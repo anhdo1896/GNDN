@@ -60,26 +60,14 @@ namespace CBDN.TonThatKyThuat
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             string strMadviqly = session.User.ma_dviqlyDN;
-            List<Object> keyvalues = grdKH.GetSelectedFieldValues("MA_KHANG");
-            foreach (object key in keyvalues)
-            {
-                string ma_khang = key + "";
-                db.DELETE_TTTT_KHACHHANG_LUUY(strMadviqly, ma_khang);
-            }
+            var cv = (DataRowView)grdKH.GetRow(grdKH.FocusedRowIndex);
+            string ma_tram = cv["MA_TRAM"] + "";
+            string ma_khang = cv["MA_KHANG"] + "";
+            db.DELETE_TTTT_KHACHHANG_LUUY(strMadviqly, ma_khang);
             LoadKH();
             grdKH.Selection.UnselectAll();
             
         }
-        private bool CheckName(string Name)
-        {
-            SYS_Session session = (SYS_Session)Session["SYS_Session"];
-
-            var dt = db.CHECK_TTTT_TRAM_UUTIEN(session.User.ma_dviqlyDN, Name);
-            if (dt.Rows.Count > 0)
-                return false;
-            return true;
-        }
-
         private void LoadKH()
         {
            
@@ -89,29 +77,14 @@ namespace CBDN.TonThatKyThuat
             grdKH.DataBind();
             
         }
-        protected void ckChua_Init(object sender, EventArgs e)
-        {
-            ASPxCheckBox chk = sender as ASPxCheckBox;
-            ASPxGridView grid = (chk.NamingContainer as GridViewHeaderTemplateContainer).Grid;
-            chk.Checked = (grid.Selection.Count == grid.VisibleRowCount);
-        }
-        protected void ckDa_Init(object sender, EventArgs e)
-        {
-            ASPxCheckBox chk = sender as ASPxCheckBox;
-            ASPxGridView grid = (chk.NamingContainer as GridViewHeaderTemplateContainer).Grid;
-            chk.Checked = (grid.Selection.Count == grid.VisibleRowCount);
-        }
+        
         protected void btnXemChiTiet_Click(object sender, EventArgs e)
         {
-            List<Object> keyvalues = grdKH.GetSelectedFieldValues("MA_TRAM");
-            List<Object> keyvalues1 = grdKH.GetSelectedFieldValues("MA_KHANG");
-            int a = keyvalues.Count;
-            for(int i=0;i<a;i++)
-            {
-                string ma_tram = keyvalues[i] + "";
-                string ma_khang = keyvalues1[i] + "";
+            var cv = (DataRowView)grdKH.GetRow(grdKH.FocusedRowIndex);
+                string ma_tram = cv["MA_TRAM"] + "";
+                string ma_khang = cv["MA_KHANG"] + "";
                 Response.Redirect("../TonThatKyThuat/dmKhachHang_CT.aspx?MA_TRAM=" + ma_tram + "&MA_KHANG=" + ma_khang + "");
-            }
+            
         }
         protected void cmbRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -124,6 +97,35 @@ namespace CBDN.TonThatKyThuat
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void grdKH_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.Caption == "STT")
+            {
+                e.DisplayText = (e.VisibleRowIndex + 1).ToString();
+            }
+        }
+
+        protected void grdKH_CellEditorInitialize(object sender, ASPxGridViewEditorEventArgs e)
+        {
+            e.Column.ToString();
+            if (e.Column.FieldName == "MA_KHANG")
+                e.Editor.Focus();
+        }
+
+        protected void grdKH_StartRowEditing(object sender, DevExpress.Web.Data.ASPxStartRowEditingEventArgs e)
+        {
+            (sender as ASPxGridView).GetRowValuesByKeyValue(e.EditingKeyValue);
+
+        }
+
+        protected void grdKH_CellEditorInitialize1(object sender, ASPxGridViewEditorEventArgs e)
+        {
+
+        }
+        protected void grdKH_HtmlCommandCellPrepared(object sender, ASPxGridViewTableCommandCellEventArgs e)
         {
 
         }

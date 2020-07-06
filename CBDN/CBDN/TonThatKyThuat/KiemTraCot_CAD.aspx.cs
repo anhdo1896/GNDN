@@ -54,66 +54,17 @@ namespace CBDN.TonThatKyThuat
                 Session["SYS_Session"] = session;
                 #endregion
                 LoadTram();
-                LoadTramChecked();
+            LoadTramCMIS();
+            LoadTramCAD();
         }
 
 
             protected void btnKiemTra_Click(object sender, EventArgs e)
             {
-                MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-                string strMadviqly = session.User.ma_dviqlyDN;
-                List<Object> keyvalues = grdTram.GetSelectedFieldValues("MATRAM");
-                foreach (object key in keyvalues)
-                {
-                    string matram= key + "";
-                if (!CheckName(matram))
-                {
-                    string trangthai = "OK!";
-                    string strDate = DateTime.Now.ToString("dd/MM/yyyy h:mm");
-                    db.INSERT_TTTT_TRAM_CAD_CHECK(strMadviqly, matram, trangthai, strDate);
-                }
-                else
-                {
-                        string trangthai = "FAIL!";
-                        string strDate = DateTime.Now.ToString("dd/MM/yyyy h:mm");
-                        db.INSERT_TTTT_TRAM_CAD_CHECK(strMadviqly, matram, trangthai, strDate);
-                }
-
-                }
-                LoadTram();
-                LoadTramChecked();
-                grdTram.Selection.UnselectAll();
-                grdTramChecked.Selection.UnselectAll();
-
+            LoadTramCAD();
+            LoadTramCMIS();
         }
-        protected void btnKiemTraChecked_Click(object sender, EventArgs e)
-        {
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            string strMadviqly = session.User.ma_dviqlyDN;
-            List<Object> keyvalues = grdTramChecked.GetSelectedFieldValues("MA_TRAM");
-            foreach (object key in keyvalues)
-            {
-                string matram = key + "";
-                if (!CheckName(matram))
-                {
-                    string trangthai = "OK!";
-                    string strDate = DateTime.Now.ToString("dd/MM/yyyy h:mm");
-                    db.UPDATE_TTTT_TRAM_CAD_CHECK(strMadviqly, matram, trangthai, strDate);
-                }
-                else
-                {
-                    string trangthai = "FAIL!";
-                    string strDate = DateTime.Now.ToString("dd/MM/yyyy h:mm");
-                    db.UPDATE_TTTT_TRAM_CAD_CHECK(strMadviqly, matram, trangthai, strDate);
-                }
 
-            }
-            LoadTram();
-            LoadTramChecked();
-            grdTram.Selection.UnselectAll();
-            grdTramChecked.Selection.UnselectAll();
-
-        }
         private bool CheckName(string Name)
             {
                 SYS_Session session = (SYS_Session)Session["SYS_Session"];
@@ -123,15 +74,6 @@ namespace CBDN.TonThatKyThuat
                     return true ;
                 return false;
             }
-        private void LoadTramChecked()
-        {
-
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            DataTable ds = db.SELECT_TTTT_TRAM_CAD_CHECK(session.User.ma_dviqlyDN);
-            grdTramChecked.DataSource = ds;
-            grdTramChecked.DataBind();
-
-        }
         private void LoadTram()
             {
 
@@ -141,32 +83,98 @@ namespace CBDN.TonThatKyThuat
                 grdTram.DataBind();
 
             }
-            protected void ckChua_Init(object sender, EventArgs e)
-            {
-                ASPxCheckBox chk = sender as ASPxCheckBox;
-                ASPxGridView grid = (chk.NamingContainer as GridViewHeaderTemplateContainer).Grid;
-                chk.Checked = (grid.Selection.Count == grid.VisibleRowCount);
-            }
-            protected void ckDa_Init(object sender, EventArgs e)
-            {
-                ASPxCheckBox chk = sender as ASPxCheckBox;
-                ASPxGridView grid = (chk.NamingContainer as GridViewHeaderTemplateContainer).Grid;
-                chk.Checked = (grid.Selection.Count == grid.VisibleRowCount);
-            }
-            
-            protected void cmbRoles_SelectedIndexChanged(object sender, EventArgs e)
-            {
-                LoadTram();
-            }
+        private void LoadTramCMIS()
+        {
+            var cv = (DataRowView)grdTram.GetRow(grdTram.FocusedRowIndex);
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string strMadviqly = session.User.ma_dviqlyDN;
+            string matram = cv["MATRAM"] + "";
+            DataTable ds = db.CHECK_TTTT_TRAM_CAD_CHECK(strMadviqly, matram);
+            grdTramCMIS.DataSource = ds;
+            grdTramCMIS.DataBind();
+        }
 
-            protected void btnSubmit_Click(object sender, EventArgs e)
+        private void LoadTramCAD()
+        {
+            var cv = (DataRowView)grdTram.GetRow(grdTram.FocusedRowIndex);
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string strMadviqly = session.User.ma_dviqlyDN;
+            string matram = cv["MATRAM"] + "";
+            DataTable dst = db.CHECK_TTTT_TRAM_CAD_CHECK_CAD_CMIS(strMadviqly, matram);
+            grdTramCAD.DataSource = dst;
+            grdTramCAD.DataBind();
+        }
+      
+        protected void grdTram_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.Caption == "STT")
             {
-
-            }
-
-            protected void btnOK_Click(object sender, EventArgs e)
-            {
-
+                e.DisplayText = (e.VisibleRowIndex + 1).ToString();
             }
         }
+        protected void grdTramCAD_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.Caption == "STT")
+            {
+                e.DisplayText = (e.VisibleRowIndex + 1).ToString();
+            }
+        }
+        protected void grdTramCMIS_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.Caption == "STT")
+            {
+                e.DisplayText = (e.VisibleRowIndex + 1).ToString();
+            }
+        }
+
+        protected void grdTram_CellEditorInitialize(object sender, ASPxGridViewEditorEventArgs e)
+        {
+            e.Column.ToString();
+            if (e.Column.FieldName == "MATRAM")
+                e.Editor.Focus();
+        }
+
+        protected void grdTram_StartRowEditing(object sender, DevExpress.Web.Data.ASPxStartRowEditingEventArgs e)
+        {
+            (sender as ASPxGridView).GetRowValuesByKeyValue(e.EditingKeyValue);
+
+        }
+
+        protected void grdTram_CellEditorInitialize1(object sender, ASPxGridViewEditorEventArgs e)
+        {
+
+        }
+        protected void grdTram_HtmlCommandCellPrepared(object sender, ASPxGridViewTableCommandCellEventArgs e)
+        {
+
+        }
+        protected void grdTramCAD_StartRowEditing(object sender, DevExpress.Web.Data.ASPxStartRowEditingEventArgs e)
+        {
+            (sender as ASPxGridView).GetRowValuesByKeyValue(e.EditingKeyValue);
+
+        }
+
+        protected void grdTramCAD_CellEditorInitialize1(object sender, ASPxGridViewEditorEventArgs e)
+        {
+
+        }
+        protected void grdTramCAD_HtmlCommandCellPrepared(object sender, ASPxGridViewTableCommandCellEventArgs e)
+        {
+
+        }
+        protected void grdTramCMIS_StartRowEditing(object sender, DevExpress.Web.Data.ASPxStartRowEditingEventArgs e)
+        {
+            (sender as ASPxGridView).GetRowValuesByKeyValue(e.EditingKeyValue);
+
+        }
+
+        protected void grdTramCMIS_CellEditorInitialize1(object sender, ASPxGridViewEditorEventArgs e)
+        {
+
+        }
+        protected void grdTramCMIS_HtmlCommandCellPrepared(object sender, ASPxGridViewTableCommandCellEventArgs e)
+        {
+
+        }
+    }
     }

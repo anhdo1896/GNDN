@@ -137,7 +137,7 @@ namespace MTCSYT
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Chưa thực hiện tính tổn thật tại trạm này');", true);
                         return;
                     }
-
+                    int thang = int.Parse(cmbThang.Value + "");
                     DataTable dt = db.SELECT_TONTHATKD_BYTRAM(session.User.ma_dviqlyDN, cmbMaTram.Value + "", int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
                     DataTable dtNew = new DataTable();
                     dtNew.Columns.Add("TTDN");

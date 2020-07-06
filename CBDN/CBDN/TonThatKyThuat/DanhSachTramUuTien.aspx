@@ -211,7 +211,7 @@
                             </dxwgv:GridViewDataTextColumn>
                             </Columns>
                             <SettingsBehavior AllowDragDrop="False" AllowSort="False" />
-                            <SettingsPager NumericButtonCount="5" PageSize="20">
+                            <SettingsPager NumericButtonCount="5" PageSize="20" Visible = true>
                                 <Summary Text="Trang {0} của {1} ({2} bản ghi)" />
                             </SettingsPager>
                             <SettingsText EmptyDataRow="Không có dữ liệu" />
