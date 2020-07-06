@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master"
-    CodeBehind="ChiTietPhuTai.aspx.cs" Inherits="MTCSYT.ChiTietPhuTai" %>
+    CodeBehind="ChiTietPhuTaiNgay.aspx.cs" Inherits="MTCSYT.ChiTietPhuTaiNgay" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web" TagPrefix="dx" %>
@@ -57,7 +57,7 @@
                                     <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Tháng" Width="100px">
                                     </dx:ASPxLabel>
                                 </td>
-                                <td >
+                                <td colspan="2">
                                     <dx:ASPxComboBox ID="cmbThang" runat="server" Width="80px">
                                         <Items>
                                             <dx:ListEditItem Text="1" Value="1" />
@@ -76,7 +76,7 @@
                                     </dx:ASPxComboBox>
                                 </td>
                                 <td>
-                                    <dx:ASPxLabel ID="ASPxLabel4" runat="server" Text="Năm" Width="80px">
+                                    <dx:ASPxLabel ID="ASPxLabel4" runat="server" Text="Năm" Width="100px">
                                     </dx:ASPxLabel>
                                 </td>
                                 <td>
@@ -94,9 +94,11 @@
                                             <dx:ListEditItem Text="2025" Value="2025" />
                                         </Items>
                                     </dx:ASPxComboBox>
+
                                 </td>
+                               
                             </tr>
-                            <tr>
+                             <tr>
                                 <td>
                                     <dx:ASPxLabel ID="ASPxLabel65" runat="server" Text="Từ ngày" Width="100px">
                                     </dx:ASPxLabel>
@@ -104,7 +106,7 @@
                                 <td >
                                     <dx:ASPxComboBox ID="cmbTungay" runat="server" Width="100px">
                                         <Items>
-                                            <dx:ListEditItem Text="1" Value="1" />
+                                            <dx:ListEditItem Text="1" Value="1" selected ="true"/>
                                             <dx:ListEditItem Text="2" Value="2" />
                                             <dx:ListEditItem Text="3" Value="3" />
                                             <dx:ListEditItem Text="4" Value="4" />
@@ -145,7 +147,7 @@
                                 <td >
                                     <dx:ASPxComboBox ID="cmbDenngay" runat="server" Width="80px">
                                         <Items>
-                                            <dx:ListEditItem Text="1" Value="1" />
+                                            <dx:ListEditItem Text="1" Value="1" selected="true"/>
                                             <dx:ListEditItem Text="2" Value="2" />
                                             <dx:ListEditItem Text="3" Value="3" />
                                             <dx:ListEditItem Text="4" Value="4" />
@@ -179,18 +181,12 @@
                                         </Items>
                                     </dx:ASPxComboBox>
                                 </td>
-                                <td colspan="3" style="text-align: right">
-                                    <dx:ASPxButton ID="btnChiTietNgay" runat="server" Font-Italic="True" Font-Underline="True" ForeColor="#0066FF" Text="Chi tiết từng phụ tải Ngày" OnClick="btnChiTietNgay_Click">
-                                    <Border BorderStyle="None" />
-                                    </dx:ASPxButton>
-                                </td>
                             </tr>
                         </table>
                     </dx:PanelContent>
                 </PanelCollection>
             </dx:ASPxRoundPanel>
                <hr />
-
 
             <table class="tbl_Write">
                 <tr>
@@ -210,8 +206,8 @@
             <table width="100%">
                 <tr>
                     <td valign="top">
-                          <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdTinhDetal" Caption="Tổn thất tại nút theo tháng"
-                            KeyFieldName="NGAYGIO" OnCustomColumnDisplayText="grdDVT_CustomColumnDisplayText"
+                        <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdTinhDetal" Caption="Tổn thất tại nút theo tháng"
+                            KeyFieldName="ID" OnCustomColumnDisplayText="grdDVT_CustomColumnDisplayText"
                             ClientIDMode="AutoID" Theme="Aqua">
                             <Columns>
                                 <dx:GridViewDataTextColumn Caption="STT" ReadOnly="True" UnboundType="String" VisibleIndex="0"
@@ -221,10 +217,13 @@
                                     <EditFormSettings Visible="False" />
                                 </dx:GridViewDataTextColumn>
                                 
-                                <dx:GridViewDataTextColumn Caption="Ngày" FieldName="NGAYGIO" VisibleIndex="3">
+                                <dx:GridViewDataTextColumn Caption="Ngày" FieldName="NGAY" VisibleIndex="3">
+                                </dx:GridViewDataTextColumn>
+                             
+                                <dx:GridViewDataTextColumn Caption="Giờ" VisibleIndex="4" FieldName="GIO">
                                 </dx:GridViewDataTextColumn>
 
-                                <dx:GridViewDataTextColumn Caption="Tổn thất tổng ngày" FieldName="TONTHATTONG" VisibleIndex="6">
+                                <dx:GridViewDataTextColumn Caption="Tổn thất" FieldName="TONTHAT" VisibleIndex="6">
                                 </dx:GridViewDataTextColumn>
 
                             </Columns>

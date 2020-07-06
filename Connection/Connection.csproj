@@ -40,7 +40,7 @@
       <HintPath>..\..\AB\BIN\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
     <Reference Include="Spirit.Portal.Core">
-      <HintPath>..\..\AB\BIN\Spirit.Portal.Core.dll</HintPath>
+      <HintPath>D:\GIAONHANDAUNGUON\CBDN\Souce\Connection\bin\Debug\Spirit.Portal.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

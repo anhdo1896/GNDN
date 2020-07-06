@@ -46,8 +46,7 @@
     <Reference Include="Aspose.Words">
       <HintPath>..\..\..\AB\BIN\Aspose.Words.dll</HintPath>
     </Reference>
-    <Reference Include="Connection, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Connection">
       <HintPath>..\..\Connection\bin\Debug\Connection.dll</HintPath>
     </Reference>
     <Reference Include="DataAcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -7321,6 +7320,7 @@
     <Content Include="TonThatCMIS\TT_DzTrungAp.aspx" />
     <Content Include="TonThatCMIS\TT_KH_DAThap.aspx" />
     <Content Include="TonThatCMIS\TT_TBA.aspx" />
+    <Content Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx" />
     <Content Include="TonThatKyThuat\DanhSachTramUuTien.aspx" />
     <Content Include="TonThatKyThuat\dmKhachHangLuuY.aspx" />
     <Content Include="TonThatKyThuat\dm_KeHoachThang.aspx" />
@@ -7929,6 +7929,13 @@
     </Compile>
     <Compile Include="TonThatCMIS\TT_TBA.aspx.designer.cs">
       <DependentUpon>TT_TBA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx.cs">
+      <DependentUpon>ChiTietPhuTaiNgay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx.designer.cs">
+      <DependentUpon>ChiTietPhuTaiNgay.aspx</DependentUpon>
     </Compile>
     <Compile Include="TonThatKyThuat\DanhSachTramUuTien.aspx.cs">
       <DependentUpon>DanhSachTramUuTien.aspx</DependentUpon>

@@ -31,8 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Connection, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Connection">
       <HintPath>..\..\Connection\bin\Debug\Connection.dll</HintPath>
     </Reference>
     <Reference Include="Entity">
@@ -119,7 +118,9 @@
     <Compile Include="ThiTracNghiem\DM_USERDataAccess_Gen.cs" />
     <Compile Include="TinhToanTonThat\clTTTT.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

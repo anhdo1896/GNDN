@@ -10,7 +10,7 @@ using DevExpress.XtraCharts;
 using DevExpress.XtraCharts.Web;
 namespace MTCSYT
 {
-    public partial class ChiTietPhuTai : BasePage
+    public partial class ChiTietPhuTaiNgay : BasePage
     {
         DataAccess.clTTTT db = new DataAccess.clTTTT();
         // CBDN.DB_CBDNDataContext db = new CBDN.DB_CBDNDataContext(new CBDN.ADOController().strcn());
@@ -60,15 +60,17 @@ namespace MTCSYT
             SYS_Session session = (SYS_Session)Session["SYS_Session"];
             cmbThang.Value = int.Parse(Request["Thang"] + "");
             cmbNam.Value = int.Parse(Request["Nam"] + "");
+            cmbTungay.Value = int.Parse(Request["Tungay"] + "");
+            cmbDenngay.Value = int.Parse(Request["Denngay"] + "");
             //DataTable dt = db.select_TTTT_TONTHATKYTHUAT_THANG(session.User.ma_dviqlyDN, Request["MA_TRAM"] + "", int.Parse(Request["Thang"] + ""), int.Parse(Request["Nam"] + ""), 0);
-            DataTable dt = db.SELECT_TTTT_TONTHATKYTHUAT_TUTHANG_DENTHANG(session.User.ma_dviqlyDN, Request["MA_TRAM"] + "", int.Parse(Request["Thang"] + ""), int.Parse(Request["Nam"] + ""),0,31,1);
+            DataTable dt = db.SELECT_TTTT_TONTHATKYTHUAT_TUTHANG_DENTHANG(session.User.ma_dviqlyDN, Request["MA_TRAM"] + "", int.Parse(Request["Thang"] + ""), int.Parse(Request["Nam"] + ""), int.Parse(Request["Tungay"] + ""), int.Parse(Request["Denngay"] + ""), 0);
             grdTinhDetal.DataSource = dt;
             grdTinhDetal.DataBind();
             hienthibieudo(dt);
         }
         private void hienthibieudo(DataTable dt)
         {
-            Series series = new Series("Tổn thất", ViewType.Line);
+            Series series = new Series("Tổn thất", ViewType.Area);
             // Add the series to the chart.
             WebChartControl1.Series.Add(series);
             // Specify the series data source.
@@ -76,13 +78,13 @@ namespace MTCSYT
             series.DataSource = seriesData;
 
             ChartTitle ct = new ChartTitle();
-            ct.Text = "BIỂU ĐỒ PHỤ TẢI TỔN THẤT TẠI TRẠM " + Request["MA_TRAM"] + " THÁNG " + cmbThang.Value + " NĂM " + cmbNam.Value + " THEO CHU KỲ";
+            ct.Text = "BIỂU ĐỒ PHỤ TẢI TỔN THẤT TẠI TRẠM " + Request["MA_TRAM"] + " TỪ " + cmbTungay.Value + "/" + cmbThang.Value + " ĐẾN " + cmbDenngay.Value + "/" + cmbThang.Value + " NĂM "+ cmbNam.Value + " THEO CHU KỲ";
             ct.Font = new System.Drawing.Font("Tahoma", 12, System.Drawing.FontStyle.Bold);
             WebChartControl1.Titles.Add(ct);
             // Specify an argument data member.
             series.ArgumentDataMember = "NGAYGIO";
             // Specify a value data member.
-            series.ValueDataMembers.AddRange(new string[] { "TONTHATTONG" });
+            series.ValueDataMembers.AddRange(new string[] { "TONTHAT" });
 
             ((XYDiagram)WebChartControl1.Diagram).EnableAxisXZooming = true;
 
@@ -121,12 +123,6 @@ namespace MTCSYT
             if (e.Column.FieldName == "MaChiNhanh")
                 e.Editor.Focus();
         }
-
-        protected void btnChiTietNgay_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../TonThatKyThuat/ChiTietPhuTaiNgay.aspx?MA_TRAM=" + lbMaTram.Text + "&Thang=" + cmbThang.Value + "&Nam=" + cmbNam.Value + "&Tungay=" + cmbTungay.Value + "&Denngay=" + cmbDenngay.Value);
-        }
-
 
 
     }
