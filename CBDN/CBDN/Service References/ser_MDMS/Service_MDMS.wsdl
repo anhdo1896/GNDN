@@ -1,0 +1,1616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Connect_MDMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Connect_MDMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Connect_MDMSResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_STATION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_STATIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_STATIONResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_LOCATION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_LOCATIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_LOCATIONResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_INFO_METER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_INFO_METERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_INFO_METERResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_INFO_TU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_INFO_TUResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_INFO_TUResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_INFO_TI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_INFO_TIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_INFO_TIResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_CHANGE_METER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_CHANGE_METERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_CHANGE_METERResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_CHANGE_TU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_CHANGE_TUResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_CHANGE_TUResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_CHANGE_TI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_CHANGE_TIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_CHANGE_TIResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_METHOD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_METHODResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_METHODResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_M_INDEX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_M_INDEXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_M_INDEXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_READ_IX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_READ_IXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_READ_IXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_READ_IX_FILTER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_end" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_meter_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_location_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_READ_IX_FILTERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_READ_IX_FILTERResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_READ_EVENT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_READ_EVENTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_READ_EVENTResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_ANALYZE_SUMMARY_SYNC_DATA_DETAIL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_end" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_ANALYZE_SUMMARY_SYNC_DATA_DETAILResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_ANALYZE_SUMMARY_SYNC_DATA_DETAILResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendConFirm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_iThang" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_iNam" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_mess" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendConFirmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendConFirmResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_TH_GN_PT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_Start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Date_End" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_Opt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_TH_GN_PTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_TH_GN_PTResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_READ_IX_OPT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_location_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_type_read" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_type_input" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_map" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_end" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_READ_IX_OPTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_READ_IX_OPTResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_R_READ_IX_LP48_CHANGE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_location_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_start" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_n_day_start" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_n_day_end" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_end" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_R_READ_IX_LP48_CHANGEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_R_READ_IX_LP48_CHANGEResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_BDDD_TH_DDO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_location_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_end" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_BDDD_TH_DDOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_BDDD_TH_DDOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_BDDD_LP48">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_location_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_end" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_BDDD_LP48Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_BDDD_LP48Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_BDDD_SUKIEN_DVCCDL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_location_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_unit_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_date_end" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_BDDD_SUKIEN_DVCCDLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_BDDD_SUKIEN_DVCCDLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Connect_MDMSSoapIn">
+    <wsdl:part name="parameters" element="tns:Connect_MDMS" />
+  </wsdl:message>
+  <wsdl:message name="Connect_MDMSSoapOut">
+    <wsdl:part name="parameters" element="tns:Connect_MDMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_STATIONSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_STATION" />
+  </wsdl:message>
+  <wsdl:message name="GET_STATIONSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_STATIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_LOCATIONSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_LOCATION" />
+  </wsdl:message>
+  <wsdl:message name="GET_LOCATIONSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_LOCATIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_INFO_METERSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_INFO_METER" />
+  </wsdl:message>
+  <wsdl:message name="GET_INFO_METERSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_INFO_METERResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_INFO_TUSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_INFO_TU" />
+  </wsdl:message>
+  <wsdl:message name="GET_INFO_TUSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_INFO_TUResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_INFO_TISoapIn">
+    <wsdl:part name="parameters" element="tns:GET_INFO_TI" />
+  </wsdl:message>
+  <wsdl:message name="GET_INFO_TISoapOut">
+    <wsdl:part name="parameters" element="tns:GET_INFO_TIResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_CHANGE_METERSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_CHANGE_METER" />
+  </wsdl:message>
+  <wsdl:message name="GET_CHANGE_METERSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_CHANGE_METERResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_CHANGE_TUSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_CHANGE_TU" />
+  </wsdl:message>
+  <wsdl:message name="GET_CHANGE_TUSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_CHANGE_TUResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_CHANGE_TISoapIn">
+    <wsdl:part name="parameters" element="tns:GET_CHANGE_TI" />
+  </wsdl:message>
+  <wsdl:message name="GET_CHANGE_TISoapOut">
+    <wsdl:part name="parameters" element="tns:GET_CHANGE_TIResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_METHODSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_METHOD" />
+  </wsdl:message>
+  <wsdl:message name="GET_METHODSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_METHODResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_M_INDEXSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_M_INDEX" />
+  </wsdl:message>
+  <wsdl:message name="GET_M_INDEXSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_M_INDEXResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_READ_IXSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_READ_IX" />
+  </wsdl:message>
+  <wsdl:message name="GET_READ_IXSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_READ_IXResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_READ_IX_FILTERSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_READ_IX_FILTER" />
+  </wsdl:message>
+  <wsdl:message name="GET_READ_IX_FILTERSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_READ_IX_FILTERResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_READ_EVENTSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_READ_EVENT" />
+  </wsdl:message>
+  <wsdl:message name="GET_READ_EVENTSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_READ_EVENTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_ANALYZE_SUMMARY_SYNC_DATA_DETAILSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_ANALYZE_SUMMARY_SYNC_DATA_DETAIL" />
+  </wsdl:message>
+  <wsdl:message name="GET_ANALYZE_SUMMARY_SYNC_DATA_DETAILSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_ANALYZE_SUMMARY_SYNC_DATA_DETAILResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendConFirmSoapIn">
+    <wsdl:part name="parameters" element="tns:SendConFirm" />
+  </wsdl:message>
+  <wsdl:message name="SendConFirmSoapOut">
+    <wsdl:part name="parameters" element="tns:SendConFirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_TH_GN_PTSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_TH_GN_PT" />
+  </wsdl:message>
+  <wsdl:message name="GET_TH_GN_PTSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_TH_GN_PTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_READ_IX_OPTSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_READ_IX_OPT" />
+  </wsdl:message>
+  <wsdl:message name="GET_READ_IX_OPTSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_READ_IX_OPTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_R_READ_IX_LP48_CHANGESoapIn">
+    <wsdl:part name="parameters" element="tns:GET_R_READ_IX_LP48_CHANGE" />
+  </wsdl:message>
+  <wsdl:message name="GET_R_READ_IX_LP48_CHANGESoapOut">
+    <wsdl:part name="parameters" element="tns:GET_R_READ_IX_LP48_CHANGEResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_BDDD_TH_DDOSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_BDDD_TH_DDO" />
+  </wsdl:message>
+  <wsdl:message name="GET_BDDD_TH_DDOSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_BDDD_TH_DDOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_BDDD_LP48SoapIn">
+    <wsdl:part name="parameters" element="tns:GET_BDDD_LP48" />
+  </wsdl:message>
+  <wsdl:message name="GET_BDDD_LP48SoapOut">
+    <wsdl:part name="parameters" element="tns:GET_BDDD_LP48Response" />
+  </wsdl:message>
+  <wsdl:message name="GET_BDDD_SUKIEN_DVCCDLSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_BDDD_SUKIEN_DVCCDL" />
+  </wsdl:message>
+  <wsdl:message name="GET_BDDD_SUKIEN_DVCCDLSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_BDDD_SUKIEN_DVCCDLResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service_MDMS_EVNSoap">
+    <wsdl:operation name="Connect_MDMS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm kiểm tra trạng thái kết nối đăng nhập để lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_unit_map: Mã đơn vị cung cấp số liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng true false ứng với trạng thái đăng nhập thành công hoặc ko thành công&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Connect_MDMSSoapIn" />
+      <wsdl:output message="tns:Connect_MDMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_STATION">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy dữ liệu thông tin danh sách trạm (mặc định dữ liệu trả về danh sách các trạm chứa điểm đo của đơn vị có giao nhận đã được cấu hình)&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_unit_map: Mã đơn vị cung cấp số liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_STATIONSoapIn" />
+      <wsdl:output message="tns:GET_STATIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATION">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy dữ liệu thông tin điểm đo (mặc định dữ liệu trả về danh sách các điểm đo của đơn vị có giao nhận đã được cấu hình)&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_unit_map: Mã đơn vị cung cấp số liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_LOCATIONSoapIn" />
+      <wsdl:output message="tns:GET_LOCATIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_INFO_METER">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm này hiện chưa sẵn sàng cung cấp vì chưa có dữ lệu&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_INFO_METERSoapIn" />
+      <wsdl:output message="tns:GET_INFO_METERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_INFO_TU">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm này hiện chưa sẵn sàng cung cấp vì chưa có dữ lệu&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_INFO_TUSoapIn" />
+      <wsdl:output message="tns:GET_INFO_TUSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_INFO_TI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm này hiện chưa sẵn sàng cung cấp vì chưa có dữ lệu&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_INFO_TISoapIn" />
+      <wsdl:output message="tns:GET_INFO_TISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_CHANGE_METER">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm này hiện chưa sẵn sàng cung cấp vì chưa có dữ lệu&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_CHANGE_METERSoapIn" />
+      <wsdl:output message="tns:GET_CHANGE_METERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_CHANGE_TU">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm này hiện chưa sẵn sàng cung cấp vì chưa có dữ lệu&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_CHANGE_TUSoapIn" />
+      <wsdl:output message="tns:GET_CHANGE_TUSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_CHANGE_TI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm này hiện chưa sẵn sàng cung cấp vì chưa có dữ lệu&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_CHANGE_TISoapIn" />
+      <wsdl:output message="tns:GET_CHANGE_TISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_METHOD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy dữ liệu phương thức giao nhận điện năng từ ngày bắt đầu đến ngày kết thúc&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_unit_map: Mã đơn vị cung cấp số liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_METHODSoapIn" />
+      <wsdl:output message="tns:GET_METHODSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_M_INDEX">
+      <wsdl:input message="tns:GET_M_INDEXSoapIn" />
+      <wsdl:output message="tns:GET_M_INDEXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_READ_IX">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy dữ liệu chi tiết đo xa bao gồm dữ liệu tích phân, dữ liệu vận hành và chỉ số chốt từ công tơ đo xa với khoảng dữ liệu được xác định từ ngày bắt đầu đến ngày kết thúc&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Caution:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Thời gian lấy số liệu khuyến khích nên lấy 1 ngày (Ngày bắt đầu bằng ngày kết thúc và &lt;= ngày D-1)&lt;br/&gt;Tối đa bạn chỉ được phép lấy tổng số 5 ngày trong 1 lời gọi tức ngày kết thúc - ngày bắt đầu &lt;= 5 còn không hệ thống sẽ ko đáp ứng. việc bạn chọn lấy dữ liệu từ 2 ngày chở lên vui lòng đặt max time out của thể hiện của đối tượng Webservice của EVN vì khối lượng dữ liệu truy xuất và trả về có thể rất lớn&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_unit_map: Mã đơn vị cung cấp số liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_READ_IXSoapIn" />
+      <wsdl:output message="tns:GET_READ_IXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_READ_IX_FILTER">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy dữ liệu chi tiết đo xa bao gồm dữ liệu tích phân, dữ liệu vận hành và chỉ số chốt từ công tơ đo xa với khoảng dữ liệu được xác định từ ngày bắt đầu đến ngày kết thúc và bộ tham số lọc unit_code, metter_id, location_id&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Caution:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Thời gian lấy số liệu khuyến khích nên lấy 1 ngày (Ngày bắt đầu bằng ngày kết thúc và &lt;= ngày D-1)&lt;br/&gt;Tối đa bạn chỉ được phép lấy tổng số 5 ngày trong 1 lời gọi tức ngày kết thúc - ngày bắt đầu &lt;= 5 còn không hệ thống sẽ ko đáp ứng. việc bạn chọn lấy dữ liệu từ 2 ngày chở lên vui lòng đặt max time out của thể hiện của đối tượng Webservice của EVN vì khối lượng dữ liệu truy xuất và trả về có thể rất lớn&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_unit_map: Mã đơn vị cung cấp số liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_unit_code: Mã đơn vị số liệu cần lọc nằm trong danh sách điểm đo chia sẻ về cho đơn vị yêu cầu service(Điều kiện con như bỏ trường lọc điểm đo nếu value là NULL hoặc String.Empty)&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_meter_id: Mã công tơ cần lọc (Điều kiện con như bỏ trường lọc điểm đo nếu value là NULL hoặc String.Empty)&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_location_id: Mã điểm đo cần lọc (Điều kiện con như bỏ trường lọc điểm đo nếu value là NULL hoặc String.Empty)&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_READ_IX_FILTERSoapIn" />
+      <wsdl:output message="tns:GET_READ_IX_FILTERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_READ_EVENT">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy dữ liệu sự kiện công tơ đo xa từ ngày bắt đầu đến ngày kết thúc&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Caution:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Thời gian lấy số liệu khuyến khích nên lấy 1 ngày (Ngày bắt đầu bằng ngày kết thúc và &lt;= ngày D-1)&lt;br/&gt;Tối đa bạn chỉ được phép lấy tổng số 5 ngày trong 1 lời gọi tức ngày kết thúc - ngày bắt đầu &lt;= 5 còn không hệ thống sẽ ko đáp ứng. việc bạn chọn lấy dữ liệu từ 2 ngày chở lên vui lòng đặt max time out của thể hiện của đối tượng Webservice của EVN vì khối lượng dữ liệu truy xuất và trả về có thể rất lớn&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_unit_map: Mã đơn vị cung cấp số liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_READ_EVENTSoapIn" />
+      <wsdl:output message="tns:GET_READ_EVENTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_ANALYZE_SUMMARY_SYNC_DATA_DETAIL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy dữ liệu báo cáo chi tiết tình hình thu thập số liệu của đơn vị từ ngày bắt đầu đến ngày kết thúc&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_unit_map: Mã đơn vị cung cấp số liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_ANALYZE_SUMMARY_SYNC_DATA_DETAILSoapIn" />
+      <wsdl:output message="tns:GET_ANALYZE_SUMMARY_SYNC_DATA_DETAILSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendConFirm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm ghi nhận trạng thái từ đơn vị gửi về trạng thái lấy dữ lệu&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SendConFirmSoapIn" />
+      <wsdl:output message="tns:SendConFirmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_TH_GN_PT">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy thông tin sản lượng tổng hợp giao nhận theo load profile 48 chu kỳ&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Caution:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Thời gian lấy số liệu khuyến khích nên lấy 1 ngày (Ngày bắt đầu bằng ngày kết thúc và &lt;= ngày D-1)&lt;br/&gt;Tối đa bạn chỉ được phép lấy tổng số 5 ngày trong 1 lời gọi tức ngày kết thúc - ngày bắt đầu &lt;= 5 còn không hệ thống sẽ ko đáp ứng. việc bạn chọn lấy dữ liệu từ 2 ngày chở lên vui lòng đặt max time out của thể hiện của đối tượng Webservice của EVN vì khối lượng dữ liệu truy xuất và trả về có thể rất lớn&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_unit_map: Mã đơn vị cung cấp số liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_opt: lựa chọn lấy dữ liệu, = 'GSUM' nếu lấy tổng hợp theo Đơn vị giao, không thì (để null hoặc rỗng) sẽ trả về chi tiết đến từng điểm đo&lt;/td&gt;
+                                        &lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định&lt;/td&gt;
+										&lt;/tr&gt;
+                                    &lt;/table&gt; </wsdl:documentation>
+      <wsdl:input message="tns:GET_TH_GN_PTSoapIn" />
+      <wsdl:output message="tns:GET_TH_GN_PTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_READ_IX_OPT">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy dữ liệu chi tiết &lt;b&gt;&lt;i&gt;theo lựa chọn (dữ liệu tự động, nhập tay)&lt;/i&gt;&lt;/b&gt; bao gồm dữ liệu tích phân, dữ liệu vận hành và chỉ số chốt từ công tơ đo xa với khoảng dữ liệu được xác định từ ngày bắt đầu đến ngày kết thúc&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Caution:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Thời gian lấy số liệu khuyến khích nên lấy 1 ngày (Ngày bắt đầu bằng ngày kết thúc và &lt;= ngày D-1)&lt;br/&gt;Tối đa bạn chỉ được phép lấy tổng số 5 ngày trong 1 lời gọi tức ngày kết thúc - ngày bắt đầu &lt;= 5 còn không hệ thống sẽ ko đáp ứng. việc bạn chọn lấy dữ liệu từ 2 ngày chở lên vui lòng đặt max time out của thể hiện của đối tượng Webservice của EVN vì khối lượng dữ liệu truy xuất và trả về có thể rất lớn&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_location_id: Mã điểm đo của KDLDD cần lấy dữ liệu, rỗng nếu lấy tất cả&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_type_read: chuỗi, chứa các loại thông số cần lấy, viết liền nhau. Có thể lấy nhiều loại khác nhau đồng thời. 0 là thông số vận hành, 1: load profile, 2: chỉ số chốt. Ví dụ: '0' chỉ lấy thông số vận hành hoặc '12' lấy load profile và chỉ số chốt hoặc '012' lấy cả 3 loại&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_type_input: chuỗi chứa các kiểu nhập. 'A' là tự động, 'M': là nhập tay. Có thể là 'AM' nếu cả 2 loại. NULL hoặc '' nếu tất cả&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_unit_map: Mã đơn vị cung cấp số liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định. Trong đó, trường TYPE_ISSUED = 'M' là nhập tay.&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_READ_IX_OPTSoapIn" />
+      <wsdl:output message="tns:GET_READ_IX_OPTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_R_READ_IX_LP48_CHANGE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy dữ liệu phụ tải 48 chu kỳ nguồn tự động (nguồn đồng bộ từ Đơn vị cung cấp dữ liệu về, không có dữ liệu nhập thủ công) theo ngày thay đổi. Dữ liệu trả về không lấy ngày D-1.&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Caution:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Thời gian lấy số liệu khuyến khích nên lấy 1 ngày (Ngày bắt đầu bằng ngày kết thúc và = ngày hiện tại nếu gọi vào cuối ngày hiện tại hoặc ngày hôm qua nếu gọi giữa ngày hiện tại)&lt;br/&gt;Tối đa bạn chỉ được phép lấy tổng số 5 ngày trong 1 lời gọi còn không hệ thống sẽ ko đáp ứng. Việc bạn chọn lấy dữ liệu từ 2 ngày chở lên vui lòng đặt max time out của thể hiện của đối tượng Webservice của EVN vì khối lượng dữ liệu truy xuất và trả về có thể rất lớn&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_location_id: Mã điểm đo của KDLDD cần lấy dữ liệu, rỗng nếu lấy tất cả&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_unit_code: Mã đơn vị người dùng&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu dữ liệu thay đổi, có thể lấy ngày hiện tại &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc dữ liệu thay đổi, có thể lấy ngày hiện tại &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_n_day_start: số ngày đầu của ngày dữ liệu sau ngày P_STARTDATE, để loại bỏ bớt các bản ghi đã lấy rồi. Thường đặt p_n_day_start=1 nghĩa là không lấy ngày dữ liệu &gt;= D-1, với D là p_date_start, vì đồng bộ đầy đủ đã lấy ngày này rồi. p_n_day_start=3 để bỏ qua dữ liệu 3 ngày gần nhất, như ngày thứ 2 đã lấy lại toàn bộ dữ liệu ngày T6, T7, CN tuần trước thì khi lấy thay đổi thì để 3. p_n_day_start=0 lấy cả ngày D-1. p_n_day_start=-1 thì lấy cả ngày D.&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_n_day_end: số ngày kết thúc của ngày dữ liệu sau ngày p_date_start, để hạn chế số bản ghi có thể quá lớn. Thường đặt bằng 0 nếu ko xác định biên ngày quá khứ. Trường hợp chỉ cần lấy dữ liệu trong vòng 31 ngày sau ngày p_date_start thì truyền p_n_day_end=31&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định.&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_R_READ_IX_LP48_CHANGESoapIn" />
+      <wsdl:output message="tns:GET_R_READ_IX_LP48_CHANGESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_BDDD_TH_DDO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy dữ liệu biến động đo đếm tổng hợp theo điểm đo (tương ứng menu VWEM\Báo cáo biến động đo đếm, tab1).&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Caution:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Gọi hàng ngày hoặc theo chu kỳ khai thác dữ liệu của Đơn vị. Khoảng ngày không quá 31 ngày. Nếu lấy dữ liệu thay đổi thì gọi vào cuối ngày&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_location_id: Mã điểm đo của KDLDD cần lấy dữ liệu, rỗng nếu lấy tất cả&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_type: 'D' lọc các dữ liệu có hiệu lực trong khoảng ngày chọn,'C' lọc theo ngày thay đổi hay cập nhật dữ liệu trong khoảng ngày chọn&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_unit_code: Mã đơn vị người dùng&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định.&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_BDDD_TH_DDOSoapIn" />
+      <wsdl:output message="tns:GET_BDDD_TH_DDOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_BDDD_LP48">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy dữ liệu biến động đo đếm dữ liệu phụ tải 48 chu kỳ: kiểm định, sự cố,... (tương ứng menu VWEM\Báo cáo biến động đo đếm, tab2.&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Caution:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Gọi hàng ngày hoặc theo chu kỳ khai thác dữ liệu của Đơn vị. Khoảng ngày không quá 31 ngày. Nếu lấy dữ liệu thay đổi thì gọi vào cuối ngày&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_location_id: Mã điểm đo của KDLDD cần lấy dữ liệu, rỗng nếu lấy tất cả&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_type: 'D' lọc các dữ liệu có hiệu lực trong khoảng ngày chọn,'C' lọc theo ngày thay đổi hay cập nhật dữ liệu trong khoảng ngày chọn&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_unit_code: Mã đơn vị người dùng&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định.&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_BDDD_LP48SoapIn" />
+      <wsdl:output message="tns:GET_BDDD_LP48SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_BDDD_SUKIEN_DVCCDL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;table&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Summary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Hàm lấy sự kiện Đơn vị cung cấp dữ liệu thông báo  (tương ứng menu VWEM\Báo cáo biến động đo đếm, tab3).&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Caution:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Gọi hàng ngày hoặc theo chu kỳ khai thác dữ liệu của Đơn vị. Khoảng ngày không quá 31 ngày. Nếu lấy dữ liệu thay đổi thì gọi vào cuối ngày&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Parameters:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;p_location_id: Mã điểm đo của KDLDD cần lấy dữ liệu, rỗng nếu lấy tất cả&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_type: 'D' lọc các dữ liệu có hiệu lực trong khoảng ngày chọn,'C' lọc theo ngày thay đổi hay cập nhật dữ liệu trong khoảng ngày chọn&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_unit_code: Mã đơn vị người dùng&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_start: Ngày bắt đầu lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_date_end: Ngày kết thúc lấy dữ liệu &lt;i&gt;(định dạng là string(dd/MM/yyyy))&lt;/i&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_username: Tên tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;/td&gt;&lt;td&gt;p_pass: Mật khẩu của tài khoản đăng nhập được phép lấy dữ liệu&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td&gt;&lt;b&gt;Return:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Kết quả trả về dạng dataset có cấu trúc và các trường theo file mô tả web service đã quy định.&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/table&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GET_BDDD_SUKIEN_DVCCDLSoapIn" />
+      <wsdl:output message="tns:GET_BDDD_SUKIEN_DVCCDLSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service_MDMS_EVNSoap" type="tns:Service_MDMS_EVNSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Connect_MDMS">
+      <soap:operation soapAction="http://tempuri.org/Connect_MDMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_STATION">
+      <soap:operation soapAction="http://tempuri.org/GET_STATION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATION">
+      <soap:operation soapAction="http://tempuri.org/GET_LOCATION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_INFO_METER">
+      <soap:operation soapAction="http://tempuri.org/GET_INFO_METER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_INFO_TU">
+      <soap:operation soapAction="http://tempuri.org/GET_INFO_TU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_INFO_TI">
+      <soap:operation soapAction="http://tempuri.org/GET_INFO_TI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_CHANGE_METER">
+      <soap:operation soapAction="http://tempuri.org/GET_CHANGE_METER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_CHANGE_TU">
+      <soap:operation soapAction="http://tempuri.org/GET_CHANGE_TU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_CHANGE_TI">
+      <soap:operation soapAction="http://tempuri.org/GET_CHANGE_TI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_METHOD">
+      <soap:operation soapAction="http://tempuri.org/GET_METHOD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_M_INDEX">
+      <soap:operation soapAction="http://tempuri.org/GET_M_INDEX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_READ_IX">
+      <soap:operation soapAction="http://tempuri.org/GET_READ_IX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_READ_IX_FILTER">
+      <soap:operation soapAction="http://tempuri.org/GET_READ_IX_FILTER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_READ_EVENT">
+      <soap:operation soapAction="http://tempuri.org/GET_READ_EVENT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_ANALYZE_SUMMARY_SYNC_DATA_DETAIL">
+      <soap:operation soapAction="http://tempuri.org/GET_ANALYZE_SUMMARY_SYNC_DATA_DETAIL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendConFirm">
+      <soap:operation soapAction="http://tempuri.org/SendConFirm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_TH_GN_PT">
+      <soap:operation soapAction="http://tempuri.org/GET_TH_GN_PT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_READ_IX_OPT">
+      <soap:operation soapAction="http://tempuri.org/GET_READ_IX_OPT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_R_READ_IX_LP48_CHANGE">
+      <soap:operation soapAction="http://tempuri.org/GET_R_READ_IX_LP48_CHANGE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_BDDD_TH_DDO">
+      <soap:operation soapAction="http://tempuri.org/GET_BDDD_TH_DDO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_BDDD_LP48">
+      <soap:operation soapAction="http://tempuri.org/GET_BDDD_LP48" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_BDDD_SUKIEN_DVCCDL">
+      <soap:operation soapAction="http://tempuri.org/GET_BDDD_SUKIEN_DVCCDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service_MDMS_EVNSoap12" type="tns:Service_MDMS_EVNSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Connect_MDMS">
+      <soap12:operation soapAction="http://tempuri.org/Connect_MDMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_STATION">
+      <soap12:operation soapAction="http://tempuri.org/GET_STATION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATION">
+      <soap12:operation soapAction="http://tempuri.org/GET_LOCATION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_INFO_METER">
+      <soap12:operation soapAction="http://tempuri.org/GET_INFO_METER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_INFO_TU">
+      <soap12:operation soapAction="http://tempuri.org/GET_INFO_TU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_INFO_TI">
+      <soap12:operation soapAction="http://tempuri.org/GET_INFO_TI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_CHANGE_METER">
+      <soap12:operation soapAction="http://tempuri.org/GET_CHANGE_METER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_CHANGE_TU">
+      <soap12:operation soapAction="http://tempuri.org/GET_CHANGE_TU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_CHANGE_TI">
+      <soap12:operation soapAction="http://tempuri.org/GET_CHANGE_TI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_METHOD">
+      <soap12:operation soapAction="http://tempuri.org/GET_METHOD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_M_INDEX">
+      <soap12:operation soapAction="http://tempuri.org/GET_M_INDEX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_READ_IX">
+      <soap12:operation soapAction="http://tempuri.org/GET_READ_IX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_READ_IX_FILTER">
+      <soap12:operation soapAction="http://tempuri.org/GET_READ_IX_FILTER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_READ_EVENT">
+      <soap12:operation soapAction="http://tempuri.org/GET_READ_EVENT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_ANALYZE_SUMMARY_SYNC_DATA_DETAIL">
+      <soap12:operation soapAction="http://tempuri.org/GET_ANALYZE_SUMMARY_SYNC_DATA_DETAIL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendConFirm">
+      <soap12:operation soapAction="http://tempuri.org/SendConFirm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_TH_GN_PT">
+      <soap12:operation soapAction="http://tempuri.org/GET_TH_GN_PT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_READ_IX_OPT">
+      <soap12:operation soapAction="http://tempuri.org/GET_READ_IX_OPT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_R_READ_IX_LP48_CHANGE">
+      <soap12:operation soapAction="http://tempuri.org/GET_R_READ_IX_LP48_CHANGE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_BDDD_TH_DDO">
+      <soap12:operation soapAction="http://tempuri.org/GET_BDDD_TH_DDO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_BDDD_LP48">
+      <soap12:operation soapAction="http://tempuri.org/GET_BDDD_LP48" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_BDDD_SUKIEN_DVCCDL">
+      <soap12:operation soapAction="http://tempuri.org/GET_BDDD_SUKIEN_DVCCDL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service_MDMS_EVN">
+    <wsdl:port name="Service_MDMS_EVNSoap" binding="tns:Service_MDMS_EVNSoap">
+      <soap:address location="http://10.1.0.113/Service_MDMS_EVN/Service_MDMS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service_MDMS_EVNSoap12" binding="tns:Service_MDMS_EVNSoap12">
+      <soap12:address location="http://10.1.0.113/Service_MDMS_EVN/Service_MDMS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

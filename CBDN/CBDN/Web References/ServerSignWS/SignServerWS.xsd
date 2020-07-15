@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws.signer.com/" targetNamespace="http://ws.signer.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getCertInfo" type="tns:getCertInfo" />
+  <xs:element name="getCertInfoResponse" type="tns:getCertInfoResponse" />
+  <xs:element name="getCertList" type="tns:getCertList" />
+  <xs:element name="getCertListResponse" type="tns:getCertListResponse" />
+  <xs:element name="reloadCertList" type="tns:reloadCertList" />
+  <xs:element name="reloadCertListResponse" type="tns:reloadCertListResponse" />
+  <xs:element name="signHashBase64" type="tns:signHashBase64" />
+  <xs:element name="signHashBase64Response" type="tns:signHashBase64Response" />
+  <xs:element name="signPdfBase64" type="tns:signPdfBase64" />
+  <xs:element name="signPdfBase64Image" type="tns:signPdfBase64Image" />
+  <xs:element name="signPdfBase64ImageResponse" type="tns:signPdfBase64ImageResponse" />
+  <xs:element name="signPdfBase64RectangleText" type="tns:signPdfBase64RectangleText" />
+  <xs:element name="signPdfBase64RectangleTextResponse" type="tns:signPdfBase64RectangleTextResponse" />
+  <xs:element name="signPdfBase64Response" type="tns:signPdfBase64Response" />
+  <xs:element name="signPdfBase64Table" type="tns:signPdfBase64Table" />
+  <xs:element name="signPdfBase64TableResponse" type="tns:signPdfBase64TableResponse" />
+  <xs:element name="signPdfFilePath" type="tns:signPdfFilePath" />
+  <xs:element name="signPdfFilePathImage" type="tns:signPdfFilePathImage" />
+  <xs:element name="signPdfFilePathImageResponse" type="tns:signPdfFilePathImageResponse" />
+  <xs:element name="signPdfFilePathRectangleText" type="tns:signPdfFilePathRectangleText" />
+  <xs:element name="signPdfFilePathRectangleTextResponse" type="tns:signPdfFilePathRectangleTextResponse" />
+  <xs:element name="signPdfFilePathResponse" type="tns:signPdfFilePathResponse" />
+  <xs:element name="signPdfFilePathTable" type="tns:signPdfFilePathTable" />
+  <xs:element name="signPdfFilePathTableResponse" type="tns:signPdfFilePathTableResponse" />
+  <xs:element name="signXmlBase64" type="tns:signXmlBase64" />
+  <xs:element name="signXmlBase64Response" type="tns:signXmlBase64Response" />
+  <xs:element name="signXmlFilePath" type="tns:signXmlFilePath" />
+  <xs:element name="signXmlFilePathResponse" type="tns:signXmlFilePathResponse" />
+  <xs:element name="verifyFilePdfBase64" type="tns:verifyFilePdfBase64" />
+  <xs:element name="verifyFilePdfBase64Response" type="tns:verifyFilePdfBase64Response" />
+  <xs:element name="verifyFilePdfFilePath" type="tns:verifyFilePdfFilePath" />
+  <xs:element name="verifyFilePdfFilePathResponse" type="tns:verifyFilePdfFilePathResponse" />
+  <xs:element name="verifyFileXmlBase64" type="tns:verifyFileXmlBase64" />
+  <xs:element name="verifyFileXmlBase64Response" type="tns:verifyFileXmlBase64Response" />
+  <xs:element name="verifyFileXmlFilePath" type="tns:verifyFileXmlFilePath" />
+  <xs:element name="verifyFileXmlFilePathResponse" type="tns:verifyFileXmlFilePathResponse" />
+  <xs:element name="workerReloadCertListRepeatTime" type="tns:workerReloadCertListRepeatTime" />
+  <xs:element name="workerReloadCertListRepeatTimeResponse" type="tns:workerReloadCertListRepeatTimeResponse" />
+  <xs:element name="workerReloadCertListSpecifyTime" type="tns:workerReloadCertListSpecifyTime" />
+  <xs:element name="workerReloadCertListSpecifyTimeResponse" type="tns:workerReloadCertListSpecifyTimeResponse" />
+  <xs:complexType name="getCertInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCertInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:certInfoResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="certInfoResponceBO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:responceWsBO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="certBO" type="tns:certBO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="responceWsBO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objectError" type="tns:objectError" />
+      <xs:element name="status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="certBO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="certStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="dn" type="xs:string" />
+      <xs:element minOccurs="0" name="issuer" type="xs:string" />
+      <xs:element minOccurs="0" name="keyLength" type="xs:int" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="serial" type="xs:string" />
+      <xs:element minOccurs="0" name="validFr" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="validTo" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="objectError">
+    <xs:sequence>
+      <xs:element name="errorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="errorDesc" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfFilePathTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="tns:displayTableConfigBO" />
+      <xs:element minOccurs="0" name="arg7" type="tns:timestampConfig" />
+      <xs:element name="arg8" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="displayTableConfigBO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="alignmentArray" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="backgroundColorTitle" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fontPath" type="xs:string" />
+      <xs:element name="fontSizeTitlePageSign" type="xs:int" />
+      <xs:element name="heightRowTitlePageSign" type="xs:float" />
+      <xs:element name="heightTitle" type="xs:float" />
+      <xs:element name="isDisplayTitlePageSign" type="xs:boolean" />
+      <xs:element name="marginBottomOfTable" type="xs:float" />
+      <xs:element name="marginRightOfTable" type="xs:float" />
+      <xs:element name="marginTopOfTable" type="xs:float" />
+      <xs:element name="maxPageSign" type="xs:int" />
+      <xs:element minOccurs="0" name="pageSize" type="xs:string" />
+      <xs:element minOccurs="0" name="signDate" type="xs:dateTime" />
+      <xs:element name="sizeFont" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="textArray" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="titlePageSign" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="titles" nillable="true" type="xs:string" />
+      <xs:element name="totalPageSign" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="widthsPercen" nillable="true" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="timestampConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tsa_acc" type="xs:string" />
+      <xs:element minOccurs="0" name="tsa_pass" type="xs:string" />
+      <xs:element minOccurs="0" name="tsa_url" type="xs:string" />
+      <xs:element name="useTimestamp" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfFilePathTableResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:signFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signFileResponceBO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:responceWsBO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="signedFileBase64" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="verifyFileXmlBase64">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyFileXmlBase64Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:verifyFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyFileResponceBO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:responceWsBO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="verifyFileResultBO" type="tns:verifyFileResultBO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="verifyFileResultBO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fileStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="reason" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="resultVerifyCertBOList" nillable="true" type="tns:resultVerifyCertBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultVerifyCertBO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cert" type="tns:certBO" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="signDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="status" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyFilePdfBase64">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyFilePdfBase64Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:verifyFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfBase64RectangleText">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="tns:displayRectangleTextConfigBO" />
+      <xs:element minOccurs="0" name="arg7" type="tns:timestampConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="displayRectangleTextConfigBO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contact" type="xs:string" />
+      <xs:element minOccurs="0" name="dateFormatString" type="xs:string" />
+      <xs:element minOccurs="0" name="displayText" type="xs:string" />
+      <xs:element minOccurs="0" name="fontPath" type="xs:string" />
+      <xs:element minOccurs="0" name="formatRectangleText" type="xs:string" />
+      <xs:element name="heightRectangle" type="xs:float" />
+      <xs:element name="locateSign" type="xs:int" />
+      <xs:element minOccurs="0" name="location" type="xs:string" />
+      <xs:element name="marginBottomOfRectangle" type="xs:float" />
+      <xs:element name="marginLeftOfRectangle" type="xs:float" />
+      <xs:element name="marginRightOfRectangle" type="xs:float" />
+      <xs:element name="marginTopOfRectangle" type="xs:float" />
+      <xs:element name="numberPageSign" type="xs:int" />
+      <xs:element minOccurs="0" name="organization" type="xs:string" />
+      <xs:element minOccurs="0" name="organizationUnit" type="xs:string" />
+      <xs:element minOccurs="0" name="reason" type="xs:string" />
+      <xs:element minOccurs="0" name="signDate" type="xs:dateTime" />
+      <xs:element name="sizeFont" type="xs:int" />
+      <xs:element name="widthRectangle" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfBase64RectangleTextResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:signFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfFilePathRectangleText">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="tns:displayRectangleTextConfigBO" />
+      <xs:element minOccurs="0" name="arg7" type="tns:timestampConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfFilePathRectangleTextResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:signFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signHashBase64">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signHashBase64Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:signDataBase64ResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signDataBase64ResponceBO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:responceWsBO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="signatureBase64" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="signPdfFilePath">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfFilePathResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:signFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="workerReloadCertListRepeatTime">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="workerReloadCertListRepeatTimeResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="signXmlBase64">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signXmlBase64Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:signFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reloadCertList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reloadCertListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:certListResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="certListResponceBO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:responceWsBO">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="certList" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getCertList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCertListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:certListResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signXmlFilePath">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signXmlFilePathResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:signFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfBase64">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfBase64Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:signFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyFilePdfFilePath">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyFilePdfFilePathResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:verifyFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfFilePathImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="tns:displayImageConfigBO" />
+      <xs:element minOccurs="0" name="arg7" type="tns:timestampConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="displayImageConfigBO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contact" type="xs:string" />
+      <xs:element minOccurs="0" name="fileImageBase64" type="xs:string" />
+      <xs:element name="heightRectangle" type="xs:float" />
+      <xs:element name="locateSign" type="xs:int" />
+      <xs:element minOccurs="0" name="location" type="xs:string" />
+      <xs:element name="marginBottomOfRectangle" type="xs:float" />
+      <xs:element name="marginLeftOfRectangle" type="xs:float" />
+      <xs:element name="marginRightOfRectangle" type="xs:float" />
+      <xs:element name="marginTopOfRectangle" type="xs:float" />
+      <xs:element name="numberPageSign" type="xs:int" />
+      <xs:element minOccurs="0" name="pathImage" type="xs:string" />
+      <xs:element minOccurs="0" name="reason" type="xs:string" />
+      <xs:element minOccurs="0" name="signDate" type="xs:dateTime" />
+      <xs:element name="widthRectangle" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfFilePathImageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:signFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="workerReloadCertListSpecifyTime">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="workerReloadCertListSpecifyTimeResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="signPdfBase64Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="tns:displayTableConfigBO" />
+      <xs:element minOccurs="0" name="arg7" type="tns:timestampConfig" />
+      <xs:element name="arg8" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfBase64TableResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:signFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfBase64Image">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="tns:displayImageConfigBO" />
+      <xs:element minOccurs="0" name="arg7" type="tns:timestampConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="signPdfBase64ImageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:signFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyFileXmlFilePath">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verifyFileXmlFilePathResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:verifyFileResponceBO" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

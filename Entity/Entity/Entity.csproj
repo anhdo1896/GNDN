@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{78CFE0F4-0056-451E-B696-52C04C80CDE8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entity</RootNamespace>
+    <AssemblyName>Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SYS\DataBase.cs" />
+    <Compile Include="SYS\DonVi.cs" />
+    <Compile Include="SYS\DonVi_Gen.cs" />
+    <Compile Include="SYS\SYS_Catagory.cs" />
+    <Compile Include="SYS\SYS_CategoryManager.cs" />
+    <Compile Include="SYS\SYS_CategoryManager_Gen.cs" />
+    <Compile Include="SYS\SYS_CCU_Gen.cs" />
+    <Compile Include="SYS\SYS_ColumnCategory.cs" />
+    <Compile Include="SYS\SYS_ColumnCategory_Gen.cs" />
+    <Compile Include="SYS\SYS_ConfigConnection.cs" />
+    <Compile Include="SYS\SYS_Config_Gen.cs" />
+    <Compile Include="SYS\SYS_Exception_Gen.cs" />
+    <Compile Include="SYS\SYS_Language.cs" />
+    <Compile Include="SYS\SYS_Log.cs" />
+    <Compile Include="SYS\SYS_Log_Gen.cs" />
+    <Compile Include="SYS\SYS_Modun_Gen.cs" />
+    <Compile Include="SYS\SYS_OrganizationPositionRole_Gen.cs" />
+    <Compile Include="SYS\SYS_Organization_Gen.cs" />
+    <Compile Include="SYS\SYS_Organnization.cs" />
+    <Compile Include="SYS\SYS_Population.cs" />
+    <Compile Include="SYS\SYS_Population_Gen.cs" />
+    <Compile Include="SYS\SYS_Position_Gen.cs" />
+    <Compile Include="SYS\SYS_Province.cs" />
+    <Compile Include="SYS\SYS_Province_Gen.cs" />
+    <Compile Include="SYS\SYS_Region.cs" />
+    <Compile Include="SYS\SYS_Region_Gen.cs" />
+    <Compile Include="SYS\SYS_Region_Organization.cs" />
+    <Compile Include="SYS\SYS_Region_Organization_Gen.cs" />
+    <Compile Include="SYS\SYS_Region_Province_Gen.cs" />
+    <Compile Include="SYS\SYS_Right.cs" />
+    <Compile Include="SYS\SYS_RightOfRoles_Gen.cs" />
+    <Compile Include="SYS\SYS_RightOfUser_Gen.cs" />
+    <Compile Include="SYS\SYS_Right_Gen.cs" />
+    <Compile Include="SYS\SYS_RoleOfUser_Gen.cs" />
+    <Compile Include="SYS\SYS_Roles.cs" />
+    <Compile Include="SYS\SYS_Roles_Gen.cs" />
+    <Compile Include="SYS\SYS_Staff.cs" />
+    <Compile Include="SYS\SYS_Staff_Gen.cs" />
+    <Compile Include="SYS\SYS_User.cs" />
+    <Compile Include="SYS\SYS_UserConfig.cs" />
+    <Compile Include="SYS\SYS_User_Gen.cs" />
+    <Compile Include="ThiTracNghiem\DM_DVQLY_Gen.cs" />
+    <Compile Include="ThiTracNghiem\DM_MODULE_Gen.cs" />
+    <Compile Include="ThiTracNghiem\DM_USER.cs" />
+    <Compile Include="ThiTracNghiem\DM_USER_Gen.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

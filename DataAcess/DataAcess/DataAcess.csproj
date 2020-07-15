@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A1B3AAD-10CD-42CC-85AB-BB6CBF5913E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAcess</RootNamespace>
+    <AssemblyName>DataAcess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Connection">
+      <HintPath>..\..\Connection\bin\Debug\Connection.dll</HintPath>
+    </Reference>
+    <Reference Include="Entity">
+      <HintPath>..\..\Entity\Entity\bin\Debug\Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="GCS\clTaiNon.cs" />
+    <Compile Include="GCS\clTBDD_CatDien.cs" />
+    <Compile Include="GCS\ConnectString.cs" />
+    <Compile Include="GCS\dbGCS.cs" />
+    <Compile Include="GCS\dbPTKH.cs" />
+    <Compile Include="GCS\TonThat.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SYS\DonViDataAccess.cs" />
+    <Compile Include="SYS\DonViDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_CatagoryDataAccess.cs" />
+    <Compile Include="SYS\SYS_CatagoryDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_CategoryManagerDataAccess.cs" />
+    <Compile Include="SYS\SYS_CategoryManagerDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_CCUDataAccess.cs" />
+    <Compile Include="SYS\SYS_CCUDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_ColumnCategoryDataAccess.cs" />
+    <Compile Include="SYS\SYS_ColumnCategoryDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_ConfigConnectionDataAccess.cs" />
+    <Compile Include="SYS\SYS_ConfigDataAccess.cs" />
+    <Compile Include="SYS\SYS_ConfigDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_DBManagerDataAccess.cs" />
+    <Compile Include="SYS\SYS_ExceptionDataAccess.cs" />
+    <Compile Include="SYS\SYS_ExceptionDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_LanguageDataAccess.cs" />
+    <Compile Include="SYS\SYS_LanguageDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_LogDataAccess.cs" />
+    <Compile Include="SYS\SYS_LogDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_ModunDataAccess.cs" />
+    <Compile Include="SYS\SYS_ModunDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_OrganizationDataAccess.cs" />
+    <Compile Include="SYS\SYS_OrganizationDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_OrganizationPositionRoleDataAccess.cs" />
+    <Compile Include="SYS\SYS_OrganizationPositionRoleDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_PopulationDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_PositionDataAccess.cs" />
+    <Compile Include="SYS\SYS_PositionDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_ProvinceDataAccess.cs" />
+    <Compile Include="SYS\SYS_ProvinceDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_RegionDataAccess.cs" />
+    <Compile Include="SYS\SYS_RegionDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_Region_OrganizationDataAccess.cs" />
+    <Compile Include="SYS\SYS_Region_OrganizationDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_Region_ProvinceDataAccess.cs" />
+    <Compile Include="SYS\SYS_Region_ProvinceDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_RightDataAccess.cs" />
+    <Compile Include="SYS\SYS_RightDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_RightOfRolesDataAccess.cs" />
+    <Compile Include="SYS\SYS_RightOfRolesDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_RightOfUserDataAccess.cs" />
+    <Compile Include="SYS\SYS_RightOfUserDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_RoleOfUserDataAccess.cs" />
+    <Compile Include="SYS\SYS_RoleOfUserDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_RolesDataAccess.cs" />
+    <Compile Include="SYS\SYS_RolesDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_StaffDataAccess.cs" />
+    <Compile Include="SYS\SYS_StaffDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_UserConfigDataAccess.cs" />
+    <Compile Include="SYS\SYS_UserConfigDataAccess_Gen.cs" />
+    <Compile Include="SYS\SYS_UserDataAccess.cs" />
+    <Compile Include="SYS\SYS_UserDataAccess_Gen.cs" />
+    <Compile Include="ThiTracNghiem\DM_DVQLYDataAccess.cs" />
+    <Compile Include="ThiTracNghiem\DM_DVQLYDataAccess_Gen.cs" />
+    <Compile Include="ThiTracNghiem\DM_MODULEDataAccess.cs" />
+    <Compile Include="ThiTracNghiem\DM_MODULEDataAccess_Gen.cs" />
+    <Compile Include="ThiTracNghiem\DM_USERDataAccess.cs" />
+    <Compile Include="ThiTracNghiem\DM_USERDataAccess_Gen.cs" />
+    <Compile Include="TinhToanTonThat\clTTTT.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

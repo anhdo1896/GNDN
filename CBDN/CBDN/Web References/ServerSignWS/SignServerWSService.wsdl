@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws.signer.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="SignServerWSService" targetNamespace="http://ws.signer.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://10.0.0.146:8080/SignServerWS?xsd=1" namespace="http://ws.signer.com/" />
+    </xsd:schema>
+  </types>
+  <message name="getCertList">
+    <part name="parameters" element="tns:getCertList" />
+  </message>
+  <message name="getCertListResponse">
+    <part name="parameters" element="tns:getCertListResponse" />
+  </message>
+  <message name="reloadCertList">
+    <part name="parameters" element="tns:reloadCertList" />
+  </message>
+  <message name="reloadCertListResponse">
+    <part name="parameters" element="tns:reloadCertListResponse" />
+  </message>
+  <message name="signXmlBase64">
+    <part name="parameters" element="tns:signXmlBase64" />
+  </message>
+  <message name="signXmlBase64Response">
+    <part name="parameters" element="tns:signXmlBase64Response" />
+  </message>
+  <message name="signPdfFilePath">
+    <part name="parameters" element="tns:signPdfFilePath" />
+  </message>
+  <message name="signPdfFilePathResponse">
+    <part name="parameters" element="tns:signPdfFilePathResponse" />
+  </message>
+  <message name="signPdfBase64">
+    <part name="parameters" element="tns:signPdfBase64" />
+  </message>
+  <message name="signPdfBase64Response">
+    <part name="parameters" element="tns:signPdfBase64Response" />
+  </message>
+  <message name="signHashBase64">
+    <part name="parameters" element="tns:signHashBase64" />
+  </message>
+  <message name="signHashBase64Response">
+    <part name="parameters" element="tns:signHashBase64Response" />
+  </message>
+  <message name="getCertInfo">
+    <part name="parameters" element="tns:getCertInfo" />
+  </message>
+  <message name="getCertInfoResponse">
+    <part name="parameters" element="tns:getCertInfoResponse" />
+  </message>
+  <message name="signXmlFilePath">
+    <part name="parameters" element="tns:signXmlFilePath" />
+  </message>
+  <message name="signXmlFilePathResponse">
+    <part name="parameters" element="tns:signXmlFilePathResponse" />
+  </message>
+  <message name="signPdfBase64RectangleText">
+    <part name="parameters" element="tns:signPdfBase64RectangleText" />
+  </message>
+  <message name="signPdfBase64RectangleTextResponse">
+    <part name="parameters" element="tns:signPdfBase64RectangleTextResponse" />
+  </message>
+  <message name="verifyFileXmlBase64">
+    <part name="parameters" element="tns:verifyFileXmlBase64" />
+  </message>
+  <message name="verifyFileXmlBase64Response">
+    <part name="parameters" element="tns:verifyFileXmlBase64Response" />
+  </message>
+  <message name="verifyFileXmlFilePath">
+    <part name="parameters" element="tns:verifyFileXmlFilePath" />
+  </message>
+  <message name="verifyFileXmlFilePathResponse">
+    <part name="parameters" element="tns:verifyFileXmlFilePathResponse" />
+  </message>
+  <message name="workerReloadCertListSpecifyTime">
+    <part name="parameters" element="tns:workerReloadCertListSpecifyTime" />
+  </message>
+  <message name="workerReloadCertListSpecifyTimeResponse">
+    <part name="parameters" element="tns:workerReloadCertListSpecifyTimeResponse" />
+  </message>
+  <message name="signPdfBase64Image">
+    <part name="parameters" element="tns:signPdfBase64Image" />
+  </message>
+  <message name="signPdfBase64ImageResponse">
+    <part name="parameters" element="tns:signPdfBase64ImageResponse" />
+  </message>
+  <message name="signPdfBase64Table">
+    <part name="parameters" element="tns:signPdfBase64Table" />
+  </message>
+  <message name="signPdfBase64TableResponse">
+    <part name="parameters" element="tns:signPdfBase64TableResponse" />
+  </message>
+  <message name="signPdfFilePathRectangleText">
+    <part name="parameters" element="tns:signPdfFilePathRectangleText" />
+  </message>
+  <message name="signPdfFilePathRectangleTextResponse">
+    <part name="parameters" element="tns:signPdfFilePathRectangleTextResponse" />
+  </message>
+  <message name="signPdfFilePathTable">
+    <part name="parameters" element="tns:signPdfFilePathTable" />
+  </message>
+  <message name="signPdfFilePathTableResponse">
+    <part name="parameters" element="tns:signPdfFilePathTableResponse" />
+  </message>
+  <message name="verifyFilePdfFilePath">
+    <part name="parameters" element="tns:verifyFilePdfFilePath" />
+  </message>
+  <message name="verifyFilePdfFilePathResponse">
+    <part name="parameters" element="tns:verifyFilePdfFilePathResponse" />
+  </message>
+  <message name="workerReloadCertListRepeatTime">
+    <part name="parameters" element="tns:workerReloadCertListRepeatTime" />
+  </message>
+  <message name="workerReloadCertListRepeatTimeResponse">
+    <part name="parameters" element="tns:workerReloadCertListRepeatTimeResponse" />
+  </message>
+  <message name="signPdfFilePathImage">
+    <part name="parameters" element="tns:signPdfFilePathImage" />
+  </message>
+  <message name="signPdfFilePathImageResponse">
+    <part name="parameters" element="tns:signPdfFilePathImageResponse" />
+  </message>
+  <message name="verifyFilePdfBase64">
+    <part name="parameters" element="tns:verifyFilePdfBase64" />
+  </message>
+  <message name="verifyFilePdfBase64Response">
+    <part name="parameters" element="tns:verifyFilePdfBase64Response" />
+  </message>
+  <portType name="SignServerWS">
+    <operation name="getCertList">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/getCertListRequest" message="tns:getCertList" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/getCertListResponse" message="tns:getCertListResponse" />
+    </operation>
+    <operation name="reloadCertList">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/reloadCertListRequest" message="tns:reloadCertList" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/reloadCertListResponse" message="tns:reloadCertListResponse" />
+    </operation>
+    <operation name="signXmlBase64">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/signXmlBase64Request" message="tns:signXmlBase64" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/signXmlBase64Response" message="tns:signXmlBase64Response" />
+    </operation>
+    <operation name="signPdfFilePath">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/signPdfFilePathRequest" message="tns:signPdfFilePath" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/signPdfFilePathResponse" message="tns:signPdfFilePathResponse" />
+    </operation>
+    <operation name="signPdfBase64">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/signPdfBase64Request" message="tns:signPdfBase64" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/signPdfBase64Response" message="tns:signPdfBase64Response" />
+    </operation>
+    <operation name="signHashBase64">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/signHashBase64Request" message="tns:signHashBase64" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/signHashBase64Response" message="tns:signHashBase64Response" />
+    </operation>
+    <operation name="getCertInfo">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/getCertInfoRequest" message="tns:getCertInfo" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/getCertInfoResponse" message="tns:getCertInfoResponse" />
+    </operation>
+    <operation name="signXmlFilePath">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/signXmlFilePathRequest" message="tns:signXmlFilePath" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/signXmlFilePathResponse" message="tns:signXmlFilePathResponse" />
+    </operation>
+    <operation name="signPdfBase64RectangleText">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/signPdfBase64RectangleTextRequest" message="tns:signPdfBase64RectangleText" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/signPdfBase64RectangleTextResponse" message="tns:signPdfBase64RectangleTextResponse" />
+    </operation>
+    <operation name="verifyFileXmlBase64">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/verifyFileXmlBase64Request" message="tns:verifyFileXmlBase64" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/verifyFileXmlBase64Response" message="tns:verifyFileXmlBase64Response" />
+    </operation>
+    <operation name="verifyFileXmlFilePath">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/verifyFileXmlFilePathRequest" message="tns:verifyFileXmlFilePath" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/verifyFileXmlFilePathResponse" message="tns:verifyFileXmlFilePathResponse" />
+    </operation>
+    <operation name="workerReloadCertListSpecifyTime">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/workerReloadCertListSpecifyTimeRequest" message="tns:workerReloadCertListSpecifyTime" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/workerReloadCertListSpecifyTimeResponse" message="tns:workerReloadCertListSpecifyTimeResponse" />
+    </operation>
+    <operation name="signPdfBase64Image">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/signPdfBase64ImageRequest" message="tns:signPdfBase64Image" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/signPdfBase64ImageResponse" message="tns:signPdfBase64ImageResponse" />
+    </operation>
+    <operation name="signPdfBase64Table">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/signPdfBase64TableRequest" message="tns:signPdfBase64Table" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/signPdfBase64TableResponse" message="tns:signPdfBase64TableResponse" />
+    </operation>
+    <operation name="signPdfFilePathRectangleText">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/signPdfFilePathRectangleTextRequest" message="tns:signPdfFilePathRectangleText" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/signPdfFilePathRectangleTextResponse" message="tns:signPdfFilePathRectangleTextResponse" />
+    </operation>
+    <operation name="signPdfFilePathTable">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/signPdfFilePathTableRequest" message="tns:signPdfFilePathTable" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/signPdfFilePathTableResponse" message="tns:signPdfFilePathTableResponse" />
+    </operation>
+    <operation name="verifyFilePdfFilePath">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/verifyFilePdfFilePathRequest" message="tns:verifyFilePdfFilePath" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/verifyFilePdfFilePathResponse" message="tns:verifyFilePdfFilePathResponse" />
+    </operation>
+    <operation name="workerReloadCertListRepeatTime">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/workerReloadCertListRepeatTimeRequest" message="tns:workerReloadCertListRepeatTime" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/workerReloadCertListRepeatTimeResponse" message="tns:workerReloadCertListRepeatTimeResponse" />
+    </operation>
+    <operation name="signPdfFilePathImage">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/signPdfFilePathImageRequest" message="tns:signPdfFilePathImage" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/signPdfFilePathImageResponse" message="tns:signPdfFilePathImageResponse" />
+    </operation>
+    <operation name="verifyFilePdfBase64">
+      <input wsam:Action="http://ws.signer.com/SignServerWS/verifyFilePdfBase64Request" message="tns:verifyFilePdfBase64" />
+      <output wsam:Action="http://ws.signer.com/SignServerWS/verifyFilePdfBase64Response" message="tns:verifyFilePdfBase64Response" />
+    </operation>
+  </portType>
+  <binding name="SignServerWSPortBinding" type="tns:SignServerWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getCertList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="reloadCertList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="signXmlBase64">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="signPdfFilePath">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="signPdfBase64">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="signHashBase64">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCertInfo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="signXmlFilePath">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="signPdfBase64RectangleText">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="verifyFileXmlBase64">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="verifyFileXmlFilePath">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="workerReloadCertListSpecifyTime">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="signPdfBase64Image">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="signPdfBase64Table">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="signPdfFilePathRectangleText">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="signPdfFilePathTable">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="verifyFilePdfFilePath">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="workerReloadCertListRepeatTime">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="signPdfFilePathImage">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="verifyFilePdfBase64">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="SignServerWSService">
+    <port name="SignServerWSPort" binding="tns:SignServerWSPortBinding">
+      <soap:address location="http://10.0.0.146:8080/SignServerWS" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{841E418A-A2C6-459F-ABFB-D4C289D8E4DC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Service</RootNamespace>
+    <AssemblyName>Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Connection, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Connection\bin\Debug\Connection.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DataAcess\DataAcess\bin\Debug\DataAcess.dll</HintPath>
+    </Reference>
+    <Reference Include="Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Entity\Entity\bin\Debug\Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SYS\DonViService.cs" />
+    <Compile Include="SYS\DonViService_Gen.cs" />
+    <Compile Include="SYS\SYS_CatagoryService.cs" />
+    <Compile Include="SYS\SYS_CatagoryService_Gen.cs" />
+    <Compile Include="SYS\SYS_CategoryManagerService.cs" />
+    <Compile Include="SYS\SYS_CategoryManagerService_Gen.cs" />
+    <Compile Include="SYS\SYS_CCUService.cs" />
+    <Compile Include="SYS\SYS_CCUService_Gen.cs" />
+    <Compile Include="SYS\SYS_ColumnCategoryService.cs" />
+    <Compile Include="SYS\SYS_ColumnCategoryService_Gen.cs" />
+    <Compile Include="SYS\SYS_ConfigConnectionServer.cs" />
+    <Compile Include="SYS\SYS_ConfigService.cs" />
+    <Compile Include="SYS\SYS_ConfigService_Gen.cs" />
+    <Compile Include="SYS\SYS_DBManager.cs" />
+    <Compile Include="SYS\SYS_ExceptionService.cs" />
+    <Compile Include="SYS\SYS_ExceptionService_Gen.cs" />
+    <Compile Include="SYS\SYS_LanguageService.cs" />
+    <Compile Include="SYS\SYS_LanguageService_Gen.cs" />
+    <Compile Include="SYS\SYS_LogService.cs" />
+    <Compile Include="SYS\SYS_LogService_Gen.cs" />
+    <Compile Include="SYS\SYS_ModunService.cs" />
+    <Compile Include="SYS\SYS_ModunService_Gen.cs" />
+    <Compile Include="SYS\SYS_OrganizationPositionRoleService.cs" />
+    <Compile Include="SYS\SYS_OrganizationPositionRoleService_Gen.cs" />
+    <Compile Include="SYS\SYS_OrganizationService.cs" />
+    <Compile Include="SYS\SYS_OrganizationService_Gen.cs" />
+    <Compile Include="SYS\SYS_PopulationService_Gen.cs" />
+    <Compile Include="SYS\SYS_PositionService.cs" />
+    <Compile Include="SYS\SYS_PositionService_Gen.cs" />
+    <Compile Include="SYS\SYS_ProvinceService.cs" />
+    <Compile Include="SYS\SYS_ProvinceService_Gen.cs" />
+    <Compile Include="SYS\SYS_RegionService.cs" />
+    <Compile Include="SYS\SYS_RegionService_Gen.cs" />
+    <Compile Include="SYS\SYS_Region_OrganizationService.cs" />
+    <Compile Include="SYS\SYS_Region_OrganizationService_Gen.cs" />
+    <Compile Include="SYS\SYS_Region_ProvinceService.cs" />
+    <Compile Include="SYS\SYS_Region_ProvinceService_Gen.cs" />
+    <Compile Include="SYS\SYS_RightOfRolesService.cs" />
+    <Compile Include="SYS\SYS_RightOfRolesService_Gen.cs" />
+    <Compile Include="SYS\SYS_RightOfUserService.cs" />
+    <Compile Include="SYS\SYS_RightOfUserService_Gen.cs" />
+    <Compile Include="SYS\SYS_RightService.cs" />
+    <Compile Include="SYS\SYS_RightService_Gen.cs" />
+    <Compile Include="SYS\SYS_RoleOfUserService.cs" />
+    <Compile Include="SYS\SYS_RoleOfUserService_Gen.cs" />
+    <Compile Include="SYS\SYS_RolesService.cs" />
+    <Compile Include="SYS\SYS_RolesService_Gen.cs" />
+    <Compile Include="SYS\SYS_StaffService.cs" />
+    <Compile Include="SYS\SYS_StaffService_Gen.cs" />
+    <Compile Include="SYS\SYS_UserConfigService.cs" />
+    <Compile Include="SYS\SYS_UserConfigService_Gen.cs" />
+    <Compile Include="SYS\SYS_UserService.cs" />
+    <Compile Include="SYS\SYS_UserService_Gen.cs" />
+    <Compile Include="ThiTracNghiem\DM_DVQLYService.cs" />
+    <Compile Include="ThiTracNghiem\DM_DVQLYService_Gen.cs" />
+    <Compile Include="ThiTracNghiem\DM_MODULEService.cs" />
+    <Compile Include="ThiTracNghiem\DM_MODULEService_Gen.cs" />
+    <Compile Include="ThiTracNghiem\DM_USERService.cs" />
+    <Compile Include="ThiTracNghiem\DM_USERService_Gen.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
