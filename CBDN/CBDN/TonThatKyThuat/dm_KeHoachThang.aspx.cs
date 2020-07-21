@@ -52,20 +52,49 @@ namespace MTCSYT
             }
             Session["SYS_Session"] = session;
             #endregion
-            _DataBind();
-            lbMaTram.Text = Request["MA_TRAM"] + "";
+            if (!IsPostBack)
+            {
+                loadDSNgay(); 
+                _DataBind();
+            }
+           
+        }
+        private void loadDSNgay()
+        {
+            if (DateTime.Now.Month == 1)
+            {
+                cmbThang.Value = 12;
+                cmbNam.Value = DateTime.Now.Year - 1;
+            }
+            else
+            {
+                cmbThang.Value = DateTime.Now.Month - 1;
+                cmbNam.Value = DateTime.Now.Year;
+            }
+
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            cmbMaTram.DataSource = db.SELECT_TRAM_HATHE(session.User.ma_dviqlyDN);
+            cmbMaTram.ValueField = "MA_TRAM";
+            cmbMaTram.TextField = "STRTEN";
+            cmbMaTram.DataBind();
         }
 
         private void _DataBind()
         {
             SYS_Session session = (SYS_Session)Session["SYS_Session"];
-            int thang = DateTime.Now.Month - 1;
-            cmbThang.Value = int.Parse(Request["Thang"] + "");
-            cmbNam.Value = int.Parse(Request["Nam"] + "");
-            DataTable dt = db.select_TTTT_TONTHATKYTHUAT_THANG(session.User.ma_dviqlyDN, Request["MA_TRAM"] + "", int.Parse(Request["Thang"] + ""), int.Parse(Request["Nam"] + ""),0);
-            grdTinhDetal.DataSource = dt;
-            grdTinhDetal.DataBind();
-        }       
+            if (cmbMaTram.Value != null)
+            {
+                DataTable dt = db.SELECT_TTTT_DN_KEHOACH(session.User.ma_dviqlyDN, cmbMaTram.Value + "");
+
+                DataRow[] dr = dt.Select("THANG=" + cmbThang.Value + " AND NAM =" + cmbNam.Value);
+                if (dr.Length > 0)
+                    txtSanLuongKH.Text = dr[0]["KEHOACH"] + "";
+                else txtSanLuongKH.Text = "0";
+                grdTinhDetal.DataSource = dt;
+                grdTinhDetal.DataBind();
+            }
+
+        }
 
         protected void grdDVT_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
         {
@@ -74,8 +103,6 @@ namespace MTCSYT
                 e.DisplayText = (e.VisibleRowIndex + 1).ToString();
             }
         }
-
-
 
         private bool CheckName(string Name, int id)
         {
@@ -92,6 +119,37 @@ namespace MTCSYT
             e.Column.ToString();
             if (e.Column.FieldName == "MaChiNhanh")
                 e.Editor.Focus();
+        }
+
+        protected void btnLuuDuLieu_Click(object sender, EventArgs e)
+        {
+            SYS_Session session = (SYS_Session)Session["SYS_Session"];
+            int testso = 0;
+            if (!int.TryParse(txtSanLuongKH.Text, out testso))
+            {
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Sản lượng kế hoạch không phải là kiểu số. Bạn check lại thông tin');", true);
+                txtSanLuongKH.Focus();
+                return;
+            }
+
+            DataTable dt = db.SELECT_TTTT_DN_KEHOACH(session.User.ma_dviqlyDN, cmbMaTram.Value + "");
+
+            DataRow[] dr = dt.Select("THANG=" + cmbThang.Value + " AND NAM =" + cmbNam.Value);
+            if (dr.Length == 0)
+            {
+
+                db.Insert_TTTT_DN_KEHOACH(session.User.ma_dviqlyDN, cmbMaTram.Value.ToString(), int.Parse(txtSanLuongKH.Text), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), DateTime.Now);
+            }
+            else
+            {
+                db.Update_TTTT_DN_KEHOACH(session.User.ma_dviqlyDN, cmbMaTram.Value.ToString(), int.Parse(txtSanLuongKH.Text), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
+            }
+            _DataBind();
+        }
+
+        protected void cmbMaTram_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _DataBind();
         }
 
 

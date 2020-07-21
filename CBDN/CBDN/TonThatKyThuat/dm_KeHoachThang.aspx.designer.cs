@@ -31,13 +31,13 @@ namespace MTCSYT {
         protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel1;
         
         /// <summary>
-        /// lbMaTram control.
+        /// cmbMaTram control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbMaTram;
+        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cmbMaTram;
         
         /// <summary>
         /// ASPxLabel3 control.
@@ -92,6 +92,24 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtSanLuongKH;
+        
+        /// <summary>
+        /// ASPxLabel5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel5;
+        
+        /// <summary>
+        /// btnLuuDuLieu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnLuuDuLieu;
         
         /// <summary>
         /// grdTinhDetal control.

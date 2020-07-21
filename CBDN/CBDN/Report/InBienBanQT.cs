@@ -90,7 +90,7 @@ namespace MTCSYT.Report
             if (tongKWh != "")
                 lbDienNangMua.Text = "2. Điện năng mua của " + tenDonviGiao + " là: " + string.Format("{0:N0} ", decimal.Parse(tongKWh)).Replace(",", ".") + "kWh (Bằng chữ: " + clChuyenSo.ChuyenSo(tongKWh.Replace("-", "")) + " Kwh)";
             else
-                lbDienNangMua.Text = "2. Điện năng mua của " + tenDonviGiao + " là: 0kWh (Bằng chữ: không Kwh)";
+                lbDienNangMua.Text = "2. Điện năng mua của " + tenDonviGiao + " là: 0kWh (Bằng chữ: Không Kwh)";
 
             string Btchu = "Không", cdChu = "Không", TDChu = "Không";
 
@@ -100,13 +100,16 @@ namespace MTCSYT.Report
 
             if (bt != "0" && bt != "")
             {
-                Btchu = clChuyenSo.ChuyenSo(bt.ToString().Replace("-", "")); lbBinhThuong.Text = "- Lượng điện năng mua theo giờ Bình thường: " + string.Format("{0:N0} ", decimal.Parse(bt)).Replace(",", ".") + "kWh (Bằng chữ: " + Btchu + " kWh)";
+                Btchu = clChuyenSo.ChuyenSo(bt.ToString().Replace("-", "")); 
+                lbBinhThuong.Text = "- Lượng điện năng mua theo giờ Bình thường: " + string.Format("{0:N0} ", decimal.Parse(bt)).Replace(",", ".") + "kWh (Bằng chữ: " + Btchu + " kWh)";
             } if (cd != "0" && cd != "")
             {
-                cdChu = clChuyenSo.ChuyenSo(cd.ToString().Replace("-", "")); lbCaoDiem.Text = "- Lượng điện năng mua theo giờ Cao điểm: " + string.Format("{0:N0} ", decimal.Parse(cd)).Replace(",", ".") + "kWh  (Bằng chữ: " + cdChu + " kWh)";
+                cdChu = clChuyenSo.ChuyenSo(cd.ToString().Replace("-", "")); 
+                lbCaoDiem.Text = "- Lượng điện năng mua theo giờ Cao điểm: " + string.Format("{0:N0} ", decimal.Parse(cd)).Replace(",", ".") + "kWh  (Bằng chữ: " + cdChu + " kWh)";
             } if (td != "0" && td != "")
             {
-                TDChu = clChuyenSo.ChuyenSo(td.ToString().Replace("-", "")); lbThapDiem.Text = "- Lượng điện năng mua theo giờ Thấp điểm: " + string.Format("{0:N0} ", decimal.Parse(td)).Replace(",", ".") + "kWh  (Bằng chữ: " + TDChu + " kWh)";
+                TDChu = clChuyenSo.ChuyenSo(td.ToString().Replace("-", "")); 
+                lbThapDiem.Text = "- Lượng điện năng mua theo giờ Thấp điểm: " + string.Format("{0:N0} ", decimal.Parse(td)).Replace(",", ".") + "kWh  (Bằng chữ: " + TDChu + " kWh)";
             }
 
 

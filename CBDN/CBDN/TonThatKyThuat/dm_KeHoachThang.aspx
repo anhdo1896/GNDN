@@ -48,17 +48,21 @@
                                     <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Mã trạm" Width="100px">
                                     </dx:ASPxLabel>
                                 </td>
-                                <td>
-                                     <dx:ASPxLabel ID="lbMaTram" runat="server" Width="100px">
-                                    </dx:ASPxLabel>
+                                <td colspan="3">
+                                    <dx:ASPxComboBox ID="cmbMaTram" IncrementalFilteringMode="Contains"
+                                        runat="server" SelectedIndex="0" Width="480px" Theme="Aqua" AutoPostBack="True" OnSelectedIndexChanged="cmbMaTram_SelectedIndexChanged">
+                                    </dx:ASPxComboBox>
 
                                 </td>
+                            </tr>
+                            <tr>
                                 <td>
                                     <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Tháng" Width="100px">
                                     </dx:ASPxLabel>
                                 </td>
-                                <td colspan="2">
-                                    <dx:ASPxComboBox ID="cmbThang" runat="server" Width="80px">
+
+                                <td>
+                                    <dx:ASPxComboBox ID="cmbThang" runat="server" Width="80px" Theme="Aqua">
                                         <Items>
                                             <dx:ListEditItem Text="1" Value="1" />
                                             <dx:ListEditItem Text="2" Value="2" />
@@ -80,7 +84,7 @@
                                     </dx:ASPxLabel>
                                 </td>
                                 <td>
-                                    <dx:ASPxComboBox ID="cmbNam" runat="server" Width="80px">
+                                    <dx:ASPxComboBox ID="cmbNam" runat="server" Width="80px" Theme="Aqua">
                                         <Items>
                                             <dx:ListEditItem Text="2016" Value="2016" />
                                             <dx:ListEditItem Text="2017" Value="2017" />
@@ -96,29 +100,38 @@
                                     </dx:ASPxComboBox>
 
                                 </td>
-                               
+
                             </tr>
                         </table>
                     </dx:PanelContent>
                 </PanelCollection>
             </dx:ASPxRoundPanel>
-               <hr />
+            <hr />
 
 
             <table class="tbl_Write">
                 <tr>
                     <td>
-                        <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Sản lượng kế hoạch" Width="100px">
-                                    </dx:ASPxLabel></td>
-               
+                        <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Sản lượng kế hoạch" Width="150px" Font-Bold="True">
+                        </dx:ASPxLabel>
+                    </td>
+
                     <td>
                         <dx:ASPxTextBox ID="txtSanLuongKH" runat="server" Width="170px">
                         </dx:ASPxTextBox>
                     </td>
+                    <td>
+                        <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Kwh" Width="150px" Font-Bold="True">
+                        </dx:ASPxLabel>
+                    </td>
+                    <td>
+                        <dx:ASPxButton ID="btnLuuDuLieu" runat="server" OnClick="btnLuuDuLieu_Click" Text="Lưu dữ liệu" Theme="Aqua">
+                        </dx:ASPxButton>
+                    </td>
                 </tr>
 
             </table>
-             <hr />
+            <hr />
             <table width="100%">
                 <tr>
                     <td valign="top">
@@ -132,10 +145,10 @@
                                         AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
                                     <EditFormSettings Visible="False" />
                                 </dx:GridViewDataTextColumn>
-                                
+
                                 <dx:GridViewDataTextColumn Caption="Tháng" FieldName="THANG" VisibleIndex="3">
                                 </dx:GridViewDataTextColumn>
-                             
+
                                 <dx:GridViewDataTextColumn Caption="Năm" VisibleIndex="4" FieldName="NAM">
                                 </dx:GridViewDataTextColumn>
 
@@ -156,7 +169,7 @@
                         </dx:ASPxGridView>
                     </td>
                 </tr>
-               
+
             </table>
 
         </div>

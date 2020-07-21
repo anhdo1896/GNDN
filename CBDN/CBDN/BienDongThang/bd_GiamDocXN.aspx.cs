@@ -130,7 +130,20 @@ namespace MTCSYT
 
             CBDN.Class.InBienBanQT inBienBan = new CBDN.Class.InBienBanQT();
             string strGiao = "", strNhan = "", strGDNhan = "", strGDGiao = "";
-            dt = inBienBan.InBienBanQuyetToan(int.Parse(cmbPhuongThuc.Value + ""), strMadviqly, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGDGiao);
+
+            int donvi = strMadviqly;
+            int phuongthuc = int.Parse(cmbPhuongThuc.Value + "");
+            if (strMadviqly == 2)
+            {
+                if (phuongthuc != 0)
+                {
+                    donvi = int.Parse(db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + "")).IDMADVIQLY.Replace(",2,", "").Replace(",", ""));
+                    phuongthuc = 0;
+                }
+
+            }
+
+            dt = inBienBan.InBienBanQuyetToan(phuongthuc, donvi, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGDGiao);
           
 
             MTCSYT.Report.InBienBanQT report = new MTCSYT.Report.InBienBanQT(dt, "" + cmbThang.Value, "" + cmbNam.Value, false, false, "", "", strGiao, strNhan, "","", strGDNhan, strGDGiao);

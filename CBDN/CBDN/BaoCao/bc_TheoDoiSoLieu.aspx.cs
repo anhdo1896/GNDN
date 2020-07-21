@@ -99,7 +99,7 @@ namespace MTCSYT
             }
 
 
-            MTCSYT.Report.InBieuTong report = new MTCSYT.Report.InBieuTong(int.Parse(cmbPhuongThuc.Value + ""), ma_dviqly, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""),  "", "", donvi.TEN_DVIQLY, strGiao, strNhan, 0, "", "", strGDNhan, strGDGiao);
+            MTCSYT.Report.InBieuTong report = new MTCSYT.Report.InBieuTong(int.Parse(cmbPhuongThuc.Value + ""), ma_dviqly, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "", "", donvi.TEN_DVIQLY, strGiao, strNhan, 0, "", "", strGDNhan, strGDGiao);
 
             ReportViewer1.Report = report;
 
@@ -114,11 +114,24 @@ namespace MTCSYT
             int strMadviqly = int.Parse(session.User.ma_dviqly);
 
             DataTable dt = new DataTable();
-            
+
             CBDN.Class.InBienBanQT inBienBan = new CBDN.Class.InBienBanQT();
-            string strGiao="", strNhan="", strGDNhan = "", strGDGiao = "";
-            dt = inBienBan.InBienBanQuyetToan(int.Parse(cmbPhuongThuc.Value + ""), strMadviqly, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGDGiao);
-            
+            string strGiao = "", strNhan = "", strGDNhan = "", strGDGiao = "";
+
+            int donvi = strMadviqly;
+            int phuongthuc = int.Parse(cmbPhuongThuc.Value + "");
+            if (strMadviqly == 2)
+            {
+                if (phuongthuc != 0)
+                {
+                    donvi = int.Parse(db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + "")).IDMADVIQLY.Replace(",2,", "").Replace(",", ""));
+                    phuongthuc = 0;
+                }
+
+            }
+
+            dt = inBienBan.InBienBanQuyetToan(phuongthuc, donvi, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGDGiao);
+
             MTCSYT.Report.InBienBanQT report = new MTCSYT.Report.InBienBanQT(dt, "" + cmbThang.Value, "" + cmbNam.Value, false, false, "", "", strGiao, strNhan, "", "", strGDNhan, strGDGiao);
             ReportViewer2.Report = report;
 
@@ -135,28 +148,7 @@ namespace MTCSYT
             cmbPhuongThuc.DataBind();
 
         }
-        //private void LoadGrdNhan()
-        //{
-        //    if (cmbPhuongThuc.Value == null || cmbPhuongThuc.Value + "" == "0") return;
 
-        //    MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-        //    int strMadviqly = int.Parse(session.User.ma_dviqly);
-
-        //    var lstNhan = db.db_TheoDoiDiemNhan_ALL(strMadviqly, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), int.Parse(cmbPhuongThuc.Value + ""));
-        //    var lstGiao = db.db_TheoDoiDiemGiao_ALL(strMadviqly, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), int.Parse(cmbPhuongThuc.Value + ""));
-
-        //    grdNhan.DataSource = lstNhan;
-        //    grdNhan.DataBind();
-
-        //    grdGiao.DataSource = lstGiao;
-        //    grdGiao.DataBind();
-
-        //    grdSanLuonghan.DataSource = lstNhan;
-        //    grdSanLuonghan.DataBind();
-
-        //    grdSLGiao.DataSource = lstGiao;
-        //    grdSLGiao.DataBind();
-        //}
         protected void cbAll_Init(object sender, EventArgs e)
         {
 
