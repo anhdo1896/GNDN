@@ -430,7 +430,7 @@ namespace CBDN
             }
             return table;
         }
-        protected void grdDVT_CustomColumnDisplayText(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewColumnDisplayTextEventArgs e)
+        protected void grdDVT_CustomColumnDisplayText(object sender, DevExpress.Web.ASPxGridViewColumnDisplayTextEventArgs e)
         {
             if (e.Column.Caption == "STT")
             {

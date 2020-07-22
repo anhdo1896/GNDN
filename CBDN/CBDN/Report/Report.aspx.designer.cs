@@ -46,7 +46,7 @@ namespace MTCSYT.Report {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnQuayLai;
+        protected global::DevExpress.Web.ASPxButton btnQuayLai;
         
         /// <summary>
         /// ReportViewer1 control.
@@ -64,7 +64,7 @@ namespace MTCSYT.Report {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl.ASPxPopupControl pcTrinhKy;
+        protected global::DevExpress.Web.ASPxPopupControl pcTrinhKy;
         
         /// <summary>
         /// PopupControlContentControl1 control.
@@ -73,7 +73,7 @@ namespace MTCSYT.Report {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl.PopupControlContentControl PopupControlContentControl1;
+        protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl1;
         
         /// <summary>
         /// ASPxLabel1 control.
@@ -82,7 +82,7 @@ namespace MTCSYT.Report {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel1;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
         
         /// <summary>
         /// txtNhapLyDo control.
@@ -91,7 +91,7 @@ namespace MTCSYT.Report {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxMemo txtNhapLyDo;
+        protected global::DevExpress.Web.ASPxMemo txtNhapLyDo;
         
         /// <summary>
         /// btnLuuTrinhKy control.
@@ -100,7 +100,7 @@ namespace MTCSYT.Report {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnLuuTrinhKy;
+        protected global::DevExpress.Web.ASPxButton btnLuuTrinhKy;
         
         /// <summary>
         /// btnDong2 control.
@@ -109,6 +109,6 @@ namespace MTCSYT.Report {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnDong2;
+        protected global::DevExpress.Web.ASPxButton btnDong2;
     }
 }

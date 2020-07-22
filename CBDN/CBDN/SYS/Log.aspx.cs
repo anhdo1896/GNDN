@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using SystemManageService;
-using DevExpress.Web.ASPxGridView;
+using DevExpress.Web;
 using Entity;
 
 namespace MTCSYT
@@ -84,9 +84,9 @@ namespace MTCSYT
             
         }
 
-        protected void GrdLog_HtmlCommandCellPrepared(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewTableCommandCellEventArgs e)
+        protected void GrdLog_HtmlCommandCellPrepared(object sender, DevExpress.Web.ASPxGridViewTableCommandCellEventArgs e)
         {
-            if (e.CommandCellType == DevExpress.Web.ASPxGridView.GridViewTableCommandCellType.Data)
+            if (e.CommandCellType == DevExpress.Web.GridViewTableCommandCellType.Data)
             {
                 SYS_Right right = (SYS_Right)Session["Right"];
                 if(right!=null)
@@ -106,7 +106,7 @@ namespace MTCSYT
             }
         }
 
-        protected void GrdLog_CellEditorInitialize(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewEditorEventArgs e)
+        protected void GrdLog_CellEditorInitialize(object sender, DevExpress.Web.ASPxGridViewEditorEventArgs e)
         {
             if (e.Column.FieldName == "Username")
                 e.Editor.Focus();

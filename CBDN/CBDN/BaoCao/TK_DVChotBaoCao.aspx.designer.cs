@@ -28,7 +28,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cmbThang;
+        protected global::DevExpress.Web.ASPxComboBox cmbThang;
         
         /// <summary>
         /// Label4 control.
@@ -46,7 +46,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cmbNam;
+        protected global::DevExpress.Web.ASPxComboBox cmbNam;
         
         /// <summary>
         /// grdDVT control.
@@ -55,6 +55,6 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grdDVT;
+        protected global::DevExpress.Web.ASPxGridView grdDVT;
     }
 }

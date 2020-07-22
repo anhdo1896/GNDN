@@ -73,7 +73,7 @@ namespace CBDN {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel3;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
         
         /// <summary>
         /// cmbThang control.
@@ -82,7 +82,7 @@ namespace CBDN {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cmbThang;
+        protected global::DevExpress.Web.ASPxComboBox cmbThang;
         
         /// <summary>
         /// ASPxLabel4 control.
@@ -91,7 +91,7 @@ namespace CBDN {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel4;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel4;
         
         /// <summary>
         /// cmbNam control.
@@ -100,7 +100,7 @@ namespace CBDN {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cmbNam;
+        protected global::DevExpress.Web.ASPxComboBox cmbNam;
         
         /// <summary>
         /// WebChartControl1 control.

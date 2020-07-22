@@ -6,8 +6,6 @@ using SystemManageService;
 using System.Web.UI;
 using System.Linq;
 using System.Data;
-using DevExpress.Web.ASPxGridView;
-using DevExpress.Web;
 namespace MTCSYT
 {
     public partial class bd_SanLuongThuongPhamTheoThang : BasePage

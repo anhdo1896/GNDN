@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entity;
 using SystemManageService;
-using DevExpress.Web.ASPxGridView;
+using DevExpress.Web;
 
 namespace MTCSYT
 {

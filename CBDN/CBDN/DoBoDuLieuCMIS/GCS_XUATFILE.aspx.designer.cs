@@ -28,7 +28,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxHyperLink ASPxHyperLink1;
+        protected global::DevExpress.Web.ASPxHyperLink ASPxHyperLink1;
         
         /// <summary>
         /// Label5 control.
@@ -73,7 +73,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel Label22;
+        protected global::DevExpress.Web.ASPxLabel Label22;
         
         /// <summary>
         /// Label2 control.
@@ -91,7 +91,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cmbKy;
+        protected global::DevExpress.Web.ASPxComboBox cmbKy;
         
         /// <summary>
         /// Label3 control.
@@ -109,7 +109,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtthang;
+        protected global::DevExpress.Web.ASPxTextBox txtthang;
         
         /// <summary>
         /// Label4 control.
@@ -127,7 +127,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtnam;
+        protected global::DevExpress.Web.ASPxTextBox txtnam;
         
         /// <summary>
         /// btnXuatFile control.
@@ -136,7 +136,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnXuatFile;
+        protected global::DevExpress.Web.ASPxButton btnXuatFile;
         
         /// <summary>
         /// btnHuyCMIS control.
@@ -145,7 +145,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnHuyCMIS;
+        protected global::DevExpress.Web.ASPxButton btnHuyCMIS;
         
         /// <summary>
         /// grdCN control.
@@ -154,7 +154,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grdCN;
+        protected global::DevExpress.Web.ASPxGridView grdCN;
         
         /// <summary>
         /// HiddenField1 control.

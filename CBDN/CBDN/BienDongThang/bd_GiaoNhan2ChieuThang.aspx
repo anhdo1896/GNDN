@@ -1,20 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master"
     CodeBehind="bd_GiaoNhan2ChieuThang.aspx.cs" Inherits="MTCSYT.bd_GiaoNhan2ChieuThang" %>
 
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPopupControl" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxRoundPanel" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPanel" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxTreeView" TagPrefix="dx" %>
-<%--<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web" TagPrefix="dxrp" %>
-<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web" TagPrefix="dxp" %>--%>
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
-<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dxwtl" %>
 
 
@@ -230,7 +221,7 @@
                                             </td>
                                             <td>
 
-                                                <dx:ASPxTextBox ID="txtG_PDau" runat="server" Text="0" Width="120px">
+                                                <dx:ASPxTextBox ID="txtG_PDau" runat="server" Text="0" Width="120px" Enabled="False">
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -244,7 +235,7 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
-                                                <dx:ASPxTextBox ID="txtSLgPGiao" runat="server" Width="170px">
+                                                <dx:ASPxTextBox ID="txtSLgPGiao" runat="server" Width="170px" Enabled="False">
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -255,7 +246,7 @@
                                             </td>
                                             <td>
 
-                                                <dx:ASPxTextBox ID="txtG_QDau" runat="server" Text="0" Width="120px">
+                                                <dx:ASPxTextBox ID="txtG_QDau" runat="server" Text="0" Width="120px"  Enabled="False">
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -269,7 +260,7 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
-                                                <dx:ASPxTextBox ID="txtSlQGiao" runat="server" Width="170px">
+                                                <dx:ASPxTextBox ID="txtSlQGiao" runat="server" Width="170px" Enabled="False">
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -280,7 +271,7 @@
                                             </td>
                                             <td>
 
-                                                <dx:ASPxTextBox ID="txtG_B1" runat="server" Text="0" Width="120px">
+                                                <dx:ASPxTextBox ID="txtG_B1" runat="server" Text="0" Width="120px" Enabled="False" >
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -296,7 +287,7 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
-                                                <dx:ASPxTextBox ID="txtSlB1Giao" runat="server" Width="170px">
+                                                <dx:ASPxTextBox ID="txtSlB1Giao" runat="server" Width="170px" Enabled="False">
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -307,7 +298,7 @@
                                             </td>
                                             <td>
 
-                                                <dx:ASPxTextBox ID="txtG_B2" runat="server" Text="0" Width="120px">
+                                                <dx:ASPxTextBox ID="txtG_B2" runat="server" Text="0" Width="120px" Enabled="False">
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -323,7 +314,7 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
-                                                <dx:ASPxTextBox ID="txtSLgB2Giao" runat="server" Width="170px">
+                                                <dx:ASPxTextBox ID="txtSLgB2Giao" runat="server" Width="170px" Enabled="False">
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -334,7 +325,7 @@
                                             </td>
                                             <td>
 
-                                                <dx:ASPxTextBox ID="txtG_B3" runat="server" Text="0" Width="120px">
+                                                <dx:ASPxTextBox ID="txtG_B3" runat="server" Text="0" Width="120px" Enabled="False">
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -350,7 +341,7 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
-                                                <dx:ASPxTextBox ID="txtSLgGiaoB3" runat="server" Width="170px">
+                                                <dx:ASPxTextBox ID="txtSLgGiaoB3" runat="server" Width="170px" Enabled="False">
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -361,7 +352,7 @@
                                             </td>
                                             <td>
 
-                                                <dx:ASPxTextBox ID="txtNPD" runat="server" Text="0" Width="120px">
+                                                <dx:ASPxTextBox ID="txtNPD" runat="server" Text="0" Width="120px" Enabled="False">
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -377,7 +368,7 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
-                                                <dx:ASPxTextBox ID="txtSlgPNhap" runat="server" Width="170px">
+                                                <dx:ASPxTextBox ID="txtSlgPNhap" runat="server" Width="170px" Enabled="False">
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -388,7 +379,7 @@
                                             </td>
                                             <td>
 
-                                                <dx:ASPxTextBox ID="txtNQD" runat="server" Text="0" Width="120px">
+                                                <dx:ASPxTextBox ID="txtNQD" runat="server" Text="0" Width="120px" Enabled="False">
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -403,7 +394,7 @@
                                                 <dx:ASPxTextBox ID="txtNQKDD" runat="server" Width="120px" Text="0"></dx:ASPxTextBox>
                                             </td>
                                             <td>
-                                                <dx:ASPxTextBox ID="txtSlgQNhap" runat="server" Width="170px">
+                                                <dx:ASPxTextBox ID="txtSlgQNhap" runat="server" Width="170px" Enabled="False">
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -414,7 +405,7 @@
                                             </td>
                                             <td>
 
-                                                <dx:ASPxTextBox ID="txtNB1D" runat="server" Text="0" Width="120px">
+                                                <dx:ASPxTextBox ID="txtNB1D" runat="server" Text="0" Width="120px" Enabled="False">
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -430,7 +421,7 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
-                                                <dx:ASPxTextBox ID="txtSlgB1Nhap" runat="server" Width="170px">
+                                                <dx:ASPxTextBox ID="txtSlgB1Nhap" runat="server" Width="170px" Enabled="False">
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -441,7 +432,7 @@
                                             </td>
                                             <td>
 
-                                                <dx:ASPxTextBox ID="txtNB2D" runat="server" Text="0" Width="120px">
+                                                <dx:ASPxTextBox ID="txtNB2D" runat="server" Text="0" Width="120px" Enabled="False">
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -457,7 +448,7 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
-                                                <dx:ASPxTextBox ID="txtSlgB2Nhap" runat="server" Width="170px">
+                                                <dx:ASPxTextBox ID="txtSlgB2Nhap" runat="server" Width="170px" Enabled="False">
                                                  
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -467,7 +458,7 @@
                                                 <dx:ASPxLabel ID="ASPxLabel58" runat="server" Text="Biểu B3 nhận"></dx:ASPxLabel>
                                             </td>
                                             <td>
-                                                <dx:ASPxTextBox ID="txtNB3D" runat="server" Width="120px" Text="0">
+                                                <dx:ASPxTextBox ID="txtNB3D" runat="server" Width="120px" Text="0" Enabled="False">
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -482,7 +473,7 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
-                                                <dx:ASPxTextBox ID="txtSlgB3Nhap" runat="server" Width="170px">
+                                                <dx:ASPxTextBox ID="txtSlgB3Nhap" runat="server" Width="170px" Enabled="False">
                                                   
                                                 </dx:ASPxTextBox>
                                             </td>

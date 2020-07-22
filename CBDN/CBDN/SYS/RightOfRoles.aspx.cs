@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using SystemManageService;
 using Entity;
-using DevExpress.Web.ASPxGridView;
-using DevExpress.Web.ASPxEditors;
+using DevExpress.Web;
 
 namespace MTCSYT
 {
