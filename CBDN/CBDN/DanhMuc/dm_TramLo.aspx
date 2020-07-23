@@ -84,11 +84,11 @@
                                 </dxwtl:TreeListTextColumn>
                                 <dxwtl:TreeListTextColumn Caption="Tên" FieldName="TenTram" VisibleIndex="1">
                                 </dxwtl:TreeListTextColumn>
-                                <dxwtl:TreeListTextColumn Caption="Mô tả" FieldName="MoTa" VisibleIndex="2">
+                                <dxwtl:TreeListTextColumn Caption="Mô tả" FieldName="MoTa" VisibleIndex="1">
                                 </dxwtl:TreeListTextColumn>
-                                <dxwtl:TreeListTextColumn Caption="Tính chất" FieldName="strTinhChat" VisibleIndex="3">
+                                <dxwtl:TreeListTextColumn Caption="Tính chất" FieldName="strTinhChat" VisibleIndex="1">
                                 </dxwtl:TreeListTextColumn>
-                                <dxwtl:TreeListCommandColumn Name="btnDelete" VisibleIndex="7" Width="10px" >
+                                <dxwtl:TreeListCommandColumn Name="btnDelete" VisibleIndex="7" Width="10px">
                                     <DeleteButton Visible="True">
                                     </DeleteButton>
                                 </dxwtl:TreeListCommandColumn>
@@ -109,8 +109,9 @@
                                             AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
                                         <EditFormSettings Visible="False" />
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewCommandColumn Caption=" " VisibleIndex="15" Width="60px" ShowDeleteButton="True">
-                                     
+                                    <dx:GridViewCommandColumn Caption=" " VisibleIndex="15" Width="60px">
+                                        <DeleteButton Visible="True">
+                                        </DeleteButton>
                                     </dx:GridViewCommandColumn>
                                     <dx:GridViewDataTextColumn Caption="Tên Xây dựng cây tổn thất" FieldName="TenTram"
                                         VisibleIndex="2">

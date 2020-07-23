@@ -93,7 +93,7 @@ namespace QLY_VTTB
         private void _DataBind()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            string strMadviqly = session.User.MA_DVIQLY;
+            string strMadviqly = session.User.ma_dviqlyDN;
 
             List<DM_DVQLY> _lstNew = new List<DM_DVQLY>();
             _lstNew = _DM_DVQLY.DM_DVQLYandLEVER_BYDV(strMadviqly);

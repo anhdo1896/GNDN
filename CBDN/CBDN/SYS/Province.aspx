@@ -70,8 +70,11 @@
                         </ValidationSettings>
                     </PropertiesTextEdit>
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewCommandColumn VisibleIndex="2" Width="20px" ShowDeleteButton="True" ShowEditButton="true">
-                   
+                <dx:GridViewCommandColumn VisibleIndex="2" Width="20px">
+                    <EditButton Visible="True">
+                    </EditButton>
+                    <DeleteButton Visible="True">
+                    </DeleteButton>
                 </dx:GridViewCommandColumn>
             </Columns>
             <SettingsBehavior ConfirmDelete="True" />
