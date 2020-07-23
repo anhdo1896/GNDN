@@ -113,11 +113,8 @@
                                 </PropertiesComboBox>
                                 <EditFormSettings Visible="True" VisibleIndex="6"></EditFormSettings>
                             </dx:GridViewDataComboBoxColumn>
-                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="8" Width="60px">
-                                <EditButton Visible="True">
-                                </EditButton>
-                                <DeleteButton Visible="True">
-                                </DeleteButton>
+                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="8" Width="60px" ShowDeleteButton="True" ShowEditButton="true">
+                               
                             </dx:GridViewCommandColumn>
                         </Columns>
                         <SettingsPager>

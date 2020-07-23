@@ -62,9 +62,7 @@
                                                     AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
                                                 <EditFormSettings Visible="False" />
                                             </dx:GridViewDataTextColumn>
-                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="18" Width="60px">
-                                                <DeleteButton Visible="True">
-                                                </DeleteButton>
+                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="18" Width="60px" ShowDeleteButton="True">
                                             </dx:GridViewCommandColumn>
                                              <dx:GridViewDataTextColumn Caption="Mã nhà máy" FieldName="MaNhaMay"
                                                 VisibleIndex="1">
