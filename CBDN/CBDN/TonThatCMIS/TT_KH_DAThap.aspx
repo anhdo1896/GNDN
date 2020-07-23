@@ -117,7 +117,9 @@
                                         OnCellEditorInitialize="grdDVT_CellEditorInitialize1" OnCustomColumnDisplayText="grdDVT_CustomColumnDisplayText"
                                         OnStartRowEditing="grdDVT_StartRowEditing"  ClientIDMode="AutoID" Theme="Aqua" Width="100%">
                             <Columns>
-                                <dx:GridViewCommandColumn Caption=" " VisibleIndex="15" Width="60px" ShowDeleteButton="True">                                            
+                                <dx:GridViewCommandColumn Caption=" " VisibleIndex="15" Width="60px">
+                                                <DeleteButton Visible="True">
+                                                </DeleteButton>
                                             </dx:GridViewCommandColumn>
                                   <dx:GridViewDataTextColumn Caption="Tên đơn vị" FieldName="TEN_DVIQLY" VisibleIndex="0">
                                 </dx:GridViewDataTextColumn>

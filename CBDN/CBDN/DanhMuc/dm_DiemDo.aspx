@@ -51,7 +51,9 @@
                                                     AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
                                                 <EditFormSettings Visible="False" />
                                             </dx:GridViewDataTextColumn>
-                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="17" Width="60px" ShowDeleteButton="True">                                              
+                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="17" Width="60px">
+                                                <DeleteButton Visible="True">
+                                                </DeleteButton>
                                             </dx:GridViewCommandColumn>
                                             <dx:GridViewDataTextColumn Caption="Tên điểm đo" FieldName="TenDiemDo"
                                                 VisibleIndex="2">
@@ -60,7 +62,7 @@
                                             </dx:GridViewDataTextColumn>
                                             <dx:GridViewDataTextColumn FieldName="TenTram" Caption="Trạm" VisibleIndex="3" GroupIndex="0" SortIndex="0" SortOrder="Ascending">
                                             </dx:GridViewDataTextColumn>
-                                             <dx:GridViewDataTextColumn FieldName="TenChiNhanh" Caption="Phương thức giao nhận" VisibleIndex="4" >
+                                             <dx:GridViewDataTextColumn FieldName="TenChiNhanh" Caption="Phương thức giao nhận" VisibleIndex="3" >
                                             </dx:GridViewDataTextColumn>
                                             <dx:GridViewDataTextColumn Caption="Loại điểm đo" FieldName="strLoaiDD" VisibleIndex="13">
                                             </dx:GridViewDataTextColumn>

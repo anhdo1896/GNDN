@@ -40,7 +40,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Reference Include="Aspose.Cells, Version=4.4.3.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Aspose.Cells.dll</HintPath>
@@ -48,29 +47,6 @@
     <Reference Include="Aspose.Words, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Aspose.Words.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Core">
-      <HintPath>..\..\Connection\bin\Debug\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.DynamicProxy2">
-      <HintPath>..\..\Connection\bin\Debug\Castle.DynamicProxy2.dll</HintPath>
-    </Reference>
-    <Reference Include="DataAcess">
-=======
-    <Reference Include="Aspose.Cells">
-      <HintPath>..\..\..\..\code\Aspose.Cells.dll</HintPath>
-    </Reference>
-    <Reference Include="Aspose.Words">
-      <HintPath>..\..\..\..\code\Aspose.Words.dll</HintPath>
-    </Reference>
-    <Reference Include="Connection, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Service\Service\bin\Debug\Connection.dll</HintPath>
-    </Reference>
-    <Reference Include="DataAcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
->>>>>>> Congtt
-      <HintPath>..\..\DataAcess\DataAcess\bin\Debug\DataAcess.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -99,23 +75,7 @@
     <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v14.1.Web, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="Entity">
-<<<<<<< HEAD
-      <HintPath>..\..\Entity\Entity\bin\Debug\Entity.dll</HintPath>
-=======
-      <HintPath>..\..\Service\Service\bin\Debug\Entity.dll</HintPath>
->>>>>>> Congtt
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Service">
-      <HintPath>..\..\Service\Service\bin\Debug\Service.dll</HintPath>
-    </Reference>
-<<<<<<< HEAD
-    <Reference Include="Spirit.Portal.Core">
-      <HintPath>..\..\Connection\bin\Debug\Spirit.Portal.Core.dll</HintPath>
-    </Reference>
-=======
->>>>>>> Congtt
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -7324,6 +7284,7 @@
     <Content Include="plugins\images\users\varun.jpg" />
     <Content Include="Report\Report.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\profiles.pubxml" />
     <None Include="Service References\ser_MDMS\Service_MDMS.disco" />
     <None Include="Service References\ser_MDMS\configuration91.svcinfo" />
@@ -7349,10 +7310,6 @@
     <Content Include="TonThatKyThuat\dmKhachHang_CT.aspx" />
     <Content Include="TonThatKyThuat\ChiTietPhuTai.aspx" />
     <Content Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx" />
-<<<<<<< HEAD
-=======
-    <Content Include="TonThatKyThuat\QuanLyCad.aspx" />
->>>>>>> Congtt
     <Content Include="TonThatKyThuat\SoSanhTonThat.aspx" />
     <Content Include="TonThatKyThuat\dmKhachHang.aspx" />
     <Content Include="TonThatKyThuat\dmLoaiDuongDay.aspx" />
@@ -7862,13 +7819,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="SYS\BasePage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-=======
     <Compile Include="SYS\BasePage.cs" />
->>>>>>> Congtt
     <Compile Include="SYS\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -7988,16 +7939,6 @@
     <Compile Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx.designer.cs">
       <DependentUpon>ImportCS_ChuKyNgay.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
-    <Compile Include="TonThatKyThuat\QuanLyCad.aspx.cs">
-      <DependentUpon>QuanLyCad.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TonThatKyThuat\QuanLyCad.aspx.designer.cs">
-      <DependentUpon>QuanLyCad.aspx</DependentUpon>
-    </Compile>
->>>>>>> Congtt
     <Compile Include="TonThatKyThuat\SoSanhTonThat.aspx.cs">
       <DependentUpon>SoSanhTonThat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -9387,6 +9328,24 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ser_MDMS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Connection\Connection.csproj">
+      <Project>{b29b9b08-241f-4b25-afa6-dceb18382602}</Project>
+      <Name>Connection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataAcess\DataAcess\DataAcess.csproj">
+      <Project>{7a1b3aad-10cd-42cc-85ab-bb6cbf5913e7}</Project>
+      <Name>DataAcess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entity\Entity\Entity.csproj">
+      <Project>{78cfe0f4-0056-451e-b696-52c04c80cde8}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\Service\Service.csproj">
+      <Project>{841e418a-a2c6-459f-abfb-d4c289d8e4dc}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

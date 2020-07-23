@@ -57,7 +57,9 @@
                                         <Settings AllowAutoFilter="False" AllowAutoFilterTextInputTimer="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
                                         <EditFormSettings Visible="False" />
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewCommandColumn Caption=" " ShowInCustomizationForm="True" VisibleIndex="20" Width="60px" ShowDeleteButton="True">
+                                    <dx:GridViewCommandColumn Caption=" " ShowInCustomizationForm="True" VisibleIndex="20" Width="60px">
+                                        <DeleteButton Visible="True">
+                                        </DeleteButton>
                                     </dx:GridViewCommandColumn>
                                     <dx:GridViewDataTextColumn Caption="Tên công tơ" FieldName="TenCongTo" ShowInCustomizationForm="True" VisibleIndex="5">
                                     </dx:GridViewDataTextColumn>

@@ -117,7 +117,9 @@
                                                     AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
                                                 <EditFormSettings Visible="False" />
                                             </dx:GridViewDataTextColumn>
-                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="17" Width="60px" ShowDeleteButton="True">
+                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="17" Width="60px">
+                                                <DeleteButton Visible="True">
+                                                </DeleteButton>
                                             </dx:GridViewCommandColumn>
                                             <dx:GridViewDataTextColumn Caption="Tên điểm đo" FieldName="TenDiemDo"
                                                 VisibleIndex="2">
@@ -179,7 +181,9 @@
                                                 <Settings AllowAutoFilter="False" AllowAutoFilterTextInputTimer="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
                                                 <EditFormSettings Visible="False" />
                                             </dx:GridViewDataTextColumn>
-                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="22" Width="60px" ShowDeleteButton="True">
+                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="22" Width="60px">
+                                                <DeleteButton Visible="True">
+                                                </DeleteButton>
                                             </dx:GridViewCommandColumn>
                                             <dx:GridViewDataTextColumn Caption="Số chế tạo" FieldName="MaCongTo" VisibleIndex="1">
                                             </dx:GridViewDataTextColumn>
