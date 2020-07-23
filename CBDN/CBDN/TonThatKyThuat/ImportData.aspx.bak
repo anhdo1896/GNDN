@@ -45,6 +45,17 @@
                         <asp:FileUpload ID="fileUp" runat="server" Width="100%" Height="22px" />
                         <input type="hidden" id="hdTenFile" runat="server" />
                     </td>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                    <td width="120px">
+                        <dxe:ASPxButton ID="btnXem" runat="server" Text="Xem dữ liệu" Theme="Aqua" OnClick="btnXem_Click"
+                            Width="120px">
+                        </dxe:ASPxButton>
+                    </td>
+=======
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                     <td colspan="3">
                         <dxe:ASPxButton ID="btnConvert" runat="server" Text="Import dữ liệu" ClientIDMode="AutoID"
                             OnClick="btnConvert_Click" Width="120px" Theme="Aqua">

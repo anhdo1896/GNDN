@@ -40,7 +40,24 @@ namespace BiQL_SangLoc
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdTenFile;
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+        /// <summary>
+        /// btnXem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnXem;
+        
+=======
+
+>>>>>>> Congtt
+>>>>>>> Stashed changes
         /// <summary>
         /// btnConvert control.
         /// </summary>
@@ -49,7 +66,15 @@ namespace BiQL_SangLoc
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnConvert;
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> Congtt
+>>>>>>> Stashed changes
         /// <summary>
         /// ASPxLabel4 control.
         /// </summary>
@@ -58,7 +83,15 @@ namespace BiQL_SangLoc
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel4;
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> Congtt
+>>>>>>> Stashed changes
         /// <summary>
         /// txtDienAp control.
         /// </summary>
@@ -67,7 +100,15 @@ namespace BiQL_SangLoc
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtDienAp;
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> Congtt
+>>>>>>> Stashed changes
         /// <summary>
         /// ASPxLabel1 control.
         /// </summary>
@@ -76,7 +117,15 @@ namespace BiQL_SangLoc
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> Congtt
+>>>>>>> Stashed changes
         /// <summary>
         /// txtMaTram control.
         /// </summary>
@@ -85,7 +134,15 @@ namespace BiQL_SangLoc
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtMaTram;
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> Congtt
+>>>>>>> Stashed changes
         /// <summary>
         /// ASPxLabel2 control.
         /// </summary>
@@ -94,7 +151,15 @@ namespace BiQL_SangLoc
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> Congtt
+>>>>>>> Stashed changes
         /// <summary>
         /// txtHSCS control.
         /// </summary>
@@ -103,7 +168,15 @@ namespace BiQL_SangLoc
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtHSCS;
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> Congtt
+>>>>>>> Stashed changes
         /// <summary>
         /// ASPxLabel3 control.
         /// </summary>
@@ -112,7 +185,15 @@ namespace BiQL_SangLoc
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> Congtt
+>>>>>>> Stashed changes
         /// <summary>
         /// lbTonThatKyThat control.
         /// </summary>
@@ -121,7 +202,15 @@ namespace BiQL_SangLoc
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel lbTonThatKyThat;
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> Congtt
+>>>>>>> Stashed changes
         /// <summary>
         /// grvView control.
         /// </summary>

@@ -230,7 +230,15 @@
                                             </td>
                                             <td>
 
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtG_PDau" runat="server" Text="0" Width="120px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtG_PDau" runat="server" Text="0" Width="120px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtG_PDau" runat="server" Text="0" Width="120px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -244,7 +252,15 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtSLgPGiao" runat="server" Width="170px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtSLgPGiao" runat="server" Width="170px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtSLgPGiao" runat="server" Width="170px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -255,7 +271,15 @@
                                             </td>
                                             <td>
 
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtG_QDau" runat="server" Text="0" Width="120px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtG_QDau" runat="server" Text="0" Width="120px"  Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtG_QDau" runat="server" Text="0" Width="120px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -269,7 +293,15 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtSlQGiao" runat="server" Width="170px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtSlQGiao" runat="server" Width="170px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtSlQGiao" runat="server" Width="170px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -280,7 +312,15 @@
                                             </td>
                                             <td>
 
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtG_B1" runat="server" Text="0" Width="120px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtG_B1" runat="server" Text="0" Width="120px" Enabled="False" >
+=======
+                                                <dx:ASPxTextBox ID="txtG_B1" runat="server" Text="0" Width="120px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -296,7 +336,15 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtSlB1Giao" runat="server" Width="170px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtSlB1Giao" runat="server" Width="170px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtSlB1Giao" runat="server" Width="170px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -307,7 +355,15 @@
                                             </td>
                                             <td>
 
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtG_B2" runat="server" Text="0" Width="120px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtG_B2" runat="server" Text="0" Width="120px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtG_B2" runat="server" Text="0" Width="120px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -323,7 +379,15 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtSLgB2Giao" runat="server" Width="170px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtSLgB2Giao" runat="server" Width="170px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtSLgB2Giao" runat="server" Width="170px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -334,7 +398,15 @@
                                             </td>
                                             <td>
 
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtG_B3" runat="server" Text="0" Width="120px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtG_B3" runat="server" Text="0" Width="120px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtG_B3" runat="server" Text="0" Width="120px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -350,7 +422,15 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtSLgGiaoB3" runat="server" Width="170px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtSLgGiaoB3" runat="server" Width="170px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtSLgGiaoB3" runat="server" Width="170px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -361,7 +441,15 @@
                                             </td>
                                             <td>
 
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtNPD" runat="server" Text="0" Width="120px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtNPD" runat="server" Text="0" Width="120px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtNPD" runat="server" Text="0" Width="120px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -377,7 +465,15 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtSlgPNhap" runat="server" Width="170px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtSlgPNhap" runat="server" Width="170px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtSlgPNhap" runat="server" Width="170px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -388,7 +484,15 @@
                                             </td>
                                             <td>
 
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtNQD" runat="server" Text="0" Width="120px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtNQD" runat="server" Text="0" Width="120px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtNQD" runat="server" Text="0" Width="120px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -403,7 +507,15 @@
                                                 <dx:ASPxTextBox ID="txtNQKDD" runat="server" Width="120px" Text="0"></dx:ASPxTextBox>
                                             </td>
                                             <td>
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtSlgQNhap" runat="server" Width="170px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtSlgQNhap" runat="server" Width="170px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtSlgQNhap" runat="server" Width="170px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -414,7 +526,15 @@
                                             </td>
                                             <td>
 
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtNB1D" runat="server" Text="0" Width="120px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtNB1D" runat="server" Text="0" Width="120px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtNB1D" runat="server" Text="0" Width="120px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -430,7 +550,15 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtSlgB1Nhap" runat="server" Width="170px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtSlgB1Nhap" runat="server" Width="170px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtSlgB1Nhap" runat="server" Width="170px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                    
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -441,7 +569,15 @@
                                             </td>
                                             <td>
 
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtNB2D" runat="server" Text="0" Width="120px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtNB2D" runat="server" Text="0" Width="120px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtNB2D" runat="server" Text="0" Width="120px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
 
@@ -457,7 +593,15 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtSlgB2Nhap" runat="server" Width="170px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtSlgB2Nhap" runat="server" Width="170px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtSlgB2Nhap" runat="server" Width="170px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                  
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -467,7 +611,15 @@
                                                 <dx:ASPxLabel ID="ASPxLabel58" runat="server" Text="Biểu B3 nhận"></dx:ASPxLabel>
                                             </td>
                                             <td>
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtNB3D" runat="server" Width="120px" Text="0">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtNB3D" runat="server" Width="120px" Text="0" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtNB3D" runat="server" Width="120px" Text="0">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                     <MaskSettings Mask="&lt;0..99999999999g&gt;.&lt;00..999&gt;" />
                                                 </dx:ASPxTextBox>
                                             </td>
@@ -482,7 +634,15 @@
                                                 </dx:ASPxTextBox>
                                             </td>
                                             <td>
+<<<<<<< Updated upstream
                                                 <dx:ASPxTextBox ID="txtSlgB3Nhap" runat="server" Width="170px">
+=======
+<<<<<<< HEAD
+                                                <dx:ASPxTextBox ID="txtSlgB3Nhap" runat="server" Width="170px" Enabled="False">
+=======
+                                                <dx:ASPxTextBox ID="txtSlgB3Nhap" runat="server" Width="170px">
+>>>>>>> Congtt
+>>>>>>> Stashed changes
                                                   
                                                 </dx:ASPxTextBox>
                                             </td>
