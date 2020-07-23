@@ -6,6 +6,8 @@ using SystemManageService;
 using System.Web.UI;
 using System.Linq;
 using System.Data;
+using DevExpress.Web.ASPxGridView;
+using DevExpress.Web;
 using Aspose.Cells;
 using System.Collections;
 namespace MTCSYT
@@ -323,11 +325,11 @@ namespace MTCSYT
                 }
                 else
                     kt = false;
-                if (e.ButtonType == DevExpress.Web.ColumnCommandButtonType.Edit)
+                if (e.ButtonType == DevExpress.Web.ASPxGridView.ColumnCommandButtonType.Edit)
                     e.Visible = kt;
 
                 // disable the selction checkbox
-                if (e.ButtonType == DevExpress.Web.ColumnCommandButtonType.SelectCheckbox)
+                if (e.ButtonType == DevExpress.Web.ASPxGridView.ColumnCommandButtonType.SelectCheckbox)
                     e.Enabled = kt;
             }
 

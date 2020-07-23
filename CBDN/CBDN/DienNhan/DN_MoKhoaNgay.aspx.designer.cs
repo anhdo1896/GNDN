@@ -19,7 +19,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxRoundPanel ASPxRoundPanel1;
+        protected global::DevExpress.Web.ASPxRoundPanel.ASPxRoundPanel ASPxRoundPanel1;
         
         /// <summary>
         /// lbNgay control.
@@ -28,7 +28,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbNgay;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbNgay;
         
         /// <summary>
         /// lbThang control.
@@ -37,7 +37,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbThang;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbThang;
         
         /// <summary>
         /// lbNam control.
@@ -46,7 +46,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbNam;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbNam;
         
         /// <summary>
         /// grdKHCHUA control.
@@ -55,7 +55,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView grdKHCHUA;
+        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grdKHCHUA;
         
         /// <summary>
         /// btnAdd control.
@@ -64,7 +64,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnAdd;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnAdd;
         
         /// <summary>
         /// btnRemove control.
@@ -73,7 +73,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnRemove;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnRemove;
         
         /// <summary>
         /// grdKH control.
@@ -82,6 +82,6 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView grdKH;
+        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grdKH;
     }
 }

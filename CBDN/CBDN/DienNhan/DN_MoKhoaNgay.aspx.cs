@@ -7,7 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using QLY_VTTB;
 using Entity;
-using DevExpress.Web;
+using DevExpress.Web.ASPxEditors;
+using DevExpress.Web.ASPxGridView;
 namespace MTCSYT
 {
     public partial class DN_MoKhoaNgay : BasePage

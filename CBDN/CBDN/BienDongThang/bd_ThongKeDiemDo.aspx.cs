@@ -6,7 +6,8 @@ using Entity;
 using System.Linq;
 using System.Web.UI;
 using System.Data;
-using DevExpress.Web;
+using DevExpress.Web.ASPxEditors;
+using DevExpress.Web.ASPxGridView;
 namespace MTCSYT
 {
     public partial class bd_ThongKeDiemDo : BasePage
@@ -195,11 +196,11 @@ namespace MTCSYT
         }
 
 
-        protected void grdGiao_CustomCallback(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e)
+        protected void grdGiao_CustomCallback(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewCustomCallbackEventArgs e)
         {
             LoadGrdGiao();
         }
-        protected void grdNhan_CustomCallback(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e)
+        protected void grdNhan_CustomCallback(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewCustomCallbackEventArgs e)
         {
             LoadGrdGiao();
         }

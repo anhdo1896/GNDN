@@ -28,7 +28,7 @@ namespace MTCSYT.Content {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxHyperLink ASPxHyperLink1;
+        protected global::DevExpress.Web.ASPxEditors.ASPxHyperLink ASPxHyperLink1;
         
         /// <summary>
         /// Label1 control.
@@ -73,7 +73,7 @@ namespace MTCSYT.Content {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel Label22;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel Label22;
         
         /// <summary>
         /// grvProvince control.
@@ -82,7 +82,7 @@ namespace MTCSYT.Content {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView grvProvince;
+        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grvProvince;
         
         /// <summary>
         /// btnAdd control.
@@ -91,6 +91,6 @@ namespace MTCSYT.Content {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnAdd;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnAdd;
     }
 }

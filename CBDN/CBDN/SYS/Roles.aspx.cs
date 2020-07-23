@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SystemManageService;
-using DevExpress.Web;
+using DevExpress.Web.ASPxGridView;
 using Entity;
 using System.Web.UI;
 namespace MTCSYT
@@ -174,7 +174,7 @@ namespace MTCSYT
             //WriteLog("Update " + e.NewValues["Name"],Action.Update);
         }
 
-        protected void Grd_HtmlCommandCellPrepared(object sender, DevExpress.Web.ASPxGridViewTableCommandCellEventArgs e)
+        protected void Grd_HtmlCommandCellPrepared(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewTableCommandCellEventArgs e)
         {
             if (e.CommandCellType == GridViewTableCommandCellType.Data)
             {
@@ -218,7 +218,7 @@ namespace MTCSYT
             cmbOrganization.DataBind();
         }
 
-        protected void Grd_CellEditorInitialize(object sender, DevExpress.Web.ASPxGridViewEditorEventArgs e)
+        protected void Grd_CellEditorInitialize(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewEditorEventArgs e)
         {
             if (e.Column.FieldName == "NAME_DVIQLY")
                 e.Editor.Focus();

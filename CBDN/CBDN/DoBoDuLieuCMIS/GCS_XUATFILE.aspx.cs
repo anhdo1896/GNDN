@@ -11,7 +11,8 @@ using System.IO;
 using System.Xml;
 using System.Text;
 using System.Net;
-using DevExpress.Web;
+using DevExpress.Web.ASPxEditors;
+using DevExpress.Web.ASPxGridView;
 namespace MTCSYT.GCS_ONLINE
 {
     public partial class GCS_XUATFILE : BasePage
@@ -81,11 +82,11 @@ namespace MTCSYT.GCS_ONLINE
 
         }
 
-        protected void grdCN_CustomCallback(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e)
+        protected void grdCN_CustomCallback(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewCustomCallbackEventArgs e)
         {
         }
 
-        protected void grdCN_CustomColumnDisplayText(object sender, DevExpress.Web.ASPxGridViewColumnDisplayTextEventArgs e)
+        protected void grdCN_CustomColumnDisplayText(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewColumnDisplayTextEventArgs e)
         {
             if (e.Column.Caption == "STT")
             {

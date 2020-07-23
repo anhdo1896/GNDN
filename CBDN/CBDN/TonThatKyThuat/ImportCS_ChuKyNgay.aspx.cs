@@ -151,7 +151,7 @@ namespace BiQL_SangLoc
             }
         }
 
-        protected void grvView_CustomColumnDisplayText(object sender, DevExpress.Web.ASPxGridViewColumnDisplayTextEventArgs e)
+        protected void grvView_CustomColumnDisplayText(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewColumnDisplayTextEventArgs e)
         {
 
             if (e.Column.Caption == "STT")

@@ -31,7 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Connection">
+    <Reference Include="Connection, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Connection\bin\Debug\Connection.dll</HintPath>
     </Reference>
     <Reference Include="DataAcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
