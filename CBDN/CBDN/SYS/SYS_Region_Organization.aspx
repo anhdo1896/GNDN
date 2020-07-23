@@ -213,10 +213,9 @@
                     </PropertiesComboBox>
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataComboBoxColumn>
-                <dx:GridViewCommandColumn Caption=" " ShowInCustomizationForm="True" VisibleIndex="2"
+                <dx:GridViewCommandColumn Caption=" " ShowInCustomizationForm="True" VisibleIndex="2" ShowDeleteButton="true"
                     Width="30px">
-                    <DeleteButton Visible="True">
-                    </DeleteButton>
+                 
                 </dx:GridViewCommandColumn>
             </Columns>
             <SettingsBehavior ConfirmDelete="True" />
