@@ -1,35 +1,36 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master"
-    CodeBehind="bd_SanLuongThuongPhamTheoThang.aspx.cs" Inherits="MTCSYT.bd_SanLuongThuongPhamTheoThang" %>
+﻿<%@ Page Title="Quản lý file Cad" Language="C#" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master" AutoEventWireup="true"
+    CodeBehind="QuanLyCad.aspx.cs" Inherits="CBDN.TonThatKyThuat.QuanLyCad" 
+    Culture="auto" UICulture="auto"%>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web" TagPrefix="dx" %>
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 
-<%--<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web" TagPrefix="dxrp" %>
-<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web" TagPrefix="dxp" %>--%>
 
-
-
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Sản lượng điện thương phẩm trong tháng</h4>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script type="text/javascript">
+        function CheckValie(s, e) {
+            if (e.value == null)
+                return;
+        }
+    </script>
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h4 class="page-title">Quản lý file CAD
+        </h4>
     </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
             <li><a href="../Default.aspx">Trang chủ</a></li>
-            <li><a href="bc_GiaoNhan2Chieu.aspx">Quản lý Danh mục </a></li>
-            <li><a href="bc_GiaoNhan2Chieu.aspx">Sản lượng điện thương phẩm trong tháng</a></li>
+            <li><a href="bc_GiaoNhan2Chieu.aspx">Tổn thất online </a></li>
+            <li><a href="bc_GiaoNhan2Chieu.aspx">Import dữ liệu đường dây theo trạm - Tính tổn thất kỹ thuật</a></li>
         </ol>
     </div>
-  
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Category" runat="server">
          <div class="col-md-12">
         <div class="white-box">
-            <h1 class="m-b-0 box-title">Sản lượng điện thương phẩm trong tháng</h1>
+            <h1 class="m-b-0 box-title">Quản lý File CAD</h1>
             <div class="col-lg-12 m-t-30">
                 <hr />
             </div>
@@ -39,9 +40,9 @@
                         <tr>
                             <td colspan="3">
                                 <div class="content">
-                                    <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdDVT"
-                                        KeyFieldName="ID" OnHtmlCommandCellPrepared="grdDVT_HtmlCommandCellPrepared"
-                                        OnRowDeleting="grdDVT_RowDeleting" Caption="Sản lượng điện thương phẩm trong tháng"
+                                    <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdDVT" Caption="Danh mục File CAD"
+                                        KeyFieldName="MATRAM" OnHtmlCommandCellPrepared="grdDVT_HtmlCommandCellPrepared"
+                                        OnRowDeleting="grdDVT_RowDeleting" 
                                         OnCellEditorInitialize="grdDVT_CellEditorInitialize1" OnCustomColumnDisplayText="grdDVT_CustomColumnDisplayText"
                                         OnStartRowEditing="grdDVT_StartRowEditing" ClientIDMode="AutoID" Theme="Aqua">
                                         <Columns>
@@ -51,25 +52,24 @@
                                                     AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
                                                 <EditFormSettings Visible="False" />
                                             </dx:GridViewDataTextColumn>
-                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="15" Width="60px" ShowDeleteButton="True">
+                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="15" Width="60px">
+                                                <DeleteButton Visible="True">
+                                                </DeleteButton>
                                             </dx:GridViewCommandColumn>
-                                            <dx:GridViewDataTextColumn Caption="Tháng" VisibleIndex="3" FieldName="Thang">
+                                            <dx:GridViewDataTextColumn Caption="Mã Đơn Vị" FieldName="MADONVI" VisibleIndex="1" >
                                             </dx:GridViewDataTextColumn>
-                                            <dx:GridViewDataTextColumn Caption="Năm" FieldName="Nam" VisibleIndex="1">
+                                            <dx:GridViewDataTextColumn Caption="Mã Trạm" FieldName="MATRAM" VisibleIndex="2">
                                             </dx:GridViewDataTextColumn>
-                                            <dx:GridViewDataTextColumn FieldName="NgayNhap" Caption="Ngày nhập" VisibleIndex="5">
-                                            </dx:GridViewDataTextColumn>
-                                            <dx:GridViewDataTextColumn Caption="Sản lượng thương phẩm (Kwh)" FieldName="SLuongThuongPham" VisibleIndex="6">
+                                            <dx:GridViewDataTextColumn Caption="Địa chỉ" FieldName="DIACHI" VisibleIndex="3">
                                             </dx:GridViewDataTextColumn>
                                         </Columns>
-                                        <SettingsPager PageSize="20">
+                                         <SettingsPager PageSize="20">
                                             <Summary Text="Trang {0} của {1} ({2} bản ghi)" />
                                         </SettingsPager>
                                         <Settings ShowFooter="True" ShowFilterRow="True" ShowFilterRowMenu="True" />
                                         <SettingsBehavior AllowFocusedRow="True" />
-                                        <Settings GridLines="None" />
                                         <TotalSummary>
-                                            <dx:ASPxSummaryItem FieldName="IDCanBo" SummaryType="Count" />
+                                            <dx:ASPxSummaryItem FieldName="MADONVI" SummaryType="Count" />
                                         </TotalSummary>
                                         <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
                                             CommandUpdate="Cập Nhật" ConfirmDelete="Bạn Muốn Xóa Chứ ?" />
@@ -97,44 +97,31 @@
                         </tr>
                     </table>
                     <dx:ASPxPopupControl ID="pcAddRoles" runat="server" ClientInstanceName="pcAddRoles"
-                        CloseAction="CloseButton" HeaderText="Cập nhật sản lượng thương phẩm" PopupHorizontalAlign="WindowCenter"
+                        CloseAction="CloseButton" HeaderText="Cập nhật bản vẽ CAD" PopupHorizontalAlign="WindowCenter"
                         PopupVerticalAlign="WindowCenter" ShowCloseButton="true" Width="400px" Modal="True"
                         ClientIDMode="AutoID" Theme="Aqua">
                         <ContentCollection>
                             <dx:PopupControlContentControl ID="PopupControlContentControl1" runat="server" SupportsDisabledAttribute="True">
-                                <table class="tbl_Write">
+                                <table width="100%" class="tbl_Write"> 
                                     <tr>
                                         <td>
-                                            <dx:ASPxLabel ID="ASPxLabel4" runat="server" Text="Tháng">
+                                            <dx:ASPxLabel ID="ASPxLabel17" runat="server" Text="Mã Trạm">
                                             </dx:ASPxLabel>
                                         </td>
                                         <td>
-                                            <dx:ASPxTextBox ID="txtThang" runat="server" Width="220px" Enabled="False">
+                                           <dx:ASPxTextBox ID="txtMaTram" runat="server" Width="220px" >
                                             </dx:ASPxTextBox>
                                         </td>
                                     </tr>
-                                      <tr>
-                                        <td>
-                                            <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Năm">
-                                            </dx:ASPxLabel>
-                                        </td>
-                                        <td>
-                                            <dx:ASPxTextBox ID="txtNam" runat="server" Width="220px" Enabled="False">
-                                            </dx:ASPxTextBox>
-                                        </td>
-                                    </tr>
-                                     <tr>
-                                        <td>
-                                            <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Sản lượng thương phẩm">
-                                            </dx:ASPxLabel>
-                                        </td>
-                                        <td>
-                                            <dx:ASPxTextBox ID="txtSanLuongDien" runat="server" Width="220px">
-                                            </dx:ASPxTextBox>
-                                        </td>
-                                    </tr>
-                                   
-                                  
+                                    <tr>
+                                   <td class="col1" align="right">
+                                        <asp:Label ID="txt11" runat="server" Text="Chọn file:"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:FileUpload ID="fileUp" runat="server" Width="100%" Height="22px" />
+                                        <input type="hidden" id="hdTenFile" runat="server" />
+                                    </td>
+                                  </tr>
                                     <tr>
                                         <td>
                                             <dx:ASPxButton ID="btnCapNhat" runat="server" OnClick="btnCapNhat_Click" Text="Cập nhật" Width="150px" Theme="Aqua">

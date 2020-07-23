@@ -119,11 +119,8 @@
                 VisibleIndex="3" Visible="False"
                 >
             </dx:GridViewDataTextColumn>
-            <dx:GridViewCommandColumn Caption=" " VisibleIndex="5">
-                <EditButton Visible="True">
-                </EditButton>
-                <DeleteButton Visible="True">
-                </DeleteButton>
+            <dx:GridViewCommandColumn Caption=" " VisibleIndex="5" ShowDeleteButton="True" ShowEditButton="true">
+               
             </dx:GridViewCommandColumn>
         </Columns>
                      <SettingsPager>

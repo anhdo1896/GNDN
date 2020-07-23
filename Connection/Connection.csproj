@@ -34,15 +34,27 @@
   <ItemGroup>
     <Reference Include="Castle.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\Working\QHQT\Connection\bin\Debug\Castle.Core.dll</HintPath>
+<<<<<<< HEAD
+      <HintPath>bin\Debug\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.DynamicProxy2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\Working\QHQT\Connection\bin\Debug\Castle.DynamicProxy2.dll</HintPath>
+      <HintPath>bin\Debug\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
     <Reference Include="Spirit.Portal.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\Working\BinhChonOnline\Connection\bin\Debug\Spirit.Portal.Core.dll</HintPath>
+      <HintPath>bin\Debug\Spirit.Portal.Core.dll</HintPath>
+=======
+      <HintPath>..\DataAcess\DataAcess\bin\Debug\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DataAcess\DataAcess\bin\Debug\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Spirit.Portal.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DataAcess\DataAcess\bin\Debug\Spirit.Portal.Core.dll</HintPath>
+>>>>>>> Congtt
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

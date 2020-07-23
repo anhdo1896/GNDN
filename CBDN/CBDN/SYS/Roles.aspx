@@ -100,11 +100,8 @@
                                                     <EditCellStyle VerticalAlign="Middle" Wrap="True">
                                                     </EditCellStyle>
                                                 </dxwgv:GridViewDataComboBoxColumn>
-                                                <dxwgv:GridViewCommandColumn VisibleIndex="2" Caption=" ">
-                                                    <EditButton Visible="True">
-                                                    </EditButton>
-                                                    <DeleteButton Visible="True">
-                                                    </DeleteButton>
+                                                <dxwgv:GridViewCommandColumn VisibleIndex="2" Caption=" " ShowDeleteButton="True" ShowEditButton="true">
+                                                   
                                                 </dxwgv:GridViewCommandColumn>
                                             </Columns>
                                             <SettingsBehavior ConfirmDelete="True" AllowFocusedRow="True" />

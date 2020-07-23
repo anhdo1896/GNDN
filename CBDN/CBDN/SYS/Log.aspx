@@ -122,9 +122,8 @@
                                 VisibleIndex="4" 
                                 Width="28%" SortIndex="0" SortOrder="Descending">
                             </dxwgv:GridViewDataTextColumn>
-                            <dxwgv:GridViewCommandColumn VisibleIndex="5" Caption=" ">
-                                <DeleteButton Visible="True">
-                                </DeleteButton>
+                            <dxwgv:GridViewCommandColumn VisibleIndex="5" Caption=" " ShowDeleteButton="True">
+                                
                             </dxwgv:GridViewCommandColumn>
                         </Columns>
                         <SettingsBehavior ConfirmDelete="True" />

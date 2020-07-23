@@ -148,7 +148,7 @@ namespace MTCSYT
                 //CBDN.DM_LoaiDay cn = db.DM_LoaiDays.SingleOrDefault(x => x.ID == qtCT.ID);
                 if (!CheckName(txtMaLoaiDay.Text,int.Parse(""+ qtCT["ID"])))
                 {
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Mã phương thức giao nhận được trùng');", true); return;
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Mã loại dây được trùng');", true); return;
                 }
                 if (!decimal.TryParse(txtDienTro.Text,out testSo))
                 {
@@ -161,7 +161,7 @@ namespace MTCSYT
             {
                 if (!CheckName(txtMaLoaiDay.Text, 0))
                 {
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Mã phương thức giao nhận được trùng');", true); return;
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Mã loại dây được trùng');", true); return;
                 }
                 if (!decimal.TryParse(txtDienTro.Text, out testSo))
                 {
