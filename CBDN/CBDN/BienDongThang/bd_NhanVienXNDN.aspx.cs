@@ -6,7 +6,8 @@ using Entity;
 using System.Linq;
 using System.Web.UI;
 using System.Data;
-using DevExpress.Web;
+using DevExpress.Web.ASPxEditors;
+using DevExpress.Web.ASPxGridView;
 using System.IO;
 namespace MTCSYT
 {
@@ -177,7 +178,7 @@ namespace MTCSYT
 
             }
         }
-        protected void grdNhan_CustomCallback(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e)
+        protected void grdNhan_CustomCallback(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewCustomCallbackEventArgs e)
         {
             loadTax();
         }

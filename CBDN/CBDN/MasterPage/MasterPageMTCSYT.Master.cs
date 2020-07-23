@@ -117,7 +117,6 @@ namespace QLY_VTTB.MasterPage
  <li> <a href='../TonThatKyThuat/ImportCS_ChuKyNgay.aspx'>* Import dữ liệu công suất tháng theo chu kỳ</a> </li>
                                 <li> <a href='../TonThatKyThuat/ImportData.aspx'>* Import dữ liệu trạm đường dây</a> </li>
                                 <li> <a href='../TonThatKyThuat/SoSanhTonThat.aspx'>* So sánh tổn thất</a></li>
-                                <li> <a href='../TonThatKyThuat/QuanLyCad.aspx'>* Quản lý file CAD</a></li>
                              
                             </ul>
                         </li>

@@ -19,7 +19,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel1;
         
         /// <summary>
         /// cmbRoles control.
@@ -28,7 +28,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox cmbRoles;
+        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cmbRoles;
         
         /// <summary>
         /// grdRightNotRoles control.
@@ -37,7 +37,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView grdRightNotRoles;
+        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grdRightNotRoles;
         
         /// <summary>
         /// btnAdd control.
@@ -46,7 +46,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnAdd;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnAdd;
         
         /// <summary>
         /// btnRemove control.
@@ -55,7 +55,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnRemove;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnRemove;
         
         /// <summary>
         /// grdRightOfRoles control.
@@ -64,7 +64,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView grdRightOfRoles;
+        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grdRightOfRoles;
         
         /// <summary>
         /// btnSubmit control.
@@ -73,7 +73,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnSubmit;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnSubmit;
         
         /// <summary>
         /// pcMess control.
@@ -82,7 +82,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl pcMess;
+        protected global::DevExpress.Web.ASPxPopupControl.ASPxPopupControl pcMess;
         
         /// <summary>
         /// PopupControlContentControl1 control.
@@ -91,7 +91,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl1;
+        protected global::DevExpress.Web.ASPxPopupControl.PopupControlContentControl PopupControlContentControl1;
         
         /// <summary>
         /// lblMess control.
@@ -100,7 +100,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lblMess;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lblMess;
         
         /// <summary>
         /// btnOK control.
@@ -109,6 +109,6 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnOK;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnOK;
     }
 }

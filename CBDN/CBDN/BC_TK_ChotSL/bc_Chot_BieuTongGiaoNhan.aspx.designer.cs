@@ -19,7 +19,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxRoundPanel ASPxRoundPanel1;
+        protected global::DevExpress.Web.ASPxRoundPanel.ASPxRoundPanel ASPxRoundPanel1;
         
         /// <summary>
         /// ASPxLabel3 control.
@@ -28,7 +28,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel3;
         
         /// <summary>
         /// cmbThang control.
@@ -37,7 +37,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox cmbThang;
+        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cmbThang;
         
         /// <summary>
         /// ASPxLabel4 control.
@@ -46,7 +46,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel4;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel4;
         
         /// <summary>
         /// cmbNam control.
@@ -55,7 +55,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox cmbNam;
+        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cmbNam;
         
         /// <summary>
         /// btnLoc control.
@@ -64,7 +64,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnLoc;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnLoc;
         
         /// <summary>
         /// btXuatDL control.
@@ -73,7 +73,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btXuatDL;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btXuatDL;
         
         /// <summary>
         /// tlDonVi control.
@@ -91,7 +91,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxRoundPanel ASPxRoundPanel2;
+        protected global::DevExpress.Web.ASPxRoundPanel.ASPxRoundPanel ASPxRoundPanel2;
         
         /// <summary>
         /// lbPhuongThucGiaoNhan control.
@@ -100,7 +100,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbPhuongThucGiaoNhan;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbPhuongThucGiaoNhan;
         
         /// <summary>
         /// ASPxLabel1 control.
@@ -109,7 +109,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel1;
         
         /// <summary>
         /// lbDLGiao control.
@@ -118,7 +118,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbDLGiao;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbDLGiao;
         
         /// <summary>
         /// lbNhanXacNhan control.
@@ -127,7 +127,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbNhanXacNhan;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbNhanXacNhan;
         
         /// <summary>
         /// ASPxLabel2 control.
@@ -136,7 +136,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel2;
         
         /// <summary>
         /// lbTongPGiao control.
@@ -145,7 +145,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbTongPGiao;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbTongPGiao;
         
         /// <summary>
         /// ASPxLabel6 control.
@@ -154,7 +154,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel6;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel6;
         
         /// <summary>
         /// lbTongQGiao control.
@@ -163,7 +163,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbTongQGiao;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbTongQGiao;
         
         /// <summary>
         /// ASPxLabel8 control.
@@ -172,7 +172,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel8;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel8;
         
         /// <summary>
         /// lbB1Giao control.
@@ -181,7 +181,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbB1Giao;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbB1Giao;
         
         /// <summary>
         /// ASPxLabel7 control.
@@ -190,7 +190,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel7;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel7;
         
         /// <summary>
         /// lbB2Giao control.
@@ -199,7 +199,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbB2Giao;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbB2Giao;
         
         /// <summary>
         /// ASPxLabel10 control.
@@ -208,7 +208,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel10;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel10;
         
         /// <summary>
         /// lbBieu3Giao control.
@@ -217,7 +217,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbBieu3Giao;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbBieu3Giao;
         
         /// <summary>
         /// ASPxLabel9 control.
@@ -226,7 +226,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel9;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel9;
         
         /// <summary>
         /// lbDienLucNhan control.
@@ -235,7 +235,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbDienLucNhan;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbDienLucNhan;
         
         /// <summary>
         /// lbGiaoXN control.
@@ -244,7 +244,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbGiaoXN;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbGiaoXN;
         
         /// <summary>
         /// ASPxLabel11 control.
@@ -253,7 +253,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel11;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel11;
         
         /// <summary>
         /// lbPNhan control.
@@ -262,7 +262,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbPNhan;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbPNhan;
         
         /// <summary>
         /// ASPxLabel13 control.
@@ -271,7 +271,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel13;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel13;
         
         /// <summary>
         /// lbQNhan control.
@@ -280,7 +280,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbQNhan;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbQNhan;
         
         /// <summary>
         /// ASPxLabel15 control.
@@ -289,7 +289,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel15;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel15;
         
         /// <summary>
         /// lbB1Nhan control.
@@ -298,7 +298,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbB1Nhan;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbB1Nhan;
         
         /// <summary>
         /// ASPxLabel51 control.
@@ -307,7 +307,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel51;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel51;
         
         /// <summary>
         /// lbB2Nhan control.
@@ -316,7 +316,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbB2Nhan;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbB2Nhan;
         
         /// <summary>
         /// ASPxLabel53 control.
@@ -325,7 +325,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel53;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel53;
         
         /// <summary>
         /// lbB3Nhan control.
@@ -334,6 +334,6 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lbB3Nhan;
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbB3Nhan;
     }
 }
