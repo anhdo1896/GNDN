@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using DevExpress.Web.ASPxEditors;
-using DevExpress.Web.ASPxGridView;
+using DevExpress.Web;
 using Entity;
 using SystemManageService;
 using System.Web.UI;
@@ -144,7 +143,7 @@ namespace MTCSYT
         }
 
 
-        protected void grvPartitionManager_HtmlCommandCellPrepared(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewTableCommandCellEventArgs e)
+        protected void grvPartitionManager_HtmlCommandCellPrepared(object sender, DevExpress.Web.ASPxGridViewTableCommandCellEventArgs e)
         {
             //if (e.CommandCellType == GridViewTableCommandCellType.Data)
             //{

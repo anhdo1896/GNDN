@@ -11,9 +11,6 @@ using SystemManageService;
 using System.Data;
 using System.Net.Mail;
 using System.Net;
-using DevExpress.Web.ASPxGridView;
-using DevExpress.Web.ASPxTabControl;
-using DevExpress.Web.ASPxEditors;
 namespace QLY_VTTB
 {
     public partial class UserManager : MTCSYT.BasePage

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BiQL_SangLoc {
-    
-    
-    public partial class ImportData {
-        
+namespace BiQL_SangLoc
+{
+
+
+    public partial class ImportData
+    {
+
         /// <summary>
         /// txt11 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace BiQL_SangLoc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label txt11;
-        
+
         /// <summary>
         /// fileUp control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace BiQL_SangLoc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fileUp;
-        
+
         /// <summary>
         /// hdTenFile control.
         /// </summary>
@@ -38,16 +40,7 @@ namespace BiQL_SangLoc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdTenFile;
-        
-        /// <summary>
-        /// btnXem control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnXem;
-        
+
         /// <summary>
         /// btnConvert control.
         /// </summary>
@@ -55,8 +48,8 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnConvert;
-        
+        protected global::DevExpress.Web.ASPxButton btnConvert;
+
         /// <summary>
         /// ASPxLabel4 control.
         /// </summary>
@@ -64,8 +57,8 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel4;
-        
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel4;
+
         /// <summary>
         /// txtDienAp control.
         /// </summary>
@@ -73,8 +66,8 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtDienAp;
-        
+        protected global::DevExpress.Web.ASPxTextBox txtDienAp;
+
         /// <summary>
         /// ASPxLabel1 control.
         /// </summary>
@@ -82,8 +75,8 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel1;
-        
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
+
         /// <summary>
         /// txtMaTram control.
         /// </summary>
@@ -91,8 +84,8 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtMaTram;
-        
+        protected global::DevExpress.Web.ASPxTextBox txtMaTram;
+
         /// <summary>
         /// ASPxLabel2 control.
         /// </summary>
@@ -100,8 +93,8 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel2;
-        
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
+
         /// <summary>
         /// txtHSCS control.
         /// </summary>
@@ -109,8 +102,8 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtHSCS;
-        
+        protected global::DevExpress.Web.ASPxTextBox txtHSCS;
+
         /// <summary>
         /// ASPxLabel3 control.
         /// </summary>
@@ -118,8 +111,8 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel3;
-        
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
+
         /// <summary>
         /// lbTonThatKyThat control.
         /// </summary>
@@ -127,8 +120,8 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbTonThatKyThat;
-        
+        protected global::DevExpress.Web.ASPxLabel lbTonThatKyThat;
+
         /// <summary>
         /// grvView control.
         /// </summary>
@@ -136,6 +129,6 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grvView;
+        protected global::DevExpress.Web.ASPxGridView grvView;
     }
 }

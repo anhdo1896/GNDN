@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SystemManageService;
-using DevExpress.Web.ASPxGridView;
+using DevExpress.Web;
 using Entity;
 
 namespace MTCSYT.Content
@@ -167,7 +167,7 @@ namespace MTCSYT.Content
             grvProvince.AddNewRow();
         }
 
-        protected void grvProvince_HtmlCommandCellPrepared(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewTableCommandCellEventArgs e)
+        protected void grvProvince_HtmlCommandCellPrepared(object sender, DevExpress.Web.ASPxGridViewTableCommandCellEventArgs e)
         {
             if (e.CommandCellType == GridViewTableCommandCellType.Data)
             {
