@@ -923,10 +923,10 @@
             // 
             this.rTGiao.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.rTGiao.ForeColor = System.Drawing.Color.Red;
-            this.rTGiao.LocationFloat = new DevExpress.Utils.PointFloat(752.2918F, 256.3334F);
+            this.rTGiao.LocationFloat = new DevExpress.Utils.PointFloat(712.3289F, 256.3334F);
             this.rTGiao.Name = "rTGiao";
             this.rTGiao.SerializableRtfString = resources.GetString("rTGiao.SerializableRtfString");
-            this.rTGiao.SizeF = new System.Drawing.SizeF(333.9954F, 108.2918F);
+            this.rTGiao.SizeF = new System.Drawing.SizeF(373.9583F, 108.2918F);
             this.rTGiao.StylePriority.UseForeColor = false;
             // 
             // rTNhan
@@ -936,7 +936,7 @@
             this.rTNhan.LocationFloat = new DevExpress.Utils.PointFloat(162.8721F, 256.3334F);
             this.rTNhan.Name = "rTNhan";
             this.rTNhan.SerializableRtfString = resources.GetString("rTNhan.SerializableRtfString");
-            this.rTNhan.SizeF = new System.Drawing.SizeF(336.7034F, 108.2918F);
+            this.rTNhan.SizeF = new System.Drawing.SizeF(397.12F, 108.2918F);
             this.rTNhan.StylePriority.UseForeColor = false;
             // 
             // lbDLGiaoKy
@@ -1193,7 +1193,7 @@
             this.PageHeight = 827;
             this.PageWidth = 1169;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
-            this.Version = "14.1";
+            this.Version = "17.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
