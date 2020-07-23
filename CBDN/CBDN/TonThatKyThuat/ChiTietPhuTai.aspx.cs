@@ -61,14 +61,15 @@ namespace MTCSYT
             int thang = DateTime.Now.Month - 1;
             cmbThang.Value = int.Parse(Request["Thang"] + "");
             cmbNam.Value = int.Parse(Request["Nam"] + "");
-            DataTable dt = db.select_TTTT_TONTHATKYTHUAT_THANG(session.User.ma_dviqlyDN, Request["MA_TRAM"] + "", int.Parse(Request["Thang"] + ""), int.Parse(Request["Nam"] + ""),0);
+            //DataTable dt = db.select_TTTT_TONTHATKYTHUAT_THANG(session.User.ma_dviqlyDN, Request["MA_TRAM"] + "", int.Parse(Request["Thang"] + ""), int.Parse(Request["Nam"] + ""),0);
+            DataTable dt = db.select_TTTT_TONTHATKYTHUAT_TUNGAY_DENNGAY(session.User.ma_dviqlyDN, Request["MA_TRAM"] + "", int.Parse(Request["Thang"] + ""), int.Parse(Request["Nam"] + ""), 10, 12, 0);
             grdTinhDetal.DataSource = dt;
             grdTinhDetal.DataBind();
             hienthibieudo(dt);
         }
         private void hienthibieudo(DataTable dt)
         {
-            Series series = new Series("Tổn thất", ViewType.Line);
+            Series series = new Series("Tổn thất", ViewType.Area);
             // Add the series to the chart.
             WebChartControl1.Series.Add(series);
             // Specify the series data source.
