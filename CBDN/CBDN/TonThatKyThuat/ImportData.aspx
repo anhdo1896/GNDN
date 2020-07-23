@@ -2,9 +2,9 @@
     Inherits="BiQL_SangLoc.ImportData" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master"
     Culture="auto" UICulture="auto" %>
 
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dxe" %>
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dxe" %>
 
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 
 
@@ -44,11 +44,6 @@
                     <td>
                         <asp:FileUpload ID="fileUp" runat="server" Width="100%" Height="22px" />
                         <input type="hidden" id="hdTenFile" runat="server" />
-                    </td>
-                    <td width="120px">
-                        <dxe:ASPxButton ID="btnXem" runat="server" Text="Xem dữ liệu" Theme="Aqua" OnClick="btnXem_Click"
-                            Width="120px">
-                        </dxe:ASPxButton>
                     </td>
                     <td colspan="3">
                         <dxe:ASPxButton ID="btnConvert" runat="server" Text="Import dữ liệu" ClientIDMode="AutoID"
