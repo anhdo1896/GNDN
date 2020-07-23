@@ -19,7 +19,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTabControl.ASPxPageControl ASPxPageControl1;
+        protected global::DevExpress.Web.ASPxPageControl ASPxPageControl1;
         
         /// <summary>
         /// TreeListOrganization control.
@@ -37,7 +37,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView GridUser;
+        protected global::DevExpress.Web.ASPxGridView GridUser;
         
         /// <summary>
         /// btnResetPass control.
@@ -46,7 +46,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnResetPass;
+        protected global::DevExpress.Web.ASPxButton btnResetPass;
         
         /// <summary>
         /// btnAdd control.
@@ -55,7 +55,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnAdd;
+        protected global::DevExpress.Web.ASPxButton btnAdd;
         
         /// <summary>
         /// btnEditUser control.
@@ -64,7 +64,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnEditUser;
+        protected global::DevExpress.Web.ASPxButton btnEditUser;
         
         /// <summary>
         /// btnXoa control.
@@ -73,7 +73,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnXoa;
+        protected global::DevExpress.Web.ASPxButton btnXoa;
         
         /// <summary>
         /// panelRight control.
@@ -82,7 +82,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPanel.ASPxPanel panelRight;
+        protected global::DevExpress.Web.ASPxPanel panelRight;
         
         /// <summary>
         /// PanelContent1 control.
@@ -91,7 +91,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPanel.PanelContent PanelContent1;
+        protected global::DevExpress.Web.PanelContent PanelContent1;
         
         /// <summary>
         /// grdRightOfRoles control.
@@ -100,7 +100,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grdRightOfRoles;
+        protected global::DevExpress.Web.ASPxGridView grdRightOfRoles;
         
         /// <summary>
         /// btnAddRight control.
@@ -109,7 +109,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnAddRight;
+        protected global::DevExpress.Web.ASPxButton btnAddRight;
         
         /// <summary>
         /// btnCommit control.
@@ -118,7 +118,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnCommit;
+        protected global::DevExpress.Web.ASPxButton btnCommit;
         
         /// <summary>
         /// btnDelete control.
@@ -127,7 +127,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnDelete;
+        protected global::DevExpress.Web.ASPxButton btnDelete;
         
         /// <summary>
         /// pcChonChucNang control.
@@ -136,7 +136,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl.ASPxPopupControl pcChonChucNang;
+        protected global::DevExpress.Web.ASPxPopupControl pcChonChucNang;
         
         /// <summary>
         /// PopupControlContentControl2 control.
@@ -145,7 +145,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl.PopupControlContentControl PopupControlContentControl2;
+        protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl2;
         
         /// <summary>
         /// grvChonChucNang control.
@@ -154,7 +154,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grvChonChucNang;
+        protected global::DevExpress.Web.ASPxGridView grvChonChucNang;
         
         /// <summary>
         /// btnThemQuyen control.
@@ -163,7 +163,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnThemQuyen;
+        protected global::DevExpress.Web.ASPxButton btnThemQuyen;
         
         /// <summary>
         /// pcAddUser control.
@@ -172,7 +172,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl.ASPxPopupControl pcAddUser;
+        protected global::DevExpress.Web.ASPxPopupControl pcAddUser;
         
         /// <summary>
         /// PopupControlContentControl1 control.
@@ -181,7 +181,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl.PopupControlContentControl PopupControlContentControl1;
+        protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl1;
         
         /// <summary>
         /// lblError control.
@@ -190,7 +190,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lblError;
+        protected global::DevExpress.Web.ASPxLabel lblError;
         
         /// <summary>
         /// ASPxLabel1 control.
@@ -199,7 +199,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel1;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
         
         /// <summary>
         /// txtUserName control.
@@ -208,7 +208,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtUserName;
+        protected global::DevExpress.Web.ASPxTextBox txtUserName;
         
         /// <summary>
         /// lblPassword control.
@@ -217,7 +217,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lblPassword;
+        protected global::DevExpress.Web.ASPxLabel lblPassword;
         
         /// <summary>
         /// txtPassword control.
@@ -226,7 +226,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtPassword;
+        protected global::DevExpress.Web.ASPxTextBox txtPassword;
         
         /// <summary>
         /// lblFistName control.
@@ -235,7 +235,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lblFistName;
+        protected global::DevExpress.Web.ASPxLabel lblFistName;
         
         /// <summary>
         /// txtHoTen control.
@@ -244,7 +244,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtHoTen;
+        protected global::DevExpress.Web.ASPxTextBox txtHoTen;
         
         /// <summary>
         /// ASPxLabel4 control.
@@ -253,7 +253,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel4;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel4;
         
         /// <summary>
         /// txtDiaChi control.
@@ -262,7 +262,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtDiaChi;
+        protected global::DevExpress.Web.ASPxTextBox txtDiaChi;
         
         /// <summary>
         /// ASPxLabel6 control.
@@ -271,7 +271,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel6;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel6;
         
         /// <summary>
         /// txtEmail control.
@@ -280,7 +280,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtEmail;
+        protected global::DevExpress.Web.ASPxTextBox txtEmail;
         
         /// <summary>
         /// ASPxLabel7 control.
@@ -289,7 +289,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel7;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel7;
         
         /// <summary>
         /// txtPhone control.
@@ -298,7 +298,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtPhone;
+        protected global::DevExpress.Web.ASPxTextBox txtPhone;
         
         /// <summary>
         /// ASPxLabel3 control.
@@ -307,7 +307,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel3;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
         
         /// <summary>
         /// cbxActive control.
@@ -316,7 +316,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxCheckBox cbxActive;
+        protected global::DevExpress.Web.ASPxCheckBox cbxActive;
         
         /// <summary>
         /// ASPxLabel19 control.
@@ -325,7 +325,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel19;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel19;
         
         /// <summary>
         /// cbxNhomQuyen control.
@@ -334,7 +334,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cbxNhomQuyen;
+        protected global::DevExpress.Web.ASPxComboBox cbxNhomQuyen;
         
         /// <summary>
         /// ASPxLabel9 control.
@@ -343,7 +343,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel9;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel9;
         
         /// <summary>
         /// cmbDonVi control.
@@ -352,7 +352,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cmbDonVi;
+        protected global::DevExpress.Web.ASPxComboBox cmbDonVi;
         
         /// <summary>
         /// btnAddUser control.
@@ -361,7 +361,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnAddUser;
+        protected global::DevExpress.Web.ASPxButton btnAddUser;
         
         /// <summary>
         /// btnDong control.
@@ -370,7 +370,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnDong;
+        protected global::DevExpress.Web.ASPxButton btnDong;
         
         /// <summary>
         /// pcThongBao control.
@@ -379,7 +379,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl.ASPxPopupControl pcThongBao;
+        protected global::DevExpress.Web.ASPxPopupControl pcThongBao;
         
         /// <summary>
         /// PopupControlContentControl3 control.
@@ -388,7 +388,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl.PopupControlContentControl PopupControlContentControl3;
+        protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl3;
         
         /// <summary>
         /// lblThongBao control.
@@ -397,7 +397,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lblThongBao;
+        protected global::DevExpress.Web.ASPxLabel lblThongBao;
         
         /// <summary>
         /// btnCo control.
@@ -406,7 +406,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnCo;
+        protected global::DevExpress.Web.ASPxButton btnCo;
         
         /// <summary>
         /// btnKhong control.
@@ -415,7 +415,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnKhong;
+        protected global::DevExpress.Web.ASPxButton btnKhong;
         
         /// <summary>
         /// grdUserChuaXacThuc control.
@@ -424,7 +424,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grdUserChuaXacThuc;
+        protected global::DevExpress.Web.ASPxGridView grdUserChuaXacThuc;
         
         /// <summary>
         /// btnXemThongTin control.
@@ -433,7 +433,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnXemThongTin;
+        protected global::DevExpress.Web.ASPxButton btnXemThongTin;
         
         /// <summary>
         /// pcTTUser control.
@@ -442,7 +442,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl.ASPxPopupControl pcTTUser;
+        protected global::DevExpress.Web.ASPxPopupControl pcTTUser;
         
         /// <summary>
         /// lblError0 control.
@@ -451,7 +451,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lblError0;
+        protected global::DevExpress.Web.ASPxLabel lblError0;
         
         /// <summary>
         /// ASPxLabel10 control.
@@ -460,7 +460,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel10;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel10;
         
         /// <summary>
         /// lbTenDN control.
@@ -469,7 +469,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbTenDN;
+        protected global::DevExpress.Web.ASPxLabel lbTenDN;
         
         /// <summary>
         /// lblFistName0 control.
@@ -478,7 +478,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lblFistName0;
+        protected global::DevExpress.Web.ASPxLabel lblFistName0;
         
         /// <summary>
         /// lbHoTen control.
@@ -487,7 +487,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbHoTen;
+        protected global::DevExpress.Web.ASPxLabel lbHoTen;
         
         /// <summary>
         /// ASPxLabel11 control.
@@ -496,7 +496,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel11;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel11;
         
         /// <summary>
         /// lbDiaChi control.
@@ -505,7 +505,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbDiaChi;
+        protected global::DevExpress.Web.ASPxLabel lbDiaChi;
         
         /// <summary>
         /// ASPxLabel12 control.
@@ -514,7 +514,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel12;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel12;
         
         /// <summary>
         /// lbNgayThang control.
@@ -523,7 +523,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbNgayThang;
+        protected global::DevExpress.Web.ASPxLabel lbNgayThang;
         
         /// <summary>
         /// ASPxLabel13 control.
@@ -532,7 +532,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel13;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel13;
         
         /// <summary>
         /// lbEmail control.
@@ -541,7 +541,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbEmail;
+        protected global::DevExpress.Web.ASPxLabel lbEmail;
         
         /// <summary>
         /// ASPxLabel14 control.
@@ -550,7 +550,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel14;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel14;
         
         /// <summary>
         /// lbSDT control.
@@ -559,7 +559,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbSDT;
+        protected global::DevExpress.Web.ASPxLabel lbSDT;
         
         /// <summary>
         /// ASPxLabel15 control.
@@ -568,7 +568,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel15;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel15;
         
         /// <summary>
         /// cbxActive0 control.
@@ -577,7 +577,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxCheckBox cbxActive0;
+        protected global::DevExpress.Web.ASPxCheckBox cbxActive0;
         
         /// <summary>
         /// ASPxLabel16 control.
@@ -586,7 +586,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel16;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel16;
         
         /// <summary>
         /// ckAdmin0 control.
@@ -595,7 +595,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxCheckBox ckAdmin0;
+        protected global::DevExpress.Web.ASPxCheckBox ckAdmin0;
         
         /// <summary>
         /// ASPxLabel17 control.
@@ -604,7 +604,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel17;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel17;
         
         /// <summary>
         /// lbDonVi control.
@@ -613,7 +613,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbDonVi;
+        protected global::DevExpress.Web.ASPxLabel lbDonVi;
         
         /// <summary>
         /// ASPxLabel18 control.
@@ -622,7 +622,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel18;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel18;
         
         /// <summary>
         /// lbNgayTao control.
@@ -631,7 +631,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbNgayTao;
+        protected global::DevExpress.Web.ASPxLabel lbNgayTao;
         
         /// <summary>
         /// btnAddUser0 control.
@@ -640,7 +640,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnAddUser0;
+        protected global::DevExpress.Web.ASPxButton btnAddUser0;
         
         /// <summary>
         /// btnDong0 control.
@@ -649,6 +649,6 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnDong0;
+        protected global::DevExpress.Web.ASPxButton btnDong0;
     }
 }

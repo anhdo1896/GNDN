@@ -8,12 +8,11 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using SystemManageService;
 using System.Linq;
-using DevExpress.Web.ASPxClasses;
-using DevExpress.Web.ASPxClasses.Internal;
+using DevExpress.Web;
+using DevExpress.Web.Internal;
 using Entity;
 using QLY_VTTB.MasterPage;
 using Page = System.Web.UI.Page;
-using DevExpress.Web.ASPxGridView;
 
 namespace MTCSYT
 {

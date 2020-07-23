@@ -28,7 +28,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxHyperLink ASPxHyperLink1;
+        protected global::DevExpress.Web.ASPxHyperLink ASPxHyperLink1;
         
         /// <summary>
         /// Label1 control.
@@ -73,7 +73,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel Label22;
+        protected global::DevExpress.Web.ASPxLabel Label22;
         
         /// <summary>
         /// ScriptManager1 control.
@@ -100,7 +100,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel1;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
         
         /// <summary>
         /// cmbRoles control.
@@ -109,7 +109,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox cmbRoles;
+        protected global::DevExpress.Web.ASPxComboBox cmbRoles;
         
         /// <summary>
         /// grdUserNotRoles control.
@@ -118,7 +118,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grdUserNotRoles;
+        protected global::DevExpress.Web.ASPxGridView grdUserNotRoles;
         
         /// <summary>
         /// btnAdd control.
@@ -127,7 +127,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnAdd;
+        protected global::DevExpress.Web.ASPxButton btnAdd;
         
         /// <summary>
         /// btnRemove control.
@@ -136,7 +136,7 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnRemove;
+        protected global::DevExpress.Web.ASPxButton btnRemove;
         
         /// <summary>
         /// grdUserOfRoles control.
@@ -145,6 +145,6 @@ namespace MTCSYT {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grdUserOfRoles;
+        protected global::DevExpress.Web.ASPxGridView grdUserOfRoles;
     }
 }

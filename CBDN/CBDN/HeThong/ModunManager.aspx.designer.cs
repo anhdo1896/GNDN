@@ -28,7 +28,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxHyperLink ASPxHyperLink1;
+        protected global::DevExpress.Web.ASPxHyperLink ASPxHyperLink1;
         
         /// <summary>
         /// Label1 control.
@@ -73,7 +73,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel2;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
         
         /// <summary>
         /// grvModunManager control.
@@ -82,7 +82,7 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grvModunManager;
+        protected global::DevExpress.Web.ASPxGridView grvModunManager;
         
         /// <summary>
         /// btnThem control.
@@ -91,6 +91,6 @@ namespace QLY_VTTB {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnThem;
+        protected global::DevExpress.Web.ASPxButton btnThem;
     }
 }

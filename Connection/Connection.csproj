@@ -60,9 +60,7 @@
     <Compile Include="SqlHelperParameterCache.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="mssccprj.scc" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="vssver2.scc" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />

@@ -46,7 +46,7 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnXem;
+        protected global::DevExpress.Web.ASPxButton btnXem;
         
         /// <summary>
         /// btnConvert control.
@@ -55,7 +55,7 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnConvert;
+        protected global::DevExpress.Web.ASPxButton btnConvert;
         
         /// <summary>
         /// ASPxLabel4 control.
@@ -64,7 +64,7 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel4;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel4;
         
         /// <summary>
         /// txtDienAp control.
@@ -73,7 +73,7 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtDienAp;
+        protected global::DevExpress.Web.ASPxTextBox txtDienAp;
         
         /// <summary>
         /// ASPxLabel1 control.
@@ -82,7 +82,7 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel1;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
         
         /// <summary>
         /// txtMaTram control.
@@ -91,7 +91,7 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtMaTram;
+        protected global::DevExpress.Web.ASPxTextBox txtMaTram;
         
         /// <summary>
         /// ASPxLabel2 control.
@@ -100,7 +100,7 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel2;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
         
         /// <summary>
         /// txtHSCS control.
@@ -109,7 +109,7 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtHSCS;
+        protected global::DevExpress.Web.ASPxTextBox txtHSCS;
         
         /// <summary>
         /// ASPxLabel3 control.
@@ -118,7 +118,7 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel ASPxLabel3;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
         
         /// <summary>
         /// lbTonThatKyThat control.
@@ -127,7 +127,7 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lbTonThatKyThat;
+        protected global::DevExpress.Web.ASPxLabel lbTonThatKyThat;
         
         /// <summary>
         /// grvView control.
@@ -136,6 +136,6 @@ namespace BiQL_SangLoc {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grvView;
+        protected global::DevExpress.Web.ASPxGridView grvView;
     }
 }

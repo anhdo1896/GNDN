@@ -5,8 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SystemManageService;
-using DevExpress.Web.ASPxEditors;
-using DevExpress.Web.ASPxGridView;
+using DevExpress.Web;
 using Entity;
 
 namespace MTCSYT
@@ -96,7 +95,7 @@ namespace MTCSYT
 
         #region grdRegionOrganization
 
-        protected void grdRegionOrganization_CustomCallback(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewCustomCallbackEventArgs e)
+        protected void grdRegionOrganization_CustomCallback(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e)
         {
             if (grdRegion.FocusedRowIndex > -1)
             {

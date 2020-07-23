@@ -6,8 +6,7 @@ using Entity;
 using System.Linq;
 using System.Web.UI;
 using System.Data;
-using DevExpress.Web.ASPxEditors;
-using DevExpress.Web.ASPxGridView;
+using DevExpress.Web;
 namespace MTCSYT
 {
     public partial class bd_NVienNhapXacNhan : BasePage
@@ -82,7 +81,7 @@ namespace MTCSYT
 
             lbThang.Text = thang + ""; lbNam.Text = nam + "";
         }
-        protected void grdNhan_CustomCallback(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewCustomCallbackEventArgs e)
+        protected void grdNhan_CustomCallback(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e)
         {
             LoadGrdNhan();
         }
