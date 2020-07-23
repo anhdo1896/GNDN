@@ -153,11 +153,8 @@
                 </PropertiesComboBox>
                 
             </dx:GridViewDataComboBoxColumn>
-            <dx:GridViewCommandColumn VisibleIndex="3" Caption=" ">
-                <EditButton Visible="True">
-                </EditButton>
-                <DeleteButton Visible="True">
-                </DeleteButton>
+            <dx:GridViewCommandColumn VisibleIndex="3" Caption=" " ShowDeleteButton="true" ShowEditButton="true">
+              
             </dx:GridViewCommandColumn>
         </Columns>
         <SettingsBehavior ConfirmDelete="True" />
