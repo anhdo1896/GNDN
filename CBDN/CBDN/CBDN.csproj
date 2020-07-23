@@ -41,10 +41,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Cells">
-      <HintPath>..\..\..\..\GNDN\BIN\Aspose.Cells.dll</HintPath>
+      <HintPath>..\..\..\AB\BIN\Aspose.Cells.dll</HintPath>
     </Reference>
     <Reference Include="Aspose.Words">
-      <HintPath>..\..\..\..\GNDN\BIN\Aspose.Words.dll</HintPath>
+      <HintPath>..\..\..\AB\BIN\Aspose.Words.dll</HintPath>
     </Reference>
     <Reference Include="Connection, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
