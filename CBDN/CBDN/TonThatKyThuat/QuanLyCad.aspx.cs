@@ -8,6 +8,7 @@ using System.Linq;
 using System.Data;
 using MTCSYT;
 using System.IO;
+using System.Web.UI.HtmlControls;
 
 namespace CBDN.TonThatKyThuat
 {
@@ -126,16 +127,16 @@ namespace CBDN.TonThatKyThuat
             try
             {
 
-                if (!Directory.Exists(Server.MapPath("~/") + "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN))
-                    Directory.CreateDirectory(Server.MapPath("~/") + "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN);
-                if (!File.Exists(Server.MapPath("~/") + "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN + "\\" + fileUp.FileName))
+                if (!Directory.Exists(Server.MapPath("~/") + "TonThatKyThuat" + "/" + "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN))
+                    Directory.CreateDirectory(Server.MapPath("~/") + "TonThatKyThuat" + "/" + "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN);
+                if (!File.Exists(Server.MapPath("~/") + "TonThatKyThuat" + "/" + "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN + "\\" + fileUp.FileName))
                 {
-                    File.Delete(Server.MapPath("~/") + "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN + "\\" + fileUp.FileName);
-                    fileUp.PostedFile.SaveAs(Server.MapPath("~/") + "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN + "\\" + strTenFile);
+                    File.Delete(Server.MapPath("~/") + "TonThatKyThuat" + "/" + "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN + "\\" + fileUp.FileName);
+                    fileUp.PostedFile.SaveAs(Server.MapPath("~/") + "TonThatKyThuat" + "/" + "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN + "\\" + strTenFile);
                 }
                 else
                 {
-                    fileUp.PostedFile.SaveAs(Server.MapPath("~/") + "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN + "\\" + fileUp.FileName);
+                    fileUp.PostedFile.SaveAs(Server.MapPath("~/") + "TonThatKyThuat" + "/" + "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN + "\\" + fileUp.FileName);
                     strTenFile = fileUp.FileName;
                 }
                 hdTenFile.Value = strTenFile;
@@ -215,7 +216,14 @@ namespace CBDN.TonThatKyThuat
                 e.Cancel = true;
             }
         }
-
+        protected void OnLinkInit(object sender, EventArgs e)
+        {
+            SYS_Session session = (SYS_Session)Session["SYS_Session"];
+            HtmlAnchor anc = sender as HtmlAnchor;
+            GridViewDataItemTemplateContainer container = anc.NamingContainer as GridViewDataItemTemplateContainer;
+            anc.InnerText = container.Grid.GetRowValues(container.VisibleIndex, "DIACHI").ToString();
+            anc.Attributes["href"] = "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN + "/" + anc.InnerText;
+        }
 
     }
 }

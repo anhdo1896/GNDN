@@ -61,6 +61,9 @@
                                             <dx:GridViewDataTextColumn Caption="Mã Trạm" FieldName="MATRAM" VisibleIndex="2">
                                             </dx:GridViewDataTextColumn>
                                             <dx:GridViewDataTextColumn Caption="Địa chỉ" FieldName="DIACHI" VisibleIndex="3">
+                                                <DataItemTemplate>  
+                                                      <a runat="server" id="ref1" href='' target='_blank' oninit="OnLinkInit"></a>  
+                                                </DataItemTemplate>
                                             </dx:GridViewDataTextColumn>
                                         </Columns>
                                          <SettingsPager PageSize="20">
