@@ -171,7 +171,7 @@ namespace CBDN.TonThatKyThuat
         {
             if (!CheckName(txtMaTram.Text))
             {
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Mã phương thức giao nhận được trùng');", true); return;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Mã trạm đã trùng');", true); return;
             }
 
 

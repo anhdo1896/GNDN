@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MTCSYT {
-    
-    
-    public partial class dmKhachHang {
-        
+namespace MTCSYT
+{
+
+
+    public partial class dmKhachHang
+    {
+
         /// <summary>
         /// ASPxRoundPanel1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxRoundPanel ASPxRoundPanel1;
-        
+
         /// <summary>
         /// ASPxLabel1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
-        
+
         /// <summary>
         /// lbTram control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel lbTram;
-        
+
         /// <summary>
         /// ASPxLabel3 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
-        
+
         /// <summary>
         /// cmbThang control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cmbThang;
-        
+
         /// <summary>
         /// ASPxLabel4 control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel4;
-        
+
         /// <summary>
         /// cmbNam control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cmbNam;
-        
+
         /// <summary>
         /// grdDVT control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView grdDVT;
-        
+
         /// <summary>
         /// btnXemChiTiet control.
         /// </summary>
@@ -92,5 +94,14 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnXemChiTiet;
+
+        /// <summary>
+        /// btnThemDSUT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnThemDSUT;
     }
 }

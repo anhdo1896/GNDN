@@ -7321,6 +7321,7 @@
     <Content Include="TonThatCMIS\TT_DzTrungAp.aspx" />
     <Content Include="TonThatCMIS\TT_KH_DAThap.aspx" />
     <Content Include="TonThatCMIS\TT_TBA.aspx" />
+    <Content Include="TonThatKyThuat\DanhSachTramUuTien.aspx" />
     <Content Include="TonThatKyThuat\dm_KeHoachThang.aspx" />
     <Content Include="TonThatKyThuat\dmKhachHang_CT.aspx" />
     <Content Include="TonThatKyThuat\ChiTietPhuTai.aspx" />
@@ -7926,6 +7927,13 @@
     </Compile>
     <Compile Include="TonThatCMIS\TT_TBA.aspx.designer.cs">
       <DependentUpon>TT_TBA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DanhSachTramUuTien.aspx.cs">
+      <DependentUpon>DanhSachTramUuTien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DanhSachTramUuTien.aspx.designer.cs">
+      <DependentUpon>DanhSachTramUuTien.aspx</DependentUpon>
     </Compile>
     <Compile Include="TonThatKyThuat\dm_KeHoachThang.aspx.cs">
       <DependentUpon>dm_KeHoachThang.aspx</DependentUpon>
@@ -9289,6 +9297,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report\InDN_ThuongPhamTCT.resx">
       <DependentUpon>InDN_ThuongPhamTCT.cs</DependentUpon>
     </EmbeddedResource>
