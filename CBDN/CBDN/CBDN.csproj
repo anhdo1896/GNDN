@@ -7322,6 +7322,7 @@
     <Content Include="TonThatCMIS\TT_KH_DAThap.aspx" />
     <Content Include="TonThatCMIS\TT_TBA.aspx" />
     <Content Include="TonThatKyThuat\DanhSachTramUuTien.aspx" />
+    <Content Include="TonThatKyThuat\dmKhachHangUuTien.aspx" />
     <Content Include="TonThatKyThuat\dm_KeHoachThang.aspx" />
     <Content Include="TonThatKyThuat\dmKhachHang_CT.aspx" />
     <Content Include="TonThatKyThuat\ChiTietPhuTai.aspx" />
@@ -7934,6 +7935,13 @@
     </Compile>
     <Compile Include="TonThatKyThuat\DanhSachTramUuTien.aspx.designer.cs">
       <DependentUpon>DanhSachTramUuTien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\dmKhachHangUuTien.aspx.cs">
+      <DependentUpon>dmKhachHangUuTien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\dmKhachHangUuTien.aspx.designer.cs">
+      <DependentUpon>dmKhachHangUuTien.aspx</DependentUpon>
     </Compile>
     <Compile Include="TonThatKyThuat\dm_KeHoachThang.aspx.cs">
       <DependentUpon>dm_KeHoachThang.aspx</DependentUpon>
