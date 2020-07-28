@@ -58,12 +58,7 @@ namespace MTCSYT
             _DataBind();
 
         }
-        protected void ckChua_Init(object sender, EventArgs e)
-        {
-            ASPxCheckBox chk = sender as ASPxCheckBox;
-            ASPxGridView grid = (chk.NamingContainer as GridViewHeaderTemplateContainer).Grid;
-            chk.Checked = (grid.Selection.Count == grid.VisibleRowCount);
-        }
+        
         private void _DataBind()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -110,34 +105,11 @@ namespace MTCSYT
             }
 
         }
-        protected void btnThemDSUT_Click(object sender, EventArgs e)
+        
+        
+        protected void ASPxButton1_Click(object sender, EventArgs e)
         {
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            string strMadviqly = session.User.ma_dviqlyDN;
-            lbTram.Text = Request["MA_TRAM"];
-            List<Object> keyvalues = grdDVT.GetSelectedFieldValues("MAKHACHHANG");
-            foreach (object key in keyvalues)
-            {
-
-                string makhachang = key + "";
-                if (!CheckName(makhachang))
-                {
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Mã Khách Hàng bị trùng');", true); return;
-                }
-                db.INSERT_TTTT_KHACHHANG_UUTIEN(strMadviqly, Request["MA_TRAM"], makhachang);
-            }
-            grdDVT.Selection.UnselectAll();
-            grdDVT.Selection.UnselectAll();
-
-        }
-        private bool CheckName(string Name)
-        {
-            SYS_Session session = (SYS_Session)Session["SYS_Session"];
-
-            var dt = db.CHECK_TTTT_TRAM_UUTIEN(session.User.ma_dviqlyDN, Name);
-            if (dt.Rows.Count > 0)
-                return false;
-            return true;
+            Response.Redirect("../TonThatKyThuat/dmKhachHangLuuY.aspx");
         }
 
     }

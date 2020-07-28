@@ -174,11 +174,51 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="left" width="130px" valign="top">&nbsp;</td>
-
+                    <td align="right" width="130px" valign="top">
+                                <span style="float: Left; padding-top: 2px; margin-left: 5px;">
+                                    <dx:ASPxButton ID="btnThem" runat="server" Text="Thêm vào danh sách lưu ý" Height="22px" Width="120px"
+                                        OnClick="btnThem_Click" ClientIDMode="AutoID" Theme="Aqua">
+                                    </dx:ASPxButton>
+                                </span>
+                            </td>
+                    <td style="text-align: right">
+                        <dx:ASPxButton ID="btnChiTiet" runat="server" Font-Italic="True" Font-Underline="True" ForeColor="#0066FF" Text="Danh sách khách hàng Lưu ý &gt;&gt;" OnClick="ASPxButton1_Click">
+                            <Border BorderStyle="None" />
+                        </dx:ASPxButton>
+                    </td>
                 </tr>
             </table>
-
+            <dx:ASPxPopupControl ID="pcAddRoles" runat="server" ClientInstanceName="pcAddRoles"
+                        CloseAction="CloseButton" HeaderText="Đưa khách hàng vào lưu ý" PopupHorizontalAlign="WindowCenter"
+                        PopupVerticalAlign="WindowCenter" ShowCloseButton="true" Width="600px" Modal="True"
+                        ClientIDMode="AutoID" Theme="Aqua">
+                        <ContentCollection>
+                            <dx:PopupControlContentControl ID="PopupControlContentControl1" runat="server" SupportsDisabledAttribute="True">
+                                <table width="100%" class="tbl_Write"> 
+                                    <tr>
+                                        <td>
+                                            <dx:ASPxLabel ID="ASPxLabel17" runat="server" Text="Nội dung cần lưu ý" Width="150px" Theme="Aqua">
+                                            </dx:ASPxLabel>
+                                        </td>
+                                        <td>
+                                           <dx:ASPxTextBox ID="txtNoiDung" runat="server" Width="420px">
+                                            </dx:ASPxTextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <dx:ASPxButton ID="btnCapNhat" runat="server" OnClick="btnCapNhat_Click" Text="Cập nhật" Width="150px" Theme="Aqua">
+                                            </dx:ASPxButton>
+                                        </td>
+                                        <td>
+                                            <dx:ASPxButton ID="btnDong" runat="server" OnClick="btnDong_Click"  Width="150px" Text="Đóng" Theme="Aqua">
+                                            </dx:ASPxButton>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </dx:PopupControlContentControl>
+                        </ContentCollection>
+                    </dx:ASPxPopupControl>
         </div>
     </div>
 </asp:Content>

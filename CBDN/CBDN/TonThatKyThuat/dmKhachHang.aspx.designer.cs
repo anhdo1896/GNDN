@@ -96,12 +96,12 @@ namespace MTCSYT
         protected global::DevExpress.Web.ASPxButton btnXemChiTiet;
 
         /// <summary>
-        /// btnThemDSUT control.
+        /// btnChiTiet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnThemDSUT;
+        protected global::DevExpress.Web.ASPxButton btnChiTiet;
     }
 }

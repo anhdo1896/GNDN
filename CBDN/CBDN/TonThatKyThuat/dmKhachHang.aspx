@@ -22,66 +22,7 @@
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script type="text/javascript">
-        function SetMenuSelectionProduct(s, e) {
-            if (s == selectionMenuProduct) {
-                var whichGrid = gridProduct;
-            }
-            else {
-                var whichGrid = gridSelProducts;
-            }
-
-            if (e.item.index == 0) {
-                whichGrid.SelectAllRowsOnPage();
-            }
-            else if (e.item.index == 1) {
-                whichGrid.SelectRows();
-            }
-            else if (e.item.index == 2) {
-                whichGrid.UnselectRows();
-            }
-        }
-
-        function OnAllCheckedChanged(s, e) {
-
-            var _handle = true;
-            if (s.GetChecked())
-
-                grdDVT.SelectRows();
-
-            else
-
-                grdDVT.UnselectRows();
-
-        }
-        function OnGridSelectionChanged(s, e) {
-
-            cbAll.SetChecked(s.GetSelectedRowCount() == s.cpVisibleRowCount);
-
-        }
-
-
-        function OnChuaCheckedChanged(s, e) {
-
-            var _handle = true;
-            if (s.GetChecked())
-
-                grdDVT.SelectRows();
-
-            else
-
-                grdDVT.UnselectRows();
-
-        }
-        function OnGridChuaSelectionChanged(s, e) {
-
-            ckChua.SetChecked(s.GetSelectedRowCount() == s.cpVisibleRowCount);
-
-        }
-        
-        
-       
-    </script>
+    
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Quản lý loại đường dây điện năng với các đơn vị khác</h4>
     </div>
@@ -176,24 +117,14 @@
                     <td colspan="3">
                         <div class="content">
                             <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdDVT" Caption="Danh sách khách hàng theo trạm"
-                                ClientInstanceName="grdDVT" KeyFieldName="MAKHACHHANG" OnHtmlCommandCellPrepared="grdDVT_HtmlCommandCellPrepared"
+                                ClientInstanceName="grdDVT" KeyFieldName="MAKHACHHANG;TENKHACHHANG;DIACHI" OnHtmlCommandCellPrepared="grdDVT_HtmlCommandCellPrepared"
                                 OnCellEditorInitialize="grdDVT_CellEditorInitialize1" OnCustomColumnDisplayText="grdDVT_CustomColumnDisplayText"
                                 OnStartRowEditing="grdDVT_StartRowEditing" ClientIDMode="AutoID" Theme="Aqua">
                                 <Styles>
                                 <AlternatingRow Enabled="True" />
                                  </Styles>
-                                <ClientSideEvents SelectionChanged="OnGridChuaSelectionChanged" />
                                 <Columns>
-                                    <dx:GridViewCommandColumn ShowInCustomizationForm="True" ShowSelectCheckbox="True" VisibleIndex="0" Width="80px">
-                                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                        <CellStyle VerticalAlign="Middle">
-                                        </CellStyle>
-                                        <HeaderTemplate>
-                                            <dx:ASPxCheckBox ID="ckChua" runat="server" OnInit="ckChua_Init">
-                                                <ClientSideEvents CheckedChanged="OnChuaCheckedChanged" />
-                                            </dx:ASPxCheckBox>
-                                        </HeaderTemplate>
-                                    </dx:GridViewCommandColumn>
+                                    
                                     <dx:GridViewDataTextColumn Caption="STT" ReadOnly="True" UnboundType="String" VisibleIndex="0"
                                         Width="20px">
                                         <Settings AllowAutoFilter="False" AllowAutoFilterTextInputTimer="False" AllowDragDrop="False"
@@ -230,13 +161,12 @@
                     </td>
                    
                 </tr>
-                <tr>
-                    <td align="left" width="130px" valign="top">
-                        <dx:ASPxButton ID="btnThemDSUT" runat="server" Text="Thêm vào danh sách Ưu Tiên" Width="120px" Theme="Aqua" OnClick="btnThemDSUT_Click" >
+                
+                <td style="text-align: right">
+                        <dx:ASPxButton ID="btnChiTiet" runat="server" Font-Italic="True" Font-Underline="True" ForeColor="#0066FF" Text="Danh sách khách hàng Lưu ý &gt;&gt;" OnClick="ASPxButton1_Click">
+                            <Border BorderStyle="None" />
                         </dx:ASPxButton>
                     </td>
-                   
-                </tr>
             </table>
 
         </div>

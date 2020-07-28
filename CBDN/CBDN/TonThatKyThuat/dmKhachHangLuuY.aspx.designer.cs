@@ -15,12 +15,21 @@ namespace CBDN.TonThatKyThuat
     {
 
         /// <summary>
-        /// grdTram control.
+        /// grdKH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView grdTram;
+        protected global::DevExpress.Web.ASPxGridView grdKH;
+
+        /// <summary>
+        /// btnRemove control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnRemove;
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dmKhachHangUuTien.aspx.cs" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master"
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dmKhachHangLuuY.aspx.cs" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master"
     Inherits="CBDN.TonThatKyThuat.dmKhachHangUuTien" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
@@ -49,11 +49,11 @@
             var _handle = true;
             if (s.GetChecked())
 
-                grdTram.SelectRows();
+                grdKH.SelectRows();
 
             else
 
-                grdTram.UnselectRows();
+                grdKH.UnselectRows();
 
         }
         function OnGridSelectionChanged(s, e) {
@@ -68,33 +68,16 @@
             var _handle = true;
             if (s.GetChecked())
 
-                grdTram.SelectRows();
+                grdKH.SelectRows();
 
             else
 
-                grdTram.UnselectRows();
+                grdKH.UnselectRows();
 
         }
         function OnGridChuaSelectionChanged(s, e) {
 
             ckChua.SetChecked(s.GetSelectedRowCount() == s.cpVisibleRowCount);
-
-        }
-        function OnDaCheckedChanged(s, e) {
-
-            var _handle = true;
-            if (s.GetChecked())
-
-                grdTram_UT.SelectRows();
-
-            else
-
-                grdTram_UT.UnselectRows();
-
-        }
-        function OnGridDaSelectionChanged(s, e) {
-
-            ckDa.SetChecked(s.GetSelectedRowCount() == s.cpVisibleRowCount);
 
         }
     </script>
@@ -127,8 +110,8 @@
             <table width="100%">
                 <tr>
                     <td valign="top">
-                        <dxwgv:ASPxGridView ID="grdTram" runat="server" AutoGenerateColumns="False" Caption="Danh sách Trạm"
-                            ClientInstanceName="grdTram" KeyFieldName ="MA_TRAM" Width="100%" ClientIDMode="AutoID" Theme="Aqua">
+                        <dxwgv:ASPxGridView ID="grdKH" runat="server" AutoGenerateColumns="False" Caption="Danh sách Trạm"
+                            ClientInstanceName="grdKH" KeyFieldName ="MA_KHANG" Width="100%" ClientIDMode="AutoID" Theme="Aqua">
                             <Settings GridLines="Horizontal" ShowFilterRow="True" ShowFilterRowMenu="True" />
                             <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
                                 CommandUpdate="Cập Nhật" ConfirmDelete="Xóa" />
@@ -147,13 +130,21 @@
                                         </dx:ASPxCheckBox>
                                     </HeaderTemplate>
                                 </dx:GridViewCommandColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Mã đơn vị " FieldName="MA_DVIQLY" VisibleIndex="1" Width="30%">
+                                <dxwgv:GridViewDataTextColumn Caption="Mã đơn vị " FieldName="MA_DVIQLY" VisibleIndex="1" >
                                     <CellStyle HorizontalAlign="Left">
                                     </CellStyle>
                                 </dxwgv:GridViewDataTextColumn>
                                 <dxwgv:GridViewDataTextColumn Caption="Mã Trạm" FieldName="MA_TRAM" VisibleIndex="2" >
                             </dxwgv:GridViewDataTextColumn>
-                            <dxwgv:GridViewDataTextColumn Caption="Tên Trạm" FieldName="TEN_TRAM" VisibleIndex="3" >
+                            <dxwgv:GridViewDataTextColumn Caption="Mã Khách Hàng" FieldName="MA_KHANG" VisibleIndex="3" >
+                            </dxwgv:GridViewDataTextColumn>
+                                <dxwgv:GridViewDataTextColumn Caption="Tên Khách Hàng" FieldName="TEN_KHANG" VisibleIndex="4" >
+                            </dxwgv:GridViewDataTextColumn>
+                                <dxwgv:GridViewDataTextColumn Caption="Địa Chỉ" FieldName="DIACHI" VisibleIndex="5" >
+                            </dxwgv:GridViewDataTextColumn>
+                                <dxwgv:GridViewDataTextColumn Caption="Nội Dung" FieldName="NOIDUNG" VisibleIndex="6" >
+                            </dxwgv:GridViewDataTextColumn>
+                                <dxwgv:GridViewDataTextColumn Caption="Thời gian" FieldName="THOIGIAN" VisibleIndex="7" >
                             </dxwgv:GridViewDataTextColumn>
                             </Columns>
                             <SettingsBehavior AllowDragDrop="False" AllowSort="False" />
@@ -163,9 +154,15 @@
                             <SettingsText EmptyDataRow="Không có dữ liệu" />
                         </dxwgv:ASPxGridView>
                         </td>
-                   
                 </tr>
             </table>
+            <tr>
+                    <td align="left" width="130px" valign="top">
+                        <dx:ASPxButton ID="btnRemove" runat="server" Text="Xóa khỏi danh sách Ưu Tiên" Width="120px" Theme="Aqua" OnClick="btnRemove_Click" >
+                        </dx:ASPxButton>
+                    </td>
+                
+                </tr>
         </div>
 
     </div>
