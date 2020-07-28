@@ -33,15 +33,6 @@ namespace CBDN.TonThatKyThuat
         protected global::DevExpress.Web.ASPxButton btnThem;
 
         /// <summary>
-        /// btnSua control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnSua;
-
-        /// <summary>
         /// pcAddRoles control.
         /// </summary>
         /// <remarks>

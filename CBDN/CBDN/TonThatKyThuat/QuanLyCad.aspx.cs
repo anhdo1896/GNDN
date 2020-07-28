@@ -108,18 +108,7 @@ namespace CBDN.TonThatKyThuat
 
     }
 
-    protected void btnSua_Click(object sender, EventArgs e)
-    {
-        pcAddRoles.ShowOnPageLoad = true;
-        Session["Add"] = 0;
-        SYS_Session session = (SYS_Session)Session["SYS_Session"];
-        var cv = (DataRowView)grdDVT.GetRow(grdDVT.FocusedRowIndex);
-        /*txtDienTro.Text = cv["DienTroSuat"] + "";
-        txtMaLoaiDay.Text = cv["MaLoaiDay"] + "";
-        txtTenLoaiDay.Text = cv["TenLoaiDay"] + "";
-        cmbLoaiDay.Value = cv["LoaiDay"] + "";
-        */
-    }
+    
         public string UploadFile()
         {
             string strTenFile = fileUp.FileName;

@@ -87,13 +87,7 @@
                                     </dx:ASPxButton>
                                 </span>
                             </td>
-                            <td align="left" valign="top" width="130px">
-                                <span style="float: Left; padding-top: 2px; margin-left: 5px;">
-                                    <dx:ASPxButton ID="btnSua" runat="server" Text="Sửa" Height="22px" Width="120px"
-                                        OnClick="btnSua_Click" ClientIDMode="AutoID" Theme="Aqua">
-                                    </dx:ASPxButton>
-                                </span>
-                            </td>
+                            
                             <td align="left" valign="top">
                                 &nbsp;</td>
                         </tr>

@@ -7,11 +7,13 @@ using System.Web.UI;
 using System.Linq;
 using System.Data;
 using System.Globalization;
+using DevExpress.XtraCharts;
 
 namespace MTCSYT
 {
     public partial class dmKhachHang_CT : BasePage
     {
+
         DataAccess.clTTTT db = new DataAccess.clTTTT();
         // CBDN.DB_CBDNDataContext db = new CBDN.DB_CBDNDataContext(new CBDN.ADOController().strcn());
         private SYS_Right rightOfUser = null;
@@ -58,9 +60,59 @@ namespace MTCSYT
                 cmbNam.Value = DateTime.Now.Year;
             }
             _DataBind();
+            LoadKH();
+            loadDanhMuc();
 
         }
+        private void loadDanhMuc()
+        {
+            //WebChartControl WebChartControl = new WebChartControl();
+            // Add the chart to the form.
+            // Note that a chart isn't initialized until it's added to the form's collection of controls.
+            //this.Controls.Add(WebChartControl);
+            // Create a new bar series.
+            Series series = new Series("Sản lượng khách hàng", ViewType.Bar);
+            // Add the series to the chart.
+            WebChartControl1.Series.Add(series);
+            // Specify the series data source.
+            DataTable seriesData = GetData();
+            series.DataSource = seriesData;
 
+            ChartTitle ct = new ChartTitle();
+            ct.Text = "THỐNG KÊ SẢN LƯỢNG KHÁCH HÀNG";
+            WebChartControl1.Titles.Add(ct);
+            // Specify an argument data member.
+            series.ArgumentDataMember = "TENKHACHHANG";
+            // Specify a value data member.
+            series.ValueDataMembers.AddRange("SLUONG1");
+            series.ValueDataMembers.AddRange("SLUONG2");
+            series.ValueDataMembers.AddRange("SLUONG3");
+
+            // Rotate the diagram (if necessary).
+            ((XYDiagram)WebChartControl1.Diagram).Rotated = false;
+            ((XYDiagram)WebChartControl1.Diagram).AxisY.Range.SetMinMaxValues(0, 100);
+            ((XYDiagram)WebChartControl1.Diagram).AxisY.Label.EndText = "%";
+        }
+        public DataTable GetData()
+        {
+            
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            int ma_dviqly = int.Parse(session.User.ma_dviqly + "");
+            DataTable dt = db.Get_SLKhang(session.User.ma_dviqlyDN, Request["MA_KHANG"], int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
+           
+            return dt;
+        }
+            
+        private void LoadKH()
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string makhachang = lbMaKH.Text;
+            DataTable dsa = db.SELECT_TTTT_KHACHHANG_LUUY_INFO(session.User.ma_dviqlyDN, makhachang);
+            
+            grdKH.DataSource = dsa;
+            grdKH.DataBind();
+
+        }
         private void _DataBind()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -97,7 +149,12 @@ namespace MTCSYT
             (sender as ASPxGridView).GetRowValuesByKeyValue(e.EditingKeyValue);
 
         }
-
+        protected void ckChua_Init(object sender, EventArgs e)
+        {
+            ASPxCheckBox chk = sender as ASPxCheckBox;
+            ASPxGridView grid = (chk.NamingContainer as GridViewHeaderTemplateContainer).Grid;
+            chk.Checked = (grid.Selection.Count == grid.VisibleRowCount);
+        }
         protected void grdDVT_CellEditorInitialize1(object sender, ASPxGridViewEditorEventArgs e)
         {
 
@@ -127,7 +184,7 @@ namespace MTCSYT
                 }
                 string strMadviqly = session.User.ma_dviqlyDN;
                 lbTram.Text = Request["MA_TRAM"];
-            string tenkhachhang = lbTenKH.Text;
+                string tenkhachhang = lbTenKH.Text;
                     string diachi = lbDiaChi.Text;
                     string makhachang = lbMaKH.Text;
                     string matram = lbTram.Text;
@@ -136,6 +193,22 @@ namespace MTCSYT
                 db.INSERT_TTTT_KHACHHANG_LUUY(strMadviqly, makhachang, matram, tenkhachhang, diachi, txtNoiDung.Text, strDate);
             pcAddRoles.ShowOnPageLoad = false;
             _DataBind();
+            LoadKH();
+        }
+        protected void btnRemove_Click(object sender, EventArgs e)
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string makhachang = lbMaKH.Text;
+            string matram = lbTram.Text;
+            List<Object> keyvalues = grdKH.GetSelectedFieldValues("THOIGIAN");
+            foreach (object key in keyvalues)
+            {
+                string thoigian = key + "";
+                db.DELETE_TTTT_KHACHHANG_LUUY_INFO(matram, makhachang, thoigian);
+            }
+            LoadKH();
+            grdKH.Selection.UnselectAll();
+
         }
         protected void btnDong_Click(object sender, EventArgs e)
         {

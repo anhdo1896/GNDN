@@ -98,7 +98,7 @@
     <div class="col-md-12">
 
         <div class="white-box">
-            <h1 class="m-b-0 box-title">DANH SÁCH TRẠM ƯU TIÊN</h1>
+            <h1 class="m-b-0 box-title">DANH SÁCH KHÁCH HÀNG LƯU Ý</h1>
             <div class="col-lg-12 m-t-30">
                 <hr />
             </div>
@@ -110,8 +110,8 @@
             <table width="100%">
                 <tr>
                     <td valign="top">
-                        <dxwgv:ASPxGridView ID="grdKH" runat="server" AutoGenerateColumns="False" Caption="Danh sách Trạm"
-                            ClientInstanceName="grdKH" KeyFieldName ="MA_KHANG" Width="100%" ClientIDMode="AutoID" Theme="Aqua">
+                        <dxwgv:ASPxGridView ID="grdKH" runat="server" AutoGenerateColumns="False" Caption="Danh sách Khách Hàng lưu ý"
+                            ClientInstanceName="grdKH" KeyFieldName ="MA_KHANG;MA_TRAM" Width="100%" ClientIDMode="AutoID" Theme="Aqua">
                             <Settings GridLines="Horizontal" ShowFilterRow="True" ShowFilterRowMenu="True" />
                             <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
                                 CommandUpdate="Cập Nhật" ConfirmDelete="Xóa" />
@@ -142,10 +142,6 @@
                             </dxwgv:GridViewDataTextColumn>
                                 <dxwgv:GridViewDataTextColumn Caption="Địa Chỉ" FieldName="DIACHI" VisibleIndex="5" >
                             </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Nội Dung" FieldName="NOIDUNG" VisibleIndex="6" >
-                            </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Thời gian" FieldName="THOIGIAN" VisibleIndex="7" >
-                            </dxwgv:GridViewDataTextColumn>
                             </Columns>
                             <SettingsBehavior AllowDragDrop="False" AllowSort="False" />
                             <SettingsPager NumericButtonCount="5" PageSize="20">
@@ -157,12 +153,21 @@
                 </tr>
             </table>
             <tr>
-                    <td align="left" width="130px" valign="top">
-                        <dx:ASPxButton ID="btnRemove" runat="server" Text="Xóa khỏi danh sách Ưu Tiên" Width="120px" Theme="Aqua" OnClick="btnRemove_Click" >
+                 <td align="left" width="130px" valign="top">
+                        <dx:ASPxButton ID="btnXemChiTiet" runat="server" Text="Thông tin chi tiết" Width="120px" Theme="Aqua" OnClick="btnXemChiTiet_Click" >
                         </dx:ASPxButton>
                     </td>
-                
-                </tr>
+             </tr>
+            <tr>
+                    <td align="right" width="130px" valign="top">
+                        <dx:ASPxButton ID="btnRemove" runat="server" Text="Xóa khỏi danh sách lưu ý" Width="120px" Theme="Aqua" OnClick="btnRemove_Click" >
+                        </dx:ASPxButton>
+                    </td>
+                <tr />
+                   
+                   
+               
+               
         </div>
 
     </div>

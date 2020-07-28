@@ -141,6 +141,24 @@ namespace MTCSYT
         protected global::DevExpress.Web.ASPxGridView grdDVT;
 
         /// <summary>
+        /// WebChartControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.XtraCharts.Web.WebChartControl WebChartControl1;
+
+        /// <summary>
+        /// grdKH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView grdKH;
+
+        /// <summary>
         /// btnThem control.
         /// </summary>
         /// <remarks>
@@ -148,6 +166,15 @@ namespace MTCSYT
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnThem;
+
+        /// <summary>
+        /// btnRemove control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnRemove;
 
         /// <summary>
         /// btnChiTiet control.

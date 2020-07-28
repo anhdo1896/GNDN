@@ -24,6 +24,15 @@ namespace CBDN.TonThatKyThuat
         protected global::DevExpress.Web.ASPxGridView grdKH;
 
         /// <summary>
+        /// btnXemChiTiet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnXemChiTiet;
+
+        /// <summary>
         /// btnRemove control.
         /// </summary>
         /// <remarks>

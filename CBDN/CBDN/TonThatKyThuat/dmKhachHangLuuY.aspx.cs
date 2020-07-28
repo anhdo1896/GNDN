@@ -101,7 +101,18 @@ namespace CBDN.TonThatKyThuat
             ASPxGridView grid = (chk.NamingContainer as GridViewHeaderTemplateContainer).Grid;
             chk.Checked = (grid.Selection.Count == grid.VisibleRowCount);
         }
-
+        protected void btnXemChiTiet_Click(object sender, EventArgs e)
+        {
+            List<Object> keyvalues = grdKH.GetSelectedFieldValues("MA_TRAM");
+            List<Object> keyvalues1 = grdKH.GetSelectedFieldValues("MA_KHANG");
+            int a = keyvalues.Count;
+            for(int i=0;i<a;i++)
+            {
+                string ma_tram = keyvalues[i] + "";
+                string ma_khang = keyvalues1[i] + "";
+                Response.Redirect("../TonThatKyThuat/dmKhachHang_CT.aspx?MA_TRAM=" + ma_tram + "&MA_KHANG=" + ma_khang + "");
+            }
+        }
         protected void cmbRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadKH();
