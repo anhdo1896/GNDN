@@ -2,8 +2,23 @@
     CodeBehind="dmKhachHang_CT.aspx.cs" Inherits="MTCSYT.dmKhachHang_CT" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dxe" %>
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dxwgv" %>
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dxcp" %>
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dxp" %>
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dxrp" %>
+
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+ Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.XtraCharts.v17.1.Web, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" 
+    Namespace="DevExpress.XtraCharts.Web" TagPrefix="dxchartsui" %>
+
 
 
 
@@ -12,6 +27,64 @@
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <script type="text/javascript">
+        function SetMenuSelectionProduct(s, e) {
+            if (s == selectionMenuProduct) {
+                var whichGrid = gridProduct;
+            }
+            else {
+                var whichGrid = gridSelProducts;
+            }
+
+            if (e.item.index == 0) {
+                whichGrid.SelectAllRowsOnPage();
+            }
+            else if (e.item.index == 1) {
+                whichGrid.SelectRows();
+            }
+            else if (e.item.index == 2) {
+                whichGrid.UnselectRows();
+            }
+        }
+
+        function OnAllCheckedChanged(s, e) {
+
+            var _handle = true;
+            if (s.GetChecked())
+
+                grdKH.SelectRows();
+
+            else
+
+                grdKH.UnselectRows();
+
+        }
+        function OnGridSelectionChanged(s, e) {
+
+            cbAll.SetChecked(s.GetSelectedRowCount() == s.cpVisibleRowCount);
+
+        }
+
+
+        function OnChuaCheckedChanged(s, e) {
+
+            var _handle = true;
+            if (s.GetChecked())
+
+                grdKH.SelectRows();
+
+            else
+
+                grdKH.UnselectRows();
+
+        }
+        function OnGridChuaSelectionChanged(s, e) {
+
+            ckChua.SetChecked(s.GetSelectedRowCount() == s.cpVisibleRowCount);
+
+        }
+       
+    </script>
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Quản lý loại đường dây điện năng với các đơn vị khác</h4>
     </div>
@@ -173,12 +246,121 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td align="left" width="130px" valign="top">&nbsp;</td>
+               <td align="left" valign="top">&nbsp;</td> </tr>
+                <td align="left" valign="top">&nbsp;</td> </tr>
+                <div class="white-box">
 
+            <h1 class="m-b-0 box-title">Thông kê sản lượng của khách hàng</h1>
+            <div class="col-lg-12 m-t-30">
+                <hr />
+            </div>
+            <table class="tbl_Write">
+
+                <tr>
+                    <td colspan="4">
+                        <dxchartsui:WebChartControl ID="WebChartControl1" runat="server" Height="500px" Width="1020px">
+                        </dxchartsui:WebChartControl>
+                    </td>
                 </tr>
             </table>
-
+        </div>
+                <td align="left" valign="top"> &nbsp;</td> </tr>
+                <td align="left" valign="top">&nbsp;</td> </tr>
+                <tr>
+                    <dxwgv:ASPxGridView ID="grdKH" runat="server" AutoGenerateColumns="False" Caption="Lịch sử ghi chú"
+                            ClientInstanceName="grdKH" KeyFieldName ="THOIGIAN" Width="100%" ClientIDMode="AutoID" Theme="Aqua">
+                            <Settings GridLines="Horizontal" ShowFilterRow="True" ShowFilterRowMenu="True" />
+                            <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
+                                CommandUpdate="Cập Nhật" ConfirmDelete="Xóa" />
+                            <Styles>
+                                <AlternatingRow Enabled="True" />
+                            </Styles>
+                             <ClientSideEvents SelectionChanged="OnGridChuaSelectionChanged" />
+                            <Columns>
+                                <dx:GridViewCommandColumn ShowInCustomizationForm="True" ShowSelectCheckbox="True" VisibleIndex="0" Width="80px">
+                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <CellStyle VerticalAlign="Middle">
+                                    </CellStyle>
+                                    <HeaderTemplate>
+                                        <dx:ASPxCheckBox ID="ckChua" runat="server" OnInit="ckChua_Init">
+                                            <ClientSideEvents CheckedChanged="OnChuaCheckedChanged" />
+                                        </dx:ASPxCheckBox>
+                                    </HeaderTemplate>
+                                </dx:GridViewCommandColumn>
+                            <dxwgv:GridViewDataTextColumn Caption="Mã Khách Hàng" FieldName="MA_KHANG" VisibleIndex="1" >
+                            </dxwgv:GridViewDataTextColumn>
+                                <dxwgv:GridViewDataTextColumn Caption="Tên Khách Hàng" FieldName="TEN_KHANG" VisibleIndex="2" >
+                            </dxwgv:GridViewDataTextColumn>
+                                <dxwgv:GridViewDataTextColumn Caption="Nội Dung" FieldName="NOIDUNG" VisibleIndex="3">
+                            </dxwgv:GridViewDataTextColumn>
+                                <dxwgv:GridViewDataTextColumn Caption="Thời gian" FieldName="THOIGIAN" VisibleIndex="4" >
+                            </dxwgv:GridViewDataTextColumn>
+                            </Columns>
+                            <SettingsBehavior AllowDragDrop="False" AllowSort="False" />
+                            <SettingsPager NumericButtonCount="5" PageSize="20">
+                                <Summary Text="Trang {0} của {1} ({2} bản ghi)" />
+                            </SettingsPager>
+                            <SettingsText EmptyDataRow="Không có dữ liệu" />
+                        </dxwgv:ASPxGridView>
+                </tr>
+                 <tr>
+                    <td align="right" width="130px" valign="top">
+                                <span style="float: Left; padding-top: 2px; margin-left: 5px;">
+                                    <dx:ASPxButton ID="btnThem" runat="server" Text="Thêm vào danh sách lưu ý" Height="22px" Width="120px"
+                                        OnClick="btnThem_Click" ClientIDMode="AutoID" Theme="Aqua">
+                                    </dx:ASPxButton>
+                                </span>
+                            </td>
+                     
+                <td align="right" width="130px" valign="top">
+                                <span style="float: Left; padding-top: 2px; margin-left: 5px;">
+                                    <dx:ASPxButton ID="btnRemove" runat="server" Text="Xóa danh sách lưu ý" Height="22px" Width="120px"
+                                        OnClick="btnRemove_Click" ClientIDMode="AutoID" Theme="Aqua">
+                                    </dx:ASPxButton>
+                                </span>
+                            </td>
+                    
+                
+                     <td style="text-align: right">
+                         <span style="float: right; padding-top: 2px; margin-left: 5px;">
+                        <dx:ASPxButton ID="btnChiTiet" runat="server" Font-Italic="True" Font-Underline="True" ForeColor="#0066FF" Text="Danh sách khách hàng Lưu ý &gt;&gt;" OnClick="ASPxButton1_Click">
+                            <Border BorderStyle="None" />
+                        </dx:ASPxButton>
+                             </span>
+                    </td>
+                </tr>
+            </table>
+            <dx:ASPxPopupControl ID="pcAddRoles" runat="server" ClientInstanceName="pcAddRoles"
+                        CloseAction="CloseButton" HeaderText="Đưa khách hàng vào lưu ý" PopupHorizontalAlign="WindowCenter"
+                        PopupVerticalAlign="WindowCenter" ShowCloseButton="true" Width="600px" Modal="True"
+                        ClientIDMode="AutoID" Theme="Aqua">
+                        <ContentCollection>
+                            <dx:PopupControlContentControl ID="PopupControlContentControl1" runat="server" SupportsDisabledAttribute="True">
+                                <table width="100%" class="tbl_Write"> 
+                                    <tr>
+                                        <td>
+                                            <dx:ASPxLabel ID="ASPxLabel17" runat="server" Text="Nội dung cần lưu ý" Width="150px" Theme="Aqua">
+                                            </dx:ASPxLabel>
+                                        </td>
+                                        <td>
+                                           <dx:ASPxTextBox ID="txtNoiDung" runat="server" Width="420px">
+                                            </dx:ASPxTextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <dx:ASPxButton ID="btnCapNhat" runat="server" OnClick="btnCapNhat_Click" Text="Cập nhật" Width="150px" Theme="Aqua">
+                                            </dx:ASPxButton>
+                                        </td>
+                                        <td>
+                                            <dx:ASPxButton ID="btnDong" runat="server" OnClick="btnDong_Click"  Width="150px" Text="Đóng" Theme="Aqua">
+                                            </dx:ASPxButton>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </dx:PopupControlContentControl>
+                        </ContentCollection>
+                    </dx:ASPxPopupControl>
         </div>
     </div>
 </asp:Content>

@@ -58,7 +58,7 @@ namespace MTCSYT
             _DataBind();
 
         }
-
+        
         private void _DataBind()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -105,7 +105,12 @@ namespace MTCSYT
             }
 
         }
-
+        
+        
+        protected void ASPxButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../TonThatKyThuat/dmKhachHangLuuY.aspx");
+        }
 
     }
 }

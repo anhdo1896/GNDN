@@ -7,65 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLY_VTTB.MasterPage
+namespace CBDN.TonThatKyThuat
 {
 
 
-    public partial class MasterPageMTCSYT
+    public partial class KiemTramCot_CAD
     {
 
         /// <summary>
-        /// lbTaiKhoan control.
+        /// grdTram control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTaiKhoan;
+        protected global::DevExpress.Web.ASPxGridView grdTram;
 
         /// <summary>
-        /// lbTenDangNhap control.
+        /// grdTramChecked control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTenDangNhap;
+        protected global::DevExpress.Web.ASPxGridView grdTramChecked;
 
         /// <summary>
-        /// lbMenu control.
+        /// btnKiemTra control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbMenu;
+        protected global::DevExpress.Web.ASPxButton btnKiemTra;
 
         /// <summary>
-        /// from1 control.
+        /// btnKiemTraChecked control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm from1;
-
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
-
-        /// <summary>
-        /// Category control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Category;
+        protected global::DevExpress.Web.ASPxButton btnKiemTraChecked;
     }
 }

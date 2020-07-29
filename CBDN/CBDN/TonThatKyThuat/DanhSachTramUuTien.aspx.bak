@@ -1,0 +1,260 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MV_PhanUS_TB_GCS.aspx.cs" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master"
+    Inherits="MTCSYT.QL_CatDien.MV_PhanUS_TB_GCS" %>
+
+<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dxe" %>
+<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dxwgv" %>
+<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxCallbackPanel" TagPrefix="dxcp" %>
+<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxPanel" TagPrefix="dxp" %>
+<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxPopupControl" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxRoundPanel" TagPrefix="dxrp" %>
+<asp:Content ContentPlaceHolderID="Category" ID="Content1" runat="server">
+    <table width="100%" class="pathWay">
+        <tr>
+            <td colspan="3" valign="middle">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/home.png" ImageAlign="TextTop" />&nbsp;
+                <dxe:ASPxHyperLink ID="ASPxHyperLink1" runat="server" Text="Trang chủ" ForeColor="#24A3D6"
+                    NavigateUrl="~/HeThong/Default.aspx">
+                </dxe:ASPxHyperLink>
+                &nbsp;<asp:Label ID="Label1" runat="server" Text="&raquo;" Font-Underline="False" />
+                &nbsp;<asp:Label ID="Label7" runat="server" 
+                    Text="QUẢN LÝ PHÂN THIẾT BỊ CHO NHÂN VIÊN GCS ONLINE" />
+            </td>
+        </tr>
+    </table>
+    <div id="Div1" class="clearfix">
+        <table class="TitlePage" width="100%">
+            <tr>
+                <td colspan="3">
+                    <p class="TitleLabel">
+                        <asp:Label ID="Label2" runat="server" Text="QUẢN LÝ PHÂN THIẾT BỊ CHO NHÂN VIÊN GCS ONLINE"
+                            Font-Bold="True" Font-Italic="False" /></p>
+                    <p class="GhiChu">
+                        <span style="color: Red; text-decoration: underline;" class="style1">
+                            <asp:Label ID="Label9" runat="server" Text="Ghi chú:" /></span>&nbsp;
+                        <dxe:ASPxLabel ID="Label22" runat="server" Text="Chức năng thực hiện thiết bị cho nhân viên trong tháng GCS"
+                            CssClass="style1">
+                        </dxe:ASPxLabel>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Content" class="clearfix">
+        <%--  <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>  
+          <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>--%>
+        <table >
+            <tr>
+                <td width="120px">
+                    <asp:Label ID="Label3" runat="server" Text="Tháng GCS: " Font-Bold="True" 
+                        ForeColor="#000066" />
+                </td>
+                <td align="left" width="70px">
+                    <dxe:ASPxTextBox ID="txtthang" runat="server" Width="70px" OnTextChanged="txtthang_TextChanged">
+                    </dxe:ASPxTextBox>
+                </td>
+                <td width="120px" align="left">
+                    <asp:Label ID="Label4" runat="server" Text="Năm GCS: " Font-Bold="True" 
+                        ForeColor="#000066" Width="120px" />
+                </td>
+                <td align="left" width="130px">
+                    <dxe:ASPxTextBox ID="txtnam" runat="server" Enabled="False" Width="80px">
+                    </dxe:ASPxTextBox>
+                </td width="50%">
+                <td>
+                </td>
+            </tr>
+           
+        </table>
+        <br />
+        <table>
+            <tr>
+                <td align="left" colspan="1" colspan="2">
+                    <dxe:ASPxLabel ID="ASPxLabel1" runat="server" CssFilePath="~/App_Themes/Aqua/{0}/styles.css"
+                        CssPostfix="Aqua" Text="Lựa chọn nhân viên:    " Width="150px" Font-Bold="True">
+                    </dxe:ASPxLabel>
+                </td>
+                <td>
+                </td>
+                <td align="left" colspan="2">
+                    <dxe:ASPxComboBox ID="cmbNguoiDung" runat="server" AutoPostBack="True" DropDownStyle="DropDown"
+                        EnableIncrementalFiltering="True" IncrementalFilteringMode="Contains" OnSelectedIndexChanged="cmbRoles_SelectedIndexChanged"
+                        TextField="Name" ValueField="ID" ValueType="System.String" Width="250px">
+                        <ButtonEditEllipsisImage Width="12px" />
+                        <DropDownButton>
+                            <Image Width="9px" />
+                        </DropDownButton>
+                        <ValidationSettings>
+                            <ErrorImage Width="14px" />
+                        </ValidationSettings>
+                    </dxe:ASPxComboBox>
+                </td>
+                <td>
+                </td>
+                <td rowspan="5" width="100%" valign="top">
+                    <dxwgv:ASPxGridView ID="grdKH" runat="server" AutoGenerateColumns="False" Caption="Danh sách nhân viên đã phân thiết bị"
+                        ClientInstanceName="grdKH" KeyFieldName="ID" Width="100%" ClientIDMode="AutoID"
+                        Enabled="False">
+                        <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
+                            CommandUpdate="Cập Nhật" ConfirmDelete="Bạn Muốn Xóa Chứ ?" />
+                        <Styles>
+                            <AlternatingRow Enabled="True" />
+                        </Styles>
+                        <Columns>
+                            <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" Width="10%">
+                                <HeaderStyle HorizontalAlign="Center" />
+                                <CellStyle HorizontalAlign="Center">
+                                </CellStyle>
+                                <HeaderTemplate>
+                                    <input onclick="grdKH.SelectAllRowsOnPage(this.checked);" style="vertical-align: middle;"
+                                        title="Select/Unselect all rows on the page" type="checkbox"></input>
+                                </HeaderTemplate>
+                            </dxwgv:GridViewCommandColumn>
+                            <dxwgv:GridViewDataTextColumn Caption="Mã nhân viên" FieldName="USERNAME" VisibleIndex="1">
+                                <CellStyle HorizontalAlign="Left">
+                                </CellStyle>
+                            </dxwgv:GridViewDataTextColumn>
+                            <dxwgv:GridViewDataTextColumn Caption="Tên nhân viên" FieldName="TEN_NVIEN" GroupIndex="0"
+                                VisibleIndex="2" Width="30%">
+                                <CellStyle HorizontalAlign="Left">
+                                </CellStyle>
+                            </dxwgv:GridViewDataTextColumn>
+                            <dxwgv:GridViewDataTextColumn Caption="MA_SOGCS" FieldName="MA_SOGCS" VisibleIndex="3" Width="30%">
+                            </dxwgv:GridViewDataTextColumn>
+                            <dxwgv:GridViewDataTextColumn Caption="PASS" FieldName="PASSWORD" 
+                                VisibleIndex="6">
+                            </dxwgv:GridViewDataTextColumn>
+                            <%-- <dxwgv:GridViewDataTextColumn Caption="Tên định danh" VisibleIndex="4">
+                            </dxwgv:GridViewDataTextColumn>--%>
+                            <dxwgv:GridViewDataTextColumn Caption="Tên định danh" FieldName="TENDINHDANH" 
+                                VisibleIndex="4">
+                            </dxwgv:GridViewDataTextColumn>
+                        </Columns>
+                        <SettingsBehavior AllowDragDrop="False" AllowSort="False" />
+                        <SettingsPager NumericButtonCount="5" PageSize="20">
+                            <Summary Text="Trang {0} của {1} ({2} bản ghi)" />
+                        </SettingsPager>
+                        <Settings ShowGroupPanel="true" />
+                        <Settings GridLines="Horizontal" ShowFilterRow="True" ShowFilterRowMenu="True" />
+                        <SettingsText EmptyDataRow="Không có dữ liệu" />
+                    </dxwgv:ASPxGridView>
+                </td>
+            </tr>
+            <tr>                <td>           &nbsp;     </td>            </tr>
+           <tr>                <td>        &nbsp;        </td>            </tr>
+            <tr align="right">
+                <td width="45%" valign="top" colspan="4">
+                    <dxwgv:ASPxGridView ID="grdKHCHUA" runat="server" AutoGenerateColumns="False" Caption="Danh sách MA_SOGCS chưa phân"
+                        ClientInstanceName="grdKHCHUA" KeyFieldName="MA_SOGCS" Width="100%" ClientIDMode="AutoID"
+                        Enabled="False">
+                        <Settings GridLines="Horizontal" ShowFilterRow="True" ShowFilterRowMenu="True" />
+                        <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
+                            CommandUpdate="Cập Nhật" ConfirmDelete="Xóa" />
+                        <Styles>
+                            <AlternatingRow Enabled="True" />
+                        </Styles>
+                        <Columns>
+                            <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" Width="10%">
+                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                <CellStyle HorizontalAlign="Center">
+                                </CellStyle>
+                                <HeaderTemplate>
+                                    <input onclick="grdKHCHUA.SelectAllRowsOnPage(this.checked);" style="vertical-align: middle;"
+                                        title="Select/Unselect all rows on the page" type="checkbox"></input>
+                                </HeaderTemplate>
+                            </dxwgv:GridViewCommandColumn>
+                            <dxwgv:GridViewDataTextColumn Caption="MA_SOGCS" FieldName="MA_SOGCS" VisibleIndex="1" Width="30%">
+                                <CellStyle HorizontalAlign="Left">
+                                </CellStyle>
+                            </dxwgv:GridViewDataTextColumn>
+                            <dxwgv:GridViewDataTextColumn Caption="Tên định danh" FieldName="TENDINHDANH" VisibleIndex="2">
+                            </dxwgv:GridViewDataTextColumn>
+                        </Columns>
+                        <SettingsBehavior AllowDragDrop="False" AllowSort="False" />
+                        <SettingsPager NumericButtonCount="5" PageSize="20">
+                            <Summary Text="Trang {0} của {1} ({2} bản ghi)" />
+                        </SettingsPager>
+                        <SettingsText EmptyDataRow="Không có dữ liệu" />
+                    </dxwgv:ASPxGridView>
+                </td>
+                <td width="10%" align="center">
+                    <table width="100%" align="center">
+                        <tr>
+                            <td align="center" width="45%">
+                                <dxe:ASPxButton ID="btnAdd" runat="server" OnClick="btnAdd_Click" Width="20px" Enabled="False">
+                                    <Image Url="~/Images/Right_20.png" Width="20px" />
+                                </dxe:ASPxButton>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" width="45%">
+                                <dxe:ASPxButton ID="btnRemove" runat="server" OnClick="btnRemove_Click" Width="20px"
+                                    Enabled="False">
+                                    <Image Url="~/Images/Left_20.png" Width="20px" />
+                                </dxe:ASPxButton>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="45%" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    &nbsp;&nbsp;
+                </td>
+            </tr>
+            <tr style="background-color: #f0f0f0">
+                <td>
+                </td>
+                <td align="center" height="30px" valign="middle">
+                    <dxe:ASPxButton ID="btnSubmit" runat="server" Width="80px" OnClick="btnSubmit_Click"
+                        Text="Đồng ý" Enabled="False" Visible="False">
+                    </dxe:ASPxButton>
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+        <dx:ASPxPopupControl ID="pcMess" runat="server" ClientInstanceName="pcMess" CloseAction="CloseButton"
+            HeaderText="Thông báo" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
+            ShowCloseButton="true" Width="600px" Modal="True" ClientIDMode="AutoID">
+            <ContentCollection>
+                <dx:PopupControlContentControl ID="PopupControlContentControl1" runat="server" SupportsDisabledAttribute="True">
+                    <table width="100%">
+                        <tr>
+                            <td align="center">
+                                <dxe:ASPxLabel ID="lblMess" runat="server" Text="Gán quyền cho nhóm người dùng thành công! ">
+                                </dxe:ASPxLabel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <dxe:ASPxButton ID="btnOK" Width="80px" runat="server" Text="Đồng ý" OnClick="btnOK_Click">
+                                </dxe:ASPxButton>
+                            </td>
+                        </tr>
+                    </table>
+                </dx:PopupControlContentControl>
+            </ContentCollection>
+        </dx:ASPxPopupControl>
+        <%--</ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="btnAdd" EventName="Click" />
+                <asp:AsyncPostBackTrigger ControlID="btnRemove" EventName="Click" />
+            </Triggers>
+        </asp:UpdatePanel>--%>
+    </div>
+</asp:Content>
