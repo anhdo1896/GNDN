@@ -76,31 +76,49 @@ namespace MTCSYT
             WebChartControl1.Series.Add(series);
             // Specify the series data source.
             DataTable seriesData = GetData();
+            int max = Convert.ToInt32(seriesData.AsEnumerable().Max(row => row["Sales"]));
             series.DataSource = seriesData;
 
             ChartTitle ct = new ChartTitle();
             ct.Text = "THỐNG KÊ SẢN LƯỢNG KHÁCH HÀNG";
             WebChartControl1.Titles.Add(ct);
             // Specify an argument data member.
-            series.ArgumentDataMember = "TENKHACHHANG";
+            series.ArgumentDataMember = "Region";
             // Specify a value data member.
-            series.ValueDataMembers.AddRange("SLUONG1");
-            series.ValueDataMembers.AddRange("SLUONG2");
-            series.ValueDataMembers.AddRange("SLUONG3");
-
+            series.ValueDataMembers.AddRange(new string[] { "Sales" });
             // Rotate the diagram (if necessary).
             ((XYDiagram)WebChartControl1.Diagram).Rotated = false;
-            ((XYDiagram)WebChartControl1.Diagram).AxisY.Range.SetMinMaxValues(0, 100);
-            ((XYDiagram)WebChartControl1.Diagram).AxisY.Label.EndText = "%";
+            ((XYDiagram)WebChartControl1.Diagram).AxisY.Range.SetMinMaxValues(0, max*1.5);
+            ((XYDiagram)WebChartControl1.Diagram).AxisY.Label.EndText = "kWh";
         }
         public DataTable GetData()
         {
             
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             int ma_dviqly = int.Parse(session.User.ma_dviqly + "");
-            DataTable dt = db.Get_SLKhang(session.User.ma_dviqlyDN, Request["MA_KHANG"], int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
-           
-            return dt;
+            string makhachang = lbMaKH.Text;
+            DataTable dt = db.Get_SLKhang(session.User.ma_dviqlyDN, makhachang, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
+            DataTable table = new DataTable();
+            table.Columns.AddRange(new DataColumn[] {
+            new DataColumn("Region", typeof(string)),
+            new DataColumn("Sales", typeof(decimal))
+        });
+            foreach (DataRow row in dt.Rows)
+            {
+                var SANLUONGTHANG = row["SANLUONGTHANG"];
+                table.Rows.Add("Sản lượng tháng", SANLUONGTHANG);
+                var SLUONG_1 = row["SLUONG_1"];
+                table.Rows.Add("Sản lượng tháng trước", SLUONG_1);
+                var SLUONG_2 = row["SLUONG_2"];
+                table.Rows.Add("Sản lượng 2 tháng trước", SLUONG_2);
+                var SLUONG_3 = row["SLUONG_3"];
+                table.Rows.Add("Sản lượng 3 tháng trước", SLUONG_3);
+                var SANLUONGCUNGKY = row["SANLUONGCUNGKY"];
+                table.Rows.Add("Sản lượng cùng kỳ năm trước", SANLUONGCUNGKY);
+
+            }
+            
+            return table;
         }
             
         private void LoadKH()

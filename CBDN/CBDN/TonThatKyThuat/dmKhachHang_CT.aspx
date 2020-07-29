@@ -250,7 +250,7 @@
                 <td align="left" valign="top">&nbsp;</td> </tr>
                 <div class="white-box">
 
-            <h1 class="m-b-0 box-title">Thông kê tình hình nhập liệu trong tháng</h1>
+            <h1 class="m-b-0 box-title">Thông kê sản lượng của khách hàng</h1>
             <div class="col-lg-12 m-t-30">
                 <hr />
             </div>
