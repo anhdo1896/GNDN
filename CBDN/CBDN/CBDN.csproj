@@ -7327,6 +7327,7 @@
     <Content Include="TonThatKyThuat\dmKhachHang_CT.aspx" />
     <Content Include="TonThatKyThuat\ChiTietPhuTai.aspx" />
     <Content Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx" />
+    <Content Include="TonThatKyThuat\KiemTraCot_CAD.aspx" />
     <Content Include="TonThatKyThuat\QuanLyCad.aspx" />
     <Content Include="TonThatKyThuat\SoSanhTonThat.aspx" />
     <Content Include="TonThatKyThuat\dmKhachHang.aspx" />
@@ -7970,6 +7971,13 @@
     </Compile>
     <Compile Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx.designer.cs">
       <DependentUpon>ImportCS_ChuKyNgay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\KiemTraCot_CAD.aspx.cs">
+      <DependentUpon>KiemTraCot_CAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\KiemTraCot_CAD.aspx.designer.cs">
+      <DependentUpon>KiemTraCot_CAD.aspx</DependentUpon>
     </Compile>
     <Compile Include="TonThatKyThuat\QuanLyCad.aspx.cs">
       <DependentUpon>QuanLyCad.aspx</DependentUpon>

@@ -88,7 +88,7 @@ namespace MTCSYT
             series.ValueDataMembers.AddRange(new string[] { "Sales" });
             // Rotate the diagram (if necessary).
             ((XYDiagram)WebChartControl1.Diagram).Rotated = false;
-            ((XYDiagram)WebChartControl1.Diagram).AxisY.Range.SetMinMaxValues(0, max*1.5);
+            ((XYDiagram)WebChartControl1.Diagram).AxisY.Range.SetMinMaxValues(0, max*1.25);
             ((XYDiagram)WebChartControl1.Diagram).AxisY.Label.EndText = "kWh";
         }
         public DataTable GetData()

@@ -120,6 +120,8 @@ namespace QLY_VTTB.MasterPage
                                 <li> <a href='../TonThatKyThuat/QuanLyCad.aspx'>* Quản lý CAD</a></li>
                                 <li> <a href='../TonThatKyThuat/DanhSachTramUuTien.aspx'>* Danh Sách Trạm Ưu tiên</a></li>
                                 <li> <a href='../TonThatKyThuat/dmKhachHangLuuY.aspx'>* Danh Sách Khách Hàng Lưu Ý</a></li>
+                                <li> <a href='../TonThatKyThuat/KiemTraCot_CAD.aspx'>* Kiểm tra cột đã nhập dữ liệu</a></li>
+
                              
                             </ul>
                         </li>
