@@ -32,29 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-
-      <HintPath>bin\Debug\Castle.Core.dll</HintPath>
+    <Reference Include="Castle.Core">
+      <HintPath>D:\GIAONHANDAUNGUON\CBDN\Souce\Connection\bin\Debug\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.DynamicProxy2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Castle.DynamicProxy2.dll</HintPath>
+    <Reference Include="Castle.DynamicProxy2">
+      <HintPath>D:\GIAONHANDAUNGUON\CBDN\Souce\Connection\bin\Debug\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
-    <Reference Include="Spirit.Portal.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Spirit.Portal.Core.dll</HintPath>
-
-      <HintPath>..\DataAcess\DataAcess\bin\Debug\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.DynamicProxy2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DataAcess\DataAcess\bin\Debug\Castle.DynamicProxy2.dll</HintPath>
-    </Reference>
-    <Reference Include="Spirit.Portal.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DataAcess\DataAcess\bin\Debug\Spirit.Portal.Core.dll</HintPath>
-
+    <Reference Include="Spirit.Portal.Core">
+      <HintPath>D:\GIAONHANDAUNGUON\CBDN\Souce\Connection\bin\Debug\Spirit.Portal.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -75,13 +60,11 @@
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\Castle.Core.dll" />
-    <Content Include="bin\Debug\Castle.DynamicProxy2.dll" />
-    <Content Include="bin\Debug\Spirit.Portal.Core.dll" />
     <Content Include="obj\Debug\Connection.csproj.FileListAbsolute.txt" />
   </ItemGroup>
   <ItemGroup>

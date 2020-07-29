@@ -40,18 +40,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Cells">
-      <HintPath>..\..\..\..\GNDN\BIN\Aspose.Cells.dll</HintPath>
-    </Reference>
-    <Reference Include="Aspose.Words">
-      <HintPath>..\..\..\..\GNDN\BIN\Aspose.Words.dll</HintPath>
-    </Reference>
-    <Reference Include="Connection, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Aspose.Cells, Version=4.4.3.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\GIAONHANDAUNGUON\CBDN\Souce\CBDN\CBDN\bin\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\GIAONHANDAUNGUON\CBDN\Souce\CBDN\CBDN\bin\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="Connection">
       <HintPath>..\..\Connection\bin\Debug\Connection.dll</HintPath>
     </Reference>
-    <Reference Include="DataAcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DataAcess">
       <HintPath>..\..\DataAcess\DataAcess\bin\Debug\DataAcess.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -85,7 +85,8 @@
     <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v17.1.Web, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="Entity">
+    <Reference Include="Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Entity\Entity\bin\Debug\Entity.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -9281,6 +9282,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report\InDN_ThuongPhamTCT.resx">
       <DependentUpon>InDN_ThuongPhamTCT.cs</DependentUpon>
     </EmbeddedResource>

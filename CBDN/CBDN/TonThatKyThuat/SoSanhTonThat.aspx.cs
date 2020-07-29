@@ -8,6 +8,8 @@ using System.Linq;
 using System.Data;
 using DevExpress.XtraCharts;
 using DevExpress.XtraCharts.Web;
+using static DevExpress.XtraExport.Helpers.TableCellCss;
+
 namespace MTCSYT
 {
     public partial class SoSanhTonThat : BasePage
@@ -302,7 +304,8 @@ namespace MTCSYT
             if (tyle > 1)
                 ct.Text = "CẢNH BÁO CÓ TỔN THẤT BẤT THƯỜNG TRẠM " + cmbMaTram.Text + " TRONG THÁNG " + cmbThang.Value;
             else
-                ct.Text = "TỶ LỆ TỔN THẤT TRẠM " + cmbMaTram.Text + " TRONG THÁNG" + cmbThang.Value + " BÌNH THƯỜNG";
+                ct.Text = "TỶ LỆ TỔN THẤT TRẠM " + cmbMaTram.Text + " TRONG THÁNG " + cmbThang.Value + " BÌNH THƯỜNG";
+            ct.Font = new System.Drawing.Font("Tahoma", 12, System.Drawing.FontStyle.Bold);
             WebChartControl1.Titles.Add(ct);
 
             decimal tyleChia = 30;

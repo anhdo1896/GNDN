@@ -38,7 +38,7 @@
             <div class="col-lg-12 m-t-30">
                 <hr />
             </div>
-            <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" Width="100%" HeaderText="Lọc dữ liệu" Theme="Aqua">
+            <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" Width="100%" HeaderText="Lọc dữ liệu" Theme="Aqua" Height="121px">
                 <PanelCollection>
                     <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
                         <table class="tbl_Write">
@@ -113,7 +113,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <dxchartsui:WebChartControl ID="WebChartControl1" runat="server" Height="500px" Width="1020px" CrosshairEnabled="True">
+                        <dxchartsui:WebChartControl ID="WebChartControl1" runat="server" Height="500px" Width="880px" CrosshairEnabled="True">
                         </dxchartsui:WebChartControl>
                     </td>
                 </tr>
