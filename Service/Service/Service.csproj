@@ -39,8 +39,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\DataAcess\DataAcess\bin\Debug\DataAcess.dll</HintPath>
     </Reference>
-    <Reference Include="Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Entity">
       <HintPath>..\..\Entity\Entity\bin\Debug\Entity.dll</HintPath>
     </Reference>
     <Reference Include="System" />

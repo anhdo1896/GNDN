@@ -192,7 +192,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <dxchartsui:WebChartControl ID="WebChartControl1" runat="server" Height="500px" Width="1020px" CrosshairEnabled="True">
+                        <dxchartsui:WebChartControl ID="WebChartControl1" runat="server" Height="500px" Width="880px" CrosshairEnabled="True">
                         </dxchartsui:WebChartControl>
                     </td>
                 </tr>

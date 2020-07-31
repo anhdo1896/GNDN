@@ -169,6 +169,45 @@ namespace DataAccess
             }
             return dt;
         }
+
+        public DataTable SELECT_TTTT_TONTHATKYTHUAT_TUTHANG_DENTHANG(string pMA_DVIQLY, string pMATRAM, int pTHANG, int pNAM,int pTUTHANG, int pDENTHANG, int kieudulieu)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT.select_TTTT_CHUKYTAI_THANG";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pMATRAM", OracleType.VarChar).Value = pMATRAM;
+                objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = pTHANG;
+                objCmd.Parameters.Add("pNAM", OracleType.Number).Value = pNAM;
+                objCmd.Parameters.Add("pTUTHANG", OracleType.Number).Value = pTUTHANG;
+                objCmd.Parameters.Add("pDENTHANG", OracleType.Number).Value = pDENTHANG;
+                objCmd.Parameters.Add("pKIEUDULIEU", OracleType.Number).Value = kieudulieu;
+
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+        }
         public void INSERT_TTTT_SLGNUT_CHUKY(string pMA_DVIQLY, string pMATRAM, string pMACOT, int pTHANG, int pNAM, decimal pSANLUONG, int pNGAY, int ChuKy)
         {
             DataTable dt = new DataTable();
