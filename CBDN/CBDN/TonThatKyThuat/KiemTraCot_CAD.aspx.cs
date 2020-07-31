@@ -54,7 +54,6 @@ namespace CBDN.TonThatKyThuat
                 Session["SYS_Session"] = session;
                 #endregion
                 LoadTram();
-                LoadTramChecked();
         }
 
 
@@ -66,54 +65,16 @@ namespace CBDN.TonThatKyThuat
                 foreach (object key in keyvalues)
                 {
                     string matram= key + "";
-                if (!CheckName(matram))
-                {
-                    string trangthai = "OK!";
-                    string strDate = DateTime.Now.ToString("dd/MM/yyyy h:mm");
-                    db.INSERT_TTTT_TRAM_CAD_CHECK(strMadviqly, matram, trangthai, strDate);
-                }
-                else
-                {
-                        string trangthai = "FAIL!";
-                        string strDate = DateTime.Now.ToString("dd/MM/yyyy h:mm");
-                        db.INSERT_TTTT_TRAM_CAD_CHECK(strMadviqly, matram, trangthai, strDate);
-                }
-
-                }
-                LoadTram();
-                LoadTramChecked();
-                grdTram.Selection.UnselectAll();
-                grdTramChecked.Selection.UnselectAll();
-
-        }
-        protected void btnKiemTraChecked_Click(object sender, EventArgs e)
-        {
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            string strMadviqly = session.User.ma_dviqlyDN;
-            List<Object> keyvalues = grdTramChecked.GetSelectedFieldValues("MA_TRAM");
-            foreach (object key in keyvalues)
-            {
-                string matram = key + "";
-                if (!CheckName(matram))
-                {
-                    string trangthai = "OK!";
-                    string strDate = DateTime.Now.ToString("dd/MM/yyyy h:mm");
-                    db.UPDATE_TTTT_TRAM_CAD_CHECK(strMadviqly, matram, trangthai, strDate);
-                }
-                else
-                {
-                    string trangthai = "FAIL!";
-                    string strDate = DateTime.Now.ToString("dd/MM/yyyy h:mm");
-                    db.UPDATE_TTTT_TRAM_CAD_CHECK(strMadviqly, matram, trangthai, strDate);
-                }
-
+                DataTable ds = db.CHECK_TTTT_TRAM_CAD_CHECK(strMadviqly, matram);
+                grdTramCMIS.DataSource = ds;
+                grdTramCMIS.DataBind();
+                DataTable dst = db.CHECK_TTTT_TRAM_CAD_CHECK_CAD_CMIS(strMadviqly, matram);
+                grdTramCAD.DataSource = dst;
+                grdTramCAD.DataBind();
             }
-            LoadTram();
-            LoadTramChecked();
-            grdTram.Selection.UnselectAll();
-            grdTramChecked.Selection.UnselectAll();
-
+                LoadTram();
         }
+
         private bool CheckName(string Name)
             {
                 SYS_Session session = (SYS_Session)Session["SYS_Session"];
@@ -123,15 +84,6 @@ namespace CBDN.TonThatKyThuat
                     return true ;
                 return false;
             }
-        private void LoadTramChecked()
-        {
-
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            DataTable ds = db.SELECT_TTTT_TRAM_CAD_CHECK(session.User.ma_dviqlyDN);
-            grdTramChecked.DataSource = ds;
-            grdTramChecked.DataBind();
-
-        }
         private void LoadTram()
             {
 

@@ -164,8 +164,8 @@
                         </td>
               <td align="left"  valign="top">&nbsp;</td> 
                     <td valign="top" align="right">
-                        <dxwgv:ASPxGridView ID="grdTramChecked" runat="server" AutoGenerateColumns="False" Caption="Danh sách trạm đã kiểm tra "
-                            ClientInstanceName="grdTramChecked" KeyFieldName ="MA_TRAM" Width="90%" ClientIDMode="AutoID" Theme="Aqua">
+                        <dxwgv:ASPxGridView ID="grdTramCMIS" runat="server" AutoGenerateColumns="False" Caption="Cột có trong CMIS không có trên CAD "
+                            ClientInstanceName="grdTramCMIS" KeyFieldName ="MA_TRAM" Width="90%" ClientIDMode="AutoID" Theme="Aqua">
                             <Settings GridLines="Horizontal" ShowFilterRow="True" ShowFilterRowMenu="True" />
                             <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
                                 CommandUpdate="Cập Nhật" ConfirmDelete="Xóa" />
@@ -184,16 +184,45 @@
                                         </dx:ASPxCheckBox>
                                     </HeaderTemplate>
                                 </dx:GridViewCommandColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Mã đơn vị " FieldName="MA_DVIQLY" VisibleIndex="1" >
-                                    <CellStyle HorizontalAlign="Left">
-                                    </CellStyle>
-                                </dxwgv:GridViewDataTextColumn>
                                 <dxwgv:GridViewDataTextColumn Caption="Mã Trạm" FieldName="MA_TRAM" VisibleIndex="2" >
                             </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Trạng Thái" FieldName="TRANGTHAI" VisibleIndex="3" >
+                                <dxwgv:GridViewDataTextColumn Caption="Sai lệch cột CAD -> CMIS" FieldName="SO_COT" VisibleIndex="3" >
                             </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Thời gian Check" FieldName="THOIGIAN" VisibleIndex="4" >
+ 
+                            </Columns>
+                            <SettingsBehavior AllowDragDrop="False" AllowSort="False" />
+                            <SettingsPager NumericButtonCount="5" PageSize="20">
+                                <Summary Text="Trang {0} của {1} ({2} bản ghi)" />
+                            </SettingsPager>
+                            <SettingsText EmptyDataRow="Không có dữ liệu" />
+                        </dxwgv:ASPxGridView>
+                        </td>
+                    <td valign="top" align="right">
+                        <dxwgv:ASPxGridView ID="grdTramCAD" runat="server" AutoGenerateColumns="False" Caption="Cột có trong CAD không có trên CMIS  "
+                            ClientInstanceName="grdTramCAD" KeyFieldName ="MA_TRAM" Width="90%" ClientIDMode="AutoID" Theme="Aqua">
+                            <Settings GridLines="Horizontal" ShowFilterRow="True" ShowFilterRowMenu="True" />
+                            <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
+                                CommandUpdate="Cập Nhật" ConfirmDelete="Xóa" />
+                            <Styles>
+                                <AlternatingRow Enabled="True" />
+                            </Styles>
+                             <ClientSideEvents SelectionChanged="OnGridChuaSelectionChanged" />
+                            <Columns>
+                                <dx:GridViewCommandColumn ShowInCustomizationForm="True" ShowSelectCheckbox="True" VisibleIndex="0" Width="80px">
+                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <CellStyle VerticalAlign="Middle">
+                                    </CellStyle>
+                                    <HeaderTemplate>
+                                        <dx:ASPxCheckBox ID="ckChua" runat="server" OnInit="ckDa_Init">
+                                            <ClientSideEvents CheckedChanged="OnChuaCheckedChanged" />
+                                        </dx:ASPxCheckBox>
+                                    </HeaderTemplate>
+                                </dx:GridViewCommandColumn>
+                                <dxwgv:GridViewDataTextColumn Caption="Mã Trạm" FieldName="MATRAM" VisibleIndex="2" >
                             </dxwgv:GridViewDataTextColumn>
+                                <dxwgv:GridViewDataTextColumn Caption="Sai lệch cột CAD -> CMIS" FieldName="DIEMCUOI" VisibleIndex="3" >
+                            </dxwgv:GridViewDataTextColumn>
+ 
                             </Columns>
                             <SettingsBehavior AllowDragDrop="False" AllowSort="False" />
                             <SettingsPager NumericButtonCount="5" PageSize="20">
@@ -209,12 +238,8 @@
                         <dx:ASPxButton ID="btnKiemTra" runat="server" Text="Kiểm Tra" Width="120px" Theme="Aqua" OnClick="btnKiemTra_Click" >
                         </dx:ASPxButton>
                     </td>
-                <td align="left"  valign="top">&nbsp;</td> 
-                    <td align="right" width="130px" valign="top">
-                        <dx:ASPxButton ID="btnKiemTraChecked" runat="server" Text="Kiểm Tra Lại" Width="120px" Theme="Aqua" OnClick="btnKiemTraChecked_Click" >
-                        </dx:ASPxButton>
-                    </td>
-                </tr>
+                
+                
                 </table>     
                    
                

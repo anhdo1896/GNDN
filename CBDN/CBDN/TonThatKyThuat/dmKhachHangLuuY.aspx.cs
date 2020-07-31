@@ -70,16 +70,6 @@ namespace CBDN.TonThatKyThuat
             grdKH.Selection.UnselectAll();
             
         }
-        private bool CheckName(string Name)
-        {
-            SYS_Session session = (SYS_Session)Session["SYS_Session"];
-
-            var dt = db.CHECK_TTTT_TRAM_UUTIEN(session.User.ma_dviqlyDN, Name);
-            if (dt.Rows.Count > 0)
-                return false;
-            return true;
-        }
-
         private void LoadKH()
         {
            

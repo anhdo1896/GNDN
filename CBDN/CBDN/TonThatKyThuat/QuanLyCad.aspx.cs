@@ -61,7 +61,7 @@ namespace CBDN.TonThatKyThuat
     {
         MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
         grdDVT.DataSource = db.GET_TTTT_QUANLYCAD(session.User.ma_dviqlyDN);
-        grdDVT.DataBind();
+            grdDVT.DataBind();
     }
 
     protected void grdDVT_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)

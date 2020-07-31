@@ -24,13 +24,22 @@ namespace CBDN.TonThatKyThuat
         protected global::DevExpress.Web.ASPxGridView grdTram;
 
         /// <summary>
-        /// grdTramChecked control.
+        /// grdTramCMIS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView grdTramChecked;
+        protected global::DevExpress.Web.ASPxGridView grdTramCMIS;
+
+        /// <summary>
+        /// grdTramCAD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView grdTramCAD;
 
         /// <summary>
         /// btnKiemTra control.
@@ -40,14 +49,5 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnKiemTra;
-
-        /// <summary>
-        /// btnKiemTraChecked control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnKiemTraChecked;
     }
 }

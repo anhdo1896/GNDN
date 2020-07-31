@@ -1577,7 +1577,7 @@ namespace DataAccess
             return dt;
 
         }
-        public void INSERT_TTTT_TRAM_CAD_CHECK(string pMA_DVIQLY, string pMA_TRAM, string pTRANGTHAI, string pTHOIGIAN)
+        public void INSERT_TTTT_TRAM_CAD_CHECK(string pMA_DVIQLY, string pMA_TRAM, string pCAD_CMIS, string pCMIS_CAD, string pTHOIGIAN)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
@@ -1590,7 +1590,8 @@ namespace DataAccess
                 objCmd.CommandType = CommandType.StoredProcedure;
                 objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
                 objCmd.Parameters.Add("pMA_TRAM", OracleType.VarChar).Value = pMA_TRAM;
-                objCmd.Parameters.Add("pTRANGTHAI", OracleType.VarChar).Value = pTRANGTHAI;
+                objCmd.Parameters.Add("pCAD_CMIS", OracleType.VarChar).Value = pCAD_CMIS;
+                objCmd.Parameters.Add("pCMIS_CAD", OracleType.VarChar).Value = pCMIS_CAD;
                 objCmd.Parameters.Add("pTHOIGIAN", OracleType.VarChar).Value = pTHOIGIAN;
                 OracleDataReader objReader = objCmd.ExecuteReader();
             }
@@ -1605,7 +1606,7 @@ namespace DataAccess
                 objCmd = null;
             }
         }
-        public void UPDATE_TTTT_TRAM_CAD_CHECK(string pMA_DVIQLY, string pMA_TRAM, string pTRANGTHAI, string pTHOIGIAN)
+        public void UPDATE_TTTT_TRAM_CAD_CHECK(string pMA_DVIQLY, string pMA_TRAM, string pCAD_CMIS, string pCMIS_CAD, string pTHOIGIAN)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
@@ -1618,7 +1619,8 @@ namespace DataAccess
                 objCmd.CommandType = CommandType.StoredProcedure;
                 objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
                 objCmd.Parameters.Add("pMA_TRAM", OracleType.VarChar).Value = pMA_TRAM;
-                objCmd.Parameters.Add("pTRANGTHAI", OracleType.VarChar).Value = pTRANGTHAI;
+                objCmd.Parameters.Add("pCAD_CMIS", OracleType.VarChar).Value = pCAD_CMIS;
+                objCmd.Parameters.Add("pCMIS_CAD", OracleType.VarChar).Value = pCMIS_CAD;
                 objCmd.Parameters.Add("pTHOIGIAN", OracleType.VarChar).Value = pTHOIGIAN;
                 OracleDataReader objReader = objCmd.ExecuteReader();
             }
@@ -1632,6 +1634,38 @@ namespace DataAccess
                 objConn.Dispose();
                 objCmd = null;
             }
+        }
+        public DataTable CHECK_TTTT_TRAM_CAD_CHECK_CAD_CMIS(string pMA_DVIQLY, string pMA_TRAM)
+        {
+            DataTable dt = new DataTable(); OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.CHECK_TTTT_TRAM_CAD_CHECK_CAD_CMIS"; objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pMA_TRAM", OracleType.VarChar).Value = pMA_TRAM;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+
         }
     }
 }
