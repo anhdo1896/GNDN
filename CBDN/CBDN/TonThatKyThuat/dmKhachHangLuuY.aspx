@@ -24,63 +24,6 @@
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script type="text/javascript">
-        function SetMenuSelectionProduct(s, e) {
-            if (s == selectionMenuProduct) {
-                var whichGrid = gridProduct;
-            }
-            else {
-                var whichGrid = gridSelProducts;
-            }
-
-            if (e.item.index == 0) {
-                whichGrid.SelectAllRowsOnPage();
-            }
-            else if (e.item.index == 1) {
-                whichGrid.SelectRows();
-            }
-            else if (e.item.index == 2) {
-                whichGrid.UnselectRows();
-            }
-        }
-
-        function OnAllCheckedChanged(s, e) {
-
-            var _handle = true;
-            if (s.GetChecked())
-
-                grdKH.SelectRows();
-
-            else
-
-                grdKH.UnselectRows();
-
-        }
-        function OnGridSelectionChanged(s, e) {
-
-            cbAll.SetChecked(s.GetSelectedRowCount() == s.cpVisibleRowCount);
-
-        }
-
-
-        function OnChuaCheckedChanged(s, e) {
-
-            var _handle = true;
-            if (s.GetChecked())
-
-                grdKH.SelectRows();
-
-            else
-
-                grdKH.UnselectRows();
-
-        }
-        function OnGridChuaSelectionChanged(s, e) {
-
-            ckChua.SetChecked(s.GetSelectedRowCount() == s.cpVisibleRowCount);
-
-        }
-    </script>
       <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title"> Danh Sách Trạm Ưu Tiên
         </h4>
@@ -110,27 +53,22 @@
             <table width="100%">
                 <tr>
                     <td valign="top">
-                        <dxwgv:ASPxGridView ID="grdKH" runat="server" AutoGenerateColumns="False" Caption="Danh sách Khách Hàng lưu ý"
-                            ClientInstanceName="grdKH" KeyFieldName ="MA_KHANG;MA_TRAM" Width="100%" ClientIDMode="AutoID" Theme="Aqua">
-                            <Settings GridLines="Horizontal" ShowFilterRow="True" ShowFilterRowMenu="True" />
-                            <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
-                                CommandUpdate="Cập Nhật" ConfirmDelete="Xóa" />
-                            <Styles>
+                        <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdKH" Caption="Danh sách khách hàng theo trạm"
+                                ClientInstanceName="grdKH" KeyFieldName="MA_TRAM;MA_KHANG" OnHtmlCommandCellPrepared="grdKH_HtmlCommandCellPrepared"
+                                OnCellEditorInitialize="grdKH_CellEditorInitialize1" OnCustomColumnDisplayText="grdKH_CustomColumnDisplayText"
+                                OnStartRowEditing="grdKH_StartRowEditing" ClientIDMode="AutoID" Theme="Aqua">
+                                <Styles>
                                 <AlternatingRow Enabled="True" />
-                            </Styles>
-                             <ClientSideEvents SelectionChanged="OnGridChuaSelectionChanged" />
-                            <Columns>
-                                <dx:GridViewCommandColumn ShowInCustomizationForm="True" ShowSelectCheckbox="True" VisibleIndex="0" Width="80px">
-                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                    <CellStyle VerticalAlign="Middle">
-                                    </CellStyle>
-                                    <HeaderTemplate>
-                                        <dx:ASPxCheckBox ID="ckChua" runat="server" OnInit="ckChua_Init">
-                                            <ClientSideEvents CheckedChanged="OnChuaCheckedChanged" />
-                                        </dx:ASPxCheckBox>
-                                    </HeaderTemplate>
-                                </dx:GridViewCommandColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Mã đơn vị " FieldName="MA_DVIQLY" VisibleIndex="1" >
+                                 </Styles>
+                                <Columns>
+                                    
+                                    <dx:GridViewDataTextColumn Caption="STT" ReadOnly="True" UnboundType="String" VisibleIndex="0"
+                                        Width="20px">
+                                        <Settings AllowAutoFilter="False" AllowAutoFilterTextInputTimer="False" AllowDragDrop="False"
+                                            AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                        <EditFormSettings Visible="False" />
+                                    </dx:GridViewDataTextColumn>
+                                    <dxwgv:GridViewDataTextColumn Caption="Mã đơn vị " FieldName="MA_DVIQLY" VisibleIndex="1" >
                                     <CellStyle HorizontalAlign="Left">
                                     </CellStyle>
                                 </dxwgv:GridViewDataTextColumn>
@@ -142,13 +80,19 @@
                             </dxwgv:GridViewDataTextColumn>
                                 <dxwgv:GridViewDataTextColumn Caption="Địa Chỉ" FieldName="DIACHI" VisibleIndex="5" >
                             </dxwgv:GridViewDataTextColumn>
-                            </Columns>
-                            <SettingsBehavior AllowDragDrop="False" AllowSort="False" />
-                            <SettingsPager NumericButtonCount="5" PageSize="20">
-                                <Summary Text="Trang {0} của {1} ({2} bản ghi)" />
-                            </SettingsPager>
-                            <SettingsText EmptyDataRow="Không có dữ liệu" />
-                        </dxwgv:ASPxGridView>
+                                </Columns>
+                                <SettingsPager PageSize="20">
+                                    <Summary Text="Trang {0} của {1} ({2} bản ghi)" />
+                                </SettingsPager>
+                                <Settings ShowFooter="True" ShowFilterRow="True" ShowFilterRowMenu="True" />
+                                <SettingsBehavior AllowFocusedRow="True" />
+                                <TotalSummary>
+                                    <dx:ASPxSummaryItem FieldName="IDCanBo" SummaryType="Count" />
+                                </TotalSummary>
+                                <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
+                                    CommandUpdate="Cập Nhật" ConfirmDelete="Bạn Muốn Xóa Chứ ?" />
+                            </dx:ASPxGridView>
+                       
                         </td>
                 </tr>
             </table>

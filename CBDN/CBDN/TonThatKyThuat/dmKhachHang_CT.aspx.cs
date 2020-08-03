@@ -77,6 +77,10 @@ namespace MTCSYT
             // Specify the series data source.
             DataTable seriesData = GetData();
             int max = Convert.ToInt32(seriesData.AsEnumerable().Max(row => row["Sales"]));
+            if(max==0)
+            {
+                max = 500;
+            }
             series.DataSource = seriesData;
 
             ChartTitle ct = new ChartTitle();
@@ -96,7 +100,7 @@ namespace MTCSYT
             
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             int ma_dviqly = int.Parse(session.User.ma_dviqly + "");
-            string makhachang = lbMaKH.Text;
+            string makhachang = Request["MA_KHANG"]+"";
             DataTable dt = db.Get_SLKhang(session.User.ma_dviqlyDN, makhachang, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
             DataTable table = new DataTable();
             table.Columns.AddRange(new DataColumn[] {
@@ -124,7 +128,7 @@ namespace MTCSYT
         private void LoadKH()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            string makhachang = lbMaKH.Text;
+            string makhachang = Request["MA_KHANG"] + "";
             DataTable dsa = db.SELECT_TTTT_KHACHHANG_LUUY_INFO(session.User.ma_dviqlyDN, makhachang);
             
             grdKH.DataSource = dsa;
