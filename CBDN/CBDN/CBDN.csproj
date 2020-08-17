@@ -7327,6 +7327,7 @@
     <Content Include="TonThatKyThuat\dm_KeHoachThang.aspx" />
     <Content Include="TonThatKyThuat\dmKhachHang_CT.aspx" />
     <Content Include="TonThatKyThuat\ChiTietPhuTai.aspx" />
+    <Content Include="TonThatKyThuat\DsTramUuTien.aspx" />
     <Content Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx" />
     <Content Include="TonThatKyThuat\KiemTraCot_CAD.aspx" />
     <Content Include="TonThatKyThuat\QuanLyCad.aspx" />
@@ -7334,6 +7335,7 @@
     <Content Include="TonThatKyThuat\dmKhachHang.aspx" />
     <Content Include="TonThatKyThuat\dmLoaiDuongDay.aspx" />
     <Content Include="TonThatKyThuat\ImportData.aspx" />
+    <Content Include="TonThatKyThuat\TonThatTramUuTien.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -7966,6 +7968,13 @@
     <Compile Include="TonThatKyThuat\ChiTietPhuTai.aspx.designer.cs">
       <DependentUpon>ChiTietPhuTai.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TonThatKyThuat\DsTramUuTien.aspx.cs">
+      <DependentUpon>DsTramUuTien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DsTramUuTien.aspx.designer.cs">
+      <DependentUpon>DsTramUuTien.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx.cs">
       <DependentUpon>ImportCS_ChuKyNgay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -8014,6 +8023,13 @@
     </Compile>
     <Compile Include="TonThatKyThuat\ImportData.aspx.designer.cs">
       <DependentUpon>ImportData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\TonThatTramUuTien.aspx.cs">
+      <DependentUpon>TonThatTramUuTien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\TonThatTramUuTien.aspx.designer.cs">
+      <DependentUpon>TonThatTramUuTien.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\ServerSignWS\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -9314,7 +9330,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report\InDN_ThuongPhamTCT.resx">
       <DependentUpon>InDN_ThuongPhamTCT.cs</DependentUpon>
     </EmbeddedResource>

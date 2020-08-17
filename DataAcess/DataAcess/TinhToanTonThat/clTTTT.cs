@@ -1154,7 +1154,7 @@ namespace DataAccess
                 objCmd.Connection = objConn;
                 objCmd.CommandText = "PKG_TTTT_CTT.DELETE_TTTT_QUANLYCAD_MATRAM";
                 objCmd.CommandType = CommandType.StoredProcedure;
-                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.Number).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
                 objCmd.Parameters.Add("pMA_TRAM", OracleType.VarChar).Value = pMA_TRAM;
                 OracleDataReader objReader = objCmd.ExecuteReader();
             }
@@ -1648,6 +1648,207 @@ namespace DataAccess
             }
             return dt;
 
+        }
+        public DataTable SELECT_TTTT_TRAM_UUTIEN_TT(int pTHANG, int pNAM)
+        {
+            DataTable dt = new DataTable(); 
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_TTTT_TRAM_UUTIEN_TT"; objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pThang", OracleType.Number).Value = pTHANG;
+                objCmd.Parameters.Add("pnam", OracleType.Number).Value = pNAM;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+
+        }
+        public void INSERT_TTTT_TRAM_UUTIEN_TINHTOAN(string pMA_DVIQLY, string pMA_TRAM, string pKyThuat, string pKinhDoanh, string pSoSanh, string pKyThuatTL, string pKinhDoanhTL, string pSoSanhTL, string pDate,string pNam, string pThang)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.INSERT_TTTT_TRAM_UUTIEN_TINHTOAN";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pMA_TRAM", OracleType.VarChar).Value = pMA_TRAM;
+                objCmd.Parameters.Add("pKyThuat", OracleType.VarChar).Value = pKyThuat;
+                objCmd.Parameters.Add("pKinhDoanh", OracleType.VarChar).Value = pKinhDoanh;
+                objCmd.Parameters.Add("pSoSanh", OracleType.VarChar).Value = pSoSanh;
+                objCmd.Parameters.Add("pKyThuatTL", OracleType.VarChar).Value = pKyThuatTL;
+                objCmd.Parameters.Add("pKinhDoanhTL", OracleType.VarChar).Value = pKinhDoanhTL;
+                objCmd.Parameters.Add("pSoSanhTL", OracleType.VarChar).Value = pSoSanhTL;
+                objCmd.Parameters.Add("pDate", OracleType.VarChar).Value = pDate;
+                objCmd.Parameters.Add("pNam", OracleType.VarChar).Value = pNam;
+                objCmd.Parameters.Add("pThang", OracleType.VarChar).Value = pThang;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+        }
+        public DataTable TTTT_SELECT_SLG_DUONGDAY_TRAM_CHECK(string pMA_DVIQLY, string pMATRAM, int pTHANG, int pNAM)
+        {
+            DataTable dt = new DataTable(); OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.TTTT_SELECT_SLG_DUONGDAY_TRAM_CHECK";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMATRAM", OracleType.VarChar).Value = pMATRAM;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = pTHANG;
+                objCmd.Parameters.Add("pNAM", OracleType.Number).Value = pNAM;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+
+        }
+        public DataTable SELECT_TRAM_HATHE_UT(string pMA_DVIQLY)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_TRAM_HATHE_UT";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+        }
+        public DataTable SELECT_TRAM_HATHE_UT_TT(string pMA_DVIQLY, string pMA_TRAM, string pTHANG, string pNAM)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_TRAM_HATHE_UT_TT";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pMA_TRAM", OracleType.VarChar).Value = pMA_TRAM;
+                objCmd.Parameters.Add("pTHANG", OracleType.VarChar).Value = pTHANG;
+                objCmd.Parameters.Add("pNAM", OracleType.VarChar).Value = pNAM;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+        }
+        public DataTable SELECT_TRAM_HATHE_UT_TT_DS(string pMA_DVIQLY, string pTHANG, string pNAM)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_TRAM_HATHE_UT_TT_DS";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pTHANG", OracleType.VarChar).Value = pTHANG;
+                objCmd.Parameters.Add("pNAM", OracleType.VarChar).Value = pNAM;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
         }
     }
 }

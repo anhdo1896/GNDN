@@ -59,10 +59,10 @@ namespace MTCSYT
                 cmbThang.Value = DateTime.Now.Month - 1;
                 cmbNam.Value = DateTime.Now.Year;
             }
-            _DataBind();
+            
             LoadKH();
             loadDanhMuc();
-
+            _DataBind();
         }
         private void loadDanhMuc()
         {
@@ -141,10 +141,19 @@ namespace MTCSYT
             DataTable dt = db.Get_SLKhang(session.User.ma_dviqlyDN, Request["MA_KHANG"], int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
             if (dt.Rows.Count > 0)
             {
-                lbMaKH.Text = dt.Rows[0]["MA_KHANG"] + "";
+                lbMaKH.Text = Request["MA_KHANG"] + "";
                 lbTenKH.Text = dt.Rows[0]["TENKHACHHANG"] + "";
                 lbTram.Text = Request["MA_TRAM"] + "";
                 lbDiaChi.Text = dt.Rows[0]["DIACHI"] + "";
+            }
+            else
+            {
+                lbMaKH.Text = Request["MA_KHANG"] + "";
+                var makhachang = Request["MA_KHANG"] + "";
+                DataTable dsa = db.SELECT_TTTT_KHACHHANG_LUUY_INFO(session.User.ma_dviqlyDN, makhachang);
+                lbTenKH.Text = dsa.Rows[0]["TEN_KHANG"] + "";
+                lbTram.Text = Request["MA_TRAM"] + "";
+                lbDiaChi.Text = dsa.Rows[0]["DIACHI"] + "";
             }
 
             grdDVT.DataSource = dt;
@@ -208,7 +217,7 @@ namespace MTCSYT
                 lbTram.Text = Request["MA_TRAM"];
                 string tenkhachhang = lbTenKH.Text;
                     string diachi = lbDiaChi.Text;
-                    string makhachang = lbMaKH.Text;
+                    string makhachang = Request["MA_KHANG"];
                     string matram = lbTram.Text;
                 string strDate = DateTime.Now.ToString("dd/MM/yyyy h:mm");
 
@@ -216,6 +225,7 @@ namespace MTCSYT
             pcAddRoles.ShowOnPageLoad = false;
             _DataBind();
             LoadKH();
+            loadDanhMuc();
         }
         protected void btnRemove_Click(object sender, EventArgs e)
         {
@@ -230,6 +240,7 @@ namespace MTCSYT
             }
             LoadKH();
             grdKH.Selection.UnselectAll();
+            loadDanhMuc();
 
         }
         protected void btnDong_Click(object sender, EventArgs e)

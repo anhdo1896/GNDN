@@ -291,6 +291,8 @@
                             </dxwgv:GridViewDataTextColumn>
                                 <dxwgv:GridViewDataTextColumn Caption="Tên Khách Hàng" FieldName="TEN_KHANG" VisibleIndex="2" >
                             </dxwgv:GridViewDataTextColumn>
+                                <dxwgv:GridViewDataTextColumn Caption="Địa Chỉ" FieldName="DIACHI" VisibleIndex="2" >
+                            </dxwgv:GridViewDataTextColumn>
                                 <dxwgv:GridViewDataTextColumn Caption="Nội Dung" FieldName="NOIDUNG" VisibleIndex="3">
                             </dxwgv:GridViewDataTextColumn>
                                 <dxwgv:GridViewDataTextColumn Caption="Thời gian" FieldName="THOIGIAN" VisibleIndex="4" >

@@ -13,7 +13,6 @@ using DevExpress.Web;
 using System.IO;
 using CBDN.Class;
 using System.Web.Script.Serialization;
-using System.Net;
 using System.Text;
 namespace MTCSYT
 {

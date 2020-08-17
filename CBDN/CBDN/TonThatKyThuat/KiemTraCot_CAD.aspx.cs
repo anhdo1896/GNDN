@@ -88,9 +88,12 @@ namespace CBDN.TonThatKyThuat
             var cv = (DataRowView)grdTram.GetRow(grdTram.FocusedRowIndex);
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             string strMadviqly = session.User.ma_dviqlyDN;
-            string matram = cv["MATRAM"] + "";
-            DataTable ds = db.CHECK_TTTT_TRAM_CAD_CHECK(strMadviqly, matram);
-            grdTramCMIS.DataSource = ds;
+            if (cv != null)
+            {
+                string matram = cv["MATRAM"] + "";
+                DataTable ds = db.CHECK_TTTT_TRAM_CAD_CHECK(strMadviqly, matram);
+                grdTramCMIS.DataSource = ds;
+            }
             grdTramCMIS.DataBind();
         }
 
@@ -99,10 +102,13 @@ namespace CBDN.TonThatKyThuat
             var cv = (DataRowView)grdTram.GetRow(grdTram.FocusedRowIndex);
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             string strMadviqly = session.User.ma_dviqlyDN;
-            string matram = cv["MATRAM"] + "";
-            DataTable dst = db.CHECK_TTTT_TRAM_CAD_CHECK_CAD_CMIS(strMadviqly, matram);
-            grdTramCAD.DataSource = dst;
-            grdTramCAD.DataBind();
+            if (cv != null)
+            {
+                string matram = cv["MATRAM"] + "";
+                DataTable dst = db.CHECK_TTTT_TRAM_CAD_CHECK_CAD_CMIS(strMadviqly, matram);
+                grdTramCAD.DataSource = dst;
+            }
+                grdTramCAD.DataBind();
         }
       
         protected void grdTram_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
