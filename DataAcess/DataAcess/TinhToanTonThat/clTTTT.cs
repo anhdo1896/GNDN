@@ -170,7 +170,7 @@ namespace DataAccess
             return dt;
         }
 
-        public DataTable SELECT_TTTT_TONTHATKYTHUAT_TUTHANG_DENTHANG(string pMA_DVIQLY, string pMATRAM, int pTHANG, int pNAM,int pTUTHANG, int pDENTHANG, int kieudulieu)
+        public DataTable SELECT_TTTT_TONTHATKYTHUAT_TUTHANG_DENTHANG(string pMA_DVIQLY, string pMATRAM, int pTHANG, int pNAM, int pTUNGAY, int pDENNGAY, int kieudulieu)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
@@ -179,14 +179,14 @@ namespace DataAccess
             {
                 objConn.Open();
                 objCmd.Connection = objConn;
-                objCmd.CommandText = "PKG_TTTT.select_TTTT_CHUKYTAI_THANG";
+                objCmd.CommandText = "PKG_TTTT.select_TTTT_CHUKYTAI_TUNGAY_DENNGAY";
                 objCmd.CommandType = CommandType.StoredProcedure;
                 objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
                 objCmd.Parameters.Add("pMATRAM", OracleType.VarChar).Value = pMATRAM;
                 objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = pTHANG;
                 objCmd.Parameters.Add("pNAM", OracleType.Number).Value = pNAM;
-                objCmd.Parameters.Add("pTUTHANG", OracleType.Number).Value = pTUTHANG;
-                objCmd.Parameters.Add("pDENTHANG", OracleType.Number).Value = pDENTHANG;
+                objCmd.Parameters.Add("pTUNGAY", OracleType.Number).Value = pTUNGAY;
+                objCmd.Parameters.Add("pDENNGAY", OracleType.Number).Value = pDENNGAY;
                 objCmd.Parameters.Add("pKIEUDULIEU", OracleType.Number).Value = kieudulieu;
 
                 objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;

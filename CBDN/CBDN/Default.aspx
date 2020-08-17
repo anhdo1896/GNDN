@@ -138,7 +138,7 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <dxchartsui:WebChartControl ID="WebChartControl1" runat="server" Height="500px" Width="1020px">
+                        <dxchartsui:WebChartControl ID="WebChartControl1" runat="server" Height="500px" Width="880px">
                         </dxchartsui:WebChartControl>
                     </td>
                 </tr>

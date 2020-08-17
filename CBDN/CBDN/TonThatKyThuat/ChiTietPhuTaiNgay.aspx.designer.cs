@@ -10,7 +10,7 @@
 namespace MTCSYT {
     
     
-    public partial class ChiTietPhuTai {
+    public partial class ChiTietPhuTaiNgay {
         
         /// <summary>
         /// ASPxRoundPanel1 control.
@@ -110,15 +110,6 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cmbDenngay;
-        
-        /// <summary>
-        /// btnChiTietNgay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnChiTietNgay;
         
         /// <summary>
         /// WebChartControl1 control.

@@ -31,13 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Connection, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Connection">
       <HintPath>..\..\Connection\bin\Debug\Connection.dll</HintPath>
-    </Reference>
-    <Reference Include="DataAcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DataAcess\DataAcess\bin\Debug\DataAcess.dll</HintPath>
     </Reference>
     <Reference Include="Entity">
       <HintPath>..\..\Entity\Entity\bin\Debug\Entity.dll</HintPath>
@@ -111,6 +106,12 @@
     <Compile Include="ThiTracNghiem\DM_MODULEService_Gen.cs" />
     <Compile Include="ThiTracNghiem\DM_USERService.cs" />
     <Compile Include="ThiTracNghiem\DM_USERService_Gen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAcess\DataAcess\DataAcess.csproj">
+      <Project>{7a1b3aad-10cd-42cc-85ab-bb6cbf5913e7}</Project>
+      <Name>DataAcess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
