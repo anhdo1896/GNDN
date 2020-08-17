@@ -60,8 +60,11 @@ namespace MTCSYT
             SYS_Session session = (SYS_Session)Session["SYS_Session"];
             cmbThang.Value = int.Parse(Request["Thang"] + "");
             cmbNam.Value = int.Parse(Request["Nam"] + "");
+            var thang = cmbThang.Value;
+            var nam = cmbNam.Value;
+            var matram = Request["MA_TRAM"] + "";
             //DataTable dt = db.select_TTTT_TONTHATKYTHUAT_THANG(session.User.ma_dviqlyDN, Request["MA_TRAM"] + "", int.Parse(Request["Thang"] + ""), int.Parse(Request["Nam"] + ""), 0);
-            DataTable dt = db.SELECT_TTTT_TONTHATKYTHUAT_TUTHANG_DENTHANG(session.User.ma_dviqlyDN, Request["MA_TRAM"] + "", int.Parse(Request["Thang"] + ""), int.Parse(Request["Nam"] + ""),0,31,1);
+            DataTable dt = db.SELECT_TTTT_TONTHATKYTHUAT_TUTHANG_DENTHANG(session.User.ma_dviqlyDN, matram, int.Parse(thang+ ""), int.Parse(nam+ ""),0,31,1);
             grdTinhDetal.DataSource = dt;
             grdTinhDetal.DataBind();
             hienthibieudo(dt);

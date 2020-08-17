@@ -107,8 +107,8 @@
             <table width="100%">
                 <tr>
                     <td valign="top">
-                        <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdKH" Caption="Danh sách trạm ưu tiên đã tính trong tháng"
-                                ClientInstanceName="grdKH" KeyFieldName="MA_TRAM;MA_DVIQLY" OnHtmlCommandCellPrepared="grdKH_HtmlCommandCellPrepared"
+                         <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdKH" Caption="Danh sách trạm ưu tiên đã tính trong tháng"
+                                ClientInstanceName="grdKH" KeyFieldName="MA_DVIQLY;MA_TRAM" OnHtmlCommandCellPrepared="grdKH_HtmlCommandCellPrepared"
                                 OnCellEditorInitialize="grdKH_CellEditorInitialize1" OnCustomColumnDisplayText="grdKH_CustomColumnDisplayText"
                                 OnStartRowEditing="grdKH_StartRowEditing" ClientIDMode="AutoID" Theme="Aqua">
                                 <Styles>
@@ -138,15 +138,15 @@
                                 <dxwgv:GridViewDataTextColumn Caption="Tỷ lệ Tổn thất kinh doanh" FieldName="KINH_DOANH_DN" VisibleIndex="7" >
                             </dxwgv:GridViewDataTextColumn>
                                     <dxwgv:GridViewDataTextColumn Caption="Tỷ lệ So sánh tổn thất" FieldName="SO_SANH_DN" VisibleIndex="8" >
-                            </dxwgv:GridViewDataTextColumn>
-                                </Columns>
+                            </dxwgv:GridViewDataTextColumn> 
+                        </Columns>
                                 <SettingsPager PageSize="20">
                                     <Summary Text="Trang {0} của {1} ({2} bản ghi)" />
                                 </SettingsPager>
                                 <Settings ShowFooter="True" ShowFilterRow="True" ShowFilterRowMenu="True" />
                                 <SettingsBehavior AllowFocusedRow="True" />
                                 <TotalSummary>
-                                    <dx:ASPxSummaryItem FieldName="IDCanBo" SummaryType="Count" />
+                                    <dx:ASPxSummaryItem FieldName="MA_TRAM" SummaryType="Count" />
                                 </TotalSummary>
                                 <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
                                     CommandUpdate="Cập Nhật" ConfirmDelete="Bạn Muốn Xóa Chứ ?" />

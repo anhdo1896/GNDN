@@ -68,25 +68,41 @@ namespace CBDN.TonThatKyThuat
         }
         private void LoadKH()
         {
-
-            int thang = DateTime.Now.Month - 1;
-            int nam = DateTime.Now.Year;
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            DataTable ds = db.SELECT_TRAM_HATHE_UT_TT_DS(session.User.ma_dviqlyDN, thang + "", nam + "");
-            grdKH.DataSource = ds;
-            grdKH.DataBind();
+            if (cmbThang.Value == null && cmbNam.Value == null)
+            {
+                int thang = DateTime.Now.Month - 1;
+                int nam = DateTime.Now.Year;
+                cmbThang.Value = thang;
+                cmbNam.Value = nam;
+                MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+                DataTable ds = db.SELECT_TRAM_HATHE_UT_TT_DS(session.User.ma_dviqlyDN, thang + "", nam + "");
+                grdKH.DataSource = ds;
+                grdKH.DataBind();
+            }
+            else
+            {
+                var thang = cmbThang.Value;
+                var nam = cmbNam.Value;
+                MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+                DataTable ds = db.SELECT_TRAM_HATHE_UT_TT_DS(session.User.ma_dviqlyDN, thang + "", nam + "");
+                grdKH.DataSource = ds;
+                grdKH.DataBind();
+            }    
 
         }
 
         protected void btnXemChiTiet_Click(object sender, EventArgs e)
         {
             var cv = (DataRowView)grdKH.GetRow(grdKH.FocusedRowIndex);
-            string ma_tram = cv["MA_DVIQLY"] + "";
-            string ma_khang = cv["MA_TRAM"] + "";
-            string Thang = cmbThang.Value + "";
-            string Nam = cmbNam.Value + "";
-            Response.Redirect("../TonThatKyThuat/TonThatTramUuTien.aspx?MA_TRAM=" + ma_tram + "&MA_KHANG=" + ma_khang + "" + "&THANG=" + Thang + "&NAM=" + Nam);
-
+            if (cv != null)
+            {
+                string ma_dviqly = cv["MA_DVIQLY"] + "";
+                string ma_tram = cv["MA_TRAM"] + "";
+                string Thang = cmbThang.Value + "";
+                string Nam = cmbNam.Value + "";
+                Response.Redirect("../TonThatKyThuat/TonThatTramUuTien.aspx?MA_QVIQLY=" + ma_dviqly + "&MA_TRAM=" + ma_tram + "" + "&THANG=" + Thang + "&NAM=" + Nam);
+            }
+            LoadKH();
         }
         protected void cmbRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -113,7 +129,7 @@ namespace CBDN.TonThatKyThuat
         protected void grdKH_CellEditorInitialize(object sender, ASPxGridViewEditorEventArgs e)
         {
             e.Column.ToString();
-            if (e.Column.FieldName == "MA_KHANG")
+            if (e.Column.FieldName == "MA_TRAM")
                 e.Editor.Focus();
         }
 

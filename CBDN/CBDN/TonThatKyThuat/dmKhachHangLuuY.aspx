@@ -87,7 +87,7 @@
                                 <Settings ShowFooter="True" ShowFilterRow="True" ShowFilterRowMenu="True" />
                                 <SettingsBehavior AllowFocusedRow="True" />
                                 <TotalSummary>
-                                    <dx:ASPxSummaryItem FieldName="IDCanBo" SummaryType="Count" />
+                                    <dx:ASPxSummaryItem FieldName="MA_KHANG" SummaryType="Count" />
                                 </TotalSummary>
                                 <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
                                     CommandUpdate="Cập Nhật" ConfirmDelete="Bạn Muốn Xóa Chứ ?" />

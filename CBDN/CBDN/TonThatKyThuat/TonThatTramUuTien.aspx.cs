@@ -56,30 +56,22 @@ namespace CBDN.TonThatKyThuat
             #endregion
             _DataBind();
 
+
         }
 
         private void _DataBind()
         {
-            int thang = DateTime.Now.Month - 1;
-            cmbThang.Value = thang;
-            cmbNam.Value = DateTime.Now.Year;
-
+            if (cmbThang.Value == null && cmbNam.Value == null)
+            {
+                var thang = Request["THANG"] + "";
+                var nam = Request["NAM"] + "";
+                cmbThang.Value = thang;
+                cmbNam.Value = nam;
+            }
+            
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            cmbMaTram.DataSource = db.SELECT_TRAM_HATHE_UT(session.User.ma_dviqlyDN);
-            cmbMaTram.ValueField = "MA_TRAM";
-            cmbMaTram.TextField = "MA_TRAM";
-            cmbMaTram.DataBind();
-
-
-
-            // var cv = (DataRowView)grdDVT.GetRow(grdDVT.FocusedRowIndex);
-            //if (cmbMaTram.Value != null)
-            //{
-            //    DataTable dt = db.SELECT_TONTHATKD_BYTRAM(session.User.ma_dviqlyDN, cmbMaTram.Value + "", thang, DateTime.Now.Year);
-            //    if (dt.Rows.Count > 0)
-            //        lbTonThatKD.Text = dt.Rows[0]["TONTHAT"] + "";
-            //}
-
+            lbDvi.Text = Request["MA_QVIQLY"] + "";
+            lbTram.Text = Request["MA_TRAM"] + ""; 
         }
 
         protected void grdDVT_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
@@ -89,44 +81,15 @@ namespace CBDN.TonThatKyThuat
                 e.DisplayText = (e.VisibleRowIndex + 1).ToString();
             }
         }
-        private bool TinhChuKy(int thang, int nam, int Ngay, int ChuKy, int ngaysau, int chukysau, int kiemtra)
-        {
-            SYS_Session session = (SYS_Session)Session["SYS_Session"];
-            DataTable dt = db.SELECT_TONTHAT_CHUKY(session.User.ma_dviqlyDN, cmbMaTram.Value + "", thang, nam, Ngay, ChuKy, ngaysau, chukysau, kiemtra);
-            if (dt.Rows.Count == 0)
-                return false;
-            if (dt.Rows[0]["CSUAT"] + "" == "0" || dt.Rows[0]["CSUAT"] + "" == "")
-                return false;
-            decimal sltinhCK = 0, sanluongtrc = 0;
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                if (i == 0)
-                {
-                    decimal slg = (decimal.Parse(dt.Rows[i]["SLGCOT"] + "") * decimal.Parse(dt.Rows[i]["CSUAT"] + "")) / decimal.Parse(dt.Rows[i]["SLDAUNGUONG"] + "");
-                    sanluongtrc = decimal.Parse(dt.Rows[i]["SLGCOT"] + "");
-                    sltinhCK = slg;
-                    db.INSERT_TTTT_SLGNUT_CHUKY(session.User.ma_dviqlyDN, cmbMaTram.Value + "", dt.Rows[i]["MACOT"] + "", thang, nam, Math.Round(slg, 2), Ngay, ChuKy);
-
-                }
-                else
-                {
-                    decimal slg = sltinhCK * decimal.Parse(dt.Rows[i]["SLGCOT"] + "") / sanluongtrc;
-                    sanluongtrc = decimal.Parse(dt.Rows[i]["SLGCOT"] + "");
-                    sltinhCK = slg;
-                    db.INSERT_TTTT_SLGNUT_CHUKY(session.User.ma_dviqlyDN, cmbMaTram.Value + "", dt.Rows[i]["MACOT"] + "", thang, nam, Math.Round(slg, 2), Ngay, ChuKy);
-                }
-            }
-            return true;
-        }
         protected void btnThem_Click(object sender, EventArgs e)
         {
             SYS_Session session = (SYS_Session)Session["SYS_Session"];
 
-            if (cmbMaTram.Value != null)
+            if (lbTram.Text != null)
             {
                 
 
-                    DataTable dtTongKT = db.select_TTTT_TONTHATKYTHUAT_THANG(session.User.ma_dviqlyDN, cmbMaTram.Value + "", int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), 1);
+                    DataTable dtTongKT = db.select_TTTT_TONTHATKYTHUAT_THANG(lbDvi.Text + "", lbTram.Text + "", int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), 1);
                     string tonthatKyThat = "2609";
                     if (dtTongKT.Rows.Count > 0)
                     {
@@ -137,47 +100,36 @@ namespace CBDN.TonThatKyThuat
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Chưa thực hiện tính tổn thật tại trạm này');", true);
                         return;
                     }
-                    /*
-                    int thang = int.Parse(cmbThang.Value + "");
-                    DataTable dt = db.SELECT_TONTHATKD_BYTRAM(session.User.ma_dviqlyDN, cmbMaTram.Value + "", int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
-                    DataTable dtNew = new DataTable();
-                    dtNew.Columns.Add("TTDN");
-                    dtNew.Columns.Add("TTKT");
-                    dtNew.Columns.Add("TTKD");
-                    dtNew.Columns.Add("SoSanh");
-                    */
-                    
                     CBDN.clTinhTonThatKT clTT = new CBDN.clTinhTonThatKT();
-                    int thang = DateTime.Now.Month - 1;
-                    thang = 6;
-                    cmbThang.Value = thang;
-                    cmbNam.Value = DateTime.Now.Year;
                     DataTable dtNew = new DataTable();
-                    DataTable dta = db.SELECT_TONTHATKD_BYTRAM(session.User.ma_dviqlyDN, cmbMaTram.Value + "", int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
-                    DataTable dt = db.SELECT_TRAM_HATHE_UT_TT(session.User.ma_dviqlyDN, cmbMaTram.Value + "", cmbThang.Value + "", cmbNam.Value + "");
+                    DataTable dta = db.SELECT_TONTHATKD_BYTRAM(lbDvi.Text + "", lbTram.Text + "", int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
+                    DataTable dt = db.SELECT_TRAM_HATHE_UT_TT(lbDvi.Text + "", lbTram.Text + "", cmbThang.Value + "", cmbNam.Value + "");
+                var a = dt.Rows.Count;
+                    
                     dtNew.Columns.Add("TTDN");
                     dtNew.Columns.Add("TTKT");
                     dtNew.Columns.Add("TTKD");
                     dtNew.Columns.Add("SoSanh");
-
+                if (a > 0)
+                {
                     dtNew.Rows.Add("ĐN tổn thất delta A", dt.Rows[0]["KY_THUAT_DN"], dt.Rows[0]["KINH_DOANH_DN"], dt.Rows[0]["SO_SANH_DN"]);
-                    
+
                     dtNew.Rows.Add("Tỉ lệ tổn thất delta A", dt.Rows[0]["KY_THUAT_TL"], dt.Rows[0]["KINH_DOANH_TL"], dt.Rows[0]["SO_SANH_TL"]);
-                    /*
-                    dtNew.Rows.Add("ĐN tổn thất delta A", tonthatKyThat, dt.Rows[0]["TONTHAT"] + "", decimal.Parse(dt.Rows[0]["TONTHAT"] + "") - decimal.Parse(tonthatKyThat));
-                    decimal phantramkt = Math.Round(decimal.Parse(tonthatKyThat) / decimal.Parse(dt.Rows[0]["DAUNGUONTHANG"] + "") * 100, 2);
-                    dtNew.Rows.Add("Tỉ lệ tổn thất delta A", phantramkt, decimal.Parse(dt.Rows[0]["PHANTRAMTT"] + ""), decimal.Parse(dt.Rows[0]["PHANTRAMTT"] + "") - phantramkt);
-                    dtNew.Rows.Add("Lũy kế", phantramkt, decimal.Parse(dt.Rows[0]["PHANTRAMTT"] + ""), decimal.Parse(dt.Rows[0]["PHANTRAMTT"] + "") - phantramkt);
-                    */
                     DataTable dtBD = new DataTable();
                     dtBD = dtHienThiBanDo(dtNew);
-                    
-                    hienthiBanDo(dtBD, decimal.Parse(dta.Rows[0]["PHANTRAMTT"] + "") - decimal.Parse(dt.Rows[0]["KY_THUAT_TL"]+""), decimal.Parse(dta.Rows[0]["PHANTRAMTT"] + ""), decimal.Parse(dt.Rows[0]["KY_THUAT_TL"] + ""));
-                    
-                    grdDVT.Caption = "Tính toán tổn thất điện năng trạm " + cmbMaTram.Text + " điện nhận tháng 6: " + dta.Rows[0]["DAUNGUONTHANG"] + " kwwh";
+
+                    hienthiBanDo(dtBD, decimal.Parse(dta.Rows[0]["PHANTRAMTT"] + "") - decimal.Parse(dt.Rows[0]["KY_THUAT_TL"] + ""), decimal.Parse(dta.Rows[0]["PHANTRAMTT"] + ""), decimal.Parse(dt.Rows[0]["KY_THUAT_TL"] + ""));
+
+                    grdDVT.Caption = "Tính toán tổn thất điện năng trạm " + lbTram.Text + " điện nhận tháng: " + cmbThang.Value + " : "+ dta.Rows[0]["DAUNGUONTHANG"] + " kwwh";
                     grdDVT.DataSource = dtNew;
                     grdDVT.DataBind();
-                
+                }
+                else
+                {
+                    grdDVT.Caption = "Tính toán tổn thất điện năng trạm " + lbTram.Text + " chưa có dự liệu tháng: " + cmbThang.Value;
+                    grdDVT.DataSource = dtNew;
+                    grdDVT.DataBind();
+                }    
                 
             }
 
@@ -235,9 +187,9 @@ namespace CBDN.TonThatKyThuat
 
             ChartTitle ct = new ChartTitle();
             if (tyle > 1)
-                ct.Text = "CẢNH BÁO CÓ TỔN THẤT BẤT THƯỜNG TRẠM " + cmbMaTram.Text + " TRONG THÁNG " + cmbThang.Value;
+                ct.Text = "CẢNH BÁO CÓ TỔN THẤT BẤT THƯỜNG TRẠM " + lbTram.Text + " TRONG THÁNG " + cmbThang.Value;
             else
-                ct.Text = "TỶ LỆ TỔN THẤT TRẠM " + cmbMaTram.Text + " TRONG THÁNG " + cmbThang.Value + " BÌNH THƯỜNG";
+                ct.Text = "TỶ LỆ TỔN THẤT TRẠM " + lbTram.Text + " TRONG THÁNG " + cmbThang.Value + " BÌNH THƯỜNG";
             ct.Font = new System.Drawing.Font("Tahoma", 12, System.Drawing.FontStyle.Bold);
             WebChartControl1.Titles.Add(ct);
 
@@ -271,13 +223,13 @@ namespace CBDN.TonThatKyThuat
 
         protected void btnDanhSanhKH_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../TonThatKyThuat/dmKhachHang.aspx?MA_TRAM=" + cmbMaTram.Value);
+            Response.Redirect("../TonThatKyThuat/dmKhachHang.aspx?MA_TRAM=" + lbTram.Text);
 
         }
 
         protected void ASPxButton1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../TonThatKyThuat/ChiTietPhuTai.aspx?MA_TRAM=" + cmbMaTram.Value + "&Thang=" + cmbThang.Value + "&Nam=" + cmbNam.Value);
+            Response.Redirect("../TonThatKyThuat/ChiTietPhuTai.aspx?MA_TRAM=" + lbTram.Text + "&Thang=" + cmbThang.Value + "&Nam=" + cmbNam.Value);
         }
 
 

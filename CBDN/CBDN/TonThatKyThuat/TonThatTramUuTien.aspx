@@ -48,14 +48,20 @@
 
                                         <tr>
                                             <td>
+                                                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Mã Đơn Vị" Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            <td>
+                                                <dx:ASPxLabel ID="lbDvi" runat="server" Text="" Width="100px" Font-Bold="True">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                           <td>
                                                 <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Mã trạm" Width="100px">
                                                 </dx:ASPxLabel>
                                             </td>
-                                            <td colspan="3">
-                                                <dx:ASPxComboBox ID="cmbMaTram" IncrementalFilteringMode="Contains"
-                                                    runat="server" SelectedIndex="0" Width="480px" Theme="Aqua" AutoPostBack="True">
-                                                </dx:ASPxComboBox>
-
+                                            <td>
+                                                <dx:ASPxLabel ID="lbTram" runat="server" Text="" Width="100px" Font-Bold="True">
+                                                </dx:ASPxLabel>
                                             </td>
                                         </tr>
                                         <tr>

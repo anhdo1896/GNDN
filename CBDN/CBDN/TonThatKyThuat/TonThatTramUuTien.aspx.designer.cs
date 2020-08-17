@@ -24,6 +24,24 @@ namespace CBDN.TonThatKyThuat
         protected global::DevExpress.Web.ASPxRoundPanel ASPxRoundPanel1;
 
         /// <summary>
+        /// ASPxLabel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
+
+        /// <summary>
+        /// lbDvi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel lbDvi;
+
+        /// <summary>
         /// ASPxLabel1 control.
         /// </summary>
         /// <remarks>
@@ -33,13 +51,13 @@ namespace CBDN.TonThatKyThuat
         protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
 
         /// <summary>
-        /// cmbMaTram control.
+        /// lbTram control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox cmbMaTram;
+        protected global::DevExpress.Web.ASPxLabel lbTram;
 
         /// <summary>
         /// ASPxLabel3 control.
