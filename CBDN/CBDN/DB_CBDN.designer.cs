@@ -45030,6 +45030,8 @@ namespace CBDN
 			}
 		}
 	}
+
+
 	
 	public partial class BC_QuyetToanTuSX_CNResult
 	{
@@ -45272,5 +45274,7 @@ namespace CBDN
 			}
 		}
 	}
+
+
 }
 #pragma warning restore 1591

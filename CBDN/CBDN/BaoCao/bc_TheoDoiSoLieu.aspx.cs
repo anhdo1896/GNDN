@@ -136,6 +136,7 @@ namespace MTCSYT
 
             ReportToolbar2.ReportViewer = ReportViewer2;
 
+            
         }
         private void loadGiaoNhan()
         {

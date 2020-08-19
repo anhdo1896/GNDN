@@ -77,6 +77,7 @@ namespace QLY_VTTB.MasterPage
                                 <li> <a href='../BaoCao/bc_BieuTong_QT_ALL.aspx'>* Tổng hợp điện năng giao nhận</a></li>
                                 <li> <a href='../BaoCao/bcTonThat.aspx'>* Báo cáo tổn thất Tổng Công Ty</a></li>
                                 <li> <a href='../BaoCao/bcTonThat_CapDienAp.aspx'>* Báo cáo tổn thất theo cấp điện áp</a></li>
+                                <li> <a href='../BaoCao/BaoCaoB9.aspx'>* Báo cáo điện nhận 3 thời điểm</a></li>
                             </ul>
                         </li>                        
                         <li>
@@ -86,6 +87,7 @@ namespace QLY_VTTB.MasterPage
                                 <li> <a href='../BC_TK_ChotSL/BC_Chot_inBienBanQT.aspx'>* In biên bản quyết toán</a> </li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BieuTongGiaoNhan.aspx'>* Tổng hợp điện năng giao nhận</a></li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_TonThat.aspx'>* Báo cáo tổn thất 110kV</a></li>
+                                <li> <a href='../BC_TK_ChotSL/bc_Chot_BaoCaoB9.aspx'>* Báo cáo điện nhận 3 thời điểm</a></li>
                                
                             </ul>
                         </li>
