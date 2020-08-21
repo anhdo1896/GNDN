@@ -51,8 +51,8 @@ namespace MTCSYT.Report
             b = Math.Round(b, 2);
             c = Math.Round(c, 2);
             xrAB_G_BT.Text = a+"";
-            xrTableCell9.Text = b + "";
-            xrAB_G_CD.Text = c + "";
+            xrTableCell9.Text =  b + "";
+            xrAB_G_CD.Text = c+"";
 
             lbTieude.Text = @"BÁO CÁO ĐIỆN NHẬN 3 THỜI ĐIỂM ";
 

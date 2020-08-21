@@ -25,7 +25,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
       <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title"> Danh Sách Trạm Ưu Tiên
+        <h4 class="page-title"> Kiểm tra dữ liệu cột đã nhập
         </h4>
     </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
@@ -41,7 +41,7 @@
     <div class="col-md-12">
 
         <div class="white-box">
-            <h1 class="m-b-0 box-title">DANH SÁCH KHÁCH HÀNG LƯU Ý</h1>
+            <h1 class="m-b-0 box-title">KIỂM TRA DỮ LIỆU CỘT ĐÃ NHẬP</h1>
             <div class="col-lg-12 m-t-30">
                 <hr />
             </div>
@@ -56,7 +56,7 @@
                 <tr>
                     <td valign="top" align="left">
 
-                        <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdTram" Caption="Danh sách khách hàng theo trạm"
+                        <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdTram" Caption="Danh sách trạm đã nhâp"
                                 ClientInstanceName="grdTram" KeyFieldName="MATRAM" OnHtmlCommandCellPrepared="grdTram_HtmlCommandCellPrepared"
                                 OnCellEditorInitialize="grdTram_CellEditorInitialize1" OnCustomColumnDisplayText="grdTram_CustomColumnDisplayText"
                                 OnStartRowEditing="grdTram_StartRowEditing" ClientIDMode="AutoID" Theme="Aqua">
