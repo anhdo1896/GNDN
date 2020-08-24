@@ -267,7 +267,7 @@ namespace MTCSYT.Report
         }
         private void InBienBanQT_LS()
         {
-            // MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            /* MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             int strMadviqly = int.Parse(Request["ChiNhanh"] + "");
 
             DataTable dt = new DataTable();
@@ -338,7 +338,7 @@ namespace MTCSYT.Report
             MTCSYT.Report.InBienBanQT report = new MTCSYT.Report.InBienBanQT(dt, "" + Request["Thang"], "" + Request["Nam"], false, false, "", "", giao.TEN_DVIQLY, nhan.TEN_DVIQLY, "", "", "", "");
             ReportViewer1.Report = report;
 
-            ReportToolbar1.ReportViewer = ReportViewer1;
+            ReportToolbar1.ReportViewer = ReportViewer1;*/
         }
 
         private void TBA()

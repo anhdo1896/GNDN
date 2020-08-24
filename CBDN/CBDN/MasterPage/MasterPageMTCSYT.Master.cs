@@ -72,8 +72,7 @@ namespace QLY_VTTB.MasterPage
                             <a href='inbox.html' class='waves-effect'><i data-icon='A' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Báo cáo<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>6</span></span></a>
                             <ul class='nav nav-second-level'>
                                 <li> <a href='../BaoCao/TK_DVChotBaoCao.aspx'>* Thông kê các đơn vị đã chốt số liệu</a>  </li>
-                                <li> <a href='../BaoCao/bc_Tram_B9.aspx'>* Báo cáo chi tiết sản lượng nhập liệu</a> </li>
-                               
+                                <li> <a href='../BaoCao/bc_Tram_B9.aspx'>* Báo cáo chi tiết sản lượng nhập liệu</a> </li>                               
                                 <li> <a href='../BaoCao/bc_BieuTong_QT_ALL.aspx'>* Tổng hợp điện năng giao nhận</a></li>
                                 <li> <a href='../BaoCao/bcTonThat.aspx'>* Báo cáo tổn thất Tổng Công Ty</a></li>
                                 <li> <a href='../BaoCao/bcTonThat_CapDienAp.aspx'>* Báo cáo tổn thất theo cấp điện áp</a></li>
@@ -84,7 +83,7 @@ namespace QLY_VTTB.MasterPage
                             <a href='inbox.html' class='waves-effect'><i data-icon='B' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Dữ liệu lịch sử<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>7</span></span></a>
                             <ul class='nav nav-second-level'>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BCChiTiet.aspx'>* Báo cáo chỉ số chốt tháng</a> </li>
-                                <li> <a href='../BC_TK_ChotSL/BC_Chot_inBienBanQT.aspx'>* In biên bản quyết toán</a> </li>
+                                <li> <a href='../BC_TK_ChotSL/LS_BieuTong_QT_ALL.aspx'>* In biên bản quyết toán</a> </li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BieuTongGiaoNhan.aspx'>* Tổng hợp điện năng giao nhận</a></li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_TonThat.aspx'>* Báo cáo tổn thất 110kV</a></li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BaoCaoB9.aspx'>* Báo cáo điện nhận 3 thời điểm</a></li>
@@ -194,7 +193,7 @@ namespace QLY_VTTB.MasterPage
                             <a href='inbox.html' class='waves-effect'><i data-icon='&#xe00b;' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Dữ liệu lịch sử<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>5</span></span></a>
                             <ul class='nav nav-second-level'>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BCChiTiet.aspx'>* Báo cáo chỉ số chốt tháng</a> </li>
-                                <li> <a href='../BC_TK_ChotSL/BC_Chot_inBienBanQT.aspx'>* In biên bản quyết toán</a> </li>
+                                <li> <a href='../BC_TK_ChotSL/LS_BieuTong_QT_ALL.aspx'>* In biên bản quyết toán</a> </li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BieuTongGiaoNhan.aspx'>* Tổng hợp điện năng giao nhận</a></li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_TonThat.aspx'>* Báo cáo tổn thất 110kV</a></li>
                             </ul>
@@ -247,7 +246,7 @@ namespace QLY_VTTB.MasterPage
                             <a href='inbox.html' class='waves-effect'><i data-icon='&#xe00b;' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Dữ liệu lịch sử<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>5</span></span></a>
                             <ul class='nav nav-second-level'>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BCChiTiet.aspx'>* Báo cáo chỉ số chốt tháng</a> </li>
-                                <li> <a href='../BC_TK_ChotSL/BC_Chot_inBienBanQT.aspx'>* In biên bản quyết toán</a> </li>
+                                <li> <a href='../BC_TK_ChotSL/LS_BieuTong_QT_ALL.aspx'>* In biên bản quyết toán</a> </li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BieuTongGiaoNhan.aspx'>* Tổng hợp điện năng giao nhận</a></li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_TonThat.aspx'>* Báo cáo tổn thất 110kV</a></li>
                             </ul>
@@ -302,7 +301,7 @@ namespace QLY_VTTB.MasterPage
                             <a href='inbox.html' class='waves-effect'><i data-icon='&#xe00b;' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Dữ liệu lịch sử<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>5</span></span></a>
                             <ul class='nav nav-second-level'>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BCChiTiet.aspx'>* Báo cáo chi tiết sản lượng nhập liệu</a> </li>
-                                <li> <a href='../BC_TK_ChotSL/BC_Chot_inBienBanQT.aspx'>* In biên bản quyết toán</a> </li>
+                                <li> <a href='../BC_TK_ChotSL/LS_BieuTong_QT_ALL.aspx'>* In biên bản quyết toán</a> </li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BieuTongGiaoNhan.aspx'>* Tổng hợp điện năng giao nhận</a></li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_TonThat.aspx'>* Báo cáo tổn thất 110kV</a></li>
                             </ul>
@@ -367,7 +366,7 @@ namespace QLY_VTTB.MasterPage
                             <a href='inbox.html' class='waves-effect'><i data-icon='&#xe00b;' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Dữ liệu lịch sử<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>5</span></span></a>
                             <ul class='nav nav-second-level'>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BCChiTiet.aspx'>* Báo cáo chỉ số chốt tháng</a> </li>
-                                <li> <a href='../BC_TK_ChotSL/BC_Chot_inBienBanQT.aspx'>* In biên bản quyết toán</a> </li>
+                                <li> <a href='../BC_TK_ChotSL/LS_BieuTong_QT_ALL.aspx'>* In biên bản quyết toán</a> </li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BieuTongGiaoNhan.aspx'>* Tổng hợp điện năng giao nhận</a></li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_TonThat.aspx'>* Báo cáo tổn thất 110kV</a></li>
                             </ul>
@@ -512,7 +511,7 @@ namespace QLY_VTTB.MasterPage
                             <a href='inbox.html' class='waves-effect'><i data-icon='&#xe00b;' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Dữ liệu lịch sử<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>5</span></span></a>
                             <ul class='nav nav-second-level'>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BCChiTiet.aspx'>* Báo cáo chỉ số chốt tháng</a> </li>
-                                <li> <a href='../BC_TK_ChotSL/BC_Chot_inBienBanQT.aspx'>* In biên bản quyết toán</a> </li>
+                                <li> <a href='../BC_TK_ChotSL/LS_BieuTong_QT_ALL.aspx'>* In biên bản quyết toán</a> </li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_BieuTongGiaoNhan.aspx'>* Tổng hợp điện năng giao nhận</a></li>
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_TonThat.aspx'>* Báo cáo tổn thất 110kV</a></li>
                             </ul>

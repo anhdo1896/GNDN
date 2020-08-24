@@ -1,22 +1,12 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master" AutoEventWireup="true"
-    CodeBehind="bd_GiamDocXN.aspx.cs" Inherits="MTCSYT.bd_GiamDocXN" %>
+    CodeBehind="LS_BieuTong_QT_ALL.aspx.cs" Inherits="MTCSYT.LS_BieuTong_QT_ALL" %>
 
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxPanel" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxPopupControl" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
 
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxTabControl" TagPrefix="dx" %>
-
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxClasses" TagPrefix="dx" %>
-
-<%@ Register Assembly="DevExpress.XtraReports.v14.1.Web, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx1" %>
+<%@ Register Assembly="DevExpress.XtraReports.v17.1.Web, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx1" %>
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -102,9 +92,9 @@
                     <td>
                         <asp:Label ID="Label7" runat="server" Text="Phương thức giao nhận " Width="150px" />
                     </td>
-                    <td colspan="5">
+                    <td colspan="3">
                         <dx:ASPxComboBox ID="cmbPhuongThuc" IncrementalFilteringMode="Contains"
-                            runat="server" SelectedIndex="0" Width="850px" Theme="Aqua" AutoPostBack="True" OnSelectedIndexChanged="cmbPhuongThuc_SelectedIndexChanged">
+                            runat="server" SelectedIndex="0" Width="550px" Theme="Aqua" AutoPostBack="True" OnSelectedIndexChanged="cmbPhuongThuc_SelectedIndexChanged">
                         </dx:ASPxComboBox>
                     </td>
                     <%--<td>
@@ -159,21 +149,13 @@
                         <%-- <dx:ASPxTextBox ID="txtnam" runat="server" Enabled="False" Width="70px">
                 </dx:ASPxTextBox>--%>
                     </td>
-                    <td>
-                        <dx:ASPxButton ID="btnDuyet" runat="server" Text="Xác nhận dữ liệu" Width="120px" OnClick="btnDuyet_Click" Theme="Aqua">
-                        </dx:ASPxButton>
-                    </td>
-                    <td>
-                        <dx:ASPxButton ID="btnHuy" runat="server" Text="Không xác nhận dữ liệu" Width="150px" OnClick="btnHuy_Click" Theme="Aqua">
-                        </dx:ASPxButton>
-                    </td>
-
+                  
                 </tr>
 
 
             </table>
             <br />
-            <table width="100%">
+          <table width="100%">
                 <tr>
                     <td align="right"></td>
                     <td colspan="4">
@@ -200,7 +182,7 @@
 
             <dx:ASPxPageControl ID="pcTax" runat="server" ActiveTabIndex="2" Width="100%" Theme="Aqua" AccessibilityCompliant="True" EnableCallBacks="True">
                 <TabPages>
-                    <dx:TabPage Text="Biên bản tổng hợp">
+                   <dx:TabPage Text="Biên bản tổng hợp">
                         <ContentCollection>
                             <dx:ContentControl runat="server" SupportsDisabledAttribute="True">
                                 <table>
@@ -305,101 +287,6 @@
 
                 </TabPages>
             </dx:ASPxPageControl>
-            <dx:ASPxPopupControl ID="pcFileKy" runat="server" ClientInstanceName="pcAddRoles"
-                CloseAction="CloseButton" HeaderText="Xác nhận số liệu" PopupHorizontalAlign="WindowCenter"
-                PopupVerticalAlign="WindowCenter" ShowCloseButton="true" Width="500px" Modal="True"
-                ClientIDMode="AutoID" Theme="Aqua">
-                <ContentCollection>
-                    <dx:PopupControlContentControl ID="PopupControlContentControl2" runat="server" SupportsDisabledAttribute="True">
-                        <table class="tbl_Write">
-                            <tr>
-                                <td>
-                                    <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Người xác nhận" Width="150px" Font-Bold="True">
-                                    </dx:ASPxLabel>
-                                </td>
-                                <td>
-                                    <dx:ASPxLabel ID="lbNguoiXN" runat="server" Text="" Width="150px" Font-Bold="True">
-                                    </dx:ASPxLabel>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td>
-                                    <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Nhận số điện thoại xác nhận" Width="150px" Font-Bold="True">
-                                    </dx:ASPxLabel>
-                                </td>
-                                <td>
-                                    <dx:ASPxTextBox ID="txtSDT" runat="server" Width="270px"></dx:ASPxTextBox>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <dx:ASPxButton ID="btnGuiMa" runat="server" Text="Gửi mã xác nhận" Theme="Aqua" OnClick="btnGuiMa_Click">
-                                    </dx:ASPxButton>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Nhập mã OTP xác nhận" Width="150px" Font-Bold="True">
-                                    </dx:ASPxLabel>
-                                </td>
-                                <td>
-                                    <dx:ASPxTextBox ID="txtOTP" runat="server" Width="270px"></dx:ASPxTextBox>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td width="50%">
-                                    <dx:ASPxButton ID="btnLuuFile" runat="server" OnClick="btnLuuFile_Click" Text="Thực hiện ký" Width="150px" Theme="Aqua">
-                                    </dx:ASPxButton>
-                                </td>
-                                <td>
-                                    <dx:ASPxButton ID="btnDongFileKy" runat="server" OnClick="btnDongFileKy_Click" Text="Đóng" Theme="Aqua">
-                                    </dx:ASPxButton>
-
-                                </td>
-                            </tr>
-
-                        </table>
-                        <dx:ASPxLabel ID="lbOTP" runat="server" Text="" Visible="false">
-                        </dx:ASPxLabel>
-                    </dx:PopupControlContentControl>
-                </ContentCollection>
-            </dx:ASPxPopupControl>
-
-            <dx:ASPxPopupControl ID="pcAddRoles" runat="server" ClientInstanceName="pcAddRoles"
-                CloseAction="CloseButton" HeaderText="Cập nhật lý do ko đồng ý xác nhận điểm đo" PopupHorizontalAlign="WindowCenter"
-                PopupVerticalAlign="WindowCenter" ShowCloseButton="true" Width="400px" Modal="True"
-                ClientIDMode="AutoID" Theme="Aqua">
-                <ContentCollection>
-                    <dx:PopupControlContentControl ID="PopupControlContentControl1" runat="server" SupportsDisabledAttribute="True">
-                        <table class="tbl_Write">
-                            <tr>
-                                <td>
-                                    <dx:ASPxLabel ID="ASPxLabel4" runat="server" Text="Lý do cập nhận không xác định điểm đo" Width="150px">
-                                    </dx:ASPxLabel>
-                                </td>
-                                <td>
-                                    <dx:ASPxMemo ID="txtLyDo" runat="server" Height="71px" Width="270px">
-                                    </dx:ASPxMemo>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <dx:ASPxButton ID="btnCapNhat" runat="server" OnClick="btnCapNhat_Click" Text="Lưu lý do" Width="150px" Theme="Aqua">
-                                    </dx:ASPxButton>
-                                </td>
-                                <td>
-                                    <dx:ASPxButton ID="btnDong" runat="server" OnClick="btnDong_Click" Text="Đóng" Theme="Aqua">
-                                    </dx:ASPxButton>
-                                </td>
-                            </tr>
-                        </table>
-                    </dx:PopupControlContentControl>
-                </ContentCollection>
-            </dx:ASPxPopupControl>
         </div>
     </div>
 
