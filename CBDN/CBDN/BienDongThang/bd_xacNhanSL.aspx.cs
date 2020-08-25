@@ -143,7 +143,7 @@ namespace MTCSYT
         }
         private void InBienBanQuyetToan()
         {
-            if (cmbPhuongThuc.Value == null || cmbPhuongThuc.Value + "" == "0")
+            if (cmbPhuongThuc.Value == null)
                 return;
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             int strMadviqly = int.Parse(session.User.ma_dviqly);
@@ -586,9 +586,29 @@ namespace MTCSYT
             WebClient client = new WebClient();
             client.Headers["Content-type"] = "application/json";
             client.Encoding = Encoding.UTF8;
+            string SQL = "";
 
-            var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(session.User.ma_dviqly));
-            string SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=" + txtOTP.Text + "&strtoken=" + lbOTP.Text + "&struserID=" + txtSDT.Text;
+            int strMadviqly = int.Parse(session.User.ma_dviqly), intdonvi;
+            if (strMadviqly == 2)
+            {
+                if (cmbPhuongThuc.Value +""!="0")
+                {
+                    intdonvi = int.Parse(db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + "")).IDMADVIQLY.Replace(",2,", "").Replace(",", ""));
+                    var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == intdonvi);
+                    SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=" + txtOTP.Text + "&strtoken=" + lbOTP.Text + "&struserID=" + txtSDT.Text;
+                }
+                else
+                {
+                    SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=PA2201&strtoken=" + lbOTP.Text + "&struserID=PC_BacNinh";
+
+                }
+
+            }
+            else
+            {
+                var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == strMadviqly);
+                SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=" + txtOTP.Text + "&strtoken=" + lbOTP.Text + "&struserID=" + txtSDT.Text;
+            }
             string json = client.DownloadString(SQL);
             services = (new JavaScriptSerializer()).Deserialize<string>(json);
             if (services.Contains("không"))
@@ -615,9 +635,28 @@ namespace MTCSYT
             WebClient client = new WebClient();
             client.Headers["Content-type"] = "application/json";
             client.Encoding = Encoding.UTF8;
+            string SQL = "";
+            int strMadviqly = int.Parse(session.User.ma_dviqly), intdonvi;
+            if (strMadviqly == 2)
+            {
+                if (cmbPhuongThuc.Value + "" != "0")
+                {
+                    intdonvi = int.Parse(db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + "")).IDMADVIQLY.Replace(",2,", "").Replace(",", ""));
+                    var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == intdonvi);
+                    SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/generate?strbrandname=" + donvi.TenVietTat + "&strType=1&struserID=" + txtSDT.Text + "&strRegion=" + donvi.MA_DVIQLY;
+                }
+                else
+                {                    
+                    SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/generate?strbrandname=PC_BacNinh&strType=1&struserID=" + txtSDT.Text + "&strRegion=PA2201";
+                }
 
-            var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(session.User.ma_dviqly));
-            string SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/generate?strbrandname=" + donvi.TenVietTat + "&strType=1&struserID=" + txtSDT.Text + "&strRegion=" + donvi.MA_DVIQLY;
+            }
+            else
+            {
+                var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == strMadviqly);
+                SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/generate?strbrandname=" + donvi.TenVietTat + "&strType=1&struserID=" + txtSDT.Text + "&strRegion=" + donvi.MA_DVIQLY;
+            }
+             
             string json = client.DownloadString(SQL);
             services = (new JavaScriptSerializer()).Deserialize<List<PUSHRESULT>>(json);
             lbOTP.Text = services[0].token;

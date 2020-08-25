@@ -13,6 +13,7 @@ using DevExpress.Web;
 using System.IO;
 using CBDN.Class;
 using System.Web.Script.Serialization;
+using System.Net;
 using System.Text;
 namespace MTCSYT
 {
@@ -120,7 +121,7 @@ namespace MTCSYT
         }
         private void InBienBanQuyetToan()
         {
-            if (cmbPhuongThuc.Value == null || cmbPhuongThuc.Value + "" == "") return;
+            if (cmbPhuongThuc.Value == null ) return;
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             int strMadviqly = int.Parse(session.User.ma_dviqly);
 

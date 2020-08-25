@@ -41,10 +41,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Cells">
-      <HintPath>..\..\..\AB\BIN\Aspose.Cells.dll</HintPath>
+      <HintPath>..\..\..\..\GNDN\CBDN\CBDN\bin\Aspose.Cells.dll</HintPath>
     </Reference>
-    <Reference Include="Aspose.Words">
-      <HintPath>..\..\..\AB\BIN\Aspose.Words.dll</HintPath>
+    <Reference Include="Castle.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
     <Reference Include="Connection">
       <HintPath>..\..\Connection\bin\Debug\Connection.dll</HintPath>
@@ -94,6 +99,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Service">
       <HintPath>..\..\Service\Service\bin\Debug\Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Spirit.Portal.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Spirit.Portal.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
@@ -5477,10 +5486,11 @@
     <Content Include="BaoCao\bc_BieuTong_QT_ALL.aspx" />
     <Content Include="BaoCao\TK_DVChotBaoCao.aspx" />
     <Content Include="BC_TK_ChotSL\bc_Chot_BaoCaoB9.aspx" />
-    <Content Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx" />
-    <Content Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx" />
     <Content Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx" />
+    <Content Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx" />
     <Content Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx" />
+    <Content Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx" />
+    <Content Include="BC_TK_ChotSL\LS_BieuTong_QT_ALL.aspx" />
     <Content Include="BienDongThang\bd_danhSachDiemDoDaNhap.aspx" />
     <Content Include="BienDongThang\bd_GiamDocXN_BackUp_PDF.aspx" />
     <Content Include="BaoCao\bc_TheoDoiSoLieu.aspx" />
@@ -7368,6 +7378,41 @@
     <Compile Include="BC_TK_ChotSL\bc_Chot_BaoCaoB9.aspx.designer.cs">
       <DependentUpon>bc_Chot_BaoCaoB9.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx.cs">
+      <DependentUpon>bc_Chot_BCChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx.designer.cs">
+      <DependentUpon>bc_Chot_BCChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx.cs">
+      <DependentUpon>bc_Chot_BieuTongGiaoNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx.designer.cs">
+      <DependentUpon>bc_Chot_BieuTongGiaoNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx.cs">
+      <DependentUpon>BC_Chot_inBienBanQT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx.designer.cs">
+      <DependentUpon>BC_Chot_inBienBanQT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx.cs">
+      <DependentUpon>bc_Chot_TonThat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx.designer.cs">
+      <DependentUpon>bc_Chot_TonThat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\LS_BieuTong_QT_ALL.aspx.cs">
+      <DependentUpon>LS_BieuTong_QT_ALL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\LS_BieuTong_QT_ALL.aspx.designer.cs">
+      <DependentUpon>LS_BieuTong_QT_ALL.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BienDongThang\bd_danhSachDiemDoDaNhap.aspx.cs">
       <DependentUpon>bd_danhSachDiemDoDaNhap.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -7415,6 +7460,7 @@
     <Compile Include="Class\DisplayConfigConsts.cs" />
     <Compile Include="Class\InBienBanB9Chot.cs" />
     <Compile Include="Class\InBienBanQT.cs" />
+    <Compile Include="Class\LS_InBienBanQT.cs" />
     <Compile Include="Class\XuatXML_GCS.cs" />
     <Compile Include="DanhMuc\DM_DiemDoLienKet.aspx.cs">
       <DependentUpon>DM_DiemDoLienKet.aspx</DependentUpon>
@@ -7555,34 +7601,6 @@
     </Compile>
     <Compile Include="BaoCao\TK_DVChotBaoCao.aspx.designer.cs">
       <DependentUpon>TK_DVChotBaoCao.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx.cs">
-      <DependentUpon>bc_Chot_TonThat.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx.designer.cs">
-      <DependentUpon>bc_Chot_TonThat.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx.cs">
-      <DependentUpon>bc_Chot_BieuTongGiaoNhan.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx.designer.cs">
-      <DependentUpon>bc_Chot_BieuTongGiaoNhan.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx.cs">
-      <DependentUpon>bc_Chot_BCChiTiet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx.designer.cs">
-      <DependentUpon>bc_Chot_BCChiTiet.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx.cs">
-      <DependentUpon>BC_Chot_inBienBanQT.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx.designer.cs">
-      <DependentUpon>BC_Chot_inBienBanQT.aspx</DependentUpon>
     </Compile>
     <Compile Include="BienDongThang\bd_TongXacNhan.aspx.cs">
       <DependentUpon>bd_TongXacNhan.aspx</DependentUpon>
