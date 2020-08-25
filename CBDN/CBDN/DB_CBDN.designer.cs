@@ -675,28 +675,28 @@ namespace CBDN
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BC_LS_QuyetToanTuSX")]
-		public ISingleResult<BC_LS_QuyetToanTuSXResult> BC_LS_QuyetToanTuSX([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam)
+		public ISingleResult<BC_LS_QuyetToanTuSXResult> BC_LS_QuyetToanTuSX([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam, int phuongThuc)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam);
 			return ((ISingleResult<BC_LS_QuyetToanTuSXResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BC_LS_QuyetToanMTApMai")]
-		public ISingleResult<BC_LS_QuyetToanMTApMaiResult> BC_LS_QuyetToanMTApMai([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam)
+		public ISingleResult<BC_LS_QuyetToanMTApMaiResult> BC_LS_QuyetToanMTApMai([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam, int phuongThuc)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam);
 			return ((ISingleResult<BC_LS_QuyetToanMTApMaiResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BC_LS_QuyetToanNgoaiNganh")]
-		public ISingleResult<BC_LS_QuyetToanNgoaiNganhResult> BC_LS_QuyetToanNgoaiNganh([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam)
+		public ISingleResult<BC_LS_QuyetToanNgoaiNganhResult> BC_LS_QuyetToanNgoaiNganh([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam, int phuongThuc)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam);
 			return ((ISingleResult<BC_LS_QuyetToanNgoaiNganhResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BC_LS_QuyetToanTruyenTai")]
-		public ISingleResult<BC_LS_QuyetToanTruyenTaiResult> BC_LS_QuyetToanTruyenTai([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam)
+		public ISingleResult<BC_LS_QuyetToanTruyenTaiResult> BC_LS_QuyetToanTruyenTai([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam, int phuongThuc)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam);
 			return ((ISingleResult<BC_LS_QuyetToanTruyenTaiResult>)(result.ReturnValue));
@@ -952,6 +952,13 @@ namespace CBDN
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam, iDChiNhanh);
 			return ((ISingleResult<BC_QuyetToanTuSX_BCCResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.db_LS_PhuongThucCanXN")]
+		public ISingleResult<db_LS_PhuongThucCanXNResult> db_LS_PhuongThucCanXN([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Loai", DbType="VarChar(50)")] string loai)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam, loai);
+			return ((ISingleResult<db_LS_PhuongThucCanXNResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -46567,6 +46574,68 @@ namespace CBDN
 				if ((this._Tong_TieuThu != value))
 				{
 					this._Tong_TieuThu = value;
+				}
+			}
+		}
+	}
+	
+	public partial class db_LS_PhuongThucCanXNResult
+	{
+		
+		private string _TenPhuongThuc;
+		
+		private string _MaPhuongThuc;
+		
+		private string _IDChiNhanh;
+		
+		public db_LS_PhuongThucCanXNResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenPhuongThuc", DbType="NVarChar(500)")]
+		public string TenPhuongThuc
+		{
+			get
+			{
+				return this._TenPhuongThuc;
+			}
+			set
+			{
+				if ((this._TenPhuongThuc != value))
+				{
+					this._TenPhuongThuc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPhuongThuc", DbType="VarChar(100)")]
+		public string MaPhuongThuc
+		{
+			get
+			{
+				return this._MaPhuongThuc;
+			}
+			set
+			{
+				if ((this._MaPhuongThuc != value))
+				{
+					this._MaPhuongThuc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDChiNhanh", DbType="VarChar(50)")]
+		public string IDChiNhanh
+		{
+			get
+			{
+				return this._IDChiNhanh;
+			}
+			set
+			{
+				if ((this._IDChiNhanh != value))
+				{
+					this._IDChiNhanh = value;
 				}
 			}
 		}
