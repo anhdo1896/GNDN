@@ -918,6 +918,41 @@ namespace CBDN
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam, iDChiNhanh);
 			return ((ISingleResult<BC_QuyetToanTuSX_CNResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BC_QuyetToan_BCC")]
+		public ISingleResult<BC_QuyetToan_BCCResult> BC_QuyetToan_BCC([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ParentId", DbType="Int")] System.Nullable<int> parentId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam, parentId);
+			return ((ISingleResult<BC_QuyetToan_BCCResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BC_QuyetToanMTApMai_BCC")]
+		public ISingleResult<BC_QuyetToanMTApMai_BCCResult> BC_QuyetToanMTApMai_BCC([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiNhanh", DbType="Int")] System.Nullable<int> iDChiNhanh)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam, iDChiNhanh);
+			return ((ISingleResult<BC_QuyetToanMTApMai_BCCResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BC_QuyetToanNgoaiNganh_BCC")]
+		public ISingleResult<BC_QuyetToanNgoaiNganh_BCCResult> BC_QuyetToanNgoaiNganh_BCC([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiNhanh", DbType="Int")] System.Nullable<int> iDChiNhanh)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam, iDChiNhanh);
+			return ((ISingleResult<BC_QuyetToanNgoaiNganh_BCCResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BC_QuyetToanTruyenTai_BCC")]
+		public ISingleResult<BC_QuyetToanTruyenTai_BCCResult> BC_QuyetToanTruyenTai_BCC([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiNhanh", DbType="Int")] System.Nullable<int> iDChiNhanh)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam, iDChiNhanh);
+			return ((ISingleResult<BC_QuyetToanTruyenTai_BCCResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BC_QuyetToanTuSX_BCC")]
+		public ISingleResult<BC_QuyetToanTuSX_BCCResult> BC_QuyetToanTuSX_BCC([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiNhanh", DbType="Int")] System.Nullable<int> iDChiNhanh)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam, iDChiNhanh);
+			return ((ISingleResult<BC_QuyetToanTuSX_BCCResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_GiaoNhan2Chieu")]
@@ -45030,8 +45065,6 @@ namespace CBDN
 			}
 		}
 	}
-
-
 	
 	public partial class BC_QuyetToanTuSX_CNResult
 	{
@@ -45274,7 +45307,1269 @@ namespace CBDN
 			}
 		}
 	}
-
-
+	
+	public partial class BC_QuyetToan_BCCResult
+	{
+		
+		private string _TenCongTy;
+		
+		private System.Nullable<decimal> _Nhan_Bieu1_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu2_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu3_SanLuong;
+		
+		private System.Nullable<decimal> _TongNhan3B;
+		
+		private System.Nullable<decimal> _Giao_Bieu1_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu2_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu3_SanLuong;
+		
+		private System.Nullable<decimal> _TongGiao3B;
+		
+		private System.Nullable<decimal> _B1_TieuThu;
+		
+		private System.Nullable<decimal> _B2_TieuThu;
+		
+		private System.Nullable<decimal> _B3_TieuThu;
+		
+		private System.Nullable<decimal> _Tong_TieuThu;
+		
+		public BC_QuyetToan_BCCResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenCongTy", DbType="NVarChar(200)")]
+		public string TenCongTy
+		{
+			get
+			{
+				return this._TenCongTy;
+			}
+			set
+			{
+				if ((this._TenCongTy != value))
+				{
+					this._TenCongTy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu1_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu1_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu1_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu1_SanLuong != value))
+				{
+					this._Nhan_Bieu1_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu2_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu2_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu2_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu2_SanLuong != value))
+				{
+					this._Nhan_Bieu2_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu3_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu3_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu3_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu3_SanLuong != value))
+				{
+					this._Nhan_Bieu3_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongNhan3B", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> TongNhan3B
+		{
+			get
+			{
+				return this._TongNhan3B;
+			}
+			set
+			{
+				if ((this._TongNhan3B != value))
+				{
+					this._TongNhan3B = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu1_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu1_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu1_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu1_SanLuong != value))
+				{
+					this._Giao_Bieu1_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu2_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu2_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu2_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu2_SanLuong != value))
+				{
+					this._Giao_Bieu2_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu3_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu3_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu3_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu3_SanLuong != value))
+				{
+					this._Giao_Bieu3_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongGiao3B", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> TongGiao3B
+		{
+			get
+			{
+				return this._TongGiao3B;
+			}
+			set
+			{
+				if ((this._TongGiao3B != value))
+				{
+					this._TongGiao3B = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B1_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B1_TieuThu
+		{
+			get
+			{
+				return this._B1_TieuThu;
+			}
+			set
+			{
+				if ((this._B1_TieuThu != value))
+				{
+					this._B1_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B2_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B2_TieuThu
+		{
+			get
+			{
+				return this._B2_TieuThu;
+			}
+			set
+			{
+				if ((this._B2_TieuThu != value))
+				{
+					this._B2_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B3_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B3_TieuThu
+		{
+			get
+			{
+				return this._B3_TieuThu;
+			}
+			set
+			{
+				if ((this._B3_TieuThu != value))
+				{
+					this._B3_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tong_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Tong_TieuThu
+		{
+			get
+			{
+				return this._Tong_TieuThu;
+			}
+			set
+			{
+				if ((this._Tong_TieuThu != value))
+				{
+					this._Tong_TieuThu = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BC_QuyetToanMTApMai_BCCResult
+	{
+		
+		private string _khoitruyentai;
+		
+		private System.Nullable<decimal> _Nhan_Bieu1_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu2_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu3_SanLuong;
+		
+		private System.Nullable<decimal> _TongNhan3B;
+		
+		private System.Nullable<decimal> _Nhan_1Gia;
+		
+		private System.Nullable<decimal> _Giao_Bieu1_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu2_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu3_SanLuong;
+		
+		private System.Nullable<decimal> _TongGiao3B;
+		
+		private System.Nullable<decimal> _Giao_1Gia;
+		
+		private System.Nullable<decimal> _B1_TieuThu;
+		
+		private System.Nullable<decimal> _B2_TieuThu;
+		
+		private System.Nullable<decimal> _B3_TieuThu;
+		
+		private System.Nullable<decimal> _Tong_TieuThu;
+		
+		private System.Nullable<decimal> _MGia_TieuThu;
+		
+		public BC_QuyetToanMTApMai_BCCResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khoitruyentai", DbType="NVarChar(15) NOT NULL", CanBeNull=false)]
+		public string khoitruyentai
+		{
+			get
+			{
+				return this._khoitruyentai;
+			}
+			set
+			{
+				if ((this._khoitruyentai != value))
+				{
+					this._khoitruyentai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu1_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu1_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu1_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu1_SanLuong != value))
+				{
+					this._Nhan_Bieu1_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu2_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu2_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu2_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu2_SanLuong != value))
+				{
+					this._Nhan_Bieu2_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu3_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu3_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu3_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu3_SanLuong != value))
+				{
+					this._Nhan_Bieu3_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongNhan3B", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> TongNhan3B
+		{
+			get
+			{
+				return this._TongNhan3B;
+			}
+			set
+			{
+				if ((this._TongNhan3B != value))
+				{
+					this._TongNhan3B = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_1Gia", DbType="Decimal(38,3)")]
+		public System.Nullable<decimal> Nhan_1Gia
+		{
+			get
+			{
+				return this._Nhan_1Gia;
+			}
+			set
+			{
+				if ((this._Nhan_1Gia != value))
+				{
+					this._Nhan_1Gia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu1_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu1_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu1_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu1_SanLuong != value))
+				{
+					this._Giao_Bieu1_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu2_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu2_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu2_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu2_SanLuong != value))
+				{
+					this._Giao_Bieu2_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu3_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu3_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu3_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu3_SanLuong != value))
+				{
+					this._Giao_Bieu3_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongGiao3B", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> TongGiao3B
+		{
+			get
+			{
+				return this._TongGiao3B;
+			}
+			set
+			{
+				if ((this._TongGiao3B != value))
+				{
+					this._TongGiao3B = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_1Gia", DbType="Decimal(38,3)")]
+		public System.Nullable<decimal> Giao_1Gia
+		{
+			get
+			{
+				return this._Giao_1Gia;
+			}
+			set
+			{
+				if ((this._Giao_1Gia != value))
+				{
+					this._Giao_1Gia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B1_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B1_TieuThu
+		{
+			get
+			{
+				return this._B1_TieuThu;
+			}
+			set
+			{
+				if ((this._B1_TieuThu != value))
+				{
+					this._B1_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B2_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B2_TieuThu
+		{
+			get
+			{
+				return this._B2_TieuThu;
+			}
+			set
+			{
+				if ((this._B2_TieuThu != value))
+				{
+					this._B2_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B3_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B3_TieuThu
+		{
+			get
+			{
+				return this._B3_TieuThu;
+			}
+			set
+			{
+				if ((this._B3_TieuThu != value))
+				{
+					this._B3_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tong_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Tong_TieuThu
+		{
+			get
+			{
+				return this._Tong_TieuThu;
+			}
+			set
+			{
+				if ((this._Tong_TieuThu != value))
+				{
+					this._Tong_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MGia_TieuThu", DbType="Decimal(38,3)")]
+		public System.Nullable<decimal> MGia_TieuThu
+		{
+			get
+			{
+				return this._MGia_TieuThu;
+			}
+			set
+			{
+				if ((this._MGia_TieuThu != value))
+				{
+					this._MGia_TieuThu = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BC_QuyetToanNgoaiNganh_BCCResult
+	{
+		
+		private string _khoitruyentai;
+		
+		private System.Nullable<decimal> _Nhan_Bieu1_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu2_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu3_SanLuong;
+		
+		private System.Nullable<decimal> _TongNhan3B;
+		
+		private System.Nullable<decimal> _Giao_Bieu1_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu2_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu3_SanLuong;
+		
+		private System.Nullable<decimal> _TongGiao3B;
+		
+		private System.Nullable<decimal> _B1_TieuThu;
+		
+		private System.Nullable<decimal> _B2_TieuThu;
+		
+		private System.Nullable<decimal> _B3_TieuThu;
+		
+		private System.Nullable<decimal> _Tong_TieuThu;
+		
+		public BC_QuyetToanNgoaiNganh_BCCResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khoitruyentai", DbType="NVarChar(11) NOT NULL", CanBeNull=false)]
+		public string khoitruyentai
+		{
+			get
+			{
+				return this._khoitruyentai;
+			}
+			set
+			{
+				if ((this._khoitruyentai != value))
+				{
+					this._khoitruyentai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu1_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu1_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu1_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu1_SanLuong != value))
+				{
+					this._Nhan_Bieu1_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu2_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu2_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu2_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu2_SanLuong != value))
+				{
+					this._Nhan_Bieu2_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu3_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu3_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu3_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu3_SanLuong != value))
+				{
+					this._Nhan_Bieu3_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongNhan3B", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> TongNhan3B
+		{
+			get
+			{
+				return this._TongNhan3B;
+			}
+			set
+			{
+				if ((this._TongNhan3B != value))
+				{
+					this._TongNhan3B = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu1_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu1_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu1_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu1_SanLuong != value))
+				{
+					this._Giao_Bieu1_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu2_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu2_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu2_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu2_SanLuong != value))
+				{
+					this._Giao_Bieu2_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu3_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu3_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu3_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu3_SanLuong != value))
+				{
+					this._Giao_Bieu3_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongGiao3B", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> TongGiao3B
+		{
+			get
+			{
+				return this._TongGiao3B;
+			}
+			set
+			{
+				if ((this._TongGiao3B != value))
+				{
+					this._TongGiao3B = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B1_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B1_TieuThu
+		{
+			get
+			{
+				return this._B1_TieuThu;
+			}
+			set
+			{
+				if ((this._B1_TieuThu != value))
+				{
+					this._B1_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B2_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B2_TieuThu
+		{
+			get
+			{
+				return this._B2_TieuThu;
+			}
+			set
+			{
+				if ((this._B2_TieuThu != value))
+				{
+					this._B2_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B3_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B3_TieuThu
+		{
+			get
+			{
+				return this._B3_TieuThu;
+			}
+			set
+			{
+				if ((this._B3_TieuThu != value))
+				{
+					this._B3_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tong_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Tong_TieuThu
+		{
+			get
+			{
+				return this._Tong_TieuThu;
+			}
+			set
+			{
+				if ((this._Tong_TieuThu != value))
+				{
+					this._Tong_TieuThu = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BC_QuyetToanTruyenTai_BCCResult
+	{
+		
+		private string _khoitruyentai;
+		
+		private System.Nullable<decimal> _Nhan_Bieu1_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu2_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu3_SanLuong;
+		
+		private System.Nullable<decimal> _TongNhan3B;
+		
+		private System.Nullable<decimal> _Giao_Bieu1_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu2_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu3_SanLuong;
+		
+		private System.Nullable<decimal> _TongGiao3B;
+		
+		private System.Nullable<decimal> _B1_TieuThu;
+		
+		private System.Nullable<decimal> _B2_TieuThu;
+		
+		private System.Nullable<decimal> _B3_TieuThu;
+		
+		private System.Nullable<decimal> _Tong_TieuThu;
+		
+		public BC_QuyetToanTruyenTai_BCCResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khoitruyentai", DbType="NVarChar(15) NOT NULL", CanBeNull=false)]
+		public string khoitruyentai
+		{
+			get
+			{
+				return this._khoitruyentai;
+			}
+			set
+			{
+				if ((this._khoitruyentai != value))
+				{
+					this._khoitruyentai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu1_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu1_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu1_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu1_SanLuong != value))
+				{
+					this._Nhan_Bieu1_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu2_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu2_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu2_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu2_SanLuong != value))
+				{
+					this._Nhan_Bieu2_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu3_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu3_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu3_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu3_SanLuong != value))
+				{
+					this._Nhan_Bieu3_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongNhan3B", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> TongNhan3B
+		{
+			get
+			{
+				return this._TongNhan3B;
+			}
+			set
+			{
+				if ((this._TongNhan3B != value))
+				{
+					this._TongNhan3B = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu1_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu1_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu1_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu1_SanLuong != value))
+				{
+					this._Giao_Bieu1_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu2_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu2_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu2_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu2_SanLuong != value))
+				{
+					this._Giao_Bieu2_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu3_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu3_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu3_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu3_SanLuong != value))
+				{
+					this._Giao_Bieu3_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongGiao3B", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> TongGiao3B
+		{
+			get
+			{
+				return this._TongGiao3B;
+			}
+			set
+			{
+				if ((this._TongGiao3B != value))
+				{
+					this._TongGiao3B = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B1_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B1_TieuThu
+		{
+			get
+			{
+				return this._B1_TieuThu;
+			}
+			set
+			{
+				if ((this._B1_TieuThu != value))
+				{
+					this._B1_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B2_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B2_TieuThu
+		{
+			get
+			{
+				return this._B2_TieuThu;
+			}
+			set
+			{
+				if ((this._B2_TieuThu != value))
+				{
+					this._B2_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B3_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B3_TieuThu
+		{
+			get
+			{
+				return this._B3_TieuThu;
+			}
+			set
+			{
+				if ((this._B3_TieuThu != value))
+				{
+					this._B3_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tong_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Tong_TieuThu
+		{
+			get
+			{
+				return this._Tong_TieuThu;
+			}
+			set
+			{
+				if ((this._Tong_TieuThu != value))
+				{
+					this._Tong_TieuThu = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BC_QuyetToanTuSX_BCCResult
+	{
+		
+		private string _khoitruyentai;
+		
+		private System.Nullable<decimal> _Nhan_Bieu1_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu2_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu3_SanLuong;
+		
+		private System.Nullable<decimal> _TongNhan3B;
+		
+		private System.Nullable<decimal> _Giao_Bieu1_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu2_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu3_SanLuong;
+		
+		private System.Nullable<decimal> _TongGiao3B;
+		
+		private System.Nullable<decimal> _B1_TieuThu;
+		
+		private System.Nullable<decimal> _B2_TieuThu;
+		
+		private System.Nullable<decimal> _B3_TieuThu;
+		
+		private System.Nullable<decimal> _Tong_TieuThu;
+		
+		public BC_QuyetToanTuSX_BCCResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khoitruyentai", DbType="NVarChar(14) NOT NULL", CanBeNull=false)]
+		public string khoitruyentai
+		{
+			get
+			{
+				return this._khoitruyentai;
+			}
+			set
+			{
+				if ((this._khoitruyentai != value))
+				{
+					this._khoitruyentai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu1_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu1_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu1_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu1_SanLuong != value))
+				{
+					this._Nhan_Bieu1_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu2_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu2_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu2_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu2_SanLuong != value))
+				{
+					this._Nhan_Bieu2_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu3_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Nhan_Bieu3_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu3_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu3_SanLuong != value))
+				{
+					this._Nhan_Bieu3_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongNhan3B", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> TongNhan3B
+		{
+			get
+			{
+				return this._TongNhan3B;
+			}
+			set
+			{
+				if ((this._TongNhan3B != value))
+				{
+					this._TongNhan3B = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu1_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu1_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu1_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu1_SanLuong != value))
+				{
+					this._Giao_Bieu1_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu2_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu2_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu2_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu2_SanLuong != value))
+				{
+					this._Giao_Bieu2_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu3_SanLuong", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Giao_Bieu3_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu3_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu3_SanLuong != value))
+				{
+					this._Giao_Bieu3_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongGiao3B", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> TongGiao3B
+		{
+			get
+			{
+				return this._TongGiao3B;
+			}
+			set
+			{
+				if ((this._TongGiao3B != value))
+				{
+					this._TongGiao3B = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B1_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B1_TieuThu
+		{
+			get
+			{
+				return this._B1_TieuThu;
+			}
+			set
+			{
+				if ((this._B1_TieuThu != value))
+				{
+					this._B1_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B2_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B2_TieuThu
+		{
+			get
+			{
+				return this._B2_TieuThu;
+			}
+			set
+			{
+				if ((this._B2_TieuThu != value))
+				{
+					this._B2_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B3_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> B3_TieuThu
+		{
+			get
+			{
+				return this._B3_TieuThu;
+			}
+			set
+			{
+				if ((this._B3_TieuThu != value))
+				{
+					this._B3_TieuThu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tong_TieuThu", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> Tong_TieuThu
+		{
+			get
+			{
+				return this._Tong_TieuThu;
+			}
+			set
+			{
+				if ((this._Tong_TieuThu != value))
+				{
+					this._Tong_TieuThu = value;
+				}
+			}
+		}
+	}
 }
 #pragma warning restore 1591

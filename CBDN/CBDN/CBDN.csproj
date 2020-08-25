@@ -7413,6 +7413,7 @@
     <Compile Include="Class\clTinhTonThatKT.cs" />
     <Compile Include="Class\ConvertListToTable.cs" />
     <Compile Include="Class\DisplayConfigConsts.cs" />
+    <Compile Include="Class\InBienBanB9Chot.cs" />
     <Compile Include="Class\InBienBanQT.cs" />
     <Compile Include="Class\XuatXML_GCS.cs" />
     <Compile Include="DanhMuc\DM_DiemDoLienKet.aspx.cs">
@@ -7866,7 +7867,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="SYS\BasePage.cs" />
+    <Compile Include="SYS\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="SYS\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -9362,7 +9365,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report\InDienNhan3ThoiDiem.resx">
       <DependentUpon>InDienNhan3ThoiDiem.cs</DependentUpon>
     </EmbeddedResource>
