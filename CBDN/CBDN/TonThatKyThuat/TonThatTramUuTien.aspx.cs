@@ -8,7 +8,7 @@ using System.Linq;
 using System.Data;
 using DevExpress.XtraCharts;
 using DevExpress.XtraCharts.Web;
-//using DevExpress.XtraExport.Helpers.TableCellCss;
+using static DevExpress.XtraExport.Helpers.TableCellCss;
 using MTCSYT;
 
 namespace CBDN.TonThatKyThuat

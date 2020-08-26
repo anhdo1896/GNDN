@@ -510,7 +510,7 @@ namespace MTCSYT
             hDKyTH.NguoiTao = session.User.IDUSER;
 
             hDKyTH.Link = "";
-            hDKyTH.Barcode = txtOTP.Text;
+            hDKyTH.Barcode = "";
             hDKyTH.Thang = int.Parse(cmbThang.Value + "");
             hDKyTH.Nam = int.Parse(cmbNam.Value + "");
             hDKyTH.IDMaDViQLy = int.Parse(strMadviqly);
