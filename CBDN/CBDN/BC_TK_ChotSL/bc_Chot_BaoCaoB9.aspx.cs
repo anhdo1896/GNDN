@@ -41,7 +41,7 @@ namespace CBDN.BC_TK_ChotSL
         {
             InBienBanQuyetToan();
         }
-
+        
         private void InBienBanQuyetToan()
         {
 
@@ -50,7 +50,7 @@ namespace CBDN.BC_TK_ChotSL
 
             DataTable dt = new DataTable();
 
-            CBDN.Class.InBienBanB9Chot inBienBan = new CBDN.Class.InBienBanB9Chot();
+            CBDN.Class.InBienBanQT inBienBan = new CBDN.Class.InBienBanQT();
             string strGiao = "", strNhan = "", strGDNhan = "", strGDGiao = "";
 
             int donvi = strMadviqly;
@@ -75,7 +75,6 @@ namespace CBDN.BC_TK_ChotSL
             decimal B1 = 0;
             decimal B2 = 0;
             decimal B3 = 0;
-
             for (int i = 11; i < 38; i++)
             {
                 j++;
@@ -91,7 +90,7 @@ namespace CBDN.BC_TK_ChotSL
                 string B1_TieuThu1 = dt.Compute("sum([B1_TieuThu])", "[Loai]=1 or [Loai]=2 or [Loai]=4").ToString();
                 string B2_TieuThu1 = dt.Compute("sum([B2_TieuThu])", "[Loai]=1 or [Loai]=2 or [Loai]=4").ToString();
                 string B3_TieuThu1 = dt.Compute("sum([B3_TieuThu])", "[Loai]=1 or [Loai]=2 or [Loai]=4").ToString();
-
+                // var Tong_TieuThu1 = dt.Rows[0]["Tong_TieuThu1"] + "";
 
                 if (B1_TieuThu1 != "")
                 {
@@ -126,15 +125,14 @@ namespace CBDN.BC_TK_ChotSL
             }
             int a = dsdt.Rows.Count;
             if (a > 1)
-            {
+            {     
                 MTCSYT.Report.InDienNhan3ThoiDiem report = new MTCSYT.Report.InDienNhan3ThoiDiem(dsdt, "" + cmbThang.Value, "" + cmbNam.Value, false, false, "", "", strGiao, strNhan, "", "", strGDNhan, strGDGiao);
-                ReportViewer2.Report = report;
+            ReportViewer2.Report = report;
 
-                ReportToolbar2.ReportViewer = ReportViewer2;
+            ReportToolbar2.ReportViewer = ReportViewer2;
             }
         }
-
-
+        
 
 
         protected void cbAll_Init(object sender, EventArgs e)
