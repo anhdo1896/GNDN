@@ -40,70 +40,42 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Cells">
-      <HintPath>..\..\..\..\GNDN\CBDN\CBDN\bin\Aspose.Cells.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+    <Reference Include="Aspose.Cells, Version=4.4.3.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Castle.Core.dll</HintPath>
+      <HintPath>bin\Aspose.Cells.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.DynamicProxy2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+    <Reference Include="Aspose.Words, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Castle.DynamicProxy2.dll</HintPath>
+      <HintPath>bin\Aspose.Words.dll</HintPath>
     </Reference>
-    <Reference Include="Connection">
-      <HintPath>..\..\Connection\bin\Debug\Connection.dll</HintPath>
-    </Reference>
-    <Reference Include="DataAcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DataAcess\DataAcess\bin\Debug\DataAcess.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraCharts.v14.1.UI, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v17.1.Web, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraCharts.v14.1.Web, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v17.1.Web, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="Entity">
-      <HintPath>..\..\Entity\Entity\bin\Debug\Entity.dll</HintPath>
-    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v14.1.Web, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Service">
-      <HintPath>..\..\Service\Service\bin\Debug\Service.dll</HintPath>
-    </Reference>
-    <Reference Include="Spirit.Portal.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Spirit.Portal.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -5473,7 +5445,6 @@
     <Content Include="assets\pages\scripts\v,..min.js" />
     <Content Include="assets\pages\scripts\widgets.js" />
     <Content Include="assets\pages\scripts\widgets.min.js" />
-    <Content Include="BaoCao\BaoCaoB9.aspx" />
     <Content Include="BaoCao\bcTonThatDienLuc_CapDienAp.aspx" />
     <Content Include="BaoCao\bcTonThat_CapDienAp.aspx" />
     <Content Include="BaoCao\bc_chiTietSauChot.aspx" />
@@ -5485,12 +5456,10 @@
     <Content Include="BaoCao\bc_BieuTongGiaoNhan.aspx" />
     <Content Include="BaoCao\bc_BieuTong_QT_ALL.aspx" />
     <Content Include="BaoCao\TK_DVChotBaoCao.aspx" />
-    <Content Include="BC_TK_ChotSL\bc_Chot_BaoCaoB9.aspx" />
-    <Content Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx" />
-    <Content Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx" />
-    <Content Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx" />
     <Content Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx" />
-    <Content Include="BC_TK_ChotSL\LS_BieuTong_QT_ALL.aspx" />
+    <Content Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx" />
+    <Content Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx" />
+    <Content Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx" />
     <Content Include="BienDongThang\bd_danhSachDiemDoDaNhap.aspx" />
     <Content Include="BienDongThang\bd_GiamDocXN_BackUp_PDF.aspx" />
     <Content Include="BaoCao\bc_TheoDoiSoLieu.aspx" />
@@ -7315,6 +7284,7 @@
     <Content Include="plugins\images\users\varun.jpg" />
     <Content Include="Report\Report.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\profiles.pubxml" />
     <None Include="Service References\ser_MDMS\Service_MDMS.disco" />
     <None Include="Service References\ser_MDMS\configuration91.svcinfo" />
@@ -7336,82 +7306,26 @@
     <Content Include="TonThatCMIS\TT_DzTrungAp.aspx" />
     <Content Include="TonThatCMIS\TT_KH_DAThap.aspx" />
     <Content Include="TonThatCMIS\TT_TBA.aspx" />
-    <Content Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx" />
-    <Content Include="TonThatKyThuat\DanhSachTramUuTien.aspx" />
-    <Content Include="TonThatKyThuat\dmKhachHangLuuY.aspx" />
     <Content Include="TonThatKyThuat\dm_KeHoachThang.aspx" />
     <Content Include="TonThatKyThuat\dmKhachHang_CT.aspx" />
     <Content Include="TonThatKyThuat\ChiTietPhuTai.aspx" />
-    <Content Include="TonThatKyThuat\DsTramUuTien.aspx" />
     <Content Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx" />
-    <Content Include="TonThatKyThuat\KiemTraCot_CAD.aspx" />
-    <Content Include="TonThatKyThuat\QuanLyCad.aspx" />
     <Content Include="TonThatKyThuat\SoSanhTonThat.aspx" />
     <Content Include="TonThatKyThuat\dmKhachHang.aspx" />
     <Content Include="TonThatKyThuat\dmLoaiDuongDay.aspx" />
     <Content Include="TonThatKyThuat\ImportData.aspx" />
-    <Content Include="TonThatKyThuat\TonThatTramUuTien.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADOController.cs" />
-    <Compile Include="BaoCao\BaoCaoB9.aspx.cs">
-      <DependentUpon>BaoCaoB9.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BaoCao\BaoCaoB9.aspx.designer.cs">
-      <DependentUpon>BaoCaoB9.aspx</DependentUpon>
-    </Compile>
     <Compile Include="BaoCao\bc_BieuTong_QT_ALL.aspx.cs">
       <DependentUpon>bc_BieuTong_QT_ALL.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="BaoCao\bc_BieuTong_QT_ALL.aspx.designer.cs">
       <DependentUpon>bc_BieuTong_QT_ALL.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BaoCaoB9.aspx.cs">
-      <DependentUpon>bc_Chot_BaoCaoB9.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BaoCaoB9.aspx.designer.cs">
-      <DependentUpon>bc_Chot_BaoCaoB9.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx.cs">
-      <DependentUpon>bc_Chot_BCChiTiet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx.designer.cs">
-      <DependentUpon>bc_Chot_BCChiTiet.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx.cs">
-      <DependentUpon>bc_Chot_BieuTongGiaoNhan.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx.designer.cs">
-      <DependentUpon>bc_Chot_BieuTongGiaoNhan.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx.cs">
-      <DependentUpon>BC_Chot_inBienBanQT.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx.designer.cs">
-      <DependentUpon>BC_Chot_inBienBanQT.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx.cs">
-      <DependentUpon>bc_Chot_TonThat.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx.designer.cs">
-      <DependentUpon>bc_Chot_TonThat.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\LS_BieuTong_QT_ALL.aspx.cs">
-      <DependentUpon>LS_BieuTong_QT_ALL.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\LS_BieuTong_QT_ALL.aspx.designer.cs">
-      <DependentUpon>LS_BieuTong_QT_ALL.aspx</DependentUpon>
     </Compile>
     <Compile Include="BienDongThang\bd_danhSachDiemDoDaNhap.aspx.cs">
       <DependentUpon>bd_danhSachDiemDoDaNhap.aspx</DependentUpon>
@@ -7458,9 +7372,7 @@
     <Compile Include="Class\clTinhTonThatKT.cs" />
     <Compile Include="Class\ConvertListToTable.cs" />
     <Compile Include="Class\DisplayConfigConsts.cs" />
-    <Compile Include="Class\InBienBanB9Chot.cs" />
     <Compile Include="Class\InBienBanQT.cs" />
-    <Compile Include="Class\LS_InBienBanQT.cs" />
     <Compile Include="Class\XuatXML_GCS.cs" />
     <Compile Include="DanhMuc\DM_DiemDoLienKet.aspx.cs">
       <DependentUpon>DM_DiemDoLienKet.aspx</DependentUpon>
@@ -7601,6 +7513,34 @@
     </Compile>
     <Compile Include="BaoCao\TK_DVChotBaoCao.aspx.designer.cs">
       <DependentUpon>TK_DVChotBaoCao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx.cs">
+      <DependentUpon>bc_Chot_TonThat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx.designer.cs">
+      <DependentUpon>bc_Chot_TonThat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx.cs">
+      <DependentUpon>bc_Chot_BieuTongGiaoNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx.designer.cs">
+      <DependentUpon>bc_Chot_BieuTongGiaoNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx.cs">
+      <DependentUpon>bc_Chot_BCChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx.designer.cs">
+      <DependentUpon>bc_Chot_BCChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx.cs">
+      <DependentUpon>BC_Chot_inBienBanQT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx.designer.cs">
+      <DependentUpon>BC_Chot_inBienBanQT.aspx</DependentUpon>
     </Compile>
     <Compile Include="BienDongThang\bd_TongXacNhan.aspx.cs">
       <DependentUpon>bd_TongXacNhan.aspx</DependentUpon>
@@ -7789,12 +7729,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Report\InDienNhan3ThoiDiem.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Report\InDienNhan3ThoiDiem.Designer.cs">
-      <DependentUpon>InDienNhan3ThoiDiem.cs</DependentUpon>
-    </Compile>
     <Compile Include="Report\InDN_ThuongPhamTCT.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -7885,9 +7819,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="SYS\BasePage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    <Compile Include="SYS\BasePage.cs" />
     <Compile Include="SYS\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -7979,27 +7911,6 @@
     <Compile Include="TonThatCMIS\TT_TBA.aspx.designer.cs">
       <DependentUpon>TT_TBA.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx.cs">
-      <DependentUpon>ChiTietPhuTaiNgay.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx.designer.cs">
-      <DependentUpon>ChiTietPhuTaiNgay.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TonThatKyThuat\DanhSachTramUuTien.aspx.cs">
-      <DependentUpon>DanhSachTramUuTien.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TonThatKyThuat\DanhSachTramUuTien.aspx.designer.cs">
-      <DependentUpon>DanhSachTramUuTien.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TonThatKyThuat\dmKhachHangLuuY.aspx.cs">
-      <DependentUpon>dmKhachHangLuuY.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TonThatKyThuat\dmKhachHangLuuY.aspx.designer.cs">
-      <DependentUpon>dmKhachHangLuuY.aspx</DependentUpon>
-    </Compile>
     <Compile Include="TonThatKyThuat\dm_KeHoachThang.aspx.cs">
       <DependentUpon>dm_KeHoachThang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -8021,33 +7932,12 @@
     <Compile Include="TonThatKyThuat\ChiTietPhuTai.aspx.designer.cs">
       <DependentUpon>ChiTietPhuTai.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TonThatKyThuat\DsTramUuTien.aspx.cs">
-      <DependentUpon>DsTramUuTien.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TonThatKyThuat\DsTramUuTien.aspx.designer.cs">
-      <DependentUpon>DsTramUuTien.aspx</DependentUpon>
-    </Compile>
     <Compile Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx.cs">
       <DependentUpon>ImportCS_ChuKyNgay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx.designer.cs">
       <DependentUpon>ImportCS_ChuKyNgay.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TonThatKyThuat\KiemTraCot_CAD.aspx.cs">
-      <DependentUpon>KiemTraCot_CAD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TonThatKyThuat\KiemTraCot_CAD.aspx.designer.cs">
-      <DependentUpon>KiemTraCot_CAD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TonThatKyThuat\QuanLyCad.aspx.cs">
-      <DependentUpon>QuanLyCad.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TonThatKyThuat\QuanLyCad.aspx.designer.cs">
-      <DependentUpon>QuanLyCad.aspx</DependentUpon>
     </Compile>
     <Compile Include="TonThatKyThuat\SoSanhTonThat.aspx.cs">
       <DependentUpon>SoSanhTonThat.aspx</DependentUpon>
@@ -8076,13 +7966,6 @@
     </Compile>
     <Compile Include="TonThatKyThuat\ImportData.aspx.designer.cs">
       <DependentUpon>ImportData.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TonThatKyThuat\TonThatTramUuTien.aspx.cs">
-      <DependentUpon>TonThatTramUuTien.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TonThatKyThuat\TonThatTramUuTien.aspx.designer.cs">
-      <DependentUpon>TonThatTramUuTien.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\ServerSignWS\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -9383,9 +9266,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Report\InDienNhan3ThoiDiem.resx">
-      <DependentUpon>InDienNhan3ThoiDiem.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report\InDN_ThuongPhamTCT.resx">
       <DependentUpon>InDN_ThuongPhamTCT.cs</DependentUpon>
     </EmbeddedResource>
@@ -9447,6 +9328,24 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ser_MDMS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Connection\Connection.csproj">
+      <Project>{b29b9b08-241f-4b25-afa6-dceb18382602}</Project>
+      <Name>Connection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataAcess\DataAcess\DataAcess.csproj">
+      <Project>{7a1b3aad-10cd-42cc-85ab-bb6cbf5913e7}</Project>
+      <Name>DataAcess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entity\Entity\Entity.csproj">
+      <Project>{78cfe0f4-0056-451e-b696-52c04c80cde8}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\Service\Service.csproj">
+      <Project>{841e418a-a2c6-459f-abfb-d4c289d8e4dc}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
