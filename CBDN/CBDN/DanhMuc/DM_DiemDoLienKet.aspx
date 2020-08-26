@@ -50,8 +50,6 @@
                             OnStartRowEditing="grdDVT_StartRowEditing" ClientIDMode="AutoID" Theme="Aqua" Width="100%" OnRowUpdating="grdDVT_RowUpdating">
                             <Columns>
                                    <dx:GridViewCommandColumn Caption=" " VisibleIndex="31" Width="60px">
-                                                <EditButton Visible="True">
-                                                </EditButton>
                                             </dx:GridViewCommandColumn>
                                  <dx:GridViewDataTextColumn Caption="Phương thức" FieldName="TenChiNhanh" VisibleIndex="2" Width="18%">
                                     <EditFormSettings Visible="False" />

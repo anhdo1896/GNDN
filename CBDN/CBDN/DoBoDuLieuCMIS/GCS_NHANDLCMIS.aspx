@@ -83,7 +83,7 @@
 
                         <dx:ASPxRadioButtonList ID="rdImportDuLieu" runat="server" AutoPostBack="true" RepeatDirection="Horizontal" SelectedIndex="0" Theme="Aqua" Width="550px">
                             <Items>
-                                <dx:ListEditItem Text="Import dữ liệu vào phần mềm CNDN" Value="0" Selected="True" />
+                                <dx:ListEditItem Text="Import dữ liệu vào phần mềm GNDN" Value="0" Selected="True" />
                                 <dx:ListEditItem Text="Đồng bộ và xuất dữ liệu vào CMIS" Value="1" />
                             </Items>
                         </dx:ASPxRadioButtonList>

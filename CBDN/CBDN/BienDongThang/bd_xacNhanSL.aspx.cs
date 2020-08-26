@@ -126,11 +126,11 @@ namespace MTCSYT
                 var user = db.DM_USERs.SingleOrDefault(x => x.IDUSER == ky.NguoiTao);
                 if(ky.ChucVu==1)
                 {
-                    lbThongTinXacNhan.Text = "Nhân viên xác nhận: "+ user.USERNAME+"_"+user.HOTEN+" thời gian xác nhận: "+ky.NgayTao;
+                    lbThongTinXacNhan.Text = "Nhân viên xác nhận: "+ user.HOTEN  + " - " + user.USERNAME + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " +ky.NgayTao;
                 }
                 else if(ky.ChucVu==2)
                 {
-                    lbTPKy.Text = "Trưởng phòng xác nhận: " + user.USERNAME + "_" + user.HOTEN + " thời gian xác nhận: " + ky.NgayTao +"</br>";
+                    lbTPKy.Text = "Trưởng phòng xác nhận: " + user.USERNAME + " - " + user.HOTEN+ "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + ky.NgayTao +"</br>";
                 }
                 //else if (ky.ChucVu == 3)
                 //{
@@ -560,7 +560,7 @@ namespace MTCSYT
 
                     db.SubmitChanges();
                 }
-
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Đã xác nhận số liệu thành công');", true);
                 LoadGrdGiao();
                 LoadGrdNhan();
                 InTongHopDienNang();

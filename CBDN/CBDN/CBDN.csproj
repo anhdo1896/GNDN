@@ -5479,6 +5479,7 @@
     <Content Include="BaoCao\bc_chiTietSauChot.aspx" />
     <Content Include="BaoCao\bcTonThat.aspx" />
     <Content Include="BaoCao\BC_inBienBanQT.aspx" />
+    <Content Include="BaoCao\bc_Tram_B9Test.aspx" />
     <Content Include="BaoCao\bc_Tram_B9.aspx" />
     <Content Include="BaoCao\bc_SanLuongDienKhuVuc.aspx" />
     <Content Include="BaoCao\bc_GiaoNhan2Chieu.aspx" />
@@ -7370,6 +7371,13 @@
     </Compile>
     <Compile Include="BaoCao\bc_BieuTong_QT_ALL.aspx.designer.cs">
       <DependentUpon>bc_BieuTong_QT_ALL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\bc_Tram_B9Test.aspx.cs">
+      <DependentUpon>bc_Tram_B9Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaoCao\bc_Tram_B9Test.aspx.designer.cs">
+      <DependentUpon>bc_Tram_B9Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="BC_TK_ChotSL\bc_Chot_BaoCaoB9.aspx.cs">
       <DependentUpon>bc_Chot_BaoCaoB9.aspx</DependentUpon>
@@ -9383,6 +9391,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report\InDienNhan3ThoiDiem.resx">
       <DependentUpon>InDienNhan3ThoiDiem.cs</DependentUpon>
     </EmbeddedResource>

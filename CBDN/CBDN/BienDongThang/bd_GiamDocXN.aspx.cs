@@ -59,15 +59,25 @@ namespace MTCSYT
                 var user = db.DM_USERs.SingleOrDefault(x => x.IDUSER == ky.NguoiTao);
                 if (ky.ChucVu == 1)
                 {
-                    lbNhanVienKy.Text = "Nhân viên xác nhận: " + user.USERNAME + "_" + user.HOTEN + " thời gian xác nhận: " + ky.NgayTao;
+                    lbNhanVienKy.Text = "NV xác nhận: " + user.HOTEN + " - " + user.USERNAME + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + ky.NgayTao;
                 }
                 else if (ky.ChucVu == 2)
                 {
-                    lbTP.Text = "Trưởng phòng xác nhận: " + user.USERNAME + "_" + user.HOTEN + " thời gian xác nhận: " + ky.NgayTao + "</br>";
+                    if (lbTP1.Text == "")
+                    {
+                        imgAnhKy.ShowLoadingImage = true;
+                        lbTP1.Text = "TP xác nhận: " + user.HOTEN + " - " + user.USERNAME + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + ky.NgayTao + "</br>";
+                    }
+                    else
+                    {
+                        ASPxImage2.ShowLoadingImage = true;
+                        lbTP2.Text = "TP xác nhận: " + user.HOTEN + " - " + user.USERNAME + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + ky.NgayTao + "</br>";
+                    }    
                 }
                 else if (ky.ChucVu == 3)
                 {
-                    lbGiamDocKy.Text = "Giám đốc xác nhận: " + user.USERNAME + "_" + user.HOTEN + " thời gian xác nhận: " + ky.NgayTao + "</br>";
+                    ASPxImage1.ShowLoadingImage = true;
+                    lbGiamDocKy.Text = "Giám đốc xác nhận: " + user.HOTEN + " - " + user.USERNAME + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + ky.NgayTao + "</br>";
                 }
             }
 

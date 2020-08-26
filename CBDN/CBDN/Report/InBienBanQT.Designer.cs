@@ -942,10 +942,10 @@
             // lbDLGiaoKy
             // 
             this.lbDLGiaoKy.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbDLGiaoKy.LocationFloat = new DevExpress.Utils.PointFloat(712.3289F, 206.25F);
+            this.lbDLGiaoKy.LocationFloat = new DevExpress.Utils.PointFloat(697.7235F, 206.25F);
             this.lbDLGiaoKy.Name = "lbDLGiaoKy";
             this.lbDLGiaoKy.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbDLGiaoKy.SizeF = new System.Drawing.SizeF(282.7083F, 23F);
+            this.lbDLGiaoKy.SizeF = new System.Drawing.SizeF(346.8234F, 23F);
             this.lbDLGiaoKy.StylePriority.UseFont = false;
             this.lbDLGiaoKy.StylePriority.UseTextAlignment = false;
             this.lbDLGiaoKy.Text = "Tổng Công ty Điện lực miền Bắc";
@@ -954,10 +954,10 @@
             // lbDLNhanKy
             // 
             this.lbDLNhanKy.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbDLNhanKy.LocationFloat = new DevExpress.Utils.PointFloat(120.4089F, 206.25F);
+            this.lbDLNhanKy.LocationFloat = new DevExpress.Utils.PointFloat(100.6173F, 206.25F);
             this.lbDLNhanKy.Name = "lbDLNhanKy";
             this.lbDLNhanKy.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbDLNhanKy.SizeF = new System.Drawing.SizeF(279.1668F, 23F);
+            this.lbDLNhanKy.SizeF = new System.Drawing.SizeF(349.7917F, 23F);
             this.lbDLNhanKy.StylePriority.UseFont = false;
             this.lbDLNhanKy.StylePriority.UseTextAlignment = false;
             this.lbDLNhanKy.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;

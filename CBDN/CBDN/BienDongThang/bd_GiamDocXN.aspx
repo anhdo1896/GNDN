@@ -179,15 +179,23 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <dx:ASPxImage ID="imgAnhKy" runat="server" ShowLoadingImage="true" ImageUrl="~/Images/CertificateActive.png"></dx:ASPxImage>
+                        <dx:ASPxImage ID="imgAnhKy" runat="server" ShowLoadingImage="false" ImageUrl="~/Images/CertificateActive.png"></dx:ASPxImage>
                     </td>
                     <td>
-                        <asp:Label ID="lbTP" runat="server" Font-Bold="True" ForeColor="Red" />
+                        <asp:Label ID="lbTP1" runat="server" Font-Bold="True" ForeColor="Red" />
                     </td>
                 </tr>
                 <tr>
                     <td align="right">
-                        <dx:ASPxImage ID="ASPxImage1" runat="server" ShowLoadingImage="true" ImageUrl="~/Images/CertificateActive.png"></dx:ASPxImage>
+                        <dx:ASPxImage ID="ASPxImage2" runat="server" ShowLoadingImage="false" ImageUrl="~/Images/CertificateActive.png"></dx:ASPxImage>
+                    </td>
+                    <td>
+                        <asp:Label ID="lbTP2" runat="server" Font-Bold="True" ForeColor="Red" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <dx:ASPxImage ID="ASPxImage1" runat="server" ShowLoadingImage="false" ImageUrl="~/Images/CertificateActive.png"></dx:ASPxImage>
                     </td>
                     <td>
                         <asp:Label ID="lbGiamDocKy" runat="server" Font-Bold="True" ForeColor="Red" />
