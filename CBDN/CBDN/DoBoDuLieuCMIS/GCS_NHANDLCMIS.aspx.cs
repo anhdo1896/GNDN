@@ -161,6 +161,14 @@ namespace MTCSYT.GCS_ONLINE
                     DataSet dsTem = new DataSet();
 
                     DataAccess.dbGCS dataA = new DataAccess.dbGCS();
+
+                    //MemoryStream memStream = new MemoryStream();
+                    //Stream file = Server.MapPath("~/") + "FileGCSCMIS\\" + UploadFile();
+                    //using (Stream s = file.PostedFile.InputStream)
+                    //{
+                    //    s.CopyTo(memStream);
+                    //}
+
                     dsTem.ReadXml(Server.MapPath("~/") + "FileGCSCMIS\\" + UploadFile(), XmlReadMode.InferSchema);
 
                     for (int i = 0; i < dsTem.Tables[0].Rows.Count; i++)

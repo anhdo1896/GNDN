@@ -93,7 +93,7 @@ namespace QLY_VTTB
         private void _DataBind()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            string strMadviqly = session.User.ma_dviqlyDN;
+            string strMadviqly = session.User.MA_DVIQLY;
 
             List<DM_DVQLY> _lstNew = new List<DM_DVQLY>();
             _lstNew = _DM_DVQLY.DM_DVQLYandLEVER_BYDV(strMadviqly);
@@ -198,7 +198,7 @@ namespace QLY_VTTB
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             DM_DVQLYService dm_dviSer = new DM_DVQLYService();
             //List<DM_DVQLY> lst_dmdv = new List<DM_DVQLY>();
-            var lst_dmdv = dm_dviSer.SelectAll_DVI_ByChild(int.Parse(session.User.ma_dviqly));
+            var lst_dmdv = dm_dviSer.SelectAll_DVI_ByChild(int.Parse(session.User.MA_DVIQLY));
             cmbChoseParent.DataSource = lst_dmdv;
             cmbChoseParent.ValueField = "IDMA_DVIQLY";
             cmbChoseParent.TextField = "NAME_DVIQLY";

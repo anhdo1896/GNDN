@@ -69,7 +69,7 @@ namespace QLY_VTTB
             DM_DVQLYService dm_dviSer = new DM_DVQLYService();
 
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            string strMadviqly = session.User.ma_dviqlyDN;
+            string strMadviqly = session.User.MA_DVIQLY;
 
             List<DM_DVQLY> lst_dmdv = new List<DM_DVQLY>();
             lst_dmdv = dm_dviSer.DM_DVQLYandLEVER_BYDV(strMadviqly);
@@ -322,6 +322,7 @@ namespace QLY_VTTB
 
         protected void GridUser_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
         {
+            if (TreeListOrganization.FocusedNode == null) return;
             List<DM_USER> lstUser = new List<DM_USER>();
             lstUser = _IDM_USERService.DM_USER_SelectAll_ByIDMA_DVIQLY(int.Parse(TreeListOrganization.FocusedNode.Key));
             GridUser.DataSource = lstUser;
