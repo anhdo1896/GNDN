@@ -75,11 +75,11 @@
             </div>
             <table>
                 <tr>
-                    <td rowspan="6" width="50%">
+                    <td rowspan="6" width="30%">
                         <dxwtl:ASPxTreeList ID="TreeListOrganization" runat="server" AutoGenerateColumns="False"
                             Caption="Danh sách đơn vị " DataCacheMode="Enabled"
                             KeyFieldName="IDMA_DVIQLY" ParentFieldName="ParentId"
-                            Width="100%" ClientInstanceName="TreeListOrganization" ClientIDMode="AutoID"
+                            Width="70%" ClientInstanceName="TreeListOrganization" ClientIDMode="AutoID"
                             OnCustomDataCallback="TreeListOrganization_CustomDataCallback" OnNodeDeleting="TreeListOrganization_NodeDeleting"
                             OnHtmlCommandCellPrepared="TreeListOrganization_HtmlCommandCellPrepared" Theme="Aqua">
                             <Images>
@@ -190,15 +190,16 @@
                             <Settings ShowTreeLines="True" SuppressOuterGridLines="true" />
                         </dxwtl:ASPxTreeList>
                     </td>
-                    <td><span><b>Thông tin chi tiết về đơn vị</b></span></td>
+                    <td> <dx:ASPxLabel ID="ASPxLabel3" runat="server" ClientInstanceName="lblName" Text="Thông tin chi tiết về đơn vị" Width="250px" Font-Bold="True" Font-Size="Large">
+                        </dx:ASPxLabel></td>
                 </tr>
                 <tr>
                     <td class="col1">
-                        <dx:ASPxLabel ID="lblName" runat="server" ClientInstanceName="lblName" Text="Mã đơn vị:">
+                        <dx:ASPxLabel ID="lblName" runat="server" ClientInstanceName="lblName" Text="Mã đơn vị:" Width="150px">
                         </dx:ASPxLabel>
                     </td>
                     <td class="clear">
-                        <dx:ASPxTextBox ID="txtNameOrganization" runat="server" Width="100%" ClientInstanceName="txtName">
+                        <dx:ASPxTextBox ID="txtNameOrganization" runat="server" Width="220px" ClientInstanceName="txtName">
                             <ValidationSettings SetFocusOnError="True" ValidationGroup="btnThemMoi">
                                 <RequiredField IsRequired="True" />
                             </ValidationSettings>
@@ -208,11 +209,11 @@
                 </tr>
                 <tr>
                     <td class="col1">
-                        <dx:ASPxLabel ID="ASPxLabel1" runat="server" ClientInstanceName="lblName" Text="Tên đơn vị:">
+                        <dx:ASPxLabel ID="ASPxLabel1" runat="server" ClientInstanceName="lblName" Text="Tên đơn vị:" Width="150px">
                         </dx:ASPxLabel>
                     </td>
                     <td class="clear">
-                        <dx:ASPxTextBox ID="txtTenDV" runat="server" Width="100%" ClientInstanceName="txtNameOrganization">
+                        <dx:ASPxTextBox ID="txtTenDV" runat="server" Width="220px" ClientInstanceName="txtNameOrganization">
                             <ValidationSettings SetFocusOnError="True" ValidationGroup="btnThemMoi">
                                 <RequiredField IsRequired="True" />
                             </ValidationSettings>
@@ -222,11 +223,11 @@
                 </tr>
                 <tr>
                     <td class="col1">
-                        <dx:ASPxLabel ID="lblChooseParent" runat="server" Text="Chọn cấp cha: ">
+                        <dx:ASPxLabel ID="lblChooseParent" runat="server" Text="Chọn cấp cha: " Width="150px">
                         </dx:ASPxLabel>
                     </td>
                     <td class="col2">
-                        <dx:ASPxComboBox ID="cmbChoseParent" runat="server" SelectedIndex="0" Width="100%"
+                        <dx:ASPxComboBox ID="cmbChoseParent" runat="server" SelectedIndex="0" Width="220px"
                             ClientInstanceName="cmbChoseParent" IncrementalFilteringMode="Contains"
                             ValueType="System.Int32">
                         </dx:ASPxComboBox>
@@ -234,11 +235,11 @@
                 </tr>
                 <tr>
                    <td class="col1">
-                        <dx:ASPxLabel ID="ASPxLabel2" runat="server" ClientInstanceName="lblName" Text="Tên viết tắt:">
+                        <dx:ASPxLabel ID="ASPxLabel2" runat="server" ClientInstanceName="lblName" Text="Tên viết tắt:" Width="150px">
                         </dx:ASPxLabel>
                     </td>
                     <td class="clear">
-                        <dx:ASPxTextBox ID="txtTenVietTat" runat="server" Width="100%" ClientInstanceName="txtTenVietTat">
+                        <dx:ASPxTextBox ID="txtTenVietTat" runat="server" Width="220px" ClientInstanceName="txtTenVietTat">
                         </dx:ASPxTextBox>
                     </td>
                 </tr>
