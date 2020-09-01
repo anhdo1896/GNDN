@@ -142,6 +142,13 @@ namespace QLY_VTTB.MasterPage
                 if (session.User.Roles.ID == 1)
                 {
                     lbMenu.Text = @"
+                        <li> 
+                            <a href='index.html' class='waves-effect'><i class='linea-icon linea-basic fa-fw' data-icon='v'></i> <span class='hide-menu'> Quản trị hệ thống <span class='fa arrow'></span> <span class='label label-rouded label-custom pull-right'>1</span></span></a>
+                                <ul class='nav nav-second-level'>
+                                <li> <a href='../DanhMuc/Organization.aspx'>* Đơn vị</a> </li>
+                                <li> <a href='../HeThong/UserManager.aspx'>* Người dùng</a> </li>
+                                </ul>
+                        </li>
                         <li>
                             <a href='inbox.html' class='waves-effect'><i data-icon=')' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Cây tổn thất <span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>2</span></span></a>
                             <ul class='nav nav-second-level'>
@@ -155,8 +162,7 @@ namespace QLY_VTTB.MasterPage
                         <li>
                             <a href='inbox.html' class='waves-effect'><i data-icon='D' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'> Đồng bộ dữ liệu <span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>3</span></span></a>
                             <ul class='nav nav-second-level'>
-                               <li> <a href='../DanhMuc/DM_DiemDoLienKet.aspx'>* Xây dựng điểm đo liên kết</a> </li>
-                                <li> <a href='../DongBoDuLieuMDMS/toolDongBoDuLieu.aspx'>* Lấy dữ liệu đo xa</a> </li>
+                               <li> <a href='../DanhMuc/DM_DiemDoLienKet.aspx'>* Xây dựng điểm đo liên kết</a> </li>                               
                                 <li> <a href='../DoBoDuLieuCMIS/GCS_NHANDLCMIS.aspx'>* Xuất nhận file CMIS</a></li>
                              
                             </ul>
@@ -169,7 +175,6 @@ namespace QLY_VTTB.MasterPage
  <li> <a href='../BaoCao/bc_TheoDoiSoLieu.aspx'>* Theo dõi số liệu đã nhập trong tháng</a></li>
                                 <li> <a href='../DanhMuc/bd_SanLuongThuongPhamTheoThang.aspx'>* Nhập sản lượng điện thương phẩm </a>  </li>
                                 <li> <a href='../BienDongThang/bd_NhanVienXNDN.aspx'>* Nhân viên xác nhận số liệu</a> </li>
-                                <li> <a href='../BienDongThang/bd_ThongKeDiemDo.aspx'>* Chốt số liệu</a></li>
                             </ul>
                         </li>
                         <li>
