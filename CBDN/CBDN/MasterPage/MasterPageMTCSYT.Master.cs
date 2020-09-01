@@ -52,6 +52,7 @@ namespace QLY_VTTB.MasterPage
                                <li> <a href='../DanhMuc/DM_DiemDoLienKet.aspx'>* Xây dựng điểm đo liên kết</a> </li>
                                 <li> <a href='../DongBoDuLieuMDMS/toolDongBoDuLieu.aspx'>* Lấy dữ liệu đo xa</a> </li>
                                 <li> <a href='../DoBoDuLieuCMIS/GCS_NHANDLCMIS.aspx'>* Xuất nhận file CMIS</a></li>
+                                <li> <a href='../DoBoDuLieuCMIS/ImportCMIS.aspx'>* Nhập dữ liệu từ CMIS</a></li>
                              
                             </ul>
                         </li>

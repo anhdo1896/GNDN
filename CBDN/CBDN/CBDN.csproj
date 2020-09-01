@@ -5517,6 +5517,7 @@
     <Content Include="DienNhan\DN_DienNangDuKien.aspx" />
     <Content Include="DienNhan\DN_MoKhoaNgay.aspx" />
     <Content Include="DoBoDuLieuCMIS\GCS_NHANDLCMIS.aspx" />
+    <Content Include="DoBoDuLieuCMIS\ImportCMIS.aspx" />
     <Content Include="DongBoDuLieuMDMS\toolDongBoDuLieu.aspx" />
     <Content Include="eliteadmin\css\tableCSS.css" />
     <Content Include="DanhMuc\dmCongTo.aspx" />
@@ -7458,6 +7459,7 @@
     <Compile Include="Class\clTinhTonThatKT.cs" />
     <Compile Include="Class\ConvertListToTable.cs" />
     <Compile Include="Class\DisplayConfigConsts.cs" />
+    <Compile Include="Class\InBienBanGiaoNhan.cs" />
     <Compile Include="Class\InBienBanQT.cs" />
     <Compile Include="Class\LS_InBienBanQT.cs" />
     <Compile Include="Class\XuatXML_GCS.cs" />
@@ -7523,6 +7525,13 @@
     </Compile>
     <Compile Include="DoBoDuLieuCMIS\GCS_NHANDLCMIS.aspx.designer.cs">
       <DependentUpon>GCS_NHANDLCMIS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoBoDuLieuCMIS\ImportCMIS.aspx.cs">
+      <DependentUpon>ImportCMIS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoBoDuLieuCMIS\ImportCMIS.aspx.designer.cs">
+      <DependentUpon>ImportCMIS.aspx</DependentUpon>
     </Compile>
     <Compile Include="DongBoDuLieuMDMS\toolDongBoDuLieu.aspx.cs">
       <DependentUpon>toolDongBoDuLieu.aspx</DependentUpon>
@@ -7788,6 +7797,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Report\InBienBanGiaoNhan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\InBienBanGiaoNhan.Designer.cs">
+      <DependentUpon>InBienBanGiaoNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\InDienNhan3ThoiDiem.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -7884,7 +7899,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="SYS\BasePage.cs" />
+    <Compile Include="SYS\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="SYS\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -8076,7 +8093,6 @@
     </Compile>
     <Compile Include="TonThatKyThuat\TonThatTramUuTien.aspx.cs">
       <DependentUpon>TonThatTramUuTien.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TonThatKyThuat\TonThatTramUuTien.aspx.designer.cs">
       <DependentUpon>TonThatTramUuTien.aspx</DependentUpon>
@@ -9380,6 +9396,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report\InBienBanGiaoNhan.resx">
+      <DependentUpon>InBienBanGiaoNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\InDienNhan3ThoiDiem.resx">
       <DependentUpon>InDienNhan3ThoiDiem.cs</DependentUpon>
     </EmbeddedResource>
