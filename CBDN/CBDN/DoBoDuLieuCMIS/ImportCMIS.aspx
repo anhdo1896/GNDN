@@ -66,8 +66,7 @@
                             ClientIDMode="AutoID"  Caption="Danh sách dữ liệu Import " ClientInstanceName="grvView"
                             OnPageIndexChanged="grvView_PageIndexChanged" Theme="Aqua" OnCustomColumnDisplayText="grvView_CustomColumnDisplayText">
                             <Columns>
-                                <dx:GridViewDataTextColumn Caption="STT" FieldName="STT" VisibleIndex="0">
-                                </dx:GridViewDataTextColumn>
+                               
                                 <dx:GridViewDataTextColumn Caption="Mã Điểm đo" FieldName="MaDiemDo" VisibleIndex="1">
                                 </dx:GridViewDataTextColumn>
                                 <dx:GridViewDataTextColumn Caption="Tên Điểm Đo" FieldName="TenDiemDo" VisibleIndex="2">
@@ -78,21 +77,12 @@
                                 </dx:GridViewDataTextColumn>
                                 <dx:GridViewDataTextColumn Caption="Bộ chỉ số" FieldName="BoChiSo" VisibleIndex="5">
                                 </dx:GridViewDataTextColumn>
-
-                                <dx:GridViewDataTextColumn Caption="Mã Sổ GCS" FieldName="MaSoGCS" VisibleIndex="6">
-                                </dx:GridViewDataTextColumn>
                                 <dx:GridViewDataTextColumn Caption="Mã Công tơ" FieldName="MaCongTo" VisibleIndex="7">
                                 </dx:GridViewDataTextColumn>
-                                <dx:GridViewDataTextColumn Caption="Số công tơ" FieldName="SoCongTo" VisibleIndex="8">
-                                </dx:GridViewDataTextColumn>
-                                <dx:GridViewDataTextColumn Caption="Số Pha" FieldName="SoPha" VisibleIndex="9">
-                                </dx:GridViewDataTextColumn>
+                               
                                 <dx:GridViewDataTextColumn Caption="Hệ số nhân" FieldName="HeSoNhan" VisibleIndex="10">
                                 </dx:GridViewDataTextColumn>
-                                <dx:GridViewDataTextColumn Caption="Ngày đầu ky" FieldName="NgayDauKy" VisibleIndex="11">
-                                </dx:GridViewDataTextColumn>
-                                <dx:GridViewDataTextColumn Caption="Ngày cuối kỳ" FieldName="NgayCuoiKy" VisibleIndex="12">
-                                </dx:GridViewDataTextColumn>
+       
                                 <dx:GridViewDataTextColumn Caption="Chỉ số cũ" FieldName="ChiSoCu" VisibleIndex="13">
                                 </dx:GridViewDataTextColumn>
 
@@ -103,10 +93,6 @@
                                 <dx:GridViewDataTextColumn Caption="Điện tiêu thụ" FieldName="DienTieuThu" VisibleIndex="16">
                                 </dx:GridViewDataTextColumn>
                                 <dx:GridViewDataTextColumn Caption="SL" FieldName="SL" VisibleIndex="17">
-                                </dx:GridViewDataTextColumn>
-                                <dx:GridViewDataTextColumn Caption="SL tháo" FieldName="SLThao" VisibleIndex="18">
-                                </dx:GridViewDataTextColumn>
-                                <dx:GridViewDataTextColumn Caption="Tổng cộng" FieldName="TongCong" VisibleIndex="19">
                                 </dx:GridViewDataTextColumn>
                                 
 
