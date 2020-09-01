@@ -425,8 +425,9 @@ namespace CBDN
                 decimal tyle = 0;
                 if (chitiet.TongCongTo != "0")
                     tyle = decimal.Parse(chitiet.TongNhap) / decimal.Parse(chitiet.TongCongTo) * 100;
+                string tyle1 = string.Format("{0:N} ", tyle);
 
-                table.Rows.Add(chitiet.TEN_DVIQLY, tyle);
+                table.Rows.Add(chitiet.TEN_DVIQLY, tyle1);
             }
             return table;
         }

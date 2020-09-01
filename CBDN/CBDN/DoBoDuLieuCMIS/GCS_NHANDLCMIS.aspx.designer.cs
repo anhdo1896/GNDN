@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MTCSYT.GCS_ONLINE {
-    
-    
-    public partial class GCS_NHANDLCMIS {
-        
+namespace MTCSYT.GCS_ONLINE
+{
+
+
+    public partial class GCS_NHANDLCMIS
+    {
+
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
         /// cmbThang control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cmbThang;
-        
+
         /// <summary>
         /// Label4 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
+
         /// <summary>
         /// cmbNam control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cmbNam;
-        
+
         /// <summary>
         /// rdImportDuLieu control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxRadioButtonList rdImportDuLieu;
-        
+
         /// <summary>
         /// Label23 control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label23;
-        
+
         /// <summary>
         /// fileUp control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fileUp;
-        
+
         /// <summary>
         /// hdTenFile control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdTenFile;
-        
+
         /// <summary>
         /// btnImport control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnImport;
-        
+
         /// <summary>
         /// btnHuyNhan control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace MTCSYT.GCS_ONLINE {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnHuyNhan;
-        
+
         /// <summary>
         /// grdCN control.
         /// </summary>
