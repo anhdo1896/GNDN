@@ -165,6 +165,7 @@ namespace QLY_VTTB.MasterPage
                             <ul class='nav nav-second-level'>
                                <li> <a href='../DanhMuc/DM_DiemDoLienKet.aspx'>* Xây dựng điểm đo liên kết</a> </li>                               
                                 <li> <a href='../DoBoDuLieuCMIS/GCS_NHANDLCMIS.aspx'>* Xuất nhận file CMIS</a></li>
+                                <li> <a href='../DoBoDuLieuCMIS/ImportCMIS.aspx'>* Nhập dữ liệu từ CMIS</a></li>
                              
                             </ul>
                         </li>
@@ -173,7 +174,7 @@ namespace QLY_VTTB.MasterPage
                             <ul class='nav nav-second-level'>
                                 <li> <a href='../BienDongThang/bd_GiaoNhan2ChieuThang.aspx'>* Nhập chỉ số chốt tháng </a>  </li>
                                 <li> <a href='../BienDongThang/bd_NVienNhapXacNhan.aspx'>* Danh sách chỉ số điểm đo đã nhập </a>  </li>
- <li> <a href='../BaoCao/bc_TheoDoiSoLieu.aspx'>* Theo dõi số liệu đã nhập trong tháng</a></li>
+                                <li> <a href='../BaoCao/bc_TheoDoiSoLieu.aspx'>* Theo dõi số liệu đã nhập trong tháng</a></li>
                                 <li> <a href='../DanhMuc/bd_SanLuongThuongPhamTheoThang.aspx'>* Nhập sản lượng điện thương phẩm </a>  </li>
                                 <li> <a href='../BienDongThang/bd_NhanVienXNDN.aspx'>* Nhân viên xác nhận số liệu</a> </li>
                             </ul>
