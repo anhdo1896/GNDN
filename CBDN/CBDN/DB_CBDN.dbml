@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_CanBangDienNang_V01" Class="DB_CBDNDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=10.21.0.135;Initial Catalog=DB_CanBangDienNang_V01;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_CanBangDienNang_V01ConnectionString3" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_GNDN_TEST" Class="DB_CBDNDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.21.0.135;Initial Catalog=DB_GNDN_TEST;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_GNDN_TESTConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DM_GiaoNhan2Chieu" Member="DM_GiaoNhan2Chieus">
     <Type Name="DM_GiaoNhan2Chieu">
       <Column Name="IDGiaoNhan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -2992,6 +2992,82 @@
     <Parameter Name="Thang" Parameter="thang" Type="System.Int32" DbType="Int" />
     <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
     <ElementType Name="BC_GiaoNhan2Chieu_TongTram_BCCResult">
+      <Column Name="IDTram" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenTram" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ISDoDem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsCToMotGia" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="slPGiao" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="slPNhan" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="slQGiao" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="slQNhan" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="slb1Giao" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="slb1Nhan" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="slb2Giao" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="slb2Nhan" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="slb3Giao" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="slb3Nhan" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="tong3B_Giao" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="tong3B_Nhan" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TongTram" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BC_ChiSoThang_ChuaChot_BCC" Method="BC_ChiSoThang_ChuaChot_BCC1">
+    <Parameter Name="IDMA_DVIQLY" Parameter="iDMA_DVIQLY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <ElementType Name="BC_ChiSoThang_ChuaChot_BCCResult1">
+      <Column Name="IDCongTo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDTram" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaTram" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsCToMotGia" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TEN_DVIQLY" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TenTram" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenDiemDo" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CapDienAp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HeSoNhan" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="MaCongTo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TenCongTo" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="HeSoNhan1" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="ISDoDem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Giao_Bieu1_Cuoi" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Giao_Bieu2_Cuoi" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Giao_Bieu3_Cuoi" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Giao_P_Cuoi" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Giao_Q_Cuoi" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Nhan_Bieu1_Cuoi" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Nhan_Bieu2_Cuoi" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Nhan_Bieu3_Cuoi" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Nhan_P_Cuoi" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Nhan_Q_Cuoi" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Giao_Bieu1_Dau" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Giao_Bieu2_Dau" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Giao_Bieu3_Dau" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Giao_P_Dau" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Giao_Q_Dau" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Nhan_Bieu1_Dau" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Nhan_Bieu2_Dau" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Nhan_Bieu3_Dau" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Nhan_P_Dau" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Nhan_Q_Dau" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Giao_P_SanLuong" Type="System.Decimal" DbType="Decimal(30,0)" CanBeNull="true" />
+      <Column Name="Giao_Q_SanLuong" Type="System.Decimal" DbType="Decimal(30,0)" CanBeNull="true" />
+      <Column Name="Giao_Bieu1_SanLuong" Type="System.Decimal" DbType="Decimal(30,0)" CanBeNull="true" />
+      <Column Name="Giao_Bieu2_SanLuong" Type="System.Decimal" DbType="Decimal(30,0)" CanBeNull="true" />
+      <Column Name="Giao_Bieu3_SanLuong" Type="System.Decimal" DbType="Decimal(30,0)" CanBeNull="true" />
+      <Column Name="Nhan_P_SanLuong" Type="System.Decimal" DbType="Decimal(30,0)" CanBeNull="true" />
+      <Column Name="Nhan_Q_SanLuong" Type="System.Decimal" DbType="Decimal(30,0)" CanBeNull="true" />
+      <Column Name="Nhan_Bieu1_SanLuong" Type="System.Decimal" DbType="Decimal(30,0)" CanBeNull="true" />
+      <Column Name="Nhan_Bieu2_SanLuong" Type="System.Decimal" DbType="Decimal(30,0)" CanBeNull="true" />
+      <Column Name="Nhan_Bieu3_SanLuong" Type="System.Decimal" DbType="Decimal(30,0)" CanBeNull="true" />
+      <Column Name="strLoaiNhap" Type="System.String" DbType="NVarChar(11) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BC_GiaoNhan2Chieu_TongTram_BCC" Method="BC_GiaoNhan2Chieu_TongTram_BCC1">
+    <Parameter Name="IDMA_DVIQLY" Parameter="iDMA_DVIQLY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <ElementType Name="BC_GiaoNhan2Chieu_TongTram_BCCResult1">
       <Column Name="IDTram" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TenTram" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="ISDoDem" Type="System.Int32" DbType="Int" CanBeNull="true" />

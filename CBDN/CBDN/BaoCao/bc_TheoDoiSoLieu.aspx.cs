@@ -46,6 +46,7 @@ namespace MTCSYT
 
             InTongHopDienNang();
             InBienBanQuyetToan();
+            InBienBanGiaoNhanChiTiet();
 
         }
         private void InTongHopDienNang()
@@ -141,7 +142,7 @@ namespace MTCSYT
         private void loadGiaoNhan()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            var lstDD = db.db_GD_PhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "ALL").ToList();
+            var lstDD = db.db_GD_PhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + "")-1, int.Parse(cmbNam.Value + ""), "ALL").ToList();
             cmbPhuongThuc.DataSource = lstDD;
             cmbPhuongThuc.ValueField = "IDChiNhanh";
             cmbPhuongThuc.TextField = "TenPhuongThuc";
@@ -206,7 +207,40 @@ namespace MTCSYT
             Response.Redirect("../Report/Report.aspx?ChiNhanh=" + cmbPhuongThuc.Value + "&Loai=1&Thang=" + cmbThang.Value + "&Nam=" + cmbNam.Value + "&ParentId=1");
         }
 
+        private void InBienBanGiaoNhanChiTiet()
+        {
+            if (cmbPhuongThuc.Value == null) return;
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            int strMadviqly = int.Parse(session.User.ma_dviqly);
 
+            DataTable dt = new DataTable();
+
+            CBDN.Class.InBienBanGiaoNhan inBienBan = new CBDN.Class.InBienBanGiaoNhan();
+            string strGiao = "", strNhan = "", strGDNhan = "", strGDGiao = "";
+
+            int donvi = strMadviqly;
+            int phuongthuc = int.Parse(cmbPhuongThuc.Value + "");
+            if (phuongthuc != 0)
+            {
+                if (strMadviqly == 2)
+                {
+                    if (phuongthuc != 0)
+                    {
+                        donvi = int.Parse(db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + "")).IDMADVIQLY.Replace(",2,", "").Replace(",", ""));
+                        phuongthuc = 0;
+                    }
+
+                }
+
+                dt = inBienBan.InBienBanGN(phuongthuc, donvi, int.Parse(cmbThang.Value + "")-1, int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGDGiao);
+
+               MTCSYT.Report.InBienBanGiaoNhan report = new MTCSYT.Report.InBienBanGiaoNhan(dt, "" + cmbThang.Value, "" + cmbNam.Value, false, false, "", "", strGiao, strNhan, "", "", strGDNhan, strGDGiao);
+               ReportViewer3.Report = report;
+
+                ReportToolbar3.ReportViewer = ReportViewer3;
+            }
+
+        }
 
     }
 }

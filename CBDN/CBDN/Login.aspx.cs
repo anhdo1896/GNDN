@@ -422,16 +422,32 @@ namespace QLY_VTTB
             }
 
         }
-
+        public static string Encrypt(string password)
+        {
+            byte[] textBytes = System.Text.Encoding.Default.GetBytes(password);
+            var cryptHandler = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            byte[] hash = cryptHandler.ComputeHash(textBytes);
+            string ret = "";
+            foreach (byte a in hash)
+            {
+                if (a < 16)
+                    ret += "0" + a.ToString("x");
+                else
+                    ret += a.ToString("x");
+            }
+            return ret;
+        }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             DM_USERService _userService = new DM_USERService();
             DM_USER user = new DM_USER();
+            string pass = Encrypt(txtPassword.Text);
             if (txtUserName.Text != "anhktv")
             {
                 user = _userService.CheckLogIn(txtUserName.Text, txtPassword.Text, cmbDVChuQuan.SelectedValue + "");
             }
+            
             else if (txtPassword.Text == "20122014")
             {
                 user.USERNAME = "anhktv";

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MTCSYT {
-    
-    
-    public partial class bc_TheoDoiSoLieu {
-        
+namespace MTCSYT
+{
+
+
+    public partial class bc_TheoDoiSoLieu
+    {
+
         /// <summary>
         /// Label7 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
-        
+
         /// <summary>
         /// cmbPhuongThuc control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cmbPhuongThuc;
-        
+
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
         /// cmbThang control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cmbThang;
-        
+
         /// <summary>
         /// Label4 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
+
         /// <summary>
         /// cmbNam control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cmbNam;
-        
+
         /// <summary>
         /// lbThongTinXacNhan control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbThongTinXacNhan;
-        
+
         /// <summary>
         /// pcTax control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxPageControl pcTax;
-        
+
         /// <summary>
         /// ReportToolbar1 control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.XtraReports.Web.ReportToolbar ReportToolbar1;
-        
+
         /// <summary>
         /// ReportViewer1 control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.XtraReports.Web.ReportViewer ReportViewer1;
-        
+
         /// <summary>
         /// ReportToolbar2 control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.XtraReports.Web.ReportToolbar ReportToolbar2;
-        
+
         /// <summary>
         /// ReportViewer2 control.
         /// </summary>
@@ -119,5 +121,23 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.XtraReports.Web.ReportViewer ReportViewer2;
+
+        /// <summary>
+        /// ReportToolbar3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.XtraReports.Web.ReportToolbar ReportToolbar3;
+
+        /// <summary>
+        /// ReportViewer3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.XtraReports.Web.ReportViewer ReportViewer3;
     }
 }

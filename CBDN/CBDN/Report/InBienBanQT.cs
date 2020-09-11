@@ -88,7 +88,7 @@ namespace MTCSYT.Report
             // lbDienNangMua.Text = "2. Điện năng mua của " + tenDonvi + " là: " + dt.Compute("sum(TongNhan3B)", "Loai=1 or Loai=2 or Loai=4").ToString() + "kWh     (A+C chiều nhận)";
             string tongKWh = dt.Compute("sum([Tong_TieuThu])", "[Loai]=1 or [Loai]=2 or [Loai]=4") + "";
             if (tongKWh != "")
-                lbDienNangMua.Text = "2. Điện năng mua của " + tenDonviGiao + " là: " + string.Format("{0:N0} ", decimal.Parse(tongKWh)).Replace(",", ".") + "kWh (Bằng chữ: " + clChuyenSo.ChuyenSo(tongKWh.Replace("-", "")) + " Kwh)";
+                lbDienNangMua.Text = "2. Điện năng mua của " + tenDonviGiao + " là: " + string.Format("{0:N0} ", decimal.Parse(tongKWh)).Replace(",", ".") + "kWh (Bằng chữ: " + clChuyenSo.ChuyenSo(tongKWh.Replace("-", "")) + " kWh)";
             else
                 lbDienNangMua.Text = "2. Điện năng mua của " + tenDonviGiao + " là: 0kWh (Bằng chữ: Không Kwh)";
 

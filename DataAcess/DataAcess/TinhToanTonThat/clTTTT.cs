@@ -12,7 +12,7 @@ namespace DataAccess
 {
     public class clTTTT
     {
-        public DataTable SELECT_TTTT_DN_KEHOACH(string pMA_DVIQLY,string pMA_TRAM)
+        public DataTable SELECT_TTTT_DN_KEHOACH(string pMA_DVIQLY, string pMA_TRAM)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
@@ -103,7 +103,7 @@ namespace DataAccess
                 objCmd = null;
             }
         }
-        public void DELETE_TTTT_DN_KEHOACH(string pMA_DVIQLY,string pMA_TRAM, int pKEHOACH, int pTHANG, int pNAM)
+        public void DELETE_TTTT_DN_KEHOACH(string pMA_DVIQLY, string pMA_TRAM, int pKEHOACH, int pTHANG, int pNAM)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
@@ -313,7 +313,7 @@ namespace DataAccess
         public DataTable Get_SLKhang(string pMA_DVIQLY, string pMakhang, int pTHANG, int pNAM)
         {
             DataTable dt = new DataTable();
-                OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
             OracleCommand objCmd = new OracleCommand();
             try
             {
@@ -378,7 +378,7 @@ namespace DataAccess
             }
             return dt;
         }
-        public DataTable SELECT_TONTHATKD_BYTRAM(string pMA_DVIQLY, string pMA_TRAM, int pTHANG , int pNAM)
+        public DataTable SELECT_TONTHATKD_BYTRAM(string pMA_DVIQLY, string pMA_TRAM, int pTHANG, int pNAM)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
@@ -592,7 +592,7 @@ namespace DataAccess
             }
         }
 
-        public DataTable TTTT_SELECT_SLG_DUONGDAY_TRAM(string pMA_DVIQLY,string pMATRAM,int pTHANG,int pNAM,int Ngay,int Gio)
+        public DataTable TTTT_SELECT_SLG_DUONGDAY_TRAM(string pMA_DVIQLY, string pMATRAM, int pTHANG, int pNAM, int Ngay, int Gio)
         {
             DataTable dt = new DataTable(); OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
             OracleCommand objCmd = new OracleCommand();
@@ -739,7 +739,7 @@ namespace DataAccess
             }
 
         }
-        public void INSERT_TTTT_DUONGDAY_TRAM(int PID, string PMATRAM, string PDIEMDAU, string PDIEMCUOI, string PIDLOAIDAY, DateTime PNGAYTAO, int PNGUOITAO, string pMA_DVIQLY, decimal pHESOCONGSUAT,decimal pCHIEUDAI,decimal pTongDienAP)
+        public void INSERT_TTTT_DUONGDAY_TRAM(int PID, string PMATRAM, string PDIEMDAU, string PDIEMCUOI, string PIDLOAIDAY, DateTime PNGAYTAO, int PNGUOITAO, string pMA_DVIQLY, decimal pHESOCONGSUAT, decimal pCHIEUDAI, decimal pTongDienAP)
         {
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
             OracleCommand objCmd = new OracleCommand();
@@ -963,8 +963,8 @@ namespace DataAccess
             }
 
         }
-     
-        
+
+
         public DataTable SELECT_TTTT_DM_LOAIDUONGDAY(int pID, string pMA_DVIQLY)
         {
             DataTable dt = new DataTable();
@@ -1375,7 +1375,7 @@ namespace DataAccess
             return dt;
 
         }
-        public void INSERT_TTTT_KHACHHANG_LUUY(string pMA_DVIQLY, string pMA_KHANG, string pMA_TRAM, string pTEN_KHANG, string pDIACHI, string pNoiDung,string pDate)
+        public void INSERT_TTTT_KHACHHANG_LUUY(string pMA_DVIQLY, string pMA_KHANG, string pMA_TRAM, string pTEN_KHANG, string pDIACHI, string pNoiDung, string pDate)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
@@ -1651,7 +1651,7 @@ namespace DataAccess
         }
         public DataTable SELECT_TTTT_TRAM_UUTIEN_TT(int pTHANG, int pNAM)
         {
-            DataTable dt = new DataTable(); 
+            DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
             OracleCommand objCmd = new OracleCommand();
             try
@@ -1682,7 +1682,7 @@ namespace DataAccess
             return dt;
 
         }
-        public void INSERT_TTTT_TRAM_UUTIEN_TINHTOAN(string pMA_DVIQLY, string pMA_TRAM, string pKyThuat, string pKinhDoanh, string pSoSanh, string pKyThuatTL, string pKinhDoanhTL, string pSoSanhTL, string pDate,string pNam, string pThang)
+        public void INSERT_TTTT_TRAM_UUTIEN_TINHTOAN(string pMA_DVIQLY, string pMA_TRAM, string pKyThuat, string pKinhDoanh, string pSoSanh, string pKyThuatTL, string pKinhDoanhTL, string pSoSanhTL, string pDate, string pNam, string pThang)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
@@ -1850,5 +1850,8 @@ namespace DataAccess
             }
             return dt;
         }
+
+      
+
     }
 }
