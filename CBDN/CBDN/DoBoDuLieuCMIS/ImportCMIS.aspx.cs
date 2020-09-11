@@ -164,10 +164,6 @@ namespace MTCSYT.GCS_ONLINE
                                     d++;
                                 }
                             }
-
-
-
-
                         }
                         if (d == 0)
                         {
@@ -208,13 +204,8 @@ namespace MTCSYT.GCS_ONLINE
                 string thang = "";
                 string nam = "";
                 string madiemdo = "";
-
-
-
                 for (int j = 0; j < a1; j++)
                 {
-
-
                     madiemdo = dtData.Rows[j]["MaDiemDo"] + "";
                     string bcs = dtData.Rows[j]["BoChiSo"] + "";
                     if (madiemdo == checkdiemdo)
@@ -281,11 +272,7 @@ namespace MTCSYT.GCS_ONLINE
             int adem = 0;
 
                 for (int i = 0; i < bdem; i++)
-
                 {
-
-
-
                     try
                     {
 
@@ -300,9 +287,7 @@ namespace MTCSYT.GCS_ONLINE
                         decimal Nhan_Bieu3_Cuoi = decimal.Parse(dsData.Rows[i]["Nhan_Bieu3_Cuoi"] + "");
                         decimal Nhan_P_Cuoi = decimal.Parse(dsData.Rows[i]["Nhan_P_Cuoi"] + "");
                         decimal Nhan_Q_Cuoi = decimal.Parse(dsData.Rows[i]["Nhan_Q_Cuoi"] + "");
-
-                        //var cto = db.DM_CongTos.SingleOrDefault(x => x.IDCongTo == int.Parse(tlDonVi.FocusedNode.Key));
-                        //CBDN.HD_GiaoNhanThang chitiet = db.HD_GiaoNhanThangs.SingleOrDefault(x => x.ID == int.Parse(tlDonVi.FocusedNode.Key));
+                       
                         var MaDiemDo = dsData.Rows[i]["MaDiemDo"] + "";
                         var Thang = int.Parse(dsData.Rows[i]["Thang"] + "");
                         var Nam = int.Parse(dsData.Rows[i]["Nam"] + "");
@@ -323,7 +308,6 @@ namespace MTCSYT.GCS_ONLINE
                             var ID = congto.IDCongTo;
                             var idDuongday = diemdo.IDChiNhanh;
                             var idtram = tram.IDTram;
-                            //var congto = db.DM_CongTos.SingleOrDefault(x => x.IDCongTo == int.Parse(chitiet.IDCongTo));
 
                             if (chitiet != null)
                             {
@@ -362,25 +346,12 @@ namespace MTCSYT.GCS_ONLINE
                                 else
                                     chitiet.Nhan_Bieu3_SanLuong = (decimal.Parse("" + Nhan_Bieu3_Cuoi) - chitiet.Nhan_Bieu3_Dau) * congto.HeSoNhan * congto.HeSoQuyDoi;
 
-                                //chitiet.DonViTinh = int.Parse(cmbDonVi.Value + "");
                                 chitiet.Nhan_P_Cuoi = Math.Round(decimal.Parse(Nhan_P_Cuoi + ""), 3);
                                 chitiet.Giao_P_Cuoi = decimal.Parse(Giao_P_Cuoi + "");
 
                                 chitiet.Giao_P_SanLuong = chitiet.Giao_Bieu1_SanLuong + chitiet.Giao_Bieu2_SanLuong + chitiet.Giao_Bieu3_SanLuong;
                                 chitiet.Nhan_P_SanLuong = chitiet.Nhan_Bieu1_SanLuong + chitiet.Nhan_Bieu2_SanLuong + chitiet.Nhan_Bieu3_SanLuong;
-                                //if (chitiet.Giao_P_Dau > decimal.Parse(Giao_P_Cuoi))
-                                //{
-                                //    //trường hợp quay đầu
-                                //    chitiet.Giao_P_SanLuong = (soLon(chitiet.Giao_P_Dau + "") - chitiet.Giao_P_Dau + decimal.Parse("" + Giao_P_Cuoi)) * (decimal)congto.HeSoNhan * (decimal)congto.HeSoQuyDoi;
-                                //}
-                                //else
-                                //    chitiet.Giao_P_SanLuong = (decimal.Parse("" + Giao_P_Cuoi) - chitiet.Giao_P_Dau) * (decimal)congto.HeSoNhan * (decimal)congto.HeSoQuyDoi;
-
-                                //if (decimal.Parse(Nhan_P_Cuoi) < chitiet.Nhan_P_Cuoi)
-                                //    chitiet.Nhan_P_SanLuong = (soLon(chitiet.Nhan_P_Cuoi + "") - chitiet.Nhan_P_Cuoi + decimal.Parse(Nhan_P_Cuoi)) * congto.HeSoNhan * congto.HeSoQuyDoi;
-                                //else
-                                //    chitiet.Nhan_P_SanLuong = (decimal.Parse(Nhan_P_Cuoi) - chitiet.Nhan_P_Cuoi) * congto.HeSoNhan * congto.HeSoQuyDoi;
-
+                             
                                 chitiet.Nhan_Q_Cuoi = decimal.Parse("" + Nhan_Q_Cuoi);
                                 chitiet.Giao_Q_Cuoi = decimal.Parse("" + Giao_Q_Cuoi);
 
