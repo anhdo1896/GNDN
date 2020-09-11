@@ -7893,9 +7893,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="SYS\BasePage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    <Compile Include="SYS\BasePage.cs" />
     <Compile Include="SYS\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -8087,6 +8085,7 @@
     </Compile>
     <Compile Include="TonThatKyThuat\TonThatTramUuTien.aspx.cs">
       <DependentUpon>TonThatTramUuTien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TonThatKyThuat\TonThatTramUuTien.aspx.designer.cs">
       <DependentUpon>TonThatTramUuTien.aspx</DependentUpon>

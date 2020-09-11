@@ -163,7 +163,8 @@ namespace QLY_VTTB.MasterPage
                         <li>
                             <a href='inbox.html' class='waves-effect'><i data-icon='D' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'> Đồng bộ dữ liệu <span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>3</span></span></a>
                             <ul class='nav nav-second-level'>
-                               <li> <a href='../DanhMuc/DM_DiemDoLienKet.aspx'>* Xây dựng điểm đo liên kết</a> </li>                               
+                               <li> <a href='../DanhMuc/DM_DiemDoLienKet.aspx'>* Xây dựng điểm đo liên kết</a> </li>   
+                                <li> <a href='../DongBoDuLieuMDMS/toolDongBoDuLieu.aspx'>* Lấy dữ liệu đo xa</a> </li>
                                 <li> <a href='../DoBoDuLieuCMIS/GCS_NHANDLCMIS.aspx'>* Xuất nhận file CMIS</a></li>
                                 <li> <a href='../DoBoDuLieuCMIS/ImportCMIS.aspx'>* Nhập dữ liệu từ CMIS</a></li>
                              

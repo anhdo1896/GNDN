@@ -217,48 +217,54 @@ namespace MTCSYT.GCS_ONLINE
                         var checkhong = dtData.Rows[j]["TinhTrang"] + "";
                             if (checkhong != "H")
                             {
+                                decimal csm = 0;
+                                if (dtData.Rows[j]["ChiSoMoi"] + ""!="")
+                                {
+                                    csm = decimal.Parse(dtData.Rows[j]["ChiSoMoi"].ToString().Replace(".",","));
+                                }
 
                                 if (bcs == "BT")
                                 {
-                                    Giao_Bieu1_Cuoi = decimal.Parse(dtData.Rows[j]["ChiSoMoi"] + "");
+                                   
+                                    Giao_Bieu1_Cuoi = csm;
                                 }
                                 if (bcs == "CD")
                                 {
-                                    Giao_Bieu2_Cuoi = decimal.Parse(dtData.Rows[j]["ChiSoMoi"] + "");
+                                    Giao_Bieu2_Cuoi = csm;
                                 }
                                 if (bcs == "TD")
                                 {
-                                    Giao_Bieu3_Cuoi = decimal.Parse(dtData.Rows[j]["ChiSoMoi"] + "");
+                                    Giao_Bieu3_Cuoi = csm;
                                 }
                                 if (bcs == "SG")
                                 {
-                                    Giao_P_Cuoi = decimal.Parse(dtData.Rows[j]["ChiSoMoi"] + "");
+                                    Giao_P_Cuoi = csm;
                                 }
                                 if (bcs == "VC")
                                 {
-                                    Giao_Q_Cuoi = decimal.Parse(dtData.Rows[j]["ChiSoMoi"] + "");
+                                    Giao_Q_Cuoi = csm;
                                 }
 
                                 if (bcs == "BN")
                                 {
-                                    Nhan_Bieu1_Cuoi = decimal.Parse(dtData.Rows[j]["ChiSoMoi"] + "");
+                                    Nhan_Bieu1_Cuoi = csm;
 
                                 }
                                 if (bcs == "CN")
                                 {
-                                    Nhan_Bieu2_Cuoi = decimal.Parse(dtData.Rows[j]["ChiSoMoi"] + "");
+                                    Nhan_Bieu2_Cuoi = csm;
                                 }
                                 if (bcs == "TN")
                                 {
-                                    Nhan_Bieu3_Cuoi = decimal.Parse(dtData.Rows[j]["ChiSoMoi"] + "");
+                                    Nhan_Bieu3_Cuoi = csm;
                                 }
                                 if (bcs == "SN")
                                 {
-                                    Nhan_P_Cuoi = decimal.Parse(dtData.Rows[j]["ChiSoMoi"] + "");
+                                    Nhan_P_Cuoi = csm;
                                 }
                                 if (bcs == "VN")
                                 {
-                                    Nhan_Q_Cuoi = decimal.Parse(dtData.Rows[j]["ChiSoMoi"] + "") ;
+                                    Nhan_Q_Cuoi = csm;
 
                                 }
                             }
@@ -393,7 +399,7 @@ namespace MTCSYT.GCS_ONLINE
                                 if (chitiet.GhiChuXacNhanNhan != "" && !(bool)chitiet.XacNhanDVNhan)
                                     chitiet.GhiChuXacNhanNhan = "Đã hiệu chỉnh số liệu";
                                 chitiet.ToolDB = true;
-                                chitiet.LoaiNhap = 0;
+                                chitiet.LoaiNhap =1;
                                 db.SubmitChanges();
                             }
                         }
