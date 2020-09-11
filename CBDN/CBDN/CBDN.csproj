@@ -7797,6 +7797,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Report\InBienBanGiaoNhan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\InBienBanGiaoNhan.Designer.cs">
+      <DependentUpon>InBienBanGiaoNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\InDienNhan3ThoiDiem.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -9390,6 +9396,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report\InBienBanGiaoNhan.resx">
+      <DependentUpon>InBienBanGiaoNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\InDienNhan3ThoiDiem.resx">
       <DependentUpon>InDienNhan3ThoiDiem.cs</DependentUpon>
     </EmbeddedResource>

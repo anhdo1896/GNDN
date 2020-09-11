@@ -140,6 +140,7 @@ namespace TinhToanTBAUuTien
                         if (dtTongKT.Rows.Count > 0 && kiemtra1 != "")
                         {
                             tonthatKyThat = dtTongKT.Rows[0]["TONTHAT"] + "";
+                            tonthatKyThat = (decimal.Parse(tonthatKyThat) / 1000) + "";
                             dtNew.Rows.Add("ĐN tổn thất delta A", tonthatKyThat, dt.Rows[0]["TONTHAT"] + "", decimal.Parse(dt.Rows[0]["TONTHAT"] + "") - decimal.Parse(tonthatKyThat));
                             decimal phantramkt = Math.Round(decimal.Parse(tonthatKyThat) / decimal.Parse(dt.Rows[0]["DAUNGUONTHANG"] + "") * 100, 2);
                             dtNew.Rows.Add("Tỉ lệ tổn thất delta A", phantramkt, decimal.Parse(dt.Rows[0]["PHANTRAMTT"] + ""), decimal.Parse(dt.Rows[0]["PHANTRAMTT"] + "") - phantramkt);

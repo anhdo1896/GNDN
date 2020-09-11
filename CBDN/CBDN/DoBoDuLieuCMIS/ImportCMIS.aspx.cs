@@ -101,7 +101,7 @@ namespace MTCSYT.GCS_ONLINE
             {
                 UploadFile();
                 dtData = GetData();
-                grvView.DataSource = GetData();
+                grvView.DataSource = dtData;
                 grvView.DataBind();
                 btnConvert.Enabled = true;
             }

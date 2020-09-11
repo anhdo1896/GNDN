@@ -54,8 +54,9 @@ namespace CBDN.TonThatKyThuat
         Session["SYS_Session"] = session;
         #endregion
         _DataBind();
+         
 
-    }
+        }
 
     private void _DataBind()
     {
@@ -79,7 +80,8 @@ namespace CBDN.TonThatKyThuat
         SYS_Session session = (SYS_Session)Session["SYS_Session"];
 
         var dt = db.CHECK_TTTT_QUANLYCAD_MATRAM(session.User.ma_dviqlyDN, Name);
-        if (dt.Rows.Count > 0)
+           
+            if (dt.Rows.Count > 0)
             return false;
         return true;
     }

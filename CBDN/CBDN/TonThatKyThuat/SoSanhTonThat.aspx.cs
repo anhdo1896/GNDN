@@ -186,7 +186,7 @@ namespace MTCSYT
             {
                 SYS_Session session = (SYS_Session)Session["SYS_Session"];
                 CBDN.clTinhTonThatKT clTT = new CBDN.clTinhTonThatKT();
-
+               
                 DataTable dtNew = new DataTable();
                 db.Delete_TTTT_TRAM_CHUYKYTINH(session.User.ma_dviqlyDN, cmbMaTram.Value + "", int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
 
@@ -240,11 +240,14 @@ namespace MTCSYT
                 //dtNew.Rows.Add("ĐN tổn thất delta A", decimal.Parse(tonthatKyThat) * decimal.Parse("15"), dt.Rows[0]["TONTHAT"] + "", decimal.Parse(dt.Rows[0]["TONTHAT"] + "") - decimal.Parse(tonthatKyThat) * decimal.Parse("15"));
                 //decimal phantramkt = Math.Round(decimal.Parse(tonthatKyThat) * decimal.Parse("15") / decimal.Parse(dt.Rows[0]["DAUNGUONTHANG"] + "") * 100, 2);
                 //dtNew.Rows.Add("Tỉ lệ tổn thất delta A", phantramkt, decimal.Parse(dt.Rows[0]["PHANTRAMTT"] + ""), decimal.Parse(dt.Rows[0]["PHANTRAMTT"] + "") - phantramkt);
-
-                DataTable dtTongKT = db.select_TTTT_TONTHATKYTHUAT_THANG(session.User.ma_dviqlyDN, Request["MA_TRAM"] + "", int.Parse(Request["Thang"] + ""), int.Parse(Request["Nam"] + ""), 1);
+                var matram = cmbMaTram.Value + "";
+                int thang = int.Parse(cmbThang.Value + "");
+                int nam = int.Parse(cmbNam.Value + "");
+                DataTable dtTongKT = db.select_TTTT_TONTHATKYTHUAT_THANG(session.User.ma_dviqlyDN, matram, thang, nam, 1);
 
                 if (dtTongKT.Rows.Count > 0)
                     tonthatKyThat = dtTongKT.Rows[0]["TONTHAT"] + "";
+                tonthatKyThat = (decimal.Parse(tonthatKyThat) / 1000) +"";
 
                 dtNew.Rows.Add("ĐN tổn thất delta A", tonthatKyThat, dt.Rows[0]["TONTHAT"] + "", decimal.Parse(dt.Rows[0]["TONTHAT"] + "") - decimal.Parse(tonthatKyThat));
                 decimal phantramkt = Math.Round(decimal.Parse(tonthatKyThat) / decimal.Parse(dt.Rows[0]["DAUNGUONTHANG"] + "") * 100, 2);

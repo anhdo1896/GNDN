@@ -56,6 +56,9 @@ namespace CBDN.TonThatKyThuat
                 LoadTram();
             LoadTramCMIS();
             LoadTramCAD();
+            
+           
+
         }
 
 

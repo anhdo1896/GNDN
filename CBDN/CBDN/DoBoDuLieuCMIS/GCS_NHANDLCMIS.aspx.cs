@@ -215,7 +215,8 @@ namespace MTCSYT.GCS_ONLINE
                             ddo.SLUONG_1 = decimal.Parse(dsTem.Tables[0].Rows[i]["SLUONG_1"] + "");
                             ddo.SLUONG_2 = decimal.Parse(dsTem.Tables[0].Rows[i]["SLUONG_2"] + "");
                             ddo.SLUONG_3 = decimal.Parse(dsTem.Tables[0].Rows[i]["SLUONG_3"] + "");
-                            ddo.SO_HO = int.Parse(dsTem.Tables[0].Rows[i]["SO_HO"] + "");
+
+                            ddo.SO_HO = Convert.ToInt32(Convert.ToDecimal(dsTem.Tables[0].Rows[i]["SO_HO"] + ""));
                             ddo.SO_HOM = dsTem.Tables[0].Rows[i]["SO_HOM"] + "";
                             ddo.TEN_KHANG = dsTem.Tables[0].Rows[i]["TEN_KHANG"] + "";
                             ddo.THANG = int.Parse(dsTem.Tables[0].Rows[i]["THANG"] + "");
@@ -231,7 +232,7 @@ namespace MTCSYT.GCS_ONLINE
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Nhận dữ liệu thành công');", true);
 
                 }
-                catch (Exception ex)
+                 catch (Exception ex)
                 {
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Lỗi nhận dữ liệu: " + ex.Message + "');", true);
                 }

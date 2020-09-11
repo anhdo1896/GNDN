@@ -63,7 +63,7 @@
                 <tr>
                     <td colspan="4">
                         <dx:ASPxGridView runat="server" ID="grvView" AutoGenerateColumns="False" Width="100%"
-                            ClientIDMode="AutoID"  Caption="Danh sách dữ liệu Import " ClientInstanceName="grvView"
+                            ClientIDMode="AutoID"  Caption="Danh sách dữ liệu Import " ClientInstanceName="grvView"  KeyFieldName="MaDiemDo" 
                             OnPageIndexChanged="grvView_PageIndexChanged" Theme="Aqua" OnCustomColumnDisplayText="grvView_CustomColumnDisplayText">
                             <Columns>
                                

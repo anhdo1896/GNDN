@@ -22,7 +22,7 @@ namespace CBDN
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DB_CanBangDienNang_V01")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DB_GNDN_TEST")]
 	public partial class DB_CBDNDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -108,7 +108,7 @@ namespace CBDN
     #endregion
 		
 		public DB_CBDNDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DB_CanBangDienNang_V01ConnectionString3"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DB_GNDN_TESTConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -938,6 +938,20 @@ namespace CBDN
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam);
 			return ((ISingleResult<BC_GiaoNhan2Chieu_TongTram_BCCResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BC_ChiSoThang_ChuaChot_BCC")]
+		public ISingleResult<BC_ChiSoThang_ChuaChot_BCCResult1> BC_ChiSoThang_ChuaChot_BCC1([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam);
+			return ((ISingleResult<BC_ChiSoThang_ChuaChot_BCCResult1>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BC_GiaoNhan2Chieu_TongTram_BCC")]
+		public ISingleResult<BC_GiaoNhan2Chieu_TongTram_BCCResult1> BC_GiaoNhan2Chieu_TongTram_BCC1([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam);
+			return ((ISingleResult<BC_GiaoNhan2Chieu_TongTram_BCCResult1>)(result.ReturnValue));
 		}
 	}
 	
@@ -46212,6 +46226,1138 @@ namespace CBDN
 		private System.Nullable<int> _TongTram;
 		
 		public BC_GiaoNhan2Chieu_TongTram_BCCResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDTram", DbType="Int NOT NULL")]
+		public int IDTram
+		{
+			get
+			{
+				return this._IDTram;
+			}
+			set
+			{
+				if ((this._IDTram != value))
+				{
+					this._IDTram = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTram", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string TenTram
+		{
+			get
+			{
+				return this._TenTram;
+			}
+			set
+			{
+				if ((this._TenTram != value))
+				{
+					this._TenTram = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISDoDem", DbType="Int")]
+		public System.Nullable<int> ISDoDem
+		{
+			get
+			{
+				return this._ISDoDem;
+			}
+			set
+			{
+				if ((this._ISDoDem != value))
+				{
+					this._ISDoDem = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsCToMotGia", DbType="Bit")]
+		public System.Nullable<bool> IsCToMotGia
+		{
+			get
+			{
+				return this._IsCToMotGia;
+			}
+			set
+			{
+				if ((this._IsCToMotGia != value))
+				{
+					this._IsCToMotGia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slPGiao", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> slPGiao
+		{
+			get
+			{
+				return this._slPGiao;
+			}
+			set
+			{
+				if ((this._slPGiao != value))
+				{
+					this._slPGiao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slPNhan", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> slPNhan
+		{
+			get
+			{
+				return this._slPNhan;
+			}
+			set
+			{
+				if ((this._slPNhan != value))
+				{
+					this._slPNhan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slQGiao", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> slQGiao
+		{
+			get
+			{
+				return this._slQGiao;
+			}
+			set
+			{
+				if ((this._slQGiao != value))
+				{
+					this._slQGiao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slQNhan", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> slQNhan
+		{
+			get
+			{
+				return this._slQNhan;
+			}
+			set
+			{
+				if ((this._slQNhan != value))
+				{
+					this._slQNhan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slb1Giao", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> slb1Giao
+		{
+			get
+			{
+				return this._slb1Giao;
+			}
+			set
+			{
+				if ((this._slb1Giao != value))
+				{
+					this._slb1Giao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slb1Nhan", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> slb1Nhan
+		{
+			get
+			{
+				return this._slb1Nhan;
+			}
+			set
+			{
+				if ((this._slb1Nhan != value))
+				{
+					this._slb1Nhan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slb2Giao", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> slb2Giao
+		{
+			get
+			{
+				return this._slb2Giao;
+			}
+			set
+			{
+				if ((this._slb2Giao != value))
+				{
+					this._slb2Giao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slb2Nhan", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> slb2Nhan
+		{
+			get
+			{
+				return this._slb2Nhan;
+			}
+			set
+			{
+				if ((this._slb2Nhan != value))
+				{
+					this._slb2Nhan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slb3Giao", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> slb3Giao
+		{
+			get
+			{
+				return this._slb3Giao;
+			}
+			set
+			{
+				if ((this._slb3Giao != value))
+				{
+					this._slb3Giao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slb3Nhan", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> slb3Nhan
+		{
+			get
+			{
+				return this._slb3Nhan;
+			}
+			set
+			{
+				if ((this._slb3Nhan != value))
+				{
+					this._slb3Nhan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong3B_Giao", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> tong3B_Giao
+		{
+			get
+			{
+				return this._tong3B_Giao;
+			}
+			set
+			{
+				if ((this._tong3B_Giao != value))
+				{
+					this._tong3B_Giao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong3B_Nhan", DbType="Decimal(38,0)")]
+		public System.Nullable<decimal> tong3B_Nhan
+		{
+			get
+			{
+				return this._tong3B_Nhan;
+			}
+			set
+			{
+				if ((this._tong3B_Nhan != value))
+				{
+					this._tong3B_Nhan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongTram", DbType="Int")]
+		public System.Nullable<int> TongTram
+		{
+			get
+			{
+				return this._TongTram;
+			}
+			set
+			{
+				if ((this._TongTram != value))
+				{
+					this._TongTram = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BC_ChiSoThang_ChuaChot_BCCResult1
+	{
+		
+		private int _IDCongTo;
+		
+		private int _IDTram;
+		
+		private string _MaTram;
+		
+		private System.Nullable<bool> _IsCToMotGia;
+		
+		private string _TEN_DVIQLY;
+		
+		private string _TenTram;
+		
+		private string _TenDiemDo;
+		
+		private string _CapDienAp;
+		
+		private System.Nullable<decimal> _HeSoNhan;
+		
+		private string _MaCongTo;
+		
+		private string _TenCongTo;
+		
+		private System.Nullable<System.DateTime> _NgayNhap;
+		
+		private System.Nullable<decimal> _HeSoNhan1;
+		
+		private System.Nullable<int> _ISDoDem;
+		
+		private System.Nullable<decimal> _Giao_Bieu1_Cuoi;
+		
+		private System.Nullable<decimal> _Giao_Bieu2_Cuoi;
+		
+		private System.Nullable<decimal> _Giao_Bieu3_Cuoi;
+		
+		private System.Nullable<decimal> _Giao_P_Cuoi;
+		
+		private System.Nullable<decimal> _Giao_Q_Cuoi;
+		
+		private System.Nullable<decimal> _Nhan_Bieu1_Cuoi;
+		
+		private System.Nullable<decimal> _Nhan_Bieu2_Cuoi;
+		
+		private System.Nullable<decimal> _Nhan_Bieu3_Cuoi;
+		
+		private System.Nullable<decimal> _Nhan_P_Cuoi;
+		
+		private System.Nullable<decimal> _Nhan_Q_Cuoi;
+		
+		private System.Nullable<decimal> _Giao_Bieu1_Dau;
+		
+		private System.Nullable<decimal> _Giao_Bieu2_Dau;
+		
+		private System.Nullable<decimal> _Giao_Bieu3_Dau;
+		
+		private System.Nullable<decimal> _Giao_P_Dau;
+		
+		private System.Nullable<decimal> _Giao_Q_Dau;
+		
+		private System.Nullable<decimal> _Nhan_Bieu1_Dau;
+		
+		private System.Nullable<decimal> _Nhan_Bieu2_Dau;
+		
+		private System.Nullable<decimal> _Nhan_Bieu3_Dau;
+		
+		private System.Nullable<decimal> _Nhan_P_Dau;
+		
+		private System.Nullable<decimal> _Nhan_Q_Dau;
+		
+		private System.Nullable<decimal> _Giao_P_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Q_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu1_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu2_SanLuong;
+		
+		private System.Nullable<decimal> _Giao_Bieu3_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_P_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Q_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu1_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu2_SanLuong;
+		
+		private System.Nullable<decimal> _Nhan_Bieu3_SanLuong;
+		
+		private string _strLoaiNhap;
+		
+		public BC_ChiSoThang_ChuaChot_BCCResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCongTo", DbType="Int NOT NULL")]
+		public int IDCongTo
+		{
+			get
+			{
+				return this._IDCongTo;
+			}
+			set
+			{
+				if ((this._IDCongTo != value))
+				{
+					this._IDCongTo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDTram", DbType="Int NOT NULL")]
+		public int IDTram
+		{
+			get
+			{
+				return this._IDTram;
+			}
+			set
+			{
+				if ((this._IDTram != value))
+				{
+					this._IDTram = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTram", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string MaTram
+		{
+			get
+			{
+				return this._MaTram;
+			}
+			set
+			{
+				if ((this._MaTram != value))
+				{
+					this._MaTram = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsCToMotGia", DbType="Bit")]
+		public System.Nullable<bool> IsCToMotGia
+		{
+			get
+			{
+				return this._IsCToMotGia;
+			}
+			set
+			{
+				if ((this._IsCToMotGia != value))
+				{
+					this._IsCToMotGia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TEN_DVIQLY", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string TEN_DVIQLY
+		{
+			get
+			{
+				return this._TEN_DVIQLY;
+			}
+			set
+			{
+				if ((this._TEN_DVIQLY != value))
+				{
+					this._TEN_DVIQLY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTram", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string TenTram
+		{
+			get
+			{
+				return this._TenTram;
+			}
+			set
+			{
+				if ((this._TenTram != value))
+				{
+					this._TenTram = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDiemDo", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string TenDiemDo
+		{
+			get
+			{
+				return this._TenDiemDo;
+			}
+			set
+			{
+				if ((this._TenDiemDo != value))
+				{
+					this._TenDiemDo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CapDienAp", DbType="NVarChar(50)")]
+		public string CapDienAp
+		{
+			get
+			{
+				return this._CapDienAp;
+			}
+			set
+			{
+				if ((this._CapDienAp != value))
+				{
+					this._CapDienAp = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HeSoNhan", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> HeSoNhan
+		{
+			get
+			{
+				return this._HeSoNhan;
+			}
+			set
+			{
+				if ((this._HeSoNhan != value))
+				{
+					this._HeSoNhan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCongTo", DbType="VarChar(50)")]
+		public string MaCongTo
+		{
+			get
+			{
+				return this._MaCongTo;
+			}
+			set
+			{
+				if ((this._MaCongTo != value))
+				{
+					this._MaCongTo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenCongTo", DbType="NVarChar(500)")]
+		public string TenCongTo
+		{
+			get
+			{
+				return this._TenCongTo;
+			}
+			set
+			{
+				if ((this._TenCongTo != value))
+				{
+					this._TenCongTo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayNhap", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayNhap
+		{
+			get
+			{
+				return this._NgayNhap;
+			}
+			set
+			{
+				if ((this._NgayNhap != value))
+				{
+					this._NgayNhap = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HeSoNhan1", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> HeSoNhan1
+		{
+			get
+			{
+				return this._HeSoNhan1;
+			}
+			set
+			{
+				if ((this._HeSoNhan1 != value))
+				{
+					this._HeSoNhan1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISDoDem", DbType="Int")]
+		public System.Nullable<int> ISDoDem
+		{
+			get
+			{
+				return this._ISDoDem;
+			}
+			set
+			{
+				if ((this._ISDoDem != value))
+				{
+					this._ISDoDem = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu1_Cuoi", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Giao_Bieu1_Cuoi
+		{
+			get
+			{
+				return this._Giao_Bieu1_Cuoi;
+			}
+			set
+			{
+				if ((this._Giao_Bieu1_Cuoi != value))
+				{
+					this._Giao_Bieu1_Cuoi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu2_Cuoi", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Giao_Bieu2_Cuoi
+		{
+			get
+			{
+				return this._Giao_Bieu2_Cuoi;
+			}
+			set
+			{
+				if ((this._Giao_Bieu2_Cuoi != value))
+				{
+					this._Giao_Bieu2_Cuoi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu3_Cuoi", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Giao_Bieu3_Cuoi
+		{
+			get
+			{
+				return this._Giao_Bieu3_Cuoi;
+			}
+			set
+			{
+				if ((this._Giao_Bieu3_Cuoi != value))
+				{
+					this._Giao_Bieu3_Cuoi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_P_Cuoi", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Giao_P_Cuoi
+		{
+			get
+			{
+				return this._Giao_P_Cuoi;
+			}
+			set
+			{
+				if ((this._Giao_P_Cuoi != value))
+				{
+					this._Giao_P_Cuoi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Q_Cuoi", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Giao_Q_Cuoi
+		{
+			get
+			{
+				return this._Giao_Q_Cuoi;
+			}
+			set
+			{
+				if ((this._Giao_Q_Cuoi != value))
+				{
+					this._Giao_Q_Cuoi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu1_Cuoi", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Nhan_Bieu1_Cuoi
+		{
+			get
+			{
+				return this._Nhan_Bieu1_Cuoi;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu1_Cuoi != value))
+				{
+					this._Nhan_Bieu1_Cuoi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu2_Cuoi", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Nhan_Bieu2_Cuoi
+		{
+			get
+			{
+				return this._Nhan_Bieu2_Cuoi;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu2_Cuoi != value))
+				{
+					this._Nhan_Bieu2_Cuoi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu3_Cuoi", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Nhan_Bieu3_Cuoi
+		{
+			get
+			{
+				return this._Nhan_Bieu3_Cuoi;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu3_Cuoi != value))
+				{
+					this._Nhan_Bieu3_Cuoi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_P_Cuoi", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Nhan_P_Cuoi
+		{
+			get
+			{
+				return this._Nhan_P_Cuoi;
+			}
+			set
+			{
+				if ((this._Nhan_P_Cuoi != value))
+				{
+					this._Nhan_P_Cuoi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Q_Cuoi", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Nhan_Q_Cuoi
+		{
+			get
+			{
+				return this._Nhan_Q_Cuoi;
+			}
+			set
+			{
+				if ((this._Nhan_Q_Cuoi != value))
+				{
+					this._Nhan_Q_Cuoi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu1_Dau", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Giao_Bieu1_Dau
+		{
+			get
+			{
+				return this._Giao_Bieu1_Dau;
+			}
+			set
+			{
+				if ((this._Giao_Bieu1_Dau != value))
+				{
+					this._Giao_Bieu1_Dau = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu2_Dau", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Giao_Bieu2_Dau
+		{
+			get
+			{
+				return this._Giao_Bieu2_Dau;
+			}
+			set
+			{
+				if ((this._Giao_Bieu2_Dau != value))
+				{
+					this._Giao_Bieu2_Dau = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu3_Dau", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Giao_Bieu3_Dau
+		{
+			get
+			{
+				return this._Giao_Bieu3_Dau;
+			}
+			set
+			{
+				if ((this._Giao_Bieu3_Dau != value))
+				{
+					this._Giao_Bieu3_Dau = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_P_Dau", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Giao_P_Dau
+		{
+			get
+			{
+				return this._Giao_P_Dau;
+			}
+			set
+			{
+				if ((this._Giao_P_Dau != value))
+				{
+					this._Giao_P_Dau = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Q_Dau", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Giao_Q_Dau
+		{
+			get
+			{
+				return this._Giao_Q_Dau;
+			}
+			set
+			{
+				if ((this._Giao_Q_Dau != value))
+				{
+					this._Giao_Q_Dau = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu1_Dau", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Nhan_Bieu1_Dau
+		{
+			get
+			{
+				return this._Nhan_Bieu1_Dau;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu1_Dau != value))
+				{
+					this._Nhan_Bieu1_Dau = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu2_Dau", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Nhan_Bieu2_Dau
+		{
+			get
+			{
+				return this._Nhan_Bieu2_Dau;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu2_Dau != value))
+				{
+					this._Nhan_Bieu2_Dau = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu3_Dau", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Nhan_Bieu3_Dau
+		{
+			get
+			{
+				return this._Nhan_Bieu3_Dau;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu3_Dau != value))
+				{
+					this._Nhan_Bieu3_Dau = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_P_Dau", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Nhan_P_Dau
+		{
+			get
+			{
+				return this._Nhan_P_Dau;
+			}
+			set
+			{
+				if ((this._Nhan_P_Dau != value))
+				{
+					this._Nhan_P_Dau = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Q_Dau", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> Nhan_Q_Dau
+		{
+			get
+			{
+				return this._Nhan_Q_Dau;
+			}
+			set
+			{
+				if ((this._Nhan_Q_Dau != value))
+				{
+					this._Nhan_Q_Dau = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_P_SanLuong", DbType="Decimal(30,0)")]
+		public System.Nullable<decimal> Giao_P_SanLuong
+		{
+			get
+			{
+				return this._Giao_P_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_P_SanLuong != value))
+				{
+					this._Giao_P_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Q_SanLuong", DbType="Decimal(30,0)")]
+		public System.Nullable<decimal> Giao_Q_SanLuong
+		{
+			get
+			{
+				return this._Giao_Q_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Q_SanLuong != value))
+				{
+					this._Giao_Q_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu1_SanLuong", DbType="Decimal(30,0)")]
+		public System.Nullable<decimal> Giao_Bieu1_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu1_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu1_SanLuong != value))
+				{
+					this._Giao_Bieu1_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu2_SanLuong", DbType="Decimal(30,0)")]
+		public System.Nullable<decimal> Giao_Bieu2_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu2_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu2_SanLuong != value))
+				{
+					this._Giao_Bieu2_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Giao_Bieu3_SanLuong", DbType="Decimal(30,0)")]
+		public System.Nullable<decimal> Giao_Bieu3_SanLuong
+		{
+			get
+			{
+				return this._Giao_Bieu3_SanLuong;
+			}
+			set
+			{
+				if ((this._Giao_Bieu3_SanLuong != value))
+				{
+					this._Giao_Bieu3_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_P_SanLuong", DbType="Decimal(30,0)")]
+		public System.Nullable<decimal> Nhan_P_SanLuong
+		{
+			get
+			{
+				return this._Nhan_P_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_P_SanLuong != value))
+				{
+					this._Nhan_P_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Q_SanLuong", DbType="Decimal(30,0)")]
+		public System.Nullable<decimal> Nhan_Q_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Q_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Q_SanLuong != value))
+				{
+					this._Nhan_Q_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu1_SanLuong", DbType="Decimal(30,0)")]
+		public System.Nullable<decimal> Nhan_Bieu1_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu1_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu1_SanLuong != value))
+				{
+					this._Nhan_Bieu1_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu2_SanLuong", DbType="Decimal(30,0)")]
+		public System.Nullable<decimal> Nhan_Bieu2_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu2_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu2_SanLuong != value))
+				{
+					this._Nhan_Bieu2_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhan_Bieu3_SanLuong", DbType="Decimal(30,0)")]
+		public System.Nullable<decimal> Nhan_Bieu3_SanLuong
+		{
+			get
+			{
+				return this._Nhan_Bieu3_SanLuong;
+			}
+			set
+			{
+				if ((this._Nhan_Bieu3_SanLuong != value))
+				{
+					this._Nhan_Bieu3_SanLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_strLoaiNhap", DbType="NVarChar(11) NOT NULL", CanBeNull=false)]
+		public string strLoaiNhap
+		{
+			get
+			{
+				return this._strLoaiNhap;
+			}
+			set
+			{
+				if ((this._strLoaiNhap != value))
+				{
+					this._strLoaiNhap = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BC_GiaoNhan2Chieu_TongTram_BCCResult1
+	{
+		
+		private int _IDTram;
+		
+		private string _TenTram;
+		
+		private System.Nullable<int> _ISDoDem;
+		
+		private System.Nullable<bool> _IsCToMotGia;
+		
+		private System.Nullable<decimal> _slPGiao;
+		
+		private System.Nullable<decimal> _slPNhan;
+		
+		private System.Nullable<decimal> _slQGiao;
+		
+		private System.Nullable<decimal> _slQNhan;
+		
+		private System.Nullable<decimal> _slb1Giao;
+		
+		private System.Nullable<decimal> _slb1Nhan;
+		
+		private System.Nullable<decimal> _slb2Giao;
+		
+		private System.Nullable<decimal> _slb2Nhan;
+		
+		private System.Nullable<decimal> _slb3Giao;
+		
+		private System.Nullable<decimal> _slb3Nhan;
+		
+		private System.Nullable<decimal> _tong3B_Giao;
+		
+		private System.Nullable<decimal> _tong3B_Nhan;
+		
+		private System.Nullable<int> _TongTram;
+		
+		public BC_GiaoNhan2Chieu_TongTram_BCCResult1()
 		{
 		}
 		
