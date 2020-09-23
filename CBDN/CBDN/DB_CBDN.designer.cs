@@ -22,7 +22,7 @@ namespace CBDN
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DB_GNDN_TEST")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DB_CanBangDienNang_V01")]
 	public partial class DB_CBDNDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -81,9 +81,6 @@ namespace CBDN
     partial void InsertHD_GiaoNhanThang(HD_GiaoNhanThang instance);
     partial void UpdateHD_GiaoNhanThang(HD_GiaoNhanThang instance);
     partial void DeleteHD_GiaoNhanThang(HD_GiaoNhanThang instance);
-    partial void InsertDM_USER(DM_USER instance);
-    partial void UpdateDM_USER(DM_USER instance);
-    partial void DeleteDM_USER(DM_USER instance);
     partial void InsertCMIS_DDoGC(CMIS_DDoGC instance);
     partial void UpdateCMIS_DDoGC(CMIS_DDoGC instance);
     partial void DeleteCMIS_DDoGC(CMIS_DDoGC instance);
@@ -105,10 +102,13 @@ namespace CBDN
     partial void InsertDM_LoaiDay(DM_LoaiDay instance);
     partial void UpdateDM_LoaiDay(DM_LoaiDay instance);
     partial void DeleteDM_LoaiDay(DM_LoaiDay instance);
+    partial void InsertDM_USER(DM_USER instance);
+    partial void UpdateDM_USER(DM_USER instance);
+    partial void DeleteDM_USER(DM_USER instance);
     #endregion
 		
 		public DB_CBDNDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DB_GNDN_TESTConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DB_CanBangDienNang_V01ConnectionString3"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -281,14 +281,6 @@ namespace CBDN
 			}
 		}
 		
-		public System.Data.Linq.Table<DM_USER> DM_USERs
-		{
-			get
-			{
-				return this.GetTable<DM_USER>();
-			}
-		}
-		
 		public System.Data.Linq.Table<CMIS_DDoGC> CMIS_DDoGCs
 		{
 			get
@@ -342,6 +334,14 @@ namespace CBDN
 			get
 			{
 				return this.GetTable<DM_LoaiDay>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DM_USER> DM_USERs
+		{
+			get
+			{
+				return this.GetTable<DM_USER>();
 			}
 		}
 		
@@ -952,6 +952,34 @@ namespace CBDN
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam);
 			return ((ISingleResult<BC_GiaoNhan2Chieu_TongTram_BCCResult1>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DM_DVQLY_SelectAll_byMaDVi")]
+		public ISingleResult<DM_DVQLY_SelectAll_byMaDViResult> DM_DVQLY_SelectAll_byMaDVi([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MA_DVIQLY", DbType="VarChar(10)")] string mA_DVIQLY)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mA_DVIQLY);
+			return ((ISingleResult<DM_DVQLY_SelectAll_byMaDViResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DM_USER_SelectAll_ByIDMA_DVIQLY")]
+		public ISingleResult<DM_USER_SelectAll_ByIDMA_DVIQLYResult> DM_USER_SelectAll_ByIDMA_DVIQLY([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY);
+			return ((ISingleResult<DM_USER_SelectAll_ByIDMA_DVIQLYResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.db_GD_PhuongThucCanXN_NPCT")]
+		public ISingleResult<db_GD_PhuongThucCanXN_NPCTResult> db_GD_PhuongThucCanXN_NPCT([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nam", DbType="Int")] System.Nullable<int> nam, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Loai", DbType="VarChar(50)")] string loai)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam, loai);
+			return ((ISingleResult<db_GD_PhuongThucCanXN_NPCTResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DM_UserNameAndIDOrganization")]
+		public ISingleResult<DM_UserNameAndIDOrganizationResult> DM_UserNameAndIDOrganization([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="NVarChar(200)")] string iDMA_DVIQLY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USERNAME", DbType="NVarChar(200)")] string uSERNAME)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, uSERNAME);
+			return ((ISingleResult<DM_UserNameAndIDOrganizationResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -8222,356 +8250,6 @@ namespace CBDN
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_USER")]
-	public partial class DM_USER : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IDUSER;
-		
-		private int _IDMA_DVIQLY;
-		
-		private bool _XACNHAN;
-		
-		private string _USERNAME;
-		
-		private string _PASSWORD;
-		
-		private string _HOTEN;
-		
-		private string _DIACHI;
-		
-		private string _SODT;
-		
-		private string _EMAIL;
-		
-		private System.Nullable<System.DateTime> _NGAYSINH;
-		
-		private System.DateTime _NGAYTAO;
-		
-		private int _IS_ADMIN;
-		
-		private string _NguoiKy;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDUSERChanging(int value);
-    partial void OnIDUSERChanged();
-    partial void OnIDMA_DVIQLYChanging(int value);
-    partial void OnIDMA_DVIQLYChanged();
-    partial void OnXACNHANChanging(bool value);
-    partial void OnXACNHANChanged();
-    partial void OnUSERNAMEChanging(string value);
-    partial void OnUSERNAMEChanged();
-    partial void OnPASSWORDChanging(string value);
-    partial void OnPASSWORDChanged();
-    partial void OnHOTENChanging(string value);
-    partial void OnHOTENChanged();
-    partial void OnDIACHIChanging(string value);
-    partial void OnDIACHIChanged();
-    partial void OnSODTChanging(string value);
-    partial void OnSODTChanged();
-    partial void OnEMAILChanging(string value);
-    partial void OnEMAILChanged();
-    partial void OnNGAYSINHChanging(System.Nullable<System.DateTime> value);
-    partial void OnNGAYSINHChanged();
-    partial void OnNGAYTAOChanging(System.DateTime value);
-    partial void OnNGAYTAOChanged();
-    partial void OnIS_ADMINChanging(int value);
-    partial void OnIS_ADMINChanged();
-    partial void OnNguoiKyChanging(string value);
-    partial void OnNguoiKyChanged();
-    #endregion
-		
-		public DM_USER()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDUSER", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IDUSER
-		{
-			get
-			{
-				return this._IDUSER;
-			}
-			set
-			{
-				if ((this._IDUSER != value))
-				{
-					this.OnIDUSERChanging(value);
-					this.SendPropertyChanging();
-					this._IDUSER = value;
-					this.SendPropertyChanged("IDUSER");
-					this.OnIDUSERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDMA_DVIQLY", DbType="Int NOT NULL")]
-		public int IDMA_DVIQLY
-		{
-			get
-			{
-				return this._IDMA_DVIQLY;
-			}
-			set
-			{
-				if ((this._IDMA_DVIQLY != value))
-				{
-					this.OnIDMA_DVIQLYChanging(value);
-					this.SendPropertyChanging();
-					this._IDMA_DVIQLY = value;
-					this.SendPropertyChanged("IDMA_DVIQLY");
-					this.OnIDMA_DVIQLYChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XACNHAN", DbType="Bit NOT NULL")]
-		public bool XACNHAN
-		{
-			get
-			{
-				return this._XACNHAN;
-			}
-			set
-			{
-				if ((this._XACNHAN != value))
-				{
-					this.OnXACNHANChanging(value);
-					this.SendPropertyChanging();
-					this._XACNHAN = value;
-					this.SendPropertyChanged("XACNHAN");
-					this.OnXACNHANChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string USERNAME
-		{
-			get
-			{
-				return this._USERNAME;
-			}
-			set
-			{
-				if ((this._USERNAME != value))
-				{
-					this.OnUSERNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._USERNAME = value;
-					this.SendPropertyChanged("USERNAME");
-					this.OnUSERNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PASSWORD", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string PASSWORD
-		{
-			get
-			{
-				return this._PASSWORD;
-			}
-			set
-			{
-				if ((this._PASSWORD != value))
-				{
-					this.OnPASSWORDChanging(value);
-					this.SendPropertyChanging();
-					this._PASSWORD = value;
-					this.SendPropertyChanged("PASSWORD");
-					this.OnPASSWORDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string HOTEN
-		{
-			get
-			{
-				return this._HOTEN;
-			}
-			set
-			{
-				if ((this._HOTEN != value))
-				{
-					this.OnHOTENChanging(value);
-					this.SendPropertyChanging();
-					this._HOTEN = value;
-					this.SendPropertyChanged("HOTEN");
-					this.OnHOTENChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(200)")]
-		public string DIACHI
-		{
-			get
-			{
-				return this._DIACHI;
-			}
-			set
-			{
-				if ((this._DIACHI != value))
-				{
-					this.OnDIACHIChanging(value);
-					this.SendPropertyChanging();
-					this._DIACHI = value;
-					this.SendPropertyChanged("DIACHI");
-					this.OnDIACHIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODT", DbType="NVarChar(200)")]
-		public string SODT
-		{
-			get
-			{
-				return this._SODT;
-			}
-			set
-			{
-				if ((this._SODT != value))
-				{
-					this.OnSODTChanging(value);
-					this.SendPropertyChanging();
-					this._SODT = value;
-					this.SendPropertyChanged("SODT");
-					this.OnSODTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="NVarChar(200)")]
-		public string EMAIL
-		{
-			get
-			{
-				return this._EMAIL;
-			}
-			set
-			{
-				if ((this._EMAIL != value))
-				{
-					this.OnEMAILChanging(value);
-					this.SendPropertyChanging();
-					this._EMAIL = value;
-					this.SendPropertyChanged("EMAIL");
-					this.OnEMAILChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYSINH", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYSINH
-		{
-			get
-			{
-				return this._NGAYSINH;
-			}
-			set
-			{
-				if ((this._NGAYSINH != value))
-				{
-					this.OnNGAYSINHChanging(value);
-					this.SendPropertyChanging();
-					this._NGAYSINH = value;
-					this.SendPropertyChanged("NGAYSINH");
-					this.OnNGAYSINHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYTAO", DbType="DateTime NOT NULL")]
-		public System.DateTime NGAYTAO
-		{
-			get
-			{
-				return this._NGAYTAO;
-			}
-			set
-			{
-				if ((this._NGAYTAO != value))
-				{
-					this.OnNGAYTAOChanging(value);
-					this.SendPropertyChanging();
-					this._NGAYTAO = value;
-					this.SendPropertyChanged("NGAYTAO");
-					this.OnNGAYTAOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IS_ADMIN", DbType="Int NOT NULL")]
-		public int IS_ADMIN
-		{
-			get
-			{
-				return this._IS_ADMIN;
-			}
-			set
-			{
-				if ((this._IS_ADMIN != value))
-				{
-					this.OnIS_ADMINChanging(value);
-					this.SendPropertyChanging();
-					this._IS_ADMIN = value;
-					this.SendPropertyChanged("IS_ADMIN");
-					this.OnIS_ADMINChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NguoiKy", DbType="VarChar(500)")]
-		public string NguoiKy
-		{
-			get
-			{
-				return this._NguoiKy;
-			}
-			set
-			{
-				if ((this._NguoiKy != value))
-				{
-					this.OnNguoiKyChanging(value);
-					this.SendPropertyChanging();
-					this._NguoiKy = value;
-					this.SendPropertyChanged("NguoiKy");
-					this.OnNguoiKyChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CMIS_DDoGCS")]
 	public partial class CMIS_DDoGC : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -13061,6 +12739,380 @@ namespace CBDN
 					this._NgayTao = value;
 					this.SendPropertyChanged("NgayTao");
 					this.OnNgayTaoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_USER")]
+	public partial class DM_USER : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IDUSER;
+		
+		private int _IDMA_DVIQLY;
+		
+		private bool _XACNHAN;
+		
+		private string _USERNAME;
+		
+		private string _PASSWORD;
+		
+		private string _HOTEN;
+		
+		private string _DIACHI;
+		
+		private string _SODT;
+		
+		private string _EMAIL;
+		
+		private System.Nullable<System.DateTime> _NGAYSINH;
+		
+		private System.DateTime _NGAYTAO;
+		
+		private int _IS_ADMIN;
+		
+		private string _NguoiKy;
+		
+		private string _CHUCDANH;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDUSERChanging(int value);
+    partial void OnIDUSERChanged();
+    partial void OnIDMA_DVIQLYChanging(int value);
+    partial void OnIDMA_DVIQLYChanged();
+    partial void OnXACNHANChanging(bool value);
+    partial void OnXACNHANChanged();
+    partial void OnUSERNAMEChanging(string value);
+    partial void OnUSERNAMEChanged();
+    partial void OnPASSWORDChanging(string value);
+    partial void OnPASSWORDChanged();
+    partial void OnHOTENChanging(string value);
+    partial void OnHOTENChanged();
+    partial void OnDIACHIChanging(string value);
+    partial void OnDIACHIChanged();
+    partial void OnSODTChanging(string value);
+    partial void OnSODTChanged();
+    partial void OnEMAILChanging(string value);
+    partial void OnEMAILChanged();
+    partial void OnNGAYSINHChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYSINHChanged();
+    partial void OnNGAYTAOChanging(System.DateTime value);
+    partial void OnNGAYTAOChanged();
+    partial void OnIS_ADMINChanging(int value);
+    partial void OnIS_ADMINChanged();
+    partial void OnNguoiKyChanging(string value);
+    partial void OnNguoiKyChanged();
+    partial void OnCHUCDANHChanging(string value);
+    partial void OnCHUCDANHChanged();
+    #endregion
+		
+		public DM_USER()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDUSER", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IDUSER
+		{
+			get
+			{
+				return this._IDUSER;
+			}
+			set
+			{
+				if ((this._IDUSER != value))
+				{
+					this.OnIDUSERChanging(value);
+					this.SendPropertyChanging();
+					this._IDUSER = value;
+					this.SendPropertyChanged("IDUSER");
+					this.OnIDUSERChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDMA_DVIQLY", DbType="Int NOT NULL")]
+		public int IDMA_DVIQLY
+		{
+			get
+			{
+				return this._IDMA_DVIQLY;
+			}
+			set
+			{
+				if ((this._IDMA_DVIQLY != value))
+				{
+					this.OnIDMA_DVIQLYChanging(value);
+					this.SendPropertyChanging();
+					this._IDMA_DVIQLY = value;
+					this.SendPropertyChanged("IDMA_DVIQLY");
+					this.OnIDMA_DVIQLYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XACNHAN", DbType="Bit NOT NULL")]
+		public bool XACNHAN
+		{
+			get
+			{
+				return this._XACNHAN;
+			}
+			set
+			{
+				if ((this._XACNHAN != value))
+				{
+					this.OnXACNHANChanging(value);
+					this.SendPropertyChanging();
+					this._XACNHAN = value;
+					this.SendPropertyChanged("XACNHAN");
+					this.OnXACNHANChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string USERNAME
+		{
+			get
+			{
+				return this._USERNAME;
+			}
+			set
+			{
+				if ((this._USERNAME != value))
+				{
+					this.OnUSERNAMEChanging(value);
+					this.SendPropertyChanging();
+					this._USERNAME = value;
+					this.SendPropertyChanged("USERNAME");
+					this.OnUSERNAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PASSWORD", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string PASSWORD
+		{
+			get
+			{
+				return this._PASSWORD;
+			}
+			set
+			{
+				if ((this._PASSWORD != value))
+				{
+					this.OnPASSWORDChanging(value);
+					this.SendPropertyChanging();
+					this._PASSWORD = value;
+					this.SendPropertyChanged("PASSWORD");
+					this.OnPASSWORDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this.OnHOTENChanging(value);
+					this.SendPropertyChanging();
+					this._HOTEN = value;
+					this.SendPropertyChanged("HOTEN");
+					this.OnHOTENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(200)")]
+		public string DIACHI
+		{
+			get
+			{
+				return this._DIACHI;
+			}
+			set
+			{
+				if ((this._DIACHI != value))
+				{
+					this.OnDIACHIChanging(value);
+					this.SendPropertyChanging();
+					this._DIACHI = value;
+					this.SendPropertyChanged("DIACHI");
+					this.OnDIACHIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODT", DbType="NVarChar(200)")]
+		public string SODT
+		{
+			get
+			{
+				return this._SODT;
+			}
+			set
+			{
+				if ((this._SODT != value))
+				{
+					this.OnSODTChanging(value);
+					this.SendPropertyChanging();
+					this._SODT = value;
+					this.SendPropertyChanged("SODT");
+					this.OnSODTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="NVarChar(200)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this.OnEMAILChanging(value);
+					this.SendPropertyChanging();
+					this._EMAIL = value;
+					this.SendPropertyChanged("EMAIL");
+					this.OnEMAILChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYSINH", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYSINH
+		{
+			get
+			{
+				return this._NGAYSINH;
+			}
+			set
+			{
+				if ((this._NGAYSINH != value))
+				{
+					this.OnNGAYSINHChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYSINH = value;
+					this.SendPropertyChanged("NGAYSINH");
+					this.OnNGAYSINHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYTAO", DbType="DateTime NOT NULL")]
+		public System.DateTime NGAYTAO
+		{
+			get
+			{
+				return this._NGAYTAO;
+			}
+			set
+			{
+				if ((this._NGAYTAO != value))
+				{
+					this.OnNGAYTAOChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYTAO = value;
+					this.SendPropertyChanged("NGAYTAO");
+					this.OnNGAYTAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IS_ADMIN", DbType="Int NOT NULL")]
+		public int IS_ADMIN
+		{
+			get
+			{
+				return this._IS_ADMIN;
+			}
+			set
+			{
+				if ((this._IS_ADMIN != value))
+				{
+					this.OnIS_ADMINChanging(value);
+					this.SendPropertyChanging();
+					this._IS_ADMIN = value;
+					this.SendPropertyChanged("IS_ADMIN");
+					this.OnIS_ADMINChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NguoiKy", DbType="VarChar(500)")]
+		public string NguoiKy
+		{
+			get
+			{
+				return this._NguoiKy;
+			}
+			set
+			{
+				if ((this._NguoiKy != value))
+				{
+					this.OnNguoiKyChanging(value);
+					this.SendPropertyChanging();
+					this._NguoiKy = value;
+					this.SendPropertyChanged("NguoiKy");
+					this.OnNguoiKyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUCDANH", DbType="NVarChar(50)")]
+		public string CHUCDANH
+		{
+			get
+			{
+				return this._CHUCDANH;
+			}
+			set
+			{
+				if ((this._CHUCDANH != value))
+				{
+					this.OnCHUCDANHChanging(value);
+					this.SendPropertyChanging();
+					this._CHUCDANH = value;
+					this.SendPropertyChanged("CHUCDANH");
+					this.OnCHUCDANHChanged();
 				}
 			}
 		}
@@ -47629,6 +47681,704 @@ namespace CBDN
 				if ((this._TongTram != value))
 				{
 					this._TongTram = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DM_DVQLY_SelectAll_byMaDViResult
+	{
+		
+		private int _IDMA_DVIQLY;
+		
+		private string _MA_DVIQLY;
+		
+		private string _TEN_DVIQLY;
+		
+		private System.Nullable<int> _ParentId;
+		
+		private string _NAME_DVIQLY;
+		
+		public DM_DVQLY_SelectAll_byMaDViResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDMA_DVIQLY", DbType="Int NOT NULL")]
+		public int IDMA_DVIQLY
+		{
+			get
+			{
+				return this._IDMA_DVIQLY;
+			}
+			set
+			{
+				if ((this._IDMA_DVIQLY != value))
+				{
+					this._IDMA_DVIQLY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MA_DVIQLY", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MA_DVIQLY
+		{
+			get
+			{
+				return this._MA_DVIQLY;
+			}
+			set
+			{
+				if ((this._MA_DVIQLY != value))
+				{
+					this._MA_DVIQLY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TEN_DVIQLY", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string TEN_DVIQLY
+		{
+			get
+			{
+				return this._TEN_DVIQLY;
+			}
+			set
+			{
+				if ((this._TEN_DVIQLY != value))
+				{
+					this._TEN_DVIQLY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentId", DbType="Int")]
+		public System.Nullable<int> ParentId
+		{
+			get
+			{
+				return this._ParentId;
+			}
+			set
+			{
+				if ((this._ParentId != value))
+				{
+					this._ParentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_DVIQLY", DbType="NVarChar(211) NOT NULL", CanBeNull=false)]
+		public string NAME_DVIQLY
+		{
+			get
+			{
+				return this._NAME_DVIQLY;
+			}
+			set
+			{
+				if ((this._NAME_DVIQLY != value))
+				{
+					this._NAME_DVIQLY = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DM_USER_SelectAll_ByIDMA_DVIQLYResult
+	{
+		
+		private int _IDUSER;
+		
+		private int _IDMA_DVIQLY;
+		
+		private bool _XACNHAN;
+		
+		private string _USERNAME;
+		
+		private string _PASSWORD;
+		
+		private string _HOTEN;
+		
+		private string _DIACHI;
+		
+		private string _SODT;
+		
+		private string _EMAIL;
+		
+		private System.Nullable<System.DateTime> _NGAYSINH;
+		
+		private System.DateTime _NGAYTAO;
+		
+		private int _IS_ADMIN;
+		
+		private string _CHUCDANH;
+		
+		public DM_USER_SelectAll_ByIDMA_DVIQLYResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDUSER", DbType="Int NOT NULL")]
+		public int IDUSER
+		{
+			get
+			{
+				return this._IDUSER;
+			}
+			set
+			{
+				if ((this._IDUSER != value))
+				{
+					this._IDUSER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDMA_DVIQLY", DbType="Int NOT NULL")]
+		public int IDMA_DVIQLY
+		{
+			get
+			{
+				return this._IDMA_DVIQLY;
+			}
+			set
+			{
+				if ((this._IDMA_DVIQLY != value))
+				{
+					this._IDMA_DVIQLY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XACNHAN", DbType="Bit NOT NULL")]
+		public bool XACNHAN
+		{
+			get
+			{
+				return this._XACNHAN;
+			}
+			set
+			{
+				if ((this._XACNHAN != value))
+				{
+					this._XACNHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string USERNAME
+		{
+			get
+			{
+				return this._USERNAME;
+			}
+			set
+			{
+				if ((this._USERNAME != value))
+				{
+					this._USERNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PASSWORD", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string PASSWORD
+		{
+			get
+			{
+				return this._PASSWORD;
+			}
+			set
+			{
+				if ((this._PASSWORD != value))
+				{
+					this._PASSWORD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this._HOTEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(200)")]
+		public string DIACHI
+		{
+			get
+			{
+				return this._DIACHI;
+			}
+			set
+			{
+				if ((this._DIACHI != value))
+				{
+					this._DIACHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODT", DbType="NVarChar(200)")]
+		public string SODT
+		{
+			get
+			{
+				return this._SODT;
+			}
+			set
+			{
+				if ((this._SODT != value))
+				{
+					this._SODT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="NVarChar(200)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this._EMAIL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYSINH", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYSINH
+		{
+			get
+			{
+				return this._NGAYSINH;
+			}
+			set
+			{
+				if ((this._NGAYSINH != value))
+				{
+					this._NGAYSINH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYTAO", DbType="DateTime NOT NULL")]
+		public System.DateTime NGAYTAO
+		{
+			get
+			{
+				return this._NGAYTAO;
+			}
+			set
+			{
+				if ((this._NGAYTAO != value))
+				{
+					this._NGAYTAO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IS_ADMIN", DbType="Int NOT NULL")]
+		public int IS_ADMIN
+		{
+			get
+			{
+				return this._IS_ADMIN;
+			}
+			set
+			{
+				if ((this._IS_ADMIN != value))
+				{
+					this._IS_ADMIN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUCDANH", DbType="NVarChar(50)")]
+		public string CHUCDANH
+		{
+			get
+			{
+				return this._CHUCDANH;
+			}
+			set
+			{
+				if ((this._CHUCDANH != value))
+				{
+					this._CHUCDANH = value;
+				}
+			}
+		}
+	}
+	
+	public partial class db_GD_PhuongThucCanXN_NPCTResult
+	{
+		
+		private string _TenPhuongThuc;
+		
+		private string _MaPhuongThuc;
+		
+		private string _IDChiNhanh;
+		
+		private int _DiemCuoiNguon;
+		
+		private int _DiemDauNguon;
+		
+		public db_GD_PhuongThucCanXN_NPCTResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenPhuongThuc", DbType="NVarChar(500)")]
+		public string TenPhuongThuc
+		{
+			get
+			{
+				return this._TenPhuongThuc;
+			}
+			set
+			{
+				if ((this._TenPhuongThuc != value))
+				{
+					this._TenPhuongThuc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPhuongThuc", DbType="VarChar(100)")]
+		public string MaPhuongThuc
+		{
+			get
+			{
+				return this._MaPhuongThuc;
+			}
+			set
+			{
+				if ((this._MaPhuongThuc != value))
+				{
+					this._MaPhuongThuc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDChiNhanh", DbType="VarChar(50)")]
+		public string IDChiNhanh
+		{
+			get
+			{
+				return this._IDChiNhanh;
+			}
+			set
+			{
+				if ((this._IDChiNhanh != value))
+				{
+					this._IDChiNhanh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemCuoiNguon", DbType="Int NOT NULL")]
+		public int DiemCuoiNguon
+		{
+			get
+			{
+				return this._DiemCuoiNguon;
+			}
+			set
+			{
+				if ((this._DiemCuoiNguon != value))
+				{
+					this._DiemCuoiNguon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemDauNguon", DbType="Int NOT NULL")]
+		public int DiemDauNguon
+		{
+			get
+			{
+				return this._DiemDauNguon;
+			}
+			set
+			{
+				if ((this._DiemDauNguon != value))
+				{
+					this._DiemDauNguon = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DM_UserNameAndIDOrganizationResult
+	{
+		
+		private int _IDUSER;
+		
+		private string _MA_DVIQLY;
+		
+		private int _IDMA_DVIQLY;
+		
+		private bool _XACNHAN;
+		
+		private string _USERNAME;
+		
+		private string _PASSWORD;
+		
+		private string _HOTEN;
+		
+		private string _DIACHI;
+		
+		private string _SODT;
+		
+		private string _EMAIL;
+		
+		private System.Nullable<System.DateTime> _NGAYSINH;
+		
+		private System.DateTime _NGAYTAO;
+		
+		private int _IS_ADMIN;
+		
+		private string _CHUCDANH;
+		
+		public DM_UserNameAndIDOrganizationResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDUSER", DbType="Int NOT NULL")]
+		public int IDUSER
+		{
+			get
+			{
+				return this._IDUSER;
+			}
+			set
+			{
+				if ((this._IDUSER != value))
+				{
+					this._IDUSER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MA_DVIQLY", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MA_DVIQLY
+		{
+			get
+			{
+				return this._MA_DVIQLY;
+			}
+			set
+			{
+				if ((this._MA_DVIQLY != value))
+				{
+					this._MA_DVIQLY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDMA_DVIQLY", DbType="Int NOT NULL")]
+		public int IDMA_DVIQLY
+		{
+			get
+			{
+				return this._IDMA_DVIQLY;
+			}
+			set
+			{
+				if ((this._IDMA_DVIQLY != value))
+				{
+					this._IDMA_DVIQLY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XACNHAN", DbType="Bit NOT NULL")]
+		public bool XACNHAN
+		{
+			get
+			{
+				return this._XACNHAN;
+			}
+			set
+			{
+				if ((this._XACNHAN != value))
+				{
+					this._XACNHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string USERNAME
+		{
+			get
+			{
+				return this._USERNAME;
+			}
+			set
+			{
+				if ((this._USERNAME != value))
+				{
+					this._USERNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PASSWORD", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string PASSWORD
+		{
+			get
+			{
+				return this._PASSWORD;
+			}
+			set
+			{
+				if ((this._PASSWORD != value))
+				{
+					this._PASSWORD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this._HOTEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(200)")]
+		public string DIACHI
+		{
+			get
+			{
+				return this._DIACHI;
+			}
+			set
+			{
+				if ((this._DIACHI != value))
+				{
+					this._DIACHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODT", DbType="NVarChar(200)")]
+		public string SODT
+		{
+			get
+			{
+				return this._SODT;
+			}
+			set
+			{
+				if ((this._SODT != value))
+				{
+					this._SODT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="NVarChar(200)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this._EMAIL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYSINH", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYSINH
+		{
+			get
+			{
+				return this._NGAYSINH;
+			}
+			set
+			{
+				if ((this._NGAYSINH != value))
+				{
+					this._NGAYSINH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYTAO", DbType="DateTime NOT NULL")]
+		public System.DateTime NGAYTAO
+		{
+			get
+			{
+				return this._NGAYTAO;
+			}
+			set
+			{
+				if ((this._NGAYTAO != value))
+				{
+					this._NGAYTAO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IS_ADMIN", DbType="Int NOT NULL")]
+		public int IS_ADMIN
+		{
+			get
+			{
+				return this._IS_ADMIN;
+			}
+			set
+			{
+				if ((this._IS_ADMIN != value))
+				{
+					this._IS_ADMIN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUCDANH", DbType="NVarChar(50)")]
+		public string CHUCDANH
+		{
+			get
+			{
+				return this._CHUCDANH;
+			}
+			set
+			{
+				if ((this._CHUCDANH != value))
+				{
+					this._CHUCDANH = value;
 				}
 			}
 		}

@@ -94,6 +94,7 @@ namespace MTCSYT
             }
             string strTPGiao = "", strTPNhan = "", strGDNhan = "", strGDGiao = "";
             var lstHDKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + ""));
+
             foreach (var hdKy in lstHDKy)
             {
                 if (hdKy.ChucVu == 2 && hdKy.IDMaDViQLy == giao.IDMA_DVIQLY)
@@ -118,27 +119,122 @@ namespace MTCSYT
         private void loadTTKy()
         {
             if (cmbPhuongThuc.Value == null || cmbPhuongThuc.Value + "" == "0")
+            {
+
+                if (lbTP1.Text == "")
+                {
+                    imgAnhKyTP1.Visible = false;
+                }
+                if (lbTP2.Text == "")
+                {
+                    imgAnhKyTP2.Visible = false;
+                }
+                if (lbGiamDocKy.Text == "")
+                {
+                    imgAnhKyGD.Visible = false;
+                }
+                if (lbGiamDocKy2.Text == "")
+                {
+                    imgAnhKyGD2.Visible = false;
+
+                }
                 return;
+            }
+
+            if (lbTP1.Text == "")
+            {
+                imgAnhKyTP1.Visible = true;
+            }
+            if (lbTP2.Text == "")
+            {
+                imgAnhKyTP2.Visible = true;
+            }
+            if (lbGiamDocKy.Text == "")
+            {
+                imgAnhKyGD.Visible = true;
+            }
+            if (lbGiamDocKy2.Text == "")
+            {
+                imgAnhKyGD2.Visible = true;
+            }
+            lbNhanVienKy.Text = "";
+            lbTP1.Text = "";
+            lbTP2.Text = "";
+            lbGiamDocKy.Text = "";
 
             var ttKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "")).OrderBy(x => x.ChucVu);
             foreach (var ky in ttKy)
             {
+
                 var user = db.DM_USERs.SingleOrDefault(x => x.IDUSER == ky.NguoiTao);
-                if(ky.ChucVu==1)
+                if (user != null)
                 {
-                    lbThongTinXacNhan.Text = "Nhân viên xác nhận: "+ user.HOTEN  + " - " + user.USERNAME + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " +ky.NgayTao;
+
+                    if (ky.ChucVu == 1)
+                    {
+                        if (user.CHUCDANH == null) user.CHUCDANH = "Nhân Viên";
+                        lbNhanVienKy.Text = user.CHUCDANH + "&nbsp;" + "xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao);
+
+                    }
+                    else if (ky.ChucVu == 2)
+                    {
+                        if (lbTP1.Text == "")
+                        {
+                            if (user.CHUCDANH == null) user.CHUCDANH = "Trưởng Phòng";
+                            lbTP1.Text = user.CHUCDANH + "&nbsp;" + "đã xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao) + "</br>";
+
+                        }
+                        else
+                        {
+                            if (user.CHUCDANH == null) user.CHUCDANH = "Trưởng Phòng";
+                            lbTP2.Text = user.CHUCDANH + "&nbsp;" + "đã xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao) + "</br>";
+                            if (lbTP2.Text == lbTP1.Text)
+                            {
+                                lbTP2.Text = "";
+                            }
+                        }
+
+                    }
+                    else if (ky.ChucVu == 3)
+                    {
+                        if (lbGiamDocKy.Text == "")
+                        {
+                            if (user.CHUCDANH == null) user.CHUCDANH = "Giám Đốc";
+                            lbGiamDocKy.Text = user.CHUCDANH + "&nbsp;" + " đã xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao) + "</br>";
+
+                        }
+                        else
+                        {
+                            if (user.CHUCDANH == null) user.CHUCDANH = "Giám Đốc";
+                            lbGiamDocKy2.Text = user.CHUCDANH + "&nbsp;" + " đã xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao) + "</br>";
+
+                            if (lbGiamDocKy.Text == lbGiamDocKy2.Text)
+                            {
+                                lbGiamDocKy2.Text = "";
+                            }
+
+                        }
+                    }
+
                 }
-                else if(ky.ChucVu==2)
-                {
-                    lbTPKy.Text = "Trưởng phòng xác nhận: " + user.USERNAME + " - " + user.HOTEN+ "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + ky.NgayTao +"</br>";
-                }
-                //else if (ky.ChucVu == 3)
-                //{
-                //    lbTPKy.Text = "Giám đốc xác nhận: " + user.USERNAME + "_" + user.HOTEN + " thời gian xác nhận: " + ky.NgayTao + "</br>";
-                //}
+
             }
-            
-            
+            if (lbTP1.Text == "")
+            {
+                imgAnhKyTP1.Visible = false;
+            }
+            if (lbTP2.Text == "")
+            {
+                imgAnhKyTP2.Visible = false;
+            }
+            if (lbGiamDocKy.Text == "")
+            {
+                imgAnhKyGD.Visible = false;
+            }
+            if (lbGiamDocKy2.Text == "")
+            {
+                imgAnhKyGD2.Visible = false;
+            }
 
         }
         private void InBienBanQuyetToan()
@@ -164,6 +260,7 @@ namespace MTCSYT
                 }
 
             }
+
             dt = inBienBan.InBienBanQuyetToan(phuongthuc, donvi, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGiao);
           
             MTCSYT.Report.InBienBanQT report = new MTCSYT.Report.InBienBanQT(dt, "" + cmbThang.Value, "" + cmbNam.Value, false, false, "", "", strGiao,strNhan, "", "",strGDNhan, strGDGiao);
@@ -174,10 +271,32 @@ namespace MTCSYT
         }
         private void loadGiaoNhan()
         {
-
+            //Where(x => x.IDChiNhanh == cmbPhuongThuc.Value + "");
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            var lstDD = db.db_SelectPhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "TPXacNhan").ToList();
-            cmbPhuongThuc.DataSource = lstDD;
+            List<Phuongthuc> dsT = new List<Phuongthuc>();
+            if (int.Parse(session.User.ma_dviqly + "") == 2)
+            {
+                var lstDD = db.db_SelectPhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "TPXacNhan").ToList();
+                foreach(var list in lstDD)
+                {
+                    var a = db.HD_GiamDocXNGiaoNhans.Where(x => x.IDChiNhanh == list.IDChiNhanh + "").Where(x => x.Thang == int.Parse(cmbThang.Value + "")).Where(x => x.Nam == int.Parse(cmbNam.Value + "")).ToList();
+                    var b = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(list.IDChiNhanh + "")).Where(x => x.Thang == int.Parse(cmbThang.Value + "")).Where(x => x.Nam == int.Parse(cmbNam.Value + "")).Where(x => x.ChucVu ==3).ToList();
+                    if (a.Count!=0 || b.Count != 0)
+                    {
+                        Phuongthuc ds = new Phuongthuc();
+                        ds.IDChiNhanh = list.IDChiNhanh + "";
+                        ds.TenPhuongThuc = list.TenPhuongThuc + "";
+                        dsT.Add(ds);
+                    }
+                }
+                cmbPhuongThuc.DataSource = dsT;
+            }
+            else
+            {
+                var lstDD = db.db_SelectPhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "TPXacNhan").ToList();
+                cmbPhuongThuc.DataSource = lstDD;
+            }
+               
             cmbPhuongThuc.ValueField = "IDChiNhanh";
             cmbPhuongThuc.TextField = "TenPhuongThuc";
             cmbPhuongThuc.DataBind();
@@ -667,5 +786,10 @@ namespace MTCSYT
     {
         private string _message; public string message { get { return _message; } set { _message = value; } }
         private string _token; public string token { get { return _token; } set { _token = value; } }
+    }
+    public class Phuongthuc
+    {
+        public string IDChiNhanh { get; set; }
+        public string TenPhuongThuc { get; set; }
     }
 }

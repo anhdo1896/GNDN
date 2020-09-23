@@ -96,13 +96,13 @@ namespace MTCSYT
         protected global::System.Web.UI.WebControls.Label lbNhanVienKy;
 
         /// <summary>
-        /// imgAnhKy control.
+        /// imgAnhKyTP1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxImage imgAnhKy;
+        protected global::DevExpress.Web.ASPxImage imgAnhKyTP1;
 
         /// <summary>
         /// lbTP1 control.
@@ -114,13 +114,13 @@ namespace MTCSYT
         protected global::System.Web.UI.WebControls.Label lbTP1;
 
         /// <summary>
-        /// ASPxImage2 control.
+        /// imgAnhKyTP2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxImage ASPxImage2;
+        protected global::DevExpress.Web.ASPxImage imgAnhKyTP2;
 
         /// <summary>
         /// lbTP2 control.
@@ -132,13 +132,13 @@ namespace MTCSYT
         protected global::System.Web.UI.WebControls.Label lbTP2;
 
         /// <summary>
-        /// ASPxImage1 control.
+        /// imgAnhKyGD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxImage ASPxImage1;
+        protected global::DevExpress.Web.ASPxImage imgAnhKyGD;
 
         /// <summary>
         /// lbGiamDocKy control.
@@ -148,6 +148,24 @@ namespace MTCSYT
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbGiamDocKy;
+
+        /// <summary>
+        /// imgAnhKyGD2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxImage imgAnhKyGD2;
+
+        /// <summary>
+        /// lbGiamDocKy2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbGiamDocKy2;
 
         /// <summary>
         /// pcTax control.

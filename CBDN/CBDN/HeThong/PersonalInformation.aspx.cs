@@ -22,6 +22,7 @@ namespace QLY_VTTB
             txtEmail.Text = session.User.EMAIL;
             txtHoTen.Text = session.User.FullName;
             txtSoDT.Text = session.User.SODT;
+            txtChucDanh.Text = session.User.CHUCDANH;
         }
 
         private bool IsValidEmailAddress(string sEmail)
@@ -40,7 +41,7 @@ namespace QLY_VTTB
             session.User.XACNHAN = session.User.XACNHAN;
             session.User.IDMA_DVIQLY = session.User.IDMA_DVIQLY;
             session.User.NGAYSINH = session.User.NGAYSINH;
-
+            session.User.CHUCDANH = txtChucDanh.Text;
             if (IsValidEmailAddress(txtEmail.Text))
             {
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Cập nhật thành công.');", true);

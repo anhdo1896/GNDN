@@ -166,19 +166,49 @@
                     </td>
 
                 </tr>
+                </table>
+             <br />
+           <table width="100%">
                 <tr>
-                    <td colspan="6">
-                        <asp:Label ID="lbThongTinXacNhan" runat="server" Font-Bold="True" ForeColor="Red" /></td>
+                    <td align="right"></td>
+                    <td colspan="4">
+                        <asp:Label ID="lbNhanVienKy" runat="server" Font-Bold="True" /></td>
+
                 </tr>
                 <tr>
-                    <td colspan="6">
-                        <asp:Label ID="lbTPKy" runat="server" Font-Bold="True" ForeColor="Red" /></td>
+                    <td align="right">
+                        <dx:ASPxImage ID="imgAnhKyTP1" runat="server" ShowLoadingImage="True" ImageUrl="~/Images/CertificateActive.png"></dx:ASPxImage>
+                    </td>
+                    <td>
+                        <asp:Label ID="lbTP1" runat="server" Font-Bold="True" ForeColor="Red" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <dx:ASPxImage ID="imgAnhKyTP2" runat="server" ShowLoadingImage="True" ImageUrl="~/Images/CertificateActive.png"></dx:ASPxImage>
+                    </td>
+                    <td>
+                        <asp:Label ID="lbTP2" runat="server" Font-Bold="True" ForeColor="Red" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <dx:ASPxImage ID="imgAnhKyGD" runat="server" ShowLoadingImage="True" ImageUrl="~/Images/CertificateActive.png"></dx:ASPxImage>
+                    </td>
+                    <td>
+                        <asp:Label ID="lbGiamDocKy" runat="server" Font-Bold="True" ForeColor="Red" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <dx:ASPxImage ID="imgAnhKyGD2" runat="server" ShowLoadingImage="True" ImageUrl="~/Images/CertificateActive.png"></dx:ASPxImage>
+                    </td>
+                    <td>
+                        <asp:Label ID="lbGiamDocKy2" runat="server" Font-Bold="True" ForeColor="Red" />
+                    </td>
                 </tr>
             </table>
-            <br />
-
-
-            <dx:ASPxPageControl ID="pcTax" runat="server" ActiveTabIndex="2" Width="100%" Theme="Aqua" AccessibilityCompliant="True" EnableCallBacks="True">
+            <dx:ASPxPageControl ID="pcTax" runat="server" ActiveTabIndex="1" Width="100%" Theme="Aqua" AccessibilityCompliant="True" EnableCallBacks="True">
                 <TabPages>
                     <dx:TabPage Text="Biên bản tổng hợp">
                         <ContentCollection>

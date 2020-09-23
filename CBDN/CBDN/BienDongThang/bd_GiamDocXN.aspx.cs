@@ -15,6 +15,8 @@ using CBDN.Class;
 using System.Web.Script.Serialization;
 using System.Net;
 using System.Text;
+using DevExpress.XtraRichEdit.Fields;
+
 namespace MTCSYT
 {
     //sCAP_DDIEN
@@ -41,47 +43,134 @@ namespace MTCSYT
             {
                 loadDSNgay();
                 loadGiaoNhan();
+                loadTTKy();
 
             }
 
             InTongHopDienNang();
             InBienBanQuyetToan();
             loadTTKy();
+           
         }
         private void loadTTKy()
         {
             if (cmbPhuongThuc.Value == null || cmbPhuongThuc.Value + "" == "0")
-                return;
+            {
 
+                if (lbTP1.Text == "")
+                {
+                    imgAnhKyTP1.Visible = false;
+                }
+                if (lbTP2.Text == "")
+                {
+                    imgAnhKyTP2.Visible = false;
+                }
+                if (lbGiamDocKy.Text == "")
+                {
+                    imgAnhKyGD.Visible = false;
+                }
+                if (lbGiamDocKy2.Text == "")
+                {
+                    imgAnhKyGD2.Visible = false;
+                    
+                }
+                return;
+            }
+
+            if (lbTP1.Text == "")
+            {
+                imgAnhKyTP1.Visible = true;
+            }
+            if (lbTP2.Text == "")
+            {
+                imgAnhKyTP2.Visible = true;
+            }
+            if (lbGiamDocKy.Text == "")
+            {
+                imgAnhKyGD.Visible = true;
+            }
+            if (lbGiamDocKy2.Text == "")
+            {
+                imgAnhKyGD2.Visible = true;
+            }
+            lbNhanVienKy.Text = "";
+            lbTP1.Text = "";
+            lbTP2.Text = "";
+            lbGiamDocKy.Text = "";
+           
             var ttKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "")).OrderBy(x => x.ChucVu);
             foreach (var ky in ttKy)
             {
+
                 var user = db.DM_USERs.SingleOrDefault(x => x.IDUSER == ky.NguoiTao);
-                if (ky.ChucVu == 1)
+                if (user != null)
                 {
-                    lbNhanVienKy.Text = "NV xác nhận: " + user.HOTEN + " - " + user.USERNAME + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + ky.NgayTao;
-                }
-                else if (ky.ChucVu == 2)
-                {
-                    if (lbTP1.Text == "")
+
+                    if (ky.ChucVu == 1)
                     {
-                        imgAnhKy.ShowLoadingImage = true;
-                        lbTP1.Text = "TP xác nhận: " + user.HOTEN + " - " + user.USERNAME + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + ky.NgayTao + "</br>";
+                        if (user.CHUCDANH == null) user.CHUCDANH = "Nhân Viên";
+                        lbNhanVienKy.Text = user.CHUCDANH + "&nbsp;" + "xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao);
+
                     }
-                    else
+                    else if (ky.ChucVu == 2)
                     {
-                        ASPxImage2.ShowLoadingImage = true;
-                        lbTP2.Text = "TP xác nhận: " + user.HOTEN + " - " + user.USERNAME + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + ky.NgayTao + "</br>";
-                    }    
+                        if (lbTP1.Text == "")
+                        {
+                            if (user.CHUCDANH == null) user.CHUCDANH = "Trưởng Phòng";
+                            lbTP1.Text = user.CHUCDANH + "&nbsp;" + "đã xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao) + "</br>";
+
+                        }
+                        else
+                        {
+                            if (user.CHUCDANH == null) user.CHUCDANH = "Trưởng Phòng";
+                            lbTP2.Text = user.CHUCDANH + "&nbsp;" + "đã xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao) + "</br>";
+                            if (lbTP2.Text == lbTP1.Text)
+                            {
+                                lbTP2.Text = "";
+                            }
+                        }
+
+                    }
+                    else if (ky.ChucVu == 3)
+                    {
+                        if (lbGiamDocKy.Text == "")
+                        {
+                            if (user.CHUCDANH == null) user.CHUCDANH = "Giám Đốc";
+                            lbGiamDocKy.Text = user.CHUCDANH + "&nbsp;" + " đã xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao) + "</br>";
+
+                        }
+                        else
+                        {
+                            if (user.CHUCDANH == null) user.CHUCDANH = "Giám Đốc";
+                            lbGiamDocKy2.Text = user.CHUCDANH + "&nbsp;" + " đã xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao) + "</br>";
+
+                            if (lbGiamDocKy.Text == lbGiamDocKy2.Text)
+                            {
+                                lbGiamDocKy2.Text = "";
+                            }
+
+                        }
+                    }
+
                 }
-                else if (ky.ChucVu == 3)
-                {
-                    ASPxImage1.ShowLoadingImage = true;
-                    lbGiamDocKy.Text = "Giám đốc xác nhận: " + user.HOTEN + " - " + user.USERNAME + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + ky.NgayTao + "</br>";
-                }
+              
             }
-
-
+            if (lbTP1.Text == "")
+            {
+                imgAnhKyTP1.Visible = false;
+            }
+            if (lbTP2.Text == "")
+            {
+                imgAnhKyTP2.Visible = false;
+            }
+            if (lbGiamDocKy.Text == "")
+            {
+                imgAnhKyGD.Visible = false;
+            }
+            if (lbGiamDocKy2.Text == "")
+            {
+                imgAnhKyGD2.Visible = false;
+            }
 
         }
         private void InTongHopDienNang()
@@ -165,8 +254,48 @@ namespace MTCSYT
         {
 
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            var lstDD = db.db_GD_PhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "GDXN").ToList();
-            cmbPhuongThuc.DataSource = lstDD;
+            int strMadviqly = int.Parse(session.User.ma_dviqly);
+            List<Phuongthuc> dsT = new List<Phuongthuc>();
+            if (strMadviqly == 2)
+            {
+                var lstDD = db.db_GD_PhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "GDXN").ToList();
+                cmbPhuongThuc.DataSource = lstDD;
+            }
+            else
+            {
+
+                var lstDDNPC = db.db_GD_PhuongThucCanXN_NPCT(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "GDXN").ToList();
+                if (lstDDNPC.Count>0)
+                {
+                    foreach (var list in lstDDNPC)
+                    {
+                        int id = int.Parse(list.DiemCuoiNguon + "");
+                        int id2 = int.Parse(list.DiemDauNguon + "");
+                        if (id == 2 || id2 ==2)
+                        {
+                            Phuongthuc ds = new Phuongthuc();
+                            ds.IDChiNhanh = list.IDChiNhanh + "";
+                            ds.TenPhuongThuc = list.TenPhuongThuc + "";
+                            dsT.Add(ds);
+                        }
+                    }
+                }
+                var lstDD = db.db_GD_PhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "GDXN").ToList();
+                foreach (var list in lstDD)
+                {
+                    int id = int.Parse(list.IDChiNhanh);
+                    if (id >= 586)
+                    {
+                        Phuongthuc ds = new Phuongthuc();
+                        ds.IDChiNhanh = list.IDChiNhanh + "";
+                        ds.TenPhuongThuc = list.TenPhuongThuc + "";
+                        dsT.Add(ds);
+                    }
+
+                }
+                cmbPhuongThuc.DataSource = dsT;
+            }
+                
             cmbPhuongThuc.ValueField = "IDChiNhanh";
             cmbPhuongThuc.TextField = "TenPhuongThuc";
             cmbPhuongThuc.DataBind();
@@ -198,137 +327,7 @@ namespace MTCSYT
         {
 
         }
-        //private void kySo(string TenFile)
-        //{
-
-        //    MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-        //    var userky = db.DM_USERs.SingleOrDefault(x => x.IDUSER == session.User.IDUSER);
-        //    if (userky.NguoiKy != txtTenNguoiKy.Text)
-        //    {
-        //        userky.HOTEN = txtHoTenNguoiKy.Text;
-        //        userky.NguoiKy = txtTenNguoiKy.Text;
-        //        db.SubmitChanges();
-        //    }
-        //    // thong tin thoi gian ký
-        //    var isKy = db.HD_ThongTinKies.SingleOrDefault(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Link.Contains(cmbPhuongThuc.Value + "_" + cmbThang.Value + "_" + cmbNam.Value + "_QT.pdf"));
-        //    if (isKy != null)
-        //    {
-        //        isKy.Barcode = isKy.Barcode + "GD_" + session.User.ma_dviqly + "_" + txtHoTenNguoiKy.Text + "_" + DateTime.Now + ";";
-        //    }
-
-        //    string strSerial = "";
-        //    string strAlias = txtTenNguoiKy.Text;
-        //    string strUrl = "http://10.0.0.146:8080/SignServerWSService?wsdl";
-        //    string strFileName = TenFile;
-        //    string strSaveTo = TenFile;
-        //    string strAppCode = "cmis";
-        //    string strPassword = "Cmis@2019";
-        //    string strHashAlogrithm = "SHA-1";
-        //    //string strInt = txtInt.Text;
-        //    CBDN.ServerSignWS.signFileResponceBO signBO = null;
-        //    try
-        //    {
-        //        var cn = db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + ""));
-
-        //        float Trai = 0, Phai = 0, Tren = 0, Duoi = 0;
-
-
-        //        if (cn.IDMADVIQLY.Contains(",2,"))
-        //        {
-        //            if (session.User.MA_DVIQLY != cn.DiemDauNguon + "")
-        //            {
-        //                //giao trái (ngược lại với tổng công ty)
-        //                Tren = 70;
-        //                Duoi = 300;
-        //                Phai = 410;
-        //                Trai = 80;
-        //            }
-        //            else
-        //            {
-        //                //nhan phải 
-        //                Tren = 70;
-        //                Duoi = 300;
-        //                Phai = 140;
-        //                Trai = 360;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (session.User.MA_DVIQLY != cn.DiemDauNguon + "")
-        //            {
-        //                //nhan phải 
-        //                Tren = 70;
-        //                Duoi = 300;
-        //                Phai = 140;
-        //                Trai = 360;
-
-        //            }
-        //            else
-        //            {
-        //                //giao trái (ngược lại với tổng công ty)
-        //                Tren = 70;
-        //                Duoi = 300;
-        //                Phai = 410;
-        //                Trai = 80;
-        //            }
-
-        //        }
-        //        byte[] AsBytes = File.ReadAllBytes(strFileName);
-        //        string AsBase64String = Convert.ToBase64String(AsBytes);
-
-        //        //byte[] tempBytes = Convert.FromBase64String(AsBase64String);
-        //        CBDN.ServerSignWS.SignServerWSService ser = new CBDN.ServerSignWS.SignServerWSService();
-        //        //ser.Url = strUrl;
-        //        #region Display
-        //        CBDN.ServerSignWS.displayRectangleTextConfigBO dspRec = new CBDN.ServerSignWS.displayRectangleTextConfigBO();
-        //        dspRec.numberPageSign = DisplayConfigConsts.NUMBER_PAGE_SIGN_DEFAULT;
-        //        dspRec.widthRectangle = DisplayConfigConsts.WIDTH_RECTANGLE_DEFAULT;
-        //        dspRec.heightRectangle = DisplayConfigConsts.HEIGHT_RECTANGLE_DEFAULT;
-        //        dspRec.locateSign = DisplayConfigConsts.LOCATE_SIGN_DEFAULT;
-
-        //        dspRec.marginTopOfRectangle = Tren;
-        //        dspRec.marginBottomOfRectangle = Duoi;
-        //        dspRec.marginRightOfRectangle = Phai;
-        //        dspRec.marginLeftOfRectangle = Trai;
-
-
-        //        dspRec.displayText = DisplayConfigConsts.DISPLAY_TEXT_DEFAULT_EMPTY;
-        //        dspRec.formatRectangleText = DisplayConfigConsts.FORMAT_RECTANGLE_TEXT_DEFAULT;
-        //        dspRec.contact = DisplayConfigConsts.CONTACT_DEFAULT_EMPTY;
-        //        dspRec.reason = DisplayConfigConsts.REASON_DEFAULT_EMPTY;
-        //        dspRec.location = DisplayConfigConsts.LOCATION_DEFAULT_EMPTY;
-        //        dspRec.dateFormatString = DisplayConfigConsts.DATE_FORMAT_STRING_DEFAULT;
-        //        dspRec.fontPath = DisplayConfigConsts.FONT_PATH_DEFAULT;
-        //        dspRec.sizeFont = DisplayConfigConsts.SIZE_FONT_DEFAULT;
-        //        dspRec.organizationUnit = DisplayConfigConsts.ORGANIZATION_UNIT_DEFAULT_EMPTY;
-        //        dspRec.organization = DisplayConfigConsts.ORGANIZATION_DEFAULT_EMPTY;
-        //        dspRec.signDate = DateTime.Now;
-        //        #endregion
-
-        //        CBDN.ServerSignWS.timestampConfig timestamp = new CBDN.ServerSignWS.timestampConfig();
-        //        timestamp.useTimestamp = false;
-
-        //        signBO = ser.signPdfBase64RectangleText(strAppCode, strPassword, strSerial, strAlias, AsBase64String, strHashAlogrithm, dspRec, timestamp);
-        //        string strOutput = signBO.signedFileBase64;
-        //        byte[] tempBytes = Convert.FromBase64String(strOutput);
-        //        try
-        //        {
-        //            File.WriteAllBytes(strSaveTo, tempBytes);
-        //            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Ký số thành công');", true);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Lỗi duyệt chấm nợ " + ex.Message + "');", true);
-        //        }
-
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Lỗi duyệt chấm nợ " + ex.Message + "');", true);
-        //    }
-
-        //}
+      
         protected void btnDuyet_Click(object sender, EventArgs e)
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -555,6 +554,11 @@ namespace MTCSYT
             string json = client.DownloadString(SQL);
             services = (new JavaScriptSerializer()).Deserialize<List<PUSHRESULT>>(json);
             lbOTP.Text = services[0].token;
+        }
+        public class Phuongthuc
+        {
+            public string IDChiNhanh { get; set; }
+            public string TenPhuongThuc { get; set; }
         }
 
     }

@@ -35,6 +35,7 @@ namespace DataAccess
         public static string FIELD_NGAYSINH = "NGAYSINH";
         public static string FIELD_NGAYTAO = "NGAYTAO";
         public static string FIELD_IS_ADMIN = "IS_ADMIN";
+        public static string FIELD_CHUCDANH = "CHUCDANH";
 
         #region Private methods
 
@@ -54,7 +55,7 @@ namespace DataAccess
             dm_user.NGAYTAO = NGAYTAO != null ? (DateTime)NGAYTAO : DateTime.Now;
             dm_user.IS_ADMIN = int.Parse("0" + reader[FIELD_IS_ADMIN]);
             dm_user.XACNHAN = bool.Parse("" + reader[FIELD_XACNHAN]);
-
+            dm_user.CHUCDANH = "" + reader[FIELD_CHUCDANH];
             SYS_RolesDataAccess sysRoleDataAccess = new SYS_RolesDataAccess();
             dm_user.Roles = sysRoleDataAccess.GetRolesByUser(dm_user.IDUSER);
             dm_user.RoleGroup = dm_user.Roles.Name;
@@ -178,7 +179,7 @@ namespace DataAccess
                 para.Add(_DbHelper.CreateParameter(FIELD_EMAIL, dm_user.EMAIL, false));
                 para.Add(_DbHelper.CreateParameter(FIELD_NGAYSINH, dm_user.NGAYSINH, false));
                 para.Add(_DbHelper.CreateParameter(FIELD_IS_ADMIN, dm_user.IS_ADMIN, false));
-
+                para.Add(_DbHelper.CreateParameter(FIELD_CHUCDANH, dm_user.CHUCDANH, false));
                 _DbHelper.ExecuteNonQuery(conn, Common.DatabaseSchema + "[DM_USER_Update]", para.ToArray());
 
             }

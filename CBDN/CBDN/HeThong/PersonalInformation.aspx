@@ -82,6 +82,16 @@
                 </tr>
                 <tr>
                     <td align="right" class="col1">
+                        <dxe:ASPxLabel ID="ASPxLabel2" runat="server" Text="Chức Danh " ClientIDMode="AutoID">
+                        </dxe:ASPxLabel>
+                    </td>
+                    <td align="left" class="style15" colspan="2">
+                        <dxe:ASPxTextBox ID="txtChucDanh" runat="server" ClientIDMode="AutoID" Width="250px">
+                        </dxe:ASPxTextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" class="col1">
                         <dxe:ASPxLabel ID="ASPxLabel7" runat="server" Text="Số điện thoại " ClientIDMode="AutoID">
                         </dxe:ASPxLabel>
                     </td>

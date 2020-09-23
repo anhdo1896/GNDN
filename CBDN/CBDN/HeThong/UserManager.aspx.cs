@@ -208,7 +208,7 @@ namespace QLY_VTTB
                     sysUser.EMAIL = txtEmail.Text;
 
                     sysUser.IS_ADMIN = 0;
-
+                    sysUser.CHUCDANH = txtChucVuFix.Text;
                     SYS_Roles sysRoles = new SYS_Roles();
                     sysRoles.ID = int.Parse(cbxNhomQuyen.Value.ToString());
 
@@ -256,7 +256,7 @@ namespace QLY_VTTB
                         User.EMAIL = txtEmail.Text;
                         User.XACNHAN = cbxActive != null ? cbxActive.Checked : false;
                         User.SODT = txtPhone.Text;
-
+                        User.CHUCDANH = txtChucVuFix.Text;
                         sysUser.IS_ADMIN = 0;
 
                         SYS_Roles sysRoles = new SYS_Roles();
@@ -310,7 +310,7 @@ namespace QLY_VTTB
                 txtDiaChi.Text = sysUser.DIACHI;
                 //txtNgaySinh.Text = sysUser.NGAYSINH.ToString("dd/MM/yyyy");
                 cbxActive.Checked = sysUser.XACNHAN;
-
+                txtChucVuFix.Text = sysUser.CHUCDANH;
                 Session["SYSUser"] = sysUser;
                 pcAddUser.ShowOnPageLoad = true;
 
@@ -378,7 +378,7 @@ namespace QLY_VTTB
                 lbNgayThang.Text = sysUser.NGAYSINH.ToString("dd/MM/yyyy");
                 lbNgayTao.Text = sysUser.NGAYTAO.ToString("dd/MM/yyyy");
                 cbxActive.Checked = sysUser.XACNHAN;
-
+                txtChucVuFix.Text = sysUser.CHUCDANH;
                 Session["SYSUser"] = sysUser;
                 pcTTUser.ShowOnPageLoad = true;
 

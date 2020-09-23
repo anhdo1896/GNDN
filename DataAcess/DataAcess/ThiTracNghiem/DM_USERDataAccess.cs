@@ -82,7 +82,7 @@ namespace DataAccess
                 para.Add(_DbHelper.CreateParameter(FIELD_EMAIL, dm_user.EMAIL, false));
                 para.Add(_DbHelper.CreateParameter(FIELD_NGAYSINH, dm_user.NGAYSINH, false));
                 para.Add(_DbHelper.CreateParameter(FIELD_IS_ADMIN, dm_user.IS_ADMIN, false));
-
+                para.Add(_DbHelper.CreateParameter(FIELD_CHUCDANH, dm_user.CHUCDANH, false));
                 _DbHelper.ExecuteNonQuery(conn, Common.DatabaseSchema + "[DM_USER_Update]", para.ToArray());
                 SYS_RoleOfUserDataAccess sysRoleOfUserDataAccess = new SYS_RoleOfUserDataAccess();
                 SYS_RoleOfUser sysRoleOfUser = new SYS_RoleOfUser();
@@ -125,6 +125,7 @@ namespace DataAccess
                 para.Add(_DbHelper.CreateParameter(FIELD_NGAYSINH, dm_user.NGAYSINH, false));
                 para.Add(_DbHelper.CreateParameter(FIELD_NGAYTAO, dm_user.NGAYTAO, false));
                 para.Add(_DbHelper.CreateParameter(FIELD_IS_ADMIN, dm_user.IS_ADMIN, false));
+                para.Add(_DbHelper.CreateParameter(FIELD_CHUCDANH, dm_user.CHUCDANH, false));
                 para.Add(ouput);
                 _DbHelper.ExecuteNonQuery(conn, Common.DatabaseSchema + "[DM_USER_Insert]", para.ToArray());
                 dm_user.IDUSER = (int)ouput.Value;
@@ -194,6 +195,7 @@ namespace DataAccess
             SYS_RolesDataAccess sysRoleDataAccess = new SYS_RolesDataAccess();
             dm_user.Roles = sysRoleDataAccess.GetRolesByUser(dm_user.IDUSER);
             dm_user.RoleGroup = dm_user.Roles.Name;
+            dm_user.CHUCDANH = "" + reader[FIELD_CHUCDANH];
         }
 
         private static void SetListDM_USER(ref DbDataReader reader, ref List<DM_USER> dm_users)

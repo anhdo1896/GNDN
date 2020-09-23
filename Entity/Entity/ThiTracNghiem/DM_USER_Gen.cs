@@ -24,7 +24,7 @@ namespace Entity
         private DateTime _NGAYSINH;
         private DateTime _NGAYTAO;
         private int _IS_ADMIN;
-
+        private string _CHUCDANH;
         public int IDUSER { get { return _IDUSER; } set { _IDUSER = value; } }
         public int IDMA_DVIQLY { get { return _IDMA_DVIQLY; } set { _IDMA_DVIQLY = value; } }
         public Boolean XACNHAN { get { return _XACNHAN; } set { _XACNHAN = value; } }
@@ -37,8 +37,10 @@ namespace Entity
         public DateTime NGAYSINH { get { return _NGAYSINH; } set { _NGAYSINH = value; } }
         public DateTime NGAYTAO { get { return _NGAYTAO; } set { _NGAYTAO = value; } }
         public int IS_ADMIN { get { return _IS_ADMIN; } set { _IS_ADMIN = value; } }
+        public string CHUCDANH { get { return _CHUCDANH; } set { _CHUCDANH = value; } }
 
-        public DM_USER(int IDUSER, int IDMA_DVIQLY, Boolean XACNHAN, string USERNAME, string PASSWORD, string HOTEN, string DIACHI, string SODT, string EMAIL, DateTime NGAYSINH, DateTime NGAYTAO, int IS_ADMIN)
+
+        public DM_USER(int IDUSER, int IDMA_DVIQLY, Boolean XACNHAN, string USERNAME, string PASSWORD, string HOTEN, string DIACHI, string SODT, string EMAIL, DateTime NGAYSINH, DateTime NGAYTAO, int IS_ADMIN, string CHUCDANH)
         {
             _IDUSER = IDUSER;
             _IDMA_DVIQLY = IDMA_DVIQLY;
@@ -52,6 +54,7 @@ namespace Entity
             _NGAYSINH = NGAYSINH;
             _NGAYTAO = NGAYTAO;
             _IS_ADMIN = IS_ADMIN;
+            _CHUCDANH = CHUCDANH;
         }
         public DM_USER()
         {
@@ -67,6 +70,7 @@ namespace Entity
             _NGAYSINH = DateTime.Now;
             _NGAYTAO = DateTime.Now;
             _IS_ADMIN = 0;
+            _CHUCDANH = String.Empty; ;
         }
 
     }

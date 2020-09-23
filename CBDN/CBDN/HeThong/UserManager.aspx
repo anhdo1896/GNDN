@@ -233,6 +233,9 @@
                                                                 </ValidationSettings>
                                                             </PropertiesTextEdit>
                                                         </dx:GridViewDataTextColumn>
+                                                          <dx:GridViewDataTextColumn Caption="Chức Danh" FieldName="CHUCDANH" VisibleIndex="6"
+                                                            Width="70px">
+                                                              </dx:GridViewDataTextColumn>
                                                         <dx:GridViewDataTextColumn Caption="Điện thoại" FieldName="SODT" VisibleIndex="2"
                                                             Width="70px">
                                                             <EditFormSettings Visible="True" VisibleIndex="3" />
@@ -526,9 +529,22 @@
                                                             <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Kích hoạt:">
                                                             </dx:ASPxLabel>
                                                         </td>
+                                                       
                                                         <td>
                                                             <dx:ASPxCheckBox ID="cbxActive" runat="server">
                                                             </dx:ASPxCheckBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                            <td class="col1">
+                                                            <dx:ASPxLabel ID="ASPxLabel25" runat="server" Text="Chức Vụ:">
+                                                            </dx:ASPxLabel>
+                                                        </td>
+                                                        <td>
+                                                            <dx:ASPxTextBox ID="txtChucVuFix" runat="server" Width="170px">
+                                                                <ValidationSettings ValidationGroup="btnAdd">
+                                                                </ValidationSettings>
+                                                            </dx:ASPxTextBox>
                                                         </td>
                                                     </tr>
                                                     <%--<tr>
@@ -650,6 +666,9 @@
                                                         <dx:GridViewDataTextColumn Caption="Địa chỉ" FieldName="DIACHI" ShowInCustomizationForm="True"
                                                             VisibleIndex="3">
                                                         </dx:GridViewDataTextColumn>
+                                                        <dx:GridViewDataTextColumn Caption="Chức Danh" FieldName="CHUCDANH" ShowInCustomizationForm="True"
+                                                            VisibleIndex="6">
+                                                        </dx:GridViewDataTextColumn>
                                                         <dx:GridViewDataTextColumn Caption="Số điện thoại" FieldName="SODT" ShowInCustomizationForm="True"
                                                             VisibleIndex="4" Width="120px">
                                                         </dx:GridViewDataTextColumn>
@@ -736,6 +755,16 @@
                                                         </td>
                                                         <td>
                                                             <dx:ASPxLabel ID="lbEmail" runat="server" ForeColor="#0099FF">
+                                                            </dx:ASPxLabel>
+                                                        </td>
+                                                    </tr>
+                                                     <tr>
+                                                        <td class="col1">
+                                                            <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Chức Danh:">
+                                                            </dx:ASPxLabel>
+                                                        </td>
+                                                        <td>
+                                                            <dx:ASPxLabel ID="txtChucDanh" runat="server" ForeColor="#0099FF">
                                                             </dx:ASPxLabel>
                                                         </td>
                                                     </tr>

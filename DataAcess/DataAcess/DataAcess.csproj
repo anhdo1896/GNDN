@@ -34,7 +34,8 @@
     <Reference Include="Connection">
       <HintPath>..\..\Connection\bin\Debug\Connection.dll</HintPath>
     </Reference>
-    <Reference Include="Entity">
+    <Reference Include="Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Entity\Entity\bin\Debug\Entity.dll</HintPath>
     </Reference>
     <Reference Include="System" />

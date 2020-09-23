@@ -18,6 +18,7 @@ namespace Entity
         private int _IDDonVi;
         private string _ma_dviqly;
         private string _ma_dviqlyDN;
+
         #endregion
         public string ma_dviqly
         {
@@ -35,12 +36,15 @@ namespace Entity
             get { return _MA_DVIQLY; }
             set { _MA_DVIQLY = value; }
         }
+      
         List<SYS_Right> _rights = new List<SYS_Right>();
         SYS_Roles _roles = new SYS_Roles();
         SYS_Position _position = new SYS_Position();
         SYS_Province _sysProvince = new SYS_Province();
   
         public DM_USER User { get; set; }
+        //them chucdanh
+
         private string _strDonVi;
         public string strDonVi { get { return _strDonVi; } set { _strDonVi = value; } }       
 

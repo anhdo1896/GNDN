@@ -245,7 +245,8 @@ namespace CBDN.Class
             drC[0]["Tong1Gia1"] = string.Format("{0:N0} ", dt.Compute("sum(Tong1Gia)", "Loai=4")).Replace(",", ".");
             drC[0]["Tong_TieuThu1"] = string.Format("{0:N0} ", dt.Compute("sum(Tong_TieuThu)", "Loai=4")).Replace(",", ".");
 
-            var lstMTAPM = db.BC_QuyetToanMTApMai_CN(strMadviqly, Thang, Nam, PhuongThuc);
+            
+            var lstMTAPM = db.BC_QuyetToanMTApMai_CN(strMadviqly, Thang, Nam, PhuongThuc).ToList();
             stt = 1;
 
             foreach (var chitiet in lstMTAPM)
@@ -290,26 +291,86 @@ namespace CBDN.Class
                 }
 
 
-                var imGDGiao = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == cn.DiemDauNguon && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3);
-                var imGDNhan = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == cn.DiemCuoiNguon && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3);
+                var imGDGiao = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == giao.IDMA_DVIQLY && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3);
+                var imGDNhan = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == nhan.IDMA_DVIQLY && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3);
 
                 if (imGDGiao != null)
                 {
                     var ngGiao = db.DM_USERs.SingleOrDefault(x => x.IDUSER == imGDGiao.NguoiTao);
-                    strGDGiao = ngGiao.HOTEN + "</br> Thời gian xác nhận: " + imGDGiao.NgayTao;
+                    if (ngGiao.CHUCDANH == null)
+                    {
+                        ngGiao.CHUCDANH = "Giám Đốc";
+                    }
+                    var chucdanh = ngGiao.CHUCDANH.ToUpper();
+                    var TenCty = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == ngGiao.IDMA_DVIQLY);
+                    var ten = TenCty.TEN_DVIQLY;
+                    ten = ten.ToUpper();
+                    strGDGiao = ngGiao.HOTEN + "</br> Đơn vị: " + chucdanh + " - " + ten+ "</br> Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", imGDGiao.NgayTao);
                 }
                 if (imGDNhan != null)
                 {
                     var ngNhan = db.DM_USERs.SingleOrDefault(x => x.IDUSER == imGDNhan.NguoiTao);
-                    strGDNhan = ngNhan.HOTEN + "</br> Thời gian xác nhận: " + imGDNhan.NgayTao;
+                    if(ngNhan.CHUCDANH == null)
+                    {
+                        ngNhan.CHUCDANH = "Giám Đốc";
+                    }    
+                    var chucdanh = ngNhan.CHUCDANH.ToUpper();
+                    var TenCty = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == ngNhan.IDMA_DVIQLY);
+                    var ten = TenCty.TEN_DVIQLY;
+                    ten = ten.ToUpper();
+                    strGDNhan = ngNhan.HOTEN +"</br> Đơn vị: " + chucdanh + " - " + ten + "</br> Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", imGDNhan.NgayTao);
                 }
                 strTenDVGiao = giao.TEN_DVIQLY;
                 strTenDVnhan = nhan.TEN_DVIQLY;
             }
             else
+                
             {
+                var lstPT = db.DM_ChiNhanhs.Where(x => x.DiemCuoiNguon == 2).Where(x => x.DiemDauNguon == strMadviqly).ToList();
+                if(lstPT.Count == 0)
+                {
+                    lstPT = db.DM_ChiNhanhs.Where(x => x.DiemCuoiNguon == strMadviqly).Where(x => x.DiemDauNguon == 2).ToList();
+                }
+                if (lstPT.Count != 0)
+                {
+                    foreach (var list in lstPT)
+                    {
+                        PhuongThuc = list.ID;
+                    }
+                }
+                    var imGDGiao = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == 2 && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3);
+                var imGDNhan = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == strMadviqly && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3);
+                if (imGDGiao != null)
+                {
+                    var ngGiao = db.DM_USERs.SingleOrDefault(x => x.IDUSER == imGDGiao.NguoiTao);
+                    if (ngGiao.CHUCDANH == null)
+                    {
+                        ngGiao.CHUCDANH = "Giám Đốc";
+                    }
+                    var chucdanh = ngGiao.CHUCDANH.ToUpper();
+                    var TenCty = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == ngGiao.IDMA_DVIQLY);
+                    var ten = TenCty.TEN_DVIQLY;
+                    ten = ten.ToUpper();
+                    strGDGiao = ngGiao.HOTEN + "</br> Đơn vị: " + chucdanh + " - " + ten + "</br> Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", imGDGiao.NgayTao);
+                }
+                if (imGDNhan != null)
+                {
+                    var ngNhan = db.DM_USERs.SingleOrDefault(x => x.IDUSER == imGDNhan.NguoiTao);
+                    if (ngNhan.CHUCDANH == null)
+                    {
+                        ngNhan.CHUCDANH = "Giám Đốc";
+                    }
+                    var chucdanh = ngNhan.CHUCDANH.ToUpper();
+                    var TenCty = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == ngNhan.IDMA_DVIQLY);
+                    var ten = TenCty.TEN_DVIQLY;
+                    ten = ten.ToUpper();
+                    strGDNhan = ngNhan.HOTEN + "</br> Đơn vị: " + chucdanh + " - " + ten + "</br> Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", imGDNhan.NgayTao);
+                }
+
+
                 strTenDVGiao = "TỔNG CÔNG TY ĐIỆN LỰC MIỀM BẮC";
                 strTenDVnhan = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == strMadviqly).TEN_DVIQLY;
+
             }
 
 

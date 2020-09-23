@@ -23,10 +23,10 @@ namespace MTCSYT.Report
 
             //lbkyNhan.Text = "Đã ký: Người ký " + strImGDNhan ;
             //lbKyGiao.Text = "Đã ký: Người ký " + strImGDGiao;
-            if (strImGDNhan != "")
-                rTNhan.Html = "<span align='center' style='color:red;font-weight:bold'> Đã ký: Người ký " + strImGDNhan + "</span>";
+                if (strImGDNhan != "")
+                rTNhan.Html = "<span align='center' style='color:red;font-weight:bold'>Người ký: " + strImGDNhan + "</span>";
             if (strImGDGiao != "")
-                rTGiao.Html = "<span align='center' style='color:red;font-weight:bold'>Đã ký: Người ký " + strImGDGiao + "</span>";
+                rTGiao.Html = "<span align='center' style='color:red;font-weight:bold'>Người ký: " + strImGDGiao + "</span>";
 
 
             Detail.Report.DataSource = dt;

@@ -11,6 +11,7 @@ namespace Entity
         List<SYS_Right> _rights = new List<SYS_Right>();
         SYS_Roles _roles = new SYS_Roles();
         private string _FullName;
+
         private int _IDOrganization;
         SYS_Position _position = new SYS_Position();
         private SYS_Organization _organization;

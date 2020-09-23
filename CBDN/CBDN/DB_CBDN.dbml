@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_GNDN_TEST" Class="DB_CBDNDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=10.21.0.135;Initial Catalog=DB_GNDN_TEST;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_GNDN_TESTConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_CanBangDienNang_V01" Class="DB_CBDNDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.21.0.135;Initial Catalog=DB_CanBangDienNang_V01;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_CanBangDienNang_V01ConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DM_GiaoNhan2Chieu" Member="DM_GiaoNhan2Chieus">
     <Type Name="DM_GiaoNhan2Chieu">
       <Column Name="IDGiaoNhan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -352,23 +352,6 @@
       <Column Name="ToolDB" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DM_USER" Member="DM_USERs">
-    <Type Name="DM_USER">
-      <Column Name="IDUSER" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IDMA_DVIQLY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="XACNHAN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="USERNAME" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="SODT" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="NGAYSINH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NGAYTAO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="IS_ADMIN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NguoiKy" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CMIS_DDoGCS" Member="CMIS_DDoGCs">
     <Type Name="CMIS_DDoGC">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -572,6 +555,24 @@
       <Column Name="DienTroSuat" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
       <Column Name="NguoiTao" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DM_USER" Member="DM_USERs">
+    <Type Name="DM_USER">
+      <Column Name="IDUSER" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDMA_DVIQLY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XACNHAN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="USERNAME" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SODT" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYTAO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IS_ADMIN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NguoiKy" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CHUCDANH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.DM_LoSelectByIDDVi" Method="DM_LoSelectByIDDVi">
@@ -3085,6 +3086,67 @@
       <Column Name="tong3B_Giao" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
       <Column Name="tong3B_Nhan" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
       <Column Name="TongTram" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DM_DVQLY_SelectAll_byMaDVi" Method="DM_DVQLY_SelectAll_byMaDVi">
+    <Parameter Name="MA_DVIQLY" Parameter="mA_DVIQLY" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="DM_DVQLY_SelectAll_byMaDViResult">
+      <Column Name="IDMA_DVIQLY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MA_DVIQLY" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TEN_DVIQLY" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME_DVIQLY" Type="System.String" DbType="NVarChar(211) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DM_USER_SelectAll_ByIDMA_DVIQLY" Method="DM_USER_SelectAll_ByIDMA_DVIQLY">
+    <Parameter Name="IDMA_DVIQLY" Parameter="iDMA_DVIQLY" Type="System.Int32" DbType="Int" />
+    <ElementType Name="DM_USER_SelectAll_ByIDMA_DVIQLYResult">
+      <Column Name="IDUSER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDMA_DVIQLY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XACNHAN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="USERNAME" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SODT" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYTAO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IS_ADMIN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CHUCDANH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.db_GD_PhuongThucCanXN_NPCT" Method="db_GD_PhuongThucCanXN_NPCT">
+    <Parameter Name="IDMA_DVIQLY" Parameter="iDMA_DVIQLY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Loai" Parameter="loai" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="db_GD_PhuongThucCanXN_NPCTResult">
+      <Column Name="TenPhuongThuc" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MaPhuongThuc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDChiNhanh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DiemCuoiNguon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DiemDauNguon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DM_UserNameAndIDOrganization" Method="DM_UserNameAndIDOrganization">
+    <Parameter Name="IDMA_DVIQLY" Parameter="iDMA_DVIQLY" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="USERNAME" Parameter="uSERNAME" Type="System.String" DbType="NVarChar(200)" />
+    <ElementType Name="DM_UserNameAndIDOrganizationResult">
+      <Column Name="IDUSER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MA_DVIQLY" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IDMA_DVIQLY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XACNHAN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="USERNAME" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SODT" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYTAO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IS_ADMIN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CHUCDANH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
