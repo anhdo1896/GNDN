@@ -121,23 +121,5 @@ namespace MTCSYT
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.XtraReports.Web.ReportViewer ReportViewer2;
-
-        /// <summary>
-        /// ReportToolbar3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.XtraReports.Web.ReportToolbar ReportToolbar3;
-
-        /// <summary>
-        /// ReportViewer3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.XtraReports.Web.ReportViewer ReportViewer3;
     }
 }

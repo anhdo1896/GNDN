@@ -64,29 +64,45 @@ namespace MTCSYT
             var nam = cmbNam.Value;
             var matram = Request["MA_TRAM"] + "";
             //DataTable dt = db.select_TTTT_TONTHATKYTHUAT_THANG(session.User.ma_dviqlyDN, Request["MA_TRAM"] + "", int.Parse(Request["Thang"] + ""), int.Parse(Request["Nam"] + ""), 0);
-            DataTable dt = db.SELECT_TTTT_TONTHATKYTHUAT_TUTHANG_DENTHANG(session.User.ma_dviqlyDN, matram, int.Parse(thang+ ""), int.Parse(nam+ ""),0,31,1);
+            DataTable dt = db.SELECT_TTTT_SANLUONG_TUTHANG_DENTHANG(session.User.ma_dviqlyDN, matram, int.Parse(thang + ""), int.Parse(nam + ""), 0, 31, 1);
+            DataTable dts = db.SELECT_TTTT_TONTHATKYTHUAT_TUTHANG_DENTHANG(session.User.ma_dviqlyDN, matram, int.Parse(thang + ""), int.Parse(nam + ""), 0, 31, 1);
+
             grdTinhDetal.DataSource = dt;
             grdTinhDetal.DataBind();
             hienthibieudo(dt);
         }
         private void hienthibieudo(DataTable dt)
         {
+           
+            Series series1= new Series("Sản lượng", ViewType.Line);
+            Series series2 = new Series("Sản lượng Trạm", ViewType.Line);
             Series series = new Series("Tổn thất", ViewType.Line);
             // Add the series to the chart.
+           
+                 WebChartControl1.Series.Add(series1);
+            WebChartControl1.Series.Add(series2);
             WebChartControl1.Series.Add(series);
             // Specify the series data source.
             DataTable seriesData = dt;
-            series.DataSource = seriesData;
 
+           
+            series1.DataSource = seriesData;
+            series2.DataSource = seriesData;
+            series.DataSource = seriesData;
             ChartTitle ct = new ChartTitle();
             ct.Text = "BIỂU ĐỒ PHỤ TẢI TỔN THẤT TẠI TRẠM " + Request["MA_TRAM"] + " THÁNG " + cmbThang.Value + " NĂM " + cmbNam.Value + " THEO CHU KỲ";
             ct.Font = new System.Drawing.Font("Tahoma", 12, System.Drawing.FontStyle.Bold);
             WebChartControl1.Titles.Add(ct);
             // Specify an argument data member.
+           
+            series1.ArgumentDataMember = "NGAYGIO";
+            series2.ArgumentDataMember = "NGAYGIO";
             series.ArgumentDataMember = "NGAYGIO";
             // Specify a value data member.
+           
+            series1.ValueDataMembers.AddRange(new string[] { "TONGSL" });
+            series2.ValueDataMembers.AddRange(new string[] { "SLTRAM" });
             series.ValueDataMembers.AddRange(new string[] { "TONTHATTONG" });
-
             ((XYDiagram)WebChartControl1.Diagram).EnableAxisXZooming = true;
 
             //diagram.AxisX.NumericScaleOptions.ScaleMode = ScaleMode.Manual;

@@ -291,8 +291,8 @@ namespace CBDN.Class
                 }
 
 
-                var imGDGiao = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == giao.IDMA_DVIQLY && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3);
-                var imGDNhan = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == nhan.IDMA_DVIQLY && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3);
+                var imGDGiao = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == giao.IDMA_DVIQLY && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3 && x.TrangThai == null);
+                var imGDNhan = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == nhan.IDMA_DVIQLY && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3 && x.TrangThai == null);
 
                 if (imGDGiao != null)
                 {
@@ -338,8 +338,8 @@ namespace CBDN.Class
                         PhuongThuc = list.ID;
                     }
                 }
-                    var imGDGiao = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == 2 && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3);
-                var imGDNhan = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == strMadviqly && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3);
+                    var imGDGiao = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == 2 && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3 && x.TrangThai == null);
+                var imGDNhan = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == strMadviqly && x.IDChinhNhanh == PhuongThuc && x.Thang == Thang && x.Nam == Nam && x.ChucVu == 3 && x.TrangThai == null);
                 if (imGDGiao != null)
                 {
                     var ngGiao = db.DM_USERs.SingleOrDefault(x => x.IDUSER == imGDGiao.NguoiTao);
@@ -368,7 +368,7 @@ namespace CBDN.Class
                 }
 
 
-                strTenDVGiao = "TỔNG CÔNG TY ĐIỆN LỰC MIỀM BẮC";
+                strTenDVGiao = "TỔNG CÔNG TY ĐIỆN LỰC MIỀN BẮC";
                 strTenDVnhan = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == strMadviqly).TEN_DVIQLY;
 
             }

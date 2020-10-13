@@ -135,6 +135,7 @@ namespace MTCSYT
                     if (dtTongKT.Rows.Count > 0)
                     {
                         tonthatKyThat = dtTongKT.Rows[0]["TONTHAT"] + "";
+                        tonthatKyThat = (decimal.Parse(tonthatKyThat) / 1000) + "";
                     }
                     else
                     {
@@ -247,7 +248,7 @@ namespace MTCSYT
 
                 if (dtTongKT.Rows.Count > 0)
                     tonthatKyThat = dtTongKT.Rows[0]["TONTHAT"] + "";
-                //tonthatKyThat = (decimal.Parse(tonthatKyThat) / 1000) +"";
+                tonthatKyThat = (decimal.Parse(tonthatKyThat) / 1000) +"";
 
                 dtNew.Rows.Add("ĐN tổn thất delta A", tonthatKyThat, dt.Rows[0]["TONTHAT"] + "", decimal.Parse(dt.Rows[0]["TONTHAT"] + "") - decimal.Parse(tonthatKyThat));
                 decimal phantramkt = Math.Round(decimal.Parse(tonthatKyThat) / decimal.Parse(dt.Rows[0]["DAUNGUONTHANG"] + "") * 100, 2);

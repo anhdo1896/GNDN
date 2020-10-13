@@ -271,57 +271,7 @@
                         </ContentCollection>
                     </dx:TabPage>
 
-                    <dx:TabPage Text="Biên bản giao nhận chi tiết">
-                        <ContentCollection>
-                            <dx:ContentControl runat="server" SupportsDisabledAttribute="True">
-                                <table>
-                                    <tr>
-                                        <td>
 
-                                            <dx1:ReportToolbar ID="ReportToolbar3" runat='server' ShowDefaultButtons='False' Theme="Aqua">
-                                                <Items>
-                                                    <dx1:ReportToolbarButton ItemKind='Search' />
-                                                    <dx1:ReportToolbarSeparator />
-                                                    <dx1:ReportToolbarButton ItemKind='PrintReport' />
-                                                    <dx1:ReportToolbarButton ItemKind='PrintPage' />
-                                                    <dx1:ReportToolbarSeparator />
-                                                    <dx1:ReportToolbarButton Enabled='False' ItemKind='FirstPage' />
-                                                    <dx1:ReportToolbarButton Enabled='False' ItemKind='PreviousPage' />
-                                                    <dx1:ReportToolbarLabel ItemKind='PageLabel' />
-                                                    <dx1:ReportToolbarComboBox ItemKind='PageNumber' Width='65px'>
-                                                    </dx1:ReportToolbarComboBox>
-                                                    <dx1:ReportToolbarLabel ItemKind='OfLabel' />
-                                                    <dx1:ReportToolbarTextBox ItemKind='PageCount' />
-                                                    <dx1:ReportToolbarButton ItemKind='NextPage' />
-                                                    <dx1:ReportToolbarButton ItemKind='LastPage' />
-                                                    <dx1:ReportToolbarSeparator />
-                                                    <dx1:ReportToolbarButton ItemKind='SaveToDisk' />
-                                                    <dx1:ReportToolbarButton ItemKind='SaveToWindow' />
-                                                    <dx1:ReportToolbarComboBox ItemKind='SaveFormat' Width='70px'>
-                                                        <Elements>
-                                                            <dx1:ListElement Value='xls' />
-                                                            <dx1:ListElement Value='rtf' />
-                                                            <dx1:ListElement Value='xlsx' />
-                                                            <dx1:ListElement Value='pdf' />
-                                                            <dx1:ListElement Value='png' />
-                                                        </Elements>
-                                                    </dx1:ReportToolbarComboBox>
-                                                </Items>
-                                                <Styles>
-                                                    <LabelStyle>
-                                                        <Margins MarginLeft='3px' MarginRight='3px' />
-                                                    </LabelStyle>
-                                                </Styles>
-                                            </dx1:ReportToolbar>
-
-                                        </td>
-                                    </tr>
-                                </table>
-                                <dx1:ReportViewer ID="ReportViewer3" runat="server" Theme="Aqua" Width="980px">
-                                </dx1:ReportViewer>
-                            </dx:ContentControl>
-                        </ContentCollection>
-                    </dx:TabPage>
                   
                 </TabPages>
             </dx:ASPxPageControl>

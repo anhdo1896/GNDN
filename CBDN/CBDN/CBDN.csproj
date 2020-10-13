@@ -7959,6 +7959,12 @@
     <Compile Include="TonThatCMIS\TT_TBA.aspx.designer.cs">
       <DependentUpon>TT_TBA.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TonThatKyThuatReport\InBienBanQT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuatReport\InBienBanQT.Designer.cs">
+      <DependentUpon>InBienBanQT.cs</DependentUpon>
+    </Compile>
     <Compile Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx.cs">
       <DependentUpon>ChiTietPhuTaiNgay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -9274,6 +9280,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report\InBienBanGiaoNhan.resx">
       <DependentUpon>InBienBanGiaoNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -9317,6 +9324,9 @@
       <DependentUpon>InChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\InBienBanQT.resx">
+      <DependentUpon>InBienBanQT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TonThatKyThuatReport\InBienBanQT.resx">
       <DependentUpon>InBienBanQT.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

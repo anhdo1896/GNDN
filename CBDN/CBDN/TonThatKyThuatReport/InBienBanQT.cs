@@ -5,7 +5,7 @@ using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using System.Data;
 using SystemManageService;
-namespace MTCSYT.Report
+namespace MTCSYT.TonThatKyThuatReport
 {
     public partial class InBienBanQT : DevExpress.XtraReports.UI.XtraReport
     {
@@ -14,6 +14,7 @@ namespace MTCSYT.Report
         {
             CBDN.cl_class.clChuyenSoThanhChu clChuyenSo = new CBDN.cl_class.clChuyenSoThanhChu();
             InitializeComponent();
+            /*
             lbDLGiaoKy.Text = tenDonviGiao.ToUpper();
             lbDLNhanKy.Text = TenDVNhan.ToUpper();
             //imTPNhan.ImageUrl = strImTPNhan;
@@ -28,9 +29,9 @@ namespace MTCSYT.Report
             if (strImGDGiao != "")
                 rTGiao.Html = "<span align='center' style='color:red;font-weight:bold'>Người ký: " + strImGDGiao + "</span>";
 
-
+            */
             Detail.Report.DataSource = dt;
-
+            /*
             xlSTT.DataBindings.Add("Text", DataSource, "STT");
             xlDonViGiaoNhan.DataBindings.Add("Text", DataSource, "TenDonVi");
             xlN_BT.DataBindings.Add("Text", DataSource, "Nhan_Bieu1_SanLuong1");
@@ -125,6 +126,7 @@ namespace MTCSYT.Report
 
             lbThangNam.Text = " Tháng " + thang + " Năm " + nam + ".";
             lbGhiChu2.Text = "- " + tenDonviGiao + " và " + TenDVNhan + " lập biên bản quyết toán điện năng tháng " + thang + " năm " + nam + " như sau:";
+            */
         }
 
     }

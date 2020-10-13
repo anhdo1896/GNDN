@@ -116,22 +116,6 @@
       <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.HD_GiamDocXNGiaoNhan" Member="HD_GiamDocXNGiaoNhans">
-    <Type Name="HD_GiamDocXNGiaoNhan">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IDChiNhanh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="IDGDGXN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IDGDNXN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ISGDGXN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ISGDNXN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="NgayGDNXN" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="NgayGDGXN" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IDUserGiaoXN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IDUserNhanXN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.HD_SanLuongThuongPham" Member="HD_SanLuongThuongPhams">
     <Type Name="HD_SanLuongThuongPham">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -531,20 +515,6 @@
       <Column Name="Chia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.HD_ThongTinKy" Member="HD_ThongTinKies">
-    <Type Name="HD_ThongTinKy">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IDChinhNhanh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Link" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="Barcode" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
-      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NguoiTao" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ChucVu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IDMaDViQLy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.DM_LoaiDay" Member="DM_LoaiDays">
     <Type Name="DM_LoaiDay">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -573,6 +543,38 @@
       <Column Name="IS_ADMIN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="NguoiKy" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="CHUCDANH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HD_ThongTinKy" Member="HD_ThongTinKies">
+    <Type Name="HD_ThongTinKy">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDChinhNhanh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Barcode" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NguoiTao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChucVu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDMaDViQLy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HD_GiamDocXNGiaoNhan" Member="HD_GiamDocXNGiaoNhans">
+    <Type Name="HD_GiamDocXNGiaoNhan">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDChiNhanh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDGDGXN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDGDNXN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISGDGXN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ISGDNXN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NgayGDNXN" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayGDGXN" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDUserGiaoXN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDUserNhanXN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.DM_LoSelectByIDDVi" Method="DM_LoSelectByIDDVi">
@@ -2465,16 +2467,6 @@
       <Column Name="ToolDB" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.db_SelectPhuongThucCanXN" Method="db_SelectPhuongThucCanXN">
-    <Parameter Name="IDMA_DVIQLY" Parameter="iDMA_DVIQLY" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Thang" Parameter="thang" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Loai" Parameter="loai" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="db_SelectPhuongThucCanXNResult">
-      <Column Name="TenPhuongThuc" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="IDChiNhanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.db_TheoDoiDiemGiao_ALL" Method="db_TheoDoiDiemGiao_ALL">
     <Parameter Name="IDMA_DVIQLY" Parameter="iDMA_DVIQLY" Type="System.Int32" DbType="Int" />
     <Parameter Name="Thang" Parameter="thang" Type="System.Int32" DbType="Int" />
@@ -2592,16 +2584,6 @@
       <Column Name="XacNhanDVNhan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="GhiChuXacNhanGiao" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="GhiChuXacNhanNhan" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.db_GD_PhuongThucCanXN" Method="db_GD_PhuongThucCanXN">
-    <Parameter Name="IDMA_DVIQLY" Parameter="iDMA_DVIQLY" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Thang" Parameter="thang" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Loai" Parameter="loai" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="db_GD_PhuongThucCanXNResult">
-      <Column Name="TenPhuongThuc" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="IDChiNhanh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.DM_DiemDoLienKet" Method="DM_DiemDoLienKet">
@@ -3147,6 +3129,30 @@
       <Column Name="NGAYTAO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="IS_ADMIN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CHUCDANH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.db_GD_PhuongThucCanXN" Method="db_GD_PhuongThucCanXN">
+    <Parameter Name="IDMA_DVIQLY" Parameter="iDMA_DVIQLY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Loai" Parameter="loai" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="db_GD_PhuongThucCanXNResult">
+      <Column Name="TenPhuongThuc" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MaPhuongThuc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDChiNhanh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DiemCuoiNguon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DiemDauNguon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.db_SelectPhuongThucCanXN" Method="db_SelectPhuongThucCanXN">
+    <Parameter Name="IDMA_DVIQLY" Parameter="iDMA_DVIQLY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Loai" Parameter="loai" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="db_SelectPhuongThucCanXNResult">
+      <Column Name="TenPhuongThuc" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IDChiNhanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaPhuongThuc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

@@ -125,10 +125,12 @@ namespace BiQL_SangLoc
                 string ngaygio = "";
                 if (dtData != null && dtData.Rows.Count > 0)
                 {
-                    decimal Csdau = 0;
+                    decimal Csdau = 0; int ngay = 1; string strngay = "";
                     //dbTT.DELETE_TTTT_DUONGDAYTRAM_BYTRAM(txtMaTram.Text);
+                    strngay = dtData.Rows[0]["Ngay"] + "";
                     for (int i = 0; i < dtData.Rows.Count; i++)
                     {
+                        //  strngay = dtData.Rows[i]["Ngay"]+"";
                         if (i == 0)
                         {
                             Csdau = decimal.Parse(dtData.Rows[i]["CS_P_GIAO"] + "");
@@ -137,7 +139,14 @@ namespace BiQL_SangLoc
                         {
                             decimal cs = decimal.Parse(dtData.Rows[i]["CS_P_GIAO"] + "") - Csdau;
                             Csdau = decimal.Parse(dtData.Rows[i]["CS_P_GIAO"] + "");
-                            dbTT.INSERT_TTTT_CHUKYSLG_THANG(session.User.ma_dviqlyDN, txtMaTram.Text, DateTime.Now.Month, DateTime.Now.Year, int.Parse(dtData.Rows[i]["Ngay"] + ""), int.Parse(dtData.Rows[i]["Gio"] + ""), cs*100);
+                            //  dbTT.INSERT_TTTT_CHUKYSLG_THANG(session.User.ma_dviqlyDN, txtMaTram.Text, DateTime.Now.Month, DateTime.Now.Year, int.Parse(dtData.Rows[i]["Ngay"] + ""), int.Parse(dtData.Rows[i]["Gio"] + ""), cs*100);
+                            dbTT.INSERT_TTTT_CHUKYSLG_THANG(session.User.ma_dviqlyDN, txtMaTram.Text, DateTime.Now.Month - 1, DateTime.Now.Year, ngay, int.Parse(dtData.Rows[i]["Gio"] + ""), cs * 100);
+                            if (strngay != dtData.Rows[i]["Ngay"] + "")
+                            {
+                                ngay = ngay++;
+                                strngay = dtData.Rows[0]["Ngay"] + "";
+                            }
+
                             ngaygio = dtData.Rows[i]["Ngay"] + "_" + dtData.Rows[i]["Gio"];
                         }
                     }
