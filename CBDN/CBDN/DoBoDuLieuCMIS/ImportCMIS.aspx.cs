@@ -78,11 +78,28 @@ namespace MTCSYT.GCS_ONLINE
             #region Chuẩn bị tệp excel mẫu để ghi dữ liệu
 
             string destFile = Server.MapPath("~/") + "DongBoCMIS\\" + hdTenFile.Value;
+            string ten = hdTenFile.Value;
+            int Lchuoi = ten.Length;
+            int c = ten.LastIndexOf(".");
+            string duoi = ten.Substring(c + 1, Lchuoi - c - 1);
+
             string sTemplate = (destFile);
-            Workbook exBook = new Workbook();
-            exBook.Open(sTemplate, FileFormatType.Excel2007Xlsx);
-            _exSheet = exBook.Worksheets[0];
-            _range = _exSheet.Cells;
+            if (duoi == "xls")
+            {
+
+                Workbook exBook = new Workbook();
+                exBook.Open(sTemplate, FileFormatType.Excel2003);
+                _exSheet = exBook.Worksheets[0];
+                _range = _exSheet.Cells;
+            }
+            if(duoi == "xlsx")
+            {
+                Workbook exBook = new Workbook();
+                exBook.Open(sTemplate, FileFormatType.Excel2007Xlsx);
+                _exSheet = exBook.Worksheets[0];
+                _range = _exSheet.Cells;
+            }
+                
             #endregion
 
 

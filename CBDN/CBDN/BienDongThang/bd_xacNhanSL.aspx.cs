@@ -162,7 +162,7 @@ namespace MTCSYT
             lbTP2.Text = "";
             lbGiamDocKy.Text = "";
 
-            var ttKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "")).OrderBy(x => x.ChucVu);
+            var ttKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null).OrderBy(x => x.ChucVu);
             foreach (var ky in ttKy)
             {
 
@@ -260,7 +260,15 @@ namespace MTCSYT
                 }
 
             }
-
+            if (phuongthuc != 0)
+            {
+                var checkphuongthuc = db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == phuongthuc);
+                if (checkphuongthuc.DiemCuoiNguon == 2 || checkphuongthuc.DiemDauNguon == 2)
+                {
+                    donvi = int.Parse(db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + "")).IDMADVIQLY.Replace(",2,", "").Replace(",", ""));
+                    phuongthuc = 0;
+                }
+            }
             dt = inBienBan.InBienBanQuyetToan(phuongthuc, donvi, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGiao);
           
             MTCSYT.Report.InBienBanQT report = new MTCSYT.Report.InBienBanQT(dt, "" + cmbThang.Value, "" + cmbNam.Value, false, false, "", "", strGiao,strNhan, "", "",strGDNhan, strGDGiao);
@@ -293,8 +301,33 @@ namespace MTCSYT
             }
             else
             {
-                var lstDD = db.db_SelectPhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "TPXacNhan").ToList();
-                cmbPhuongThuc.DataSource = lstDD;
+                var lstDDALL = db.db_SelectPhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "TPXNALL").ToList();
+                foreach (var list in lstDDALL)
+                {
+                    if (list.IDChiNhanh != 0)
+                    {
+                        var checkphuongthuc = db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(list.IDChiNhanh + ""));
+                        if (checkphuongthuc.DiemCuoiNguon == 2 || checkphuongthuc.DiemDauNguon == 2)
+                        {
+                            Phuongthuc ds = new Phuongthuc();
+                            ds.IDChiNhanh = list.IDChiNhanh + "";
+                            ds.TenPhuongThuc = list.TenPhuongThuc + "";
+                            dsT.Add(ds);
+                        }
+                    }
+                }
+                    var lstDD = db.db_SelectPhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "TPXacNhan").ToList();
+                foreach (var list in lstDD)
+                {
+                    if (list.IDChiNhanh !=0)
+                        {
+                        Phuongthuc ds = new Phuongthuc();
+                        ds.IDChiNhanh = list.IDChiNhanh + "";
+                        ds.TenPhuongThuc = list.TenPhuongThuc + "";
+                        dsT.Add(ds);
+                    }
+                }
+                cmbPhuongThuc.DataSource = dsT;
             }
                
             cmbPhuongThuc.ValueField = "IDChiNhanh";
@@ -367,137 +400,7 @@ namespace MTCSYT
         {
 
         }
-        //private void kySo(string TenFile)
-        //{
-
-        //    MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-        //    var userky = db.DM_USERs.SingleOrDefault(x => x.IDUSER == session.User.IDUSER);
-        //    if (userky.SODT != txtSDT.Text)
-        //    {
-        //        //userky.HOTEN = txtHoTenNguoiKy.Text;
-        //        userky.SODT = txtSDT.Text;
-        //        db.SubmitChanges();
-        //    }
-        //    // thong tin thoi gian ký
-        //    var isKy = db.HD_ThongTinKies.SingleOrDefault(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Link.Contains(cmbPhuongThuc.Value + "_" + cmbThang.Value + "_" + cmbNam.Value + "_QT.pdf"));
-        //    if (isKy != null)
-        //    {
-        //        isKy.Barcode = isKy.Barcode + "TP_" + session.User.ma_dviqly + "_" + lbNguoiXacNhan.Text + "_" + DateTime.Now + ";";
-        //    }
-
-        //    string strSerial = "";
-        //    string strAlias = txtTenNguoiKy.Text;
-        //    string strUrl = "http://10.0.0.146:8080/SignServerWSService?wsdl";
-        //    string strFileName = TenFile;
-        //    string strSaveTo = TenFile;
-        //    string strAppCode = "cmis";
-        //    string strPassword = "Cmis@2019";
-        //    string strHashAlogrithm = "SHA-1";
-        //    //string strInt = txtInt.Text;
-        //    CBDN.ServerSignWS.signFileResponceBO signBO = null;
-        //    try
-        //    {
-        //        var cn = db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + ""));
-
-        //        float Trai = 0, Phai = 0, Tren = 0, Duoi = 0;
-
-        //        if (cn.IDMADVIQLY.Contains(",2,"))
-        //        {
-        //            if (session.User.MA_DVIQLY != cn.DiemDauNguon + "")
-        //            {
-        //                //giao trái (ngược lại với tổng công ty)
-        //                Tren = 20;
-        //                Duoi = 350;
-        //                Phai = 410;
-        //                Trai = 80;
-        //            }
-        //            else
-        //            {
-        //                //nhan phải 
-        //                Tren = 20;
-        //                Duoi = 350;
-        //                Phai = 140;
-        //                Trai = 360;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (session.User.MA_DVIQLY != cn.DiemDauNguon + "")
-        //            {
-        //                //nhan phải 
-        //                Tren = 20;
-        //                Duoi = 350;
-        //                Phai = 140;
-        //                Trai = 360;
-
-        //            }
-        //            else
-        //            {
-        //                //giao trái (ngược lại với tổng công ty)
-        //                Tren = 20;
-        //                Duoi = 350;
-        //                Phai = 410;
-        //                Trai = 80;
-        //            }
-
-        //        }
-
-        //        byte[] AsBytes = File.ReadAllBytes(strFileName);
-        //        string AsBase64String = Convert.ToBase64String(AsBytes);
-
-        //        //byte[] tempBytes = Convert.FromBase64String(AsBase64String);
-        //        CBDN.ServerSignWS.SignServerWSService ser = new CBDN.ServerSignWS.SignServerWSService();
-        //        //ser.Url = strUrl;
-        //        #region Display
-        //        CBDN.ServerSignWS.displayRectangleTextConfigBO dspRec = new CBDN.ServerSignWS.displayRectangleTextConfigBO();
-        //        dspRec.numberPageSign = DisplayConfigConsts.NUMBER_PAGE_SIGN_DEFAULT;
-        //        dspRec.widthRectangle = DisplayConfigConsts.WIDTH_RECTANGLE_DEFAULT;
-        //        dspRec.heightRectangle = DisplayConfigConsts.HEIGHT_RECTANGLE_DEFAULT;
-        //        dspRec.locateSign = DisplayConfigConsts.LOCATE_SIGN_DEFAULT;
-
-        //        dspRec.marginTopOfRectangle = Tren;
-        //        dspRec.marginBottomOfRectangle = Duoi;
-        //        dspRec.marginRightOfRectangle = Phai;
-        //        dspRec.marginLeftOfRectangle = Trai;
-
-
-        //        dspRec.displayText = DisplayConfigConsts.DISPLAY_TEXT_DEFAULT_EMPTY;
-        //        dspRec.formatRectangleText = DisplayConfigConsts.FORMAT_RECTANGLE_TEXT_DEFAULT;
-        //        dspRec.contact = DisplayConfigConsts.CONTACT_DEFAULT_EMPTY;
-        //        dspRec.reason = DisplayConfigConsts.REASON_DEFAULT_EMPTY;
-        //        dspRec.location = DisplayConfigConsts.LOCATION_DEFAULT_EMPTY;
-        //        dspRec.dateFormatString = DisplayConfigConsts.DATE_FORMAT_STRING_DEFAULT;
-        //        dspRec.fontPath = DisplayConfigConsts.FONT_PATH_DEFAULT;
-        //        dspRec.sizeFont = DisplayConfigConsts.SIZE_FONT_DEFAULT;
-        //        dspRec.organizationUnit = DisplayConfigConsts.ORGANIZATION_UNIT_DEFAULT_EMPTY;
-        //        dspRec.organization = DisplayConfigConsts.ORGANIZATION_DEFAULT_EMPTY;
-        //        dspRec.signDate = DateTime.Now;
-        //        #endregion
-
-        //        CBDN.ServerSignWS.timestampConfig timestamp = new CBDN.ServerSignWS.timestampConfig();
-        //        timestamp.useTimestamp = false;
-
-        //        signBO = ser.signPdfBase64RectangleText(strAppCode, strPassword, strSerial, strAlias, AsBase64String, strHashAlogrithm, dspRec, timestamp);
-        //        string strOutput = signBO.signedFileBase64;
-        //        byte[] tempBytes = Convert.FromBase64String(strOutput);
-        //        try
-        //        {
-        //            File.WriteAllBytes(strSaveTo, tempBytes);
-        //            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Ký số thành công');", true);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Lỗi duyệt chấm nợ " + ex.Message + "');", true);
-        //        }
-
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Lỗi duyệt chấm nợ " + ex.Message + "');", true);
-        //    }
-
-        //}
+      
         protected void btnDuyet_Click(object sender, EventArgs e)
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -551,7 +454,10 @@ namespace MTCSYT
                 bd_chitiet.ISChot = false;
                 bd_chitiet.IDXacNhanNhan = int.Parse(strMadviqly);
                 bd_chitiet.NgayXacNhanDVNhan = DateTime.Now;
-
+                if(int.Parse(strMadviqly) == 2)
+                {
+                    bd_chitiet.ISNhanVien = false;
+                }    
                 if (txtLyDo.Text != "")
                     bd_chitiet.GhiChuXacNhanNhan = txtLyDo.Text;
                 else
@@ -568,6 +474,10 @@ namespace MTCSYT
                 bd_chitiet.IDXacNhanGiao = int.Parse(strMadviqly);
                 bd_chitiet.NgayXacNhanDVGiao = DateTime.Now;
                 bd_chitiet.ISChot = false;
+                if (int.Parse(strMadviqly) == 2)
+                {
+                    bd_chitiet.ISNhanVien = false;
+                }
 
                 if (txtLyDo.Text != "")
                     bd_chitiet.GhiChuXacNhanGiao = txtLyDo.Text;
@@ -576,6 +486,7 @@ namespace MTCSYT
 
                 db.SubmitChanges();
             }
+            huyxacnhanky();
             LoadGrdGiao();
             LoadGrdNhan();
 
@@ -614,13 +525,35 @@ namespace MTCSYT
             pcFileKy.ShowOnPageLoad = false;
         }
 
+        private void huyxacnhanky()
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string strMadviqly = session.User.ma_dviqly;
+
+            var dv = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(strMadviqly));
+            var lstHDKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null);
+            
+            foreach (var list in lstHDKy)
+            {
+                list.TrangThai = 0;
+                db.SubmitChanges();
+            }
+            var lstHDKyGD = db.HD_GiamDocXNGiaoNhans.Where(x => x.IDChiNhanh == (cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null);
+            foreach (var list in lstHDKyGD)
+            {
+                list.TrangThai = 0;
+                db.SubmitChanges();
+            }
+
+
+        }
         private void xacnhanky()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             string strMadviqly = session.User.ma_dviqly;
 
             var dv = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(strMadviqly));
-            var ky = db.HD_ThongTinKies.SingleOrDefault(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.IDMaDViQLy == int.Parse(strMadviqly) && x.ChucVu == 2);
+            var ky = db.HD_ThongTinKies.SingleOrDefault(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.IDMaDViQLy == int.Parse(strMadviqly) && x.ChucVu == 2 && x.TrangThai == null);
             if (ky != null)
                 return;
             CBDN.HD_ThongTinKy hDKyTH = new CBDN.HD_ThongTinKy();
@@ -679,6 +612,7 @@ namespace MTCSYT
 
                     db.SubmitChanges();
                 }
+
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Đã xác nhận số liệu thành công');", true);
                 LoadGrdGiao();
                 LoadGrdNhan();

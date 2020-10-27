@@ -36,13 +36,15 @@ namespace MTCSYT
         }
         private void loadTax()
         {
-            var isKy = db.HD_ThongTinKies.SingleOrDefault(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Link == cmbPhuongThuc.Value + "_" + cmbThang.Value + "_" + cmbNam.Value + "_QT.pdf");
-            if (isKy != null)
+            if (cmbPhuongThuc.Value != null)
             {
-                var ngtao = db.DM_USERs.SingleOrDefault(x => x.IDUSER == isKy.NguoiTao);
-                lbThongTinXacNhan.Text = "Giao nhận này đã được xác nhận và tạo File ký. Người tạo: " + ngtao.USERNAME + " - Ngày tạo: " + isKy.NgayTao;
+                var isKy = db.HD_ThongTinKies.SingleOrDefault(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.TrangThai == null && x.Link == cmbPhuongThuc.Value + "_" + cmbThang.Value + "_" + cmbNam.Value + "_QT.pdf");
+                if (isKy != null)
+                {
+                    var ngtao = db.DM_USERs.SingleOrDefault(x => x.IDUSER == isKy.NguoiTao);
+                    lbThongTinXacNhan.Text = "Giao nhận này đã được xác nhận và tạo File ký. Người tạo: " + ngtao.USERNAME + " - Ngày tạo: " + isKy.NgayTao;
+                }
             }
-
             InTongHopDienNang();
             InBienBanQuyetToan();
             LoadGrdNhan();
@@ -116,10 +118,35 @@ namespace MTCSYT
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             var lstDD = db.db_SelectPhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "NVXacNhan").ToList();
-            cmbPhuongThuc.DataSource = lstDD;
-            cmbPhuongThuc.ValueField = "IDChiNhanh";
-            cmbPhuongThuc.TextField = "TenPhuongThuc";
-            cmbPhuongThuc.DataBind();
+            if (int.Parse(session.User.ma_dviqly + "") == 2)
+            {
+                List<Phuongthuc> dsT = new List<Phuongthuc>();
+                foreach (var list in lstDD)
+                {
+                    var a = db.HD_GiamDocXNGiaoNhans.Where(x => x.IDChiNhanh == list.IDChiNhanh + "").Where(x => x.Thang == int.Parse(cmbThang.Value + "")).Where(x => x.Nam == int.Parse(cmbNam.Value + "")).Where(x => x.TrangThai == null).ToList();
+                    var b = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(list.IDChiNhanh + "")).Where(x => x.Thang == int.Parse(cmbThang.Value + "")).Where(x => x.Nam == int.Parse(cmbNam.Value + "")).Where(x => x.ChucVu == 3).Where(x => x.TrangThai == null).ToList();
+                    if (a.Count != 0 || b.Count != 0)
+                    {
+                        Phuongthuc ds = new Phuongthuc();
+                        ds.IDChiNhanh = list.IDChiNhanh + "";
+                        ds.TenPhuongThuc = list.TenPhuongThuc + "";
+                        dsT.Add(ds);
+                    }
+                }
+               
+                cmbPhuongThuc.DataSource = dsT;
+                cmbPhuongThuc.ValueField = "IDChiNhanh";
+                cmbPhuongThuc.TextField = "TenPhuongThuc";
+                cmbPhuongThuc.DataBind();
+            }
+            else
+            {
+                cmbPhuongThuc.DataSource = lstDD;
+                cmbPhuongThuc.ValueField = "IDChiNhanh";
+                cmbPhuongThuc.TextField = "TenPhuongThuc";
+                cmbPhuongThuc.DataBind();
+            }
+            
 
         }
         private void LoadGrdNhan()
@@ -197,6 +224,12 @@ namespace MTCSYT
 
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             string strMadviqly = session.User.ma_dviqly;
+            if(int.Parse(cmbPhuongThuc.Value + "") == 0)
+            {
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Không thể xác nhận khi Phương thức giao nhận là: Tất Cả');", true);
+                return ;
+            }
+                
 
             try
             {
@@ -209,7 +242,7 @@ namespace MTCSYT
                 //Lưu file ký
                 // UploadFile();
 
-                var ky = db.HD_ThongTinKies.SingleOrDefault(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.IDMaDViQLy == int.Parse(strMadviqly) && x.ChucVu == 1);
+                var ky = db.HD_ThongTinKies.SingleOrDefault(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.IDMaDViQLy == int.Parse(strMadviqly) && x.ChucVu == 1 && x.TrangThai == null);
                 if (ky == null)
                 {
                     CBDN.HD_ThongTinKy hDKyTH = new CBDN.HD_ThongTinKy();
@@ -291,6 +324,10 @@ namespace MTCSYT
                 bd_chitiet.ISChot = false;
                 bd_chitiet.IDXacNhanNhan = int.Parse(strMadviqly);
                 bd_chitiet.NgayXacNhanDVNhan = DateTime.Now;
+                if (int.Parse(strMadviqly) == 2)
+                {
+                    bd_chitiet.ISNhanVien = false;
+                }
                 if (txtLyDo.Text != "")
                     bd_chitiet.GhiChuXacNhanNhan = txtLyDo.Text;
                 else
@@ -298,10 +335,32 @@ namespace MTCSYT
                 db.SubmitChanges();
             }
             pcAddRoles.ShowOnPageLoad = false;
+            huyxacnhanky();
             loadTax();
 
         }
+        private void huyxacnhanky()
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string strMadviqly = session.User.ma_dviqly;
 
+            var dv = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(strMadviqly));
+            var lstHDKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null);
+
+            foreach (var list in lstHDKy)
+            {
+                list.TrangThai = 0;
+                db.SubmitChanges();
+            }
+            var lstHDKyGD = db.HD_GiamDocXNGiaoNhans.Where(x => x.IDChiNhanh == (cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null);
+            foreach (var list in lstHDKyGD)
+            {
+                list.TrangThai = 0;
+                db.SubmitChanges();
+            }
+
+
+        }
         protected void cmbThang_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadTax();
@@ -453,7 +512,7 @@ namespace MTCSYT
             var nhan = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == cn.DiemCuoiNguon);
 
             string strTPGiao = "", strTPNhan = "", strGDNhan = "", strGDGiao = "";
-            var lstHDKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThucDV.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + ""));
+            var lstHDKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThucDV.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null);
             foreach (var hdKy in lstHDKy)
             {
                 if (hdKy.ChucVu == 2 && hdKy.IDMaDViQLy == giao.IDMA_DVIQLY)

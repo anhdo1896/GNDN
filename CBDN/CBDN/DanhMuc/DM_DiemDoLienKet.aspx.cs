@@ -170,8 +170,8 @@ namespace MTCSYT
             lbdodiem.Text = cv.MaDiemDo;
             txtMaDiemDoLK.Text = cv.DDo;
             txtNguon.Text = cv.Nguon;
-            ckGiao.Checked = (bool)cv.IsChieuGiao;
-            CkNhan.Checked = (bool)cv.IsChieuNhan;        
+            if(cv.IsChieuGiao != null)  ckGiao.Checked = (bool)cv.IsChieuGiao;
+            if (cv.IsChieuNhan != null) CkNhan.Checked = (bool)cv.IsChieuNhan;        
         }
 
         protected void btnDong_Click(object sender, EventArgs e)

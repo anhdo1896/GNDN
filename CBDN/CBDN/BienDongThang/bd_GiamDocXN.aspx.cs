@@ -98,7 +98,7 @@ namespace MTCSYT
             lbTP2.Text = "";
             lbGiamDocKy.Text = "";
            
-            var ttKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "")).OrderBy(x => x.ChucVu);
+            var ttKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null).OrderBy(x => x.ChucVu);
             foreach (var ky in ttKy)
             {
 
@@ -181,42 +181,39 @@ namespace MTCSYT
             int ma_dviqly = int.Parse(session.User.ma_dviqly);
             DM_DVQLYService dm_dviSer = new DM_DVQLYService();
             var donvi = dm_dviSer.SelectDM_DVQLY(ma_dviqly);
-            
+           
+            string strGiao = "", strNhan = "", strGDNhan = "", strGDGiao = "";
             //  if (Request["XacNhan"] + "" == "1") kiemtra = true;
 
-            var cn = db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + ""));
-            CBDN.DM_DVQLY giao, nhan;
-            if (cn.IDMADVIQLY.Contains(",2,"))
-            {
-                giao = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == 2);
-                nhan = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(cn.IDMADVIQLY.Replace(",2,", "").Replace(",", "")));
-            }
-            else
-            {
-                giao = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == cn.DiemDauNguon);
-                nhan = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == cn.DiemCuoiNguon);
-            }
-            string strTPGiao = "", strTPNhan = "", strGDNhan = "", strGDGiao = "";
-            var lstHDKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + ""));
-            foreach (var hdKy in lstHDKy)
-            {
-                if (hdKy.ChucVu == 2 && hdKy.IDMaDViQLy == giao.IDMA_DVIQLY)
-                    strTPGiao = hdKy.Link;
-                if (hdKy.ChucVu == 2 && hdKy.IDMaDViQLy == nhan.IDMA_DVIQLY)
-                    strTPNhan = hdKy.Link;
-                if (hdKy.ChucVu == 3 && hdKy.IDMaDViQLy == giao.IDMA_DVIQLY)
-                    strGDGiao = hdKy.Link;
-                if (hdKy.ChucVu == 3 && hdKy.IDMaDViQLy == nhan.IDMA_DVIQLY)
-                    strGDNhan = hdKy.Link;
-            }
-
-            MTCSYT.Report.InBieuTong report = new MTCSYT.Report.InBieuTong(int.Parse(cmbPhuongThuc.Value + ""), ma_dviqly, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "", "", donvi.TEN_DVIQLY, giao.TEN_DVIQLY, nhan.TEN_DVIQLY, 0, strTPNhan, strTPGiao, strGDNhan, strGDGiao);
-
-            ReportViewer1.Report = report;
-
-            ReportToolbar1.ReportViewer = ReportViewer1;
-
-
+                var cn = db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + ""));
+                CBDN.DM_DVQLY giao, nhan;
+                if (cn.IDMADVIQLY.Contains(",2,"))
+                {
+                    giao = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == 2);
+                    nhan = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(cn.IDMADVIQLY.Replace(",2,", "").Replace(",", "")));
+                }
+                else
+                {
+                    giao = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == cn.DiemDauNguon);
+                    nhan = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == cn.DiemCuoiNguon);
+                }
+                string strTPGiao = "", strTPNhan = "";
+                var lstHDKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null);
+                foreach (var hdKy in lstHDKy)
+                {
+                    if (hdKy.ChucVu == 2 && hdKy.IDMaDViQLy == giao.IDMA_DVIQLY)
+                        strTPGiao = hdKy.Link;
+                    if (hdKy.ChucVu == 2 && hdKy.IDMaDViQLy == nhan.IDMA_DVIQLY)
+                        strTPNhan = hdKy.Link;
+                    if (hdKy.ChucVu == 3 && hdKy.IDMaDViQLy == giao.IDMA_DVIQLY)
+                        strGDGiao = hdKy.Link;
+                    if (hdKy.ChucVu == 3 && hdKy.IDMaDViQLy == nhan.IDMA_DVIQLY)
+                        strGDNhan = hdKy.Link;
+                }
+                MTCSYT.Report.InBieuTong report = new MTCSYT.Report.InBieuTong(int.Parse(cmbPhuongThuc.Value + ""), ma_dviqly, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "", "", donvi.TEN_DVIQLY, giao.TEN_DVIQLY, nhan.TEN_DVIQLY, 0, strTPNhan, strTPGiao, strGDNhan, strGDGiao);
+                ReportViewer1.Report = report;
+                ReportToolbar1.ReportViewer = ReportViewer1;
+ 
         }
         private void InBienBanQuyetToan()
         {
@@ -240,7 +237,15 @@ namespace MTCSYT
                 }
 
             }
-
+            if (phuongthuc != 0)
+            {
+                var checkphuongthuc = db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == phuongthuc);
+                if (checkphuongthuc.DiemCuoiNguon == 2 || checkphuongthuc.DiemDauNguon == 2)
+                {
+                    donvi = int.Parse(db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + "")).IDMADVIQLY.Replace(",2,", "").Replace(",", ""));
+                    phuongthuc = 0;
+                }
+            }
             dt = inBienBan.InBienBanQuyetToan(phuongthuc, donvi, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGDGiao);
           
 
@@ -283,8 +288,10 @@ namespace MTCSYT
                 var lstDD = db.db_GD_PhuongThucCanXN(int.Parse(session.User.ma_dviqly + ""), int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "GDXN").ToList();
                 foreach (var list in lstDD)
                 {
-                    int id = int.Parse(list.IDChiNhanh);
-                    if (id >= 586)
+
+                    int id = int.Parse(list.DiemCuoiNguon + "");
+                    int id2 = int.Parse(list.DiemDauNguon + "");
+                    if (id != 2 && id2 != 2)
                     {
                         Phuongthuc ds = new Phuongthuc();
                         ds.IDChiNhanh = list.IDChiNhanh + "";
@@ -366,7 +373,6 @@ namespace MTCSYT
                 bd_chitiet.NgayXacNhanDVGiao = DateTime.Now;
                 bd_chitiet.XacNhanDVNhan = false;
                 bd_chitiet.ISChot = false;
-
                 if (txtLyDo.Text != "")
                     bd_chitiet.GhiChuXacNhanGiao = txtLyDo.Text;
                 else
@@ -382,9 +388,31 @@ namespace MTCSYT
 
                 db.SubmitChanges();
             }
+            huyxacnhanky();
             pcAddRoles.ShowOnPageLoad = false;
         }
+        private void huyxacnhanky()
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string strMadviqly = session.User.ma_dviqly;
 
+            var dv = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(strMadviqly));
+            var lstHDKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null);
+
+            foreach (var list in lstHDKy)
+            {
+                list.TrangThai = 0;
+                db.SubmitChanges();
+            }
+            var lstHDKyGD = db.HD_GiamDocXNGiaoNhans.Where(x => x.IDChiNhanh == (cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null);
+            foreach (var list in lstHDKyGD)
+            {
+                list.TrangThai = 0;
+                db.SubmitChanges();
+            }
+
+
+        }
         protected void btnIn_Click(object sender, EventArgs e)
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -421,7 +449,7 @@ namespace MTCSYT
             string strMadviqly = session.User.ma_dviqly;
 
             var dv = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(strMadviqly));
-            var ky = db.HD_ThongTinKies.SingleOrDefault(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.IDMaDViQLy == int.Parse(strMadviqly) && x.ChucVu == 3);
+            var ky = db.HD_ThongTinKies.SingleOrDefault(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.IDMaDViQLy == int.Parse(strMadviqly) && x.ChucVu == 3 && x.TrangThai == null);
             if (ky != null)
                 return;
             CBDN.HD_ThongTinKy hDKyTH = new CBDN.HD_ThongTinKy();
@@ -450,9 +478,29 @@ namespace MTCSYT
             WebClient client = new WebClient();
             client.Headers["Content-type"] = "application/json";
             client.Encoding = Encoding.UTF8;
+            string SQL = "";
 
-            var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(session.User.ma_dviqly));
-            string SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=" + txtOTP.Text + "&strtoken=" + lbOTP.Text + "&struserID=" + txtSDT.Text;
+            int strMadviqly = int.Parse(session.User.ma_dviqly), intdonvi;
+            if (strMadviqly == 2)
+            {
+                if (cmbPhuongThuc.Value + "" != "0")
+                {
+                    intdonvi = int.Parse(db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + "")).IDMADVIQLY.Replace(",2,", "").Replace(",", ""));
+                    var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == intdonvi);
+                    SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=" + txtOTP.Text + "&strtoken=" + lbOTP.Text + "&struserID=" + txtSDT.Text;
+                }
+                else
+                {
+                    SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=PA2201&strtoken=" + lbOTP.Text + "&struserID=PC_BacNinh";
+
+                }
+
+            }
+            else
+            {
+                var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == strMadviqly);
+                SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=" + txtOTP.Text + "&strtoken=" + lbOTP.Text + "&struserID=" + txtSDT.Text;
+            }
             string json = client.DownloadString(SQL);
             services = (new JavaScriptSerializer()).Deserialize<string>(json);
             if (services.Contains("không"))
@@ -493,7 +541,7 @@ namespace MTCSYT
             dvGiao = (int)cto.IDDonViGiao;
             idDVNhan = (int)cto.IDDonViNhan;
 
-            var gdXN = db.HD_GiamDocXNGiaoNhans.SingleOrDefault(x => x.IDChiNhanh == cto.IDChiNhanh + "" && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + ""));
+            var gdXN = db.HD_GiamDocXNGiaoNhans.SingleOrDefault(x => x.IDChiNhanh == cto.IDChiNhanh + "" && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null);
             if (gdXN == null)
             {
                 CBDN.HD_GiamDocXNGiaoNhan gd = new CBDN.HD_GiamDocXNGiaoNhan();
@@ -548,13 +596,33 @@ namespace MTCSYT
             WebClient client = new WebClient();
             client.Headers["Content-type"] = "application/json";
             client.Encoding = Encoding.UTF8;
+            string SQL = "";
+            int strMadviqly = int.Parse(session.User.ma_dviqly), intdonvi;
+            if (strMadviqly == 2)
+            {
+                if (cmbPhuongThuc.Value + "" != "0")
+                {
+                    intdonvi = int.Parse(db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + "")).IDMADVIQLY.Replace(",2,", "").Replace(",", ""));
+                    var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == intdonvi);
+                    SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/generate?strbrandname=" + donvi.TenVietTat + "&strType=1&struserID=" + txtSDT.Text + "&strRegion=" + donvi.MA_DVIQLY;
+                }
+                else
+                {
+                    SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/generate?strbrandname=PC_BacNinh&strType=1&struserID=" + txtSDT.Text + "&strRegion=PA2201";
+                }
 
-            var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(session.User.ma_dviqly));
-            string SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/generate?strbrandname=" + donvi.TenVietTat + "&strType=1&struserID=" + txtSDT.Text + "&strRegion=" + donvi.MA_DVIQLY;
+            }
+            else
+            {
+                var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == strMadviqly);
+                SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/generate?strbrandname=" + donvi.TenVietTat + "&strType=1&struserID=" + txtSDT.Text + "&strRegion=" + donvi.MA_DVIQLY;
+            }
+
             string json = client.DownloadString(SQL);
             services = (new JavaScriptSerializer()).Deserialize<List<PUSHRESULT>>(json);
             lbOTP.Text = services[0].token;
         }
+    
         public class Phuongthuc
         {
             public string IDChiNhanh { get; set; }
