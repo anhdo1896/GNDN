@@ -21,13 +21,10 @@ namespace QLY_VTTB
             //insertdulieu();
             if (!IsPostBack)
             {
-                DataAccess.TonThat dbtt = new DataAccess.TonThat();
-                dbtt.INSERT_CTO_CHUANHOA("8792728", "PA2201", "03", "04", "02", "024", "032", "043","002","23.44211","33.425151");
                 laodDVCapCha();
                 LoadDataDV();
             }
         }
-       
         private bool CheckName(string Name, int id, string ma_dviqly)
         {
             var dt = db.DM_ChiNhanhs.SingleOrDefault(x => x.MaChiNhanh == Name && x.ID != id);

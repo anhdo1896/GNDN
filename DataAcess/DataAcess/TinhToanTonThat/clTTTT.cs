@@ -1889,6 +1889,74 @@ namespace DataAccess
             }
             return dt;
         }
+        public DataTable SELECT_THONGTIN_TRAM_BCKD(string pMA_DVIQLY, string pMATRAM, int pTHANG, int pNAM)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_THONGTIN_TRAM_BCKD";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pMATRAM", OracleType.VarChar).Value = pMATRAM;
+                objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = pTHANG;
+                objCmd.Parameters.Add("pNAM", OracleType.Number).Value = pNAM;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+        }
+        public DataTable SELECT_THONGTIN_KHANG_BCKD(string pMA_DVIQLY, string pMATRAM, int pTHANG, int pNAM)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_THONGTIN_TRAM_BCKD";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pMATRAM", OracleType.VarChar).Value = pMATRAM;
+                objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = pTHANG;
+                objCmd.Parameters.Add("pNAM", OracleType.Number).Value = pNAM;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+        }
 
     }
 }

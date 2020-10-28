@@ -14,52 +14,6 @@ namespace DataAccess
     {
         private MSSqlHelper _DbHelper = new MSSqlHelper();
 
-        public string INSERT_CTO_CHUANHOA(string pSOCONGTO, string pMA_DVIQLY, string pSOCOTMOI, string pLOAIHOM, string pTHUTUHOM, string pTHUTUPHA, string pTHUTULO, string pMANVIEN, string pANHHIENTRUONG, string pKINHDO, string pVIDO)
-        {
-            OracleConnection connection = new OracleConnection(ConnectString.ConnectionString("PA01"));
-            connection.Open();
-            bool result;
-            try
-            {
-                OracleCommand cmd4 = new OracleCommand
-                {
-                    CommandText = "PTKH_MTB.PKG_CHUANHOA_CTO.INSERT_CTO_CHUANHOA",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = connection
-                };
-                cmd4.Parameters.Add("pSOCONGTO", OracleType.VarChar).Value = pSOCONGTO;
-                cmd4.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
-                cmd4.Parameters.Add("pSOCOTMOI", OracleType.VarChar).Value = pSOCOTMOI;
-                cmd4.Parameters.Add("pLOAIHOM", OracleType.VarChar).Value = pLOAIHOM;
-                cmd4.Parameters.Add("pTHUTUHOM", OracleType.VarChar).Value = pTHUTUHOM;
-                cmd4.Parameters.Add("pTHUTUPHA", OracleType.VarChar).Value = pTHUTUPHA;
-                cmd4.Parameters.Add("pTHUTULO", OracleType.VarChar).Value = pTHUTULO;
-                cmd4.Parameters.Add("pMANVIEN", OracleType.VarChar).Value = pMANVIEN;
-                cmd4.Parameters.Add("pANHHIENTRUONG", OracleType.VarChar).Value = pANHHIENTRUONG;
-                cmd4.Parameters.Add("pKINHDO", OracleType.VarChar).Value = pKINHDO;
-                cmd4.Parameters.Add("pVIDO", OracleType.VarChar).Value = pVIDO;
-                cmd4.ExecuteNonQuery();
-
-            }
-            catch (Exception ex_623)
-            {
-                // result = false;
-                return ex_623.Message;
-            }
-            finally
-            {
-                if (connection != null)
-                {
-                    if (connection.State == ConnectionState.Open)
-                    {
-                        connection.Close();
-                    }
-                    connection.Dispose();
-                }
-            }
-            result = true;
-            return result + "";
-        }
         public DataTable DN_TK_ThucTeDonVi(int Ma_dviqly, int Thang, int Nam,int ThangN1,int NamN1, int ThangN2,int NamN2, int TuNgay,int DenNgay)
         {
             DbConnection connection = _DbHelper.CreateConnection(Common.ConnectionString);

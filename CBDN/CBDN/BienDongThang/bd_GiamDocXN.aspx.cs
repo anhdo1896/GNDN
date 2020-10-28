@@ -97,7 +97,8 @@ namespace MTCSYT
             lbTP1.Text = "";
             lbTP2.Text = "";
             lbGiamDocKy.Text = "";
-           
+            lbGiamDocKy2.Text = "";
+
             var ttKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null).OrderBy(x => x.ChucVu);
             foreach (var ky in ttKy)
             {

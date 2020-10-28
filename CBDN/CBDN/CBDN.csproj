@@ -7305,6 +7305,7 @@
     <Content Include="TonThatCMIS\TT_DzTrungAp.aspx" />
     <Content Include="TonThatCMIS\TT_KH_DAThap.aspx" />
     <Content Include="TonThatCMIS\TT_TBA.aspx" />
+    <Content Include="TonThatKyThuat\BaoCaoTTKD.aspx" />
     <Content Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx" />
     <Content Include="TonThatKyThuat\DanhSachTramUuTien.aspx" />
     <Content Include="TonThatKyThuat\dmKhachHangLuuY.aspx" />
@@ -7959,11 +7960,18 @@
     <Compile Include="TonThatCMIS\TT_TBA.aspx.designer.cs">
       <DependentUpon>TT_TBA.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TonThatKyThuatReport\InBienBanQT.cs">
+    <Compile Include="TonThatKyThuatReport\InBienTTKD.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TonThatKyThuatReport\InBienBanQT.Designer.cs">
-      <DependentUpon>InBienBanQT.cs</DependentUpon>
+    <Compile Include="TonThatKyThuatReport\InBienTTKD.Designer.cs">
+      <DependentUpon>InBienTTKD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\BaoCaoTTKD.aspx.cs">
+      <DependentUpon>BaoCaoTTKD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\BaoCaoTTKD.aspx.designer.cs">
+      <DependentUpon>BaoCaoTTKD.aspx</DependentUpon>
     </Compile>
     <Compile Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx.cs">
       <DependentUpon>ChiTietPhuTaiNgay.aspx</DependentUpon>
@@ -9326,8 +9334,8 @@
     <EmbeddedResource Include="Report\InBienBanQT.resx">
       <DependentUpon>InBienBanQT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TonThatKyThuatReport\InBienBanQT.resx">
-      <DependentUpon>InBienBanQT.cs</DependentUpon>
+    <EmbeddedResource Include="TonThatKyThuatReport\InBienTTKD.resx">
+      <DependentUpon>InBienTTKD.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
