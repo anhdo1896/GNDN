@@ -29,7 +29,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel5;
-
+        
         /// <summary>
         /// MaDienLuc control.
         /// </summary>
@@ -38,7 +38,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox MaDienLuc;
-
+        
         /// <summary>
         /// ASPxLabel2 control.
         /// </summary>
@@ -47,7 +47,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
-
+        
         /// <summary>
         /// cmMaDvi control.
         /// </summary>
@@ -56,7 +56,7 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cmMaDvi;
-
+        
         /// <summary>
         /// ASPxLabel1 control.
         /// </summary>
@@ -74,15 +74,6 @@ namespace MTCSYT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cmbMaTram;
-        
-        /// <summary>
-        /// btnLoc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnLoc;
         
         /// <summary>
         /// ASPxLabel3 control.
@@ -120,15 +111,14 @@ namespace MTCSYT {
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cmbNam;
         
-       
         /// <summary>
-        /// cmbDKLoc control.
+        /// btnLoc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox cmbDKLoc;
+        protected global::DevExpress.Web.ASPxButton btnLoc;
         
         /// <summary>
         /// pcTax control.
