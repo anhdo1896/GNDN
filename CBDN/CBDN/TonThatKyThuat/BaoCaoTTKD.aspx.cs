@@ -31,7 +31,7 @@ namespace MTCSYT
             }
             else
             {
-              
+
             }
             Session["SYS_Session"] = session;
             if (!IsPostBack)
@@ -78,15 +78,23 @@ namespace MTCSYT
             DataTable dttram = new DataTable();
             DataTable dtKhang = new DataTable();
 
-            string Ma_dvi = cmMaDvi.Value+"";
+            string Ma_dvi = cmMaDvi.Value + "";
 
             string Matram = cmbMaTram.Value + "";
+
             dttram = db.SELECT_THONGTIN_TRAM_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
             dtKhang = db.SELECT_THONGTIN_KHANG_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
-            
-                MTCSYT.TonThatKyThuatReport.InBienTTKD report = new MTCSYT.TonThatKyThuatReport.InBienTTKD(dttram, dtKhang, "" + cmbThang.Value, "" + cmbNam.Value, Ma_dvi);
+            if (dtKhang.Rows.Count ==0 && dttram.Rows.Count == 0)
+            {
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Trạm không có dữ liệu theo điều kiện chọn.');", true);
+                return;
+            }
+            else
+            {
+                TonThatKyThuatReport.InBienTTKD report = new TonThatKyThuatReport.InBienTTKD(dttram, dtKhang, "" + cmbThang.Value, "" + cmbNam.Value, Ma_dvi);
                 ReportViewer2.Report = report;
-            
+            }
+
 
         }
         protected void cbAll_Init(object sender, EventArgs e)
@@ -135,15 +143,15 @@ namespace MTCSYT
                 List.Add(Dvi);
 
                 MaDienLuc.DataSource = List;
-               MaDienLuc.TextField = "NAME_DVIQLY";
+                MaDienLuc.TextField = "NAME_DVIQLY";
                 MaDienLuc.ValueField = "MA_DVIQLY";
                 MaDienLuc.DataBind();
-            }    
+            }
 
         }
         private void LoadDataDV()
         {
-            
+
             if (MaDienLuc.Value + "" != "")
             {
                 DM_DVQLYService dm_dviSer = new DM_DVQLYService();
@@ -154,7 +162,7 @@ namespace MTCSYT
                 cmMaDvi.TextField = "NAME_DVIQLY";
                 cmMaDvi.DataBind();
             }
-            
+
 
         }
         protected void grdGiao_Callback(object sender, EventArgs e)
