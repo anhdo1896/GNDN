@@ -45,7 +45,30 @@
                             <PanelCollection>
                                 <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
                                     <table class="tbl_Write">
+                                         <tr>
+                                            <td>
+                                                <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Điện Lực" Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            <td colspan="3">
+                                                <dx:ASPxComboBox ID="MaDienLuc" IncrementalFilteringMode="Contains"
+                                                    runat="server" SelectedIndex="0" Width="480px" Theme="Aqua" AutoPostBack="True">
+                                                </dx:ASPxComboBox>
 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Đơn vị" Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            <td colspan="3">
+                                                <dx:ASPxComboBox ID="cmMaDvi" IncrementalFilteringMode="Contains"
+                                                    runat="server" SelectedIndex="0" Width="480px" Theme="Aqua" AutoPostBack="True">
+                                                </dx:ASPxComboBox>
+
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td>
                                                 <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Mã trạm" Width="100px">
