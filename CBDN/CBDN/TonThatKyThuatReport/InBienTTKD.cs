@@ -25,8 +25,8 @@ namespace MTCSYT.TonThatKyThuatReport
             lbDNT2.Text = dttram.Rows[0]["SL_2"] + "";
             lbDNT3.Text = dttram.Rows[0]["SL_3"] + "";
             lbTLT1.Text = dttram.Rows[0]["TT_TL1"] + "";
-            lbTLT2.Text = dttram.Rows[0]["TT_TL1"] + "";
-            lbTLT3.Text = dttram.Rows[0]["TT_TL1"] + "";
+            lbTLT2.Text = dttram.Rows[0]["TT_TL2"] + "";
+            lbTLT3.Text = dttram.Rows[0]["TT_TL3"] + "";
             lbDNTT.Text = "DNTT KH (kWh): " + dttram.Rows[0]["DNTTKH"] + "";
             lbTT.Text = "DN Tổn Thất (kWh): " +dttram.Rows[0]["DNTT"] + "";
             lbHSN.Text = "HSN: " + dttram.Rows[0]["HSN"] + "";
