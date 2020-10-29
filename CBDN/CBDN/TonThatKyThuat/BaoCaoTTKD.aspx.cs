@@ -37,11 +37,15 @@ namespace MTCSYT
             if (!IsPostBack)
             {
                 loadDSNgay();
+                laodDVCapCha();
+                LoadDataDV();
                 _DataBind();
-
 
             }
 
+            laodDVCapCha();
+            LoadDataDV();
+            _DataBind();
             InBienBanTonThat();
 
         }
@@ -55,7 +59,7 @@ namespace MTCSYT
                 cmbNam.Value = DateTime.Now.Year;
             }
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            cmbMaTram.DataSource = db.SELECT_TRAM_HATHE(session.User.ma_dviqlyDN);
+            cmbMaTram.DataSource = db.SELECT_TRAM_HATHE(cmMaDvi.Value + "");
             cmbMaTram.ValueField = "MA_TRAM";
             cmbMaTram.TextField = "STRTEN";
             cmbMaTram.DataBind();
@@ -106,7 +110,54 @@ namespace MTCSYT
                 cmbNam.Value = DateTime.Now.Year;
             }
         }
+        private void laodDVCapCha()
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            if (session.User.ma_dviqly == "2")
+            {
+                DM_DVQLYService dm_dviSer = new DM_DVQLYService();
 
+                var lst_dmdv = dm_dviSer.SelectAllDM_DVQLY();
+
+                MaDienLuc.DataSource = lst_dmdv;
+                MaDienLuc.ValueField = "IDMA_DVIQLY";
+                MaDienLuc.TextField = "TEN_DVIQLY";
+                MaDienLuc.DataBind();
+            }
+            else
+            {
+                DM_DVQLYService dm_dviSer = new DM_DVQLYService();
+                var donvi = dm_dviSer.SelectDM_DVQLY(int.Parse(session.User.ma_dviqly));
+                List<DM_DS> List = new List<DM_DS>();
+                DM_DS Dvi = new DM_DS();
+
+                Dvi.MA_DVIQLY = session.User.ma_dviqly;
+                Dvi.NAME_DVIQLY = donvi.NAME_DVIQLY.Split('-')[1].ToString().ToUpper(); ;
+                List.Add(Dvi);
+
+                MaDienLuc.DataSource = List;
+               MaDienLuc.TextField = "NAME_DVIQLY";
+                MaDienLuc.ValueField = "MA_DVIQLY";
+                MaDienLuc.DataBind();
+            }    
+
+        }
+        private void LoadDataDV()
+        {
+            
+            if (MaDienLuc.Value + "" != "")
+            {
+                DM_DVQLYService dm_dviSer = new DM_DVQLYService();
+                //  DataTable lst_dmdv = new DataTable();
+                var lst_dmdv = dm_dviSer.SelectAll_DVI_ByChild(int.Parse(MaDienLuc.Value + ""));
+                cmMaDvi.DataSource = lst_dmdv;
+                cmMaDvi.ValueField = "MA_DVIQLY";
+                cmMaDvi.TextField = "NAME_DVIQLY";
+                cmMaDvi.DataBind();
+            }
+            
+
+        }
         protected void grdGiao_Callback(object sender, EventArgs e)
         {
 
@@ -128,7 +179,12 @@ namespace MTCSYT
             InBienBanTonThat();
         }
 
-      
+        public class DM_DS
+        {
+
+            public string MA_DVIQLY { get; set; }
+            public string NAME_DVIQLY { get; set; }
+        }
 
     }
 }

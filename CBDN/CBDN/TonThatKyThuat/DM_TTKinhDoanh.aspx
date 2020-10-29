@@ -16,21 +16,21 @@
         }
     </script>
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Quản lý file CAD
+        <h4 class="page-title">Danh Mục Cảnh Báo
         </h4>
     </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
             <li><a href="../Default.aspx">Trang chủ</a></li>
             <li><a href="bc_GiaoNhan2Chieu.aspx">Tổn thất online </a></li>
-            <li><a href="bc_GiaoNhan2Chieu.aspx">Import dữ liệu đường dây theo trạm - Tính tổn thất kỹ thuật</a></li>
+            <li><a href="BaoCaoTTKD.aspx">Báo cáo tổn thất kinh doanh</</a></li>
         </ol>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Category" runat="server">
     <div class="col-md-12">
         <div class="white-box">
-            <h1 class="m-b-0 box-title">Quản lý File CAD</h1>
+            <h1 class="m-b-0 box-title">Danh Mục Cảnh Báo</h1>
             <div class="col-lg-12 m-t-30">
                 <hr />
             </div>
