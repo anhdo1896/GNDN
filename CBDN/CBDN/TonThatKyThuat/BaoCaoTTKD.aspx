@@ -34,7 +34,7 @@
     <link href="../CSS/cssCircle.css" rel="stylesheet">
     <div class="col-md-12">
         <div class="white-box">
-            <h1 class="m-b-0 box-title">Tính toán so sánh tổn thất</h1>
+            <h1 class="m-b-0 box-title">Báo Cáo Tổn Thất Kinh Doanh</h1>
             <div class="col-lg-12 m-t-30">
                 <hr />
             </div>
