@@ -77,17 +77,16 @@ namespace MTCSYT
 
             DataTable dttram = new DataTable();
             DataTable dtKhang = new DataTable();
+
             string Ma_dvi = cmMaDvi.Value+"";
+
             string Matram = cmbMaTram.Value + "";
             dttram = db.SELECT_THONGTIN_TRAM_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
             dtKhang = db.SELECT_THONGTIN_KHANG_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
-            if (dttram.Rows.Count != 0 && dtKhang.Rows.Count != 0)
-            {
+            
                 MTCSYT.TonThatKyThuatReport.InBienTTKD report = new MTCSYT.TonThatKyThuatReport.InBienTTKD(dttram, dtKhang, "" + cmbThang.Value, "" + cmbNam.Value, Ma_dvi);
                 ReportViewer2.Report = report;
-            }
-            ReportViewer2.Report = null;
-           ReportToolbar2.ReportViewer = ReportViewer2;
+            
 
         }
         protected void cbAll_Init(object sender, EventArgs e)
