@@ -1957,6 +1957,146 @@ namespace DataAccess
             }
             return dt;
         }
+        public DataTable SELECT_TTTT_DM_TTKD()
+        {
+            DataTable dt = new DataTable(); OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_TTTT_DM_TTKD";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
 
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+
+        }
+        public void UPDATE_TTTT_DM_TTKD(string pMA_CANHBAO, string pTT_CANHBAO, string pDX_CANHBAO)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.UPDATE_TTTT_DM_TTKD";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_CANHBAO", OracleType.VarChar).Value = pMA_CANHBAO;
+                objCmd.Parameters.Add("pTT_CANHBAO", OracleType.VarChar).Value = pTT_CANHBAO;
+                objCmd.Parameters.Add("pDX_CANHBAO", OracleType.NVarChar).Value = pDX_CANHBAO;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+        }
+        public void INSERT_TTTT_DM_TTKD(string pMA_CANHBAO, string pTT_CANHBAO, string pDX_CANHBAO)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.INSERT_TTTT_DM_TTKD";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_CANHBAO", OracleType.VarChar).Value = pMA_CANHBAO;
+                objCmd.Parameters.Add("pTT_CANHBAO", OracleType.VarChar).Value = pTT_CANHBAO;
+                objCmd.Parameters.Add("pDX_CANHBAO", OracleType.NVarChar).Value = pDX_CANHBAO;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+        }
+        public DataTable SELECT_CHECK_TTTT_DM_TTKD(string pMA_CANHBAO)
+        {
+            DataTable dt = new DataTable(); OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_CHECK_TTTT_DM_TTKD"; objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_CANHBAO", OracleType.VarChar).Value = pMA_CANHBAO;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+
+        }
+        public void DELETE_CHECK_TTTT_DM_TTKD(string pMA_CANHBAO)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.DELETE_CHECK_TTTT_DM_TTKD";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_CANHBAO", OracleType.VarChar).Value = pMA_CANHBAO;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+        }
     }
 }

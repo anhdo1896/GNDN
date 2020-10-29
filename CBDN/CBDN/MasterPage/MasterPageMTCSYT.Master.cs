@@ -125,6 +125,7 @@ namespace QLY_VTTB.MasterPage
                                 <li> <a href='../TonThatKyThuat/dmKhachHangLuuY.aspx'>* Danh Sách Khách Hàng Lưu Ý</a></li>
                                 <li> <a href='../TonThatKyThuat/KiemTraCot_CAD.aspx'>* Kiểm tra cột đã nhập dữ liệu</a></li>
                                 <li> <a href='../TonThatKyThuat/BaoCaoTTKD.aspx'>* Báo cáo tổn thất kinh doanh</a></li>
+                                <li> <a href='../TonThatKyThuat/DM_TTKinhDoanh.aspx'>* Danh Mục Cảnh Báo</a></li>
                              
                             </ul>
                         </li>
