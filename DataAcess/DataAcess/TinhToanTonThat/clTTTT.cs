@@ -1932,7 +1932,7 @@ namespace DataAccess
             {
                 objConn.Open();
                 objCmd.Connection = objConn;
-                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_THONGTIN_TRAM_BCKD";
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_THONGTIN_KHANG_BCKD";
                 objCmd.CommandType = CommandType.StoredProcedure;
                 objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
                 objCmd.Parameters.Add("pMATRAM", OracleType.VarChar).Value = pMATRAM;
