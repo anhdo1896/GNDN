@@ -84,7 +84,8 @@ namespace MTCSYT
 
             dttram = db.SELECT_THONGTIN_TRAM_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
             dtKhang = db.SELECT_THONGTIN_KHANG_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
-            if (dtKhang.Rows.Count ==0 && dttram.Rows.Count == 0)
+
+            if (dtKhang.Rows.Count ==0 || dttram.Rows.Count == 0)
             {
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Trạm không có dữ liệu theo điều kiện chọn.');", true);
                 return;
@@ -94,8 +95,6 @@ namespace MTCSYT
                 TonThatKyThuatReport.InBienTTKD report = new TonThatKyThuatReport.InBienTTKD(dttram, dtKhang, "" + cmbThang.Value, "" + cmbNam.Value, Ma_dvi);
                 ReportViewer2.Report = report;
             }
-
-
         }
         protected void cbAll_Init(object sender, EventArgs e)
         {
