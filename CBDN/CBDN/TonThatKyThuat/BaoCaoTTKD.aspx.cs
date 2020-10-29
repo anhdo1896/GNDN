@@ -128,9 +128,19 @@ namespace MTCSYT
             {
                 DM_DVQLYService dm_dviSer = new DM_DVQLYService();
                 var donvi = dm_dviSer.SelectDM_DVQLY(int.Parse(session.User.ma_dviqly));
-                MaDienLuc.TextField = donvi.NAME_DVIQLY.Split('-')[1].ToString().ToUpper();
-                MaDienLuc.ValueField = session.User.ma_dviqly;
+                List<DM_DS> List = new List<DM_DS>();
+                DM_DS Dvi = new DM_DS();
+
+                Dvi.MA_DVIQLY = session.User.ma_dviqly;
+                Dvi.NAME_DVIQLY = donvi.NAME_DVIQLY.Split('-')[1].ToString().ToUpper(); ;
+                List.Add(Dvi);
+
+                MaDienLuc.DataSource = List;
+               MaDienLuc.TextField = "NAME_DVIQLY";
+                MaDienLuc.ValueField = "MA_DVIQLY";
+                MaDienLuc.DataBind();
             }    
+
         }
         private void LoadDataDV()
         {
@@ -169,7 +179,12 @@ namespace MTCSYT
             InBienBanTonThat();
         }
 
-      
+        public class DM_DS
+        {
+
+            public string MA_DVIQLY { get; set; }
+            public string NAME_DVIQLY { get; set; }
+        }
 
     }
 }
