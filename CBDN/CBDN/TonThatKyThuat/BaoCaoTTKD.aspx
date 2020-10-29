@@ -45,7 +45,7 @@
                             <PanelCollection>
                                 <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
                                     <table class="tbl_Write">
-                                         <tr>
+                                        <tr>
                                             <td>
                                                 <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Điện Lực" Width="100px">
                                                 </dx:ASPxLabel>
@@ -76,7 +76,7 @@
                                             </td>
                                             <td colspan="3">
                                                 <dx:ASPxComboBox ID="cmbMaTram" IncrementalFilteringMode="Contains"
-                                                    runat="server" SelectedIndex="0" Width="480px" Theme="Aqua" AutoPostBack="True">
+                                                    runat="server" SelectedIndex="0" Width="480px" Theme="Aqua">
                                                 </dx:ASPxComboBox>
 
                                             </td>
@@ -86,7 +86,7 @@
                                                 <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Tháng" Width="100px">
                                                 </dx:ASPxLabel>
                                             </td>
-                                            <td >
+                                            <td>
                                                 <dx:ASPxComboBox ID="cmbThang" runat="server" Width="80px">
                                                     <Items>
                                                         <dx:ListEditItem Text="1" Value="1" />
@@ -125,7 +125,15 @@
                                                 </dx:ASPxComboBox>
 
                                             </td>
-                                          </table>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="4">
+                                                <dx:ASPxButton ID="btnLoc" runat="server" Text="Lọc dữ liệu" OnClick="btnLoc_Click" Theme="Aqua"></dx:ASPxButton>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </dx:PanelContent>
                             </PanelCollection>
                         </dx:ASPxRoundPanel>
@@ -134,7 +142,7 @@
             </table>
 
             <dx:ASPxPageControl ID="pcTax" runat="server" ActiveTabIndex="2" Width="100%" Theme="Aqua" AccessibilityCompliant="True" EnableCallBacks="True">
-                 <TabPages>
+                <TabPages>
                     <dx:TabPage Text="Báo cáo tổn thất kinh doanh">
                         <ContentCollection>
                             <dx:ContentControl runat="server" SupportsDisabledAttribute="True">

@@ -77,7 +77,7 @@ namespace MTCSYT
 
             DataTable dttram = new DataTable();
             DataTable dtKhang = new DataTable();
-            string Ma_dvi = session.User.ma_dviqlyDN;
+            string Ma_dvi = cmMaDvi.Value+"";
             string Matram = cmbMaTram.Value + "";
             dttram = db.SELECT_THONGTIN_TRAM_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
             dtKhang = db.SELECT_THONGTIN_KHANG_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
@@ -162,22 +162,6 @@ namespace MTCSYT
         {
 
         }
-    
-        protected void cmbNam_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            InBienBanTonThat();
-
-        }
-
-        protected void cmbThang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            InBienBanTonThat();
-        }
-
-        protected void cmbMaTram_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            InBienBanTonThat();
-        }
 
         public class DM_DS
         {
@@ -186,5 +170,10 @@ namespace MTCSYT
             public string NAME_DVIQLY { get; set; }
         }
 
+        protected void btnLoc_Click(object sender, EventArgs e)
+        {
+
+            InBienBanTonThat();
+        }
     }
 }
