@@ -14,24 +14,24 @@ namespace MTCSYT.TonThatKyThuatReport
         {
            
             InitializeComponent();
-            string tentram = dttram.Rows[0]["TEN_TRAM"]+"";
-            lbMaTram.Text = Ma_dvi.ToUpper();
+            string tentram = "Tên Trạm: " + dttram.Rows[0]["TEN_TRAM"]+"";
+            lbMaTram.Text = "Mã Trạm: " +dttram.Rows[0]["MA_TRAM"] + "";
             lbTenTram.Text = tentram.ToUpper();
-            lbDoanhSo.Text = "0";
-            lbCongSuat.Text = dttram.Rows[0]["CSUAT_TRAM"] + "";
-            lbSoNO.Text = "0";
-            lbHanKiemDinh.Text = "0";
-            lbDNT1.Text = dttram.Rows[0]["DNTT1"] + "";
-            lbDNT2.Text = dttram.Rows[0]["DNTT2"] + "";
-            lbDNT3.Text = dttram.Rows[0]["DNTT3"] + "";
-            lbTLT1.Text = dttram.Rows[0]["DNTT_TL1"] + "";
-            lbTLT2.Text = dttram.Rows[0]["DNTT_TL2"] + "";
-            lbTLT3.Text = dttram.Rows[0]["DNTT_TL3"] + "";
-            lbDNTT.Text = dttram.Rows[0]["CUOIKY"] + "";
-            lbTT.Text = dttram.Rows[0]["TONTHAT"] + "";
-            lbHSN.Text = "0";
-            lbCSMtram.Text = "0";
-
+            lbDoanhSo.Text = "Doanh Số: " + dttram.Rows[0]["DINH_DANH"] + "";
+            lbCongSuat.Text = "Công Suất (kVA): " + dttram.Rows[0]["CSUAT_TRAM"] + "";
+            lbSoNO.Text = "Số NO: " + dttram.Rows[0]["SO_CTO"] + "";
+            lbHanKiemDinh.Text = "Ngày Kiểm Định: " + dttram.Rows[0]["NGAY_KDINH"] + ""; ;
+            lbDNT1.Text = dttram.Rows[0]["SL_1"] + "";
+            lbDNT2.Text = dttram.Rows[0]["SL_2"] + "";
+            lbDNT3.Text = dttram.Rows[0]["SL_3"] + "";
+            lbTLT1.Text = dttram.Rows[0]["TT_TL1"] + "";
+            lbTLT2.Text = dttram.Rows[0]["TT_TL1"] + "";
+            lbTLT3.Text = dttram.Rows[0]["TT_TL1"] + "";
+            lbDNTT.Text = "DNTT KH (kWh): " + dttram.Rows[0]["DNTTKH"] + "";
+            lbTT.Text = "DN Tổn Thất (kWh): " +dttram.Rows[0]["DNTT"] + "";
+            lbHSN.Text = "HSN: " + dttram.Rows[0]["HSN"] + "";
+            TongKHang.Text = "Tổng khách hàng: " +dtKhang.Rows.Count + "";
+            
             Detail.Report.DataSource = dtKhang;
 
             khSTT.DataBindings.Add("Text", DataSource, "STT");

@@ -54,7 +54,7 @@
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.lbTT = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel32 = new DevExpress.XtraReports.UI.XRLabel();
+            this.TongKHang = new DevExpress.XtraReports.UI.XRLabel();
             this.lbDNTT = new DevExpress.XtraReports.UI.XRLabel();
             this.lbDNT3 = new DevExpress.XtraReports.UI.XRLabel();
             this.lbTLT3 = new DevExpress.XtraReports.UI.XRLabel();
@@ -68,7 +68,6 @@
             this.xrLabel25 = new DevExpress.XtraReports.UI.XRLabel();
             this.lbTenTram = new DevExpress.XtraReports.UI.XRLabel();
             this.lbHanKiemDinh = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbCSMtram = new DevExpress.XtraReports.UI.XRLabel();
             this.lbHSN = new DevExpress.XtraReports.UI.XRLabel();
             this.lbSoNO = new DevExpress.XtraReports.UI.XRLabel();
             this.lbMaTram = new DevExpress.XtraReports.UI.XRLabel();
@@ -303,7 +302,7 @@
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.lbTT,
-            this.xrLabel32,
+            this.TongKHang,
             this.lbDNTT,
             this.lbDNT3,
             this.lbTLT3,
@@ -317,7 +316,6 @@
             this.xrLabel25,
             this.lbTenTram,
             this.lbHanKiemDinh,
-            this.lbCSMtram,
             this.lbHSN,
             this.lbSoNO,
             this.lbMaTram,
@@ -339,17 +337,17 @@
             this.lbTT.Text = "ĐN tổn thất (kW):";
             this.lbTT.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // xrLabel32
+            // TongKHang
             // 
-            this.xrLabel32.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.xrLabel32.LocationFloat = new DevExpress.Utils.PointFloat(1030.992F, 79.4306F);
-            this.xrLabel32.Name = "xrLabel32";
-            this.xrLabel32.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel32.SizeF = new System.Drawing.SizeF(122.0072F, 22.99998F);
-            this.xrLabel32.StylePriority.UseFont = false;
-            this.xrLabel32.StylePriority.UseTextAlignment = false;
-            this.xrLabel32.Text = "Số lượng công tơ ngoài nhà:";
-            this.xrLabel32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.TongKHang.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.TongKHang.LocationFloat = new DevExpress.Utils.PointFloat(1030.992F, 79.4306F);
+            this.TongKHang.Name = "TongKHang";
+            this.TongKHang.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.TongKHang.SizeF = new System.Drawing.SizeF(122.0072F, 22.99998F);
+            this.TongKHang.StylePriority.UseFont = false;
+            this.TongKHang.StylePriority.UseTextAlignment = false;
+            this.TongKHang.Text = "Tổng khách hàng:";
+            this.TongKHang.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // lbDNTT
             // 
@@ -504,20 +502,8 @@
             this.lbHanKiemDinh.SizeF = new System.Drawing.SizeF(122.0072F, 22.99998F);
             this.lbHanKiemDinh.StylePriority.UseFont = false;
             this.lbHanKiemDinh.StylePriority.UseTextAlignment = false;
-            this.lbHanKiemDinh.Text = "Hạn kiểm định:";
+            this.lbHanKiemDinh.Text = "Ngày kiểm định:";
             this.lbHanKiemDinh.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // lbCSMtram
-            // 
-            this.lbCSMtram.Font = new System.Drawing.Font("Times New Roman", 8F);
-            this.lbCSMtram.LocationFloat = new DevExpress.Utils.PointFloat(161.1646F, 165.418F);
-            this.lbCSMtram.Name = "lbCSMtram";
-            this.lbCSMtram.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbCSMtram.SizeF = new System.Drawing.SizeF(122.0072F, 22.99998F);
-            this.lbCSMtram.StylePriority.UseFont = false;
-            this.lbCSMtram.StylePriority.UseTextAlignment = false;
-            this.lbCSMtram.Text = "Chỉ số mới";
-            this.lbCSMtram.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // lbHSN
             // 
@@ -958,7 +944,7 @@
         private DevExpress.XtraReports.UI.XRTableCell khCanhBao;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell40;
         private DevExpress.XtraReports.UI.XRLabel lbTT;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel32;
+        private DevExpress.XtraReports.UI.XRLabel TongKHang;
         private DevExpress.XtraReports.UI.XRLabel lbDNTT;
         private DevExpress.XtraReports.UI.XRLabel lbDNT3;
         private DevExpress.XtraReports.UI.XRLabel lbTLT3;
@@ -972,7 +958,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel25;
         private DevExpress.XtraReports.UI.XRLabel lbTenTram;
         private DevExpress.XtraReports.UI.XRLabel lbHanKiemDinh;
-        private DevExpress.XtraReports.UI.XRLabel lbCSMtram;
         private DevExpress.XtraReports.UI.XRLabel lbHSN;
         private DevExpress.XtraReports.UI.XRLabel lbSoNO;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell5;
