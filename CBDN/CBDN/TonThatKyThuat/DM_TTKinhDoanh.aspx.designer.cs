@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CBDN.TonThatKyThuat
-{
-
-
-    public partial class DM_TTKinhDoanh
-    {
-
+namespace CBDN.TonThatKyThuat {
+    
+    
+    public partial class DM_TTKinhDoanh {
+        
         /// <summary>
         /// grdDVT control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView grdDVT;
-
+        
         /// <summary>
         /// btnThem control.
         /// </summary>
@@ -31,7 +29,16 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnThem;
-
+        
+        /// <summary>
+        /// btnSua control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnSua;
+        
         /// <summary>
         /// pcAddRoles control.
         /// </summary>
@@ -40,7 +47,7 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxPopupControl pcAddRoles;
-
+        
         /// <summary>
         /// PopupControlContentControl1 control.
         /// </summary>
@@ -49,7 +56,7 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl1;
-
+        
         /// <summary>
         /// macanhbao control.
         /// </summary>
@@ -58,7 +65,7 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel macanhbao;
-
+        
         /// <summary>
         /// txtMA_CANHBAO control.
         /// </summary>
@@ -67,7 +74,7 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtMA_CANHBAO;
-
+        
         /// <summary>
         /// ASPxLabel1 control.
         /// </summary>
@@ -76,7 +83,7 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
-
+        
         /// <summary>
         /// txtTT_CANHBAO control.
         /// </summary>
@@ -85,7 +92,7 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtTT_CANHBAO;
-
+        
         /// <summary>
         /// dexuat control.
         /// </summary>
@@ -94,7 +101,7 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel dexuat;
-
+        
         /// <summary>
         /// txtDX_CANHBAO control.
         /// </summary>
@@ -103,7 +110,7 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtDX_CANHBAO;
-
+        
         /// <summary>
         /// btnCapNhat control.
         /// </summary>
@@ -112,7 +119,7 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnCapNhat;
-
+        
         /// <summary>
         /// btnDong control.
         /// </summary>
