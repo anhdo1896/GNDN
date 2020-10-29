@@ -120,15 +120,7 @@ namespace MTCSYT {
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cmbNam;
         
-        /// <summary>
-        /// ASPxLabel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
-        
+       
         /// <summary>
         /// cmbDKLoc control.
         /// </summary>
