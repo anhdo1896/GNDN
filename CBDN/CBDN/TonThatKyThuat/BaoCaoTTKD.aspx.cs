@@ -94,6 +94,7 @@ namespace MTCSYT
             {
                 TonThatKyThuatReport.InBienTTKD report = new TonThatKyThuatReport.InBienTTKD(dttram, dtKhang, "" + cmbThang.Value, "" + cmbNam.Value, Ma_dvi);
                 ReportViewer2.Report = report;
+                ReportToolbar2.ReportViewer = ReportViewer2;
             }
         }
         protected void cbAll_Init(object sender, EventArgs e)
