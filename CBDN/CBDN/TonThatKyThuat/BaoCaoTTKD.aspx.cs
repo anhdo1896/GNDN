@@ -92,7 +92,7 @@ namespace MTCSYT
             }
             else
             {
-                TonThatKyThuatReport.InBienTTKD report = new TonThatKyThuatReport.InBienTTKD(dttram, dtKhang, "" + cmbThang.Value, "" + cmbNam.Value, Ma_dvi);
+                TonThatKyThuatReport.InBienBanQT report = new TonThatKyThuatReport.InBienBanQT(dttram, dtKhang, "" + cmbThang.Value, "" + cmbNam.Value, Ma_dvi);
                 ReportViewer2.Report = report;
             }
         }

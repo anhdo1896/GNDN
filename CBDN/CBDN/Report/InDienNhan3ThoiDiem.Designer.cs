@@ -200,6 +200,7 @@
             this.xrTable2,
             this.lbTieude,
             this.lbDonvi});
+            this.ReportHeader.Expanded = false;
             this.ReportHeader.HeightF = 270.6087F;
             this.ReportHeader.Name = "ReportHeader";
             // 
@@ -521,7 +522,7 @@
             this.T_Tong_TieuThu.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.T_Tong_TieuThu.Weight = 0.2883263959749377D;
             // 
-            // InBienBanB9
+            // InDienNhan3ThoiDiem
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,
