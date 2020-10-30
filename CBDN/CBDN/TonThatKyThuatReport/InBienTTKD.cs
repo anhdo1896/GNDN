@@ -43,7 +43,7 @@ namespace MTCSYT.TonThatKyThuatReport
             khSoHo.DataBindings.Add("Text", DataSource, "SOHO");
             khMaNN.DataBindings.Add("Text", DataSource, "MA_NN");
             lbHanKH.DataBindings.Add("Text", DataSource, "HANKD");
-            khCSMoi.DataBindings.Add("Text", DataSource, "CHISO_MOI");
+            khCSMoi.DataBindings.Add("Text", DataSource, "SAN_LUONG");
             khSL_1.DataBindings.Add("Text", DataSource, "SLUONG_1");
             khSL_2.DataBindings.Add("Text", DataSource, "SLUONG_2");
             khSL_3.DataBindings.Add("Text", DataSource, "SLUONG_3");

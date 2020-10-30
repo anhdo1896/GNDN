@@ -218,7 +218,7 @@
             // 
             this.khCSMoi.Name = "khCSMoi";
             this.khCSMoi.StylePriority.UseTextAlignment = false;
-            this.khCSMoi.Text = "CS Mới";
+            this.khCSMoi.Text = "Sản Lượng";
             this.khCSMoi.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.khCSMoi.Weight = 0.30565755795772265D;
             // 
@@ -626,7 +626,7 @@
             // xrTableCell10
             // 
             this.xrTableCell10.Name = "xrTableCell10";
-            this.xrTableCell10.Text = "CS Mới";
+            this.xrTableCell10.Text = "Sản lượng";
             this.xrTableCell10.Weight = 0.30565784381889238D;
             // 
             // xrTableCell12

@@ -129,6 +129,7 @@
                                         </tr>
 
                                         <tr>
+                                            
                                             <td colspan="4">
                                                 <dx:ASPxButton ID="btnLoc" runat="server" Text="Lọc dữ liệu" OnClick="btnLoc_Click" Theme="Aqua"></dx:ASPxButton>
                                             </td>

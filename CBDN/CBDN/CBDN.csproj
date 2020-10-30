@@ -7312,6 +7312,7 @@
     <Content Include="TonThatKyThuat\dm_KeHoachThang.aspx" />
     <Content Include="TonThatKyThuat\dmKhachHang_CT.aspx" />
     <Content Include="TonThatKyThuat\ChiTietPhuTai.aspx" />
+    <Content Include="TonThatKyThuat\DM_TTKinhDoanh_TRAM.aspx" />
     <Content Include="TonThatKyThuat\DsTramUuTien.aspx" />
     <Content Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx" />
     <Content Include="TonThatKyThuat\KiemTraCot_CAD.aspx" />
@@ -7961,6 +7962,7 @@
     <Compile Include="TonThatCMIS\TT_TBA.aspx.designer.cs">
       <DependentUpon>TT_TBA.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TonThatKyThuatReport\DuyetCanhBaoTTKD.cs" />
     <Compile Include="TonThatKyThuatReport\InBienBanQT.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -8021,6 +8023,13 @@
     </Compile>
     <Compile Include="TonThatKyThuat\ChiTietPhuTai.aspx.designer.cs">
       <DependentUpon>ChiTietPhuTai.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DM_TTKinhDoanh_TRAM.aspx.cs">
+      <DependentUpon>DM_TTKinhDoanh_TRAM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DM_TTKinhDoanh_TRAM.aspx.designer.cs">
+      <DependentUpon>DM_TTKinhDoanh_TRAM.aspx</DependentUpon>
     </Compile>
     <Compile Include="TonThatKyThuat\DsTramUuTien.aspx.cs">
       <DependentUpon>DsTramUuTien.aspx</DependentUpon>

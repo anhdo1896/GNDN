@@ -73,18 +73,18 @@ namespace MTCSYT
             int strMadviqly = int.Parse(session.User.ma_dviqly);
             DataAccess.clTTTT db = new DataAccess.clTTTT();
 
-            CBDN.Class.InBienBanQT inBienBan = new CBDN.Class.InBienBanQT();
+            CBDN.TonThatKyThuatReport.DuyetCanhBaoTTKD DuyetKH = new CBDN.TonThatKyThuatReport.DuyetCanhBaoTTKD();
 
             DataTable dttram = new DataTable();
             DataTable dtKhang = new DataTable();
-
+            DataTable dtKhangD = new DataTable();
             string Ma_dvi = cmMaDvi.Value + "";
 
             string Matram = cmbMaTram.Value + "";
 
             dttram = db.SELECT_THONGTIN_TRAM_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
             dtKhang = db.SELECT_THONGTIN_KHANG_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
-
+            dtKhangD = DuyetKH.DCB_TKD(dtKhang);
             if (dtKhang.Rows.Count ==0 || dttram.Rows.Count == 0)
             {
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Trạm không có dữ liệu theo điều kiện chọn.');", true);
@@ -92,7 +92,7 @@ namespace MTCSYT
             }
             else
             {
-                TonThatKyThuatReport.InBienBanQT report = new TonThatKyThuatReport.InBienBanQT(dttram, dtKhang, "" + cmbThang.Value, "" + cmbNam.Value, Ma_dvi);
+                TonThatKyThuatReport.InBienTTKD report = new TonThatKyThuatReport.InBienTTKD(dttram, dtKhangD, "" + cmbThang.Value, "" + cmbNam.Value, Ma_dvi);
                 ReportViewer2.Report = report;
                 ReportToolbar2.ReportViewer = ReportViewer2;
             }

@@ -2098,5 +2098,88 @@ namespace DataAccess
                 objCmd = null;
             }
         }
+        public DataTable SELECT_CHECK_TTTT_TTKD_TLTTTRAM(string pMA_DVIQLY)
+        {
+            DataTable dt = new DataTable(); OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_TTTT_DM_TTKD";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+
+        }
+        public void DELETE_CHECK_TTTT_TTKD_TLTTTRAM(int pID)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.DELETE_CHECK_TTTT_TTKD_TLTTTRAM";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pID", OracleType.VarChar).Value = pID;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+        }
+        public void INSERT_TTTT_TTKD_TLTTTRAM(string pMA_DVIQLY, float pTYLETT)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.INSERT_TTTT_DM_TTKD";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pTYLETT", OracleType.Number).Value = pTYLETT;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+        }
     }
 }
