@@ -31,7 +31,7 @@ namespace MTCSYT.TonThatKyThuatReport
             lbTT.Text = "DN Tổn Thất (kWh): " +dttram.Rows[0]["DNTT"] + "";
             lbHSN.Text = "HSN: " + dttram.Rows[0]["HSN"] + "";
             TongKHang.Text = "Tổng khách hàng: " +dtKhang.Rows.Count + "";
-            
+
             Detail.Report.DataSource = dtKhang;
 
             khSTT.DataBindings.Add("Text", DataSource, "STT");
