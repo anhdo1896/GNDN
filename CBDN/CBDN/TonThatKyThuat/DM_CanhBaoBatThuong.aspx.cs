@@ -1,26 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using DevExpress.Web;
-using Entity;
 using SystemManageService;
-using System.Web.UI;
+using DevExpress.Web.ASPxTreeList;
+using Entity;
 using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Net;
 using System.Data;
-using MTCSYT;
+using DevExpress.Web;
 using System.IO;
-using System.Web.UI.HtmlControls;
-
-namespace CBDN.TonThatKyThuat
+using CBDN.Class;
+namespace MTCSYT
 {
-    public partial class DM_TTKinhDoanh : BasePage
+    //sCAP_DDIEN
+    //sLoaiSoDoCapDien
+    //DCS, LM,DT,NR
+    public partial class DM_CanhBaoBatThuong : BasePage
     {
         DataAccess.clTTTT db = new DataAccess.clTTTT();
-        // CBDN.DB_CBDNDataContext db = new CBDN.DB_CBDNDataContext(new CBDN.ADOController().strcn());
+        private const string funcid = "61";
         private SYS_Right rightOfUser = null;
-        private const string funcid = "57";
         protected void Page_Load(object sender, EventArgs e)
         {
-            #region PhanQuyen
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             if (session == null || session.User.USERNAME == "Guest")
             {
@@ -28,36 +31,13 @@ namespace CBDN.TonThatKyThuat
             }
             else
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
 
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
             }
             Session["SYS_Session"] = session;
-            #endregion
+          
             _DataBind();
 
-
         }
-
         private void _DataBind()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -65,7 +45,6 @@ namespace CBDN.TonThatKyThuat
             grdDVT.DataSource = dt;
             grdDVT.DataBind();
         }
-
         protected void grdDVT_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
         {
             if (e.Column.Caption == "STT")
@@ -73,8 +52,6 @@ namespace CBDN.TonThatKyThuat
                 e.DisplayText = (e.VisibleRowIndex + 1).ToString();
             }
         }
-
-
 
         private bool CheckName(string Name)
         {
@@ -86,20 +63,11 @@ namespace CBDN.TonThatKyThuat
                 return false;
             return true;
         }
-
-        protected void grdDVT_CellEditorInitialize(object sender, ASPxGridViewEditorEventArgs e)
-        {
-            e.Column.ToString();
-            if (e.Column.FieldName == "MaChiNhanh")
-                e.Editor.Focus();
-        }
-
         protected void btnThem_Click(object sender, EventArgs e)
         {
             pcAddRoles.ShowOnPageLoad = true;
             Session["Add"] = 1;
         }
-
         protected void grdDVT_StartRowEditing(object sender, DevExpress.Web.Data.ASPxStartRowEditingEventArgs e)
         {
             (sender as ASPxGridView).GetRowValuesByKeyValue(e.EditingKeyValue);
@@ -137,12 +105,6 @@ namespace CBDN.TonThatKyThuat
         {
             pcAddRoles.ShowOnPageLoad = false;
         }
-
-        protected void cmbPhongBan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _DataBind();
-        }
-
         protected void grdDVT_HtmlCommandCellPrepared(object sender, ASPxGridViewTableCommandCellEventArgs e)
         {
 
@@ -167,7 +129,7 @@ namespace CBDN.TonThatKyThuat
                 e.Cancel = true;
             }
         }
-      
+
         protected void btnSua_Click(object sender, EventArgs e)
         {
             pcAddRoles.ShowOnPageLoad = true;

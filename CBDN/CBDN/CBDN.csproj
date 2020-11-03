@@ -7305,6 +7305,8 @@
     <Content Include="TonThatCMIS\TT_DzTrungAp.aspx" />
     <Content Include="TonThatCMIS\TT_KH_DAThap.aspx" />
     <Content Include="TonThatCMIS\TT_TBA.aspx" />
+    <Content Include="TonThatKyThuat\DM_CanhBaoBatThuong.aspx" />
+    <Content Include="TonThatKyThuat\CauHinhTonThat.aspx" />
     <Content Include="TonThatKyThuat\BaoCaoTTKD.aspx" />
     <Content Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx" />
     <Content Include="TonThatKyThuat\DanhSachTramUuTien.aspx" />
@@ -7974,6 +7976,20 @@
     </Compile>
     <Compile Include="TonThatKyThuatReport\InBienTTKD.Designer.cs">
       <DependentUpon>InBienTTKD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DM_CanhBaoBatThuong.aspx.cs">
+      <DependentUpon>DM_CanhBaoBatThuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DM_CanhBaoBatThuong.aspx.designer.cs">
+      <DependentUpon>DM_CanhBaoBatThuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\CauHinhTonThat.aspx.cs">
+      <DependentUpon>CauHinhTonThat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\CauHinhTonThat.aspx.designer.cs">
+      <DependentUpon>CauHinhTonThat.aspx</DependentUpon>
     </Compile>
     <Compile Include="TonThatKyThuat\BaoCaoTTKD.aspx.cs">
       <DependentUpon>BaoCaoTTKD.aspx</DependentUpon>

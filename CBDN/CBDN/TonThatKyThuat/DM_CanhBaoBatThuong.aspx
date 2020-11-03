@@ -1,41 +1,36 @@
-﻿<%@ Page Title="Quản lý file Cad" Language="C#" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master" AutoEventWireup="true"
-    CodeBehind="DM_TTKinhDoanh.aspx.cs" Inherits="CBDN.TonThatKyThuat.DM_TTKinhDoanh"
-    Culture="auto" UICulture="auto" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master" AutoEventWireup="true"
+    CodeBehind="DM_CanhBaoBatThuong.aspx.cs" Inherits="MTCSYT.DM_CanhBaoBatThuong" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dx" %>
 
+<%@ Register Assembly="DevExpress.XtraReports.v17.1.Web, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx1" %>
 
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script type="text/javascript">
-        function CheckValie(s, e) {
-            if (e.value == null)
-                return;
-        }
-    </script>
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Danh Mục Cảnh Báo
-        </h4>
+        <h4 class="page-title">Tính toán so sánh tổn thất</h4>
     </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
             <li><a href="../Default.aspx">Trang chủ</a></li>
-            <li><a href="bc_GiaoNhan2Chieu.aspx">Tổn thất online </a></li>
-            <li><a href="DM_TTKinhDoanh.aspx">Báo cáo tổn thất kinh doanh</</a></li>
+            <li><a href="bc_GiaoNhan2Chieu.aspx">Tổn thất kỹ thuật</a></li>
+            <li><a href="bc_GiaoNhan2Chieu.aspx">Danh mục cảnh báo và đề xuất</a></li>
         </ol>
     </div>
+
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Category" runat="server">
+    <link href="../CSS/cssCircle.css" rel="stylesheet">
     <div class="col-md-12">
         <div class="white-box">
-            <h1 class="m-b-0 box-title">Danh Mục Cảnh Báo</h1>
+            <h1 class="m-b-0 box-title">Danh mục cảnh báo và đề xuất</h1>
             <div class="col-lg-12 m-t-30">
                 <hr />
             </div>
-
-            <table width="100%">
+                <table width="100%">
 
                 <tr>
                     <td colspan="4">
@@ -146,4 +141,5 @@
 
         </div>
     </div>
+
 </asp:Content>
