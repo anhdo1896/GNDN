@@ -71,10 +71,10 @@ namespace CBDN.TonThatKyThuat
         {
            
         }
+        
 
 
 
-       
 
         protected void grdDVT_CellEditorInitialize(object sender, ASPxGridViewEditorEventArgs e)
         {
@@ -146,7 +146,16 @@ namespace CBDN.TonThatKyThuat
             }
         }
 
+        protected void btnSua_Click(object sender, EventArgs e)
+        {
+            pcAddRoles.ShowOnPageLoad = true;
+            Session["Add"] = 0;
+            SYS_Session session = (SYS_Session)Session["SYS_Session"];
+            var qtCT = (DataRowView)grdDVT.GetRow(grdDVT.FocusedRowIndex);
+            txtMA_DVIQLY.Text = qtCT["MA_CANHBAO"] + "";
+            txtTYLETT.Text = qtCT["TT_CANHBAO"] + "";
+            txtMA_DVIQLY.Enabled = false;
+        }
 
-      
     }
 }

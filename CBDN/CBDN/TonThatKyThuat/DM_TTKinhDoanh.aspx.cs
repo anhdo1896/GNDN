@@ -28,28 +28,7 @@ namespace CBDN.TonThatKyThuat
             }
             else
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
 
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
             }
             Session["SYS_Session"] = session;
             #endregion
@@ -76,21 +55,12 @@ namespace CBDN.TonThatKyThuat
 
 
 
-        private bool CheckName(string Name)
-        {
-            SYS_Session session = (SYS_Session)Session["SYS_Session"];
 
-            var dt = db.SELECT_CHECK_TTTT_DM_TTKD(Name);
-
-            if (dt.Rows.Count > 0)
-                return false;
-            return true;
-        }
 
         protected void grdDVT_CellEditorInitialize(object sender, ASPxGridViewEditorEventArgs e)
         {
             e.Column.ToString();
-            if (e.Column.FieldName == "MaChiNhanh")
+            if (e.Column.FieldName == "MA_CANHBAO")
                 e.Editor.Focus();
         }
 
@@ -117,6 +87,7 @@ namespace CBDN.TonThatKyThuat
         {
             DM_DVQLYService dm_dviSer = new DM_DVQLYService();
             SYS_Session session = (SYS_Session)Session["SYS_Session"];
+
 
             if (Session["Add"] + "" == "0")
             {
@@ -167,14 +138,6 @@ namespace CBDN.TonThatKyThuat
                 e.Cancel = true;
             }
         }
-        protected void OnLinkInit(object sender, EventArgs e)
-        {
-            SYS_Session session = (SYS_Session)Session["SYS_Session"];
-            HtmlAnchor anc = sender as HtmlAnchor;
-            GridViewDataItemTemplateContainer container = anc.NamingContainer as GridViewDataItemTemplateContainer;
-            anc.InnerText = container.Grid.GetRowValues(container.VisibleIndex, "DIACHI").ToString();
-            anc.Attributes["href"] = "LuuTruFileCAD" + "/" + session.User.ma_dviqlyDN + "/" + anc.InnerText;
-        }
 
         protected void btnSua_Click(object sender, EventArgs e)
         {
@@ -188,4 +151,5 @@ namespace CBDN.TonThatKyThuat
             txtMA_CANHBAO.Enabled = false;
         }
     }
+    
 }

@@ -28,7 +28,7 @@ namespace CBDN.TonThatKyThuatReport
                 var tb1 = tbsl1 - tbsl2;
                 var tb2 = tbsl2 - tbsl3;
                 var tb3 = tbsl1 - tbsl3;
-                //CH - Cháy hỏng
+                //H - Cháy hỏng
                 if (sanluong <=2 && sanluong_1 > 10 && sanluong_2 > 10)
                 {
                     if ((dtKhang.Rows[i]["CANH_BAO"] + "") != "")
@@ -39,7 +39,7 @@ namespace CBDN.TonThatKyThuatReport
                     {
                         dtKhang.Rows[i]["CANH_BAO"] = "Có thể " + "Cháy hỏng công tơ";
                     }
-                    dtKhang.Rows[i]["MA_TTCTO"] = "CH";
+                    dtKhang.Rows[i]["MA_TTCTO"] = "H";
                     dtKhang.Rows[i]["DX_CANH_BAO"] = "Kiểm tra và thay thế công tơ";
                   //GD - Ghi đè    
                 }   
@@ -53,14 +53,14 @@ namespace CBDN.TonThatKyThuatReport
                 {
                     if (tb1 > 30)
                     {
-                        //ST2 - Sản lượng tăng bất thường 2 tháng
+                        //T2 - Sản lượng tăng bất thường 2 tháng
                         if (Math.Abs(tb2) > 30 && Math.Abs(tb3) < 30 || Math.Abs(tb2) < 30 && Math.Abs(tb3) > 30)
                         {
                             dtKhang.Rows[i]["MA_TTCTO"] = "T2";
                             dtKhang.Rows[i]["CANH_BAO"] = "Sản lượng tăng bất thường trong 2 tháng";
                             dtKhang.Rows[i]["DX_CANH_BAO"] = "Kiểm tra lại công tơ";
                         }
-                        //ST3 - Sản lượng tăng bất thường trong 3 tháng
+                        //T3 - Sản lượng tăng bất thường trong 3 tháng
                         else if (Math.Abs(tb2) > 30 && Math.Abs(tb3) > 30)
                         {
                             dtKhang.Rows[i]["MA_TTCTO"] = "T3";

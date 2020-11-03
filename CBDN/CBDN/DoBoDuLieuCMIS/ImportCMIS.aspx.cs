@@ -156,10 +156,11 @@ namespace MTCSYT.GCS_ONLINE
             dsData.Columns.Add("Nhan_Bieu2_Cuoi");
             dsData.Columns.Add("Giao_Bieu3_Cuoi");
             dsData.Columns.Add("Nhan_Bieu3_Cuoi");
-            #endregion
+                #endregion
 
+               
 
-            DataTable dsdiemdo = new DataTable();
+                DataTable dsdiemdo = new DataTable();
             dsdiemdo.Columns.Add("MaDiemDo");
             int b = dtData.Rows.Count;
             int d = 0;
@@ -221,16 +222,24 @@ namespace MTCSYT.GCS_ONLINE
                 string thang = "";
                 string nam = "";
                 string madiemdo = "";
-                for (int j = 0; j < a1; j++)
+                    if (DateTime.Now.Month == 1)
+                    {
+                        thang = "12";
+                        nam = DateTime.Now.Year - 1 +"";
+                    }
+                    else
+                    {
+                        thang = DateTime.Now.Month - 1 + "";
+                        nam = DateTime.Now.Year +"";
+                    }
+                    for (int j = 0; j < a1; j++)
                 {
                     madiemdo = dtData.Rows[j]["MaDiemDo"] + "";
                     string bcs = dtData.Rows[j]["BoChiSo"] + "";
                     if (madiemdo == checkdiemdo)
                     {
                         madiemdo = dtData.Rows[j]["MaDiemDo"] + "";
-                        string ngay = dtData.Rows[j]["NgayDauKy"] + "";
-                        thang = ngay.Substring(3, 2);
-                        nam = ngay.Substring(6, 4); 
+                        
                         var checkhong = dtData.Rows[j]["TinhTrang"] + "";
                             if (checkhong != "H")
                             {
