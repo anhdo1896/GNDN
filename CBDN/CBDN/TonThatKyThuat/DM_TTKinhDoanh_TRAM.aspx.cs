@@ -53,7 +53,12 @@ namespace CBDN.TonThatKyThuat
             }
             Session["SYS_Session"] = session;
             #endregion
-            _DataBind();
+            if (!IsPostBack)
+            {
+                TyLEBT();
+            }
+
+                _DataBind();
 
 
         }
@@ -65,8 +70,27 @@ namespace CBDN.TonThatKyThuat
             var dt = db.SELECT_CHECK_TTTT_TTKD_TLTTTRAM(madvi);
             grdDVT.DataSource = dt;
             grdDVT.DataBind();
+
+
+              
         }
 
+        private void TyLEBT()
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string madvi = session.User.ma_dviqlyDN;
+            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi);
+            int t = kh.Rows.Count;
+            if (t != 0)
+            {
+                string tlbt = kh.Rows[0]["PT_BT"] + "";
+                txtTyLeBT.Text = tlbt;
+            }
+            else
+            {
+                txtTyLeBT.Text = "";
+            }
+        }
         protected void grdDVT_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
         {
            
@@ -85,7 +109,8 @@ namespace CBDN.TonThatKyThuat
 
         protected void btnThem_Click(object sender, EventArgs e)
         {
-
+            SYS_Session session = (SYS_Session)Session["SYS_Session"];
+            txtMA_DVIQLY.Text = session.User.ma_dviqlyDN;
             pcAddRoles.ShowOnPageLoad = true;
         }
 
@@ -106,7 +131,9 @@ namespace CBDN.TonThatKyThuat
         {
             DM_DVQLYService dm_dviSer = new DM_DVQLYService();
             SYS_Session session = (SYS_Session)Session["SYS_Session"];
-                db.INSERT_TTTT_TTKD_TLTTTRAM(txtMA_DVIQLY.Text, float.Parse(txtTYLETT.Text+""));
+            string tyle = txtTYLETT.Text;
+            float tl = float.Parse(tyle.ToString().Replace(".", ","));
+                db.INSERT_TTTT_TTKD_TLTTTRAM(txtMA_DVIQLY.Text, tl);
             pcAddRoles.ShowOnPageLoad = false;
             _DataBind();
         }
@@ -131,8 +158,8 @@ namespace CBDN.TonThatKyThuat
             {
                 SYS_Session session = (SYS_Session)Session["SYS_Session"];
                 var HoatDong = (DataRowView)grdDVT.GetRow(grdDVT.FocusedRowIndex);
-
-                db.DELETE_CHECK_TTTT_DM_TTKD(HoatDong["ID"] + "");
+                int id = int.Parse(HoatDong["ID"] + "");
+                db.DELETE_CHECK_TTTT_TTKD_TLTTTRAM(id);
 
 
                 _DataBind();
@@ -152,10 +179,32 @@ namespace CBDN.TonThatKyThuat
             Session["Add"] = 0;
             SYS_Session session = (SYS_Session)Session["SYS_Session"];
             var qtCT = (DataRowView)grdDVT.GetRow(grdDVT.FocusedRowIndex);
-            txtMA_DVIQLY.Text = qtCT["MA_CANHBAO"] + "";
-            txtTYLETT.Text = qtCT["TT_CANHBAO"] + "";
+            txtMA_DVIQLY.Text = qtCT["MA_DVIQLY"] + "";
+            txtTYLETT.Text = qtCT["TYLETT"] + "";
             txtMA_DVIQLY.Enabled = false;
         }
 
+        protected void TextboxA_TextChanged(object sender, EventArgs e)
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string madvi = session.User.ma_dviqlyDN;
+            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi);
+            int t = kh.Rows.Count;
+            string btstr = txtTyLeBT.Text + "";
+            if (btstr != "")
+            {
+                float bt = float.Parse(btstr);
+
+                if (t == 0)
+                {
+                    db.INSERT_TTTT_PT_BT_KHANG(madvi, bt);
+                }
+                else
+                {
+                    db.UPDATE_TTTT_PT_BT_KHANG(madvi, bt);
+                }
+            }
+
+        }
     }
 }

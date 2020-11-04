@@ -39,15 +39,16 @@ namespace MTCSYT
                 loadDSNgay();
                 laodDVCapCha();
                 LoadDataDV();
-                _DataBind();
+                LoadTyLeTT();
+                TyLEBT();
 
             }
-
-            laodDVCapCha();
-            LoadDataDV();
-            _DataBind();
-            InBienBanTonThat();
-
+            else
+            {
+                
+                _DataBind();
+                InBienBanTonThat();
+            }
         }
         private void _DataBind()
         {
@@ -59,11 +60,31 @@ namespace MTCSYT
                 cmbNam.Value = DateTime.Now.Year;
             }
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            cmbMaTram.DataSource = db.SELECT_TRAM_HATHE(cmMaDvi.Value + "");
+            float tt = float.Parse(cmtltt.Value + "");
+            int Thang = int.Parse(cmbThang.Value + "");
+            int Nam = int.Parse(cmbNam.Value + "");
+            var dt =  db.SELECT_TRAM_HATHE_CTT(cmMaDvi.Value + "", tt, Thang, Nam);
+            cmbMaTram.DataSource = dt;
             cmbMaTram.ValueField = "MA_TRAM";
             cmbMaTram.TextField = "STRTEN";
             cmbMaTram.DataBind();
 
+        }
+        private void TyLEBT()
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string madvi = session.User.ma_dviqlyDN;
+            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi);
+            int t = kh.Rows.Count;
+            if (t != 0)
+            {
+                string tlbt = kh.Rows[0]["PT_BT"] + "";
+                txtTyLeBT.Text = tlbt;
+            }
+            else
+            {
+                txtTyLeBT.Text = "30";
+            }
         }
 
         private void InBienBanTonThat()
@@ -81,10 +102,17 @@ namespace MTCSYT
             string Ma_dvi = cmMaDvi.Value + "";
 
             string Matram = cmbMaTram.Value + "";
-
+            float tylebt = float.Parse(txtTyLeBT.Text + "");
             dttram = db.SELECT_THONGTIN_TRAM_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
             dtKhang = db.SELECT_THONGTIN_KHANG_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
-            dtKhangD = DuyetKH.DCB_TKD(dtKhang);
+            if (int.Parse(rdTinhToan.Value + "") == 0)
+            {
+                dtKhangD = DuyetKH.DCB_TKD(dtKhang, tylebt,0);
+            }
+            else
+            {
+                dtKhangD = DuyetKH.DCB_TKD(dtKhang, tylebt, 1);
+            }
             if (dtKhang.Rows.Count ==0 || dttram.Rows.Count == 0)
             {
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Trạm không có dữ liệu theo điều kiện chọn.');", true);
@@ -164,6 +192,20 @@ namespace MTCSYT
             }
 
 
+        }
+        //Load tỷ lệ tổn thất của trạm
+        private void LoadTyLeTT()
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string madvi = session.User.ma_dviqlyDN;
+            var dt = db.SELECT_CHECK_TTTT_TTKD_TLTTTRAM(madvi);
+            if (dt != null)
+            {
+                cmtltt.DataSource = dt;
+                cmtltt.ValueField = "TYLETT";
+                cmtltt.TextField = "TYLETT";
+                cmtltt.DataBind();
+            }
         }
         protected void grdGiao_Callback(object sender, EventArgs e)
         {

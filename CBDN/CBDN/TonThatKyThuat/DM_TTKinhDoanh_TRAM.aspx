@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Danh Mục Tỷ Lệ Tổn Thất" Language="C#" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master" AutoEventWireup="true"
+﻿<%@ Page Title="Cấu Hình Tổn Thất" Language="C#" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master" AutoEventWireup="true"
     CodeBehind="DM_TTKinhDoanh_TRAM.aspx.cs" Inherits="CBDN.TonThatKyThuat.DM_TTKinhDoanh_TRAM" 
     Culture="auto" UICulture="auto"%>
 
@@ -16,8 +16,7 @@
         }
     </script>
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Quản lý file CAD
-        </h4>
+        <h4 class="page-title">Cấu Hình Tổn Thất</h4>
     </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
@@ -30,7 +29,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="Category" runat="server">
          <div class="col-md-12">
         <div class="white-box">
-            <h1 class="m-b-0 box-title">Danh Mục Cảnh Báo</h1>
+            <h1 class="m-b-0 box-title">Cấu Hình Tổn Thất
             <div class="col-lg-12 m-t-30">
                 <hr />
             </div>
@@ -40,13 +39,15 @@
                         <tr>
                             <td colspan="3">
                                 <div class="content">
-                                      <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdDVT" Caption="Danh mục Cảnh Báo"
+                                      <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="60%" ID="grdDVT" Caption="Danh mục Cảnh Báo"
                                 KeyFieldName="TYLETT" OnHtmlCommandCellPrepared="grdDVT_HtmlCommandCellPrepared"
                                 OnRowDeleting="grdDVT_RowDeleting"
                                 OnCellEditorInitialize="grdDVT_CellEditorInitialize1" OnCustomColumnDisplayText="grdDVT_CustomColumnDisplayText"
                                 OnStartRowEditing="grdDVT_StartRowEditing" ClientIDMode="AutoID" Theme="Aqua">
                                 <Columns>
-                                     <dx:GridViewDataTextColumn Caption="ID" FieldName="ID" VisibleIndex="1">
+                                     <dx:GridViewCommandColumn ShowDeleteButton="True" VisibleIndex="0">
+                                     </dx:GridViewCommandColumn>
+                                     <dx:GridViewDataTextColumn Caption="ID" FieldName="ID" VisibleIndex="1" Visible="False">
                                     </dx:GridViewDataTextColumn>
                                     <dx:GridViewDataTextColumn Caption="Mã đơn vị" FieldName="MA_DVIQLY" VisibleIndex="2">
                                     </dx:GridViewDataTextColumn>
@@ -68,23 +69,51 @@
                             </td>
                         </tr>
                         <tr>
-                            <td align="left" width="130px" valign="top">
-                                <span style="float: Left; padding-top: 2px; margin-left: 5px;">
+                               <td>
                                     <dx:ASPxButton ID="btnThem" runat="server" Text="Thêm mới" Height="22px" Width="120px"
                                         OnClick="btnThem_Click" ClientIDMode="AutoID" Theme="Aqua">
                                     </dx:ASPxButton>
-                                </span>
-                            </td>
-                            
-                            <td align="left" valign="top">
+                                     </span>
 									<dx:ASPxButton ID="btnSua" runat="server" Text="Sửa" Height="22px" Width="120px"
 									ClientIDMode="AutoID" Theme="Aqua" OnClick="btnSua_Click">
-                        </dx:ASPxButton>
-                    </td>
+                                    </dx:ASPxButton>
+
+                                     
+                                </td>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
                         </tr>
+                         <tr>
+                    <td>
+                        <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Cấu hình so sánh" Theme="Aqua">
+                            <PanelCollection>
+                                <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
+                                    <table class="tbl_Write">
+                                        <tr>
+                                            <td>
+                                                <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Cấu hình % bất thường sản lượng khách hàng" Width="200px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            <td colspan="3">
+                                                
+
+                                                <dx:ASPxTextBox ID="txtTyLeBT" runat="server" Width="170px" OnTextChanged="TextboxA_TextChanged" autopostback="True">
+                                                </dx:ASPxTextBox>
+
+                                            </td>
+                                        </tr>
+                                       
+                                    </table>
+                                </dx:PanelContent>
+                            </PanelCollection>
+                        </dx:ASPxRoundPanel>
+                    </td>
+                </tr>
                     </table>
                     <dx:ASPxPopupControl ID="pcAddRoles" runat="server" ClientInstanceName="pcAddRoles"
-                        CloseAction="CloseButton" HeaderText="Cập nhật bản vẽ CAD" PopupHorizontalAlign="WindowCenter"
+                        CloseAction="CloseButton" HeaderText="Cấu Hình Tổn Thất" PopupHorizontalAlign="WindowCenter"
                         PopupVerticalAlign="WindowCenter" ShowCloseButton="true" Width="400px" Modal="True"
                         ClientIDMode="AutoID" Theme="Aqua">
                         <ContentCollection>
@@ -96,8 +125,7 @@
                                     </dx:ASPxLabel>
                                 </td>
                                 <td>
-                                    <dx:ASPxTextBox ID="txtMA_DVIQLY" runat="server" Width="220px">
-                                    </dx:ASPxTextBox>
+                                    <asp:Label ID="txtMA_DVIQLY" runat="server" Text="Mã Đơn vị: " />
                                 </td>
                             </tr>
                             <tr>
@@ -111,6 +139,17 @@
                                 </td>
          
                             </tr>
+        
+                                    <tr>
+                                        <td>
+                                            <dx:ASPxButton ID="btnCapNhat" runat="server" OnClick="btnCapNhat_Click" Text="Cập nhật" Theme="Aqua" Width="150px">
+                                            </dx:ASPxButton>
+                                        </td>
+                                        <td>
+                                            <dx:ASPxButton ID="btnDong" runat="server" OnClick="btnDong_Click" Text="Đóng" Theme="Aqua" Width="150px">
+                                            </dx:ASPxButton>
+                                        </td>
+                                    </tr>
                         </table>
                     </dx:PopupControlContentControl>
                         </ContentCollection>

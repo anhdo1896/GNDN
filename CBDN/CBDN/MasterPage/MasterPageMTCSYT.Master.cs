@@ -124,9 +124,8 @@ namespace QLY_VTTB.MasterPage
                                 <li> <a href='../TonThatKyThuat/DsTramUuTien.aspx'>* Danh sách Tổn thất trạm ưu tiên</a></li>
                                 <li> <a href='../TonThatKyThuat/dmKhachHangLuuY.aspx'>* Danh Sách Khách Hàng Lưu Ý</a></li>
                                 <li> <a href='../TonThatKyThuat/KiemTraCot_CAD.aspx'>* Kiểm tra cột đã nhập dữ liệu</a></li>
-                                <li> <a href='../TonThatKyThuat/DM_TTKinhDoanh_TRAM.aspx'>* Danh Mục Tổn Thất Trạm</a></li>   
                                 <li> <a href='../TonThatKyThuat/BaoCaoTTKD.aspx'>* Báo cáo tổn thất kinh doanh</a></li>
-                                <li> <a href='../TonThatKyThuat/CauHinhTonThat.aspx'>* Đặt cấu hình tổn thất</a></li>
+                                <li> <a href='../TonThatKyThuat/DM_TTKinhDoanh_TRAM.aspx'>* Đặt cấu hình tổn thất</a></li>
                                 <li> <a href='../TonThatKyThuat/DM_CanhBaoBatThuong.aspx'>* Danh mục cảnh báo và đề xuất</a></li>
                                                       
                             </ul>

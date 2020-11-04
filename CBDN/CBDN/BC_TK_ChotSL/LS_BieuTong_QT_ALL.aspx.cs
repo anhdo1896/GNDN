@@ -48,27 +48,122 @@ namespace MTCSYT
         private void loadTTKy()
         {
             if (cmbPhuongThuc.Value == null || cmbPhuongThuc.Value + "" == "0")
-                return;
-
-            var ttKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "")).OrderBy(x => x.ChucVu);
-            foreach (var ky in ttKy)
             {
-                var user = db.DM_USERs.SingleOrDefault(x => x.IDUSER == ky.NguoiTao);
-                if (ky.ChucVu == 1)
+
+                if (lbTP1.Text == "")
                 {
-                    lbNhanVienKy.Text = "Nhân viên xác nhận: " + user.USERNAME + "_" + user.HOTEN + " thời gian xác nhận: " + ky.NgayTao;
+                    imgAnhKyTP1.Visible = false;
                 }
-                else if (ky.ChucVu == 2)
+                if (lbTP2.Text == "")
                 {
-                    lbTP.Text = "Trưởng phòng xác nhận: " + user.USERNAME + "_" + user.HOTEN + " thời gian xác nhận: " + ky.NgayTao + "</br>";
+                    imgAnhKyTP2.Visible = false;
                 }
-                else if (ky.ChucVu == 3)
+                if (lbGiamDocKy.Text == "")
                 {
-                    lbGiamDocKy.Text = "Giám đốc xác nhận: " + user.USERNAME + "_" + user.HOTEN + " thời gian xác nhận: " + ky.NgayTao + "</br>";
+                    imgAnhKyGD.Visible = false;
                 }
+                if (lbGiamDocKy2.Text == "")
+                {
+                    imgAnhKyGD2.Visible = false;
+
+                }
+                return;
             }
 
+            if (lbTP1.Text == "")
+            {
+                imgAnhKyTP1.Visible = true;
+            }
+            if (lbTP2.Text == "")
+            {
+                imgAnhKyTP2.Visible = true;
+            }
+            if (lbGiamDocKy.Text == "")
+            {
+                imgAnhKyGD.Visible = true;
+            }
+            if (lbGiamDocKy2.Text == "")
+            {
+                imgAnhKyGD2.Visible = true;
+            }
+            lbNhanVienKy.Text = "";
+            lbTP1.Text = "";
+            lbTP2.Text = "";
+            lbGiamDocKy.Text = "";
+            lbGiamDocKy2.Text = "";
+            var ttKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null).OrderBy(x => x.ChucVu);
+            foreach (var ky in ttKy)
+            {
 
+                var user = db.DM_USERs.SingleOrDefault(x => x.IDUSER == ky.NguoiTao);
+                if (user != null)
+                {
+
+                    if (ky.ChucVu == 1)
+                    {
+                        if (user.CHUCDANH == null) user.CHUCDANH = "Nhân Viên";
+                        lbNhanVienKy.Text = user.CHUCDANH + "&nbsp;" + "xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao);
+
+                    }
+                    else if (ky.ChucVu == 2)
+                    {
+                        if (lbTP1.Text == "")
+                        {
+                            if (user.CHUCDANH == null) user.CHUCDANH = "Trưởng Phòng";
+                            lbTP1.Text = user.CHUCDANH + "&nbsp;" + "đã xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao) + "</br>";
+
+                        }
+                        else
+                        {
+                            if (user.CHUCDANH == null) user.CHUCDANH = "Trưởng Phòng";
+                            lbTP2.Text = user.CHUCDANH + "&nbsp;" + "đã xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao) + "</br>";
+                            if (lbTP2.Text == lbTP1.Text)
+                            {
+                                lbTP2.Text = "";
+                            }
+                        }
+
+                    }
+                    else if (ky.ChucVu == 3)
+                    {
+                        if (lbGiamDocKy.Text == "")
+                        {
+                            if (user.CHUCDANH == null) user.CHUCDANH = "Giám Đốc";
+                            lbGiamDocKy.Text = user.CHUCDANH + "&nbsp;" + " đã xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao) + "</br>";
+
+                        }
+                        else
+                        {
+                            if (user.CHUCDANH == null) user.CHUCDANH = "Giám Đốc";
+                            lbGiamDocKy2.Text = user.CHUCDANH + "&nbsp;" + " đã xác nhận: " + user.HOTEN + "&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" + "Thời gian xác nhận: " + String.Format("{0:dd-MM-yyyy HH:mm:ss}", ky.NgayTao) + "</br>";
+
+                            if (lbGiamDocKy.Text == lbGiamDocKy2.Text)
+                            {
+                                lbGiamDocKy2.Text = "";
+                            }
+
+                        }
+                    }
+
+                }
+
+            }
+            if (lbTP1.Text == "")
+            {
+                imgAnhKyTP1.Visible = false;
+            }
+            if (lbTP2.Text == "")
+            {
+                imgAnhKyTP2.Visible = false;
+            }
+            if (lbGiamDocKy.Text == "")
+            {
+                imgAnhKyGD.Visible = false;
+            }
+            if (lbGiamDocKy2.Text == "")
+            {
+                imgAnhKyGD2.Visible = false;
+            }
 
         }
         private void InTongHopDienNang()
@@ -86,8 +181,8 @@ namespace MTCSYT
 
             string strTPGiao = "", strTPNhan = "", strGDNhan = "", strGDGiao = "";
           
-            var imGDGiao = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == cn.DiemDauNguon && x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.ChucVu == 3);
-            var imGDNhan = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == cn.DiemCuoiNguon && x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.ChucVu == 3);
+            var imGDGiao = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == cn.DiemDauNguon && x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.ChucVu == 3 && x.TrangThai == null);
+            var imGDNhan = db.HD_ThongTinKies.SingleOrDefault(x => x.IDMaDViQLy == cn.DiemCuoiNguon && x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.ChucVu == 3 && x.TrangThai == null);
 
             if (imGDGiao != null)
             {

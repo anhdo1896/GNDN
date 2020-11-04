@@ -69,6 +69,19 @@
 
                                             </td>
                                         </tr>
+                                         <tr>
+                                            <td>
+                                                <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="Tỷ lệ tổn thất trạm" Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            <td colspan="3">
+                                                <dx:ASPxComboBox ID="cmtltt" IncrementalFilteringMode="Contains"
+                                                    runat="server" SelectedIndex="0" Width="480px" Theme="Aqua" AutoPostBack="True">
+                                                </dx:ASPxComboBox>
+
+                                            </td>
+                                            
+                                        </tr>
                                         <tr>
                                             <td>
                                                 <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Mã trạm" Width="100px">
@@ -126,6 +139,24 @@
 
                                             </td>
 
+                                        </tr>
+                                        <tr>
+                                             <td>
+                                                <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="Phần Trăm Tỷ Lệ Bất Thường" Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                             <td>
+                                                <dx:ASPxLabel ID="txtTyLeBT" runat="server"  Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            <td colspan="2" >
+                                                  <dx:ASPxRadioButtonList ID="rdTinhToan" runat="server" SelectedIndex="0" RepeatDirection="Horizontal" TextWrap="False" Width="350px" >
+                                                      <Items>
+                                                          <dx:ListEditItem Text="Tất Cả Khách Hàng" Value="0" Selected="True" />
+                                                          <dx:ListEditItem Text="Chỉ Khách Hàng Bất Thường" Value="1" />
+                                                      </Items>
+                                                  </dx:ASPxRadioButtonList>
+                                              </td>
                                         </tr>
 
                                         <tr>
