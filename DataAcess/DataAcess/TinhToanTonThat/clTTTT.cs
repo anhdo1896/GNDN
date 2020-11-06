@@ -1889,7 +1889,7 @@ namespace DataAccess
             }
             return dt;
         }
-        public DataTable SELECT_THONGTIN_TRAM_BCKD(string pMA_DVIQLY, string pMATRAM, int pTHANG, int pNAM)
+        public DataTable SELECT_THONGTIN_TRAM_BCKD(string pMA_DVIQLY, string pMATRAM, int pTHANG, int pNAM, int pTHANG1, int pNAM1, int pTHANG2, int pNAM2, int pTHANG3, int pNAM3)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
@@ -1904,6 +1904,12 @@ namespace DataAccess
                 objCmd.Parameters.Add("pMATRAM", OracleType.VarChar).Value = pMATRAM;
                 objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = pTHANG;
                 objCmd.Parameters.Add("pNAM", OracleType.Number).Value = pNAM;
+                objCmd.Parameters.Add("pTHANG1", OracleType.Number).Value = pTHANG1;
+                objCmd.Parameters.Add("pNAM1", OracleType.Number).Value = pNAM1;
+                objCmd.Parameters.Add("pTHANG2", OracleType.Number).Value = pTHANG2;
+                objCmd.Parameters.Add("pNAM2", OracleType.Number).Value = pNAM2;
+                objCmd.Parameters.Add("pTHANG3", OracleType.Number).Value = pTHANG3;
+                objCmd.Parameters.Add("pNAM3", OracleType.Number).Value = pNAM3;
                 objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
                 OracleDataReader objReader = objCmd.ExecuteReader();
                 dt.Load(objReader);
@@ -2215,7 +2221,7 @@ namespace DataAccess
             }
             return dt;
         }
-        public DataTable SELECT_TTTT_PT_BT_KHANG(string pMA_DVIQLY)
+        public DataTable SELECT_TTTT_PT_BT_KHANG(string pMA_DVIQLY, int pLoai)
         {
             DataTable dt = new DataTable(); OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
             OracleCommand objCmd = new OracleCommand();
@@ -2226,6 +2232,7 @@ namespace DataAccess
                 objCmd.CommandText = "PKG_TTTT_CTT.SELECT_TTTT_PT_BT_KHANG";
                 objCmd.CommandType = CommandType.StoredProcedure;
                 objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pLOAI", OracleType.Number).Value = pLoai;
                 objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
                 OracleDataReader objReader = objCmd.ExecuteReader();
                 dt.Load(objReader);
@@ -2247,7 +2254,7 @@ namespace DataAccess
             return dt;
 
         }
-        public void INSERT_TTTT_PT_BT_KHANG(string pMA_DVIQLY, float pPT_BT)
+        public void INSERT_TTTT_PT_BT_KHANG(string pMA_DVIQLY, float pPT_BT, int pLoai)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
@@ -2260,6 +2267,7 @@ namespace DataAccess
                 objCmd.CommandType = CommandType.StoredProcedure;
                 objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
                 objCmd.Parameters.Add("pPT_BT", OracleType.Number).Value = pPT_BT;
+                objCmd.Parameters.Add("pLOAI", OracleType.Number).Value = pLoai;
                 OracleDataReader objReader = objCmd.ExecuteReader();
             }
             catch (Exception ex)
@@ -2273,7 +2281,7 @@ namespace DataAccess
                 objCmd = null;
             }
         }
-        public void UPDATE_TTTT_PT_BT_KHANG(string pMA_DVIQLY, float pPT_BT)
+        public void UPDATE_TTTT_PT_BT_KHANG(string pMA_DVIQLY, float pPT_BT, int pLoai)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
@@ -2286,6 +2294,7 @@ namespace DataAccess
                 objCmd.CommandType = CommandType.StoredProcedure;
                 objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
                 objCmd.Parameters.Add("pPT_BT", OracleType.Number).Value = pPT_BT;
+                objCmd.Parameters.Add("pLOAI", OracleType.Number).Value = pLoai;
                 OracleDataReader objReader = objCmd.ExecuteReader();
             }
             catch (Exception ex)
@@ -2299,5 +2308,229 @@ namespace DataAccess
                 objCmd = null;
             }
         }
+        public DataTable SELECT_THONGTIN_TRAM_TLTT(string pMA_DVIQLY, int pTHANG, int pNAM, int pTHANG1, int pNAM1, int pTHANG2, int pNAM2, int pTHANG3, int pNAM3, float pTyLeSS)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_THONGTIN_TRAM_TLTT";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = pTHANG;
+                objCmd.Parameters.Add("pNAM", OracleType.Number).Value = pNAM;
+                objCmd.Parameters.Add("pTHANG1", OracleType.Number).Value = pTHANG1;
+                objCmd.Parameters.Add("pNAM1", OracleType.Number).Value = pNAM1;
+                objCmd.Parameters.Add("pTHANG2", OracleType.Number).Value = pTHANG2;
+                objCmd.Parameters.Add("pNAM2", OracleType.Number).Value = pNAM2;
+                objCmd.Parameters.Add("pTHANG3", OracleType.Number).Value = pTHANG3;
+                objCmd.Parameters.Add("pNAM3", OracleType.Number).Value = pNAM3;
+                objCmd.Parameters.Add("pTyLeSS", OracleType.Number).Value = pTyLeSS;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+        }
+
+        public void INSERT_TBDD_PT_CHISO_KH(string pMA_DVIQLY, string pMATRAM, string pMAKHACHHANG, string pMA_NN, string pTENKHACHHANG, string pDIACHI, string pMA_TTCTO, string pCANH_BAO, string pDX_CANH_BAO, string pMA_CLOAI, string pSO_CTO, string pSAN_LUONG, string pSLUONG_1, string pSLUONG_2, string pSLUONG_3, string pSOHO, string pHANKD)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT.INSERT_TTTT_SLGNUT_CHUKY";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pMATRAM", OracleType.VarChar).Value = pMATRAM;
+                objCmd.Parameters.Add("pMAKHACHHANG", OracleType.VarChar).Value = pMAKHACHHANG;
+                objCmd.Parameters.Add("pMA_NN", OracleType.VarChar).Value = pMA_NN;
+                objCmd.Parameters.Add("pTENKHACHHANG", OracleType.VarChar).Value = pTENKHACHHANG;
+                objCmd.Parameters.Add("pDIACHI", OracleType.VarChar).Value = pDIACHI;
+                objCmd.Parameters.Add("pMA_TTCTO", OracleType.VarChar).Value = pMA_TTCTO;
+                objCmd.Parameters.Add("pCANH_BAO", OracleType.VarChar).Value = pCANH_BAO;
+                objCmd.Parameters.Add("pDX_CANH_BAO", OracleType.VarChar).Value = pDX_CANH_BAO;
+                objCmd.Parameters.Add("pMA_CLOAI", OracleType.VarChar).Value = pMA_CLOAI;
+                objCmd.Parameters.Add("pSO_CTO", OracleType.VarChar).Value = pSO_CTO;
+                objCmd.Parameters.Add("pSAN_LUONG", OracleType.VarChar).Value = pSAN_LUONG;
+                objCmd.Parameters.Add("pSLUONG_1", OracleType.VarChar).Value = pSLUONG_1;
+                objCmd.Parameters.Add("pSLUONG_2", OracleType.VarChar).Value = pSLUONG_2;
+                objCmd.Parameters.Add("pSLUONG_3", OracleType.VarChar).Value = pSLUONG_3;
+                objCmd.Parameters.Add("pSLUONG_2", OracleType.VarChar).Value = pSLUONG_2;
+                objCmd.Parameters.Add("pSLUONG_3", OracleType.VarChar).Value = pSLUONG_3;
+                objCmd.Parameters.Add("pSOHO", OracleType.VarChar).Value = pSOHO;
+                objCmd.Parameters.Add("pHANKD", OracleType.VarChar).Value = pHANKD;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+        }
+
+        public void Insert_Khang_PhucTra(DataTable dsTem, int thang, int nam, string Ma_dvi)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+
+                objCmd.CommandText = "PKG_TTTT_CTT.INSERT_TBDD_PHUCTRA_CS_TEM";
+                objCmd.CommandType = CommandType.StoredProcedure;
+
+                for (int i = 0; i < dsTem.Rows.Count; i++)
+                {
+                    dt = check_INSERT_TBDD_PT_CHISO_KH(Ma_dvi, dsTem.Rows[i]["SO_CTO"] + "", "DDK" , "0A", 0, thang, nam);
+                    if (dt.Rows.Count == 0)
+                    {
+                        objCmd.Parameters.Clear();
+
+                        objCmd.Parameters.Add("pDIA_CHI", OracleType.VarChar).Value = dsTem.Rows[i]["DIACHI"] + "";
+
+                        objCmd.Parameters.Add("pMA_CTO", OracleType.VarChar).Value = dsTem.Rows[i]["SO_CTO"] + "";
+                        objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = Ma_dvi;
+
+                        objCmd.Parameters.Add("pMA_KHANG", OracleType.VarChar).Value = dsTem.Rows[i]["MAKHACHHANG"] + "";
+                        if (dsTem.Columns.Contains("MA_NN"))
+                            objCmd.Parameters.Add("pMA_NN", OracleType.VarChar).Value = dsTem.Rows[i]["MA_NN"] + "";
+                        else
+                            objCmd.Parameters.Add("pMA_NN", OracleType.VarChar).Value = "";
+
+                        objCmd.Parameters.Add("pMA_TRAM", OracleType.VarChar).Value = "" + dsTem.Rows[i]["MATRAM"];
+                        objCmd.Parameters.Add("pNAM", OracleType.Number).Value = nam;
+
+                        // objCmd.Parameters.Add("pSAN_LUONG", OracleType.Number).Value = decimal.Parse("0" + dsTem.Rows[i]["SAN_LUONG"]);
+
+                        objCmd.Parameters.Add("pSO_HO", OracleType.Number).Value = decimal.Parse("0" + dsTem.Rows[i]["SOHO"]);
+                        objCmd.Parameters.Add("pTEN_KHANG", OracleType.VarChar).Value = "" + dsTem.Rows[i]["TENKHACHHANG"];
+                        objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = thang;
+                        objCmd.Parameters.Add("pTTR_MOI", OracleType.VarChar).Value = dsTem.Rows[i]["MA_TTCTO"] + "";
+
+                        objCmd.Parameters.Add("pSLUONG_1", OracleType.Number).Value = decimal.Parse("0" + dsTem.Rows[i]["SLUONG_1"]);
+                        objCmd.Parameters.Add("pSLUONG_2", OracleType.Number).Value = decimal.Parse("0" + dsTem.Rows[i]["SLUONG_2"]);
+                        objCmd.Parameters.Add("pSLUONG_3", OracleType.Number).Value = decimal.Parse("0" + dsTem.Rows[i]["SLUONG_3"]);
+
+
+                        objCmd.Parameters.Add("pBOCSO_ID", OracleType.Number).Value = decimal.Parse("0");
+                        if (dsTem.Columns.Contains("CHUOI_GIA"))
+                            objCmd.Parameters.Add("pCHUOI_GIA", OracleType.VarChar).Value = "";
+                        else
+                            objCmd.Parameters.Add("pCHUOI_GIA", OracleType.VarChar).Value = "";
+                        objCmd.Parameters.Add("pCS_CU", OracleType.Number).Value = decimal.Parse("0");
+                        objCmd.Parameters.Add("pCS_MOI", OracleType.Number).Value = decimal.Parse("0");
+                        objCmd.Parameters.Add("pHSN", OracleType.Number).Value = decimal.Parse("0");
+                        objCmd.Parameters.Add("pKIMUA_CSPK", OracleType.Number).Value = decimal.Parse("0");
+                        objCmd.Parameters.Add("pKY", OracleType.Number).Value = int.Parse("0");
+                        objCmd.Parameters.Add("pLOAI_BCS", OracleType.VarChar).Value = "0A";
+                        objCmd.Parameters.Add("pLOAI_CS", OracleType.VarChar).Value = "0A";
+                        objCmd.Parameters.Add("pMA_COT", OracleType.VarChar).Value = "";
+                        objCmd.Parameters.Add("pMA_DDO", OracleType.VarChar).Value = "000A";
+                        objCmd.Parameters.Add("pMA_GC", OracleType.VarChar).Value = "";
+                        objCmd.Parameters.Add("pMA_NVGCS", OracleType.VarChar).Value = "";
+                        objCmd.Parameters.Add("pMA_QUYEN", OracleType.VarChar).Value = "00A";
+                        objCmd.Parameters.Add("pNGAY_CU", OracleType.DateTime).Value = DateTime.Parse("1000-01-01");
+                        objCmd.Parameters.Add("pNGAY_MOI", OracleType.DateTime).Value = DateTime.Parse("1000-01-01");
+                        objCmd.Parameters.Add("pNGUOI_GCS", OracleType.VarChar).Value = "";
+                        objCmd.Parameters.Add("pSERY_CTO", OracleType.VarChar).Value = "000A";
+                        objCmd.Parameters.Add("pSL_MOI", OracleType.Number).Value = decimal.Parse("0");
+                        objCmd.Parameters.Add("pSL_CU", OracleType.Number).Value = decimal.Parse("0");
+                        objCmd.Parameters.Add("pSL_THAO", OracleType.Number).Value = decimal.Parse("0");
+                        objCmd.Parameters.Add("pSL_TTIEP", OracleType.Number).Value = decimal.Parse("0");
+
+                        if (dsTem.Columns.Contains("TTR_CU"))
+                            objCmd.Parameters.Add("pTTR_CU", OracleType.VarChar).Value = "";
+                        else
+                            objCmd.Parameters.Add("pTTR_CU", OracleType.VarChar).Value = "";
+
+                        if (dsTem.Columns.Contains("SO_HOM"))
+                            objCmd.Parameters.Add("pSO_HOM", OracleType.VarChar).Value = "";
+                        else
+                            objCmd.Parameters.Add("pSO_HOM", OracleType.VarChar).Value = "";
+                        objCmd.Parameters.Add("pTENFILE", OracleType.VarChar).Value = "";
+                        OracleDataReader objReader = objCmd.ExecuteReader();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+
+        }
+        public DataTable check_INSERT_TBDD_PT_CHISO_KH(string Ma_dvi, string MA_CTO, string LOAI_CS, string LOAI_BCS, int ky, int thang, int nam)
+        {
+            DataTable dt = new DataTable(); OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.check_INSERT_TBDD_PT_CHISO_KH";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = Ma_dvi;
+                objCmd.Parameters.Add("pMA_CTO", OracleType.VarChar).Value = MA_CTO;
+                objCmd.Parameters.Add("pLOAI_CS", OracleType.VarChar).Value = LOAI_CS;
+                objCmd.Parameters.Add("pLOAI_BCS", OracleType.VarChar).Value = LOAI_BCS;
+                objCmd.Parameters.Add("pKY", OracleType.Number).Value = ky;
+                objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = thang;
+                objCmd.Parameters.Add("pNAM", OracleType.Number).Value = nam;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+
+
+        }
+
+
     }
 }

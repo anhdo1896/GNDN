@@ -127,6 +127,7 @@ namespace QLY_VTTB.MasterPage
                                 <li> <a href='../TonThatKyThuat/BaoCaoTTKD.aspx'>* Báo cáo tổn thất kinh doanh</a></li>
                                 <li> <a href='../TonThatKyThuat/DM_TTKinhDoanh_TRAM.aspx'>* Đặt cấu hình tổn thất</a></li>
                                 <li> <a href='../TonThatKyThuat/DM_CanhBaoBatThuong.aspx'>* Danh mục cảnh báo và đề xuất</a></li>
+                                <li> <a href='../TonThatKyThuat/DanhSachTTKDTram.aspx'>* Danh sách TTKD Trạm</a></li>
                                                       
                             </ul>
                         </li>

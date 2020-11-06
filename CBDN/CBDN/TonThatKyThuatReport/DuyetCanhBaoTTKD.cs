@@ -9,9 +9,9 @@ namespace CBDN.TonThatKyThuatReport
 {
     public class DuyetCanhBaoTTKD 
     {
-            public DataTable DCB_TKD(DataTable dtKhang, float tylebt, int t)
+            public DataTable DCB_TKD(DataTable dtKhang, float tylebt, int t,int thang,int nam,string Ma_dvi,string Matram)
         {
-            CBDN.DB_CBDNDataContext db = new CBDN.DB_CBDNDataContext(new CBDN.ADOController().strcn());
+            DataAccess.clTTTT db = new DataAccess.clTTTT();
             int a = dtKhang.Rows.Count;
             for(int i = 0; i<a; i++)
             {
@@ -78,6 +78,7 @@ namespace CBDN.TonThatKyThuatReport
 
                     }
                 }
+                
                 if (tb1 < 0)
                 {
                     if (Math.Abs(tb1) > tylebt)
@@ -102,11 +103,27 @@ namespace CBDN.TonThatKyThuatReport
                         }
                     }
                 }
-            }
 
-            if (t != 0)
+            }
+            //Insert vào DB
+            /*for (int j = 0; i < a; j++)
             {
-                DataTable dt = new DataTable();
+                string check = dtKhang.Rows[i]["MA_TTCTO"] + "";
+                if (check != "")
+                {
+                    db.INSERT_TBDD_PT_CHISO_KH(dtKhang.Rows[i]["MA_DVIQLY"]+"", dtKhang.Rows[i]["MATRAM"] + "", dtKhang.Rows[i]["MAKHACHHANG"] + "", dtKhang.Rows[i]["MA_NN"] + "",
+                    dtKhang.Rows[i]["TENKHACHHANG"] + "", dtKhang.Rows[i]["DIACHI"] + "", dtKhang.Rows[i]["MA_TTCTO"] + "", dtKhang.Rows[i]["CANH_BAO"] + "",
+                    dtKhang.Rows[i]["DX_CANH_BAO"] + "", dtKhang.Rows[i]["MA_CLOAI"] + "",
+                    dtKhang.Rows[i]["SO_CTO"] + "", dtKhang.Rows[i]["SAN_LUONG"] + "", dtKhang.Rows[i]["SLUONG_1"] + "", dtKhang.Rows[i]["SLUONG_2"] + "",
+                    dtKhang.Rows[i]["SLUONG_3"] + "", dtKhang.Rows[i]["SOHO"] + "", dtKhang.Rows[i]["HANKD"] + "");
+
+                }
+            }
+            */
+
+
+
+            DataTable dt = new DataTable();
                 dt.Columns.Add("MA_DVIQLY");
                 dt.Columns.Add("MATRAM");
                 dt.Columns.Add("MAKHACHHANG");
@@ -139,11 +156,14 @@ namespace CBDN.TonThatKyThuatReport
                         j++;
                     }    
                 }
+                if(dt.Rows.Count != 0)
+            {
+                db.Insert_Khang_PhucTra(dt, thang, nam, Ma_dvi);
+            }    
 
-
+            if (t != 0)
+            {
                 return dt;
-
-
             }
             return dtKhang;
         }

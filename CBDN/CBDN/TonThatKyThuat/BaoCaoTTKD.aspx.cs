@@ -74,7 +74,7 @@ namespace MTCSYT
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             string madvi = session.User.ma_dviqlyDN;
-            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi);
+            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi,0);
             int t = kh.Rows.Count;
             if (t != 0)
             {
@@ -86,7 +86,7 @@ namespace MTCSYT
                 txtTyLeBT.Text = "30";
             }
         }
-
+     
         private void InBienBanTonThat()
         {
             if (cmbMaTram.Value == null) return;
@@ -95,23 +95,31 @@ namespace MTCSYT
             DataAccess.clTTTT db = new DataAccess.clTTTT();
 
             CBDN.TonThatKyThuatReport.DuyetCanhBaoTTKD DuyetKH = new CBDN.TonThatKyThuatReport.DuyetCanhBaoTTKD();
-
+            
             DataTable dttram = new DataTable();
             DataTable dtKhang = new DataTable();
             DataTable dtKhangD = new DataTable();
+            int thang = 0, thang1 = 0, thang2 = 0, thang3 = 0, nam = 0, nam1 = 0, nam2 = 0, nam3 = 0;
             string Ma_dvi = cmMaDvi.Value + "";
 
             string Matram = cmbMaTram.Value + "";
+            thang = int.Parse(cmbThang.Value + "");
+            nam = int.Parse(cmbNam.Value + "");
+            if (thang == 1) { thang1 = 12; thang2 = 11; thang3 = 10; nam1 = nam - 1; nam2 = nam - 1; nam3 = nam - 1; }
+            else if (thang == 2) { thang1 = 1; thang2 = 12; thang3 = 11; nam1 = nam; nam2 = nam - 1; nam3 = nam - 1; }
+            else if (thang == 3) { thang1 = 2; thang2 = 1; thang3 = 12; nam1 = nam; nam2 = nam; nam3 = nam - 1; }
+            else { thang1 = thang - 1; thang2 = thang - 2; thang3 = thang - 3; nam1 = nam; nam2 = nam; nam3 = nam; }
+
             float tylebt = float.Parse(txtTyLeBT.Text + "");
-            dttram = db.SELECT_THONGTIN_TRAM_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
-            dtKhang = db.SELECT_THONGTIN_KHANG_BCKD(Ma_dvi, Matram, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
+            dttram = db.SELECT_THONGTIN_TRAM_BCKD(Ma_dvi, Matram, thang, nam, thang1, nam1, thang2, nam2, thang3, nam3);
+            dtKhang = db.SELECT_THONGTIN_KHANG_BCKD(Ma_dvi, Matram, thang, nam);
             if (int.Parse(rdTinhToan.Value + "") == 0)
             {
-                dtKhangD = DuyetKH.DCB_TKD(dtKhang, tylebt,0);
+                dtKhangD = DuyetKH.DCB_TKD(dtKhang, tylebt,0, thang, nam, Ma_dvi, Matram);
             }
             else
             {
-                dtKhangD = DuyetKH.DCB_TKD(dtKhang, tylebt, 1);
+                dtKhangD = DuyetKH.DCB_TKD(dtKhang, tylebt, 1, thang, nam, Ma_dvi, Matram);
             }
             if (dtKhang.Rows.Count ==0 || dttram.Rows.Count == 0)
             {

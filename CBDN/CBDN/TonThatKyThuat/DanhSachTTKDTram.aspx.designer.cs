@@ -11,35 +11,8 @@ namespace CBDN.TonThatKyThuat
 {
 
 
-    public partial class DM_TTKinhDoanh_TRAM
+    public partial class DanhSachTTKDTram
     {
-
-        /// <summary>
-        /// grdDVT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView grdDVT;
-
-        /// <summary>
-        /// btnThem control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnThem;
-
-        /// <summary>
-        /// btnSua control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnSua;
 
         /// <summary>
         /// ASPxRoundPanel1 control.
@@ -60,22 +33,13 @@ namespace CBDN.TonThatKyThuat
         protected global::DevExpress.Web.ASPxLabel ASPxLabel5;
 
         /// <summary>
-        /// txtTyLeBT control.
+        /// MaDienLuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox txtTyLeBT;
-
-        /// <summary>
-        /// ASPxRoundPanel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxRoundPanel ASPxRoundPanel2;
+        protected global::DevExpress.Web.ASPxComboBox MaDienLuc;
 
         /// <summary>
         /// ASPxLabel2 control.
@@ -87,84 +51,120 @@ namespace CBDN.TonThatKyThuat
         protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
 
         /// <summary>
-        /// txtTyLeBTram control.
+        /// cmMaDvi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox txtTyLeBTram;
+        protected global::DevExpress.Web.ASPxComboBox cmMaDvi;
 
         /// <summary>
-        /// pcAddRoles control.
+        /// ASPxLabel6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl pcAddRoles;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel6;
 
         /// <summary>
-        /// PopupControlContentControl1 control.
+        /// cmtltt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl1;
+        protected global::DevExpress.Web.ASPxComboBox cmtltt;
 
         /// <summary>
-        /// madvqly control.
+        /// ASPxLabel3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel madvqly;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
 
         /// <summary>
-        /// txtMA_DVIQLY control.
+        /// cmbThang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtMA_DVIQLY;
+        protected global::DevExpress.Web.ASPxComboBox cmbThang;
 
         /// <summary>
-        /// ASPxLabel1 control.
+        /// ASPxLabel4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel4;
 
         /// <summary>
-        /// txtTYLETT control.
+        /// cmbNam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox txtTYLETT;
+        protected global::DevExpress.Web.ASPxComboBox cmbNam;
 
         /// <summary>
-        /// btnCapNhat control.
+        /// ASPxLabel7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnCapNhat;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel7;
 
         /// <summary>
-        /// btnDong control.
+        /// txtTyLeBT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnDong;
+        protected global::DevExpress.Web.ASPxLabel txtTyLeBT;
+
+        /// <summary>
+        /// rdTinhToan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxRadioButtonList rdTinhToan;
+
+        /// <summary>
+        /// btnLoc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnLoc;
+
+        /// <summary>
+        /// grdKH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView grdKH;
+
+        /// <summary>
+        /// btnXemChiTiet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnXemChiTiet;
     }
 }

@@ -7316,6 +7316,7 @@
     <Content Include="TonThatKyThuat\dmKhachHang_CT.aspx" />
     <Content Include="TonThatKyThuat\ChiTietPhuTai.aspx" />
     <Content Include="TonThatKyThuat\DM_TTKinhDoanh_TRAM.aspx" />
+    <Content Include="TonThatKyThuat\DanhSachTTKDTram.aspx" />
     <Content Include="TonThatKyThuat\DsTramUuTien.aspx" />
     <Content Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx" />
     <Content Include="TonThatKyThuat\KiemTraCot_CAD.aspx" />
@@ -7965,6 +7966,7 @@
     <Compile Include="TonThatCMIS\TT_TBA.aspx.designer.cs">
       <DependentUpon>TT_TBA.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TonThatKyThuatReport\DuyetTTTramTB.cs" />
     <Compile Include="TonThatKyThuatReport\DuyetCanhBaoTTKD.cs" />
     <Compile Include="TonThatKyThuatReport\InBienBanQT.cs">
       <SubType>Component</SubType>
@@ -8047,6 +8049,13 @@
     </Compile>
     <Compile Include="TonThatKyThuat\DM_TTKinhDoanh_TRAM.aspx.designer.cs">
       <DependentUpon>DM_TTKinhDoanh_TRAM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DanhSachTTKDTram.aspx.cs">
+      <DependentUpon>DanhSachTTKDTram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DanhSachTTKDTram.aspx.designer.cs">
+      <DependentUpon>DanhSachTTKDTram.aspx</DependentUpon>
     </Compile>
     <Compile Include="TonThatKyThuat\DsTramUuTien.aspx.cs">
       <DependentUpon>DsTramUuTien.aspx</DependentUpon>
@@ -9328,7 +9337,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report\InBienBanGiaoNhan.resx">
       <DependentUpon>InBienBanGiaoNhan.cs</DependentUpon>
     </EmbeddedResource>

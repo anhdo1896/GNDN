@@ -39,7 +39,7 @@
                         <tr>
                             <td colspan="3">
                                 <div class="content">
-                                      <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="60%" ID="grdDVT" Caption="Danh mục Cảnh Báo"
+                                      <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="60%" ID="grdDVT" Caption="Cấu Hình Báo Cáo TTKD"
                                 KeyFieldName="TYLETT" OnHtmlCommandCellPrepared="grdDVT_HtmlCommandCellPrepared"
                                 OnRowDeleting="grdDVT_RowDeleting"
                                 OnCellEditorInitialize="grdDVT_CellEditorInitialize1" OnCustomColumnDisplayText="grdDVT_CustomColumnDisplayText"
@@ -87,7 +87,7 @@
                         </tr>
                          <tr>
                     <td>
-                        <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Cấu hình so sánh" Theme="Aqua">
+                        <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Cấu Hình Báo Cáo TTKD" Theme="Aqua">
                             <PanelCollection>
                                 <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
                                     <table class="tbl_Write">
@@ -103,6 +103,32 @@
                                                 </dx:ASPxTextBox>
 
                                             </td>
+
+                                        </tr>
+                                       
+                                    </table>
+                                </dx:PanelContent>
+                            </PanelCollection>
+                        </dx:ASPxRoundPanel>
+                    </td>
+                              <td>
+                        <dx:ASPxRoundPanel ID="ASPxRoundPanel2" runat="server" HeaderText="Cấu Hình TTKD Trạm" Theme="Aqua">
+                            <PanelCollection>
+                                <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
+                                    <table class="tbl_Write">
+                                        <tr>
+                                            <td>
+                                                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Cấu hình tỷ lệ tổn thất bất thường Trạm" Width="200px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            <td colspan="3">
+                                                
+
+                                                <dx:ASPxTextBox ID="txtTyLeBTram" runat="server" Width="170px" OnTextChanged="TextboxB_TextChanged" autopostback="True">
+                                                </dx:ASPxTextBox>
+
+                                            </td>
+
                                         </tr>
                                        
                                     </table>

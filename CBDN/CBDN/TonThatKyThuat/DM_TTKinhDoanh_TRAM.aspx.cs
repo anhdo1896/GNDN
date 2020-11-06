@@ -56,6 +56,7 @@ namespace CBDN.TonThatKyThuat
             if (!IsPostBack)
             {
                 TyLEBT();
+                TyLEBTram();
             }
 
                 _DataBind();
@@ -69,17 +70,14 @@ namespace CBDN.TonThatKyThuat
             string madvi = session.User.ma_dviqlyDN;
             var dt = db.SELECT_CHECK_TTTT_TTKD_TLTTTRAM(madvi);
             grdDVT.DataSource = dt;
-            grdDVT.DataBind();
-
-
-              
+            grdDVT.DataBind();    
         }
 
         private void TyLEBT()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             string madvi = session.User.ma_dviqlyDN;
-            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi);
+            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi,0);
             int t = kh.Rows.Count;
             if (t != 0)
             {
@@ -89,6 +87,22 @@ namespace CBDN.TonThatKyThuat
             else
             {
                 txtTyLeBT.Text = "";
+            }
+        }
+        private void TyLEBTram()
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string madvi = session.User.ma_dviqlyDN;
+            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi, 1);
+            int t = kh.Rows.Count;
+            if (t != 0)
+            {
+                string tlbt = kh.Rows[0]["PT_BT"] + "";
+                txtTyLeBTram.Text = tlbt;
+            }
+            else
+            {
+                txtTyLeBTram.Text = "";
             }
         }
         protected void grdDVT_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
@@ -188,7 +202,7 @@ namespace CBDN.TonThatKyThuat
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             string madvi = session.User.ma_dviqlyDN;
-            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi);
+            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi,0);
             int t = kh.Rows.Count;
             string btstr = txtTyLeBT.Text + "";
             if (btstr != "")
@@ -197,11 +211,33 @@ namespace CBDN.TonThatKyThuat
 
                 if (t == 0)
                 {
-                    db.INSERT_TTTT_PT_BT_KHANG(madvi, bt);
+                    db.INSERT_TTTT_PT_BT_KHANG(madvi, bt,0);
                 }
                 else
                 {
-                    db.UPDATE_TTTT_PT_BT_KHANG(madvi, bt);
+                    db.UPDATE_TTTT_PT_BT_KHANG(madvi, bt,0);
+                }
+            }
+
+        }
+        protected void TextboxB_TextChanged(object sender, EventArgs e)
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string madvi = session.User.ma_dviqlyDN;
+            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi, 1);
+            int t = kh.Rows.Count;
+            string btstr = txtTyLeBTram.Text + "";
+            if (btstr != "")
+            {
+                float bt = float.Parse(btstr);
+
+                if (t == 0)
+                {
+                    db.INSERT_TTTT_PT_BT_KHANG(madvi, bt, 1);
+                }
+                else
+                {
+                    db.UPDATE_TTTT_PT_BT_KHANG(madvi, bt, 1);
                 }
             }
 
