@@ -56,23 +56,30 @@ namespace CBDN.TonThatKyThuat
             {
                 loadDSNgay();
                 laodDVCapCha();
-                LoadDataDV();
+                
                 TyLEBTTram();
                 LoadTyLeTT();
             }
-            loadTram();
+            else
+            {
+                LoadDataDV();
+                loadTram();
+            }
         }
         private void LoadTyLeTT()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             string madvi = session.User.ma_dviqlyDN;
-            var dt = db.SELECT_CHECK_TTTT_TTKD_TLTTTRAM(madvi);
-            if (dt != null)
+            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi, 2);
+            int t = kh.Rows.Count;
+            if (t != 0)
             {
-                cmtltt.DataSource = dt;
-                cmtltt.ValueField = "TYLETT";
-                cmtltt.TextField = "TYLETT";
-                cmtltt.DataBind();
+                string tlbt = kh.Rows[0]["PT_BT"] + "";
+                TLTT_Tram.Text = tlbt;
+            }
+            else
+            {
+                TLTT_Tram.Text = "0";
             }
         }
         private void TyLEBTTram()
@@ -100,7 +107,7 @@ namespace CBDN.TonThatKyThuat
             float tylebt = float.Parse(txtTyLeBT.Text + "");
             float pTyLeSS = 0;
             string Ma_dvi = cmMaDvi.Value + "";
-            pTyLeSS = float.Parse(cmtltt.Value + "");
+            pTyLeSS = float.Parse(TLTT_Tram.Value + "");
             thang = int.Parse(cmbThang.Value + "");
             nam = int.Parse(cmbNam.Value + "");
             if (thang == 1) { thang1 = 12; thang2 = 11; thang3 = 10; nam1 = nam - 1; nam2 = nam - 1; nam3 = nam - 1; }
@@ -130,7 +137,7 @@ namespace CBDN.TonThatKyThuat
             float tylebt = float.Parse(txtTyLeBT.Text + "");
             float pTyLeSS = 0;
             string Ma_dvi = cmMaDvi.Value + "";
-            pTyLeSS = float.Parse(cmtltt.Value + "");
+            pTyLeSS = float.Parse(TLTT_Tram.Value + "");
                 thang = int.Parse(cmbThang.Value + "");
                 nam = int.Parse(cmbNam.Value + "");
                 if (thang == 1) { thang1 = 12; thang2 = 11; thang3 = 10; nam1 = nam - 1; nam2 = nam - 1; nam3 = nam - 1; }
@@ -221,8 +228,17 @@ namespace CBDN.TonThatKyThuat
             var cv = (DataRowView)grdKH.GetRow(grdKH.FocusedRowIndex);
             if (cv != null)
             {
+
                 string ma_tram = cv["MA_TRAM"] + "";
-                Response.Redirect("../TonThatKyThuat/dmKhachHang.aspx?MA_TRAM=" + ma_tram); 
+                string ma_tramtext = cv["TEN_TRAM"] + "";
+                string ma_dl = MaDienLuc.Value + "";
+                string ma_dltxt = MaDienLuc.Text + "";
+                string ma_dv = cmMaDvi.Value + "";
+                string ma_dvtxt = cmMaDvi.Text + "";
+                string thang = cmbThang.Value + "";
+                string nam = cmbNam.Value + "";
+                Response.Redirect("../TonThatKyThuat/rq_BaoCaoTTKD.aspx?MATRAM_V=" + ma_tram + "&MATRAM_T=" + ma_tramtext + "&MADL_V=" + ma_dl + "&MADL_T=" + ma_dltxt +
+                   "&MADV_V=" + ma_dv + "&MADV_T=" + ma_dvtxt + "&THANG=" + thang + "&NAM=" + nam); 
             }
             loadTram();
         }

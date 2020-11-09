@@ -60,24 +60,6 @@ namespace CBDN.TonThatKyThuat
         protected global::DevExpress.Web.ASPxComboBox cmMaDvi;
 
         /// <summary>
-        /// ASPxLabel6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel6;
-
-        /// <summary>
-        /// cmtltt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox cmtltt;
-
-        /// <summary>
         /// ASPxLabel3 control.
         /// </summary>
         /// <remarks>
@@ -139,6 +121,24 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxRadioButtonList rdTinhToan;
+
+        /// <summary>
+        /// ASPxLabel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
+
+        /// <summary>
+        /// TLTT_Tram control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel TLTT_Tram;
 
         /// <summary>
         /// btnLoc control.

@@ -17,7 +17,7 @@ namespace MTCSYT
     //sCAP_DDIEN
     //sLoaiSoDoCapDien
     //DCS, LM,DT,NR
-    public partial class BaoCaoTTKD : BasePage
+    public partial class rq_BaoCaoTTKD : BasePage
     {
         DataAccess.clTTTT db = new DataAccess.clTTTT();
         private const string funcid = "61";
@@ -40,33 +40,28 @@ namespace MTCSYT
                 loadDSNgay();
                 LoadTyLeTT();
                 TyLEBT();
+                LoadDataDV();
+                _DataBind();
+                InBienBanTonThat();
 
             }
             else
             {
                
-                LoadDataDV();
-                _DataBind();
-                InBienBanTonThat();
+               
             }
         }
         private void _DataBind()
         {
-            if (cmbThang.Value == null && cmbNam.Value == null)
-            {
+            List<DM_DS> List = new List<DM_DS>();
+            DM_DS Dvi = new DM_DS();
 
-                int thang = DateTime.Now.Month - 1;
-                cmbThang.Value = thang;
-                cmbNam.Value = DateTime.Now.Year;
-            }
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            float tt = float.Parse(TLTT_Tram.Text + "");
-            int Thang = int.Parse(cmbThang.Value + "");
-            int Nam = int.Parse(cmbNam.Value + "");
-            var dt =  db.SELECT_TRAM_HATHE_CTT(cmMaDvi.Value + "", tt, Thang, Nam);
-            cmbMaTram.DataSource = dt;
-            cmbMaTram.ValueField = "MA_TRAM";
-            cmbMaTram.TextField = "STRTEN";
+            Dvi.MA_DVIQLY = Request["MATRAM_V"] + "";
+            Dvi.NAME_DVIQLY = Request["MATRAM_T"] + "";
+            List.Add(Dvi);
+            cmbMaTram.DataSource = List;
+            cmbMaTram.TextField = "NAME_DVIQLY";
+            cmbMaTram.ValueField = "MA_DVIQLY";
             cmbMaTram.DataBind();
 
         }
@@ -142,64 +137,39 @@ namespace MTCSYT
         }
         private void loadDSNgay()
         {
-            if (DateTime.Now.Month == 1)
-            {
-                cmbThang.Value = 12;
-                cmbNam.Value = DateTime.Now.Year - 1;
-            }
-            else
-            {
-                cmbThang.Value = DateTime.Now.Month - 1;
-                cmbNam.Value = DateTime.Now.Year;
-            }
+            
+                cmbThang.Value = Request["THANG"] + "";
+            cmbNam.Value = Request["NAM"] + "";
         }
         private void laodDVCapCha()
         {
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            if (session.User.ma_dviqly == "2")
-            {
-                DM_DVQLYService dm_dviSer = new DM_DVQLYService();
+            List<DM_DS> List = new List<DM_DS>();
+            DM_DS Dvi = new DM_DS();
 
-                var lst_dmdv = dm_dviSer.SelectAllDM_DVQLY();
+            Dvi.MA_DVIQLY = Request["MADL_V"] + "";
+            Dvi.NAME_DVIQLY = Request["MADL_T"] + "";
+            List.Add(Dvi);
 
-                MaDienLuc.DataSource = lst_dmdv;
-                MaDienLuc.ValueField = "IDMA_DVIQLY";
-                MaDienLuc.TextField = "TEN_DVIQLY";
+            MaDienLuc.DataSource = List;
+            MaDienLuc.TextField = "NAME_DVIQLY";
+            MaDienLuc.ValueField = "MA_DVIQLY";
                 MaDienLuc.DataBind();
-            }
-            else
-            {
-                DM_DVQLYService dm_dviSer = new DM_DVQLYService();
-                var donvi = dm_dviSer.SelectDM_DVQLY(int.Parse(session.User.ma_dviqly));
-                List<DM_DS> List = new List<DM_DS>();
-                DM_DS Dvi = new DM_DS();
-
-                Dvi.MA_DVIQLY = session.User.ma_dviqly;
-                Dvi.NAME_DVIQLY = donvi.NAME_DVIQLY.Split('-')[1].ToString().ToUpper(); ;
-                List.Add(Dvi);
-
-                MaDienLuc.DataSource = List;
-                MaDienLuc.TextField = "NAME_DVIQLY";
-                MaDienLuc.ValueField = "MA_DVIQLY";
-                MaDienLuc.DataBind();
-            }
 
         }
         private void LoadDataDV()
         {
+            List<DM_DS> List = new List<DM_DS>();
+            DM_DS Dvi = new DM_DS();
 
-            if (MaDienLuc.Value + "" != "")
-            {
-                DM_DVQLYService dm_dviSer = new DM_DVQLYService();
-                //  DataTable lst_dmdv = new DataTable();
-                var lst_dmdv = dm_dviSer.SelectAll_DVI_ByChild(int.Parse(MaDienLuc.Value + ""));
-                cmMaDvi.DataSource = lst_dmdv;
-                cmMaDvi.ValueField = "MA_DVIQLY";
-                cmMaDvi.TextField = "NAME_DVIQLY";
+            Dvi.MA_DVIQLY = Request["MADV_V"] + "";
+            Dvi.NAME_DVIQLY = Request["MADV_T"] + "";
+            List.Add(Dvi);
+
+            cmMaDvi.DataSource = List;
+            cmMaDvi.TextField = "NAME_DVIQLY";
+            cmMaDvi.ValueField = "MA_DVIQLY";
                 cmMaDvi.DataBind();
-            }
-
-
+ 
         }
         //Load tỷ lệ tổn thất của trạm
         private void LoadTyLeTT()

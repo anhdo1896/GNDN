@@ -1,51 +1,47 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DanhSachTTKDTram.aspx.cs" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master"
-    Inherits="CBDN.TonThatKyThuat.DanhSachTTKDTram" %>
-
-<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web" TagPrefix="dxe" %>
-<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web" TagPrefix="dxwgv" %>
-<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web" TagPrefix="dxcp" %>
-<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web" TagPrefix="dxp" %>
-<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web" TagPrefix="dxrp" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master" AutoEventWireup="true"
+    CodeBehind="    .aspx.cs" Inherits="MTCSYT.rq_BaoCaoTTKD" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dx" %>
 
 
+
+
+
+
+
+
+<%@ Register Assembly="DevExpress.XtraReports.v17.1.Web, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx1" %>
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title"> Danh Sách Trạm Ưu Tiên
-        </h4>
+
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h4 class="page-title">Tính toán so sánh tổn thất</h4>
     </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
             <li><a href="../Default.aspx">Trang chủ</a></li>
-            <li><a href="bc_GiaoNhan2Chieu.aspx">Tổn thất online </a></li>
-            <li><a href="bc_GiaoNhan2Chieu.aspx">Import dữ liệu đường dây theo trạm - Tính tổn thất kỹ thuật</a></li>
+            <li><a href="bc_GiaoNhan2Chieu.aspx">Tổn thất kỹ thuật</a></li>
+            <li><a href="bc_GiaoNhan2Chieu.aspx">Tính toán so sánh tổn thất</a></li>
         </ol>
     </div>
 
 </asp:Content>
-<asp:Content ContentPlaceHolderID="Category" ID="Content4" runat="server">
+<asp:Content ID="Content4" ContentPlaceHolderID="Category" runat="server">
+    <link href="../CSS/cssCircle.css" rel="stylesheet">
     <div class="col-md-12">
-
         <div class="white-box">
-            <h1 class="m-b-0 box-title">DANH SÁCH TRẠM</h1>
+            <h1 class="m-b-0 box-title">Báo Cáo Tổn Thất Kinh Doanh</h1>
             <div class="col-lg-12 m-t-30">
                 <hr />
             </div>
-            <table>
+            <table width="100%">
                 <tr>
                     <td>
-                         <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Lọc dữ liệu" Theme="Aqua">
+                        <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Lọc dữ liệu" Theme="Aqua">
                             <PanelCollection>
                                 <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
                                     <table class="tbl_Write">
@@ -68,19 +64,31 @@
                                             </td>
                                             <td colspan="3">
                                                 <dx:ASPxComboBox ID="cmMaDvi" IncrementalFilteringMode="Contains"
-                                                    runat="server" SelectedIndex="0" Width="480px" Theme="Aqua" AutoPostBack="False">
+                                                    runat="server" SelectedIndex="0" Width="480px" Theme="Aqua" AutoPostBack="True">
                                                 </dx:ASPxComboBox>
 
                                             </td>
                                         </tr>
-                                      
+                                         
+                                        <tr>
+                                            <td>
+                                                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Mã trạm" Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            <td colspan="3">
+                                                <dx:ASPxComboBox ID="cmbMaTram" IncrementalFilteringMode="Contains"
+                                                    runat="server" SelectedIndex="0" Width="480px" Theme="Aqua">
+                                                </dx:ASPxComboBox>
+
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td>
                                                 <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Tháng" Width="100px">
                                                 </dx:ASPxLabel>
                                             </td>
                                             <td>
-                                                <dx:ASPxComboBox ID="cmbThang" runat="server" Width="80px">
+                                                <dx:ASPxComboBox ID="cmbThang" runat="server" Width="80px" AutoPostBack="True">
                                                     <Items>
                                                         <dx:ListEditItem Text="1" Value="1" />
                                                         <dx:ListEditItem Text="2" Value="2" />
@@ -121,11 +129,8 @@
 
                                         </tr>
                                         <tr>
-
-                                        </tr>
-                                         <tr>
                                              <td>
-                                                <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="Phần Trăm TB Biến Động Của Trạm" Width="100px">
+                                                <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="Phần Trăm Tỷ Lệ Bất Thường" Width="100px">
                                                 </dx:ASPxLabel>
                                             </td>
                                              <td>
@@ -135,15 +140,15 @@
                                             <td colspan="2" >
                                                   <dx:ASPxRadioButtonList ID="rdTinhToan" runat="server" SelectedIndex="0" RepeatDirection="Horizontal" TextWrap="False" Width="350px" >
                                                       <Items>
-                                                          <dx:ListEditItem Text="Tất Cả Các Trạm" Value="0" Selected="True" />
-                                                          <dx:ListEditItem Text="Chỉ Trạm Bất Thường" Value="1" />
+                                                          <dx:ListEditItem Text="Tất Cả Khách Hàng" Value="0" Selected="True" />
+                                                          <dx:ListEditItem Text="Chỉ Khách Hàng Bất Thường" Value="1" />
                                                       </Items>
                                                   </dx:ASPxRadioButtonList>
                                               </td>
                                         </tr>
                                         <tr>
                                            <td>
-                                                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Phần Trăm Tổn Thất Trạm" Width="100px">
+                                                <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="Phần Trăm Tổn Thất Trạm" Width="100px">
                                                 </dx:ASPxLabel>
                                             </td>
                                              <td>
@@ -165,64 +170,64 @@
                     </td>
                 </tr>
             </table>
-            <table width="100%">
-                <tr>
-                    <td valign="top">
-                         <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdKH" Caption="Danh sách trạm ưu tiên đã tính trong tháng"
-                                ClientInstanceName="grdKH" KeyFieldName="MA_TRAM" OnHtmlCommandCellPrepared="grdKH_HtmlCommandCellPrepared"
-                                OnCellEditorInitialize="grdKH_CellEditorInitialize1" OnCustomColumnDisplayText="grdKH_CustomColumnDisplayText"
-                                OnStartRowEditing="grdKH_StartRowEditing" ClientIDMode="AutoID" Theme="Aqua">
-                                <Styles>
-                                <AlternatingRow Enabled="True" />
-                                 </Styles>
-                                <Columns>
-                                    <dx:GridViewDataTextColumn Caption="STT" ReadOnly="True" UnboundType="String" VisibleIndex="0"
-                                        Width="20px">
-                                        <Settings AllowAutoFilter="False" AllowAutoFilterTextInputTimer="False" AllowDragDrop="False"
-                                            AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
-                                        <EditFormSettings Visible="False" />
-                                    </dx:GridViewDataTextColumn>
-                                    <dxwgv:GridViewDataTextColumn Caption="Mã đơn vị " FieldName="MA_DVIQLY" VisibleIndex="1"  Visible="False" >
-                                    <CellStyle HorizontalAlign="Left">
-                                    </CellStyle>
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Mã Trạm" FieldName="MA_TRAM" VisibleIndex="2">
-                            </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Tên Trạm" FieldName="TEN_TRAM" VisibleIndex="3" >
-                            </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Công Suất Trạm" FieldName="CSUAT_TRAM" VisibleIndex="4" >
-                            </dxwgv:GridViewDataTextColumn>
-                                    <dxwgv:GridViewDataTextColumn Caption="Tỷ lệ TT Tháng" FieldName="TT_PT" VisibleIndex="5" >
-                            </dxwgv:GridViewDataTextColumn>
-                                    <dxwgv:GridViewDataTextColumn Caption="Tỷ lệ TT Tháng Trước" FieldName="TT_TL1" VisibleIndex="6" >
-                            </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Tỷ lệ TT Tháng 2 Trước" FieldName="TT_TL2" VisibleIndex="7" >
-                            </dxwgv:GridViewDataTextColumn>
-                                    <dxwgv:GridViewDataTextColumn Caption="Tỷ lệ TT Tháng 3 Trước" FieldName="TT_TL3" VisibleIndex="8" >
-                            </dxwgv:GridViewDataTextColumn> 
-                        </Columns>
-                                <SettingsPager PageSize="20">
-                                    <Summary Text="Trang {0} của {1} ({2} bản ghi)" />
-                                </SettingsPager>
-                                <Settings ShowFooter="True" ShowFilterRow="True" ShowFilterRowMenu="True" />
-                                <SettingsBehavior AllowFocusedRow="True" />
-                                <TotalSummary>
-                                    <dx:ASPxSummaryItem FieldName="MA_TRAM" SummaryType="Count" />
-                                </TotalSummary>
-                                <SettingsText CommandCancel="Thoát" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
-                                    CommandUpdate="Cập Nhật" ConfirmDelete="Bạn Muốn Xóa Chứ ?" />
-                            </dx:ASPxGridView>
-                        </td>
-                </tr>
-            </table>
-            <tr>
-                 <td align="left" width="130px" valign="top">
-                        <dx:ASPxButton ID="btnXemChiTiet" runat="server" Text="Thông tin chi tiết" Width="120px" Theme="Aqua" OnClick="btnXemChiTiet_Click" >
-                        </dx:ASPxButton>
-                    </td>
-             </tr>
-        </div>
 
+            <dx:ASPxPageControl ID="pcTax" runat="server" ActiveTabIndex="2" Width="100%" Theme="Aqua" AccessibilityCompliant="True" EnableCallBacks="True">
+                <TabPages>
+                    <dx:TabPage Text="Báo cáo tổn thất kinh doanh">
+                        <ContentCollection>
+                            <dx:ContentControl runat="server" SupportsDisabledAttribute="True">
+                                <table>
+                                    <tr>
+                                        <td>
+
+                                            <dx1:ReportToolbar ID="ReportToolbar2" runat='server' ShowDefaultButtons='False' Theme="Aqua">
+                                                <Items>
+                                                    <dx1:ReportToolbarButton ItemKind='Search' />
+                                                    <dx1:ReportToolbarSeparator />
+                                                    <dx1:ReportToolbarButton ItemKind='PrintReport' />
+                                                    <dx1:ReportToolbarButton ItemKind='PrintPage' />
+                                                    <dx1:ReportToolbarSeparator />
+                                                    <dx1:ReportToolbarButton Enabled='False' ItemKind='FirstPage' />
+                                                    <dx1:ReportToolbarButton Enabled='False' ItemKind='PreviousPage' />
+                                                    <dx1:ReportToolbarLabel ItemKind='PageLabel' />
+                                                    <dx1:ReportToolbarComboBox ItemKind='PageNumber' Width='65px'>
+                                                    </dx1:ReportToolbarComboBox>
+                                                    <dx1:ReportToolbarLabel ItemKind='OfLabel' />
+                                                    <dx1:ReportToolbarTextBox ItemKind='PageCount' />
+                                                    <dx1:ReportToolbarButton ItemKind='NextPage' />
+                                                    <dx1:ReportToolbarButton ItemKind='LastPage' />
+                                                    <dx1:ReportToolbarSeparator />
+                                                    <dx1:ReportToolbarButton ItemKind='SaveToDisk' />
+                                                    <dx1:ReportToolbarButton ItemKind='SaveToWindow' />
+                                                    <dx1:ReportToolbarComboBox ItemKind='SaveFormat' Width='70px'>
+                                                        <Elements>
+                                                            <dx1:ListElement Value='xls' />
+                                                            <dx1:ListElement Value='rtf' />
+                                                            <dx1:ListElement Value='xlsx' />
+                                                            <dx1:ListElement Value='pdf' />
+                                                            <dx1:ListElement Value='png' />
+                                                        </Elements>
+                                                    </dx1:ReportToolbarComboBox>
+                                                </Items>
+                                                <Styles>
+                                                    <LabelStyle>
+                                                        <Margins MarginLeft='3px' MarginRight='3px' />
+                                                    </LabelStyle>
+                                                </Styles>
+                                            </dx1:ReportToolbar>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <dx1:ReportViewer ID="ReportViewer2" runat="server" Theme="Aqua" Width="980px">
+                                </dx1:ReportViewer>
+                            </dx:ContentControl>
+                        </ContentCollection>
+                    </dx:TabPage>
+
+                </TabPages>
+            </dx:ASPxPageControl>
+        </div>
     </div>
 
 </asp:Content>

@@ -15,31 +15,31 @@ namespace CBDN.TonThatKyThuat
     {
 
         /// <summary>
-        /// grdDVT control.
+        /// ASPxRoundPanel3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView grdDVT;
+        protected global::DevExpress.Web.ASPxRoundPanel ASPxRoundPanel3;
 
         /// <summary>
-        /// btnThem control.
+        /// ASPxLabel3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnThem;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
 
         /// <summary>
-        /// btnSua control.
+        /// txtTyLeTT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnSua;
+        protected global::DevExpress.Web.ASPxTextBox txtTyLeTT;
 
         /// <summary>
         /// ASPxRoundPanel1 control.
@@ -94,77 +94,5 @@ namespace CBDN.TonThatKyThuat
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtTyLeBTram;
-
-        /// <summary>
-        /// pcAddRoles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl pcAddRoles;
-
-        /// <summary>
-        /// PopupControlContentControl1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl1;
-
-        /// <summary>
-        /// madvqly control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel madvqly;
-
-        /// <summary>
-        /// txtMA_DVIQLY control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtMA_DVIQLY;
-
-        /// <summary>
-        /// ASPxLabel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
-
-        /// <summary>
-        /// txtTYLETT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox txtTYLETT;
-
-        /// <summary>
-        /// btnCapNhat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnCapNhat;
-
-        /// <summary>
-        /// btnDong control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnDong;
     }
 }

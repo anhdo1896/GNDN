@@ -11,7 +11,7 @@ namespace MTCSYT
 {
 
 
-    public partial class BaoCaoTTKD
+    public partial class rq_BaoCaoTTKD
     {
 
         /// <summary>
