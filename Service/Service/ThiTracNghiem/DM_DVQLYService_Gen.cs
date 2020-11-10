@@ -55,9 +55,13 @@ namespace SystemManageService
         {
             return _dm_dvqlyDataAccess.SelectBindingAllDM_DVQLY();
         }
-	 	
-	 	
-	}
+
+        public List<DM_DVQLY> Select_DVI_Cha_ByChild()
+        {
+            return _dm_dvqlyDataAccess.Select_DVI_Cha_ByChild();
+        }
+
+    }
 }
 
 

@@ -3155,4 +3155,14 @@
       <Column Name="MaPhuongThuc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.Select_DVI_Cha_ByChild" Method="Select_DVI_Cha_ByChild">
+    <Parameter Name="IDMA_DVIQLY" Parameter="iDMA_DVIQLY" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Select_DVI_Cha_ByChildResult">
+      <Column Name="IDMA_DVIQLY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MA_DVIQLY" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TEN_DVIQLY" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME_DVIQLY" Type="System.String" DbType="NVarChar(213) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

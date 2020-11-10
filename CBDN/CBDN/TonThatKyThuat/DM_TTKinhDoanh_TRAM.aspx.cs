@@ -111,42 +111,35 @@ namespace CBDN.TonThatKyThuat
                 txtTyLeBTram.Text = "";
             }
         }
-     
-  
-        protected void TextboxA_TextChanged(object sender, EventArgs e)
+
+        protected void btnLuc_Click(object sender, EventArgs e)
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             string madvi = session.User.ma_dviqlyDN;
-            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi,0);
-            int t = kh.Rows.Count;
-            string btstr = txtTyLeBT.Text + "";
-            if (btstr != "")
+            var kh0 = db.SELECT_TTTT_PT_BT_KHANG(madvi, 0);
+            int t0 = kh0.Rows.Count;
+            string btstr0 = (txtTyLeBT.Text + "").Replace(".", ",");
+            if (btstr0 != "")
             {
-                float bt = float.Parse(btstr);
+                float bt = float.Parse(btstr0);
 
-                if (t == 0)
+                if (t0 == 0)
                 {
-                    db.INSERT_TTTT_PT_BT_KHANG(madvi, bt,0);
+                    db.INSERT_TTTT_PT_BT_KHANG(madvi, bt, 0);
                 }
                 else
                 {
-                    db.UPDATE_TTTT_PT_BT_KHANG(madvi, bt,0);
+                    db.UPDATE_TTTT_PT_BT_KHANG(madvi, bt, 0);
                 }
             }
-
-        }
-        protected void TextboxB_TextChanged(object sender, EventArgs e)
-        {
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            string madvi = session.User.ma_dviqlyDN;
-            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi, 1);
-            int t = kh.Rows.Count;
-            string btstr = txtTyLeBTram.Text + "";
-            if (btstr != "")
+            var kh1 = db.SELECT_TTTT_PT_BT_KHANG(madvi, 1);
+            int t1 = kh1.Rows.Count;
+            string btstr1 = (txtTyLeBTram.Text + "").Replace(".", ",");
+            if (btstr1 != "")
             {
-                float bt = float.Parse(btstr);
+                float bt = float.Parse(btstr1);
 
-                if (t == 0)
+                if (t1 == 0)
                 {
                     db.INSERT_TTTT_PT_BT_KHANG(madvi, bt, 1);
                 }
@@ -155,20 +148,14 @@ namespace CBDN.TonThatKyThuat
                     db.UPDATE_TTTT_PT_BT_KHANG(madvi, bt, 1);
                 }
             }
-
-        }
-        protected void TextboxC_TextChanged(object sender, EventArgs e)
-        {
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            string madvi = session.User.ma_dviqlyDN;
-            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi, 2);
-            int t = kh.Rows.Count;
-            string btstr = txtTyLeTT.Text + "";
-            if (btstr != "")
+            var kh2 = db.SELECT_TTTT_PT_BT_KHANG(madvi, 2);
+            int t2 = kh2.Rows.Count;
+            string btstr2 = (txtTyLeTT.Text + "").Replace(".", ",");
+            if (btstr2 != "")
             {
-                float bt = float.Parse(btstr);
+                float bt = float.Parse(btstr2);
 
-                if (t == 0)
+                if (t2 == 0)
                 {
                     db.INSERT_TTTT_PT_BT_KHANG(madvi, bt, 2);
                 }
@@ -178,6 +165,11 @@ namespace CBDN.TonThatKyThuat
                 }
             }
 
+            TyLEBT();
+            TyLEBTram();
+            _DataBind();
+
         }
+            
     }
 }
