@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Cấu Hình Tổn Thất" Language="C#" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master" AutoEventWireup="true"
-    CodeBehind="DM_TTKinhDoanh_TRAM.aspx.cs" Inherits="CBDN.TonThatKyThuat.DM_TTKinhDoanh_TRAM" 
-    Culture="auto" UICulture="auto"%>
+    CodeBehind="DM_TTKinhDoanh_TRAM.aspx.cs" Inherits="CBDN.TonThatKyThuat.DM_TTKinhDoanh_TRAM"
+    Culture="auto" UICulture="auto" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web" TagPrefix="dx" %>
@@ -27,96 +27,70 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Category" runat="server">
-         <div class="col-md-12">
+    <div class="col-md-12">
         <div class="white-box">
-            <h1 class="m-b-0 box-title">Cấu Hình Tổn Thất </h1>
+            <h1 class="m-b-0 box-title">Cấu Hình Cảnh Báo Sản Lượng</h1>
             <div class="col-lg-12 m-t-30">
-                 <hr />
+                <hr />
             </div>
-            
 
-                    <table width="100%">
 
-                         <td>
-                        <dx:ASPxRoundPanel ID="ASPxRoundPanel3" runat="server" HeaderText="CẤU HÌNH TTKD TRẠM" Theme="Aqua">
-                            <PanelCollection>
-                                <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
-                                    <table class="tbl_Write">
-                                        <tr>
-                                            <td>
-                                                <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Cấu hình % tỷ lệ tổn thất trạm" Width="200px">
-                                                </dx:ASPxLabel>
-                                            </td>
-                                            <td colspan="3">
-                                                
+            <table width="100%">
 
-                                                <dx:ASPxTextBox ID="txtTyLeTT" runat="server" Width="170px" OnTextChanged="TextboxC_TextChanged" autopostback="True">
-                                                </dx:ASPxTextBox>
+                <td>
+                    <dx:ASPxRoundPanel ID="ASPxRoundPanel3" runat="server" HeaderText="THÔNG SỐ CẤU HÌNH" Theme="Aqua">
+                        <PanelCollection>
+                            <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
+                                <table class="tbl_Write">
+                                    <tr>
+                                        <td>
+                                            <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Tỷ lệ tổn thất Trạm tăng giảm bắt thường vượt quá hoặc bằng ngưỡng" Width="200px">
+                                            </dx:ASPxLabel>
+                                        </td>
+                                        <td colspan="3">
 
-                                            </td>
+                                            <dx:ASPxTextBox ID="txtTyLeBTram" runat="server" Width="170px" OnTextChanged="TextboxB_TextChanged" AutoPostBack="True">
+                                            </dx:ASPxTextBox>
 
-                                        </tr>
-                                       
-                                    </table>
-                                </dx:PanelContent>
-                            </PanelCollection>
-                        </dx:ASPxRoundPanel>
-                    </td>
-                         <tr>
-                    <td>
-                        <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Cấu Hình Báo Cáo TTKD" Theme="Aqua">
-                            <PanelCollection>
-                                <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
-                                    <table class="tbl_Write">
-                                        <tr>
-                                            <td>
-                                                <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Cấu hình % bất thường sản lượng khách hàng" Width="200px">
-                                                </dx:ASPxLabel>
-                                            </td>
-                                            <td colspan="3">
-                                                
+                                        </td>
 
-                                                <dx:ASPxTextBox ID="txtTyLeBT" runat="server" Width="170px" OnTextChanged="TextboxA_TextChanged" autopostback="True">
-                                                </dx:ASPxTextBox>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Tổn thất trạm vượt so mới mức" Width="200px">
+                                            </dx:ASPxLabel>
+                                        </td>
+                                        <td colspan="3">
+                                            <dx:ASPxTextBox ID="txtTyLeTT" runat="server" Width="170px" OnTextChanged="TextboxC_TextChanged" AutoPostBack="True">
+                                            </dx:ASPxTextBox>
 
-                                            </td>
+                                        </td>
 
-                                        </tr>
-                                       
-                                    </table>
-                                </dx:PanelContent>
-                            </PanelCollection>
-                        </dx:ASPxRoundPanel>
-                    </td>
-                              <td>
-                        <dx:ASPxRoundPanel ID="ASPxRoundPanel2" runat="server" HeaderText="Cấu Hình TTKD Trạm" Theme="Aqua">
-                            <PanelCollection>
-                                <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
-                                    <table class="tbl_Write">
-                                        <tr>
-                                            <td>
-                                                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Cấu hình tỷ lệ tổn thất bất thường Trạm" Width="200px">
-                                                </dx:ASPxLabel>
-                                            </td>
-                                            <td colspan="3">
-                                                
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Sản lượng trung bình tăng giảm bất thường" Width="200px">
+                                            </dx:ASPxLabel>
+                                        </td>
+                                        <td colspan="3">
 
-                                                <dx:ASPxTextBox ID="txtTyLeBTram" runat="server" Width="170px" OnTextChanged="TextboxB_TextChanged" autopostback="True">
-                                                </dx:ASPxTextBox>
 
-                                            </td>
+                                            <dx:ASPxTextBox ID="txtTyLeBT" runat="server" Width="170px" OnTextChanged="TextboxA_TextChanged" AutoPostBack="True">
+                                            </dx:ASPxTextBox>
 
-                                        </tr>
-                                       
-                                    </table>
-                                </dx:PanelContent>
-                            </PanelCollection>
-                        </dx:ASPxRoundPanel>
-                    </td>
-                </tr>
-                    </table>
-            
-                  </div>
-               </div>
+                                        </td>
+
+                                    </tr>
+
+                                </table>
+                            </dx:PanelContent>
+                        </PanelCollection>
+                    </dx:ASPxRoundPanel>
+                </td>
+
+            </table>
+
+        </div>
+    </div>
     <hr />
 </asp:Content>

@@ -112,8 +112,17 @@ namespace QLY_VTTB.MasterPage
                              
                             </ul>
                         </li>
-                          <li>
-                            <a href='inbox.html' class='waves-effect'><i data-icon='D' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Tổn thất kỹ thuật <span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>3</span></span></a>
+                        <li>
+                            <a href='inbox.html' class='waves-effect'><i data-icon='D' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Phân tích sản lượng khách hàng <span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>1</span></span></a>
+                            <ul class='nav nav-second-level'>                                
+                                <li> <a href='../TonThatKyThuat/DM_TTKinhDoanh_TRAM.aspx'>* Đặt cấu hình tổn thất</a></li> 
+                                <li> <a href='../TonThatKyThuat/DM_CanhBaoBatThuong.aspx'>* Danh mục cảnh báo và đề xuất</a></li>
+                                <li> <a href='../TonThatKyThuat/DanhSachTTKDTram.aspx'>* Danh sách trạm bất thường</a></li>
+                                <li> <a href='../TonThatKyThuat/BaoCaoTTKD.aspx'>* Báo cáo tổn thất kinh doanh</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href='inbox.html' class='waves-effect'><i data-icon='D' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Tổn thất kỹ thuật <span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>2</span></span></a>
                             <ul class='nav nav-second-level'>
                                <li> <a href='../TonThatKyThuat/dmLoaiDuongDay.aspx'>* Danh mục loại dây</a> </li>
                                 <li> <a href='../TonThatKyThuat/ImportCS_ChuKyNgay.aspx'>* Import dữ liệu công suất tháng theo chu kỳ</a> </li>
@@ -123,12 +132,7 @@ namespace QLY_VTTB.MasterPage
                                 <li> <a href='../TonThatKyThuat/DanhSachTramUuTien.aspx'>* Danh Sách Trạm Ưu tiên</a></li>
                                 <li> <a href='../TonThatKyThuat/DsTramUuTien.aspx'>* Danh sách Tổn thất trạm ưu tiên</a></li>
                                 <li> <a href='../TonThatKyThuat/dmKhachHangLuuY.aspx'>* Danh Sách Khách Hàng Lưu Ý</a></li>
-                                <li> <a href='../TonThatKyThuat/KiemTraCot_CAD.aspx'>* Kiểm tra cột đã nhập dữ liệu</a></li>
-                                <li> <a href='../TonThatKyThuat/BaoCaoTTKD.aspx'>* Báo cáo tổn thất kinh doanh</a></li>
-                                <li> <a href='../TonThatKyThuat/DM_TTKinhDoanh_TRAM.aspx'>* Đặt cấu hình tổn thất</a></li>
-                                <li> <a href='../TonThatKyThuat/DM_CanhBaoBatThuong.aspx'>* Danh mục cảnh báo và đề xuất</a></li>
-                                <li> <a href='../TonThatKyThuat/DanhSachTTKDTram.aspx'>* Danh sách TTKD Trạm</a></li>
-                                                      
+                                <li> <a href='../TonThatKyThuat/KiemTraCot_CAD.aspx'>* Kiểm tra cột đã nhập dữ liệu</a></li>                                                      
                             </ul>
                         </li>
                         <li>
@@ -343,7 +347,7 @@ namespace QLY_VTTB.MasterPage
                             <a href='inbox.html' class='waves-effect'><i data-icon='/' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Giao nhận điện năng đầu nguồn<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>3</span></span></a>
                             <ul class='nav nav-second-level'>
                                 <li> <a href='../BienDongThang/bd_GiaoNhan2ChieuThang.aspx'>* Nhập chỉ số chốt tháng </a>  </li> 
-<li> <a href='../BaoCao/bc_TheoDoiSoLieu.aspx'>* Theo dõi số liệu đã nhập trong tháng</a></li>
+                                <li> <a href='../BaoCao/bc_TheoDoiSoLieu.aspx'>* Theo dõi số liệu đã nhập trong tháng</a></li>
                                 <li> <a href='../DanhMuc/bd_SanLuongThuongPhamTheoThang.aspx'>* Nhập sản lượng điện thương phẩm </a>  </li>
                                 <li> <a href='../BienDongThang/bd_NhanVienXNDN.aspx'>* Nhân viên xác nhận số liệu</a> </li>
                                 <li> <a href='../BienDongThang/bd_xacNhanSL.aspx'>* Trưởng phòng Xác nhận số liệu</a></li>
@@ -490,7 +494,7 @@ namespace QLY_VTTB.MasterPage
                             <ul class='nav nav-second-level'>
                                 <li> <a href='../BienDongThang/bd_GiaoNhan2ChieuThang.aspx'>* Nhập chỉ số chốt tháng </a>  </li>
                                 <li> <a href='../BienDongThang/bd_danhSachDiemDoDaNhap.aspx'>* Danh sách chỉ số điểm đo đã nhập </a>  </li> 
-<li> <a href='../BaoCao/bc_TheoDoiSoLieu.aspx'>* Theo dõi số liệu đã nhập trong tháng</a></li>
+                                <li> <a href='../BaoCao/bc_TheoDoiSoLieu.aspx'>* Theo dõi số liệu đã nhập trong tháng</a></li>
                                 <li> <a href='../DanhMuc/bd_SanLuongThuongPhamTheoThang.aspx'>* Nhập sản lượng điện thương phẩm </a>  </li>
                                 <li> <a href='../BienDongThang/bd_NhanVienXNDN.aspx'>* Nhân viên xác nhận số liệu</a> </li>
                                 <li> <a href='../BienDongThang/bd_ThongKeDiemDo.aspx'>* Chốt số liệu</a></li>
@@ -535,6 +539,19 @@ namespace QLY_VTTB.MasterPage
                             </ul>
                         </li>
                     ";
+                }
+                else if (session.User.Roles.ID == 11)
+                {
+                    lbMenu.Text = @"
+                                    < li >
+                                        < a href = 'inbox.html' class='waves-effect'><i data-icon='D' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Phân tích sản lượng khách hàng<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>1</span></span></a>
+                                        <ul class='nav nav-second-level'>                                
+                                            <li> <a href = '../TonThatKyThuat/DM_TTKinhDoanh_TRAM.aspx' > *Đặt cấu hình tổn thất</a></li> 
+                                            <li> <a href = '../TonThatKyThuat/DM_CanhBaoBatThuong.aspx' > *Danh mục cảnh báo và đề xuất</a></li>
+                                            <li> <a href = '../TonThatKyThuat/DanhSachTTKDTram.aspx' > *Danh sách trạm bất thường</a></li>
+                                            <li> <a href = '../TonThatKyThuat/BaoCaoTTKD.aspx' > *Báo cáo tổn thất kinh doanh</a></li>
+                                        </ul>
+                                    </li>";
                 }
             }
         }
