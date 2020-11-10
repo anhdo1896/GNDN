@@ -44,13 +44,12 @@ namespace MTCSYT
                 _DataBind();
 
             }
-            else
-            {
+  
                
                 LoadDataDV();
                 _DataBind();
                 InBienBanTonThat();
-            }
+           
         }
         private void _DataBind()
         {
@@ -177,7 +176,7 @@ namespace MTCSYT
                 List<DM_DS> List = new List<DM_DS>();
                 DM_DS Dvi = new DM_DS();
 
-                Dvi.MA_DVIQLY = session.User.IDMA_DVIQLY +"";
+                Dvi.MA_DVIQLY = donvi.IDMA_DVIQLY +"";
                 Dvi.NAME_DVIQLY = donvi.NAME_DVIQLY.Split('-')[1].ToString().ToUpper(); ;
                 List.Add(Dvi);
 

@@ -42,13 +42,22 @@ namespace CBDN.TonThatKyThuat
         protected global::DevExpress.Web.ASPxTextBox txtTyLeTT;
 
         /// <summary>
-        /// ASPxRoundPanel1 control.
+        /// ASPxLabel2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxRoundPanel ASPxRoundPanel1;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
+
+        /// <summary>
+        /// txtTyLeBTram control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtTyLeBTram;
 
         /// <summary>
         /// ASPxLabel5 control.
@@ -69,30 +78,12 @@ namespace CBDN.TonThatKyThuat
         protected global::DevExpress.Web.ASPxTextBox txtTyLeBT;
 
         /// <summary>
-        /// ASPxRoundPanel2 control.
+        /// btnLuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxRoundPanel ASPxRoundPanel2;
-
-        /// <summary>
-        /// ASPxLabel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
-
-        /// <summary>
-        /// txtTyLeBTram control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox txtTyLeBTram;
+        protected global::DevExpress.Web.ASPxButton btnLuc;
     }
 }

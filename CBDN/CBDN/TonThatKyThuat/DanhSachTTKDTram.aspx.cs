@@ -184,7 +184,7 @@ namespace CBDN.TonThatKyThuat
                 List<DM_DS> List = new List<DM_DS>();
                 DM_DS Dvi = new DM_DS();
 
-                Dvi.MA_DVIQLY = session.User.IDMA_DVIQLY + "";
+                Dvi.MA_DVIQLY = donvi.IDMA_DVIQLY + "";
                 Dvi.NAME_DVIQLY = donvi.NAME_DVIQLY.Split('-')[1].ToString().ToUpper(); ;
                 List.Add(Dvi);
 
@@ -221,7 +221,7 @@ namespace CBDN.TonThatKyThuat
                     DM_DS Dvi = new DM_DS();
 
                     Dvi.MA_DVIQLY = session.User.ma_dviqlyDN + "";
-                    Dvi.NAME_DVIQLY = donvi.NAME_DVIQLY.Split('-')[1].ToString().ToUpper(); ;
+                    Dvi.NAME_DVIQLY = donvi.NAME_DVIQLY.Split('-')[1].ToString().ToUpper();
                     List.Add(Dvi);
 
                     cmMaDvi.DataSource = List;

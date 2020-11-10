@@ -50,49 +50,12 @@
                                             <td colspan="3">
                                                 
 
-                                                <dx:ASPxTextBox ID="txtTyLeTT" runat="server" Width="170px" OnTextChanged="TextboxC_TextChanged" autopostback="True">
+                                                <dx:ASPxTextBox ID="txtTyLeTT" runat="server" Width="170px">
                                                 </dx:ASPxTextBox>
 
                                             </td>
 
                                         </tr>
-                                       
-                                    </table>
-                                </dx:PanelContent>
-                            </PanelCollection>
-                        </dx:ASPxRoundPanel>
-                    </td>
-                         <tr>
-                    <td>
-                        <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Cấu Hình Báo Cáo TTKD" Theme="Aqua">
-                            <PanelCollection>
-                                <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
-                                    <table class="tbl_Write">
-                                        <tr>
-                                            <td>
-                                                <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Cấu hình % bất thường sản lượng khách hàng" Width="200px">
-                                                </dx:ASPxLabel>
-                                            </td>
-                                            <td colspan="3">
-                                                
-
-                                                <dx:ASPxTextBox ID="txtTyLeBT" runat="server" Width="170px" OnTextChanged="TextboxA_TextChanged" autopostback="True">
-                                                </dx:ASPxTextBox>
-
-                                            </td>
-
-                                        </tr>
-                                       
-                                    </table>
-                                </dx:PanelContent>
-                            </PanelCollection>
-                        </dx:ASPxRoundPanel>
-                    </td>
-                              <td>
-                        <dx:ASPxRoundPanel ID="ASPxRoundPanel2" runat="server" HeaderText="Cấu Hình TTKD Trạm" Theme="Aqua">
-                            <PanelCollection>
-                                <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
-                                    <table class="tbl_Write">
                                         <tr>
                                             <td>
                                                 <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Cấu hình tỷ lệ tổn thất bất thường Trạm" Width="200px">
@@ -101,19 +64,37 @@
                                             <td colspan="3">
                                                 
 
-                                                <dx:ASPxTextBox ID="txtTyLeBTram" runat="server" Width="170px" OnTextChanged="TextboxB_TextChanged" autopostback="True">
+                                                <dx:ASPxTextBox ID="txtTyLeBTram" runat="server" Width="170px">
                                                 </dx:ASPxTextBox>
 
                                             </td>
 
                                         </tr>
-                                       
+                                        <tr>
+                                            <td>
+                                                <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Cấu hình % bất thường sản lượng khách hàng" Width="200px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            <td colspan="3">
+                                                
+
+                                                <dx:ASPxTextBox ID="txtTyLeBT" runat="server" Width="170px">
+                                                </dx:ASPxTextBox>
+
+                                            </td>
+
+                                        </tr>
                                     </table>
                                 </dx:PanelContent>
                             </PanelCollection>
                         </dx:ASPxRoundPanel>
-                    </td>
-                </tr>
+                    </td> 
+                        <tr>
+                                            
+                                            <td colspan="4">
+                                                <dx:ASPxButton ID="btnLuc" runat="server" Text="Lưu dữ liệu" OnClick="btnLuc_Click" Theme="Aqua"></dx:ASPxButton>
+                                            </td>
+                                        </tr>
                     </table>
             
                   </div>
