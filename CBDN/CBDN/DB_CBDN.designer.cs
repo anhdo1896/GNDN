@@ -981,6 +981,13 @@ namespace CBDN
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY, thang, nam, loai);
 			return ((ISingleResult<db_SelectPhuongThucCanXNResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Select_DVI_Cha_ByChild")]
+		public ISingleResult<Select_DVI_Cha_ByChildResult> Select_DVI_Cha_ByChild([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMA_DVIQLY", DbType="Int")] System.Nullable<int> iDMA_DVIQLY)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMA_DVIQLY);
+			return ((ISingleResult<Select_DVI_Cha_ByChildResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_GiaoNhan2Chieu")]
@@ -48499,6 +48506,104 @@ namespace CBDN
 				if ((this._MaPhuongThuc != value))
 				{
 					this._MaPhuongThuc = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Select_DVI_Cha_ByChildResult
+	{
+		
+		private int _IDMA_DVIQLY;
+		
+		private string _MA_DVIQLY;
+		
+		private string _TEN_DVIQLY;
+		
+		private System.Nullable<int> _ParentId;
+		
+		private string _NAME_DVIQLY;
+		
+		public Select_DVI_Cha_ByChildResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDMA_DVIQLY", DbType="Int NOT NULL")]
+		public int IDMA_DVIQLY
+		{
+			get
+			{
+				return this._IDMA_DVIQLY;
+			}
+			set
+			{
+				if ((this._IDMA_DVIQLY != value))
+				{
+					this._IDMA_DVIQLY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MA_DVIQLY", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MA_DVIQLY
+		{
+			get
+			{
+				return this._MA_DVIQLY;
+			}
+			set
+			{
+				if ((this._MA_DVIQLY != value))
+				{
+					this._MA_DVIQLY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TEN_DVIQLY", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string TEN_DVIQLY
+		{
+			get
+			{
+				return this._TEN_DVIQLY;
+			}
+			set
+			{
+				if ((this._TEN_DVIQLY != value))
+				{
+					this._TEN_DVIQLY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentId", DbType="Int")]
+		public System.Nullable<int> ParentId
+		{
+			get
+			{
+				return this._ParentId;
+			}
+			set
+			{
+				if ((this._ParentId != value))
+				{
+					this._ParentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_DVIQLY", DbType="NVarChar(213) NOT NULL", CanBeNull=false)]
+		public string NAME_DVIQLY
+		{
+			get
+			{
+				return this._NAME_DVIQLY;
+			}
+			set
+			{
+				if ((this._NAME_DVIQLY != value))
+				{
+					this._NAME_DVIQLY = value;
 				}
 			}
 		}

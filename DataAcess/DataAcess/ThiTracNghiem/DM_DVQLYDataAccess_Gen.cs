@@ -383,6 +383,30 @@ namespace DataAccess
 
             return count;
         }
+        public List<DM_DVQLY> Select_DVI_Cha_ByChild()
+        {
+            List<DM_DVQLY> dm_dvqly = new List<DM_DVQLY>();
+            DbDataReader reader = null;
+            DbConnection conn = _DbHelper.CreateConnection(Common.ConnectionString);
+            conn.Open();
+            try
+            {
+                reader = _DbHelper.ExecuteReader(conn, Common.DatabaseSchema + "[Select_DVI_Cha_ByChild]", (DbParameter[])null);
+                if (reader.HasRows)
+                    DM_DVQLYDataAccess.SetListDM_DVQLYInfo(ref reader, ref dm_dvqly);
+                return dm_dvqly;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(String.Format(" DM_DVQLYDataAccess.SelectAll: {0}", ex.Message));
+            }
+            finally
+            {
+                if (reader != null)
+                    reader.Close();
+                conn.Close();
+            }
+        }
     }
 }
 

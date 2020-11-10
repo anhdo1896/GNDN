@@ -40,6 +40,8 @@ namespace MTCSYT
                 loadDSNgay();
                 LoadTyLeTT();
                 TyLEBT();
+                LoadDataDV();
+                _DataBind();
 
             }
             else
@@ -156,7 +158,8 @@ namespace MTCSYT
         private void laodDVCapCha()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            if (session.User.ma_dviqly == "2")
+            int a = int.Parse(session.User.ma_dviqly + "");
+            if (a == 2)
             {
                 DM_DVQLYService dm_dviSer = new DM_DVQLYService();
 
@@ -167,14 +170,14 @@ namespace MTCSYT
                 MaDienLuc.TextField = "TEN_DVIQLY";
                 MaDienLuc.DataBind();
             }
-            else
+            else if (a <38)
             {
                 DM_DVQLYService dm_dviSer = new DM_DVQLYService();
                 var donvi = dm_dviSer.SelectDM_DVQLY(int.Parse(session.User.ma_dviqly));
                 List<DM_DS> List = new List<DM_DS>();
                 DM_DS Dvi = new DM_DS();
 
-                Dvi.MA_DVIQLY = session.User.ma_dviqly;
+                Dvi.MA_DVIQLY = session.User.IDMA_DVIQLY +"";
                 Dvi.NAME_DVIQLY = donvi.NAME_DVIQLY.Split('-')[1].ToString().ToUpper(); ;
                 List.Add(Dvi);
 
@@ -183,22 +186,53 @@ namespace MTCSYT
                 MaDienLuc.ValueField = "MA_DVIQLY";
                 MaDienLuc.DataBind();
             }
+            else
+            {
+                DM_DVQLYService dm_dviSer = new DM_DVQLYService();
+
+                var lst_dmdv = dm_dviSer.Select_DVI_Cha_ByChild(a);
+
+                MaDienLuc.DataSource = lst_dmdv;
+                MaDienLuc.ValueField = "IDMA_DVIQLY";
+                MaDienLuc.TextField = "TEN_DVIQLY";
+                MaDienLuc.DataBind();
+
+            }    
 
         }
         private void LoadDataDV()
         {
-
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            int a = int.Parse(session.User.ma_dviqly + "");
             if (MaDienLuc.Value + "" != "")
             {
-                DM_DVQLYService dm_dviSer = new DM_DVQLYService();
-                //  DataTable lst_dmdv = new DataTable();
-                var lst_dmdv = dm_dviSer.SelectAll_DVI_ByChild(int.Parse(MaDienLuc.Value + ""));
-                cmMaDvi.DataSource = lst_dmdv;
-                cmMaDvi.ValueField = "MA_DVIQLY";
-                cmMaDvi.TextField = "NAME_DVIQLY";
-                cmMaDvi.DataBind();
-            }
+                if (a > 38)
+                {
+                    DM_DVQLYService dm_dviSer = new DM_DVQLYService();
+                    var donvi = dm_dviSer.SelectDM_DVQLY(a);
+                    List<DM_DS> List = new List<DM_DS>();
+                    DM_DS Dvi = new DM_DS();
 
+                    Dvi.MA_DVIQLY = session.User.ma_dviqlyDN + "";
+                    Dvi.NAME_DVIQLY = donvi.NAME_DVIQLY.Split('-')[1].ToString().ToUpper(); ;
+                    List.Add(Dvi);
+
+                    cmMaDvi.DataSource = List;
+                    cmMaDvi.TextField = "NAME_DVIQLY";
+                    cmMaDvi.ValueField = "MA_DVIQLY";
+                    cmMaDvi.DataBind();
+                }
+                else
+                {
+                    DM_DVQLYService dm_dviSer = new DM_DVQLYService();
+                    //  DataTable lst_dmdv = new DataTable();
+                    var lst_dmdv = dm_dviSer.SelectAll_DVI_ByChild(int.Parse(MaDienLuc.Value + ""));
+                    cmMaDvi.DataSource = lst_dmdv;
+                    cmMaDvi.ValueField = "MA_DVIQLY";
+                    cmMaDvi.TextField = "NAME_DVIQLY";
+                    cmMaDvi.DataBind();
+                }
+            }
 
         }
         //Load tỷ lệ tổn thất của trạm

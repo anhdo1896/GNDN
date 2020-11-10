@@ -29,19 +29,19 @@ namespace CBDN.TonThatKyThuatReport
                 var tb1 = tbsl1 - tbsl2;
                 var tb2 = tbsl2 - tbsl3;
                 var tb3 = tbsl1 - tbsl3;
-                //H - Cháy hỏng
+                //H0 - Cháy hỏng
                 if (sanluong <=2 && sanluong_1 > 10 && sanluong_2 > 10)
                 {
                     if ((dtKhang.Rows[i]["CANH_BAO"] + "") != "")
                     {
-                        dtKhang.Rows[i]["CANH_BAO"] = "Có thể " + dtKhang.Rows[0]["CANH_BAO"] + ", " + "Cháy hỏng công tơ";
+                        dtKhang.Rows[i]["CANH_BAO"] = "Có thể " + dtKhang.Rows[0]["CANH_BAO"] + ", " + "Cháy hỏng, kẹt công tơ";
                     }
                     else
                     {
-                        dtKhang.Rows[i]["CANH_BAO"] = "Có thể " + "Cháy hỏng công tơ";
+                        dtKhang.Rows[i]["CANH_BAO"] = "Có thể " + "Cháy hỏng, kẹt công tơ";
                     }
-                    dtKhang.Rows[i]["MA_TTCTO"] = "H";
-                    dtKhang.Rows[i]["DX_CANH_BAO"] = "Kiểm tra và thay thế công tơ";
+                    dtKhang.Rows[i]["MA_TTCTO"] = "H0";
+                    dtKhang.Rows[i]["DX_CANH_BAO"] = "Kiểm tra và thay tháo công tơ";
                   //GD - Ghi đè    
                 }   
                 if(sl_check1 == 0)

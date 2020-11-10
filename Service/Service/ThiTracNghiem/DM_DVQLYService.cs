@@ -40,6 +40,10 @@ namespace SystemManageService
         {
             return _dm_dvqlyDataAccess.SelectAll_DVI_ByChild(Ma_dviqly);
         }
+        public DataTable Select_DVI_Cha_ByChild(int Ma_dviqly)
+        {
+            return _dm_dvqlyDataAccess.Select_DVI_Cha_ByChild(Ma_dviqly);
+        }
     }
 }
 

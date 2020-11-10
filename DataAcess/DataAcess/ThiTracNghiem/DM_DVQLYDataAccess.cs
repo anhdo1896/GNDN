@@ -156,6 +156,27 @@ namespace DataAccess
             }
 
         }
+        public DataTable Select_DVI_Cha_ByChild(int Ma_dviqly)
+        {
+            DbConnection connection = _DbHelper.CreateConnection(Common.ConnectionString);
+            connection.Open();
+            try
+            {
+                ArrayList para = new ArrayList();
+                para.Add(_DbHelper.CreateParam("IDMA_DVIQLY", SqlDbType.Int, Ma_dviqly));
+                DataTable dt = _DbHelper.RunProcedureGetTable(connection, Common.DatabaseSchema + "[Select_DVI_Cha_ByChild]", para);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(String.Format("BV_CTR_ByIDBC.Select_DVI_Cha_ByChild: {0}", ex.Message));
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
     }
 }
 
