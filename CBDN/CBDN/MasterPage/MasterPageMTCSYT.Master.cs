@@ -213,6 +213,15 @@ namespace QLY_VTTB.MasterPage
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_TonThat.aspx'>* Báo cáo tổn thất 110kV</a></li>
                             </ul>
                         </li>
+ <li>
+                                        <a href = 'inbox.html' class='waves-effect'><i data-icon='D' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Phân tích sản lượng khách hàng<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>1</span></span></a>
+                                        <ul class='nav nav-second-level'>                                
+                                            <li> <a href = '../TonThatKyThuat/DM_TTKinhDoanh_TRAM.aspx' > *Đặt cấu hình tổn thất</a></li> 
+                                            <li> <a href = '../TonThatKyThuat/DM_CanhBaoBatThuong.aspx' > *Danh mục cảnh báo và đề xuất</a></li>
+                                            <li> <a href = '../TonThatKyThuat/DanhSachTTKDTram.aspx' > *Danh sách trạm bất thường</a></li>
+                                            <li> <a href = '../TonThatKyThuat/BaoCaoTTKD.aspx' > *Báo cáo tổn thất kinh doanh</a></li>
+                                        </ul>
+                                    </li>
                      <li>
                             <a href='inbox.html' class='waves-effect'><i data-icon='&#xe00b;' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Trợ giúp<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>6</span></span></a>
                             <ul class='nav nav-second-level'>
@@ -220,6 +229,7 @@ namespace QLY_VTTB.MasterPage
                                 <li> <a href='../BaoCao/bc_Tram_B9.aspx'>* Hướng dẫn sử dụng</a> </li>
                             </ul>
                         </li>
+                    
           ";
                 }
                 else if (session.User.Roles.ID == 2)
@@ -543,8 +553,16 @@ namespace QLY_VTTB.MasterPage
                 else if (session.User.Roles.ID == 11)
                 {
                     lbMenu.Text = @"
-                                    < li >
-                                        < a href = 'inbox.html' class='waves-effect'><i data-icon='D' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Phân tích sản lượng khách hàng<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>1</span></span></a>
+                                    <li> 
+                                        <a href='index.html' class='waves-effect'><i class='linea-icon linea-basic fa-fw' data-icon='v'></i> <span class='hide-menu'> Quản trị hệ thống <span class='fa arrow'></span> <span class='label label-rouded label-custom pull-right'>1</span></span></a>
+                                        <ul class='nav nav-second-level'>
+                                        <li> <a href='../DanhMuc/Organization.aspx'>* Đơn vị</a> </li>
+                                     
+                                         <li> <a href='../HeThong/UserManager.aspx'>* Người dùng</a> </li>
+                                  </ul>
+                                     </li>
+                                    <li>
+                                        <a href = 'inbox.html' class='waves-effect'><i data-icon='D' class='linea-icon linea-basic fa-fw'></i> <span class='hide-menu'>Phân tích sản lượng khách hàng<span class='fa arrow'></span><span class='label label-rouded label-custom pull-right'>1</span></span></a>
                                         <ul class='nav nav-second-level'>                                
                                             <li> <a href = '../TonThatKyThuat/DM_TTKinhDoanh_TRAM.aspx' > *Đặt cấu hình tổn thất</a></li> 
                                             <li> <a href = '../TonThatKyThuat/DM_CanhBaoBatThuong.aspx' > *Danh mục cảnh báo và đề xuất</a></li>

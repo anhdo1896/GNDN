@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Cấu Hình Tổn Thất" Language="C#" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master" AutoEventWireup="true"
-    CodeBehind="DM_TTKinhDoanh_TRAM.aspx.cs" Inherits="CBDN.TonThatKyThuat.DM_TTKinhDoanh_TRAM"
-    Culture="auto" UICulture="auto" %>
+    CodeBehind="DM_TTKinhDoanh_TRAM.aspx.cs" Inherits="CBDN.TonThatKyThuat.DM_TTKinhDoanh_TRAM" 
+    Culture="auto" UICulture="auto"%>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web" TagPrefix="dx" %>
@@ -27,12 +27,14 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Category" runat="server">
-    <div class="col-md-12">
+         <div class="col-md-12">
         <div class="white-box">
-            <h1 class="m-b-0 box-title">Cấu Hình Cảnh Báo Sản Lượng</h1>
+            <h1 class="m-b-0 box-title">Cấu Hình Tổn Thất </h1>
             <div class="col-lg-12 m-t-30">
-                <hr />
+                 <hr />
             </div>
+            
+
                     <table width="100%">
 
                          <td>
