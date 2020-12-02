@@ -125,7 +125,7 @@
                                         </tr>
                                          <tr>
                                              <td>
-                                                <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="Phần Trăm TB Biến Động Của Trạm" Width="100px">
+                                                <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="Phần Trăm TB Bất Thường Của Trạm" Width="100px">
                                                 </dx:ASPxLabel>
                                             </td>
                                              <td>
@@ -137,6 +137,7 @@
                                                       <Items>
                                                           <dx:ListEditItem Text="Tất Cả Các Trạm" Value="0" Selected="True" />
                                                           <dx:ListEditItem Text="Chỉ Trạm Bất Thường" Value="1" />
+                                                          <dx:ListEditItem Text="Tìm kiếm theo sản lượng" Value="2" />
                                                       </Items>
                                                   </dx:ASPxRadioButtonList>
                                               </td>
@@ -148,6 +149,14 @@
                                             </td>
                                              <td>
                                                 <dx:ASPxLabel ID="TLTT_Tram" runat="server"  Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            <td>
+                                                <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="Sản Lượng Của Trạm" Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                             <td>
+                                                <dx:ASPxLabel ID="TLTT_SL" runat="server"  Width="100px">
                                                 </dx:ASPxLabel>
                                             </td>
                                             
@@ -196,9 +205,9 @@
                             </dxwgv:GridViewDataTextColumn>
                                     <dxwgv:GridViewDataTextColumn Caption="Tỷ lệ TT Tháng Trước" FieldName="TT_TL1" VisibleIndex="6" >
                             </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Tỷ lệ TT Tháng 2 Trước" FieldName="TT_TL2" VisibleIndex="7" >
+                                <dxwgv:GridViewDataTextColumn Caption="Tỷ lệ TT 2 Tháng Trước" FieldName="TT_TL2" VisibleIndex="7" >
                             </dxwgv:GridViewDataTextColumn>
-                                    <dxwgv:GridViewDataTextColumn Caption="Tỷ lệ TT Tháng 3 Trước" FieldName="TT_TL3" VisibleIndex="8" >
+                                    <dxwgv:GridViewDataTextColumn Caption="Tỷ lệ TT 3 Tháng Trước" FieldName="TT_TL3" VisibleIndex="8" >
                             </dxwgv:GridViewDataTextColumn> 
                         </Columns>
                                 <SettingsPager PageSize="20">

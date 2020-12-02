@@ -84,6 +84,20 @@
                                             </td>
 
                                         </tr>
+                                        <tr>
+                                            <td>
+                                                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Sản lượng Trạm" Width="200px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            <td colspan="3">
+                                                
+
+                                                <dx:ASPxTextBox ID="txtSL" runat="server" Width="170px">
+                                                </dx:ASPxTextBox>
+
+                                            </td>
+
+                                        </tr>
                                     </table>
                                 </dx:PanelContent>
                             </PanelCollection>

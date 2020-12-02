@@ -87,7 +87,6 @@
             this.xrTableCell21 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbTieude = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
-            this.SubBand1 = new DevExpress.XtraReports.UI.SubBand();
             this.dxDeXuat2 = new DevExpress.XtraReports.UI.XRLabel();
             this.dxDeXuat1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
@@ -99,8 +98,9 @@
             this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell41 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell42 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.lbDienNangMua = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.SubBand1 = new DevExpress.XtraReports.UI.SubBand();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
@@ -221,7 +221,7 @@
             // 
             this.khCSMoi.Name = "khCSMoi";
             this.khCSMoi.StylePriority.UseTextAlignment = false;
-            this.khCSMoi.Text = "CS Mới";
+            this.khCSMoi.Text = "Sản Lượng Tháng";
             this.khCSMoi.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.khCSMoi.Weight = 0.30565755795772265D;
             // 
@@ -616,7 +616,7 @@
             // xrTableCell10
             // 
             this.xrTableCell10.Name = "xrTableCell10";
-            this.xrTableCell10.Text = "CS Mới";
+            this.xrTableCell10.Text = "Sản Lượng Tháng";
             this.xrTableCell10.Weight = 0.30565784381889238D;
             // 
             // xrTableCell12
@@ -640,7 +640,7 @@
             // xrTableCell15
             // 
             this.xrTableCell15.Name = "xrTableCell15";
-            this.xrTableCell15.Text = "Hạn KĐ";
+            this.xrTableCell15.Text = "Ngày KĐ";
             this.xrTableCell15.Weight = 0.33526318142265887D;
             // 
             // xrTableCell20
@@ -682,12 +682,6 @@
             this.ReportFooter.Name = "ReportFooter";
             this.ReportFooter.SubBands.AddRange(new DevExpress.XtraReports.UI.SubBand[] {
             this.SubBand1});
-            // 
-            // SubBand1
-            // 
-            this.SubBand1.HeightF = 0F;
-            this.SubBand1.Name = "SubBand1";
-            this.SubBand1.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
             // 
             // dxDeXuat2
             // 
@@ -799,6 +793,18 @@
             this.xrTableCell42.Text = "Đề Xuất";
             this.xrTableCell42.Weight = 0.93210999294570285D;
             // 
+            // lbDienNangMua
+            // 
+            this.lbDienNangMua.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbDienNangMua.LocationFloat = new DevExpress.Utils.PointFloat(11.00006F, 32.99996F);
+            this.lbDienNangMua.Name = "lbDienNangMua";
+            this.lbDienNangMua.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbDienNangMua.SizeF = new System.Drawing.SizeF(1106.704F, 23F);
+            this.lbDienNangMua.StylePriority.UseFont = false;
+            this.lbDienNangMua.StylePriority.UseTextAlignment = false;
+            this.lbDienNangMua.Text = "II. Kết Quả Phân Tích Công tơ Tổng";
+            this.lbDienNangMua.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
             // xrLabel2
             // 
             this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
@@ -811,17 +817,11 @@
             this.xrLabel2.Text = "Tỷ Lệ Tổn Thất Sau Chuẩn Xác:           ";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // lbDienNangMua
+            // SubBand1
             // 
-            this.lbDienNangMua.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbDienNangMua.LocationFloat = new DevExpress.Utils.PointFloat(11.00006F, 32.99996F);
-            this.lbDienNangMua.Name = "lbDienNangMua";
-            this.lbDienNangMua.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbDienNangMua.SizeF = new System.Drawing.SizeF(1106.704F, 23F);
-            this.lbDienNangMua.StylePriority.UseFont = false;
-            this.lbDienNangMua.StylePriority.UseTextAlignment = false;
-            this.lbDienNangMua.Text = "II. Kết Quả Phân Tích Công tơ Tổng";
-            this.lbDienNangMua.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.SubBand1.HeightF = 0F;
+            this.SubBand1.Name = "SubBand1";
+            this.SubBand1.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
             // 
             // InBienTTKD
             // 

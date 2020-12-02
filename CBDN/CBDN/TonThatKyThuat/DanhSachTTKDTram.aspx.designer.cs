@@ -141,6 +141,24 @@ namespace CBDN.TonThatKyThuat
         protected global::DevExpress.Web.ASPxLabel TLTT_Tram;
 
         /// <summary>
+        /// ASPxLabel6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel6;
+
+        /// <summary>
+        /// TLTT_SL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel TLTT_SL;
+
+        /// <summary>
         /// btnLoc control.
         /// </summary>
         /// <remarks>
