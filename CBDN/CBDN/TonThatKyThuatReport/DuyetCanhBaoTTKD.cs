@@ -106,7 +106,8 @@ namespace CBDN.TonThatKyThuatReport
 
             }
             //Insert vào DB
-            /*for (int j = 0; i < a; j++)
+            /*
+            for (int j = 0; i < a; j++)
             {
                 string check = dtKhang.Rows[i]["MA_TTCTO"] + "";
                 if (check != "")
@@ -158,7 +159,69 @@ namespace CBDN.TonThatKyThuatReport
                 }
                 if(dt.Rows.Count != 0)
             {
-                db.Insert_Khang_PhucTra(dt, thang, nam, Ma_dvi);
+
+                //Kiểm tra xem dữ liệu được chèn vào bảng TBDD_PT_CHISO
+                DataTable ds = db.SELECT_THONGTIN_TRAM_TLTT_B10_CHECK(Ma_dvi, Matram, thang, nam);
+                int a1 = ds.Rows.Count;
+                //Nếu có dữ liệu rồi ktra với TBDD_PT_CHISO_TRAM_B10 có dữ liệu chưa và nếu có thì tybt có trùng nhau không
+                //Nếu trùng thì dữ nguyên, nếu không trùng tiến hành xoá ở TBDD_PT_CHISO rồi insert TBDD_PT_CHISO và insert DL vào lại bảng TBDD_PT_CHISO_TRAM_B10
+                if (a1==1)
+                {     
+                    
+                    DataTable check = db.SELECT_THONGTIN_TRAM_TLTT_B10_TEMP_Check(Ma_dvi, Matram, thang, nam, tylebt);
+                    int check1 = check.Rows.Count;
+                    if (check1 == 0)
+                    {
+                        float dnn = 0;
+                        float dntt = 0;
+                        float tt_lk = 0;
+                        int nn = 0;
+                        int tt = 0;
+                        db.DELETE_KHANG_PHUCTRA_TRAM(Ma_dvi, Matram, "DDK", "0A", thang, nam, 0);
+                        db.Insert_Khang_PhucTra(dt, thang, nam, Ma_dvi);
+                        ds = db.SELECT_THONGTIN_TRAM_TLTT_B10_CHECK(Ma_dvi, Matram, thang, nam);
+                        string ten_tram = ds.Rows[0]["TEN_TRAM"] + "";
+                        int csuat_tram = int.Parse(ds.Rows[0]["CSUAT_TRAM"] + "");
+                        string DNN = ds.Rows[0]["DNN"] + "";
+                        string TT_LK = ds.Rows[0]["TT_LK"] + "";
+                        string NGUYEN_NHAN = ds.Rows[0]["NGUYEN_NHAN"] + "";
+                        string TINH_TRANG = ds.Rows[0]["TINH_TRANG"] + "";
+                        string DNTT = ds.Rows[0]["DNTT"] + "";
+                        if (DNN != "") { dnn = float.Parse(DNN); }
+                        if (TT_LK != "") { tt_lk = float.Parse(TT_LK); }
+                        if (NGUYEN_NHAN != "") { nn = int.Parse(NGUYEN_NHAN); }
+                        if (TINH_TRANG != "") { tt = int.Parse(TINH_TRANG); }
+                        if (DNTT != "") { dntt = float.Parse(DNTT); }
+                        db.INSERT_THONGTIN_TRAM_TLTT_B10(Ma_dvi, Matram, ten_tram, csuat_tram, dnn, tt_lk, dntt, nn,  tt, thang, nam, tylebt);
+                      
+                    }
+
+                }
+                else if (a1 == 0)
+                        {
+                    float dnn = 0;
+                    float dntt = 0;
+                    float tt_lk = 0;
+                    int nn = 0;
+                    int tt = 0;
+                    db.Insert_Khang_PhucTra(dt, thang, nam, Ma_dvi);
+                    ds = db.SELECT_THONGTIN_TRAM_TLTT_B10_CHECK(Ma_dvi, Matram, thang, nam);
+                    string ten_tram = ds.Rows[0]["TEN_TRAM"] + "";
+                    int csuat_tram = int.Parse(ds.Rows[0]["CSUAT_TRAM"] + "");
+                    string DNN = ds.Rows[0]["DNN"] + "";
+                    string TT_LK = ds.Rows[0]["TT_LK"] + "";
+                    string NGUYEN_NHAN = ds.Rows[0]["NGUYEN_NHAN"] + "";
+                    string TINH_TRANG = ds.Rows[0]["TINH_TRANG"] + "";
+                    string DNTT = ds.Rows[0]["DNTT"] + "";
+                    if (DNN != "") { dnn = float.Parse(DNN); }
+                    if (TT_LK != "") { tt_lk = float.Parse(TT_LK); }
+                    if (NGUYEN_NHAN != "") { nn = int.Parse(NGUYEN_NHAN); }
+                    if (TINH_TRANG != "") { tt = int.Parse(TINH_TRANG); }
+                    if (DNTT != "") { dntt = float.Parse(DNTT); }
+                    db.INSERT_THONGTIN_TRAM_TLTT_B10(Ma_dvi, Matram, ten_tram, csuat_tram, dnn, tt_lk, dntt, nn, tt, thang, nam, tylebt);
+
+                }
+
             }    
 
             if (t != 0)

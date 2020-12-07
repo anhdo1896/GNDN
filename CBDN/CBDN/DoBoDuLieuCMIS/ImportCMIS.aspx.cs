@@ -244,9 +244,35 @@ namespace MTCSYT.GCS_ONLINE
                             if (checkhong != "H")
                             {
                                 decimal csm = 0;
+                                  
                                 if (dtData.Rows[j]["ChiSoMoi"] + ""!="")
                                 {
-                                    csm = decimal.Parse(dtData.Rows[j]["ChiSoMoi"].ToString().Replace(".",","));
+
+                                    var a12 = (dtData.Rows[j]["ChiSoMoi"] + "");
+                                    int x1 = a12.IndexOf(".");
+                                    int x2 = a12.LastIndexOf(".");
+                                    if (x1 == x2)
+                                    {
+                                       
+                                        csm = decimal.Parse(a12.ToString().Replace(".", ","));
+                                    }    
+                                    else
+                                    {
+                                        a12 = a12.Remove(x1, 1);
+                                        int x1a = a12.IndexOf(".");
+                                        int x2a = a12.LastIndexOf(".");
+                                        if (x1 == x2)
+                                        {
+                                            csm = decimal.Parse(a12.ToString().Replace(".", ","));
+                                        }
+                                        else
+                                        {
+                                            a12 = a12.Remove(x1a, 1);
+                                            csm = decimal.Parse(a12.ToString().Replace(".", ","));
+                                        }    
+                                    }    
+
+                                   
                                 }
 
                                 if (bcs == "BT")

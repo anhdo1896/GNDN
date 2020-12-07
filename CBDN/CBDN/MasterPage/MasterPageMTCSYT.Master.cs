@@ -119,6 +119,8 @@ namespace QLY_VTTB.MasterPage
                                 <li> <a href='../TonThatKyThuat/DM_CanhBaoBatThuong.aspx'>* Danh mục cảnh báo và đề xuất</a></li>
                                 <li> <a href='../TonThatKyThuat/DanhSachTTKDTram.aspx'>* Danh sách trạm bất thường</a></li>
                                 <li> <a href='../TonThatKyThuat/BaoCaoTTKD.aspx'>* Báo cáo tổn thất kinh doanh</a></li>
+                                <li> <a href = '../PhanTichSL/BaoCaoB10.aspx' > *Báo cáo phân tích kiểm tra TTĐN các TBA CC</a></li>
+                                <li> <a href = '../PhanTichSL/BaoCaoTLTT2Thang.aspx' > *TTĐN các TBA chênh lệch giữa 2 tháng liền kề</a></li>
                             </ul>
                         </li>
                         <li>
@@ -219,7 +221,10 @@ namespace QLY_VTTB.MasterPage
                                             <li> <a href = '../TonThatKyThuat/DM_TTKinhDoanh_TRAM.aspx' > *Đặt cấu hình tổn thất</a></li> 
                                             <li> <a href = '../TonThatKyThuat/DM_CanhBaoBatThuong.aspx' > *Danh mục cảnh báo và đề xuất</a></li>
                                             <li> <a href = '../TonThatKyThuat/DanhSachTTKDTram.aspx' > *Danh sách trạm bất thường</a></li>
-                                            <li> <a href = '../TonThatKyThuat/BaoCaoTTKD.aspx' > *Báo cáo tổn thất kinh doanh</a></li>
+                                            <li> <a href = '../TonThatKyThuat/BaoCaoTTKD.aspx' > *Báo cáo tổn thất kinh doanh</a></li
+                                            <li> <a href = '../PhanTichSL/BaoCaoB10.aspx' > *Báo cáo phân tích kiểm tra TTĐN các TBA CC</a></li>
+                                            <li> <a href = '../PhanTichSL/BaoCaoTLTT2Thang.aspx' > *TTĐN các TBA chênh lệch giữa 2 tháng liền kề</a></li>
+    
                                         </ul>
                                     </li>
                      <li>
@@ -568,6 +573,8 @@ namespace QLY_VTTB.MasterPage
                                             <li> <a href = '../TonThatKyThuat/DM_CanhBaoBatThuong.aspx' > *Danh mục cảnh báo và đề xuất</a></li>
                                             <li> <a href = '../TonThatKyThuat/DanhSachTTKDTram.aspx' > *Danh sách trạm bất thường</a></li>
                                             <li> <a href = '../TonThatKyThuat/BaoCaoTTKD.aspx' > *Báo cáo tổn thất kinh doanh</a></li>
+                                            <li> <a href = '../PhanTichSL/BaoCaoB10.aspx' > *Báo cáo phân tích kiểm tra TTĐN các TBA CC</a></li>
+                                            <li> <a href = '../PhanTichSL/BaoCaoTLTT2Thang.aspx' > *TTĐN các TBA chênh lệch giữa 2 tháng liền kề</a></li>
                                         </ul>
                                     </li>";
                 }

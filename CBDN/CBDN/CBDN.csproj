@@ -119,6 +119,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
@@ -5683,6 +5684,8 @@
     <Content Include="login\vendor\select2\select2.min.css" />
     <Content Include="login\vendor\select2\select2.min.js" />
     <Content Include="MasterPage\typography.html" />
+    <Content Include="PhanTichSL\BaoCaoTLTT2Thang.aspx" />
+    <Content Include="PhanTichSL\BaoCaoB10.aspx" />
     <Content Include="plugins\bower_components\Animatedbg\css\component.css" />
     <Content Include="plugins\bower_components\Animatedbg\css\demo.css" />
     <Content Include="plugins\bower_components\Animatedbg\css\normalize.css" />
@@ -7767,6 +7770,20 @@
     <Compile Include="MasterPage\MasterPageMTCSYT.Master.designer.cs">
       <DependentUpon>MasterPageMTCSYT.Master</DependentUpon>
     </Compile>
+    <Compile Include="PhanTichSL\BaoCaoTLTT2Thang.aspx.cs">
+      <DependentUpon>BaoCaoTLTT2Thang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhanTichSL\BaoCaoTLTT2Thang.aspx.designer.cs">
+      <DependentUpon>BaoCaoTLTT2Thang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhanTichSL\BaoCaoB10.aspx.cs">
+      <DependentUpon>BaoCaoB10.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhanTichSL\BaoCaoB10.aspx.designer.cs">
+      <DependentUpon>BaoCaoB10.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -9344,6 +9361,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report\InBienBanGiaoNhan.resx">
       <DependentUpon>InBienBanGiaoNhan.cs</DependentUpon>
     </EmbeddedResource>
