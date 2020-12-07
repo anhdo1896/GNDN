@@ -162,7 +162,7 @@
             <table width="100%">
                 <tr>
                     <td valign="top">
-                         <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdKH" Caption="Báo cáo phân tích và kiểm tra các TTDN trạm CC"
+                         <dx:ASPxGridView runat="server" AutoGenerateColumns="False" Width="100%" ID="grdKH" Caption="TTĐN các TBA chênh lệch giữa 2 tháng liền kề"
                                 ClientInstanceName="grdKH" KeyFieldName="MA_TRAM" OnHtmlCommandCellPrepared="grdKH_HtmlCommandCellPrepared"
                                 OnCellEditorInitialize="grdKH_CellEditorInitialize1" OnCustomColumnDisplayText="grdKH_CustomColumnDisplayText"
                             EditFormPreparedEventArgs = "gridView_EditFormPrepared" OnStartRowEditing="grdKH_StartRowEditing" ClientIDMode="AutoID" Theme="Aqua">
