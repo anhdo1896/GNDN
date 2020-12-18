@@ -143,7 +143,45 @@
                                             </td>
 
                                         </tr>
-                                        
+                                       
+                                         <tr>
+                                             <td>
+                                                <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="Phần Trăm TB Bất Thường Của Trạm" Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                             <td>
+                                                <dx:ASPxLabel ID="txtTyLeBT" runat="server"  Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            <td colspan="2" >
+                                                  <dx:ASPxRadioButtonList ID="rdTinhToan" runat="server" SelectedIndex="0" RepeatDirection="Horizontal" TextWrap="False" Width="350px" >
+                                                      <Items>
+                                                          <dx:ListEditItem Text="Tất Cả Các Trạm" Value="0" Selected="True" />
+                                                          <dx:ListEditItem Text="Chỉ Trạm Bất Thường" Value="1" />
+                                                        
+                                                      </Items>
+                                                  </dx:ASPxRadioButtonList>
+                                              </td>
+                                        </tr>
+                                        <tr>
+                                           <td>
+                                                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Phần Trăm Tổn Thất Trạm" Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                             <td>
+                                                <dx:ASPxLabel ID="TLTT_Tram" runat="server"  Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                             <td>
+                                                <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="ĐNTT Tháng" Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                             <td>
+                                                <dx:ASPxLabel ID="TLTT_SL" runat="server"  Width="100px">
+                                                </dx:ASPxLabel>
+                                            </td>
+                                            
+                                        </tr>
                                         <tr>
                                             
                                             <td colspan="4">

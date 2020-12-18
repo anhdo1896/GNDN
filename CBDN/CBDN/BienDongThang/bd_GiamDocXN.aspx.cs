@@ -16,6 +16,7 @@ using System.Web.Script.Serialization;
 using System.Net;
 using System.Text;
 using DevExpress.XtraRichEdit.Fields;
+using Newtonsoft.Json;
 
 namespace MTCSYT
 {
@@ -488,11 +489,62 @@ namespace MTCSYT
                 {
                     intdonvi = int.Parse(db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + "")).IDMADVIQLY.Replace(",2,", "").Replace(",", ""));
                     var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == intdonvi);
-                    SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=" + txtOTP.Text + "&strtoken=" + lbOTP.Text + "&struserID=" + txtSDT.Text;
+                   // SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=" + txtOTP.Text + "&strtoken=" + lbOTP.Text + "&struserID=" + txtSDT.Text;
+
+                    var baseAddress = "http://10.21.50.205:8080/" + "PushQueueService/vn/com/evn/otp/verify.wadl?";
+                    var request = (HttpWebRequest)WebRequest.Create(baseAddress);
+
+                    var postData = "appCode=app1" + "&";
+                    postData += "password=app1" + "&";
+                    postData += "totp=" + txtOTP.Text + "&";
+                    postData += "token=" + lbOTP.Text + "&";
+                    postData += "userId=" + txtSDT.Text;
+                    var data = Encoding.UTF8.GetBytes(postData);
+                    request.Method = "POST";
+                    request.ContentType = "application/x-www-form-urlencoded;charset=UTF-8";
+                    request.ContentLength = data.Length;
+
+                    using (var stream = request.GetRequestStream())
+                    {
+                        stream.Write(data, 0, data.Length);
+                    }
+
+                    var response = (HttpWebResponse)request.GetResponse();
+
+                    var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                    Dictionary<string, object> result1 = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseString.ToString());
+                    //string strType = "";
+                    //textBox8.Text = result1["errorCode"].ToString();
+                    SQL =  result1["message"].ToString();
                 }
                 else
                 {
-                    SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=PA2201&strtoken=" + lbOTP.Text + "&struserID=PC_BacNinh";
+                    // SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=PA2201&strtoken=" + lbOTP.Text + "&struserID=PC_BacNinh";
+                    var baseAddress = "http://10.21.50.205:8080/" + "PushQueueService/vn/com/evn/otp/verify.wadl?";
+                    var request = (HttpWebRequest)WebRequest.Create(baseAddress);
+
+                    var postData = "appCode=app1" + "&";
+                    postData += "password=app1" + "&";
+                    postData += "totp=" + txtOTP.Text + "&";
+                    postData += "token=" + lbOTP.Text + "&";
+                    postData += "userId=" + txtSDT.Text;
+                    var data = Encoding.UTF8.GetBytes(postData);
+                    request.Method = "POST";
+                    request.ContentType = "application/x-www-form-urlencoded;charset=UTF-8";
+                    request.ContentLength = data.Length;
+
+                    using (var stream = request.GetRequestStream())
+                    {
+                        stream.Write(data, 0, data.Length);
+                    }
+
+                    var response = (HttpWebResponse)request.GetResponse();
+
+                    var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                    Dictionary<string, object> result1 = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseString.ToString());
+                    //string strType = "";
+                    //textBox8.Text = result1["errorCode"].ToString();
+                    SQL = result1["message"].ToString();
 
                 }
 
@@ -500,11 +552,36 @@ namespace MTCSYT
             else
             {
                 var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == strMadviqly);
-                SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=" + txtOTP.Text + "&strtoken=" + lbOTP.Text + "&struserID=" + txtSDT.Text;
+                //SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/verify?strOTP=" + txtOTP.Text + "&strtoken=" + lbOTP.Text + "&struserID=" + txtSDT.Text;
+                var baseAddress = "http://10.21.50.205:8080/" + "PushQueueService/vn/com/evn/otp/verify.wadl?";
+                var request = (HttpWebRequest)WebRequest.Create(baseAddress);
+
+                var postData = "appCode=app1" + "&";
+                postData += "password=app1" + "&";
+                postData += "totp=" + txtOTP.Text + "&";
+                postData += "token=" + lbOTP.Text + "&";
+                postData += "userId=" + txtSDT.Text;
+                var data = Encoding.UTF8.GetBytes(postData);
+                request.Method = "POST";
+                request.ContentType = "application/x-www-form-urlencoded;charset=UTF-8";
+                request.ContentLength = data.Length;
+
+                using (var stream = request.GetRequestStream())
+                {
+                    stream.Write(data, 0, data.Length);
+                }
+
+                var response = (HttpWebResponse)request.GetResponse();
+
+                var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                Dictionary<string, object> result1 = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseString.ToString());
+                //string strType = "";
+                //textBox8.Text = result1["errorCode"].ToString();
+                SQL = result1["message"].ToString();
             }
-            string json = client.DownloadString(SQL);
-            services = (new JavaScriptSerializer()).Deserialize<string>(json);
-            if (services.Contains("không"))
+            string json = SQL;
+            //services = (new JavaScriptSerializer()).Deserialize<string>(json);
+            if (json=="không")
             {
                 return false;
             }
@@ -598,6 +675,7 @@ namespace MTCSYT
             client.Headers["Content-type"] = "application/json";
             client.Encoding = Encoding.UTF8;
             string SQL = "";
+            var list = new List<PUSHRESULT>();
             int strMadviqly = int.Parse(session.User.ma_dviqly), intdonvi;
             if (strMadviqly == 2)
             {
@@ -605,7 +683,45 @@ namespace MTCSYT
                 {
                     intdonvi = int.Parse(db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + "")).IDMADVIQLY.Replace(",2,", "").Replace(",", ""));
                     var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == intdonvi);
-                    SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/generate?strbrandname=" + donvi.TenVietTat + "&strType=1&struserID=" + txtSDT.Text + "&strRegion=" + donvi.MA_DVIQLY;
+                    //SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/generate?strbrandname=" + donvi.TenVietTat + "&strType=1&struserID=" + txtSDT.Text + "&strRegion=" + donvi.MA_DVIQLY;
+                    var baseAddress = "http://10.21.50.205:8080/" + "PushQueueService/vn/com/evn/otp/generate.wadl?";
+                    var http = (HttpWebRequest)WebRequest.Create(new Uri(baseAddress));
+                    var request = (HttpWebRequest)WebRequest.Create(baseAddress);
+                    string strappCode = "app1";
+                    string strpass = "app1";
+                    string strToken = "";
+                    string strcontent = "Ma OTP xac thuc cua quy khach la: #OTP";
+                    var postData = "brandname=" + donvi.TenVietTat + "&";
+                    postData += "type=" + 1 + "&";
+                    postData += "content=" + strcontent + "&";
+                    postData += "regionCode=" + donvi.MA_DVIQLY + "&";
+                    postData += "appCode=" + strappCode + "&";
+                    //postData += "extraInfo=truong mo rong" + "&";
+                    postData += "password=" + strpass + "&";
+                    postData += "systemKey=RVZOSUNUMTFDVUFCQUM=" + "&";
+                    postData += "token=" + strToken + "&";
+                    postData += "userId=" + txtSDT.Text;
+                    var data = Encoding.UTF8.GetBytes(postData);
+                    //postData = "brandname=EVNIT&type=2&content=nhan du lieu&regionCode=CSKH&appCode=app1&password=app1&systemKey=RVZOSUNUMTFDVUFCQUM=&token=eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwMjU5ZWE0MS03OGE3LTQyYjMtYjBiZS01MWRiOTI1OGQ4N2UiLCJpYXQiOjE1NjA5MDY5MDcsInN1YiI6Imtob2FkZC5ldm5pdEBldm4uY29tLnZuIiwiaXNzIjoiRVZOSUNUIiwiZXhwIjoxNTYwOTA3MjY3fQ.q5k4x6Qe8H3sqhDEnRGKRJjlyv1tbXqwRGyZhRTo9hY&userId=khoadd.evnit@evn.com.vn";
+                    request.Method = "POST";
+                    request.ContentType = "application/x-www-form-urlencoded;charset=UTF-8";
+                    request.ContentLength = data.Length;
+
+                    using (var stream = request.GetRequestStream())
+                    {
+                        stream.Write(data, 0, data.Length);
+                    }
+
+                    var response = (HttpWebResponse)request.GetResponse();
+
+                    var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                    Dictionary<string, object> result1 = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseString.ToString());
+                    //string strType = "";
+                    
+                    var kq = new PUSHRESULT();
+                    kq.token = result1["token"].ToString();
+                    kq.message = result1["message"].ToString();
+                    list.Add(kq);
                 }
                 else
                 {
@@ -616,12 +732,50 @@ namespace MTCSYT
             else
             {
                 var donvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == strMadviqly);
-                SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/generate?strbrandname=" + donvi.TenVietTat + "&strType=1&struserID=" + txtSDT.Text + "&strRegion=" + donvi.MA_DVIQLY;
+                //SQL = "http://10.21.50.212:8082/api/HsoDtuNPC/generate?strbrandname=" + donvi.TenVietTat + "&strType=1&struserID=" + txtSDT.Text + "&strRegion=" + donvi.MA_DVIQLY;
+                var baseAddress = "http://10.21.50.205:8080/" + "PushQueueService/vn/com/evn/otp/generate.wadl?";
+                var http = (HttpWebRequest)WebRequest.Create(new Uri(baseAddress));
+                var request = (HttpWebRequest)WebRequest.Create(baseAddress);
+                string strappCode = "app1";
+                string strpass = "app1";
+                string strToken = "";
+                string strcontent = "Ma OTP xac thuc cua quy khach la: #OTP";
+                var postData = "brandname=" + donvi.TenVietTat + "&";
+                postData += "type=" + 1 + "&";
+                postData += "content=" + strcontent + "&";
+                postData += "regionCode=" + donvi.MA_DVIQLY + "&";
+                postData += "appCode=" + strappCode + "&";
+                //postData += "extraInfo=truong mo rong" + "&";
+                postData += "password=" + strpass + "&";
+                postData += "systemKey=RVZOSUNUMTFDVUFCQUM=" + "&";
+                postData += "token=" + strToken + "&";
+                postData += "userId=" + txtSDT.Text;
+                var data = Encoding.UTF8.GetBytes(postData);
+                //postData = "brandname=EVNIT&type=2&content=nhan du lieu&regionCode=CSKH&appCode=app1&password=app1&systemKey=RVZOSUNUMTFDVUFCQUM=&token=eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwMjU5ZWE0MS03OGE3LTQyYjMtYjBiZS01MWRiOTI1OGQ4N2UiLCJpYXQiOjE1NjA5MDY5MDcsInN1YiI6Imtob2FkZC5ldm5pdEBldm4uY29tLnZuIiwiaXNzIjoiRVZOSUNUIiwiZXhwIjoxNTYwOTA3MjY3fQ.q5k4x6Qe8H3sqhDEnRGKRJjlyv1tbXqwRGyZhRTo9hY&userId=khoadd.evnit@evn.com.vn";
+                request.Method = "POST";
+                request.ContentType = "application/x-www-form-urlencoded;charset=UTF-8";
+                request.ContentLength = data.Length;
+
+                using (var stream = request.GetRequestStream())
+                {
+                    stream.Write(data, 0, data.Length);
+                }
+
+                var response = (HttpWebResponse)request.GetResponse();
+
+                var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                Dictionary<string, object> result1 = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseString.ToString());
+                //string strType = "";
+
+                var kq = new PUSHRESULT();
+                kq.token = result1["token"].ToString();
+                kq.message = result1["message"].ToString();
+                list.Add(kq);
             }
 
-            string json = client.DownloadString(SQL);
-            services = (new JavaScriptSerializer()).Deserialize<List<PUSHRESULT>>(json);
-            lbOTP.Text = services[0].token;
+            //string json = client.DownloadString(SQL);
+            //services = (new JavaScriptSerializer()).Deserialize<List<PUSHRESULT>>(json);
+            lbOTP.Text = list[0].token;
         }
     
         public class Phuongthuc

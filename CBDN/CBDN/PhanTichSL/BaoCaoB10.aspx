@@ -185,18 +185,25 @@
                                     </CellStyle>
                                 </dxwgv:GridViewDataTextColumn>
                                 <dxwgv:GridViewDataTextColumn Caption="Mã Trạm" FieldName="MA_TRAM" VisibleIndex="3">
+                                    <EditFormSettings Visible="False" /> 
                             </dxwgv:GridViewDataTextColumn>
                                 <dxwgv:GridViewDataTextColumn Caption="Tên Trạm" FieldName="TEN_TRAM" VisibleIndex="4" >
+                                    <EditFormSettings Visible="False" /> 
                             </dxwgv:GridViewDataTextColumn>
                                 <dxwgv:GridViewDataTextColumn Caption="Công Suất Trạm" FieldName="CSUAT" VisibleIndex="5" >
+                                    <EditFormSettings Visible="False" /> 
                             </dxwgv:GridViewDataTextColumn>
                                     <dxwgv:GridViewDataTextColumn Caption="Điện nhận luỹ kế" FieldName="DN_LK" VisibleIndex="6" >
+                                        <EditFormSettings Visible="False" /> 
                             </dxwgv:GridViewDataTextColumn>
                                     <dxwgv:GridViewDataTextColumn Caption="Điện năng tổn thất lũy kế" FieldName="DNTT" VisibleIndex="7" >
+                                        <EditFormSettings Visible="False" /> 
                             </dxwgv:GridViewDataTextColumn>
                                     <dxwgv:GridViewDataTextColumn Caption="Tỷ Lệ Điện năng tổn thất lũy kế" FieldName="DNTT_LK" VisibleIndex="8" >
+                                        <EditFormSettings Visible="False" /> 
                             </dxwgv:GridViewDataTextColumn>
                                 <dxwgv:GridViewDataTextColumn Caption="Nguyên Nhân (Số Khách Hàng Bất Thường)" FieldName="NGUYEN_NHAN" VisibleIndex="9" >
+                                    <EditFormSettings Visible="False" /> 
                             </dxwgv:GridViewDataTextColumn>
                                     <dxwgv:GridViewDataTextColumn Caption="Tình Trạng" FieldName="TINH_TRANG" VisibleIndex="10" >
                             </dxwgv:GridViewDataTextColumn> 

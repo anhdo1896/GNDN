@@ -98,6 +98,10 @@
       <HintPath>..\..\Entity\Entity\bin\Debug\Entity.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\code\CNPM\GhiChiSoWeb-ANH\ChamNoOnline\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Service">
       <HintPath>..\..\Service\Service\bin\Debug\Service.dll</HintPath>
     </Reference>

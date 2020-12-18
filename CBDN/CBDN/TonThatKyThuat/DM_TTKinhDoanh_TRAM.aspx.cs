@@ -112,6 +112,7 @@ namespace CBDN.TonThatKyThuat
                 txtTyLeBTram.Text = "";
             }
         }
+        
         private void SLTram()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -128,6 +129,7 @@ namespace CBDN.TonThatKyThuat
                 txtSL.Text = "";
             }
         }
+        
         protected void btnLuc_Click(object sender, EventArgs e)
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -181,6 +183,7 @@ namespace CBDN.TonThatKyThuat
                 }
             }
             var kh3 = db.SELECT_TTTT_PT_BT_KHANG(madvi, 3);
+            
             int t3 = kh3.Rows.Count;
             string btstr3 = (txtSL.Text + "").Replace(".", ",");
             if (btstr3 != "")
@@ -196,7 +199,7 @@ namespace CBDN.TonThatKyThuat
                     db.UPDATE_TTTT_PT_BT_KHANG(madvi, bt, 3);
                 }
             }
-
+            
             TyLEBT();
             TyLEBTram();
             SLTram();

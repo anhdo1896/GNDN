@@ -2680,6 +2680,45 @@ namespace DataAccess
             }
             return dt;
         }
+        public DataTable SELECT_THONGTIN_TRAM_TLTT_2THANG_BT(string pMA_DVIQLY, int pTHANG, int pNAM, int pTHANG1, int pNAM1, float pTyLeSS, float tylebt, float SL)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_THONGTIN_TRAM_TLTT_2THANG_BT";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = pTHANG;
+                objCmd.Parameters.Add("pNAM", OracleType.Number).Value = pNAM;
+                objCmd.Parameters.Add("pTHANG1", OracleType.Number).Value = pTHANG1;
+                objCmd.Parameters.Add("pNAM1", OracleType.Number).Value = pNAM1;
+                objCmd.Parameters.Add("pTL", OracleType.Number).Value = pTyLeSS;
+                objCmd.Parameters.Add("pBT", OracleType.Number).Value = tylebt;
+                objCmd.Parameters.Add("pSL", OracleType.Number).Value = SL;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+        }
+
         public void INSERT_THONGTIN_TRAM_TLTT_B10(string pMA_DVIQLY, string pMA_TRAM, string pTEN_TRAM, int pCSUAT_TRAM, float pDNN, float pTT_LK,float DNTT,int pNGUYEN_NHAN, int pTinhTrang, int pTHANG, int pNAM, float pTL)
         {
             DataTable dt = new DataTable();

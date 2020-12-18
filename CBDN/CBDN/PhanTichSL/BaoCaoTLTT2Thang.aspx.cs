@@ -63,6 +63,9 @@ namespace CBDN.PhanTichSL
                 loadDSNgay();
                 laodDVCapCha();
                 LoadDataDV();
+                TyLEBTTram();
+                LoadTyLeTT();
+                SLTTram();
             }
             else
             {
@@ -70,7 +73,24 @@ namespace CBDN.PhanTichSL
                 loadTram();
             }
         }
-      
+        private void SLTTram()
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string madvi = session.User.ma_dviqlyDN;
+            int pLoai = 3;
+            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi, pLoai);
+            int t = kh.Rows.Count;
+            if (t != 0)
+            {
+                string tlbt = kh.Rows[0]["PT_BT"] + "";
+                TLTT_SL.Text = tlbt;
+            }
+            else
+            {
+                TLTT_SL.Text = "0";
+            }
+        }
+
         protected void loadTram()
         {
             DataTable dsD = new DataTable();
@@ -82,6 +102,20 @@ namespace CBDN.PhanTichSL
             if (thang == 1) { thang1 = 12; nam1 = nam - 1; }
             else { thang1 = thang - 1; nam1 = nam; }
             DataTable ds = db.SELECT_THONGTIN_TRAM_TLTT_2THANG(Ma_dvi, thang, nam, thang1, nam1);
+            int a = ds.Rows.Count;
+
+            for(int i = 0; i<a; i++)
+            {
+                float DNN = float.Parse(ds.Rows[i]["DNN"] + "");
+                float DNTT = float.Parse(ds.Rows[i]["DNTT"] + "");
+                double TT_LK = 0;
+                if (DNN != 0)
+                {
+                    TT_LK = DNTT*100 / DNN;
+                    TT_LK= Math.Round(TT_LK, 3);
+                }
+                ds.Rows[i]["TT_LK"] = TT_LK;
+            }    
             
                 grdKH.DataSource = ds;
                 grdKH.DataBind();
@@ -97,12 +131,73 @@ namespace CBDN.PhanTichSL
             int thang1 = 0; int nam1 = 0;
             if (thang == 1) { thang1 = 12; nam1 = nam - 1; }
             else { thang1 = thang - 1; nam1 = nam; }
-            DataTable ds = db.SELECT_THONGTIN_TRAM_TLTT_2THANG(Ma_dvi, thang, nam, thang1,nam1);
+            DataTable ds = new DataTable();
+            if (int.Parse(rdTinhToan.Value + "") == 0)
+            {
+                float pTyLeSS = 0;
+                pTyLeSS = float.Parse(TLTT_Tram.Value + "");
+                ds = db.SELECT_THONGTIN_TRAM_TLTT_2THANG(Ma_dvi, thang, nam, thang1, nam1);
+           
+            }
+            else if (int.Parse(rdTinhToan.Value + "") == 1)
+            {
+                float pTyLeSS = float.Parse(TLTT_Tram.Value + "");
+                float tylebt = float.Parse(txtTyLeBT.Text + "");
+                float SL = float.Parse(TLTT_SL.Text + "");
+                ds = db.SELECT_THONGTIN_TRAM_TLTT_2THANG_BT(Ma_dvi, thang, nam, thang1, nam1, pTyLeSS, tylebt, SL);
+
+            }
+          
+            int a = ds.Rows.Count;
+            for (int i = 0; i < a; i++)
+            {
+                float DNN = float.Parse(ds.Rows[i]["DNN"] + "");
+                float DNTT = float.Parse(ds.Rows[i]["DNTT"] + "");
+                double TT_LK = 0;
+                if (DNN != 0)
+                {
+                    TT_LK = DNTT * 100 / DNN;
+                    TT_LK = Math.Round(TT_LK, 3);
+                }
+                ds.Rows[i]["TT_LK"] = TT_LK;
+            }
             grdKH.DataSource = ds;
             grdKH.DataBind();
 
         }
-
+        private void LoadTyLeTT()
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string madvi = session.User.ma_dviqlyDN;
+            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi, 2);
+            int t = kh.Rows.Count;
+            if (t != 0)
+            {
+                string tlbt = kh.Rows[0]["PT_BT"] + "";
+                TLTT_Tram.Text = tlbt;
+            }
+            else
+            {
+                TLTT_Tram.Text = "0";
+            }
+        }
+        private void TyLEBTTram()
+        {
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            string madvi = session.User.ma_dviqlyDN;
+            int pLoai = 1;
+            var kh = db.SELECT_TTTT_PT_BT_KHANG(madvi, pLoai);
+            int t = kh.Rows.Count;
+            if (t != 0)
+            {
+                string tlbt = kh.Rows[0]["PT_BT"] + "";
+                txtTyLeBT.Text = tlbt;
+            }
+            else
+            {
+                txtTyLeBT.Text = "0";
+            }
+        }
         private void laodDVCapCha()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];

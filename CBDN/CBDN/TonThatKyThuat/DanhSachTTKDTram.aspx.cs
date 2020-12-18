@@ -100,6 +100,7 @@ namespace CBDN.TonThatKyThuat
                 txtTyLeBT.Text = "0";
             }
         }
+        
         private void SLTTram()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -117,6 +118,7 @@ namespace CBDN.TonThatKyThuat
                 TLTT_SL.Text = "0";
             }
         }
+        
         protected void loadTram()
         {
             DataTable dsD = new DataTable();
@@ -147,6 +149,7 @@ namespace CBDN.TonThatKyThuat
                 grdKH.DataSource = ds;
                 grdKH.DataBind();
             }
+            
             else
             {
                 float SL = float.Parse(TLTT_SL.Text + "");
@@ -154,6 +157,7 @@ namespace CBDN.TonThatKyThuat
                 grdKH.DataSource = ds;
                 grdKH.DataBind();
             }    
+            
         }
         protected void btnLoc_Click(object sender, EventArgs e)
         {
@@ -185,6 +189,7 @@ namespace CBDN.TonThatKyThuat
                 grdKH.DataSource = ds;
                 grdKH.DataBind();
             }
+            
             else
             {
                 float SL = float.Parse(TLTT_SL.Text + "");
@@ -192,7 +197,7 @@ namespace CBDN.TonThatKyThuat
                 grdKH.DataSource = ds;
                 grdKH.DataBind();
             }
-
+            
 
         }
 

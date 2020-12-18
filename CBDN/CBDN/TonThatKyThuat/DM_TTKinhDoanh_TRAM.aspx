@@ -83,10 +83,10 @@
 
                                             </td>
 
-                                        </tr>
+                                        </tr
                                         <tr>
                                             <td>
-                                                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Sản lượng Trạm" Width="200px">
+                                                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Cấu hình ĐNTT tháng của trạm" Width="200px">
                                                 </dx:ASPxLabel>
                                             </td>
                                             <td colspan="3">
@@ -98,6 +98,7 @@
                                             </td>
 
                                         </tr>
+                                        
                                     </table>
                                 </dx:PanelContent>
                             </PanelCollection>

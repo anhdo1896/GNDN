@@ -137,7 +137,7 @@
                                                       <Items>
                                                           <dx:ListEditItem Text="Tất Cả Các Trạm" Value="0" Selected="True" />
                                                           <dx:ListEditItem Text="Chỉ Trạm Bất Thường" Value="1" />
-                                                          <dx:ListEditItem Text="Tìm kiếm theo sản lượng" Value="2" />
+                                                          <dx:ListEditItem Text="Tìm theo sản lượng" Value="2" />
                                                       </Items>
                                                   </dx:ASPxRadioButtonList>
                                               </td>
@@ -152,13 +152,14 @@
                                                 </dx:ASPxLabel>
                                             </td>
                                             <td>
-                                                <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="Sản Lượng Của Trạm" Width="100px">
+                                                <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="ĐNTT Tháng hiện tại" Width="100px">
                                                 </dx:ASPxLabel>
                                             </td>
                                              <td>
                                                 <dx:ASPxLabel ID="TLTT_SL" runat="server"  Width="100px">
                                                 </dx:ASPxLabel>
                                             </td>
+                                            
                                             
                                         </tr>
                                         <tr>
