@@ -231,11 +231,14 @@
                                     <dxwgv:GridViewDataTextColumn Caption="Tỷ Lệ ĐNTT lũy kế" FieldName="TT_LK" VisibleIndex="8" >
                             </dxwgv:GridViewDataTextColumn>
                                 <dxwgv:GridViewDataTextColumn Caption="TTĐN tháng hiện tại (%)" FieldName="TT_PT" VisibleIndex="9" >
-                            </dxwgv:GridViewDataTextColumn>
+                            </dxwgv:GridViewDataTextColumn>                         
                                      <dxwgv:GridViewDataTextColumn Caption="TTĐN tháng trước (%)" FieldName="TT_TL1" VisibleIndex="10" >
                             </dxwgv:GridViewDataTextColumn>  
-                                    <dxwgv:GridViewDataTextColumn Caption="So Sánh" FieldName="CL" VisibleIndex="11" >
+                                     <dxwgv:GridViewDataTextColumn Caption="TTĐN tháng hiện tại (kWh)" FieldName="CL" VisibleIndex="11" >
                             </dxwgv:GridViewDataTextColumn>
+                                    <dxwgv:GridViewDataTextColumn Caption="So Sánh" FieldName="TT_PT-TT_TL1" VisibleIndex="12" >
+                            </dxwgv:GridViewDataTextColumn>
+
                         </Columns>
 
                                 <SettingsPager PageSize="20">

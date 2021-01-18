@@ -2,11 +2,11 @@
     CodeBehind="QuanLyCad.aspx.cs" Inherits="CBDN.TonThatKyThuat.QuanLyCad" 
     Culture="auto" UICulture="auto"%>
 
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPopupControl" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script type="text/javascript">
@@ -52,15 +52,17 @@
                                                     AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
                                                 <EditFormSettings Visible="False" />
                                             </dx:GridViewDataTextColumn>
-                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="15" Width="60px">
-                                                <DeleteButton Visible="True">
-                                                </DeleteButton>
+                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="15" Width="60px" ShowDeleteButton="true">
+
                                             </dx:GridViewCommandColumn>
                                             <dx:GridViewDataTextColumn Caption="Mã Đơn Vị" FieldName="MADONVI" VisibleIndex="1" >
                                             </dx:GridViewDataTextColumn>
                                             <dx:GridViewDataTextColumn Caption="Mã Trạm" FieldName="MATRAM" VisibleIndex="2">
                                             </dx:GridViewDataTextColumn>
                                             <dx:GridViewDataTextColumn Caption="Địa chỉ" FieldName="DIACHI" VisibleIndex="3">
+                                                <DataItemTemplate>  
+                                                      <a runat="server" id="ref1" href='' target='_blank' oninit="OnLinkInit"></a>  
+                                                </DataItemTemplate>
                                             </dx:GridViewDataTextColumn>
                                         </Columns>
                                          <SettingsPager PageSize="20">
@@ -85,13 +87,7 @@
                                     </dx:ASPxButton>
                                 </span>
                             </td>
-                            <td align="left" valign="top" width="130px">
-                                <span style="float: Left; padding-top: 2px; margin-left: 5px;">
-                                    <dx:ASPxButton ID="btnSua" runat="server" Text="Sửa" Height="22px" Width="120px"
-                                        OnClick="btnSua_Click" ClientIDMode="AutoID" Theme="Aqua">
-                                    </dx:ASPxButton>
-                                </span>
-                            </td>
+                            
                             <td align="left" valign="top">
                                 &nbsp;</td>
                         </tr>

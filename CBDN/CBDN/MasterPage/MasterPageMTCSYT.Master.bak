@@ -1,18 +1,13 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageMTCSYT.Master.cs"
     Inherits="QLY_VTTB.MasterPage.MasterPageMTCSYT" %>
 
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxMenu" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxLoadingPanel" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxPager" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxNavBar" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -110,7 +105,7 @@
                                 <asp:Label ID="lbTenDangNhap" runat="server" Text=""></asp:Label><span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="../HeThong/PersonalInformation.aspx"><i class="ti-user"></i>Thông tin tài khoản</a></li>
-                            <li><a href="../login/Login.aspx"><i class="fa fa-power-off"></i>Đăng Xuất</a></li>
+                            <li><a href="../Login.aspx"><i class="fa fa-power-off"></i>Đăng Xuất</a></li>
                         </ul>
                     </li>
                     <li class="nav-small-cap m-t-10"><b>--- Chức năng chính ---</b></li>

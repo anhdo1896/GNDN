@@ -1,10 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/MasterPageMTCSYT.Master" AutoEventWireup="true" CodeBehind="Province.aspx.cs" Inherits="MTCSYT.Content.Province" %>
 
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dx" %>
 
-<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
+
 
 
 
@@ -71,11 +70,8 @@
                         </ValidationSettings>
                     </PropertiesTextEdit>
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewCommandColumn VisibleIndex="2" Width="20px">
-                    <EditButton Visible="True">
-                    </EditButton>
-                    <DeleteButton Visible="True">
-                    </DeleteButton>
+                <dx:GridViewCommandColumn VisibleIndex="2" Width="20px" ShowDeleteButton="true" ShowEditButton="true">
+                   
                 </dx:GridViewCommandColumn>
             </Columns>
             <SettingsBehavior ConfirmDelete="True" />

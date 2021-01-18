@@ -70,7 +70,7 @@ namespace MTCSYT
             int thang, nam;
             if (DateTime.Now.Month == 1)
             {
-                thang = 1;
+                thang = 12;
                 nam = DateTime.Now.Year - 1;
             }
             else

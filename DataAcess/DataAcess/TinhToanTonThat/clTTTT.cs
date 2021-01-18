@@ -2719,7 +2719,7 @@ namespace DataAccess
             return dt;
         }
 
-        public void INSERT_THONGTIN_TRAM_TLTT_B10(string pMA_DVIQLY, string pMA_TRAM, string pTEN_TRAM, int pCSUAT_TRAM, float pDNN, float pTT_LK,float DNTT,int pNGUYEN_NHAN, int pTinhTrang, int pTHANG, int pNAM, float pTL)
+        public void INSERT_THONGTIN_TRAM_TLTT_B10(string pMA_DVIQLY, string pMA_TRAM, string pTEN_TRAM, int pCSUAT_TRAM, float pDNN, double pTT_LK,float DNTT,int pNGUYEN_NHAN, int pTinhTrang, int pTHANG, int pNAM, float pTL)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));

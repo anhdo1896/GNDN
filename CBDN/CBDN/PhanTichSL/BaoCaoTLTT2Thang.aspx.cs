@@ -93,34 +93,47 @@ namespace CBDN.PhanTichSL
 
         protected void loadTram()
         {
-            DataTable dsD = new DataTable();
-            int thang = 0,nam = 0;    
+            int thang = 0, nam = 0;
             string Ma_dvi = cmMaDvi.Value + "";
             thang = int.Parse(cmbThang.Value + "");
             nam = int.Parse(cmbNam.Value + "");
             int thang1 = 0; int nam1 = 0;
             if (thang == 1) { thang1 = 12; nam1 = nam - 1; }
             else { thang1 = thang - 1; nam1 = nam; }
-            DataTable ds = db.SELECT_THONGTIN_TRAM_TLTT_2THANG(Ma_dvi, thang, nam, thang1, nam1);
-            int a = ds.Rows.Count;
+            DataTable ds = new DataTable();
+            if (int.Parse(rdTinhToan.Value + "") == 0)
+            {
+                float pTyLeSS = 0;
+                pTyLeSS = float.Parse(TLTT_Tram.Value + "");
+                ds = db.SELECT_THONGTIN_TRAM_TLTT_2THANG(Ma_dvi, thang, nam, thang1, nam1);
 
-            for(int i = 0; i<a; i++)
+            }
+            else if (int.Parse(rdTinhToan.Value + "") == 1)
+            {
+                float pTyLeSS = float.Parse(TLTT_Tram.Value + "");
+                float tylebt = float.Parse(txtTyLeBT.Text + "");
+                float SL = float.Parse(TLTT_SL.Text + "");
+                ds = db.SELECT_THONGTIN_TRAM_TLTT_2THANG_BT(Ma_dvi, thang, nam, thang1, nam1, pTyLeSS, tylebt, SL);
+
+            }
+
+            int a = ds.Rows.Count;
+            for (int i = 0; i < a; i++)
             {
                 float DNN = float.Parse(ds.Rows[i]["DNN"] + "");
                 float DNTT = float.Parse(ds.Rows[i]["DNTT"] + "");
                 double TT_LK = 0;
                 if (DNN != 0)
                 {
-                    TT_LK = DNTT*100 / DNN;
-                    TT_LK= Math.Round(TT_LK, 3);
+                    TT_LK = DNTT * 100 / DNN;
+                    TT_LK = Math.Round(TT_LK, 3);
                 }
                 ds.Rows[i]["TT_LK"] = TT_LK;
-            }    
-            
-                grdKH.DataSource = ds;
-                grdKH.DataBind();
             }
-       
+            grdKH.DataSource = ds;
+            grdKH.DataBind();
+        }
+    
         protected void btnLoc_Click(object sender, EventArgs e)
         {
            
@@ -368,7 +381,22 @@ namespace CBDN.PhanTichSL
             int thang1 = 0; int nam1 = 0;
             if (thang == 1) { thang1 = 12; nam1 = nam - 1; }
             else { thang1 = thang - 1; nam1 = nam; }
-            DataTable lst = db.SELECT_THONGTIN_TRAM_TLTT_2THANG(Ma_dvi, thang, nam, thang1, nam1);
+            DataTable lst = new DataTable();
+            if (int.Parse(rdTinhToan.Value + "") == 0)
+            {
+                float pTyLeSS = 0;
+                pTyLeSS = float.Parse(TLTT_Tram.Value + "");
+                lst = db.SELECT_THONGTIN_TRAM_TLTT_2THANG(Ma_dvi, thang, nam, thang1, nam1);
+
+            }
+            else if (int.Parse(rdTinhToan.Value + "") == 1)
+            {
+                float pTyLeSS = float.Parse(TLTT_Tram.Value + "");
+                float tylebt = float.Parse(txtTyLeBT.Text + "");
+                float SL = float.Parse(TLTT_SL.Text + "");
+                lst = db.SELECT_THONGTIN_TRAM_TLTT_2THANG_BT(Ma_dvi, thang, nam, thang1, nam1, pTyLeSS, tylebt, SL);
+
+            }
 
 
             #region Chuẩn bị tệp excel mẫu để ghi dữ liệu
@@ -403,8 +431,7 @@ namespace CBDN.PhanTichSL
 
             int stt = 1;
             for (int i = 0; i < a; i++)
-            {
-                
+            {               
                 _range[donghientai + stt, 0].PutValue(lst.Rows[i]["MA_TRAM"] + "");
                 _range[donghientai + stt, 1].PutValue(lst.Rows[i]["MA_DVIQLY"] +"");
                 _range[donghientai + stt, 2].PutValue(stt);
@@ -415,7 +442,8 @@ namespace CBDN.PhanTichSL
                 _range[donghientai + stt, 7].PutValue(lst.Rows[i]["TT_LK"] + "");
                 _range[donghientai + stt, 8].PutValue(lst.Rows[i]["TT_PT"] + "");
                 _range[donghientai + stt, 9].PutValue(lst.Rows[i]["TT_TL1"] + "");
-                _range[donghientai + stt, 10].PutValue(lst.Rows[i]["CL"] + "");
+                _range[donghientai + stt, 10].PutValue(lst.Rows[i]["CL"] + ""); 
+                _range[donghientai + stt, 11].PutValue(lst.Rows[i]["TT_PT-TT_TL1"] + "");
                 stt++;
             }
 

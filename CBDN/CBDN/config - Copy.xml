@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Config>
+    <ConnectString>Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.21.18.1)(PORT=1522)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=cmis3)));User Id=PTKH_MTB;Password=ptkh123;</ConnectString>
+  </Config>
+</NewDataSet>

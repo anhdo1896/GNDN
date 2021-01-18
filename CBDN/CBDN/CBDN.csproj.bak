@@ -40,45 +40,91 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Cells, Version=4.4.3.1, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Aspose.Cells.dll</HintPath>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\..\..\..\GNDN\GNDN\CBDN\CBDN\bin\Aspose.Cells.dll</HintPath>
     </Reference>
     <Reference Include="Aspose.Words, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Aspose.Words.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxTreeList.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="Castle.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GNDN\GNDN\CBDN\CBDN\bin\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GNDN\GNDN\CBDN\CBDN\bin\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Connection">
+      <HintPath>..\..\Connection\bin\Debug\Connection.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DataAcess\DataAcess\bin\Debug\DataAcess.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      
+    </Reference>
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Web.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Web.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v14.1.UI, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraCharts.v17.1.UI, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v14.1.Web, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraCharts.v17.1.Web, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v14.1.Web, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.1.Web, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Entity\Entity\bin\Debug\Entity.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\code\CNPM\GhiChiSoWeb-ANH\ChamNoOnline\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Service">
+      <HintPath>..\..\Service\Service\bin\Debug\Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Spirit.Portal.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GNDN\GNDN\Connection\bin\Debug\Spirit.Portal.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -88,9 +134,13 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -3653,7 +3703,6 @@
     <Content Include="assets\global\plugins\icheck\demo\css\montserrat-regular.svg" />
     <Content Include="assets\global\plugins\icheck\demo\css\normalize.css" />
     <Content Include="assets\global\plugins\icheck\demo\index.html" />
-    <Content Include="assets\global\plugins\icheck\demo\js\custom.js" />
     <Content Include="assets\global\plugins\icheck\demo\js\custom.min.js" />
     <Content Include="assets\global\plugins\icheck\demo\js\jquery.js" />
     <Content Include="assets\global\plugins\icheck\demo\js\zepto.js" />
@@ -5445,6 +5494,7 @@
     <Content Include="assets\pages\scripts\v,..min.js" />
     <Content Include="assets\pages\scripts\widgets.js" />
     <Content Include="assets\pages\scripts\widgets.min.js" />
+    <Content Include="BaoCao\BaoCaoB9.aspx" />
     <Content Include="BaoCao\bcTonThatDienLuc_CapDienAp.aspx" />
     <Content Include="BaoCao\bcTonThat_CapDienAp.aspx" />
     <Content Include="BaoCao\bc_chiTietSauChot.aspx" />
@@ -5456,10 +5506,12 @@
     <Content Include="BaoCao\bc_BieuTongGiaoNhan.aspx" />
     <Content Include="BaoCao\bc_BieuTong_QT_ALL.aspx" />
     <Content Include="BaoCao\TK_DVChotBaoCao.aspx" />
-    <Content Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx" />
-    <Content Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx" />
+    <Content Include="BC_TK_ChotSL\bc_Chot_BaoCaoB9.aspx" />
     <Content Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx" />
+    <Content Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx" />
     <Content Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx" />
+    <Content Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx" />
+    <Content Include="BC_TK_ChotSL\LS_BieuTong_QT_ALL.aspx" />
     <Content Include="BienDongThang\bd_danhSachDiemDoDaNhap.aspx" />
     <Content Include="BienDongThang\bd_GiamDocXN_BackUp_PDF.aspx" />
     <Content Include="BaoCao\bc_TheoDoiSoLieu.aspx" />
@@ -5486,6 +5538,7 @@
     <Content Include="DienNhan\DN_DienNangDuKien.aspx" />
     <Content Include="DienNhan\DN_MoKhoaNgay.aspx" />
     <Content Include="DoBoDuLieuCMIS\GCS_NHANDLCMIS.aspx" />
+    <Content Include="DoBoDuLieuCMIS\ImportCMIS.aspx" />
     <Content Include="DongBoDuLieuMDMS\toolDongBoDuLieu.aspx" />
     <Content Include="eliteadmin\css\tableCSS.css" />
     <Content Include="DanhMuc\dmCongTo.aspx" />
@@ -5650,6 +5703,8 @@
     <Content Include="login\vendor\select2\select2.min.css" />
     <Content Include="login\vendor\select2\select2.min.js" />
     <Content Include="MasterPage\typography.html" />
+    <Content Include="PhanTichSL\BaoCaoTLTT2Thang.aspx" />
+    <Content Include="PhanTichSL\BaoCaoB10.aspx" />
     <Content Include="plugins\bower_components\Animatedbg\css\component.css" />
     <Content Include="plugins\bower_components\Animatedbg\css\demo.css" />
     <Content Include="plugins\bower_components\Animatedbg\css\normalize.css" />
@@ -6585,12 +6640,6 @@
     <Content Include="plugins\bower_components\jsgrid\css\jsgrid.css" />
     <Content Include="plugins\bower_components\jsgrid\css\theme.css" />
     <Content Include="plugins\bower_components\jsgrid\db.js" />
-    <Content Include="plugins\bower_components\jsgrid\dist\jsgrid-theme.css" />
-    <Content Include="plugins\bower_components\jsgrid\dist\jsgrid-theme.min.css" />
-    <Content Include="plugins\bower_components\jsgrid\dist\jsgrid.css" />
-    <Content Include="plugins\bower_components\jsgrid\dist\jsgrid.js" />
-    <Content Include="plugins\bower_components\jsgrid\dist\jsgrid.min.css" />
-    <Content Include="plugins\bower_components\jsgrid\dist\jsgrid.min.js" />
     <Content Include="plugins\bower_components\jsgrid\external\jquery\jquery-1.8.3.js" />
     <Content Include="plugins\bower_components\jsgrid\external\qunit\qunit-1.10.0.css" />
     <Content Include="plugins\bower_components\jsgrid\external\qunit\qunit-1.10.0.js" />
@@ -6869,32 +6918,6 @@
     <Content Include="plugins\bower_components\multiselect\js\jquery.multi-select.js" />
     <Content Include="plugins\bower_components\nestable\jquery.nestable.js" />
     <Content Include="plugins\bower_components\nestable\nestable.css" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap-theme.css" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap.css" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap.min.css" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\js\bootstrap.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\js\bootstrap.min.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\js\npm.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\Gruntfile.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\grunt\bs-commonjs-generator.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\grunt\bs-glyphicons-data-generator.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\grunt\bs-lessdoc-parser.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\grunt\bs-raw-files-generator.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\js\affix.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\js\alert.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\js\button.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\js\carousel.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\js\collapse.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\js\dropdown.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\js\modal.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\js\popover.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\js\scrollspy.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\js\tab.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\js\tooltip.js" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\js\transition.js" />
     <Content Include="plugins\bower_components\owl.carousel\owl.carousel.js" />
     <Content Include="plugins\bower_components\owl.carousel\owl.carousel.min.css" />
     <Content Include="plugins\bower_components\owl.carousel\owl.carousel.min.js" />
@@ -7284,7 +7307,6 @@
     <Content Include="plugins\images\users\varun.jpg" />
     <Content Include="Report\Report.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
-    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\profiles.pubxml" />
     <None Include="Service References\ser_MDMS\Service_MDMS.disco" />
     <None Include="Service References\ser_MDMS\configuration91.svcinfo" />
@@ -7306,26 +7328,89 @@
     <Content Include="TonThatCMIS\TT_DzTrungAp.aspx" />
     <Content Include="TonThatCMIS\TT_KH_DAThap.aspx" />
     <Content Include="TonThatCMIS\TT_TBA.aspx" />
+    <Content Include="TonThatKyThuat\rq_BaoCaoTTKD.aspx" />
+    <Content Include="TonThatKyThuat\DM_CanhBaoBatThuong.aspx" />
+    <Content Include="TonThatKyThuat\CauHinhTonThat.aspx" />
+    <Content Include="TonThatKyThuat\BaoCaoTTKD.aspx" />
+    <Content Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx" />
+    <Content Include="TonThatKyThuat\DanhSachTramUuTien.aspx" />
+    <Content Include="TonThatKyThuat\dmKhachHangLuuY.aspx" />
     <Content Include="TonThatKyThuat\dm_KeHoachThang.aspx" />
     <Content Include="TonThatKyThuat\dmKhachHang_CT.aspx" />
     <Content Include="TonThatKyThuat\ChiTietPhuTai.aspx" />
+    <Content Include="TonThatKyThuat\DM_TTKinhDoanh_TRAM.aspx" />
+    <Content Include="TonThatKyThuat\DanhSachTTKDTram.aspx" />
+    <Content Include="TonThatKyThuat\DsTramUuTien.aspx" />
     <Content Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx" />
+    <Content Include="TonThatKyThuat\KiemTraCot_CAD.aspx" />
+    <Content Include="TonThatKyThuat\DM_TTKinhDoanh.aspx" />
+    <Content Include="TonThatKyThuat\QuanLyCad.aspx" />
     <Content Include="TonThatKyThuat\SoSanhTonThat.aspx" />
     <Content Include="TonThatKyThuat\dmKhachHang.aspx" />
     <Content Include="TonThatKyThuat\dmLoaiDuongDay.aspx" />
     <Content Include="TonThatKyThuat\ImportData.aspx" />
+    <Content Include="TonThatKyThuat\TonThatTramUuTien.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADOController.cs" />
+    <Compile Include="BaoCao\BaoCaoB9.aspx.cs">
+      <DependentUpon>BaoCaoB9.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaoCao\BaoCaoB9.aspx.designer.cs">
+      <DependentUpon>BaoCaoB9.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\bc_BieuTong_QT_ALL.aspx.cs">
       <DependentUpon>bc_BieuTong_QT_ALL.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="BaoCao\bc_BieuTong_QT_ALL.aspx.designer.cs">
       <DependentUpon>bc_BieuTong_QT_ALL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BaoCaoB9.aspx.cs">
+      <DependentUpon>bc_Chot_BaoCaoB9.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BaoCaoB9.aspx.designer.cs">
+      <DependentUpon>bc_Chot_BaoCaoB9.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx.cs">
+      <DependentUpon>bc_Chot_BCChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx.designer.cs">
+      <DependentUpon>bc_Chot_BCChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx.cs">
+      <DependentUpon>bc_Chot_BieuTongGiaoNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx.designer.cs">
+      <DependentUpon>bc_Chot_BieuTongGiaoNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx.cs">
+      <DependentUpon>BC_Chot_inBienBanQT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx.designer.cs">
+      <DependentUpon>BC_Chot_inBienBanQT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx.cs">
+      <DependentUpon>bc_Chot_TonThat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx.designer.cs">
+      <DependentUpon>bc_Chot_TonThat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\LS_BieuTong_QT_ALL.aspx.cs">
+      <DependentUpon>LS_BieuTong_QT_ALL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BC_TK_ChotSL\LS_BieuTong_QT_ALL.aspx.designer.cs">
+      <DependentUpon>LS_BieuTong_QT_ALL.aspx</DependentUpon>
     </Compile>
     <Compile Include="BienDongThang\bd_danhSachDiemDoDaNhap.aspx.cs">
       <DependentUpon>bd_danhSachDiemDoDaNhap.aspx</DependentUpon>
@@ -7372,7 +7457,9 @@
     <Compile Include="Class\clTinhTonThatKT.cs" />
     <Compile Include="Class\ConvertListToTable.cs" />
     <Compile Include="Class\DisplayConfigConsts.cs" />
+    <Compile Include="Class\InBienBanGiaoNhan.cs" />
     <Compile Include="Class\InBienBanQT.cs" />
+    <Compile Include="Class\LS_InBienBanQT.cs" />
     <Compile Include="Class\XuatXML_GCS.cs" />
     <Compile Include="DanhMuc\DM_DiemDoLienKet.aspx.cs">
       <DependentUpon>DM_DiemDoLienKet.aspx</DependentUpon>
@@ -7436,6 +7523,13 @@
     </Compile>
     <Compile Include="DoBoDuLieuCMIS\GCS_NHANDLCMIS.aspx.designer.cs">
       <DependentUpon>GCS_NHANDLCMIS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoBoDuLieuCMIS\ImportCMIS.aspx.cs">
+      <DependentUpon>ImportCMIS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoBoDuLieuCMIS\ImportCMIS.aspx.designer.cs">
+      <DependentUpon>ImportCMIS.aspx</DependentUpon>
     </Compile>
     <Compile Include="DongBoDuLieuMDMS\toolDongBoDuLieu.aspx.cs">
       <DependentUpon>toolDongBoDuLieu.aspx</DependentUpon>
@@ -7513,34 +7607,6 @@
     </Compile>
     <Compile Include="BaoCao\TK_DVChotBaoCao.aspx.designer.cs">
       <DependentUpon>TK_DVChotBaoCao.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx.cs">
-      <DependentUpon>bc_Chot_TonThat.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_TonThat.aspx.designer.cs">
-      <DependentUpon>bc_Chot_TonThat.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx.cs">
-      <DependentUpon>bc_Chot_BieuTongGiaoNhan.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx.designer.cs">
-      <DependentUpon>bc_Chot_BieuTongGiaoNhan.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx.cs">
-      <DependentUpon>bc_Chot_BCChiTiet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx.designer.cs">
-      <DependentUpon>bc_Chot_BCChiTiet.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx.cs">
-      <DependentUpon>BC_Chot_inBienBanQT.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BC_TK_ChotSL\BC_Chot_inBienBanQT.aspx.designer.cs">
-      <DependentUpon>BC_Chot_inBienBanQT.aspx</DependentUpon>
     </Compile>
     <Compile Include="BienDongThang\bd_TongXacNhan.aspx.cs">
       <DependentUpon>bd_TongXacNhan.aspx</DependentUpon>
@@ -7723,11 +7789,36 @@
     <Compile Include="MasterPage\MasterPageMTCSYT.Master.designer.cs">
       <DependentUpon>MasterPageMTCSYT.Master</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PhanTichSL\BaoCaoTLTT2Thang.aspx.cs">
+      <DependentUpon>BaoCaoTLTT2Thang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhanTichSL\BaoCaoTLTT2Thang.aspx.designer.cs">
+      <DependentUpon>BaoCaoTLTT2Thang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhanTichSL\BaoCaoB10.aspx.cs">
+      <DependentUpon>BaoCaoB10.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhanTichSL\BaoCaoB10.aspx.designer.cs">
+      <DependentUpon>BaoCaoB10.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Report\InBienBanGiaoNhan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\InBienBanGiaoNhan.Designer.cs">
+      <DependentUpon>InBienBanGiaoNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\InDienNhan3ThoiDiem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\InDienNhan3ThoiDiem.Designer.cs">
+      <DependentUpon>InDienNhan3ThoiDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\InDN_ThuongPhamTCT.cs">
       <SubType>Component</SubType>
@@ -7911,6 +8002,69 @@
     <Compile Include="TonThatCMIS\TT_TBA.aspx.designer.cs">
       <DependentUpon>TT_TBA.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TonThatKyThuatReport\DuyetTTTramTB.cs" />
+    <Compile Include="TonThatKyThuatReport\DuyetCanhBaoTTKD.cs" />
+    <Compile Include="TonThatKyThuatReport\InBienBanQT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuatReport\InBienBanQT.Designer.cs">
+      <DependentUpon>InBienBanQT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuatReport\InBienTTKD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuatReport\InBienTTKD.Designer.cs">
+      <DependentUpon>InBienTTKD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\rq_BaoCaoTTKD.aspx.cs">
+      <DependentUpon>rq_BaoCaoTTKD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\rq_BaoCaoTTKD.aspx.designer.cs">
+      <DependentUpon>rq_BaoCaoTTKD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DM_CanhBaoBatThuong.aspx.cs">
+      <DependentUpon>DM_CanhBaoBatThuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DM_CanhBaoBatThuong.aspx.designer.cs">
+      <DependentUpon>DM_CanhBaoBatThuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\CauHinhTonThat.aspx.cs">
+      <DependentUpon>CauHinhTonThat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\CauHinhTonThat.aspx.designer.cs">
+      <DependentUpon>CauHinhTonThat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\BaoCaoTTKD.aspx.cs">
+      <DependentUpon>BaoCaoTTKD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\BaoCaoTTKD.aspx.designer.cs">
+      <DependentUpon>BaoCaoTTKD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx.cs">
+      <DependentUpon>ChiTietPhuTaiNgay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\ChiTietPhuTaiNgay.aspx.designer.cs">
+      <DependentUpon>ChiTietPhuTaiNgay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DanhSachTramUuTien.aspx.cs">
+      <DependentUpon>DanhSachTramUuTien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DanhSachTramUuTien.aspx.designer.cs">
+      <DependentUpon>DanhSachTramUuTien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\dmKhachHangLuuY.aspx.cs">
+      <DependentUpon>dmKhachHangLuuY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\dmKhachHangLuuY.aspx.designer.cs">
+      <DependentUpon>dmKhachHangLuuY.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TonThatKyThuat\dm_KeHoachThang.aspx.cs">
       <DependentUpon>dm_KeHoachThang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -7932,12 +8086,54 @@
     <Compile Include="TonThatKyThuat\ChiTietPhuTai.aspx.designer.cs">
       <DependentUpon>ChiTietPhuTai.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TonThatKyThuat\DM_TTKinhDoanh_TRAM.aspx.cs">
+      <DependentUpon>DM_TTKinhDoanh_TRAM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DM_TTKinhDoanh_TRAM.aspx.designer.cs">
+      <DependentUpon>DM_TTKinhDoanh_TRAM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DanhSachTTKDTram.aspx.cs">
+      <DependentUpon>DanhSachTTKDTram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DanhSachTTKDTram.aspx.designer.cs">
+      <DependentUpon>DanhSachTTKDTram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DsTramUuTien.aspx.cs">
+      <DependentUpon>DsTramUuTien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DsTramUuTien.aspx.designer.cs">
+      <DependentUpon>DsTramUuTien.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx.cs">
       <DependentUpon>ImportCS_ChuKyNgay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TonThatKyThuat\ImportCS_ChuKyNgay.aspx.designer.cs">
       <DependentUpon>ImportCS_ChuKyNgay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\KiemTraCot_CAD.aspx.cs">
+      <DependentUpon>KiemTraCot_CAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\KiemTraCot_CAD.aspx.designer.cs">
+      <DependentUpon>KiemTraCot_CAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DM_TTKinhDoanh.aspx.cs">
+      <DependentUpon>DM_TTKinhDoanh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\DM_TTKinhDoanh.aspx.designer.cs">
+      <DependentUpon>DM_TTKinhDoanh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\QuanLyCad.aspx.cs">
+      <DependentUpon>QuanLyCad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\QuanLyCad.aspx.designer.cs">
+      <DependentUpon>QuanLyCad.aspx</DependentUpon>
     </Compile>
     <Compile Include="TonThatKyThuat\SoSanhTonThat.aspx.cs">
       <DependentUpon>SoSanhTonThat.aspx</DependentUpon>
@@ -7966,6 +8162,13 @@
     </Compile>
     <Compile Include="TonThatKyThuat\ImportData.aspx.designer.cs">
       <DependentUpon>ImportData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TonThatKyThuat\TonThatTramUuTien.aspx.cs">
+      <DependentUpon>TonThatTramUuTien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TonThatKyThuat\TonThatTramUuTien.aspx.designer.cs">
+      <DependentUpon>TonThatTramUuTien.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\ServerSignWS\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -8132,7 +8335,6 @@
     <Content Include="assets\global\plugins\icheck\.gitignore" />
     <Content Include="assets\global\plugins\icheck\bower.json" />
     <Content Include="assets\global\plugins\icheck\CHANGELOG.md" />
-    <Content Include="assets\global\plugins\icheck\demo\css\custom.styl" />
     <Content Include="assets\global\plugins\icheck\demo\css\montserrat-bold.eot" />
     <Content Include="assets\global\plugins\icheck\demo\css\montserrat-bold.ttf" />
     <Content Include="assets\global\plugins\icheck\demo\css\montserrat-bold.woff" />
@@ -9098,96 +9300,6 @@
     <Content Include="plugins\bower_components\morrisjs\spec\lib\parse_time_spec.coffee" />
     <Content Include="plugins\bower_components\morrisjs\spec\support\placeholder.coffee" />
     <Content Include="plugins\bower_components\morrisjs\spec\viz\run.sh" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\CHANGELOG.md" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap-theme.css.map" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap-theme.min.css.map" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap.css.map" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap.min.css.map" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\grunt\.jshintrc" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\grunt\configBridge.json" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\grunt\sauce_browsers.yml" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\alerts.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\badges.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\bootstrap.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\breadcrumbs.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\button-groups.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\buttons.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\carousel.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\close.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\code.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\component-animations.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\dropdowns.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\forms.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\glyphicons.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\grid.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\input-groups.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\jumbotron.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\labels.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\list-group.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\media.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\alerts.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\background-variant.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\border-radius.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\buttons.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\center-block.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\clearfix.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\forms.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\gradients.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\grid-framework.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\grid.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\hide-text.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\image.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\labels.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\list-group.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\nav-divider.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\nav-vertical-align.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\opacity.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\pagination.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\panels.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\progress-bar.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\reset-filter.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\reset-text.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\resize.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\responsive-visibility.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\size.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\tab-focus.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\table-row.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\text-emphasis.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\text-overflow.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\mixins\vendor-prefixes.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\modals.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\navbar.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\navs.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\normalize.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\pager.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\pagination.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\panels.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\popovers.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\print.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\progress-bars.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\responsive-embed.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\responsive-utilities.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\scaffolding.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\tables.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\theme.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\thumbnails.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\tooltip.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\type.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\utilities.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\variables.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\less\wells.less" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\LICENSE" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\package.json" />
-    <Content Include="plugins\bower_components\node_modules\bootstrap\README.md" />
     <Content Include="plugins\bower_components\owl.carousel\owl.carousel - Shortcut.lnk" />
     <Content Include="plugins\bower_components\raphael\.bower.json" />
     <Content Include="plugins\bower_components\raphael\bower.json" />
@@ -9256,6 +9368,8 @@
     <Folder Include="assets\apps\img\" />
     <Folder Include="assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="plugins\bower_components\etc\" />
+    <Folder Include="plugins\bower_components\jsgrid\dist\" />
+    <Folder Include="plugins\bower_components\node_modules\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -9266,7 +9380,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report\InBienBanGiaoNhan.resx">
+      <DependentUpon>InBienBanGiaoNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\InDienNhan3ThoiDiem.resx">
+      <DependentUpon>InDienNhan3ThoiDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\InDN_ThuongPhamTCT.resx">
       <DependentUpon>InDN_ThuongPhamTCT.cs</DependentUpon>
     </EmbeddedResource>
@@ -9306,6 +9425,12 @@
     <EmbeddedResource Include="Report\InBienBanQT.resx">
       <DependentUpon>InBienBanQT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TonThatKyThuatReport\InBienBanQT.resx">
+      <DependentUpon>InBienBanQT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TonThatKyThuatReport\InBienTTKD.resx">
+      <DependentUpon>InBienTTKD.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -9328,24 +9453,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ser_MDMS\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Connection\Connection.csproj">
-      <Project>{b29b9b08-241f-4b25-afa6-dceb18382602}</Project>
-      <Name>Connection</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DataAcess\DataAcess\DataAcess.csproj">
-      <Project>{7a1b3aad-10cd-42cc-85ab-bb6cbf5913e7}</Project>
-      <Name>DataAcess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Entity\Entity\Entity.csproj">
-      <Project>{78cfe0f4-0056-451e-b696-52c04c80cde8}</Project>
-      <Name>Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Service\Service\Service.csproj">
-      <Project>{841e418a-a2c6-459f-abfb-d4c289d8e4dc}</Project>
-      <Name>Service</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
