@@ -109,6 +109,13 @@ namespace CBDN.PhanTichSL
             nam = int.Parse(cmbNam.Value + "");
             float tlbt = TyLEBT();
             DataTable ds = db.SELECT_THONGTIN_TRAM_TLTT_B10_TEMP_BC(Ma_dvi, thang, nam, tlbt);
+            int a = ds.Rows.Count;
+            for(int i =0; i<a; i++)
+            {
+                ds.Rows[i]["DN_LK"] = Math.Abs(float.Parse(ds.Rows[i]["DN_LK"] + ""));
+                ds.Rows[i]["DNTT"] = Math.Abs(float.Parse(ds.Rows[i]["DNTT"] + ""));
+                ds.Rows[i]["DNTT_LK"] = Math.Abs(float.Parse(ds.Rows[i]["DNTT_LK"] + ""));
+            }    
             grdKH.DataSource = ds;
             grdKH.DataBind();
 
@@ -299,7 +306,13 @@ namespace CBDN.PhanTichSL
             if (Ma_dvi == "") return;
             float tlbt = TyLEBT();
             DataTable lst = db.SELECT_THONGTIN_TRAM_TLTT_B10_TEMP_BC(Ma_dvi, thang, nam, tlbt);
-
+            int a1 = lst.Rows.Count;
+            for (int i = 0; i < a1; i++)
+            {
+                lst.Rows[i]["DN_LK"] = Math.Abs(float.Parse(lst.Rows[i]["DN_LK"] + ""));
+                lst.Rows[i]["DNTT"] = Math.Abs(float.Parse(lst.Rows[i]["DNTT"] + ""));
+                lst.Rows[i]["DNTT_LK"] = Math.Abs(float.Parse(lst.Rows[i]["DNTT_LK"] + ""));
+            }
 
             #region Chuẩn bị tệp excel mẫu để ghi dữ liệu
             string destFile = Server.MapPath("~/Tem/BC_PL10.xls");

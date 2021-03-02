@@ -125,7 +125,7 @@
                                         </tr>
                                          <tr>
                                              <td>
-                                                <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="Phần Trăm TB Bất Thường Của Trạm" Width="100px">
+                                                <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="Phần Trăm Tổn Thất chênh lệch giữa 2 tháng" Width="100px">
                                                 </dx:ASPxLabel>
                                             </td>
                                              <td>
@@ -135,9 +135,10 @@
                                             <td colspan="2" >
                                                   <dx:ASPxRadioButtonList ID="rdTinhToan" runat="server" SelectedIndex="0" RepeatDirection="Horizontal" TextWrap="False" Width="350px" >
                                                       <Items>
-                                                          <dx:ListEditItem Text="Tất Cả Các Trạm" Value="0" Selected="True" />
-                                                          <dx:ListEditItem Text="Chỉ Trạm Bất Thường" Value="1" />
-                                                          <dx:ListEditItem Text="Tìm theo sản lượng" Value="2" />
+                                                          <dx:ListEditItem Text="Tìm theo % tỷ lệ tổn thất trạm" Value="0" Selected="True" />
+                                                          <dx:ListEditItem Text="Tìm theo % chênh lệch tổn thất" Value="1" />
+                                                          <dx:ListEditItem Text="Tìm theo sản lượng tổn thất" Value="2" />
+                                                          <dx:ListEditItem Text="Tất cả điều kiện" Value="3" />
                                                       </Items>
                                                   </dx:ASPxRadioButtonList>
                                               </td>
@@ -166,6 +167,7 @@
                                             
                                             <td colspan="4">
                                                 <dx:ASPxButton ID="btnLoc" runat="server" Text="Lọc dữ liệu" OnClick="btnLoc_Click" Theme="Aqua"></dx:ASPxButton>
+                                                <dx:ASPxButton ID="ASPxButton1" runat="server" Text="Xuất dữ liệu" OnClick="btnXuat_Click" Theme="Aqua"></dx:ASPxButton>
                                             </td>
                                         </tr>
                                     </table>
@@ -229,6 +231,7 @@
                  <td align="left" width="130px" valign="top">
                         <dx:ASPxButton ID="btnXemChiTiet" runat="server" Text="Thông tin chi tiết" Width="120px" Theme="Aqua" OnClick="btnXemChiTiet_Click" >
                         </dx:ASPxButton>
+                     
                     </td>
              </tr>
         </div>

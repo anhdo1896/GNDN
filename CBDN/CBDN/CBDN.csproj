@@ -63,14 +63,11 @@
       <HintPath>..\..\DataAcess\DataAcess\bin\Debug\DataAcess.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      
     </Reference>
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      
     </Reference>
     <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      
     </Reference>
     <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -99,7 +96,6 @@
     </Reference>
     <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      
     </Reference>
     <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -9350,6 +9346,21 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <None Include="Service References\ser_MDMS\Service_MDMS.wsdl" />
+    <Content Include="Tem\BCTonThatLenTCT.xls" />
+    <Content Include="Tem\BC_BCDienLuc.xls" />
+    <Content Include="Tem\BC_bc_TramB9.xls" />
+    <Content Include="Tem\bc_chiTiet.xls" />
+    <Content Include="Tem\BC_ChiTietGN.xls" />
+    <Content Include="Tem\BC_GiamDocKy.xls" />
+    <Content Include="Tem\BC_GiaoNhanChiNhanh.xls" />
+    <Content Include="Tem\BC_KhuVuc.xls" />
+    <Content Include="Tem\BC_PL10.xls" />
+    <Content Include="Tem\BC_PL10.xlsx" />
+    <Content Include="Tem\BC_TongHopDienNang.xls" />
+    <Content Include="Tem\BC_TonThat.xls" />
+    <Content Include="Tem\Bieu_thong_ke_TTDN_tram.xls" />
+    <Content Include="Tem\Bieu_thong_ke_TTDN_tram.xlsx" />
+    <Content Include="Tem\DanhSachTramBatThuong.xls" />
     <None Include="Web References\ServerSignWS\SignServerWS.xsd">
       <SubType>Designer</SubType>
     </None>

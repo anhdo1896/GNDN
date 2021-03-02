@@ -9,6 +9,7 @@ using System.Data;
 using MTCSYT;
 using System.IO;
 using System.Web.UI.HtmlControls;
+using Aspose.Cells;
 
 namespace CBDN.TonThatKyThuat
 {
@@ -17,6 +18,8 @@ namespace CBDN.TonThatKyThuat
         DataAccess.clTTTT db = new DataAccess.clTTTT();
         private const string funcid = "58";
         private SYS_Right rightOfUser = null;
+        private Cells _range;
+        private Worksheet _exSheet;
         protected void Page_Load(object sender, EventArgs e)
         {
             #region PhanQuyen
@@ -118,87 +121,59 @@ namespace CBDN.TonThatKyThuat
                 TLTT_SL.Text = "0";
             }
         }
-        
-        protected void loadTram()
+        protected DataTable Laydulieu()
         {
-            DataTable dsD = new DataTable();
+            DataTable ds = new DataTable();
             CBDN.TonThatKyThuatReport.DuyetTTTramTB DuyetKH = new CBDN.TonThatKyThuatReport.DuyetTTTramTB();
-            int thang = 0, thang1 = 0, thang2 = 0, thang3 = 0, nam = 0, nam1 = 0, nam2 = 0, nam3 = 0;    
+            int thang = 0, thang1 = 0, thang2 = 0, thang3 = 0, nam = 0, nam1 = 0, nam2 = 0, nam3 = 0;
             string Ma_dvi = cmMaDvi.Value + "";
+
             thang = int.Parse(cmbThang.Value + "");
             nam = int.Parse(cmbNam.Value + "");
             if (thang == 1) { thang1 = 12; thang2 = 11; thang3 = 10; nam1 = nam - 1; nam2 = nam - 1; nam3 = nam - 1; }
             else if (thang == 2) { thang1 = 1; thang2 = 12; thang3 = 11; nam1 = nam; nam2 = nam - 1; nam3 = nam - 1; }
             else if (thang == 3) { thang1 = 2; thang2 = 1; thang3 = 12; nam1 = nam; nam2 = nam; nam3 = nam - 1; }
             else { thang1 = thang - 1; thang2 = thang - 2; thang3 = thang - 3; nam1 = nam; nam2 = nam; nam3 = nam; }
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-           
 
             if (int.Parse(rdTinhToan.Value + "") == 0)
             {
                 float pTyLeSS = 0;
                 pTyLeSS = float.Parse(TLTT_Tram.Value + "");
-                DataTable ds = db.SELECT_THONGTIN_TRAM_TLTT(Ma_dvi, thang, nam, thang1, nam1, thang2, nam2, thang3, nam3, pTyLeSS);
-                grdKH.DataSource = ds;
-                grdKH.DataBind();
+                ds = db.SELECT_THONGTIN_TRAM_TLTT(Ma_dvi, thang, nam, thang1, nam1, thang2, nam2, thang3, nam3, pTyLeSS);
+                
             }
             else if (int.Parse(rdTinhToan.Value + "") == 1)
             {
                 float tylebt = float.Parse(txtTyLeBT.Text + "");
-                DataTable ds = db.SELECT_THONGTIN_TRAM_TLTT_BT(Ma_dvi, thang, nam, thang1, nam1, thang2, nam2, thang3, nam3, tylebt);
-                grdKH.DataSource = ds;
-                grdKH.DataBind();
+                ds = db.SELECT_THONGTIN_TRAM_TLTT_BT(Ma_dvi, thang, nam, thang1, nam1, thang2, nam2, thang3, nam3, tylebt);
             }
-            
-            else
+
+            else if (int.Parse(rdTinhToan.Value + "") == 2)
             {
                 float SL = float.Parse(TLTT_SL.Text + "");
-                DataTable ds = db.SELECT_THONGTIN_TRAM_TLTT_SL(Ma_dvi, thang, nam, thang1, nam1, thang2, nam2, thang3, nam3, SL);
+                ds = db.SELECT_THONGTIN_TRAM_TLTT_SL(Ma_dvi, thang, nam, thang1, nam1, thang2, nam2, thang3, nam3, SL);
+            }
+            else
+            {
+                float pTyLeSS = 0;
+                pTyLeSS = float.Parse(TLTT_Tram.Value + "");
+                float tylebt = float.Parse(txtTyLeBT.Text + "");
+                float SL = float.Parse(TLTT_SL.Text + "");
+                ds = db.SELECT_THONGTIN_TRAM_TLTT_ALL(Ma_dvi, thang, nam, thang1, nam1, thang2, nam2, thang3, nam3, pTyLeSS, tylebt, SL);
+            }
+            return ds;
+        }
+        protected void loadTram()
+        {
+            var ds = Laydulieu();
                 grdKH.DataSource = ds;
                 grdKH.DataBind();
-            }    
-            
         }
         protected void btnLoc_Click(object sender, EventArgs e)
         {
-            DataTable dsD = new DataTable();
-            CBDN.TonThatKyThuatReport.DuyetTTTramTB DuyetKH = new CBDN.TonThatKyThuatReport.DuyetTTTramTB();
-            int thang = 0, thang1 = 0, thang2 = 0, thang3 = 0, nam = 0, nam1 = 0, nam2 = 0, nam3 = 0;
-            string Ma_dvi = cmMaDvi.Value + "";
-
-                thang = int.Parse(cmbThang.Value + "");
-                nam = int.Parse(cmbNam.Value + "");
-                if (thang == 1) { thang1 = 12; thang2 = 11; thang3 = 10; nam1 = nam - 1; nam2 = nam - 1; nam3 = nam - 1; }
-                else if (thang == 2) { thang1 = 1; thang2 = 12; thang3 = 11; nam1 = nam; nam2 = nam - 1; nam3 = nam - 1; }
-                else if (thang == 3) { thang1 = 2; thang2 = 1; thang3 = 12; nam1 = nam; nam2 = nam; nam3 = nam - 1; }
-                else { thang1 = thang-1; thang2 = thang-2; thang3 = thang-3; nam1 = nam; nam2 = nam; nam3 = nam; }
-                MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            
-            if (int.Parse(rdTinhToan.Value + "") == 0)
-            {
-                float pTyLeSS = 0;
-                pTyLeSS = float.Parse(TLTT_Tram.Value + "");
-                DataTable ds = db.SELECT_THONGTIN_TRAM_TLTT(Ma_dvi, thang, nam, thang1, nam1, thang2, nam2, thang3, nam3, pTyLeSS);
-                grdKH.DataSource = ds;
-                grdKH.DataBind();
-            }
-            else if (int.Parse(rdTinhToan.Value + "") == 1)
-            {
-                float tylebt = float.Parse(txtTyLeBT.Text + "");
-                DataTable ds = db.SELECT_THONGTIN_TRAM_TLTT_BT(Ma_dvi, thang, nam, thang1, nam1, thang2, nam2, thang3, nam3, tylebt);
-                grdKH.DataSource = ds;
-                grdKH.DataBind();
-            }
-            
-            else
-            {
-                float SL = float.Parse(TLTT_SL.Text + "");
-                DataTable ds = db.SELECT_THONGTIN_TRAM_TLTT_SL(Ma_dvi, thang, nam, thang1, nam1, thang2, nam2, thang3, nam3, SL);
-                grdKH.DataSource = ds;
-                grdKH.DataBind();
-            }
-            
-
+            var ds = Laydulieu();
+            grdKH.DataSource = ds;
+                grdKH.DataBind();   
         }
 
         private void laodDVCapCha()
@@ -354,6 +329,61 @@ namespace CBDN.TonThatKyThuat
         protected void grdKH_HtmlCommandCellPrepared(object sender, ASPxGridViewTableCommandCellEventArgs e)
         {
 
+        }
+        protected void btnXuat_Click(object sender, EventArgs e)
+        {
+            var lst = Laydulieu();
+
+            #region Chuẩn bị tệp excel mẫu để ghi dữ liệu
+            string destFile = Server.MapPath("~/Tem/DanhSachTramBatThuong.xls");
+            string sTemplate = (destFile);
+            Workbook exBook = new Workbook();
+            exBook.Open(sTemplate, FileFormatType.Excel2003);
+            _exSheet = exBook.Worksheets[0];
+            _range = _exSheet.Cells;
+            #endregion
+
+            // Xử lý replace các thông tin báo cáo tĩnh theo công ty
+            //Report.ReplaceSpecificationField(_exSheet);
+
+            int donghientai = 2;
+
+            #region Ghi dữ liệu
+
+            /*
+            Style celicaStil = exBook.Styles[exBook.Styles.Add()];
+            celicaStil.Font.IsBold = true;
+            */
+
+            string pluc = "Danh Sách Trạm Bất Thường Tháng " + cmbThang.Value +" Năm "+ cmbNam.Value + " Đơn Vị " + cmMaDvi.Text;
+
+            _range[0, 0].PutValue(pluc);
+            int a = lst.Rows.Count;
+            if (a > 0)
+            {
+                _exSheet.Cells.InsertRows(donghientai + 1, lst.Rows.Count);
+            }
+
+            int stt = 1;
+            for (int i = 0; i < a; i++)
+            {
+                _range[donghientai + stt, 0].PutValue(stt);
+                _range[donghientai + stt, 1].PutValue(lst.Rows[i]["MA_TRAM"] + "");
+                _range[donghientai + stt, 2].PutValue(lst.Rows[i]["TEN_TRAM"] + "");
+                _range[donghientai + stt, 3].PutValue(lst.Rows[i]["CSUAT_TRAM"] + "");
+                _range[donghientai + stt, 4].PutValue(lst.Rows[i]["TT_PT"] + "");
+                _range[donghientai + stt, 5].PutValue(lst.Rows[i]["TT_TL1"] + "");
+                _range[donghientai + stt, 6].PutValue(lst.Rows[i]["TT_TL2"] + "");
+                _range[donghientai + stt, 7].PutValue(lst.Rows[i]["TT_TL3"] + "");
+                stt++;
+            }
+
+
+
+            #endregion
+
+            exBook.Save("DanhSachTramBatThuong.xls", SaveType.OpenInExcel, FileFormatType.Default, this.Response);
+            //Response.Redirect("../BaoCao/Report.aspx?Loai=5&strSQL=" + strTruyVan);
         }
         public class DM_DS
         {

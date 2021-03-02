@@ -211,7 +211,7 @@ namespace CBDN.TonThatKyThuatReport
                     {
                         float dnn = 0;
                         float dntt = 0;
-                        float tt_lk = 0;
+                        double tt_lk = 0;
                         int nn = 0;
                         int tt = 0;
                         db.Insert_Khang_PhucTra(dt, thang, nam, Ma_dvi);
@@ -224,10 +224,17 @@ namespace CBDN.TonThatKyThuatReport
                         string TINH_TRANG = ds.Rows[0]["TINH_TRANG"] + "";
                         string DNTT = ds.Rows[0]["DNTT"] + "";
                         if (DNN != "") { dnn = float.Parse(DNN); }
-                        if (TT_LK != "") { tt_lk = float.Parse(TT_LK); }
+                        if (DNTT != "") { dntt = float.Parse(DNTT); }
+                        
+                        if (dnn != 0)
+                        {
+                            tt_lk = dntt * 100 / dnn;
+                            tt_lk = Math.Round(tt_lk, 3);
+                        }
+                        //if (TT_LK != "") { tt_lk = float.Parse(TT_LK); }
                         if (NGUYEN_NHAN != "") { nn = int.Parse(NGUYEN_NHAN); }
                         if (TINH_TRANG != "") { tt = int.Parse(TINH_TRANG); }
-                        if (DNTT != "") { dntt = float.Parse(DNTT); }
+                       
                         db.INSERT_THONGTIN_TRAM_TLTT_B10(Ma_dvi, Matram, ten_tram, csuat_tram, dnn, tt_lk, dntt, nn, tt, thang, nam, tylebt);
 
                     }

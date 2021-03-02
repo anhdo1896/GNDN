@@ -168,6 +168,15 @@ namespace CBDN.TonThatKyThuat
         protected global::DevExpress.Web.ASPxButton btnLoc;
 
         /// <summary>
+        /// ASPxButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton ASPxButton1;
+
+        /// <summary>
         /// grdKH control.
         /// </summary>
         /// <remarks>

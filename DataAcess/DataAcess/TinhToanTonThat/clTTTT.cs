@@ -2921,6 +2921,48 @@ namespace DataAccess
                 objCmd = null;
             }
         }
+        public DataTable SELECT_THONGTIN_TRAM_TLTT_ALL(string pMA_DVIQLY, int pTHANG, int pNAM, int pTHANG1, int pNAM1, int pTHANG2, int pNAM2, int pTHANG3, int pNAM3, float pTyLeSS, float tylebt, float SL)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(""));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_TTTT_CTT.SELECT_THONGTIN_TRAM_TLTT_ALL";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = pTHANG;
+                objCmd.Parameters.Add("pNAM", OracleType.Number).Value = pNAM;
+                objCmd.Parameters.Add("pTHANG1", OracleType.Number).Value = pTHANG1;
+                objCmd.Parameters.Add("pNAM1", OracleType.Number).Value = pNAM1;
+                objCmd.Parameters.Add("pTHANG2", OracleType.Number).Value = pTHANG2;
+                objCmd.Parameters.Add("pNAM2", OracleType.Number).Value = pNAM2;
+                objCmd.Parameters.Add("pTHANG3", OracleType.Number).Value = pTHANG3;
+                objCmd.Parameters.Add("pNAM3", OracleType.Number).Value = pNAM3;
+                objCmd.Parameters.Add("pTyLeSS", OracleType.Number).Value = pTyLeSS;
+                objCmd.Parameters.Add("pTYLEBT", OracleType.Number).Value = tylebt;
+                objCmd.Parameters.Add("pSL", OracleType.Number).Value = SL;
+                objCmd.Parameters.Add("rs", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataReader objReader = objCmd.ExecuteReader();
+                dt.Load(objReader);
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+            return dt;
+        }
 
     }
 }

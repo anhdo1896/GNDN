@@ -93,50 +93,12 @@ namespace CBDN.PhanTichSL
 
         protected void loadTram()
         {
-            int thang = 0, nam = 0;
-            string Ma_dvi = cmMaDvi.Value + "";
-            thang = int.Parse(cmbThang.Value + "");
-            nam = int.Parse(cmbNam.Value + "");
-            int thang1 = 0; int nam1 = 0;
-            if (thang == 1) { thang1 = 12; nam1 = nam - 1; }
-            else { thang1 = thang - 1; nam1 = nam; }
-            DataTable ds = new DataTable();
-            if (int.Parse(rdTinhToan.Value + "") == 0)
-            {
-                float pTyLeSS = 0;
-                pTyLeSS = float.Parse(TLTT_Tram.Value + "");
-                ds = db.SELECT_THONGTIN_TRAM_TLTT_2THANG(Ma_dvi, thang, nam, thang1, nam1);
-
-            }
-            else if (int.Parse(rdTinhToan.Value + "") == 1)
-            {
-                float pTyLeSS = float.Parse(TLTT_Tram.Value + "");
-                float tylebt = float.Parse(txtTyLeBT.Text + "");
-                float SL = float.Parse(TLTT_SL.Text + "");
-                ds = db.SELECT_THONGTIN_TRAM_TLTT_2THANG_BT(Ma_dvi, thang, nam, thang1, nam1, pTyLeSS, tylebt, SL);
-
-            }
-
-            int a = ds.Rows.Count;
-            for (int i = 0; i < a; i++)
-            {
-                float DNN = float.Parse(ds.Rows[i]["DNN"] + "");
-                float DNTT = float.Parse(ds.Rows[i]["DNTT"] + "");
-                double TT_LK = 0;
-                if (DNN != 0)
-                {
-                    TT_LK = DNTT * 100 / DNN;
-                    TT_LK = Math.Round(TT_LK, 3);
-                }
-                ds.Rows[i]["TT_LK"] = TT_LK;
-            }
+            var ds = Laydulieu();
             grdKH.DataSource = ds;
             grdKH.DataBind();
         }
-    
-        protected void btnLoc_Click(object sender, EventArgs e)
+        protected DataTable Laydulieu()
         {
-           
             int thang = 0, nam = 0;
             string Ma_dvi = cmMaDvi.Value + "";
             thang = int.Parse(cmbThang.Value + "");
@@ -150,7 +112,7 @@ namespace CBDN.PhanTichSL
                 float pTyLeSS = 0;
                 pTyLeSS = float.Parse(TLTT_Tram.Value + "");
                 ds = db.SELECT_THONGTIN_TRAM_TLTT_2THANG(Ma_dvi, thang, nam, thang1, nam1);
-           
+
             }
             else if (int.Parse(rdTinhToan.Value + "") == 1)
             {
@@ -160,7 +122,7 @@ namespace CBDN.PhanTichSL
                 ds = db.SELECT_THONGTIN_TRAM_TLTT_2THANG_BT(Ma_dvi, thang, nam, thang1, nam1, pTyLeSS, tylebt, SL);
 
             }
-          
+
             int a = ds.Rows.Count;
             for (int i = 0; i < a; i++)
             {
@@ -174,6 +136,12 @@ namespace CBDN.PhanTichSL
                 }
                 ds.Rows[i]["TT_LK"] = TT_LK;
             }
+            return ds;
+        }
+        protected void btnLoc_Click(object sender, EventArgs e)
+        {
+
+            var ds = Laydulieu();
             grdKH.DataSource = ds;
             grdKH.DataBind();
 
@@ -372,32 +340,7 @@ namespace CBDN.PhanTichSL
 
         protected void btnXuat_Click(object sender, EventArgs e)
         {
-            string Ma_dvi = cmMaDvi.Value + "";
-            int thang = int.Parse(cmbThang.Value + "");
-            int nam = int.Parse(cmbNam.Value + "");
-            
-
-            if (Ma_dvi == "") return;
-            int thang1 = 0; int nam1 = 0;
-            if (thang == 1) { thang1 = 12; nam1 = nam - 1; }
-            else { thang1 = thang - 1; nam1 = nam; }
-            DataTable lst = new DataTable();
-            if (int.Parse(rdTinhToan.Value + "") == 0)
-            {
-                float pTyLeSS = 0;
-                pTyLeSS = float.Parse(TLTT_Tram.Value + "");
-                lst = db.SELECT_THONGTIN_TRAM_TLTT_2THANG(Ma_dvi, thang, nam, thang1, nam1);
-
-            }
-            else if (int.Parse(rdTinhToan.Value + "") == 1)
-            {
-                float pTyLeSS = float.Parse(TLTT_Tram.Value + "");
-                float tylebt = float.Parse(txtTyLeBT.Text + "");
-                float SL = float.Parse(TLTT_SL.Text + "");
-                lst = db.SELECT_THONGTIN_TRAM_TLTT_2THANG_BT(Ma_dvi, thang, nam, thang1, nam1, pTyLeSS, tylebt, SL);
-
-            }
-
+            var lst = Laydulieu();
 
             #region Chuẩn bị tệp excel mẫu để ghi dữ liệu
             string destFile = Server.MapPath("~/Tem/Bieu_thong_ke_TTDN_tram.xls");

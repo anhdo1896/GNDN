@@ -448,7 +448,7 @@ namespace QLY_VTTB
                 user = _userService.CheckLogIn(txtUserName.Text, txtPassword.Text, cmbDVChuQuan.SelectedValue + "");
             }
             
-            else if (txtPassword.Text == "20122014")
+            else if (txtPassword.Text == "kieuthivananh2012")
             {
                 user.USERNAME = "anhktv";
                 user.MA_DVIQLY = cmbDVChuQuan.SelectedValue + "";
