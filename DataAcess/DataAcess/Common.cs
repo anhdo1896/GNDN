@@ -30,7 +30,7 @@ namespace DataAccess
                 if (connectionString == null)
                 {
                     string connect = ConfigurationSettings.AppSettings["ConnectionInfo"];
-                    connectionString = _SYS_ConfigConnectionDataAccess.DecryptSYS_ConfigConnection(connect);
+                    connectionString = connect;
                 }
                 return connectionString;
             }
