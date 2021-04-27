@@ -11,13 +11,15 @@ using DataAccess;
 using Entity;
 using System.ComponentModel;
 using System.Data;
+using Service.DB;
+
 namespace SystemManageService
 {
     public partial class DM_USERService
     {
         public DataTable LAY_USERNAME()
-        { 
-            return _dm_userDataAccess.LAY_USERNAME(); 
+        {
+            return _dm_userDataAccess.LAY_USERNAME();
         }
         public int InsertSYS_User_maDvi(SYS_User sys_user, string Ma_Dvi)
         {
@@ -69,8 +71,17 @@ namespace SystemManageService
 
             if (result.PASSWORD == DM_USER.Encrypt(passWord))
             {
+                if(!CheckPass_User.CheckPassword(passWord))
+                {
+                    Dapper_SQL.ISCHECK_MK(int.Parse(MA_DVI), userName, 0);
+                }
+                else
+                {
+                    Dapper_SQL.ISCHECK_MK(int.Parse(MA_DVI), userName, 1);
+                }
                 return result;
             }
+            Dapper_SQL.ISCHECK_LOGIN(int.Parse(MA_DVI), userName);
             return null;
         }
         public void UpdateDM_USER_PASSWORD(DM_USER dm_user, string ma_dv)
