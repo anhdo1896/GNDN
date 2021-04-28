@@ -24,6 +24,16 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
+            else if (session.XacNhanPass == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
             else
             {
                 //if (Request.Cookies["IDUSER"].Value != "1")
@@ -146,7 +156,7 @@ namespace MTCSYT
             StyleFlag flg = new StyleFlag();
             flg.Font = true; int tongtram = 0;
             flg.CellShading = true;
-           
+
             foreach (var ct in lst)
             {
                 tongtram = tongtram + 1;
@@ -254,7 +264,7 @@ namespace MTCSYT
                         _range[donghientai + vitri + i, 14].PutValue("");
                     }
                 }
-                //in tổng 
+                //in tổng
                 _range[donghientai + vitri + 5, 1].PutValue("");
                 _range.Merge(donghientai + vitri + 5, 1, 5, 1);
                 _range[donghientai + vitri + 5, 1].SetStyle(celicaStil);

@@ -32,7 +32,8 @@ namespace MTCSYT
         public int IDDMDonVi { get; set; }
         public int Tuyen { get; set; }
         public string TenDonVi { get; set; }
-
+        public int XacNhanPass { get; set; }
+        public double DatePass { get; set; }
     }
 
     public class BasePage : System.Web.UI.Page

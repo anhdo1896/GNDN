@@ -24,6 +24,16 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
+            else if (session.XacNhanPass == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
             else
             {
                 //if (Request.Cookies["IDUSER"].Value != "1")
@@ -73,7 +83,7 @@ namespace MTCSYT
         private void loadDV()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-           
+
             List<CBDN.DM_DVQLY> lstDD = db.DM_DVQLies.Where(x => x.Type == 2 || x.Type==1).ToList();
             cmbDonVi.DataSource = lstDD;
             cmbDonVi.ValueField = "IDMA_DVIQLY";

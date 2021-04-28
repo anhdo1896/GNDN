@@ -25,37 +25,22 @@ namespace CBDN.TonThatKyThuat
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
-
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             #endregion
             LoadKH();
         }
 
-       
+
         protected void btnRemove_Click(object sender, EventArgs e)
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -66,25 +51,25 @@ namespace CBDN.TonThatKyThuat
             db.DELETE_TTTT_KHACHHANG_LUUY(strMadviqly, ma_khang);
             LoadKH();
             grdKH.Selection.UnselectAll();
-            
+
         }
         private void LoadKH()
         {
-           
+
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             DataTable ds = db.SELECT_TTTT_KHACHHANG_LUUY(session.User.ma_dviqlyDN);
             grdKH.DataSource = ds;
             grdKH.DataBind();
-            
+
         }
-        
+
         protected void btnXemChiTiet_Click(object sender, EventArgs e)
         {
             var cv = (DataRowView)grdKH.GetRow(grdKH.FocusedRowIndex);
                 string ma_tram = cv["MA_TRAM"] + "";
                 string ma_khang = cv["MA_KHANG"] + "";
                 Response.Redirect("../TonThatKyThuat/dmKhachHang_CT.aspx?MA_TRAM=" + ma_tram + "&MA_KHANG=" + ma_khang + "");
-            
+
         }
         protected void cmbRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -131,4 +116,3 @@ namespace CBDN.TonThatKyThuat
         }
     }
 }
-    

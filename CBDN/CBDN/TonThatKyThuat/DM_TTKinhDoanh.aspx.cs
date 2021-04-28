@@ -26,9 +26,15 @@ namespace CBDN.TonThatKyThuat
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             #endregion
@@ -151,5 +157,5 @@ namespace CBDN.TonThatKyThuat
             txtMA_CANHBAO.Enabled = false;
         }
     }
-    
+
 }

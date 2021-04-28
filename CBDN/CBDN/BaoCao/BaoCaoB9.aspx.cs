@@ -25,12 +25,20 @@ namespace CBDN.BaoCao
             {
                 Response.Redirect("~\\Login.aspx");
             }
-
+            else if (session.XacNhanPass == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
             Session["SYS_Session"] = session;
             if (!IsPostBack)
             {
                 loadDSNgay();
-         
                 //if (session.User.ma_dviqly == "2")
                 //    pcTax.TabIndex[4].
             }
@@ -39,14 +47,14 @@ namespace CBDN.BaoCao
         }
         private void loadTax()
         {
-           
+
             InBienBanQuyetToan();
 
         }
-       
+
         private void InBienBanQuyetToan()
         {
-            
+
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             int strMadviqly = int.Parse(session.User.ma_dviqly);
 
@@ -61,7 +69,7 @@ namespace CBDN.BaoCao
             DataTable dsdt = new DataTable();
             dsdt.Columns.Add("STT");
             dsdt.Columns.Add("Ten_Cty");
-            
+
             dsdt.Columns.Add("B1_TieuThu");
             dsdt.Columns.Add("B2_TieuThu");
             dsdt.Columns.Add("B3_TieuThu");
@@ -85,7 +93,7 @@ namespace CBDN.BaoCao
                 var TenDonvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == donvi);
                 var Ten = TenDonvi.TEN_DVIQLY;
                 dt = inBienBan.InBienBanQuyetToan(phuongthuc, donvi, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGDGiao);
-                
+
                 /*var B1_TieuThu1 = dt.Rows[0]["B1_TieuThu1"] + "";
                 var B2_TieuThu1 = dt.Rows[0]["B2_TieuThu1"] + "";
                 var B3_TieuThu1 = dt.Rows[0]["B3_TieuThu1"] + "";
@@ -93,7 +101,7 @@ namespace CBDN.BaoCao
                 string B1_TieuThu1 = dt.Compute("sum([B1_TieuThu])", "[Loai]=1 or [Loai]=2 or [Loai]=4").ToString();
                 string B2_TieuThu1 = dt.Compute("sum([B2_TieuThu])", "[Loai]=1 or [Loai]=2 or [Loai]=4").ToString();
                 string B3_TieuThu1 = dt.Compute("sum([B3_TieuThu])", "[Loai]=1 or [Loai]=2 or [Loai]=4").ToString();
-               
+
 
                 if (B1_TieuThu1 != "")
                 {
@@ -135,7 +143,7 @@ namespace CBDN.BaoCao
                 ReportToolbar2.ReportViewer = ReportViewer2;
             }
         }
-        
+
 
 
         protected void cbAll_Init(object sender, EventArgs e)

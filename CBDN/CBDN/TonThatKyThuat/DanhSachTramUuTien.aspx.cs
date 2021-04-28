@@ -25,30 +25,15 @@ namespace CBDN.TonThatKyThuat
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
-
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             #endregion
@@ -56,7 +41,7 @@ namespace CBDN.TonThatKyThuat
             LoadTramUT();
         }
 
-       
+
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -76,7 +61,7 @@ namespace CBDN.TonThatKyThuat
             LoadTram();
             grdTram_UT.Selection.UnselectAll();
             grdTram.Selection.UnselectAll();
-            
+
         }
         private bool CheckName(string Name)
         {
@@ -103,7 +88,7 @@ namespace CBDN.TonThatKyThuat
             grdTram_UT.Selection.UnselectAll();
             grdTram.Selection.UnselectAll();
         }
-        
+
         private void LoadTramUT()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -115,12 +100,12 @@ namespace CBDN.TonThatKyThuat
             else btnRemove.Enabled = false;
             grdTram_UT.DataSource = dsa;
             grdTram_UT.DataBind();
-            
+
         }
-       
+
         private void LoadTram()
         {
-           
+
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             DataTable ds = db.SELECT_TRAM(session.User.ma_dviqlyDN);
             if (ds.Rows.Count > 0)
@@ -130,7 +115,7 @@ namespace CBDN.TonThatKyThuat
             else btnAdd.Enabled = false;
             grdTram.DataSource = ds;
             grdTram.DataBind();
-            
+
         }
         protected void ckChua_Init(object sender, EventArgs e)
         {

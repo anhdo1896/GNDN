@@ -22,37 +22,22 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
-
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             #endregion
             _DataBind();
-        
+
         }
-      
+
         private void _DataBind()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -77,7 +62,7 @@ namespace MTCSYT
 
 
                  db.DELETE_TTTT_DM_LOAIDUONGDAY(int.Parse(HoatDong["ID"]+""),session.User.ma_dviqlyDN);
-               
+
                 _DataBind();
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Xoá loại dây thành công');", true);
             }
@@ -144,7 +129,7 @@ namespace MTCSYT
             if (Session["Add"] + "" == "0")
             {
                 var qtCT = (DataRowView)grdDVT.GetRow(grdDVT.FocusedRowIndex);
-               
+
                 //CBDN.DM_LoaiDay cn = db.DM_LoaiDays.SingleOrDefault(x => x.ID == qtCT.ID);
                 if (!CheckName(txtMaLoaiDay.Text,int.Parse(""+ qtCT["ID"])))
                 {
@@ -155,7 +140,7 @@ namespace MTCSYT
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Điện trở phải là kiểu số');", true); return;
                 }
                 db.Update_TTTT_DM_LOAIDUONGDAY(int.Parse("" + qtCT["ID"]), session.User.ma_dviqlyDN, txtMaLoaiDay.Text, txtTenLoaiDay.Text, int.Parse(cmbLoaiDay.Value + ""), decimal.Parse(txtDienTro.Value + ""), DateTime.Now, session.User.IDUSER);
-                
+
             }
             else
             {
@@ -169,7 +154,7 @@ namespace MTCSYT
                 }
 
                 db.Insert_TTTT_DM_LOAIDUONGDAY(0, session.User.ma_dviqlyDN, txtMaLoaiDay.Text, txtTenLoaiDay.Text, int.Parse(cmbLoaiDay.Value + ""), decimal.Parse(txtDienTro.Value + ""), DateTime.Now, session.User.IDUSER);
-         
+
             }
             pcAddRoles.ShowOnPageLoad = false;
             _DataBind();

@@ -21,30 +21,15 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
-
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             #endregion
@@ -146,7 +131,7 @@ namespace MTCSYT
             cmbDuongDay.Value = tram.IDChiNhanh;
             cmbDuongDay.Text = db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(tram.IDChiNhanh)).TenChiNhanh;
             cmbCDA.Value = tram.TinhChatDD;
-           
+
             if (tram.TinhChatDD == 0)
                 cmbCDA.Text = "550 kV";
             else if (tram.TinhChatDD == 0)
@@ -186,7 +171,7 @@ namespace MTCSYT
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Bạn phải chọn phương thức giao nhận');", true);
                 return;
             }
-           
+
             if (txtTenDuongDay.Value + "" == "")
             {
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Tên trạm không thể bỏ trống');", true);
@@ -208,7 +193,7 @@ namespace MTCSYT
                 //{
 
                 qtCT.IDMaDviQly = cn.IDMADVIQLY;
-                
+
                 qtCT.MaTram = txtMaDuongDat.Text;
                 qtCT.TenTram = txtTenDuongDay.Text;
                 qtCT.MoTa = txtmoTa.Text;
@@ -230,17 +215,17 @@ namespace MTCSYT
                     qtCT.HoatDong = 0;
                 db.SubmitChanges();
 
-              
+
             }
             else
             {
-               
+
                 if (!CheckName(txtMaDuongDat.Text, 0, cmbDuongDay.Value + ""))
                 {
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Mã trạm không được trùng');", true); return;
                 }
 
-              
+
                 //var lstDD = db.DM_ChiNhanhs.Where(x => x.MaChiNhanh == cn.MaChiNhanh);
                 //foreach (var dd in lstDD)
                 //{

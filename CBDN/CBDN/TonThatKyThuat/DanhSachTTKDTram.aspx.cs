@@ -28,30 +28,15 @@ namespace CBDN.TonThatKyThuat
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
-
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             #endregion
@@ -103,7 +88,7 @@ namespace CBDN.TonThatKyThuat
                 txtTyLeBT.Text = "0";
             }
         }
-        
+
         private void SLTTram()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -140,7 +125,7 @@ namespace CBDN.TonThatKyThuat
                 float pTyLeSS = 0;
                 pTyLeSS = float.Parse(TLTT_Tram.Value + "");
                 ds = db.SELECT_THONGTIN_TRAM_TLTT(Ma_dvi, thang, nam, thang1, nam1, thang2, nam2, thang3, nam3, pTyLeSS);
-                
+
             }
             else if (int.Parse(rdTinhToan.Value + "") == 1)
             {
@@ -173,7 +158,7 @@ namespace CBDN.TonThatKyThuat
         {
             var ds = Laydulieu();
             grdKH.DataSource = ds;
-                grdKH.DataBind();   
+                grdKH.DataBind();
         }
 
         private void laodDVCapCha()
@@ -284,7 +269,7 @@ namespace CBDN.TonThatKyThuat
                 string thang = cmbThang.Value + "";
                 string nam = cmbNam.Value + "";
                 Response.Redirect("../TonThatKyThuat/rq_BaoCaoTTKD.aspx?MATRAM_V=" + ma_tram + "&MATRAM_T=" + ma_tramtext + "&MADL_V=" + ma_dl + "&MADL_T=" + ma_dltxt +
-                   "&MADV_V=" + ma_dv + "&MADV_T=" + ma_dvtxt + "&THANG=" + thang + "&NAM=" + nam); 
+                   "&MADV_V=" + ma_dv + "&MADV_T=" + ma_dvtxt + "&THANG=" + thang + "&NAM=" + nam);
             }
             loadTram();
         }

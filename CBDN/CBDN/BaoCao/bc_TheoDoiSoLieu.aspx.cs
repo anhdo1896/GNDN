@@ -22,7 +22,16 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
-
+            else if (session.XacNhanPass == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
             Session["SYS_Session"] = session;
             if (!IsPostBack)
             {
@@ -137,7 +146,7 @@ namespace MTCSYT
 
             ReportToolbar2.ReportViewer = ReportViewer2;
 
-            
+
         }
         private void loadGiaoNhan()
         {
@@ -207,7 +216,7 @@ namespace MTCSYT
             Response.Redirect("../Report/Report.aspx?ChiNhanh=" + cmbPhuongThuc.Value + "&Loai=1&Thang=" + cmbThang.Value + "&Nam=" + cmbNam.Value + "&ParentId=1");
         }
 
-       
+
 
     }
 }

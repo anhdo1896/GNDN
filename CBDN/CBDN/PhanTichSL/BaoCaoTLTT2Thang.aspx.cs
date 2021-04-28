@@ -31,30 +31,15 @@ namespace CBDN.PhanTichSL
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
-
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             #endregion
@@ -287,7 +272,7 @@ namespace CBDN.PhanTichSL
                 string thang = cmbThang.Value + "";
                 string nam = cmbNam.Value + "";
                 Response.Redirect("../TonThatKyThuat/rq_BaoCaoTTKD.aspx?MATRAM_V=" + ma_tram + "&MATRAM_T=" + ma_tramtext + "&MADL_V=" + ma_dl + "&MADL_T=" + ma_dltxt +
-                   "&MADV_V=" + ma_dv + "&MADV_T=" + ma_dvtxt + "&THANG=" + thang + "&NAM=" + nam); 
+                   "&MADV_V=" + ma_dv + "&MADV_T=" + ma_dvtxt + "&THANG=" + thang + "&NAM=" + nam);
             }
             loadTram();
         }
@@ -326,7 +311,7 @@ namespace CBDN.PhanTichSL
         }
 
         //ASPxGridView.RowUpdating
-        
+
 
 
         protected void grdKH_CellEditorInitialize1(object sender, ASPxGridViewEditorEventArgs e)
@@ -357,7 +342,7 @@ namespace CBDN.PhanTichSL
             int donghientai = 2;
 
             #region Ghi dữ liệu
-           
+
             /*
             Style celicaStil = exBook.Styles[exBook.Styles.Add()];
             celicaStil.Font.IsBold = true;
@@ -374,7 +359,7 @@ namespace CBDN.PhanTichSL
 
             int stt = 1;
             for (int i = 0; i < a; i++)
-            {               
+            {
                 _range[donghientai + stt, 0].PutValue(lst.Rows[i]["MA_TRAM"] + "");
                 _range[donghientai + stt, 1].PutValue(lst.Rows[i]["MA_DVIQLY"] +"");
                 _range[donghientai + stt, 2].PutValue(stt);
@@ -385,12 +370,12 @@ namespace CBDN.PhanTichSL
                 _range[donghientai + stt, 7].PutValue(lst.Rows[i]["TT_LK"] + "");
                 _range[donghientai + stt, 8].PutValue(lst.Rows[i]["TT_PT"] + "");
                 _range[donghientai + stt, 9].PutValue(lst.Rows[i]["TT_TL1"] + "");
-                _range[donghientai + stt, 10].PutValue(lst.Rows[i]["CL"] + ""); 
+                _range[donghientai + stt, 10].PutValue(lst.Rows[i]["CL"] + "");
                 _range[donghientai + stt, 11].PutValue(lst.Rows[i]["TT_PT-TT_TL1"] + "");
                 stt++;
             }
 
-        
+
 
             #endregion
 
@@ -407,6 +392,6 @@ namespace CBDN.PhanTichSL
             public string NAME_DVIQLY { get; set; }
         }
 
-       
+
     }
 }

@@ -95,7 +95,7 @@
                         <ClientSideEvents Validation="CheckValie"></ClientSideEvents>
                     </dxe:ASPxTextBox>
                     <dxe:ASPxLabel ID="ASPxLabel1" runat="server" Font-Italic="True" Font-Size="X-Small"
-                        Text="(Bạn không được để trống)">
+                          Text="(Bạn không được để trống - Mật khẩu tối thiểu 8 ký tự, 1 hoa, 1 thường, 1 ký tự đặc biệt)">
                     </dxe:ASPxLabel>
                 </td>
                 <tr>
@@ -122,7 +122,7 @@
                             <ClientSideEvents Validation="CheckValie"></ClientSideEvents>
                         </dxe:ASPxTextBox>
                         <dxe:ASPxLabel ID="ASPxLabel4" runat="server" Font-Italic="True" Font-Size="X-Small"
-                            Text="(Bạn không được để trống)">
+                            Text="(Bạn không được để trống - Mật khẩu tối thiểu 8 ký tự, 1 hoa, 1 thường, 1 ký tự đặc biệt)">
                         </dxe:ASPxLabel>
                     </td>
                 </tr>

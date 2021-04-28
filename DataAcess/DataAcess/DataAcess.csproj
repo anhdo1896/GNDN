@@ -34,6 +34,9 @@
     <Reference Include="Connection">
       <HintPath>..\..\Connection\bin\Debug\Connection.dll</HintPath>
     </Reference>
+    <Reference Include="Dapper, Version=1.50.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CBDN\packages\Dapper.1.50.0\lib\net40\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Entity\Entity\bin\Debug\Entity.dll</HintPath>
@@ -52,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="DB_Login\CheckPass_User.cs" />
+    <Compile Include="DB_Login\Dapper_SQL.cs" />
+    <Compile Include="DB_Login\Out_PUT.cs" />
     <Compile Include="GCS\clTaiNon.cs" />
     <Compile Include="GCS\clTBDD_CatDien.cs" />
     <Compile Include="GCS\ConnectString.cs" />
@@ -122,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

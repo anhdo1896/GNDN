@@ -12,7 +12,7 @@ using System.Web.UI.HtmlControls;
 
 namespace CBDN.TonThatKyThuat
 {
-  
+
         public partial class KiemTramCot_CAD : BasePage
         {
             DataAccess.clTTTT db = new DataAccess.clTTTT();
@@ -26,38 +26,24 @@ namespace CBDN.TonThatKyThuat
                 {
                     Response.Redirect("~\\Login.aspx");
                 }
-                else
-                {
-                    //if (Request.Cookies["IDUSER"].Value != "1")
-                    //{
-                    //    List<SYS_Right> right = session.User.Rights;
-                    //    foreach (SYS_Right sysRight in right)
-                    //    {
-                    //        if (sysRight.FuncId == funcid)
-                    //        {
-                    //            rightOfUser = sysRight;
-                    //            Session["Right"] = sysRight;
-                    //            Session["UserId"] = session.User.IDUSER;
-                    //            Session["FunctionId"] = sysRight.FuncId;
-                    //            break;
-                    //        }
-                    //    }
 
-                    //    if (rightOfUser == null)
-                    //    {
-                    //        Session["Status"] = "0";
-                    //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                    //    }
-                    //}
-                }
-                Session["SYS_Session"] = session;
+            else if (session.XacNhanPass == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            Session["SYS_Session"] = session;
                 #endregion
                 LoadTram();
             LoadTramCMIS();
             LoadTramCAD();
-            
-           
+
+
 
         }
 
@@ -113,7 +99,7 @@ namespace CBDN.TonThatKyThuat
             }
                 grdTramCAD.DataBind();
         }
-      
+
         protected void grdTram_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
         {
             if (e.Column.Caption == "STT")

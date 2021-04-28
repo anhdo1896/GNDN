@@ -31,30 +31,15 @@ namespace CBDN.PhanTichSL
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
-
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             #endregion
@@ -70,11 +55,11 @@ namespace CBDN.PhanTichSL
                 loadTram();
             }
         }
-      
+
         protected void loadTram()
         {
             DataTable dsD = new DataTable();
-            int thang = 0,nam = 0;    
+            int thang = 0,nam = 0;
             string Ma_dvi = cmMaDvi.Value + "";
             thang = int.Parse(cmbThang.Value + "");
             nam = int.Parse(cmbNam.Value + "");
@@ -102,7 +87,7 @@ namespace CBDN.PhanTichSL
         }
         protected void btnLoc_Click(object sender, EventArgs e)
         {
-           
+
             int thang = 0, nam = 0;
             string Ma_dvi = cmMaDvi.Value + "";
             thang = int.Parse(cmbThang.Value + "");
@@ -115,7 +100,7 @@ namespace CBDN.PhanTichSL
                 ds.Rows[i]["DN_LK"] = Math.Abs(float.Parse(ds.Rows[i]["DN_LK"] + ""));
                 ds.Rows[i]["DNTT"] = Math.Abs(float.Parse(ds.Rows[i]["DNTT"] + ""));
                 ds.Rows[i]["DNTT_LK"] = Math.Abs(float.Parse(ds.Rows[i]["DNTT_LK"] + ""));
-            }    
+            }
             grdKH.DataSource = ds;
             grdKH.DataBind();
 
@@ -229,7 +214,7 @@ namespace CBDN.PhanTichSL
                 string thang = cmbThang.Value + "";
                 string nam = cmbNam.Value + "";
                 Response.Redirect("../TonThatKyThuat/rq_BaoCaoTTKD.aspx?MATRAM_V=" + ma_tram + "&MATRAM_T=" + ma_tramtext + "&MADL_V=" + ma_dl + "&MADL_T=" + ma_dltxt +
-                   "&MADV_V=" + ma_dv + "&MADV_T=" + ma_dvtxt + "&THANG=" + thang + "&NAM=" + nam); 
+                   "&MADV_V=" + ma_dv + "&MADV_T=" + ma_dvtxt + "&THANG=" + thang + "&NAM=" + nam);
             }
             loadTram();
         }
@@ -301,7 +286,7 @@ namespace CBDN.PhanTichSL
             string Ma_dvi = cmMaDvi.Value + "";
             int thang = int.Parse(cmbThang.Value + "");
             int nam = int.Parse(cmbNam.Value + "");
-            
+
 
             if (Ma_dvi == "") return;
             float tlbt = TyLEBT();
@@ -329,7 +314,7 @@ namespace CBDN.PhanTichSL
             int donghientai = 2;
 
             #region Ghi dữ liệu
-           
+
 
             Style celicaStil = exBook.Styles[exBook.Styles.Add()];
             celicaStil.Font.IsBold = true;
@@ -359,7 +344,7 @@ namespace CBDN.PhanTichSL
                 stt++;
             }
 
-        
+
 
             #endregion
 
@@ -376,6 +361,6 @@ namespace CBDN.PhanTichSL
             public string NAME_DVIQLY { get; set; }
         }
 
-       
+
     }
 }

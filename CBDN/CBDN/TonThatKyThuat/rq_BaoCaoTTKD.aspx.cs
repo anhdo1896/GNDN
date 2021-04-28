@@ -29,9 +29,15 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             if (!IsPostBack)
@@ -82,7 +88,7 @@ namespace MTCSYT
                 txtTyLeBT.Text = "30";
             }
         }
-     
+
         private void InBienBanTonThat()
         {
             if (cmbMaTram.Value == null) return;
@@ -91,7 +97,7 @@ namespace MTCSYT
             DataAccess.clTTTT db = new DataAccess.clTTTT();
 
             CBDN.TonThatKyThuatReport.DuyetCanhBaoTTKD DuyetKH = new CBDN.TonThatKyThuatReport.DuyetCanhBaoTTKD();
-            
+
             DataTable dttram = new DataTable();
             DataTable dtKhang = new DataTable();
             DataTable dtKhangD = new DataTable();
@@ -138,7 +144,7 @@ namespace MTCSYT
         }
         private void loadDSNgay()
         {
-            
+
                 cmbThang.Value = Request["THANG"] + "";
             cmbNam.Value = Request["NAM"] + "";
         }
@@ -170,7 +176,7 @@ namespace MTCSYT
             cmMaDvi.TextField = "NAME_DVIQLY";
             cmMaDvi.ValueField = "MA_DVIQLY";
                 cmMaDvi.DataBind();
- 
+
         }
         //Load tỷ lệ tổn thất của trạm
         private void LoadTyLeTT()

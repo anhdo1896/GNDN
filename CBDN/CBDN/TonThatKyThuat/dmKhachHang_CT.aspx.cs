@@ -26,30 +26,15 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
-
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             #endregion
@@ -59,7 +44,7 @@ namespace MTCSYT
                 cmbThang.Value = DateTime.Now.Month - 1;
                 cmbNam.Value = DateTime.Now.Year;
             }
-            
+
             LoadKH();
             loadDanhMuc();
             _DataBind();
@@ -97,7 +82,7 @@ namespace MTCSYT
         }
         public DataTable GetData()
         {
-            
+
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             int ma_dviqly = int.Parse(session.User.ma_dviqly + "");
             string makhachang = Request["MA_KHANG"]+"";
@@ -121,16 +106,16 @@ namespace MTCSYT
                 table.Rows.Add("Sản lượng cùng kỳ năm trước", SANLUONGCUNGKY);
 
             }
-            
+
             return table;
         }
-            
+
         private void LoadKH()
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             string makhachang = Request["MA_KHANG"] + "";
             DataTable dsa = db.SELECT_TTTT_KHACHHANG_LUUY_INFO(session.User.ma_dviqlyDN, makhachang);
-            
+
             grdKH.DataSource = dsa;
             grdKH.DataBind();
 
@@ -208,7 +193,7 @@ namespace MTCSYT
         {
             DM_DVQLYService dm_dviSer = new DM_DVQLYService();
             SYS_Session session = (SYS_Session)Session["SYS_Session"];
-            
+
                 if (txtNoiDung.Text == null)
                 {
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Nội dung không được để trống');", true); return;

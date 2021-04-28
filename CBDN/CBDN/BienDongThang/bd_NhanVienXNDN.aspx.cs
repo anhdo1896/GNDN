@@ -22,7 +22,16 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
-
+            else if (session.XacNhanPass == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
             Session["SYS_Session"] = session;
             if (!IsPostBack)
             {
@@ -54,12 +63,12 @@ namespace MTCSYT
         private void InTongHopDienNang()
         {
             if (cmbPhuongThuc.Value == null || cmbPhuongThuc.Value+"" == "0") return;
-            
+
                 MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
                 int ma_dviqly = int.Parse(session.User.ma_dviqly);
                 DM_DVQLYService dm_dviSer = new DM_DVQLYService();
                 var donvi = dm_dviSer.SelectDM_DVQLY(ma_dviqly);
-               
+
                 //  if (Request["XacNhan"] + "" == "1") kiemtra = true;
 
                 var cn = db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + ""));
@@ -74,13 +83,13 @@ namespace MTCSYT
                     giao = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == cn.DiemDauNguon);
                     nhan = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == cn.DiemCuoiNguon);
                 }
-               
+
                 MTCSYT.Report.InBieuTong report = new MTCSYT.Report.InBieuTong(int.Parse(cmbPhuongThuc.Value + ""), ma_dviqly, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""),  "", "", donvi.TEN_DVIQLY, giao.TEN_DVIQLY, nhan.TEN_DVIQLY, 0, "", "", "", "");
 
                 ReportViewer1.Report = report;
 
                 ReportToolbar1.ReportViewer = ReportViewer1;
-        
+
 
         }
         private void InBienBanQuyetToan()
@@ -107,7 +116,7 @@ namespace MTCSYT
             }
 
             dt = inBienBan.InBienBanQuyetToan(phuongthuc, donvi, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGiao);
-          
+
             MTCSYT.Report.InBienBanQT report = new MTCSYT.Report.InBienBanQT(dt, "" + cmbThang.Value, "" + cmbNam.Value, false, false, "", "", strGiao, strNhan, "", "",strGDNhan,strGDGiao);
             ReportViewer2.Report = report;
 
@@ -133,7 +142,7 @@ namespace MTCSYT
                         dsT.Add(ds);
                     }
                 }
-               
+
                 cmbPhuongThuc.DataSource = dsT;
                 cmbPhuongThuc.ValueField = "IDChiNhanh";
                 cmbPhuongThuc.TextField = "TenPhuongThuc";
@@ -146,7 +155,7 @@ namespace MTCSYT
                 cmbPhuongThuc.TextField = "TenPhuongThuc";
                 cmbPhuongThuc.DataBind();
             }
-            
+
 
         }
         private void LoadGrdNhan()
@@ -229,7 +238,7 @@ namespace MTCSYT
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Không thể xác nhận khi Phương thức giao nhận là: Tất Cả');", true);
                 return ;
             }
-                
+
 
             try
             {
@@ -456,7 +465,7 @@ namespace MTCSYT
                 }
                 //hdTenFile.Value = strTenFile;
 
-                // import file quyết toán 
+                // import file quyết toán
                 string strQT = cmbPhuongThuc.Value + "_" + cmbThang.Value + "_" + cmbNam.Value + "_QT.pdf";
 
                 if (!File.Exists(Server.MapPath("~/") + "FileKy\\" + strQT))

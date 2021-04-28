@@ -29,16 +29,22 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-              
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             if (!IsPostBack)
             {
                 loadDSNgay();
                 loadGiaoNhan();
-              
+
             }
 
             InTongHopDienNang();
@@ -169,12 +175,12 @@ namespace MTCSYT
         private void InTongHopDienNang()
         {
             if (cmbPhuongThuc.Value == null || cmbPhuongThuc.Value + "" == "") return;
-            
+
                 MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
                 int ma_dviqly = int.Parse(session.User.ma_dviqly);
                 DM_DVQLYService dm_dviSer = new DM_DVQLYService();
                 var donvi = dm_dviSer.SelectDM_DVQLY(ma_dviqly);
-              
+
                 //  if (Request["XacNhan"] + "" == "1") kiemtra = true;
 
                 var cn = db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + ""));
@@ -208,7 +214,7 @@ namespace MTCSYT
                 ReportViewer1.Report = report;
 
                 ReportToolbar1.ReportViewer = ReportViewer1;
-            
+
 
         }
         private void InBienBanQuyetToan()
@@ -288,7 +294,7 @@ namespace MTCSYT
         {
 
         }
-    
+
         protected void cmbNam_SelectedIndexChanged(object sender, EventArgs e)
         {
             InTongHopDienNang();
@@ -308,7 +314,7 @@ namespace MTCSYT
             InBienBanQuyetToan();
         }
 
-      
+
 
     }
 }

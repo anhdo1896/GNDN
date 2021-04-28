@@ -11,6 +11,8 @@ using SystemManageService;
 using System.Data;
 using System.Net.Mail;
 using System.Net;
+using DataAccess;
+
 namespace QLY_VTTB
 {
     public partial class UserManager : MTCSYT.BasePage
@@ -123,10 +125,10 @@ namespace QLY_VTTB
         //    List<Entity.Parts> lstModun = new List<Parts>();
         //    List<Parts> lst = new List<Parts>();
         //    var sysModunService = new PartsService();
-        //    cmbLinhVuc.DataSource = sysModunService.SelectAllParts(); 
+        //    cmbLinhVuc.DataSource = sysModunService.SelectAllParts();
         //    cmbLinhVuc.ValueField = "ID";
         //    cmbLinhVuc.TextField = "LinhVuc";
-        //    cmbLinhVuc.DataBind();           
+        //    cmbLinhVuc.DataBind();
         //}
         private void BindComboDonVi()
         {
@@ -188,23 +190,8 @@ namespace QLY_VTTB
                     sysUser.HOTEN = txtHoTen.Text;
                     sysUser.DIACHI = txtDiaChi.Text;
                     sysUser.SODT = txtPhone.Text;
-                    //if (txtNgaySinh.Text.Trim() != "")
-                    //{
-                    //    if (txtNgaySinh.Text.Split('/').Length == 3)
-                    //    {
-                    //        if (DateTime.TryParse(txtNgaySinh.Text.Split('/')[1] + "/" + txtNgaySinh.Text.Split('/')[0] + "/" + txtNgaySinh.Text.Split('/')[2], out testdate))
-                    //            sysUser.NGAYSINH = DateTime.Parse(txtNgaySinh.Text.Split('/')[1] + "/" + txtNgaySinh.Text.Split('/')[0] + "/" + txtNgaySinh.Text.Split('/')[2]);
-                    //    }
-                    //    else
-                    //    {
-                    //        loiNgayThang.Visible = true;
-                    //        return;
-                    //    }
-                    //}
-                    //else
                     sysUser.NGAYSINH = DateTime.Now;
                     sysUser.USERNAME = txtUserName.Text;
-                    //sysUser.IDparts = int.Parse(cmbLinhVuc.Value.ToString());
                     sysUser.EMAIL = txtEmail.Text;
 
                     sysUser.IS_ADMIN = 0;
@@ -226,7 +213,12 @@ namespace QLY_VTTB
                 }
                 else
                 {
-                    if (checkUser(txtUserName.Text, int.Parse(cmbDonVi.Value.ToString())))
+                    if (!CheckPass_User.CheckPassword(txtPassword.Text))
+                    {
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Mật Khẩu phải tối thiểu 8 ký tự, 1 chữ hoa, 1 chữ thường, 1 ký tự đặc biệt.');", true);
+                        //throw new Exception(string.Format("Mật Khẩu phải tối thiểu 8 ký tự, 1 chữ hoa, 1 chữ thường, 1 ký tự đặc biệt"));
+                    }
+                    else if (checkUser(txtUserName.Text, int.Parse(cmbDonVi.Value.ToString())))
                     {
                         TreeListOrganization.FocusedNode.GetValue("IDMA_DVIQLY");
                         DM_USER User = new DM_USER { USERNAME = txtUserName.Text };
@@ -278,9 +270,10 @@ namespace QLY_VTTB
                     }
                     else
                     {
-                        lblError.Visible = true;
-                        throw new Exception(string.Format("Trùng tên! Vui lòng nhập lại."));
-                        //lblError.Text = "Trùng tên! Vui lòng nhập lại.";
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('rùng tên! Vui lòng nhập lại.');", true);
+                        //lblError.Visible = true;
+                        //throw new Exception(string.Format("Trùng tên! Vui lòng nhập lại."));
+
                     }
                 }
             }

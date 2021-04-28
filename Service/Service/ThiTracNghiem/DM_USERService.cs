@@ -11,7 +11,6 @@ using DataAccess;
 using Entity;
 using System.ComponentModel;
 using System.Data;
-using Service.DB;
 
 namespace SystemManageService
 {
@@ -71,14 +70,6 @@ namespace SystemManageService
 
             if (result.PASSWORD == DM_USER.Encrypt(passWord))
             {
-                if(!CheckPass_User.CheckPassword(passWord))
-                {
-                    Dapper_SQL.ISCHECK_MK(int.Parse(MA_DVI), userName, 0);
-                }
-                else
-                {
-                    Dapper_SQL.ISCHECK_MK(int.Parse(MA_DVI), userName, 1);
-                }
                 return result;
             }
             Dapper_SQL.ISCHECK_LOGIN(int.Parse(MA_DVI), userName);

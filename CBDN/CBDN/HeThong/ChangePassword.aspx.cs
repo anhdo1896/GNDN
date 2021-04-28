@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Web.UI;
 using SystemManageService;
 using Entity;
-
+using DataAccess;
 
 namespace QLY_VTTB
 {
@@ -18,9 +18,11 @@ namespace QLY_VTTB
         }
         private bool checkRetypePassword(ref  string Msg)
         {
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            user = _userService.CheckLogIn(session.User.USERNAME, txtPassword.Text, session.User.IDMA_DVIQLY);
-            if (user == null)
+            
+                MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
+            var ds = Dapper_SQL.Checklogin(session.User.IDMA_DVIQLY,session.User.USERNAME, txtPassword.Text);
+            //user = _userService.CheckLogIn(session.User.USERNAME, txtPassword.Text, session.User.IDMA_DVIQLY);
+            if (ds == null)
             {
                 txtPassWordNew.Text = "";
                 txtRetypeNewPassword.Text = "";
@@ -31,6 +33,11 @@ namespace QLY_VTTB
             if (txtRetypeNewPassword.Text != txtPassWordNew.Text)
             {
                 Msg = "hai ô text nhập Password mới phải giống nhau";
+
+            }
+            if (!CheckPass_User.CheckPassword(txtRetypeNewPassword.Text))
+            {
+                Msg = "Phải tối thiểu 8 ký tự, 1 chữ hoa, 1 chữ thường, 1 ký tự đặc biệt";
                 return false;
             }
             return true;
@@ -48,9 +55,12 @@ namespace QLY_VTTB
                 return;
             }
 
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"]; 
+            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             session.User.PASSWORD = DM_USER.Encrypt(txtPassWordNew.Text);
-            _userService.UpdateDM_USER_PASSWORD(session.User,session.User.MA_DVIQLY);
+            session.XacNhanPass = 1;
+            session.DatePass = 0;
+            Dapper_SQL.updatePass_DMUSER(session.User.IDMA_DVIQLY, session.User.USERNAME, session.User.PASSWORD);
+           // _userService.UpdateDM_USER_PASSWORD(session.User,session.User.MA_DVIQLY);
             //WriteLog("Thay đổi mật khẩu", Action.Update);
         }
     }

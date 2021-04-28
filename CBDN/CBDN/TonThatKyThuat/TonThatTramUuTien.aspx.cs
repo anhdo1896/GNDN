@@ -27,30 +27,15 @@ namespace CBDN.TonThatKyThuat
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
-
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             #endregion
@@ -68,10 +53,10 @@ namespace CBDN.TonThatKyThuat
                 cmbThang.Value = thang;
                 cmbNam.Value = nam;
             }
-            
+
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             lbDvi.Text = Request["MA_QVIQLY"] + "";
-            lbTram.Text = Request["MA_TRAM"] + ""; 
+            lbTram.Text = Request["MA_TRAM"] + "";
         }
 
         protected void grdDVT_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
@@ -87,7 +72,7 @@ namespace CBDN.TonThatKyThuat
 
             if (lbTram.Text != null)
             {
-                
+
 
                     DataTable dtTongKT = db.select_TTTT_TONTHATKYTHUAT_THANG(lbDvi.Text + "", lbTram.Text + "", int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), 1);
                     string tonthatKyThat = "2609";
@@ -105,7 +90,7 @@ namespace CBDN.TonThatKyThuat
                     DataTable dta = db.SELECT_TONTHATKD_BYTRAM(lbDvi.Text + "", lbTram.Text + "", int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""));
                     DataTable dt = db.SELECT_TRAM_HATHE_UT_TT(lbDvi.Text + "", lbTram.Text + "", cmbThang.Value + "", cmbNam.Value + "");
                 var a = dt.Rows.Count;
-                    
+
                     dtNew.Columns.Add("TTDN");
                     dtNew.Columns.Add("TTKT");
                     dtNew.Columns.Add("TTKD");
@@ -129,14 +114,14 @@ namespace CBDN.TonThatKyThuat
                     grdDVT.Caption = "Tính toán tổn thất điện năng trạm " + lbTram.Text + " chưa có dự liệu tháng: " + cmbThang.Value;
                     grdDVT.DataSource = dtNew;
                     grdDVT.DataBind();
-                }    
-                
+                }
+
             }
 
 
             btnDanhSanhKH.Enabled = true;
         }
-       
+
         private DataTable dtHienThiBanDo(DataTable dt)
         {
             DataTable dtBanDo = new DataTable();
@@ -203,7 +188,7 @@ namespace CBDN.TonThatKyThuat
             ((XYDiagram)WebChartControl1.Diagram).AxisY.Range.SetMinMaxValues(0, tyleChia);
             ((XYDiagram)WebChartControl1.Diagram).AxisY.Label.EndText = "%";
         }
-        
+
         protected void grdDVT_StartRowEditing(object sender, DevExpress.Web.Data.ASPxStartRowEditingEventArgs e)
         {
             (sender as ASPxGridView).GetRowValuesByKeyValue(e.EditingKeyValue);

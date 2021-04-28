@@ -24,30 +24,15 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
-
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             #endregion
@@ -73,19 +58,19 @@ namespace MTCSYT
         }
         private void hienthibieudo(DataTable dt)
         {
-           
+
             Series series1= new Series("Sản lượng", ViewType.Line);
             Series series2 = new Series("Sản lượng Trạm", ViewType.Line);
             Series series = new Series("Tổn thất", ViewType.Line);
             // Add the series to the chart.
-           
+
                  WebChartControl1.Series.Add(series1);
             WebChartControl1.Series.Add(series2);
             WebChartControl1.Series.Add(series);
             // Specify the series data source.
             DataTable seriesData = dt;
 
-           
+
             series1.DataSource = seriesData;
             series2.DataSource = seriesData;
             series.DataSource = seriesData;
@@ -94,12 +79,12 @@ namespace MTCSYT
             ct.Font = new System.Drawing.Font("Tahoma", 12, System.Drawing.FontStyle.Bold);
             WebChartControl1.Titles.Add(ct);
             // Specify an argument data member.
-           
+
             series1.ArgumentDataMember = "NGAYGIO";
             series2.ArgumentDataMember = "NGAYGIO";
             series.ArgumentDataMember = "NGAYGIO";
             // Specify a value data member.
-           
+
             series1.ValueDataMembers.AddRange(new string[] { "TONGSL" });
             series2.ValueDataMembers.AddRange(new string[] { "SLTRAM" });
             series.ValueDataMembers.AddRange(new string[] { "TONTHATTONG" });

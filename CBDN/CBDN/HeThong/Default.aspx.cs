@@ -13,7 +13,7 @@ namespace QLY_VTTB
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
             if (session == null || session.User.USERNAME == "Guest")
-            {               
+            {
                 Response.Redirect("~\\Login.aspx");
             }
         }

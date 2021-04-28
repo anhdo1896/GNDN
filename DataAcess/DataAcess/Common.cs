@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Data.Common;
 using System.Configuration;
-using System.Data.Common;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
@@ -121,7 +120,7 @@ namespace DataAccess
         {
             try
             {
-                //WebConfigurationManager.OpenWebConfiguration("~"); 
+                //WebConfigurationManager.OpenWebConfiguration("~");
                 Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
                 AppSettingsSection appSettingsSection = (AppSettingsSection)configuration.GetSection("appSettings");

@@ -21,6 +21,16 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
+            else if (session.XacNhanPass == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
             else
             {
                 //if (Request.Cookies["IDUSER"].Value != "1")
@@ -65,7 +75,7 @@ namespace MTCSYT
                 }
 
             }
-            loadDanhMuc();          
+            loadDanhMuc();
         }
 
         private void loadDanhMuc()
@@ -79,11 +89,11 @@ namespace MTCSYT
             tlDonVi.DataBind();
 
         }
-      
-       
+
+
         protected void btnLoc_Click(object sender, EventArgs e)
         {
-            loadDanhMuc();           
+            loadDanhMuc();
         }
 
     }

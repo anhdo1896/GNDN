@@ -34,30 +34,15 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
-
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             if (!IsPostBack)
@@ -81,7 +66,7 @@ namespace MTCSYT
             int ma_dviqly = int.Parse(session.User.ma_dviqly);
             DM_DVQLYService dm_dviSer = new DM_DVQLYService();
             var donvi = dm_dviSer.SelectDM_DVQLY(ma_dviqly);
-           
+
             var cn = db.DM_ChiNhanhs.SingleOrDefault(x => x.ID == int.Parse(cmbPhuongThuc.Value + ""));
             CBDN.DM_DVQLY giao, nhan;
             if (cn.IDMADVIQLY.Contains(",2,"))
@@ -272,7 +257,7 @@ namespace MTCSYT
                 }
             }
             dt = inBienBan.InBienBanQuyetToan(phuongthuc, donvi, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGiao);
-          
+
             MTCSYT.Report.InBienBanQT report = new MTCSYT.Report.InBienBanQT(dt, "" + cmbThang.Value, "" + cmbNam.Value, false, false, "", "", strGiao,strNhan, "", "",strGDNhan, strGDGiao);
             ReportViewer2.Report = report;
 
@@ -331,7 +316,7 @@ namespace MTCSYT
                 }
                 cmbPhuongThuc.DataSource = dsT;
             }
-               
+
             cmbPhuongThuc.ValueField = "IDChiNhanh";
             cmbPhuongThuc.TextField = "TenPhuongThuc";
             cmbPhuongThuc.DataBind();
@@ -402,7 +387,7 @@ namespace MTCSYT
         {
 
         }
-      
+
         protected void btnDuyet_Click(object sender, EventArgs e)
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -459,7 +444,7 @@ namespace MTCSYT
                 if(int.Parse(strMadviqly) == 2)
                 {
                     bd_chitiet.ISNhanVien = false;
-                }    
+                }
                 if (txtLyDo.Text != "")
                     bd_chitiet.GhiChuXacNhanNhan = txtLyDo.Text;
                 else
@@ -534,7 +519,7 @@ namespace MTCSYT
 
             var dv = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(strMadviqly));
             var lstHDKy = db.HD_ThongTinKies.Where(x => x.IDChinhNhanh == int.Parse(cmbPhuongThuc.Value + "") && x.Thang == int.Parse(cmbThang.Value + "") && x.Nam == int.Parse(cmbNam.Value + "") && x.TrangThai == null);
-            
+
             foreach (var list in lstHDKy)
             {
                 list.TrangThai = 0;
@@ -577,7 +562,7 @@ namespace MTCSYT
         protected void btnLuuFile_Click(object sender, EventArgs e)
         {
 
-            //Kiểm tra mã xác thực 
+            //Kiểm tra mã xác thực
             if (!xacthuc())
             {
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "", "alert('Lỗi mã OTP không chính xác');", true);

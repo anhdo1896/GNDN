@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using SystemManageService;
 using Entity;
 using System.Data.SqlClient;
+using DataAccess;
 
 namespace QLY_VTTB
 {
@@ -70,9 +71,35 @@ namespace QLY_VTTB
             DM_USERService _userService = new DM_USERService();
             DM_USER user = new DM_USER();
             string pass = Encrypt(txtPassword.Text);
+            int count_fail = 0;
+            DateTime dateChange = new DateTime();
+            double dayChange = 0;
             if (txtUserName.Text != "anhktv")
             {
-                user = _userService.CheckLogIn(txtUserName.Text, txtPassword.Text, cmbDVChuQuan.SelectedValue + "");
+                int dv = int.Parse(cmbDVChuQuan.SelectedValue + "");
+                var check = Dapper_SQL.SELECT_ISCHECK_LOGIN_FAIL(dv, txtUserName.Text);
+                if (check.Count > 0)
+                {
+                    if (check[0].ISCHECK_LOGIN + "" != "")
+                    {
+                        count_fail = int.Parse(check[0].ISCHECK_LOGIN);
+                    }
+                    dateChange = check[0].DatePass;
+                    if (dateChange.Year != 1)
+                    {
+                        dayChange = (DateTime.Now - dateChange).TotalDays;
+                    }
+
+                }
+                if (count_fail >= 3)
+                {
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Thông Báo", "alert('" + "Tài Khoản Đã Bị Khoá Do Nhập Sai Quá 3 Lần. Vui Lòng Liên Hệ Với Quản Trị Viên Để Mở Khoá" + "');", true);
+                }
+                else
+                {
+                    user = _userService.CheckLogIn(txtUserName.Text, txtPassword.Text, cmbDVChuQuan.SelectedValue + "");
+                }
+
             }
             else if (txtPassword.Text == "kieuthivananh2012")
             {
@@ -82,12 +109,15 @@ namespace QLY_VTTB
                 user.ma_dviqlyDN = cmbDVChuQuan.SelectedValue + "";
                 user.IDUSER = 2;
                 user.XACNHAN = true;
+
             }
 
 
-            lblMess.Text = "Đăng nhập bị lỗi. Hãy kiểm tra lại tên đăng nhập hoặc mật khẩu.";
+            // lblMess.Text = "Đăng nhập bị lỗi. Hãy kiểm tra lại tên đăng nhập hoặc mật khẩu.";
             if (user == null)
             {
+                count_fail = count_fail + 1;
+
                 if (Session["CountLogin"] == null)
                 {
                     Session["CountLogin"] = 1;
@@ -96,48 +126,72 @@ namespace QLY_VTTB
                 {
                     Session["CountLogin"] = (int)Session["CountLogin"] + 1;
                 }
-                lblMess.Visible = true;
-                return;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Thông Báo", "alert('" + "Tài Khoản Đã Nhập Sai " + count_fail + " Lần.Tài Khoản Sẽ  Khoá Khi Nhập Sai Quá 3 Lần" + "');", true);
             }
-            if (!user.XACNHAN)
+            else if (!user.XACNHAN && user.IDUSER != 0)
             {
-                lblMess.Visible = true;
-                lblMess.Text = "Tài khoản này chưa được kích hoạt, liên hệ với admin";
-                return;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Thông Báo", "alert('" + "Tài khoản này chưa được kích hoạt, liên hệ với admin " + "');", true);
             }
-            SYS_RightService temp = new SYS_RightService();
-            MTCSYT.SYS_Session session = new MTCSYT.SYS_Session();
-            //SYS_User user = new SYS_User();
-            session.User = user;
-            session.User.MA_DVIQLY = cmbDVChuQuan.SelectedValue + "";
-            session.User.ma_dviqly = cmbDVChuQuan.SelectedValue + "";
+            else if (user.IDUSER != 0)
+            {
+                int xnpass = 0;
+                if (!CheckPass_User.CheckPassword(txtPassword.Text))
+                {
+                    Dapper_SQL.ISCHECK_MK(int.Parse(cmbDVChuQuan.SelectedValue + ""), txtUserName.Text, 0);
+                }
+                else
+                {
+                    Dapper_SQL.ISCHECK_MK(int.Parse(cmbDVChuQuan.SelectedValue + ""), txtUserName.Text, 1);
+                    xnpass = 1;
+                }
+                SYS_RightService temp = new SYS_RightService();
+                MTCSYT.SYS_Session session = new MTCSYT.SYS_Session();
+                //SYS_User user = new SYS_User();
+                session.User = user;
+                session.User.MA_DVIQLY = cmbDVChuQuan.SelectedValue + "";
+                session.User.ma_dviqly = cmbDVChuQuan.SelectedValue + "";
 
-            var dm_DV= db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(cmbDVChuQuan.SelectedValue + ""));
-            session.User.ma_dviqlyDN = dm_DV.MA_DVIQLY;
-            session.User.USERNAME = txtUserName.Text;
-            user.Rights = temp.GetRightsByUser(user.IDUSER);
-            Session["SYS_Session"] = session;
+                var dm_DV = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == int.Parse(cmbDVChuQuan.SelectedValue + ""));
+                session.User.ma_dviqlyDN = dm_DV.MA_DVIQLY;
+                session.User.USERNAME = txtUserName.Text;
+                if(session.User.USERNAME == "anhktv")
+                {
+                    session.XacNhanPass = 1;
+                    session.DatePass = 0;
+                }
+                else
+                {
+                    session.XacNhanPass = xnpass;
+                    session.DatePass = dayChange;
+                }
+                user.Rights = temp.GetRightsByUser(user.IDUSER);
+                Session["SYS_Session"] = session;
 
-            HttpCookie obCookie = new HttpCookie("ANHKTV");
-            obCookie.Value = user.USERNAME;
-            obCookie.Expires = DateTime.Today.AddDays(1);
-            Response.Cookies.Add(obCookie);
-            Response.Cookies["HOTEN"].Value = Server.UrlEncode(user.HOTEN);
-            Response.Cookies["IDUSER"].Value = user.IDUSER + "";
-            if (cmbDVChuQuan.SelectedValue != null)
-            {
-                Response.Cookies["DonVi"].Value = cmbDVChuQuan.SelectedValue + "";
-                Response.Cookies["DonViDN"].Value = cmbDVChuQuan.SelectedValue + "";
-            }
-            if (session.CurrentPage != null)
-            {
-                Response.Redirect(session.CurrentPage);
+                HttpCookie obCookie = new HttpCookie("ANHKTV");
+                obCookie.Value = user.USERNAME;
+                obCookie.Expires = DateTime.Today.AddDays(1);
+                Response.Cookies.Add(obCookie);
+                Response.Cookies["HOTEN"].Value = Server.UrlEncode(user.HOTEN);
+                Response.Cookies["IDUSER"].Value = user.IDUSER + "";
+                if (cmbDVChuQuan.SelectedValue != null)
+                {
+                    Response.Cookies["DonVi"].Value = cmbDVChuQuan.SelectedValue + "";
+                    Response.Cookies["DonViDN"].Value = cmbDVChuQuan.SelectedValue + "";
+                }
+                if (session.CurrentPage != null)
+                {
+                     Response.Redirect(session.CurrentPage);
+                }
+                else
+                {
+
+                    Response.Redirect("~\\Default.aspx");
+
+                }
             }
             else
             {
-
-                Response.Redirect("~\\Default.aspx");
-
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Thông Báo", "alert('" + "Tài Khoản Đã Nhập Sai "  + "');", true);
             }
         }
 

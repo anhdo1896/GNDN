@@ -25,12 +25,21 @@ namespace CBDN.BC_TK_ChotSL
             {
                 Response.Redirect("~\\Login.aspx");
             }
-
+            else if (session.XacNhanPass == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
             Session["SYS_Session"] = session;
             if (!IsPostBack)
             {
                 loadDSNgay();
-         
+
                 //if (session.User.ma_dviqly == "2")
                 //    pcTax.TabIndex[4].
             }
@@ -41,7 +50,7 @@ namespace CBDN.BC_TK_ChotSL
         {
             InBienBanQuyetToan();
         }
-        
+
         private void InBienBanQuyetToan()
         {
 
@@ -125,14 +134,14 @@ namespace CBDN.BC_TK_ChotSL
             }
             int a = dsdt.Rows.Count;
             if (a > 1)
-            {     
+            {
                 MTCSYT.Report.InDienNhan3ThoiDiem report = new MTCSYT.Report.InDienNhan3ThoiDiem(dsdt, "" + cmbThang.Value, "" + cmbNam.Value, false, false, "", "", strGiao, strNhan, "", "", strGDNhan, strGDGiao);
             ReportViewer2.Report = report;
 
             ReportToolbar2.ReportViewer = ReportViewer2;
             }
         }
-        
+
 
 
         protected void cbAll_Init(object sender, EventArgs e)
@@ -144,7 +153,7 @@ namespace CBDN.BC_TK_ChotSL
         }
         private void loadDSNgay()
         {
-           
+
                 if (DateTime.Now.Month == 2)
                 {
                     cmbThang.Value = 12;
@@ -162,7 +171,7 @@ namespace CBDN.BC_TK_ChotSL
                     cmbThang.Value = DateTime.Now.Month - 2;
                     cmbNam.Value = DateTime.Now.Year;
 
-                
+
             }
         }
         protected void grdNhan_CustomCallback(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e)

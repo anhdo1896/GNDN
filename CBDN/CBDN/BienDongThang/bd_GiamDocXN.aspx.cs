@@ -35,6 +35,16 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
+            else if (session.XacNhanPass == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
             else
             {
 
@@ -51,7 +61,7 @@ namespace MTCSYT
             InTongHopDienNang();
             InBienBanQuyetToan();
             loadTTKy();
-           
+
         }
         private void loadTTKy()
         {
@@ -73,7 +83,7 @@ namespace MTCSYT
                 if (lbGiamDocKy2.Text == "")
                 {
                     imgAnhKyGD2.Visible = false;
-                    
+
                 }
                 return;
             }
@@ -155,7 +165,7 @@ namespace MTCSYT
                     }
 
                 }
-              
+
             }
             if (lbTP1.Text == "")
             {
@@ -183,7 +193,7 @@ namespace MTCSYT
             int ma_dviqly = int.Parse(session.User.ma_dviqly);
             DM_DVQLYService dm_dviSer = new DM_DVQLYService();
             var donvi = dm_dviSer.SelectDM_DVQLY(ma_dviqly);
-           
+
             string strGiao = "", strNhan = "", strGDNhan = "", strGDGiao = "";
             //  if (Request["XacNhan"] + "" == "1") kiemtra = true;
 
@@ -215,7 +225,7 @@ namespace MTCSYT
                 MTCSYT.Report.InBieuTong report = new MTCSYT.Report.InBieuTong(int.Parse(cmbPhuongThuc.Value + ""), ma_dviqly, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), "", "", donvi.TEN_DVIQLY, giao.TEN_DVIQLY, nhan.TEN_DVIQLY, 0, strTPNhan, strTPGiao, strGDNhan, strGDGiao);
                 ReportViewer1.Report = report;
                 ReportToolbar1.ReportViewer = ReportViewer1;
- 
+
         }
         private void InBienBanQuyetToan()
         {
@@ -249,7 +259,7 @@ namespace MTCSYT
                 }
             }
             dt = inBienBan.InBienBanQuyetToan(phuongthuc, donvi, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGDGiao);
-          
+
 
             MTCSYT.Report.InBienBanQT report = new MTCSYT.Report.InBienBanQT(dt, "" + cmbThang.Value, "" + cmbNam.Value, false, false, "", "", strGiao, strNhan, "","", strGDNhan, strGDGiao);
             ReportViewer2.Report = report;
@@ -304,7 +314,7 @@ namespace MTCSYT
                 }
                 cmbPhuongThuc.DataSource = dsT;
             }
-                
+
             cmbPhuongThuc.ValueField = "IDChiNhanh";
             cmbPhuongThuc.TextField = "TenPhuongThuc";
             cmbPhuongThuc.DataBind();
@@ -336,7 +346,7 @@ namespace MTCSYT
         {
 
         }
-      
+
         protected void btnDuyet_Click(object sender, EventArgs e)
         {
             MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
@@ -717,7 +727,7 @@ namespace MTCSYT
                     var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
                     Dictionary<string, object> result1 = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseString.ToString());
                     //string strType = "";
-                    
+
                     var kq = new PUSHRESULT();
                     kq.token = result1["token"].ToString();
                     kq.message = result1["message"].ToString();
@@ -777,7 +787,7 @@ namespace MTCSYT
             //services = (new JavaScriptSerializer()).Deserialize<List<PUSHRESULT>>(json);
             lbOTP.Text = list[0].token;
         }
-    
+
         public class Phuongthuc
         {
             public string IDChiNhanh { get; set; }

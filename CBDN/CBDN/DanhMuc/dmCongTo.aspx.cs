@@ -22,30 +22,15 @@ namespace MTCSYT
             {
                 Response.Redirect("~\\Login.aspx");
             }
-            else
+            else if (session.XacNhanPass == 0)
             {
-                //if (Request.Cookies["IDUSER"].Value != "1")
-                //{
-                //    List<SYS_Right> right = session.User.Rights;
-                //    foreach (SYS_Right sysRight in right)
-                //    {
-                //        if (sysRight.FuncId == funcid)
-                //        {
-                //            rightOfUser = sysRight;
-                //            Session["Right"] = sysRight;
-                //            Session["UserId"] = session.User.IDUSER;
-                //            Session["FunctionId"] = sysRight.FuncId;
-                //            break;
-                //        }
-                //    }
-
-                //    if (rightOfUser == null)
-                //    {
-                //        Session["Status"] = "0";
-                //        Response.Redirect("~\\HeThong\\Default.aspx");
-
-                //    }
-                //}
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Không Hợp Lệ. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
+            }
+            else if (session.DatePass > 90)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Mật Khẩu Quá 90 Ngày. Yêu Cầu Đổi Mật Khẩu'); window.location='" +
+                Request.ApplicationPath + "HeThong/ChangePassword.aspx';", true);
             }
             Session["SYS_Session"] = session;
             #endregion
@@ -215,7 +200,7 @@ namespace MTCSYT
             CBDN.DM_CongToSelectByIDDViResult cv = (CBDN.DM_CongToSelectByIDDViResult)grdDVT.GetRow(grdDVT.FocusedRowIndex);
             txtMaDuongDat.Text = cv.MaCongTo;
             txtTenDuongDay.Text = cv.TenCongTo;
-            loadDanhMuc();           
+            loadDanhMuc();
             cmbDiemDo.Text = cv.MaDiemDo;
             cmbDiemDo.Value = cv.IDDiemDo;
 
@@ -255,15 +240,15 @@ namespace MTCSYT
             cmbDvGiao.ValueField = "IDMA_DVIQLY";
             cmbDvGiao.TextField = "TEN_DVIQLY";
             cmbDvGiao.DataBind();
-          
+
              cmbDvGiao.Value = cv.IDDonViGiao; cmbDvGiao.Text = giao.TEN_DVIQLY;
 
             cmbNhan.DataSource = lst;
             cmbNhan.ValueField = "IDMA_DVIQLY";
             cmbNhan.TextField = "TEN_DVIQLY";
             cmbNhan.DataBind();
-           
-            cmbNhan.Value = cv.IDDonViNhan;cmbNhan.Text = nhan.TEN_DVIQLY; 
+
+            cmbNhan.Value = cv.IDDonViNhan;cmbNhan.Text = nhan.TEN_DVIQLY;
 
             txtHsNhanQD.Text = cv.HeSoQuyDoi + "";
         }

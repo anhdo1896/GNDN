@@ -49,9 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DB\CheckPass_User.cs" />
-    <Compile Include="DB\Dapper_SQL.cs" />
-    <Compile Include="DB\Out_PUT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SYS\DonViService.cs" />
     <Compile Include="SYS\DonViService_Gen.cs" />
