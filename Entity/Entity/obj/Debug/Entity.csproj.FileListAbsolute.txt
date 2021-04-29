@@ -1,0 +1,5 @@
+C:\1.Code\GNDN\Entity\Entity\bin\Debug\Entity.dll
+C:\1.Code\GNDN\Entity\Entity\bin\Debug\Entity.pdb
+C:\1.Code\GNDN\Entity\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\1.Code\GNDN\Entity\Entity\obj\Debug\Entity.dll
+C:\1.Code\GNDN\Entity\Entity\obj\Debug\Entity.pdb
