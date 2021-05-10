@@ -5,17 +5,17 @@ using System.Text;
 
 namespace DataAccess
 {
-    public class Out_PUT
+    public static class Out_PUT
     {
         public class ISCHECK_LOGIN_OUT
         {
             public string ISCHECK_LOGIN { get; set; }
-            public DateTime DatePass { get; set; }
+            public DateTime DATE_PASS { get; set; }
         }
 
         public class Getdate_Pass
         {
-            public DateTime DatePass { get; set; }
+            public DateTime DATE_PASS { get; set; }
         }
 
         public class Checklogin_USER

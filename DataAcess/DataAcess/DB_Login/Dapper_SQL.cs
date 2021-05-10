@@ -121,7 +121,7 @@ namespace DataAccess
             {
                 string loi = ex + "";
                 return null;
-                
+
             }
             finally
             {
@@ -135,7 +135,7 @@ namespace DataAccess
             try
             {
                 db.Open();
-                string query = @"update DM_USER set PASSWORD =  @PASSWORD where IDMA_DVIQLY = @IDMA_DVIQLY and USERNAME = @USERNAME  ";
+                string query = @"update DM_USER set PASSWORD =  @PASSWORD, DATE_PASS = getdate() where IDMA_DVIQLY = @IDMA_DVIQLY and USERNAME = @USERNAME  ";
                 db.Query(query, new { PASSWORD = PASSWORD, IDMA_DVIQLY = @IDMA_DVIQLY, USERNAME = @USERNAME });
                 db.Close();
                 db.Dispose();

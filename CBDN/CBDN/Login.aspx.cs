@@ -84,7 +84,7 @@ namespace QLY_VTTB
                     {
                         count_fail = int.Parse(check[0].ISCHECK_LOGIN);
                     }
-                    dateChange = check[0].DatePass;
+                    dateChange = check[0].DATE_PASS;
                     if (dateChange.Year != 1)
                     {
                         dayChange = (DateTime.Now - dateChange).TotalDays;
