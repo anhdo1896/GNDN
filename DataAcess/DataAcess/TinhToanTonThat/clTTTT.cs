@@ -2963,6 +2963,41 @@ namespace DataAccess
             }
             return dt;
         }
+        public void Insert_User_Login_Log(string pMA_DVIQLY, string pPHANLOAI, string pAPP_WEB, string pUSERDN, DateTime pTHOIGIANDN, int pTHANG, int pNAM)
+        {
+            DataTable dt = new DataTable();
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
+            OracleCommand objCmd = new OracleCommand();
+            try
+            {
+                objConn.Open();
+                objCmd.Connection = objConn;
+                objCmd.CommandText = "PKG_USER_GCS_UDHT.USER_LOGIN_LOG";
+                objCmd.CommandType = CommandType.StoredProcedure;
+                objCmd.Parameters.Add("pMA_DVIQLY", OracleType.VarChar).Value = pMA_DVIQLY;
+                objCmd.Parameters.Add("pPHANLOAI", OracleType.VarChar).Value = pPHANLOAI;
+                objCmd.Parameters.Add("pAPP_WEB", OracleType.VarChar).Value = pAPP_WEB;
+                objCmd.Parameters.Add("pUSERDN", OracleType.VarChar).Value = pUSERDN;
+                objCmd.Parameters.Add("pTHOIGIANDN", OracleType.DateTime).Value = pTHOIGIANDN;
+                objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = pTHANG;
+                objCmd.Parameters.Add("pNAM", OracleType.Number).Value = pNAM;
+                objCmd.ExecuteReader();
+                objConn.Close();
+                objCmd.Dispose();
+                objCmd = null;
+            }
 
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+            finally
+            {
+                objConn.Close();
+                objConn.Dispose();
+                objCmd = null;
+            }
+
+        }
     }
 }
