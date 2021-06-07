@@ -2963,7 +2963,7 @@ namespace DataAccess
             }
             return dt;
         }
-        public void Insert_User_Login_Log(string pMA_DVIQLY, string pPHANLOAI, string pAPP_WEB, string pUSERDN, DateTime pTHOIGIANDN, int pTHANG, int pNAM)
+        public void Insert_User_Login_Log(string pMA_DVIQLY, string pPHANLOAI, string pAPP_WEB, string pUSERDN, DateTime pTHOIGIANDN, int pTHANG, int pNAM, string pTENUSER, string pCHUCDANH)
         {
             DataTable dt = new DataTable();
             OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
@@ -2981,6 +2981,8 @@ namespace DataAccess
                 objCmd.Parameters.Add("pTHOIGIANDN", OracleType.DateTime).Value = pTHOIGIANDN;
                 objCmd.Parameters.Add("pTHANG", OracleType.Number).Value = pTHANG;
                 objCmd.Parameters.Add("pNAM", OracleType.Number).Value = pNAM;
+                objCmd.Parameters.Add("pTENUSER", OracleType.VarChar).Value = pTENUSER;
+                objCmd.Parameters.Add("pCHUCDANH", OracleType.VarChar).Value = pCHUCDANH;
                 objCmd.ExecuteReader();
                 objConn.Close();
                 objCmd.Dispose();

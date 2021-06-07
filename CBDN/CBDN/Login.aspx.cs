@@ -167,7 +167,7 @@ namespace QLY_VTTB
                 user.Rights = temp.GetRightsByUser(user.IDUSER);
                 Session["SYS_Session"] = session;
                 DataAccess.clTTTT dlDB = new DataAccess.clTTTT();
-                dlDB.Insert_User_Login_Log(dm_DV.MA_DVIQLY, "GNDN", "W", txtUserName.Text, DateTime.Now, DateTime.Now.Month, DateTime.Now.Year);
+                dlDB.Insert_User_Login_Log(dm_DV.MA_DVIQLY, "GNDN", "W", txtUserName.Text, DateTime.Now, DateTime.Now.Month, DateTime.Now.Year, session.User.HOTEN + " ", session.User.CHUCDANH + "");
 
                 HttpCookie obCookie = new HttpCookie("ANHKTV");
                 obCookie.Value = user.USERNAME;
