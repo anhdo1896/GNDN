@@ -24,7 +24,6 @@ C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\bin\Debug\Cast
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\bin\Debug\Connection.pdb
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\bin\Debug\Dapper.xml
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\bin\Debug\Entity.pdb
-C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\obj\Debug\DataAcess.csprojAssemblyReference.cache
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\obj\Debug\DataAcess.csproj.CoreCompileInputs.cache
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\obj\Debug\DataAcess.csproj.CopyComplete
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\obj\Debug\DataAcess.dll

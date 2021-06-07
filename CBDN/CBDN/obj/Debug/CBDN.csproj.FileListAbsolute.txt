@@ -599,7 +599,6 @@ C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\de\DevExpress.XtraRi
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\es\DevExpress.XtraRichEdit.v17.1.resources.dll
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\ja\DevExpress.XtraRichEdit.v17.1.resources.dll
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\ru\DevExpress.XtraRichEdit.v17.1.resources.dll
-C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.csprojAssemblyReference.cache
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\MTCSYT.Report.InBienBanGiaoNhan.resources
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\MTCSYT.Report.InDienNhan3ThoiDiem.resources
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\MTCSYT.Report.InDN_ThuongPhamTCT.resources
@@ -622,3 +621,4 @@ C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.csproj.Co
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.csproj.CopyComplete
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.dll
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.pdb
+C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.csprojAssemblyReference.cache

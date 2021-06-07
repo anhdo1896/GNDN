@@ -5519,6 +5519,7 @@
     <Content Include="BienDongThang\bd_GiamDocXN.aspx" />
     <Content Include="BienDongThang\bd_xacNhanSL_BackUp_PDF.aspx" />
     <Content Include="BienDongThang\bd_xacNhanSL.aspx" />
+    <Content Include="config.xml" />
     <Content Include="CSS\cssCircle.css" />
     <Content Include="CSS\style.css" />
     <Content Include="DanhMuc\bd_SanLuongThuongPhamTheoThang.aspx" />

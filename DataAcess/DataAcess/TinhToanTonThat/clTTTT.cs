@@ -2966,7 +2966,7 @@ namespace DataAccess
         public void Insert_User_Login_Log(string pMA_DVIQLY, string pPHANLOAI, string pAPP_WEB, string pUSERDN, DateTime pTHOIGIANDN, int pTHANG, int pNAM, string pTENUSER, string pCHUCDANH)
         {
             DataTable dt = new DataTable();
-            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString(pMA_DVIQLY));
+            OracleConnection objConn = new OracleConnection(ConnectString.ConnectionString2(pMA_DVIQLY));
             OracleCommand objCmd = new OracleCommand();
             try
             {

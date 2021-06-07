@@ -22,6 +22,17 @@ namespace DataAccess
                 return null;
             }
         }
+        public static String ConnectionString2(string ma_dv)
+        {
+            try
+            {
+                return ReadConfig2();
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
 
         protected static string ReadConfig()
@@ -51,7 +62,33 @@ namespace DataAccess
                 return "";
             }
         }
+        protected static string ReadConfig2()
+        {
+            try
+            {
+                var path = System.Web.HttpContext.Current.Server.MapPath("~/config.xml");
+                var dataSet = new DataSet();
+                dataSet.ReadXml(path);
+                if (dataSet.Tables.Count <= 0)
+                {
+                    return "";
+                }
+                var table = dataSet.Tables[0];
+                if (table.Rows.Count <= 0)
+                {
+                    return "";
+                }
+                string chuoi = table.Rows[0]["ConnectString_2"] + "";
+                return chuoi;
 
+
+            }
+            catch (Exception exception)
+            {
+                //lbThongBao.Text = @"Đọc file lỗi: " + exception.Message;
+                return "";
+            }
+        }
         public static string DecryptSYS_ConfigConnection(string connect)
         {
             try
