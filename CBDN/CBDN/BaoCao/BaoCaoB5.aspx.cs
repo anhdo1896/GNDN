@@ -9,6 +9,7 @@ using System.Data;
 using DevExpress.Web;
 using System.IO;
 using MTCSYT;
+using DataAccess;
 
 namespace CBDN.BaoCao
 {
@@ -47,19 +48,12 @@ namespace CBDN.BaoCao
        
         private void InBienBanQuyetToan()
         {
-
-            MTCSYT.SYS_Session session = (MTCSYT.SYS_Session)Session["SYS_Session"];
-            int strMadviqly = int.Parse(session.User.ma_dviqly);
-
-            DataTable dt = new DataTable();
-
-            CBDN.Class.InBienBanQT inBienBan = new CBDN.Class.InBienBanQT();
-            string strGiao = "", strNhan = "", strGDNhan = "", strGDGiao = "";
-
-            int donvi = strMadviqly;
-            // int phuongthuc = int.Parse(cmbPhuongThuc.Value + "");
-            int phuongthuc = 0;
+            int thang = int.Parse(cmbThang.Value + "");
+            int nam = int.Parse(cmbNam.Value + "");
+            int tnow = DateTime.Now.Month;
+            int ynow = DateTime.Now.Year;
             DataTable dsdt = new DataTable();
+            DataTable dsa = new DataTable();
             dsdt.Columns.Add("STT");
             dsdt.Columns.Add("Ten_Cty");
 
@@ -71,49 +65,31 @@ namespace CBDN.BaoCao
             dsdt.Columns.Add("B2", typeof(decimal));
             dsdt.Columns.Add("B3", typeof(decimal));
             dsdt.Columns.Add("Tong", typeof(decimal));
-            int j = 0;
-            decimal B1 = 0;
-            decimal B2 = 0;
-            decimal B3 = 0;
-            for (int i = 11; i < 38; i++)
+            if(thang == tnow-1 && nam == ynow)
+            { dsa = Dapper_SQL.Get_BaoCaoB5(thang, nam); }    
+            else if (thang == 12 && nam == ynow && tnow == 1)
+            { dsa = Dapper_SQL.Get_BaoCaoB5(thang, nam); }
+            else
             {
-                j++;
-                donvi = i;
-                var TenDonvi = db.DM_DVQLies.SingleOrDefault(x => x.IDMA_DVIQLY == donvi);
-                var Ten = TenDonvi.TEN_DVIQLY;
-                dt = inBienBan.InBienBanQuyetToan(phuongthuc, donvi, int.Parse(cmbThang.Value + ""), int.Parse(cmbNam.Value + ""), ref strGiao, ref strNhan, ref strGDNhan, ref strGDGiao);
-
-                string B1_TieuThu1 = dt.Compute("sum([B1_TieuThu])", "[Loai]=1 or [Loai]=2 or [Loai]=4").ToString();
-                string B2_TieuThu1 = dt.Compute("sum([B2_TieuThu])", "[Loai]=1 or [Loai]=2 or [Loai]=4").ToString();
-                string B3_TieuThu1 = dt.Compute("sum([B3_TieuThu])", "[Loai]=1 or [Loai]=2 or [Loai]=4").ToString();
-               
-                if (B1_TieuThu1 != "")
+                dsa = Dapper_SQL.Get_BaoCaoB5_LS(thang, nam);
+            }    
+                int a = dsa.Rows.Count;
+            if (a > 1)
+            {
+                for (int i = 0; i < a; i++)
                 {
-                    B1 = decimal.Parse(B1_TieuThu1.Replace(".", ""));
-                }
-                if (B1_TieuThu1 != "")
-                {
-                    B2 = decimal.Parse(B2_TieuThu1.Replace(".", ""));
-                }
-                if (B1_TieuThu1 != "")
-                {
-                    B3 = decimal.Parse(B3_TieuThu1.Replace(".", ""));
-                }
-                decimal Tong = B1 + B2 + B3;
-                if (Tong != 0)
-                {
-
+                    var Ten = dsa.Rows[i]["TenDV"];
+                    var B1 = decimal.Parse(dsa.Rows[i]["B1_TieuThu"]+"");
+                   var B2 = decimal.Parse(dsa.Rows[i]["B2_TieuThu"] + "");
+                   var B3 = decimal.Parse(dsa.Rows[i]["B3_TieuThu"] + "");
+                    var Tong = decimal.Parse(dsa.Rows[i]["Tong_TieuThu"] + "");
                     var B1_TieuThu = string.Format("{0:N0} ", B1);
                     var B2_TieuThu = string.Format("{0:N0} ", B2);
                     var B3_TieuThu = string.Format("{0:N0} ", B3);
                     var Tong_TieuThu = string.Format("{0:N0} ", Tong);
 
-                    dsdt.Rows.Add(j, Ten, B1_TieuThu, B2_TieuThu, B3_TieuThu, Tong_TieuThu, B1, B2, B3, Tong);
+                    dsdt.Rows.Add(i+1,Ten, B1_TieuThu, B2_TieuThu, B3_TieuThu, Tong_TieuThu, B1, B2, B3, Tong);
                 }
-            }
-            int a = dsdt.Rows.Count;
-            if (a > 1)
-            {
                 MTCSYT.Report.InBaoCaoB5 report = new MTCSYT.Report.InBaoCaoB5(dsdt, "" + cmbThang.Value, "" + cmbNam.Value);
             ReportViewer2.Report = report;
 
@@ -123,13 +99,7 @@ namespace CBDN.BaoCao
 
 
 
-        protected void cbAll_Init(object sender, EventArgs e)
-        {
-
-            ASPxCheckBox chk = sender as ASPxCheckBox;
-            ASPxGridView grid = (chk.NamingContainer as GridViewHeaderTemplateContainer).Grid;
-            chk.Checked = (grid.Selection.Count == grid.VisibleRowCount);
-        }
+       
         private void loadDSNgay()
         {
 

@@ -150,5 +150,57 @@ namespace DataAccess
                 db.Dispose();
             }
         }
+
+        public static DataTable Get_BaoCaoB5(int Thang, int Nam)
+        {
+            DataTable ds = new DataTable();
+            IDbConnection db = new SqlConnection(Common.ConnectionString);
+            try
+            {
+                db.Open();
+                string query = @"exec [dbo].[BC_GuiB5] @Thang, @Nam";
+                var data = db.ExecuteReader(query, new { Thang = Thang, Nam = Nam});
+                ds.Load(data);
+                db.Close();
+                db.Dispose();
+
+                return ds;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                db.Close();
+                db.Dispose();
+            }
+        }
+        public static DataTable Get_BaoCaoB5_LS(int Thang, int Nam)
+        {
+            DataTable ds = new DataTable();
+            IDbConnection db = new SqlConnection(Common.ConnectionString);
+            try
+            {
+                db.Open();
+                string query = @"exec [dbo].[BC_GuiB5_LS] @Thang, @Nam";
+                var data = db.ExecuteReader(query, new { Thang = Thang, Nam = Nam });
+                ds.Load(data);
+                db.Close();
+                db.Dispose();
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                db.Close();
+                db.Dispose();
+            }
+        }
     }
 }
+

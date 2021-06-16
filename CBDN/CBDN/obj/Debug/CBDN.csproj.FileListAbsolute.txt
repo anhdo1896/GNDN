@@ -418,7 +418,6 @@ C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\CBDN.dll.config
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\CBDN.dll
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\CBDN.pdb
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\Connection.dll
-C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\DataAcess.dll
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\DevExpress.Charts.v17.1.Core.dll
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\DevExpress.CodeParser.v17.1.dll
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\DevExpress.Data.v17.1.dll
@@ -621,6 +620,7 @@ C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.csproj.Co
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.csproj.CopyComplete
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.dll
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.pdb
-C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.csprojAssemblyReference.cache
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\MTCSYT.Report.InBaoCaoB5.resources
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.dll.licenses
+C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.csprojAssemblyReference.cache
+C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\DataAcess.dll
