@@ -5502,6 +5502,7 @@
     <Content Include="BaoCao\bc_BieuTongGiaoNhan.aspx" />
     <Content Include="BaoCao\bc_BieuTong_QT_ALL.aspx" />
     <Content Include="BaoCao\TK_DVChotBaoCao.aspx" />
+    <Content Include="BaoCao\BaoCaoB5.aspx" />
     <Content Include="BC_TK_ChotSL\bc_Chot_BaoCaoB9.aspx" />
     <Content Include="BC_TK_ChotSL\bc_Chot_BCChiTiet.aspx" />
     <Content Include="BC_TK_ChotSL\bc_Chot_BieuTongGiaoNhan.aspx" />
@@ -7367,6 +7368,13 @@
     <Compile Include="BaoCao\bc_BieuTong_QT_ALL.aspx.designer.cs">
       <DependentUpon>bc_BieuTong_QT_ALL.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\BaoCaoB5.aspx.cs">
+      <DependentUpon>BaoCaoB5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaoCao\BaoCaoB5.aspx.designer.cs">
+      <DependentUpon>BaoCaoB5.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BC_TK_ChotSL\bc_Chot_BaoCaoB9.aspx.cs">
       <DependentUpon>bc_Chot_BaoCaoB9.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -7810,6 +7818,12 @@
     </Compile>
     <Compile Include="Report\InBienBanGiaoNhan.Designer.cs">
       <DependentUpon>InBienBanGiaoNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\InBaoCaoB5.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\InBaoCaoB5.Designer.cs">
+      <DependentUpon>InBaoCaoB5.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\InDienNhan3ThoiDiem.cs">
       <SubType>Component</SubType>
@@ -9392,8 +9406,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Report\InBienBanGiaoNhan.resx">
       <DependentUpon>InBienBanGiaoNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\InBaoCaoB5.resx">
+      <DependentUpon>InBaoCaoB5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\InDienNhan3ThoiDiem.resx">
       <DependentUpon>InDienNhan3ThoiDiem.cs</DependentUpon>

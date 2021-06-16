@@ -622,3 +622,5 @@ C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.csproj.Co
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.dll
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.pdb
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.csprojAssemblyReference.cache
+C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\MTCSYT.Report.InBaoCaoB5.resources
+C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.dll.licenses
