@@ -18,80 +18,22 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Theo dõi số liệu đã nhập trong tháng</h4>
+        <h4 class="page-title">BẢNG TỔNG HỢP ĐIỆN MUA CỦA CÁC CÔNG TY ĐIỆN LỰC</h4>
     </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
             <li><a href="../Default.aspx">Trang chủ</a></li>
             <li><a href="bc_GiaoNhan2Chieu.aspx">Báo cáo</a></li>
-            <li><a href="bc_GiaoNhan2Chieu.aspx">Theo dõi số liệu đã nhập trong tháng</a></li>
+            <li><a href="bc_GiaoNhan2Chieu.aspx">BẢNG TỔNG HỢP ĐIỆN MUA CỦA CÁC CÔNG TY ĐIỆN LỰC</a></li>
         </ol>
     </div>
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Category" runat="server">
 
-    <script type="text/javascript">
-        function SetMenuSelectionProduct(s, e) {
-            if (s == selectionMenuProduct) {
-                var whichGrid = gridProduct;
-            }
-            else {
-                var whichGrid = gridSelProducts;
-            }
-
-            if (e.item.index == 0) {
-                whichGrid.SelectAllRowsOnPage();
-            }
-            else if (e.item.index == 1) {
-                whichGrid.SelectRows();
-            }
-            else if (e.item.index == 2) {
-                whichGrid.UnselectRows();
-            }
-        }
-
-        function OnAllCheckedChanged(s, e) {
-
-            var _handle = true;
-            if (s.GetChecked())
-
-                grdGiao.SelectRows();
-
-            else
-
-                grdGiao.UnselectRows();
-
-        }
-        function OnGridSelectionChanged(s, e) {
-
-            cbAll.SetChecked(s.GetSelectedRowCount() == s.cpVisibleRowCount);
-
-        }
-
-
-        function OnNhanCheckedChanged(s, e) {
-
-            var _handle = true;
-            if (s.GetChecked())
-
-                grdNhan.SelectRows();
-
-            else
-
-                grdNhan.UnselectRows();
-
-        }
-        function OnGridNhanSelectionChanged(s, e) {
-
-            cbNhan.SetChecked(s.GetSelectedRowCount() == s.cpVisibleRowCount);
-
-        }
-    </script>
-
     <div class="col-md-12">
         <div class="white-box">
-            <h1 class="m-b-0 box-title">Theo dõi số liệu đã nhập trong tháng</h1>
+            <h1 class="m-b-0 box-title">BẢNG TỔNG HỢP ĐIỆN MUA CỦA CÁC CÔNG TY ĐIỆN LỰC</h1>
             <div class="col-lg-12 m-t-30">
                 <hr />
             </div>
