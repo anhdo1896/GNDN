@@ -79,6 +79,7 @@ namespace QLY_VTTB.MasterPage
                                 <li> <a href='../BaoCao/bcTonThat_CapDienAp.aspx'>* Báo cáo tổn thất theo cấp điện áp</a></li>
                                 <li> <a href='../BaoCao/BaoCaoB9.aspx'>* Báo cáo điện nhận 3 thời điểm</a></li>
                                 <li> <a href='../BaoCao/BaoCaoB5.aspx'>* Báo cáo B5</a></li>
+                                <li> <a href='../BaoCao/BaoCaoB5_Quy.aspx'>* Báo cáo B5 Quý</a></li>
                             </ul>
                         </li>                        
                         <li>
@@ -216,6 +217,7 @@ namespace QLY_VTTB.MasterPage
                                 <li> <a href='../BC_TK_ChotSL/bc_Chot_TonThat.aspx'>* Báo cáo tổn thất 110kV</a></li>
                                 <li> <a href='../BaoCao/BaoCaoB9.aspx'>* Báo cáo điện nhận 3 thời điểm</a></li>
                                 <li> <a href='../BaoCao/BaoCaoB5.aspx'>* Báo cáo B5</a></li>
+                                <li> <a href='../BaoCao/BaoCaoB5_Quy.aspx'>* Báo cáo B5 Quý</a></li>
                             </ul>
                         </li>
  <li>

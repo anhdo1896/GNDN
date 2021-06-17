@@ -7,10 +7,10 @@ using System.Data;
 using SystemManageService;
 namespace MTCSYT.Report
 {
-    public partial class InBaoCaoB5 : DevExpress.XtraReports.UI.XtraReport
+    public partial class InBaoCaoB5_Quy : DevExpress.XtraReports.UI.XtraReport
     {
 
-        public InBaoCaoB5(DataTable dsdt, string thang, string nam)
+        public InBaoCaoB5_Quy(DataTable dsdt, string quy, string nam)
         {
             CBDN.cl_class.clChuyenSoThanhChu clChuyenSo = new CBDN.cl_class.clChuyenSoThanhChu();
             InitializeComponent();
@@ -37,11 +37,10 @@ namespace MTCSYT.Report
 
         
 
-            lbThangNam.Text = " Tháng " + thang + " Năm " + nam + ".";
+            lbThangNam.Text = " Quý " + quy + " Năm " + nam + ".";
             nguoilap.Text = @"Người lập biểu";
             TruongBan.Text = @"KT. TRƯỞNG BAN";
             ptb.Text = @"PHÓ TRƯỞNG BAN";
-
         }
 
     }

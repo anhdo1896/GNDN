@@ -201,6 +201,31 @@ namespace DataAccess
                 db.Dispose();
             }
         }
+        public static DataTable Get_MaxThang_DL_GN(int Nam)
+        {
+            DataTable ds = new DataTable();
+            IDbConnection db = new SqlConnection(Common.ConnectionString);
+            try
+            {
+                db.Open();
+                string query = @"SELECT MAX(thang) as ThangMax FROM [DB_CanBangDienNang_V01].[dbo].[HD_GiaoNhanThang] where Nam = @Nam";
+                var data = db.ExecuteReader(query, new { Nam = Nam });
+                ds.Load(data);
+                db.Close();
+                db.Dispose();
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                db.Close();
+                db.Dispose();
+            }
+        }
     }
 }
 

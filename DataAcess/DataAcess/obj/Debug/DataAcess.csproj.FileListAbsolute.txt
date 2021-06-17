@@ -28,3 +28,4 @@ C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\obj\Debug\Data
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\obj\Debug\DataAcess.csproj.CopyComplete
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\obj\Debug\DataAcess.dll
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\obj\Debug\DataAcess.pdb
+C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\DataAcess\DataAcess\obj\Debug\DataAcess.csprojAssemblyReference.cache

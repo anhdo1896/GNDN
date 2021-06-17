@@ -624,3 +624,4 @@ C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\MTCSYT.Report.
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.dll.licenses
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\CBDN.csprojAssemblyReference.cache
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\bin\DataAcess.dll
+C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Debug\MTCSYT.Report.InBaoCaoB5_Quy.resources

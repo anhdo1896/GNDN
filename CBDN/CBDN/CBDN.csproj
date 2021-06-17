@@ -5490,6 +5490,7 @@
     <Content Include="assets\pages\scripts\v,..min.js" />
     <Content Include="assets\pages\scripts\widgets.js" />
     <Content Include="assets\pages\scripts\widgets.min.js" />
+    <Content Include="BaoCao\BaoCaoB5_Quy.aspx" />
     <Content Include="BaoCao\BaoCaoB9.aspx" />
     <Content Include="BaoCao\bcTonThatDienLuc_CapDienAp.aspx" />
     <Content Include="BaoCao\bcTonThat_CapDienAp.aspx" />
@@ -7354,6 +7355,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADOController.cs" />
+    <Compile Include="BaoCao\BaoCaoB5_Quy.aspx.cs">
+      <DependentUpon>BaoCaoB5_Quy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaoCao\BaoCaoB5_Quy.aspx.designer.cs">
+      <DependentUpon>BaoCaoB5_Quy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\BaoCaoB9.aspx.cs">
       <DependentUpon>BaoCaoB9.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -7812,6 +7820,12 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Report\InBaoCaoB5_Quy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\InBaoCaoB5_Quy.Designer.cs">
+      <DependentUpon>InBaoCaoB5_Quy.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\InBienBanGiaoNhan.cs">
       <SubType>Component</SubType>
@@ -9407,6 +9421,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report\InBaoCaoB5_Quy.resx">
+      <DependentUpon>InBaoCaoB5_Quy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\InBienBanGiaoNhan.resx">
       <DependentUpon>InBienBanGiaoNhan.cs</DependentUpon>
     </EmbeddedResource>

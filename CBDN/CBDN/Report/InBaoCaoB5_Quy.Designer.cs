@@ -1,6 +1,6 @@
 ﻿namespace MTCSYT.Report
 {
-    partial class InBaoCaoB5
+    partial class InBaoCaoB5_Quy
     {
         /// <summary>
         /// Required designer variable.
@@ -350,7 +350,7 @@
             this.lbThangNam.SizeF = new System.Drawing.SizeF(826.9999F, 22.99998F);
             this.lbThangNam.StylePriority.UseFont = false;
             this.lbThangNam.StylePriority.UseTextAlignment = false;
-            this.lbThangNam.Text = "Tháng năm";
+            this.lbThangNam.Text = "Quý năm";
             this.lbThangNam.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel6
@@ -427,14 +427,14 @@
             // TruongBan
             // 
             this.TruongBan.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
-            this.TruongBan.LocationFloat = new DevExpress.Utils.PointFloat(451.3901F, 96.96524F);
+            this.TruongBan.LocationFloat = new DevExpress.Utils.PointFloat(451.3901F, 96.96528F);
             this.TruongBan.Multiline = true;
             this.TruongBan.Name = "TruongBan";
             this.TruongBan.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TruongBan.SizeF = new System.Drawing.SizeF(299.0193F, 27.66665F);
+            this.TruongBan.SizeF = new System.Drawing.SizeF(299.0193F, 29.74997F);
             this.TruongBan.StylePriority.UseFont = false;
             this.TruongBan.StylePriority.UseTextAlignment = false;
-            this.TruongBan.Text = "KT. TRƯỞNG BAN";
+            this.TruongBan.Text = "KT. TRƯỞNG BAN\r\n";
             this.TruongBan.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // nguoilap
@@ -546,17 +546,17 @@
             // ptb
             // 
             this.ptb.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
-            this.ptb.LocationFloat = new DevExpress.Utils.PointFloat(451.3901F, 124.6319F);
+            this.ptb.LocationFloat = new DevExpress.Utils.PointFloat(451.3901F, 126.7152F);
             this.ptb.Multiline = true;
             this.ptb.Name = "ptb";
             this.ptb.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.ptb.SizeF = new System.Drawing.SizeF(299.0193F, 27.66665F);
+            this.ptb.SizeF = new System.Drawing.SizeF(299.0193F, 29.74997F);
             this.ptb.StylePriority.UseFont = false;
             this.ptb.StylePriority.UseTextAlignment = false;
             this.ptb.Text = " PHÓ TRƯỞNG BAN";
             this.ptb.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // InBaoCaoB5
+            // InBaoCaoB5_Quy
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,
