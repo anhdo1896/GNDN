@@ -88,10 +88,10 @@
                                 </dxwtl:TreeListTextColumn>
                                 <dxwtl:TreeListTextColumn Caption="Tính chất" FieldName="strTinhChat" VisibleIndex="1">
                                 </dxwtl:TreeListTextColumn>
-                                <dxwtl:TreeListCommandColumn Name="btnDelete" VisibleIndex="7" Width="10px">
+                               <%-- <dxwtl:TreeListCommandColumn Name="btnDelete" VisibleIndex="7" Width="10px">
                                     <DeleteButton Visible="True">
                                     </DeleteButton>
-                                </dxwtl:TreeListCommandColumn>
+                                </dxwtl:TreeListCommandColumn>--%>
                             </Columns>
                             <SettingsBehavior AllowFocusedNode="True" ExpandCollapseAction="NodeDblClick" ProcessFocusedNodeChangedOnServer="True" />
                             <SettingsEditing AllowNodeDragDrop="False" />

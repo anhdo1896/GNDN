@@ -416,3 +416,6 @@ C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Release\CBDN.csproj.
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Release\CBDN.dll
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Release\CBDN.pdb
 C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Release\CBDN.XmlSerializers.dll
+C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Release\MTCSYT.Report.InBaoCaoB5_Quy.resources
+C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Release\MTCSYT.Report.InBaoCaoB5.resources
+C:\Users\thanh\OneDrive\Documents\GitHub\GNDN\CBDN\CBDN\obj\Release\CBDN.dll.licenses

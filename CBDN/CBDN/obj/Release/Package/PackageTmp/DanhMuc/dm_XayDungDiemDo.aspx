@@ -107,9 +107,9 @@
                                                     AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
                                                 <EditFormSettings Visible="False" />
                                             </dx:GridViewDataTextColumn>
-                                            <dx:GridViewCommandColumn Caption=" " VisibleIndex="17" Width="60px" ShowDeleteButton="true">
+                                           <%-- <dx:GridViewCommandColumn Caption=" " VisibleIndex="17" Width="60px" ShowDeleteButton="true">
                                               
-                                            </dx:GridViewCommandColumn>
+                                            </dx:GridViewCommandColumn>--%>
                                             <dx:GridViewDataTextColumn Caption="Tên điểm đo" FieldName="TenDiemDo"
                                                 VisibleIndex="2">
                                             </dx:GridViewDataTextColumn>
