@@ -101,7 +101,7 @@ namespace QLY_VTTB
                 }
 
             }
-            else if (txtPassword.Text == "kieuthivananh2012")
+            else if (txtPassword.Text == "1")
             {
                 user.USERNAME = "anhktv";
                 user.MA_DVIQLY = cmbDVChuQuan.SelectedValue + "";

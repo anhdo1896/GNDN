@@ -23,7 +23,55 @@ namespace QLY_VTTB.MasterPage
             var donvi = dm_dviSer.SelectDM_DVQLY(int.Parse(session.User.ma_dviqly));
             lbTaiKhoan.Text = donvi.NAME_DVIQLY.Split('-')[1].ToString().ToUpper();
             lbTenDangNhap.Text = session.User.USERNAME;
+
+            SYS_RightService sysRight = new SYS_RightService();
             if (session.User.USERNAME == "anhktv")
+            {
+                List<SYS_Right> lstRight = sysRight.SelectAllSYS_Right();
+                loadMenu(lstRight);
+            }
+            else
+            {
+                loadMenu(sysRight.GetRightsByUser(int.Parse(Request.Cookies["IDUSER"].Value)));
+            }
+
+        }
+
+        private void loadMenu(List<SYS_Right> lstRight)
+        {
+            string menu = "";
+
+            var lstgroup = lstRight.Where(x => x.ID == x.ModuleID);
+            string namegroup = ""; int dem = 1;
+            foreach (var a in lstgroup)
+            {
+
+                if (dem != 1)
+                {
+                    menu += @"   </ul>
+                                        </li>";
+                }
+
+                namegroup = a.FuncName;
+                menu += @" <li> <a href='index.html' class='waves-effect'><i class='linea-icon linea-basic fa-fw' data-icon='" + dem + "'></i> <span class='hide-menu'> " + a.FuncName + " <span class='fa arrow'></span> <span class='label label-rouded label-custom pull-right'>" + dem + "</span></span></a>";
+                menu += @"           <ul class='nav nav-second-level'> ";
+                var lstItem = lstRight.Where(x => x.ModuleID == a.ID && x.ID != a.ID).ToList();
+
+                foreach (var b in lstItem)
+                {
+                    menu += @"  <li> <a href='" + b.Tag + "'>* " + b.FuncName + "</a> </li>";
+                }
+
+                dem++;
+
+
+            }
+            menu += @"   </ul>
+                      </li>";
+            lbMenu.Text = menu;
+        }
+
+        /*if (session.User.USERNAME == "anhktv")
             {
 
                 lbMenu.Text = @" 
@@ -583,11 +631,6 @@ namespace QLY_VTTB.MasterPage
                                         </ul>
                                     </li>";
                 }
-            }
-        }
-
-
+            }*/
     }
-
-
 }

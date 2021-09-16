@@ -21,7 +21,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">BẢNG NHẬP KẾ HOẠCH ĐIỆN NHẬN - THƯƠNG PHẨM PHÂN BỔ THEO THÁNG</h4>
+        <h4 class="page-title">Xây dựng điểm đo liên kết</h4>
     </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">

@@ -871,6 +871,7 @@ pre {
   color: rgba(0, 0, 0, 0.5);
   font-weight: 600;
   margin-top: 6px;
+  width:400px;
 }
 .bg-title .breadcrumb {
   background: none;
@@ -1484,8 +1485,8 @@ table.dataTable thead .sorting:after {
   font-weight: 500;
   text-transform: uppercase;
   font-size: 14px;
-    height: 35px;
-    width: 775px;
+  height: 10px;
+   
 }
 .panel {
   border-radius: 0px;

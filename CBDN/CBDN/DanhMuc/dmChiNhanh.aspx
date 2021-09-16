@@ -15,13 +15,13 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Quản lý phương thức giao nhận điện năng với các đơn vị khác</h4>
+        <h4 class="page-title">Phương thức giao nhận điện năng</h4>
     </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
             <li><a href="../Default.aspx">Trang chủ</a></li>
-            <li><a href="bc_GiaoNhan2Chieu.aspx">Quản lý Danh mục </a></li>
-            <li><a href="bc_GiaoNhan2Chieu.aspx">Quản lý phương thức giao nhận</a></li>
+            <li><a href="bc_GiaoNhan2Chieu.aspx">Danh mục </a></li>
+            <li><a href="bc_GiaoNhan2Chieu.aspx">Phương thức giao nhận</a></li>
         </ol>
     </div>
   
@@ -29,7 +29,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="Category" runat="server">
          <div class="col-md-12">
         <div class="white-box">
-            <h1 class="m-b-0 box-title">Quản lý phương thức giao nhận điện năng với các đơn vị khác</h1>
+            <h1 class="m-b-0 box-title">Phương thức giao nhận điện năng với các đơn vị khác</h1>
             <div class="col-lg-12 m-t-30">
                 <hr />
             </div>
