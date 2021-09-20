@@ -33,12 +33,12 @@
                         <div class="stat-item">
                             <h6>Nhân viên</h6>
                             <b>
-                                <asp:Label ID="lbNhanVien" runat="server" Text=""></asp:Label></b>
+                                <asp:Label ID="lbNhanVien" runat="server" ForeColor="#00C292"></asp:Label></b>
                         </div>
                          <div class="stat-item">
                             <h6>Trưởng phòng</h6>
                             <b>
-                                <asp:Label ID="lbTruongPhong" runat="server" Text=""></asp:Label></b>
+                                <asp:Label ID="lbTruongPhong" runat="server" ForeColor="#00C292"></asp:Label></b>
                         </div>
                     </div>
                     <div id="sparkline8"></div>
@@ -51,11 +51,11 @@
                         <div class="stat-item">
                             <h6>Chưa xác nhận</h6>
                             <b>
-                                <asp:Label ID="lbGiamDocChua" runat="server" Text=""></asp:Label></b>
+                                <asp:Label ID="lbGiamDocChua" runat="server" ForeColor="#FB9678"></asp:Label></b>
                         </div>
                         <div class="stat-item">
                             <h6>Đã xác nhận</h6>
-                            <b> <asp:Label ID="lbGiamDocDa" runat="server" Text=""></asp:Label></b>
+                            <b> <asp:Label ID="lbGiamDocDa" runat="server" ForeColor="#FB9678"></asp:Label></b>
                         </div>
                     </div>
                     <div id="sparkline9"></div>
@@ -69,12 +69,12 @@
                         <div class="stat-item">
                             <h6>Tổn thất biểu tổng</h6>
                             <b>
-                                <asp:Label ID="lbTonThatBieuTong" runat="server" Text=""></asp:Label></b>
+                                <asp:Label ID="lbTonThatBieuTong" runat="server" ForeColor="#00C292"></asp:Label></b>
                         </div>
                         <div class="stat-item">
                             <h6>Tổn thất B1</h6>
                             <b>
-                                <asp:Label ID="lbBieu1" runat="server" Text=""></asp:Label></b>
+                                <asp:Label ID="lbBieu1" runat="server" ForeColor="#00C292"></asp:Label></b>
                         </div>
                        
                     </div>

@@ -58,8 +58,7 @@ namespace CBDN.BC_TK_ChotSL
             int strMadviqly = int.Parse(session.User.ma_dviqly);
 
             DataTable dt = new DataTable();
-
-            CBDN.Class.InBienBanQT inBienBan = new CBDN.Class.InBienBanQT();
+            CBDN.Class.LS_InBienBanQT inBienBan = new CBDN.Class.LS_InBienBanQT();
             string strGiao = "", strNhan = "", strGDNhan = "", strGDGiao = "";
 
             int donvi = strMadviqly;

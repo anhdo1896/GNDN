@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
 namespace CBDN
 {
     public class ADOController
@@ -9,7 +6,7 @@ namespace CBDN
         public string strcn()
         {
             //return "Data Source=10.21.0.135;Initial Catalog=TESTGNDN;User ID=sa;Password=pcnpm@2018;MultipleActiveResultSets=True;";
-            return "Data Source=.;Initial Catalog=DB_CanBangDienNang_V01;User ID=sa;Password=pcnpm@2018;MultipleActiveResultSets=True;";
+            return ConfigurationSettings.AppSettings["ConnectionInfo"];
         }
 
     }

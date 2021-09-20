@@ -11,26 +11,7 @@
     Namespace="DevExpress.Web" TagPrefix="dxrp" %>
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web" TagPrefix="dxp" %>
-
-
-
-
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Quản lý đơn vị</h4>
-    </div>
-    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-        <ol class="breadcrumb">
-            <li><a href="../Default.aspx">Trang chủ</a></li>
-            <li><a href="bc_GiaoNhan2Chieu.aspx">Quản lý hệ thống </a></li>
-            <li><a href="bc_GiaoNhan2Chieu.aspx">Đơn vị</a></li>
-        </ol>
-    </div>
-
-</asp:Content>
-
-<asp:Content ID="Content4" ContentPlaceHolderID="Category" runat="server">
     <script type="text/javascript">
         function hiddenlink() {
             var elem = document.getElementById('ctl00_userName');
@@ -67,47 +48,62 @@
                 s.SetText(Trim(e.value));
         }
     </script>
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h4 class="page-title">Quản lý đơn vị</h4>
+    </div>
+    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+        <ol class="breadcrumb">
+            <li><a href="../Default.aspx">Trang chủ</a></li>
+            <li><a href="bc_GiaoNhan2Chieu.aspx">Quản lý hệ thống </a></li>
+            <li><a href="bc_GiaoNhan2Chieu.aspx">Đơn vị</a></li>
+        </ol>
+    </div>
+
+</asp:Content>
+
+
+<asp:Content ID="Content4" ContentPlaceHolderID="Category" runat="server">
     <div class="col-md-12">
         <div class="white-box">
             <h1 class="m-b-0 box-title">Quản lý đơn vị</h1>
-            <div class="col-lg-12 m-t-30">
-                <hr />
-            </div>
-            <table>
-                <tr>
-                    <td rowspan="6" width="30%">
-                        <dxwtl:ASPxTreeList ID="TreeListOrganization" runat="server" AutoGenerateColumns="False"
-                            Caption="Danh sách đơn vị " DataCacheMode="Enabled"
-                            KeyFieldName="IDMA_DVIQLY" ParentFieldName="ParentId"
-                            Width="70%" ClientInstanceName="TreeListOrganization" ClientIDMode="AutoID"
-                            OnCustomDataCallback="TreeListOrganization_CustomDataCallback" OnNodeDeleting="TreeListOrganization_NodeDeleting"
-                            OnHtmlCommandCellPrepared="TreeListOrganization_HtmlCommandCellPrepared" Theme="Aqua">
-                            <Images>
-                                <CustomizationWindowClose Width="17px" />
-                                <CollapsedButton Width="15px" />
-                                <ExpandedButton Width="15px" />
-                                <SortDescending Width="7px" />
-                                <SortAscending Width="7px" />
-                            </Images>
-                            <SettingsPager Mode="ShowPager" NumericButtonCount="20" PageSize="20">
-                                <AllButton>
-                                    <Image Width="27px" />
-                                </AllButton>
-                                <FirstPageButton>
-                                    <Image Width="23px" />
-                                </FirstPageButton>
-                                <LastPageButton>
-                                    <Image Width="23px" />
-                                </LastPageButton>
-                                <NextPageButton>
-                                    <Image Width="19px" />
-                                </NextPageButton>
-                                <PrevPageButton>
-                                    <Image Width="19px" />
-                                </PrevPageButton>
-                                <Summary Text="Trang {0} của {1} ({2} dòng)" />
-                            </SettingsPager>
-                            <ClientSideEvents CustomDataCallback="function(s, e) { 
+            <hr />
+
+            <div class="content">
+                <table>
+                    <tr>
+                        <td width="35%" valign="Top">
+                            <dxwtl:ASPxTreeList ID="TreeListOrganization" runat="server" AutoGenerateColumns="False"
+                                Caption="Danh sách đơn vị " DataCacheMode="Enabled"
+                                KeyFieldName="IDMA_DVIQLY" ParentFieldName="ParentId"
+                                Width="70%" ClientInstanceName="TreeListOrganization" ClientIDMode="AutoID"
+                                OnCustomDataCallback="TreeListOrganization_CustomDataCallback" OnNodeDeleting="TreeListOrganization_NodeDeleting"
+                                OnHtmlCommandCellPrepared="TreeListOrganization_HtmlCommandCellPrepared" Theme="Aqua">
+                                <Images>
+                                    <CustomizationWindowClose Width="17px" />
+                                    <CollapsedButton Width="15px" />
+                                    <ExpandedButton Width="15px" />
+                                    <SortDescending Width="7px" />
+                                    <SortAscending Width="7px" />
+                                </Images>
+                                <SettingsPager Mode="ShowPager" NumericButtonCount="20" PageSize="20">
+                                    <AllButton>
+                                        <Image Width="27px" />
+                                    </AllButton>
+                                    <FirstPageButton>
+                                        <Image Width="23px" />
+                                    </FirstPageButton>
+                                    <LastPageButton>
+                                        <Image Width="23px" />
+                                    </LastPageButton>
+                                    <NextPageButton>
+                                        <Image Width="19px" />
+                                    </NextPageButton>
+                                    <PrevPageButton>
+                                        <Image Width="19px" />
+                                    </PrevPageButton>
+                                    <Summary Text="Trang {0} của {1} ({2} dòng)" />
+                                </SettingsPager>
+                                <ClientSideEvents CustomDataCallback="function(s, e) { 
                                                                                    txtNameOrganization.SetText(e.result[0]);
                                                                                    txtName.SetText(e.result[1]);   
                                                                                    txtTenVietTat.SetText(e.result[3]);
@@ -149,162 +145,164 @@
                                                                                }                                                                                     
                                                                                                                                                            
                                                                                                                                                           
-                                                                                }" FocusedNodeChanged="function(s, e) { 
+                                                                                }"
+                                    FocusedNodeChanged="function(s, e) { 
                                                                 var key = TreeListOrganization.GetFocusedNodeKey();
                                                                 TreeListOrganization.PerformCustomDataCallback(key);
 
                                                                  
                                                             }" />
-                            <SettingsLoadingPanel Enabled="False" />
-                            <SettingsText CommandCancel="Hủy" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
-                                CommandUpdate="Cập nhật" ConfirmDelete="Bạn có chắc chắn xóa không?" RecursiveDeleteError="Đã có các nút con không thể xóa!" />
-                            <Styles>
-                                <AlternatingNode Enabled="True">
-                                </AlternatingNode>
-                                <FocusedNode BackColor="White" Font-Bold="True" Font-Underline="True" ForeColor="#24A3D6"
-                                    Wrap="True">
-                                </FocusedNode>
-                            </Styles>
-                            <Columns>
-                                <dxwtl:TreeListTextColumn Caption="Mã đơn vị " FieldName="MA_DVIQLY"
-                                    VisibleIndex="0" Width="35%">
-                                    <PropertiesTextEdit>
-                                        <ClientSideEvents Validation="CheckVali" />
-                                    </PropertiesTextEdit>
-                                </dxwtl:TreeListTextColumn>
-                                <dxwtl:TreeListTextColumn Caption="Tên đơn vị" FieldName="TEN_DVIQLY"
-                                    VisibleIndex="1">
-                                </dxwtl:TreeListTextColumn>
-                                <dxwtl:TreeListTextColumn Caption="Tên viết tắt" FieldName="TenVietTat"
-                                    VisibleIndex="2">
-                                </dxwtl:TreeListTextColumn>
-                                <dxwtl:TreeListCommandColumn Name="btnDelete" VisibleIndex="7" Width="10px">
-                                    <DeleteButton Visible="True">
-                                    </DeleteButton>
-                                </dxwtl:TreeListCommandColumn>
-                            </Columns>
-                            <%--<Settings ShowColumnHeaders="False" />--%>
-                            <SettingsBehavior AllowFocusedNode="True" ExpandCollapseAction="NodeDblClick" ProcessFocusedNodeChangedOnServer="True" />
-                            <SettingsEditing AllowNodeDragDrop="False" />
-                            <Border BorderStyle="None" />
-                            <Settings ShowTreeLines="True" SuppressOuterGridLines="true" />
-                        </dxwtl:ASPxTreeList>
-                    </td>
-                    <td> <dx:ASPxLabel ID="ASPxLabel3" runat="server" ClientInstanceName="lblName" Text="Thông tin chi tiết về đơn vị" Width="250px" Font-Bold="True" Font-Size="Large">
-                        </dx:ASPxLabel></td>
-                </tr>
-                <tr>
-                    <td class="col1">
-                        <dx:ASPxLabel ID="lblName" runat="server" ClientInstanceName="lblName" Text="Mã đơn vị:" Width="150px">
-                        </dx:ASPxLabel>
-                    </td>
-                    <td class="clear">
-                        <dx:ASPxTextBox ID="txtNameOrganization" runat="server" Width="220px" ClientInstanceName="txtName">
-                            <ValidationSettings SetFocusOnError="True" ValidationGroup="btnThemMoi">
-                                <RequiredField IsRequired="True" />
-                            </ValidationSettings>
-                        </dx:ASPxTextBox>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="col1">
-                        <dx:ASPxLabel ID="ASPxLabel1" runat="server" ClientInstanceName="lblName" Text="Tên đơn vị:" Width="150px">
-                        </dx:ASPxLabel>
-                    </td>
-                    <td class="clear">
-                        <dx:ASPxTextBox ID="txtTenDV" runat="server" Width="220px" ClientInstanceName="txtNameOrganization">
-                            <ValidationSettings SetFocusOnError="True" ValidationGroup="btnThemMoi">
-                                <RequiredField IsRequired="True" />
-                            </ValidationSettings>
-                        </dx:ASPxTextBox>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="col1">
-                        <dx:ASPxLabel ID="lblChooseParent" runat="server" Text="Chọn cấp cha: " Width="150px">
-                        </dx:ASPxLabel>
-                    </td>
-                    <td class="col2">
-                        <dx:ASPxComboBox ID="cmbChoseParent" runat="server" SelectedIndex="0" Width="220px"
-                            ClientInstanceName="cmbChoseParent" IncrementalFilteringMode="Contains"
-                            ValueType="System.Int32">
-                        </dx:ASPxComboBox>
-                    </td>
-                </tr>
-                <tr>
-                   <td class="col1">
-                        <dx:ASPxLabel ID="ASPxLabel2" runat="server" ClientInstanceName="lblName" Text="Tên viết tắt:" Width="150px">
-                        </dx:ASPxLabel>
-                    </td>
-                    <td class="clear">
-                        <dx:ASPxTextBox ID="txtTenVietTat" runat="server" Width="220px" ClientInstanceName="txtTenVietTat">
-                        </dx:ASPxTextBox>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col1">
-                        <dx:ASPxButton ID="btnCapNhat" runat="server" Enabled="false"
-                            OnClick="btnCapNhat_Click" Text="Cập nhật" ValidationGroup="btnThemMoi"
-                            Width="120px">
-                        </dx:ASPxButton>
-                    </td>
-                    <td>
-                        <dx:ASPxButton ID="btnBack" runat="server" OnClick="btnBack_Click"
-                            Text="Quay lại" Visible="false" Width="100px">
-                        </dx:ASPxButton>
-                    </td>
-                </tr>
-            </table>
-            <div id="Content" class="clearfix">
-
-                <div class="left_tree" style="width: 500px;">
-                </div>
-                <div class="right_Tree">
-                    <asp:Panel ID="Panel1" Width="100%" Visible="true" CssClass="boxPanel" runat="server">
-                        <table>
-                            <tr>
-                                <td colspan="4">
-                                    <dx:ASPxLabel ID="lblCurrentEdit" runat="server" Text="" ForeColor="#24A3D6" Visible="false">
-                                    </dx:ASPxLabel>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="4">
-                                    <dx:ASPxLabel ID="lblError" runat="server" Text="" ForeColor="Red">
-                                    </dx:ASPxLabel>
-                                </td>
-                            </tr>
-                        </table>
-
-
-                        <table width="100%" class="tbl_Write">
-                            <tr>
-                                <td colspan="4" class="TitleInfo"></td>
-                            </tr>
-                    </asp:Panel>
-                </div>
-                <table width="100%">
-                    <tr>
-                        <td width="120px">
-                            <dx:ASPxButton ID="btnAdd" runat="server" Text="Thêm mới"
-                                OnClick="btnAdd_Click" Width="100px">
-                            </dx:ASPxButton>
+                                <SettingsLoadingPanel Enabled="False" />
+                                <SettingsText CommandCancel="Hủy" CommandDelete="Xóa" CommandEdit="Sửa" CommandNew="Thêm"
+                                    CommandUpdate="Cập nhật" ConfirmDelete="Bạn có chắc chắn xóa không?" RecursiveDeleteError="Đã có các nút con không thể xóa!" />
+                                <Styles>
+                                    <AlternatingNode Enabled="True">
+                                    </AlternatingNode>
+                                    <FocusedNode BackColor="White" Font-Bold="True" Font-Underline="True" ForeColor="#24A3D6"
+                                        Wrap="True">
+                                    </FocusedNode>
+                                </Styles>
+                                <Columns>
+                                    <dxwtl:TreeListTextColumn Caption="Mã đơn vị " FieldName="MA_DVIQLY"
+                                        VisibleIndex="0" Width="35%">
+                                        <PropertiesTextEdit>
+                                            <ClientSideEvents Validation="CheckVali" />
+                                        </PropertiesTextEdit>
+                                    </dxwtl:TreeListTextColumn>
+                                    <dxwtl:TreeListTextColumn Caption="Tên đơn vị" FieldName="TEN_DVIQLY"
+                                        VisibleIndex="1">
+                                    </dxwtl:TreeListTextColumn>
+                                    <dxwtl:TreeListTextColumn Caption="Tên viết tắt" FieldName="TenVietTat"
+                                        VisibleIndex="2">
+                                    </dxwtl:TreeListTextColumn>
+                                    <dxwtl:TreeListCommandColumn Name="btnDelete" VisibleIndex="7" Width="10px">
+                                        <DeleteButton Visible="True">
+                                        </DeleteButton>
+                                    </dxwtl:TreeListCommandColumn>
+                                </Columns>
+                                <%--<Settings ShowColumnHeaders="False" />--%>
+                                <SettingsBehavior AllowFocusedNode="True" ExpandCollapseAction="NodeDblClick" ProcessFocusedNodeChangedOnServer="True" />
+                                <SettingsEditing AllowNodeDragDrop="False" />
+                                <Border BorderStyle="None" />
+                                <Settings ShowTreeLines="True" SuppressOuterGridLines="true" />
+                            </dxwtl:ASPxTreeList>
+                            <table width="100%">
+                                <tr>
+                                    <td width="120px">
+                                        <dx:ASPxButton ID="btnAdd" runat="server" Text="Thêm mới"
+                                            OnClick="btnAdd_Click" Width="100px">
+                                        </dx:ASPxButton>
+                                    </td>
+                                    <td width="90px">
+                                        <dx:ASPxButton ID="btnEdit" ClientInstanceName="btnEdit" runat="server" Text="Sửa"
+                                            OnClick="btnEdit_Click" Width="100px">
+                                        </dx:ASPxButton>
+                                    </td>
+                                    <td>&nbsp;
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
-                        <td width="90px">
-                            <dx:ASPxButton ID="btnEdit" ClientInstanceName="btnEdit" runat="server" Text="Sửa"
-                                OnClick="btnEdit_Click" Width="100px">
-                            </dx:ASPxButton>
+                        <td valign="top">
+                            <asp:Panel ID="Panel1" Visible="true" CssClass="boxPanel" runat="server">
+                                <table>
+                                    <tr>
+                                        <td colspan="4">
+                                            <dx:ASPxLabel ID="lblCurrentEdit" runat="server" Text="" ForeColor="#24A3D6" Visible="false">
+                                            </dx:ASPxLabel>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <dx:ASPxLabel ID="lblError" runat="server" Text="" ForeColor="Red">
+                                            </dx:ASPxLabel>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                                <table class="tbl_Write">
+                                    <tr>
+                                        <td colspan="4" class="TitleInfo">
+                                            <span>Thông tin chi tiết về đơn vị</span></td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="col1">
+                                            <dx:ASPxLabel ID="lblName" runat="server" Width="150px" ClientInstanceName="lblName" Text="Mã đơn vị:">
+                                            </dx:ASPxLabel>
+                                        </td>
+                                        <td class="clear">
+                                            <dx:ASPxTextBox ID="txtNameOrganization" runat="server" Width="350px" ClientInstanceName="txtName">
+                                                <ValidationSettings SetFocusOnError="True" ValidationGroup="btnThemMoi">
+                                                    <RequiredField IsRequired="True" />
+                                                </ValidationSettings>
+                                            </dx:ASPxTextBox>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="col1">
+                                            <dx:ASPxLabel ID="ASPxLabel1" runat="server" ClientInstanceName="lblName" Text="Tên đơn vị:">
+                                            </dx:ASPxLabel>
+                                        </td>
+                                        <td class="clear">
+                                            <dx:ASPxTextBox ID="txtTenDV" runat="server" Width="100%" ClientInstanceName="txtNameOrganization">
+                                                <ValidationSettings SetFocusOnError="True" ValidationGroup="btnThemMoi">
+                                                    <RequiredField IsRequired="True" />
+                                                </ValidationSettings>
+                                            </dx:ASPxTextBox>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="col1">
+                                            <dx:ASPxLabel ID="lblChooseParent" runat="server" Text="Chọn cấp cha: ">
+                                            </dx:ASPxLabel>
+                                        </td>
+                                        <td class="col2" colspan="3">
+                                            <dx:ASPxComboBox ID="cmbChoseParent" runat="server" SelectedIndex="0" Width="350px"
+                                                ClientInstanceName="cmbChoseParent" IncrementalFilteringMode="Contains"
+                                                ValueType="System.Int32" Theme="Aqua">
+                                            </dx:ASPxComboBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col1">
+                                            <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Tên viết tắt: ">
+                                            </dx:ASPxLabel>
+                                        </td>
+                                        <td>
+                                             <dx:ASPxTextBox ID="txtTenVietTat" runat="server" Width="350px" ClientInstanceName="txtName">
+                                                <ValidationSettings SetFocusOnError="True" ValidationGroup="btnThemMoi">
+                                                    <RequiredField IsRequired="True" />
+                                                </ValidationSettings>
+                                            </dx:ASPxTextBox>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="btn" colspan="4">
+                                            <dx:ASPxButton ID="btnCapNhat" runat="server" Enabled="false"
+                                                OnClick="btnCapNhat_Click" Text="Cập nhật" ValidationGroup="btnThemMoi"
+                                                Width="120px" Theme="Aqua">
+                                            </dx:ASPxButton>
+                                            <dx:ASPxButton ID="btnBack" runat="server" OnClick="btnBack_Click"
+                                                Text="Quay lại" Visible="false" Width="100px" Theme="Aqua">
+                                            </dx:ASPxButton>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+
+                            </asp:Panel>
                         </td>
-                        <td>&nbsp;
-                        </td>
+
                     </tr>
                 </table>
-
             </div>
-
         </div>
     </div>
 </asp:Content>
